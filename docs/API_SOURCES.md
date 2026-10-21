@@ -1,4 +1,4 @@
-# Official API sources and M1 contracts
+# Official API sources and versioned contracts
 
 Verified directly on **2026-10-21 UTC**, with public response retrievals at
 19:51–19:58 UTC. Each JSON fixture records its own URL, retrieval timestamp,
@@ -80,3 +80,53 @@ not covered by this project's MIT code license. No data was pushed, published,
 or redistributed in this milestone. Broader data use requires the applicable
 venue permission; the published Polymarket terms date needs rechecking before
 ongoing collection. Collection is an explicit bounded CLI action, not a daemon.
+
+## M2 verification — 2026-10-21
+
+Rechecked the official market/detail and US rule-structure sources above for the
+registry. It reuses M1's verified metadata, rules and side identities without any
+new API endpoint. Collected Kalshi event/series evidence and official contract URLs
+are fingerprinted separately. Market terms, deadlines, outcome identities and
+uninterpreted additional metadata participate in version changes; quote/volume
+updates do not establish or approve equivalence. Polymarket asset-specific terms
+remain uninterpreted evidence, not automatically matched conditions.
+
+Full legal sources/clarifications are operator-imported from official US URLs;
+the original bytes and exact UTF-8 resolution text are archived with separate
+hashes and declared retrieval time. This does not independently authenticate the
+source file or confer data rights. A human must verify source fidelity and all
+settlement cases; see [pair review](PAIR_REVIEW.md). No live equivalence decision
+was made during implementation or validation.
+
+## M3 verification — 2026-10-21
+
+Official documents were fetched again before M3 implementation. The
+[manifest](evidence/M3_API_CHECKS.json) records canonical URLs, downloaded document
+hashes and local save timestamps around 21:12 UTC. New unchanged book/detail
+responses were captured at 21:23 UTC; see the
+[M3 fixture](../tests/fixtures/m3-live-snapshots.json) for per-response timestamps,
+hashes and schemas. Upstream versions remain Kalshi **3.34.0** and US public
+MarketService **1.0.0**; normalization contract: `binary-books/m3-v1`.
+
+| Official source | M3 interpretation |
+| --- | --- |
+| [Kalshi fixed-point migration](https://docs.kalshi.com/getting_started/fixed_point_migration) | Use fixed-point strings; count precision is 0.01. Market `price_ranges`, not a guessed label mapping, establish price grids |
+| [Kalshi market](https://docs.kalshi.com/api-reference/market/get-market) and [book](https://docs.kalshi.com/api-reference/market/get-market-orderbook) | Active binary $1/default-bound markets only; opposing bids produce complementary asks with unchanged quantity. REST has no book timestamp |
+| [Kalshi orderbook updates](https://docs.kalshi.com/websockets/orderbook-updates) | Snapshot/delta fixed-point fields, subscription-scoped `seq`, market `clock`, envelope `sending_ts_ms`; snapshot includes updates through its clock, subsequent deltas must be beyond it |
+| [US market detail](https://docs.polymarket.us/api-reference/markets/get-market-by-slug) and [book](https://docs.polymarket.us/api-reference/markets/get-market-book) | Explicit tradable long/short instrument identities, `orderPriceMinTickSize`, `minimumTradeQty`; YES bids/offers, USD quantities/prices, `transactTime` |
+| [US fractional contracts](https://docs.polymarket.us/learn/trading/basics/fractional-shares) | Supported conservative quantity grids are 0.01 or 1 when the market minimum matches; unknown minima are refused, not treated as universal lot specifications |
+| [US buying YES versus selling NO](https://docs.polymarket.us/learn/trading/basics/buying-yes-vs-selling-no) | Short-YES exposure represents synthetic NO; `1-bid` is a quote/payoff representation, not a separate NO-token buy route |
+| [US market WebSocket](https://docs.polymarket.us/api-reference/websocket/markets) | Authenticated market-data snapshots; no assumed sequence/delta continuity contract |
+
+Kalshi's sequence is not per market when multiple markets share a subscription.
+The offline helper therefore requires one market per subscription. Its clock can
+skip/repeat across deltas and is not checked as a contiguous counter. Send time
+is labeled provider send time, never mutation time. Both documented WebSockets
+require authentication; neither was connected or tested live. Only public REST
+collectors and deterministic hypothetical stream replay were run.
+
+Missing Kalshi REST source time blocks fresh comparisons; receipt time, HTTP Date
+and metadata timestamps are never substituted. All quotes remain `UNVERIFIED`.
+See [M3 results](M3_RESULTS.md) for measured evidence and [book inspection](BOOKS.md)
+for fail-closed rules. M1 data-use restrictions above still apply; no new rights
+or real-pair equivalence finding is claimed.

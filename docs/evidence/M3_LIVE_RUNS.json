@@ -1,0 +1,66 @@
+{
+  "schema_version": 3,
+  "runs": [
+    {
+      "id": 1,
+      "venue": "kalshi",
+      "schema_version": "kalshi-3.34.0/m1-v1",
+      "started_at": "2026-10-21T21:23:26.102360+00:00",
+      "finished_at": "2026-10-21T21:23:28.033939+00:00",
+      "status": "COMPLETE",
+      "scope_json": "{\"books\":2,\"filter\":\"KXLNBELITE2GAME-26OCT231430CHASTC\",\"max_age_seconds\":60,\"max_pages\":4,\"page_size\":1,\"selected\":[]}",
+      "pages": 2,
+      "records": 2,
+      "unique_records": 2,
+      "duplicates": 0,
+      "next_page": null,
+      "error": null
+    },
+    {
+      "id": 2,
+      "venue": "polymarket_us",
+      "schema_version": "polymarket-us-marketservice-1.0.0/m1-v1",
+      "started_at": "2026-10-21T21:23:28.170552+00:00",
+      "finished_at": "2026-10-21T21:23:29.039416+00:00",
+      "status": "COMPLETE",
+      "scope_json": "{\"books\":1,\"filter\":\"tec-mlb-champ-2026-09-27-mil\",\"max_age_seconds\":60,\"max_pages\":3,\"page_size\":1,\"selected\":[]}",
+      "pages": 2,
+      "records": 1,
+      "unique_records": 1,
+      "duplicates": 0,
+      "next_page": null,
+      "error": null
+    }
+  ],
+  "normalizations": [
+    {
+      "observation_id": 6,
+      "venue": "kalshi",
+      "source_id": "KXLNBELITE2GAME-26OCT231430CHASTC-STC",
+      "evaluated_at": "2026-10-21T21:23:27.526263+00:00",
+      "data_usable": false,
+      "rejections": [
+        "UNKNOWN_SOURCE_TIME"
+      ]
+    },
+    {
+      "observation_id": 8,
+      "venue": "kalshi",
+      "source_id": "KXLNBELITE2GAME-26OCT231430CHASTC-CHA",
+      "evaluated_at": "2026-10-21T21:23:28.030123+00:00",
+      "data_usable": false,
+      "rejections": [
+        "UNKNOWN_SOURCE_TIME"
+      ]
+    },
+    {
+      "observation_id": 12,
+      "venue": "polymarket_us",
+      "source_id": "tec-mlb-champ-2026-09-27-mil",
+      "evaluated_at": "2026-10-21T21:23:29.028171+00:00",
+      "data_usable": true,
+      "rejections": []
+    }
+  ],
+  "real_pairs": 0
+}

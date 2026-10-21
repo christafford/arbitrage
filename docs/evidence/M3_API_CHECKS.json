@@ -1,0 +1,47 @@
+[
+  {
+    "official_url": "https://docs.kalshi.com/getting_started/fixed_point_migration",
+    "local_document_sha256": "249bb44d972bfef98061ecffcd7869eba0aef356c610fcab8946ca33072cecb4",
+    "saved_at_utc": "2026-10-21T21:12:49.530035+00:00"
+  },
+  {
+    "official_url": "https://docs.kalshi.com/api-reference/market/get-market",
+    "local_document_sha256": "ae9d917509f33d278b59657e5793277574846208635e845cc07f5762a6178bea",
+    "saved_at_utc": "2026-10-21T21:12:49.507938+00:00"
+  },
+  {
+    "official_url": "https://docs.kalshi.com/api-reference/market/get-market-orderbook",
+    "local_document_sha256": "ec5115f85471624872a6cbd8213c7e1fe3c994e19a0f7e4d86549cf2fd2c4f2e",
+    "saved_at_utc": "2026-10-21T21:12:49.505013+00:00"
+  },
+  {
+    "official_url": "https://docs.kalshi.com/websockets/orderbook-updates",
+    "local_document_sha256": "8432edeec3ae10347060f144a4b5207d642034abcde6f5ef569db35ea13d9474",
+    "saved_at_utc": "2026-10-21T21:12:49.488387+00:00"
+  },
+  {
+    "official_url": "https://docs.polymarket.us/api-reference/markets/get-market-by-slug",
+    "local_document_sha256": "86cb8e963491d2be7769804a3c2e0e0ba6ae1ab1deb61537b651dfc4a5b6464b",
+    "saved_at_utc": "2026-10-21T21:12:50.110710+00:00"
+  },
+  {
+    "official_url": "https://docs.polymarket.us/api-reference/websocket/markets",
+    "local_document_sha256": "ae6c43e9fc4f302ecec8871538b68fa56fa266c78e329b695895eafe315286f7",
+    "saved_at_utc": "2026-10-21T21:12:49.635658+00:00"
+  },
+  {
+    "official_url": "https://docs.polymarket.us/api-reference/markets/get-market-book",
+    "local_document_sha256": "a7067ab36d8372f67f9eae96b8ef177e120b94f33355f85ff7bf49f66d795e29",
+    "saved_at_utc": "2026-10-21T21:12:49.650828+00:00"
+  },
+  {
+    "official_url": "https://docs.polymarket.us/learn/trading/basics/fractional-shares",
+    "local_document_sha256": "a884f08f93aaf9ddc33155edb0a2c201c90b8d1f5ace98c55bcdc39563cf792f",
+    "saved_at_utc": "2026-10-21T21:12:49.638893+00:00"
+  },
+  {
+    "official_url": "https://docs.polymarket.us/learn/trading/basics/buying-yes-vs-selling-no",
+    "local_document_sha256": "fd46648a0ee6051185f34dca2f9d61d375ceaef4d0e93872dca2e86b7063eb5d",
+    "saved_at_utc": "2026-10-21T21:12:49.900537+00:00"
+  }
+]

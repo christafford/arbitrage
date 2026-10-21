@@ -1,0 +1,24 @@
+{
+  "hypothetical": true,
+  "candidate_statuses": [
+    "UNVERIFIED",
+    "UNVERIFIED"
+  ],
+  "final_pairs": [
+    {
+      "pair_id": 1,
+      "status": "REJECTED"
+    },
+    {
+      "pair_id": 2,
+      "status": "REVOKED"
+    },
+    {
+      "pair_id": 3,
+      "status": "INVALIDATED"
+    }
+  ],
+  "audit_events": 12,
+  "trading_authorized": false,
+  "trace": "data/m2-final-demo-artifacts/cli-trace.json"
+}

@@ -1,0 +1,11 @@
+{
+  "schema_version": 3,
+  "counts": {
+    "raw_observations": 12,
+    "catalogue_entries": 3,
+    "registry_instruments": 3,
+    "registry_supplements": 4,
+    "pairs": 0,
+    "normalized_books": 0
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "hypothetical": true,
+  "purpose": "Synthetic settlement review examples, never real exchange contracts or human approvals",
+  "instruments": [
+    {
+      "venue": "kalshi",
+      "source_id": "HYPOTHETICAL-K",
+      "contract": {
+        "title": "HYPOTHETICAL River City temperature reaches 30 C",
+        "description": "HYPOTHETICAL ONLY: River City daily high temperature reaches at least 30 C on 2030-07-01. Resolution uses the FINAL agency report through 2030-07-03T00:00:00Z, including revisions. Normal payouts are 1/0; void, cancellation, suspension or source-revision exceptions settle each selected leg at 0.50 USD on 2030-07-04T12:00:00Z."
+      },
+      "resolution_text": "HYPOTHETICAL ONLY: River City daily high temperature reaches at least 30 C on 2030-07-01. Resolution uses the FINAL agency report through 2030-07-03T00:00:00Z, including revisions. Normal payouts are 1/0; void, cancellation, suspension or source-revision exceptions settle each selected leg at 0.50 USD on 2030-07-04T12:00:00Z."
+    },
+    {
+      "venue": "polymarket_us",
+      "source_id": "HYPOTHETICAL-P",
+      "contract": {
+        "title": "HYPOTHETICAL River City temperature reaches 30 C",
+        "description": "HYPOTHETICAL ONLY: River City daily high temperature reaches at least 30 C on 2030-07-01. Resolution uses the FINAL agency report through 2030-07-03T00:00:00Z, including revisions. Normal payouts are 1/0; void, cancellation, suspension or source-revision exceptions settle each selected leg at 0.50 USD on 2030-07-04T12:00:00Z."
+      },
+      "resolution_text": "HYPOTHETICAL ONLY: River City daily high temperature reaches at least 30 C on 2030-07-01. Resolution uses the FINAL agency report through 2030-07-03T00:00:00Z, including revisions. Normal payouts are 1/0; void, cancellation, suspension or source-revision exceptions settle each selected leg at 0.50 USD on 2030-07-04T12:00:00Z."
+    },
+    {
+      "venue": "polymarket_us",
+      "source_id": "HYPOTHETICAL-P-DIFFERENT",
+      "contract": {
+        "title": "HYPOTHETICAL River City temperature reaches 30 C",
+        "description": "HYPOTHETICAL ONLY: River City daily high temperature reaches at least 30 C on 2030-07-01. Resolution uses the FIRST agency report at 2030-07-01T23:59:00Z, excluding all revisions. Normal payouts are 1/0; void, cancellation, suspension or source-revision exceptions settle each selected leg at 0.50 USD on 2030-07-04T12:00:00Z."
+      },
+      "resolution_text": "HYPOTHETICAL ONLY: River City daily high temperature reaches at least 30 C on 2030-07-01. Resolution uses the FIRST agency report at 2030-07-01T23:59:00Z, excluding all revisions. Normal payouts are 1/0; void, cancellation, suspension or source-revision exceptions settle each selected leg at 0.50 USD on 2030-07-04T12:00:00Z."
+    }
+  ]
+}

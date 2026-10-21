@@ -1,0 +1,85 @@
+[
+  {
+    "check": "us_historical",
+    "command": [
+      ".venv/bin/predarb",
+      "books",
+      "inspect",
+      "12",
+      "--db",
+      "data/m3-live-smoke.sqlite3",
+      "--at",
+      "2026-10-21T21:23:29.028171+00:00",
+      "--side",
+      "YES",
+      "--quantity",
+      "1"
+    ],
+    "exit_code": 0,
+    "evaluated_at": "2026-10-21T21:23:29.028171+00:00",
+    "historical_replay": true,
+    "data_usable": true,
+    "rejections": [],
+    "hypothetical_depth": {
+      "complete": true,
+      "covered": "1",
+      "levels": [
+        {
+          "price": "0.6290",
+          "quantity": "1"
+        }
+      ],
+      "quote_cost": "0.6290",
+      "reason": "COVERED",
+      "requested": "1"
+    },
+    "verification": "UNVERIFIED",
+    "trading_authorized": false
+  },
+  {
+    "check": "kalshi_historical",
+    "command": [
+      ".venv/bin/predarb",
+      "books",
+      "inspect",
+      "6",
+      "--db",
+      "data/m3-live-smoke.sqlite3",
+      "--at",
+      "2026-10-21T21:23:27.526263+00:00"
+    ],
+    "exit_code": 2,
+    "evaluated_at": "2026-10-21T21:23:27.526263+00:00",
+    "historical_replay": true,
+    "data_usable": false,
+    "rejections": [
+      "UNKNOWN_SOURCE_TIME"
+    ],
+    "hypothetical_depth": null,
+    "verification": "UNVERIFIED",
+    "trading_authorized": false
+  },
+  {
+    "check": "us_current",
+    "command": [
+      ".venv/bin/predarb",
+      "books",
+      "inspect",
+      "12",
+      "--db",
+      "data/m3-live-smoke.sqlite3"
+    ],
+    "exit_code": 2,
+    "evaluated_at": "2026-10-21T21:27:32.528318+00:00",
+    "historical_replay": false,
+    "data_usable": false,
+    "rejections": [
+      "STALE_RECEIPT",
+      "STALE_METADATA",
+      "STALE_SOURCE"
+    ],
+    "hypothetical_depth": null,
+    "verification": "UNVERIFIED",
+    "trading_authorized": false
+  }
+]

@@ -18,6 +18,19 @@ response body were changed. JSON envelope formatting is not part of the body has
   acceptance collection, including the real terminal pagination response, details
   and selected books. Its `run` records the original collection summary.
 - `*-live.json` contains individual detail, event, series or book samples.
+- `m3-live-snapshots.json` contains three new real public book/detail pairs captured
+  at 21:23 UTC on 2026-10-21, with exact normalization expectations and evaluation
+  clocks. Each nested response preserves its unchanged body, SHA-256, URL,
+  receipt time and schema contract. Its sanitizer removes infrastructure and
+  cookie headers, not payload fields. Replay verifies hashes and exact results.
+
+`m3-hypothetical.json` is explicitly **HYPOTHETICAL**, with synthetic market IDs,
+rules, quotes, dates and a 2030 replay clock. It exercises exact complementary
+depth, fractional sizes, US synthetic NO and offline Kalshi sequence recovery.
+Its representative metadata shape derives from the public schemas; it establishes
+no real settlement equivalence or observed stream behavior. Generated variations
+in tests and `scripts/m3_demo.py` are also hypothetical.
+
 
 Offline tests validate unchanged captures and replay their request sequences.
 Altered failure/overlap/empty-book scenarios are explicitly labeled

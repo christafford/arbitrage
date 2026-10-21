@@ -1,6 +1,7 @@
 import argparse
 import json
 import sys
+import sqlite3
 from decimal import Decimal
 from .models import AskLevel
 from .math import evaluate
@@ -25,10 +26,16 @@ def report(db_path):
         books = db.execute("SELECT freshness,liquidity,COUNT(*) FROM book_captures GROUP BY freshness,liquidity").fetchall()
         profits = [Decimal(row[0]) for row in db.execute("SELECT profit FROM opportunities")]
         sims = (len(profits), sum(profits, Decimal("0")))
+        from .registry import list_pairs
+        list_pairs(db)  # Evaluate expiry/freshness; cached APPROVED rows alone are not authority.
+        normalized = db.execute("SELECT data_usable,COUNT(*) FROM normalized_books GROUP BY data_usable").fetchall()
+        pairs = db.execute("SELECT hypothetical,status,COUNT(*) FROM pairs GROUP BY hypothetical,status").fetchall()
     print("Read-only archive counts:", dict(raw))
     print("Collection runs (id, venue, status, pages, records, unique, duplicates):", runs)
     print("Book captures (freshness AT CAPTURE, liquidity, count):", books)
     print("All live catalogue entries and books are UNVERIFIED; no actionable signals")
+    print("Normalized book assessments (data usable AT ASSESSMENT, count):", normalized)
+    print("Pair decisions (hypothetical, status, count; no trading authority):", pairs)
     print(f"Hypothetical evaluations: {sims[0]} (sum of *example modeled* profits, NOT realized P&L: ${sims[1]:.2f})")
 
 
@@ -61,15 +68,21 @@ def main():
             sp.add_argument("--book", action="append", default=[], help="explicit source ID in captured scope; repeatable")
             sp.add_argument("--max-age", type=int, default=60, help="book age threshold in seconds")
             sp.add_argument("--event-ticker" if name == "collect-kalshi" else "--slug")
+    from . import registry_cli
+    registry_cli.add_parser(s)
+    from . import books_cli
+    books_cli.add_parser(s)
     args = p.parse_args()
     try:
         if args.cmd == "demo": demo(args.db)
         elif args.cmd == "report": report(args.db)
+        elif args.cmd == "pairs": return registry_cli.run(args)
+        elif args.cmd == "books": return books_cli.run(args)
         else: return collect_venue(args)
     except KeyboardInterrupt:
         print("Collection interrupted; archived evidence retained", file=sys.stderr)
         return 130
-    except (ValueError, OSError, TimeoutError) as exc:
+    except (ValueError, OSError, TimeoutError, sqlite3.Error) as exc:
         print(f"Collector/error: {exc}", file=sys.stderr)
         return 1
     return 0

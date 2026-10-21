@@ -63,7 +63,7 @@ def connect(path: str):
         con.execute('PRAGMA journal_mode=WAL')
         con.execute('PRAGMA busy_timeout=15000')
         version = con.execute('PRAGMA user_version').fetchone()[0]
-        if version > 1:
+        if version > 3:
             raise ValueError(f'unsupported database schema version {version}')
         con.executescript(SCHEMA)
         if version == 0:
@@ -78,6 +78,14 @@ def connect(path: str):
                 f'ALTER TABLE raw_observations ADD COLUMN {name} {kind};'
                 for name, kind in columns.items())
             con.executescript(sql + '\n' + M1_SCHEMA + '\nPRAGMA user_version=1;\nCOMMIT;')
+        if version < 2:
+            from .registry_schema import M2_SCHEMA
+            con.executescript('BEGIN IMMEDIATE;\n' + M2_SCHEMA + '\nPRAGMA user_version=2;\nCOMMIT;')
+            from .registry import sync_catalogue
+            sync_catalogue(con)
+        if version < 3:
+            from .book_store import M3_SCHEMA
+            con.executescript('BEGIN IMMEDIATE;\n' + M3_SCHEMA + '\nPRAGMA user_version=3;\nCOMMIT;')
         return con
     except BaseException:
         con.close()
@@ -123,6 +131,9 @@ def update_run(con, run_id, *, status, pages, records, unique, next_page, error=
                 (status, pages, records, unique, records - unique, next_page, error,
                  None if status == 'RUNNING' else timestamp(), run_id))
     con.commit()
+    if status in {'FAILED', 'INTERRUPTED'}:
+        from .registry import invalidate_failed_collection
+        invalidate_failed_collection(con, run_id, status)
 
 
 def save_entry(con, run_id, observation, source_id, metadata, rules, source_ts):
@@ -134,6 +145,8 @@ def save_entry(con, run_id, observation, source_id, metadata, rules, source_ts):
                 (run_id, source_id, observation.id, source_ts, dumps(metadata), rules_json,
                  hashlib.sha256(rules_json.encode()).hexdigest()))
     con.commit()
+    from .registry import observe_catalogue
+    observe_catalogue(con, run_id, observation.id, source_id, metadata, rules)
 
 
 def save_book(con, run_id, observation, source_id, source_ts, freshness, liquidity):

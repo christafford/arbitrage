@@ -1,0 +1,50 @@
+{
+  "migration_of_m1_copy": {
+    "schema_version": 2,
+    "counts": {
+      "raw_observations": 12,
+      "catalogue_entries": 3,
+      "opportunities": 1,
+      "registry_instruments": 3,
+      "registry_supplements": 4,
+      "pairs": 0
+    }
+  },
+  "live_smoke": {
+    "schema_version": 2,
+    "runs": [
+      [
+        "kalshi",
+        "2026-10-21T20:22:06.364944+00:00",
+        "2026-10-21T20:22:08.282985+00:00",
+        "COMPLETE",
+        2,
+        2,
+        2,
+        0
+      ],
+      [
+        "polymarket_us",
+        "2026-10-21T20:22:08.428878+00:00",
+        "2026-10-21T20:22:09.269809+00:00",
+        "COMPLETE",
+        2,
+        1,
+        1,
+        0
+      ]
+    ],
+    "registry_instruments": 3,
+    "supplements": [
+      [
+        "event",
+        2
+      ],
+      [
+        "series",
+        2
+      ]
+    ],
+    "live_pairs": 0
+  }
+}

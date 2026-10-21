@@ -44,8 +44,8 @@ def collect(con, adapter, *, page_size=20, max_pages=10, scope=None, books=1,
             selected=(), max_age=60, client=None, now=None):
     if not 1 <= page_size <= 1000 or not 1 <= max_pages <= 10000:
         raise ValueError('page_size must be 1..1000 and max_pages 1..10000')
-    if not 0 <= books <= 100 or max_age <= 0 or len(selected) > 100:
-        raise ValueError('books must be 0..100, at most 100 selections, and max_age positive')
+    if not 0 <= books <= 100 or type(max_age) is not int or not 1 <= max_age <= 3600 or len(selected) > 100:
+        raise ValueError('books must be 0..100, at most 100 selections, and max_age 1..3600')
     if scope:
         identifier(scope)
     selected = tuple(dict.fromkeys(identifier(value) for value in selected))
@@ -146,6 +146,8 @@ def collect(con, adapter, *, page_size=20, max_pages=10, scope=None, books=1,
             freshness = book_freshness(source_ts, book.received_at, max_age=max_age, now=now)
             liquidity = ('EMPTY' if not any(sizes) else 'PARTIAL' if not all(sizes) else 'TWO_SIDED')
             save_book(con, run_id, book, source_id, source_ts, freshness, liquidity)
+            from .book_store import record_normalization
+            record_normalization(con, book.id, detail.id, now=now, max_age=max_age)
             captured += 1
         status = 'COMPLETE' if continuation is None else 'PARTIAL'
         update_run(con, run_id, status=status, pages=pages, records=records,

@@ -1,0 +1,432 @@
+{
+  "hypothetical": false,
+  "provenance": "REAL_PUBLIC_US_API_SNAPSHOTS; provider rights reserved; local research only",
+  "sanitization": "No credentials. Allowlisted response headers; JSON bodies unchanged.",
+  "normalizer_version": "binary-books/m3-v1",
+  "cases": [
+    {
+      "venue": "kalshi",
+      "source_id": "KXLNBELITE2GAME-26OCT231430CHASTC-STC",
+      "evaluated_at": "2026-10-21T21:23:27.526263+00:00",
+      "metadata": {
+        "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXLNBELITE2GAME-26OCT231430CHASTC-STC",
+        "retrieved_at": "2026-10-21T21:23:26.754114+00:00",
+        "schema_version": "kalshi-3.34.0/m1-v1",
+        "status": 200,
+        "headers": {
+          "content-type": "application/json",
+          "date": "Wed, 21 Oct 2026 21:23:26 GMT"
+        },
+        "body": "{\"market\":{\"can_close_early\":true,\"close_time\":\"2026-10-25T18:30:00Z\",\"created_time\":\"2026-10-21T19:50:19.669738Z\",\"custom_strike\":{\"basketball_team\":\"5e69a4cb-8e3d-43d1-835b-de8c4375cd9a\"},\"early_close_condition\":\"This market will close and expire after a winner is declared.\",\"event_ticker\":\"KXLNBELITE2GAME-26OCT231430CHASTC\",\"exchange_index\":3,\"expected_expiration_time\":\"2026-10-23T21:30:00Z\",\"expiration_time\":\"2026-10-25T18:30:00Z\",\"expiration_value\":\"\",\"last_price_dollars\":\"0.0000\",\"latest_expiration_time\":\"2026-10-25T18:30:00Z\",\"market_type\":\"binary\",\"no_ask_dollars\":\"0.9400\",\"no_bid_dollars\":\"0.0600\",\"no_sub_title\":\"Saint-Chamond\",\"notional_value_dollars\":\"1.0000\",\"occurrence_datetime\":\"2026-10-23T21:30:00Z\",\"open_interest_fp\":\"0.00\",\"open_time\":\"2026-10-21T19:51:00Z\",\"previous_price_dollars\":\"0.0000\",\"previous_yes_ask_dollars\":\"0.0000\",\"previous_yes_bid_dollars\":\"0.0000\",\"price_level_structure\":\"linear_cent\",\"price_ranges\":[{\"end\":\"1.0000\",\"start\":\"0.0000\",\"step\":\"0.0100\"}],\"result\":\"\",\"rules_primary\":\"If Saint-Chamond wins the Champagne Basketball vs Saint-Chamond men's professional LNB Elite 2 basketball game originally scheduled for Oct 23, 2026 at 2:30 PM EDT, then the market resolves to Yes.\",\"rules_secondary\":\"If the game is postponed but begins within 48 hours of its originally scheduled start time, the market will remain open and resolve based on the official final result. If the game is cancelled or not started within 48 hours of its originally scheduled start, all markets will resolve to a fair price.\\n\\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.\",\"settlement_bounds_type\":\"default\",\"settlement_timer_seconds\":90,\"status\":\"active\",\"strike_type\":\"structured\",\"ticker\":\"KXLNBELITE2GAME-26OCT231430CHASTC-STC\",\"title\":\"Saint-Chamond wins\",\"updated_time\":\"2026-10-21T19:51:00.247724Z\",\"volume_24h_fp\":\"0.00\",\"volume_fp\":\"0.00\",\"yes_ask_dollars\":\"0.9400\",\"yes_ask_size_fp\":\"100.00\",\"yes_bid_dollars\":\"0.0600\",\"yes_bid_size_fp\":\"100.00\",\"yes_sub_title\":\"Saint-Chamond\"}}\n",
+        "body_sha256": "33be976ea2f64d950b62ab1446c9a3ab497ff5b68f478d24ef9efc0fa1f51fd4"
+      },
+      "book": {
+        "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXLNBELITE2GAME-26OCT231430CHASTC-STC/orderbook",
+        "retrieved_at": "2026-10-21T21:23:27.504979+00:00",
+        "schema_version": "kalshi-3.34.0/m1-v1",
+        "status": 200,
+        "headers": {
+          "content-type": "application/json; charset=utf-8",
+          "date": "Wed, 21 Oct 2026 21:23:27 GMT"
+        },
+        "body": "{\"orderbook_fp\":{\"no_dollars\":[[\"0.0100\",\"1219.00\"],[\"0.0200\",\"385.00\"],[\"0.0300\",\"422.00\"],[\"0.0400\",\"90.00\"],[\"0.0500\",\"100.00\"],[\"0.0600\",\"100.00\"]],\"yes_dollars\":[[\"0.0100\",\"1837.00\"],[\"0.0200\",\"981.00\"],[\"0.0300\",\"979.00\"],[\"0.0400\",\"263.00\"],[\"0.0500\",\"237.00\"],[\"0.0600\",\"100.00\"]]}}",
+        "body_sha256": "9a32ef73c4a06eaf73149b5d1f54ea6cc4a5fd5a4b95de61057ebde8d4fe5a7a"
+      },
+      "expected": {
+        "continuity": "INDEPENDENT_FULL_SNAPSHOT",
+        "data_usable": false,
+        "market_close_at": "2026-10-25T18:30:00Z",
+        "mechanism_no": "BUY_NO_FROM_COMPLEMENTARY_YES_BID",
+        "mechanism_yes": "BUY_YES_FROM_COMPLEMENTARY_NO_BID",
+        "metadata_received_at": "2026-10-21T21:23:26.754114+00:00",
+        "minimum_quantity": "0.01",
+        "no_asks": [
+          {
+            "price": "0.9400",
+            "quantity": "100.00"
+          },
+          {
+            "price": "0.9500",
+            "quantity": "237.00"
+          },
+          {
+            "price": "0.9600",
+            "quantity": "263.00"
+          },
+          {
+            "price": "0.9700",
+            "quantity": "979.00"
+          },
+          {
+            "price": "0.9800",
+            "quantity": "981.00"
+          },
+          {
+            "price": "0.9900",
+            "quantity": "1837.00"
+          }
+        ],
+        "normalizer_version": "binary-books/m3-v1",
+        "price_bands": [
+          {
+            "end": "1.0000",
+            "start": "0.0000",
+            "step": "0.0100"
+          }
+        ],
+        "quantity_step": "0.01",
+        "received_at": "2026-10-21T21:23:27.504979+00:00",
+        "rejections": [
+          "UNKNOWN_SOURCE_TIME"
+        ],
+        "sequence": null,
+        "source_id": "KXLNBELITE2GAME-26OCT231430CHASTC-STC",
+        "source_ts": null,
+        "timestamp_kind": "ABSENT",
+        "trading_authorized": false,
+        "transport": "REST_SNAPSHOT",
+        "venue": "kalshi",
+        "verification": "UNVERIFIED",
+        "yes_asks": [
+          {
+            "price": "0.9400",
+            "quantity": "100.00"
+          },
+          {
+            "price": "0.9500",
+            "quantity": "100.00"
+          },
+          {
+            "price": "0.9600",
+            "quantity": "90.00"
+          },
+          {
+            "price": "0.9700",
+            "quantity": "422.00"
+          },
+          {
+            "price": "0.9800",
+            "quantity": "385.00"
+          },
+          {
+            "price": "0.9900",
+            "quantity": "1219.00"
+          }
+        ]
+      }
+    },
+    {
+      "venue": "kalshi",
+      "source_id": "KXLNBELITE2GAME-26OCT231430CHASTC-CHA",
+      "evaluated_at": "2026-10-21T21:23:28.030123+00:00",
+      "metadata": {
+        "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXLNBELITE2GAME-26OCT231430CHASTC-CHA",
+        "retrieved_at": "2026-10-21T21:23:27.754150+00:00",
+        "schema_version": "kalshi-3.34.0/m1-v1",
+        "status": 200,
+        "headers": {
+          "content-type": "application/json",
+          "date": "Wed, 21 Oct 2026 21:23:27 GMT"
+        },
+        "body": "{\"market\":{\"can_close_early\":true,\"close_time\":\"2026-10-25T18:30:00Z\",\"created_time\":\"2026-10-21T19:50:19.669738Z\",\"custom_strike\":{\"basketball_team\":\"2618e858-e9dc-43ca-8848-f1f6bb75058a\"},\"early_close_condition\":\"This market will close and expire after a winner is declared.\",\"event_ticker\":\"KXLNBELITE2GAME-26OCT231430CHASTC\",\"exchange_index\":3,\"expected_expiration_time\":\"2026-10-23T21:30:00Z\",\"expiration_time\":\"2026-10-25T18:30:00Z\",\"expiration_value\":\"\",\"last_price_dollars\":\"0.0000\",\"latest_expiration_time\":\"2026-10-25T18:30:00Z\",\"market_type\":\"binary\",\"no_ask_dollars\":\"0.9400\",\"no_bid_dollars\":\"0.0600\",\"no_sub_title\":\"Champagne Basketball\",\"notional_value_dollars\":\"1.0000\",\"occurrence_datetime\":\"2026-10-23T21:30:00Z\",\"open_interest_fp\":\"0.00\",\"open_time\":\"2026-10-21T19:51:00Z\",\"previous_price_dollars\":\"0.0000\",\"previous_yes_ask_dollars\":\"0.0000\",\"previous_yes_bid_dollars\":\"0.0000\",\"price_level_structure\":\"linear_cent\",\"price_ranges\":[{\"end\":\"1.0000\",\"start\":\"0.0000\",\"step\":\"0.0100\"}],\"result\":\"\",\"rules_primary\":\"If Champagne Basketball wins the Champagne Basketball vs Saint-Chamond men's professional LNB Elite 2 basketball game originally scheduled for Oct 23, 2026 at 2:30 PM EDT, then the market resolves to Yes.\",\"rules_secondary\":\"If the game is postponed but begins within 48 hours of its originally scheduled start time, the market will remain open and resolve based on the official final result. If the game is cancelled or not started within 48 hours of its originally scheduled start, all markets will resolve to a fair price.\\n\\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.\",\"settlement_bounds_type\":\"default\",\"settlement_timer_seconds\":90,\"status\":\"active\",\"strike_type\":\"structured\",\"ticker\":\"KXLNBELITE2GAME-26OCT231430CHASTC-CHA\",\"title\":\"Champagne Basketball wins\",\"updated_time\":\"2026-10-21T19:51:00.247724Z\",\"volume_24h_fp\":\"0.00\",\"volume_fp\":\"0.00\",\"yes_ask_dollars\":\"0.9400\",\"yes_ask_size_fp\":\"122.00\",\"yes_bid_dollars\":\"0.0600\",\"yes_bid_size_fp\":\"100.00\",\"yes_sub_title\":\"Champagne Basketball\"}}\n",
+        "body_sha256": "7bee717f9debbc8f0b2cba5e16ac06c9a2ed33b7a2422371c2991ce7909c5e11"
+      },
+      "book": {
+        "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXLNBELITE2GAME-26OCT231430CHASTC-CHA/orderbook",
+        "retrieved_at": "2026-10-21T21:23:28.008521+00:00",
+        "schema_version": "kalshi-3.34.0/m1-v1",
+        "status": 200,
+        "headers": {
+          "content-type": "application/json; charset=utf-8",
+          "date": "Wed, 21 Oct 2026 21:23:27 GMT"
+        },
+        "body": "{\"orderbook_fp\":{\"no_dollars\":[[\"0.0100\",\"1219.00\"],[\"0.0200\",\"385.00\"],[\"0.0300\",\"422.00\"],[\"0.0400\",\"112.00\"],[\"0.0500\",\"100.00\"],[\"0.0600\",\"122.00\"]],\"yes_dollars\":[[\"0.0100\",\"1837.00\"],[\"0.0200\",\"981.00\"],[\"0.0300\",\"1001.00\"],[\"0.0400\",\"263.00\"],[\"0.0500\",\"259.00\"],[\"0.0600\",\"100.00\"]]}}",
+        "body_sha256": "530a04ce129a8f49f01ff40f64cf4f4a95631b28c6beab2991369a1713d17429"
+      },
+      "expected": {
+        "continuity": "INDEPENDENT_FULL_SNAPSHOT",
+        "data_usable": false,
+        "market_close_at": "2026-10-25T18:30:00Z",
+        "mechanism_no": "BUY_NO_FROM_COMPLEMENTARY_YES_BID",
+        "mechanism_yes": "BUY_YES_FROM_COMPLEMENTARY_NO_BID",
+        "metadata_received_at": "2026-10-21T21:23:27.754150+00:00",
+        "minimum_quantity": "0.01",
+        "no_asks": [
+          {
+            "price": "0.9400",
+            "quantity": "100.00"
+          },
+          {
+            "price": "0.9500",
+            "quantity": "259.00"
+          },
+          {
+            "price": "0.9600",
+            "quantity": "263.00"
+          },
+          {
+            "price": "0.9700",
+            "quantity": "1001.00"
+          },
+          {
+            "price": "0.9800",
+            "quantity": "981.00"
+          },
+          {
+            "price": "0.9900",
+            "quantity": "1837.00"
+          }
+        ],
+        "normalizer_version": "binary-books/m3-v1",
+        "price_bands": [
+          {
+            "end": "1.0000",
+            "start": "0.0000",
+            "step": "0.0100"
+          }
+        ],
+        "quantity_step": "0.01",
+        "received_at": "2026-10-21T21:23:28.008521+00:00",
+        "rejections": [
+          "UNKNOWN_SOURCE_TIME"
+        ],
+        "sequence": null,
+        "source_id": "KXLNBELITE2GAME-26OCT231430CHASTC-CHA",
+        "source_ts": null,
+        "timestamp_kind": "ABSENT",
+        "trading_authorized": false,
+        "transport": "REST_SNAPSHOT",
+        "venue": "kalshi",
+        "verification": "UNVERIFIED",
+        "yes_asks": [
+          {
+            "price": "0.9400",
+            "quantity": "122.00"
+          },
+          {
+            "price": "0.9500",
+            "quantity": "100.00"
+          },
+          {
+            "price": "0.9600",
+            "quantity": "112.00"
+          },
+          {
+            "price": "0.9700",
+            "quantity": "422.00"
+          },
+          {
+            "price": "0.9800",
+            "quantity": "385.00"
+          },
+          {
+            "price": "0.9900",
+            "quantity": "1219.00"
+          }
+        ]
+      }
+    },
+    {
+      "venue": "polymarket_us",
+      "source_id": "tec-mlb-champ-2026-09-27-mil",
+      "evaluated_at": "2026-10-21T21:23:29.028171+00:00",
+      "metadata": {
+        "url": "https://gateway.polymarket.us/v1/market/slug/tec-mlb-champ-2026-09-27-mil",
+        "retrieved_at": "2026-10-21T21:23:28.809951+00:00",
+        "schema_version": "polymarket-us-marketservice-1.0.0/m1-v1",
+        "status": 200,
+        "headers": {
+          "content-type": "application/json",
+          "date": "Wed, 21 Oct 2026 21:23:28 GMT"
+        },
+        "body": "{\"market\":{\"id\":\"7930\",\"question\":\"World Series Champion\",\"slug\":\"tec-mlb-champ-2026-09-27-mil\",\"endDate\":\"2026-11-06T21:20:09Z\",\"category\":\"sports\",\"startDate\":\"2026-03-19T14:32:24Z\",\"image\":\"https://polymarket-upload.s3.us-east-2.amazonaws.com/us-logos/mlb/Polymarket_MIL.png\",\"description\":\"Will Milwaukee Brewers win the 2026 MLB World Series, scheduled for October 23-November 1, 2026? If the event is postponed, delayed, or rescheduled, the expiration date will be amended to align with the new event date. If the event is not rescheduled within two weeks of the originally scheduled date, the instrument may settle at last fair market prices. If the event is canceled, the instrument may settle at last fair market prices. If the team is eliminated from contention, the instrument will settle to $0.00.\",\"active\":true,\"marketType\":\"futures\",\"closed\":false,\"createdAt\":\"2026-03-19T14:41:53Z\",\"updatedAt\":\"2026-10-21T21:13:07Z\",\"archived\":false,\"orderPriceMinTickSize\":0.001,\"gameStartTime\":\"2026-09-07T00:00:00Z\",\"manualActivation\":false,\"sportsMarketType\":\"futures\",\"marketSides\":[{\"id\":\"15859\",\"marketSideType\":\"MARKET_SIDE_TYPE_INSTRUMENT\",\"identifier\":\"tec-mlb-champ-2026-09-27-mil\",\"createdAt\":\"2026-03-19T14:41:53Z\",\"updatedAt\":\"2026-03-19T14:41:53Z\",\"description\":\"Yes\",\"price\":\"0.6290\",\"marketId\":7930,\"long\":true,\"teamId\":3016,\"team\":{\"id\":3016,\"name\":\"Milwaukee Brewers\",\"abbreviation\":\"mil\",\"league\":\"mlb\",\"record\":\"\",\"logo\":\"https://polymarket-upload.s3.us-east-2.amazonaws.com/milwaukee-light-95f2b5f4a8.png\",\"alias\":\"Milwaukee Brewers\",\"safeName\":\"Brewers\",\"homeIcon\":\"\",\"awayIcon\":\"\",\"colorPrimary\":\"#BD9000\",\"providerId\":32,\"ordering\":\"away\",\"longIcon\":\"https://polymarket-upload.s3.us-east-2.amazonaws.com/milwaukee-light-95f2b5f4a8.png\",\"shortIcon\":\"https://polymarket-upload.s3.us-east-2.amazonaws.com/milwaukee-light-95f2b5f4a8.png\",\"displayAbbreviation\":\"MIL\",\"conference\":\"\",\"providerIds\":[{\"provider\":\"PROVIDER_SPORTRADAR\",\"providerId\":\"dcfd5266-00ce-442c-bc09-264cd20cf455\"},{\"provider\":\"PROVIDER_SPORTSDATAIO\",\"providerId\":\"32\"}],\"longIconDark\":\"https://polymarket-upload.s3.us-east-2.amazonaws.com/milwaukee-dark-df69cd6a2a.png\",\"shortIconDark\":\"https://polymarket-upload.s3.us-east-2.amazonaws.com/milwaukee-dark-df69cd6a2a.png\",\"color\":{\"light\":\"#BD9000\",\"dark\":\"#BD9000\"},\"imageDisplayType\":\"IMAGE_DISPLAY_TYPE_LOGO\"},\"quote\":{\"value\":\"0.6290\",\"currency\":\"USD\"},\"tradable\":true},{\"id\":\"15860\",\"marketSideType\":\"MARKET_SIDE_TYPE_INSTRUMENT\",\"identifier\":\"tec-mlb-champ-2026-09-27-mil\",\"createdAt\":\"2026-03-19T14:41:53Z\",\"updatedAt\":\"2026-03-19T14:41:53Z\",\"description\":\"No\",\"price\":\"0.372\",\"marketId\":7930,\"long\":false,\"teamId\":3016,\"team\":{\"id\":3016,\"name\":\"Milwaukee Brewers\",\"abbreviation\":\"mil\",\"league\":\"mlb\",\"record\":\"\",\"logo\":\"https://polymarket-upload.s3.us-east-2.amazonaws.com/milwaukee-light-95f2b5f4a8.png\",\"alias\":\"Milwaukee Brewers\",\"safeName\":\"Brewers\",\"homeIcon\":\"\",\"awayIcon\":\"\",\"colorPrimary\":\"#BD9000\",\"providerId\":32,\"ordering\":\"home\",\"longIcon\":\"https://polymarket-upload.s3.us-east-2.amazonaws.com/milwaukee-light-95f2b5f4a8.png\",\"shortIcon\":\"https://polymarket-upload.s3.us-east-2.amazonaws.com/milwaukee-light-95f2b5f4a8.png\",\"displayAbbreviation\":\"MIL\",\"conference\":\"\",\"providerIds\":[{\"provider\":\"PROVIDER_SPORTRADAR\",\"providerId\":\"dcfd5266-00ce-442c-bc09-264cd20cf455\"},{\"provider\":\"PROVIDER_SPORTSDATAIO\",\"providerId\":\"32\"}],\"longIconDark\":\"https://polymarket-upload.s3.us-east-2.amazonaws.com/milwaukee-dark-df69cd6a2a.png\",\"shortIconDark\":\"https://polymarket-upload.s3.us-east-2.amazonaws.com/milwaukee-dark-df69cd6a2a.png\",\"color\":{\"light\":\"#BD9000\",\"dark\":\"#BD9000\"},\"imageDisplayType\":\"IMAGE_DISPLAY_TYPE_LOGO\"},\"quote\":{\"value\":\"0.372\",\"currency\":\"USD\"},\"tradable\":true}],\"outcomes\":\"[\\\"Yes\\\",\\\"No\\\"]\",\"outcomePrices\":\"[\\\"0.6290\\\",\\\"0.372\\\"]\",\"ep3Status\":\"OPEN\",\"status\":\"MARKET_STATUS_OPEN\",\"assetPriceTerms\":null,\"sportsMarketTypeV2\":\"SPORTS_MARKET_TYPE_FUTURE\",\"hidden\":false,\"tags\":[],\"title\":\"Milwaukee Brewers\",\"subtitle\":\"\",\"color\":\"#BD9000\",\"feeCoefficient\":0.0695,\"bestBidQuote\":{\"value\":\"0.6280\",\"currency\":\"USD\"},\"bestAskQuote\":{\"value\":\"0.6290\",\"currency\":\"USD\"},\"titleShort\":\"Milwaukee Brewers\",\"ep3SyncedAt\":\"2026-10-15T11:52:02Z\",\"minimumTradeQty\":1,\"comboEnabled\":false,\"politics\":null}}",
+        "body_sha256": "17d92c66055dc91a12f14c276e25799911c9543823c02240f67e32aae1e56672"
+      },
+      "book": {
+        "url": "https://gateway.polymarket.us/v1/markets/tec-mlb-champ-2026-09-27-mil/book",
+        "retrieved_at": "2026-10-21T21:23:29.011272+00:00",
+        "schema_version": "polymarket-us-marketservice-1.0.0/m1-v1",
+        "status": 200,
+        "headers": {
+          "content-type": "application/json",
+          "date": "Wed, 21 Oct 2026 21:23:28 GMT",
+          "last-modified": "Wed, 21 Oct 2026 21:23:16 GMT"
+        },
+        "body": "{\"marketData\":{\"marketSlug\":\"tec-mlb-champ-2026-09-27-mil\",\"bids\":[{\"px\":{\"value\":\"0.6280\",\"currency\":\"USD\"},\"qty\":\"9267.0000\"},{\"px\":{\"value\":\"0.6270\",\"currency\":\"USD\"},\"qty\":\"32080.0000\"},{\"px\":{\"value\":\"0.6260\",\"currency\":\"USD\"},\"qty\":\"3196.0000\"},{\"px\":{\"value\":\"0.6250\",\"currency\":\"USD\"},\"qty\":\"1589.0000\"},{\"px\":{\"value\":\"0.6240\",\"currency\":\"USD\"},\"qty\":\"1.0000\"},{\"px\":{\"value\":\"0.6200\",\"currency\":\"USD\"},\"qty\":\"213.0000\"},{\"px\":{\"value\":\"0.6190\",\"currency\":\"USD\"},\"qty\":\"49.0000\"},{\"px\":{\"value\":\"0.6180\",\"currency\":\"USD\"},\"qty\":\"194.0000\"},{\"px\":{\"value\":\"0.6130\",\"currency\":\"USD\"},\"qty\":\"31.0000\"},{\"px\":{\"value\":\"0.6120\",\"currency\":\"USD\"},\"qty\":\"50.0000\"},{\"px\":{\"value\":\"0.6050\",\"currency\":\"USD\"},\"qty\":\"63300.0000\"},{\"px\":{\"value\":\"0.5500\",\"currency\":\"USD\"},\"qty\":\"1.0000\"},{\"px\":{\"value\":\"0.0300\",\"currency\":\"USD\"},\"qty\":\"15.0000\"},{\"px\":{\"value\":\"0.0220\",\"currency\":\"USD\"},\"qty\":\"5259.0000\"},{\"px\":{\"value\":\"0.0110\",\"currency\":\"USD\"},\"qty\":\"200000.0000\"},{\"px\":{\"value\":\"0.0030\",\"currency\":\"USD\"},\"qty\":\"10003.0000\"},{\"px\":{\"value\":\"0.0020\",\"currency\":\"USD\"},\"qty\":\"4000000.0000\"},{\"px\":{\"value\":\"0.0010\",\"currency\":\"USD\"},\"qty\":\"350000.0000\"}],\"offers\":[{\"px\":{\"value\":\"0.6290\",\"currency\":\"USD\"},\"qty\":\"5713.0000\"},{\"px\":{\"value\":\"0.6340\",\"currency\":\"USD\"},\"qty\":\"24.0000\"},{\"px\":{\"value\":\"0.6370\",\"currency\":\"USD\"},\"qty\":\"211.0000\"},{\"px\":{\"value\":\"0.6390\",\"currency\":\"USD\"},\"qty\":\"6.0000\"},{\"px\":{\"value\":\"0.6400\",\"currency\":\"USD\"},\"qty\":\"912.0000\"},{\"px\":{\"value\":\"0.6420\",\"currency\":\"USD\"},\"qty\":\"32753.0000\"},{\"px\":{\"value\":\"0.6430\",\"currency\":\"USD\"},\"qty\":\"1288.0000\"},{\"px\":{\"value\":\"0.7500\",\"currency\":\"USD\"},\"qty\":\"12.0000\"},{\"px\":{\"value\":\"0.9570\",\"currency\":\"USD\"},\"qty\":\"522.0000\"},{\"px\":{\"value\":\"0.9580\",\"currency\":\"USD\"},\"qty\":\"6378.0000\"},{\"px\":{\"value\":\"0.9600\",\"currency\":\"USD\"},\"qty\":\"51.0000\"},{\"px\":{\"value\":\"0.9620\",\"currency\":\"USD\"},\"qty\":\"59776.0000\"},{\"px\":{\"value\":\"0.9700\",\"currency\":\"USD\"},\"qty\":\"15.0000\"},{\"px\":{\"value\":\"0.9840\",\"currency\":\"USD\"},\"qty\":\"29219.0000\"},{\"px\":{\"value\":\"0.9900\",\"currency\":\"USD\"},\"qty\":\"1.0000\"},{\"px\":{\"value\":\"0.9980\",\"currency\":\"USD\"},\"qty\":\"2086430.0000\"},{\"px\":{\"value\":\"0.9990\",\"currency\":\"USD\"},\"qty\":\"249999.0000\"}],\"state\":\"MARKET_STATE_OPEN\",\"stats\":{\"openPx\":{\"value\":\"0.1580\",\"currency\":\"USD\"},\"closePx\":{\"value\":\"0.1590\",\"currency\":\"USD\"},\"lowPx\":{\"value\":\"0.0020\",\"currency\":\"USD\"},\"highPx\":{\"value\":\"0.7620\",\"currency\":\"USD\"},\"lastTradePx\":{\"value\":\"0.6290\",\"currency\":\"USD\"},\"settlementPx\":{\"value\":\"0.1590\",\"currency\":\"USD\"},\"sharesTraded\":\"22202799.0000\",\"notionalTraded\":{\"value\":\"4271415.1760\",\"currency\":\"USD\"},\"lastTradeQty\":\"154.0000\",\"openInterest\":\"724932.0000\",\"openSetTime\":\"2026-09-12T21:17:10.227048635Z\",\"closeSetTime\":\"2026-09-12T21:00:12.696270164Z\",\"highSetTime\":\"2026-10-16T03:18:12.464944922Z\",\"lowSetTime\":\"2026-09-24T12:02:29.604545384Z\",\"lastTradeSetTime\":\"2026-10-21T21:18:29.856094725Z\",\"settlementSetTime\":\"2026-09-12T21:00:12.696292450Z\",\"openInterestSetTime\":\"2026-10-21T18:00:01.652591670Z\",\"notionalSetTime\":\"2026-10-21T21:18:29.856094725Z\",\"settlementPriceCalculationMethod\":\"SETTLEMENT_PRICE_CALCULATION_METHOD_EVENT_TIER_2\",\"currentPx\":{\"value\":\"0.6285\",\"currency\":\"USD\"},\"lastPriceSample\":{\"longPx\":{\"value\":\"0.6290\",\"currency\":\"USD\"},\"shortPx\":{\"value\":\"0.371\",\"currency\":\"USD\"},\"ts\":\"2026-10-21T21:23:13.308960974Z\"}},\"transactTime\":\"2026-10-21T21:23:13.308960974Z\"}}",
+        "body_sha256": "6a9f8f5268d2cd0d1487bc2c4fd46f6d136136eadef9c739ef33b3364eeec5b3"
+      },
+      "expected": {
+        "continuity": "INDEPENDENT_FULL_SNAPSHOT",
+        "data_usable": true,
+        "market_close_at": "2026-11-06T21:20:09Z",
+        "mechanism_no": "SYNTHETIC_NO_FROM_SELL_YES_AT_BID",
+        "mechanism_yes": "BUY_LONG_FROM_OFFER",
+        "metadata_received_at": "2026-10-21T21:23:28.809951+00:00",
+        "minimum_quantity": "1",
+        "no_asks": [
+          {
+            "price": "0.3720",
+            "quantity": "9267.0000"
+          },
+          {
+            "price": "0.3730",
+            "quantity": "32080.0000"
+          },
+          {
+            "price": "0.3740",
+            "quantity": "3196.0000"
+          },
+          {
+            "price": "0.3750",
+            "quantity": "1589.0000"
+          },
+          {
+            "price": "0.3760",
+            "quantity": "1.0000"
+          },
+          {
+            "price": "0.3800",
+            "quantity": "213.0000"
+          },
+          {
+            "price": "0.3810",
+            "quantity": "49.0000"
+          },
+          {
+            "price": "0.3820",
+            "quantity": "194.0000"
+          },
+          {
+            "price": "0.3870",
+            "quantity": "31.0000"
+          },
+          {
+            "price": "0.3880",
+            "quantity": "50.0000"
+          },
+          {
+            "price": "0.3950",
+            "quantity": "63300.0000"
+          },
+          {
+            "price": "0.4500",
+            "quantity": "1.0000"
+          },
+          {
+            "price": "0.9700",
+            "quantity": "15.0000"
+          },
+          {
+            "price": "0.9780",
+            "quantity": "5259.0000"
+          },
+          {
+            "price": "0.9890",
+            "quantity": "200000.0000"
+          },
+          {
+            "price": "0.9970",
+            "quantity": "10003.0000"
+          },
+          {
+            "price": "0.9980",
+            "quantity": "4000000.0000"
+          },
+          {
+            "price": "0.9990",
+            "quantity": "350000.0000"
+          }
+        ],
+        "normalizer_version": "binary-books/m3-v1",
+        "price_bands": [
+          {
+            "end": "1",
+            "start": "0",
+            "step": "0.001"
+          }
+        ],
+        "quantity_step": "1",
+        "received_at": "2026-10-21T21:23:29.011272+00:00",
+        "rejections": [],
+        "sequence": null,
+        "source_id": "tec-mlb-champ-2026-09-27-mil",
+        "source_ts": "2026-10-21T21:23:13.308960974Z",
+        "timestamp_kind": "TRANSACTION_TIME",
+        "trading_authorized": false,
+        "transport": "REST_SNAPSHOT",
+        "venue": "polymarket_us",
+        "verification": "UNVERIFIED",
+        "yes_asks": [
+          {
+            "price": "0.6290",
+            "quantity": "5713.0000"
+          },
+          {
+            "price": "0.6340",
+            "quantity": "24.0000"
+          },
+          {
+            "price": "0.6370",
+            "quantity": "211.0000"
+          },
+          {
+            "price": "0.6390",
+            "quantity": "6.0000"
+          },
+          {
+            "price": "0.6400",
+            "quantity": "912.0000"
+          },
+          {
+            "price": "0.6420",
+            "quantity": "32753.0000"
+          },
+          {
+            "price": "0.6430",
+            "quantity": "1288.0000"
+          },
+          {
+            "price": "0.7500",
+            "quantity": "12.0000"
+          },
+          {
+            "price": "0.9570",
+            "quantity": "522.0000"
+          },
+          {
+            "price": "0.9580",
+            "quantity": "6378.0000"
+          },
+          {
+            "price": "0.9600",
+            "quantity": "51.0000"
+          },
+          {
+            "price": "0.9620",
+            "quantity": "59776.0000"
+          },
+          {
+            "price": "0.9700",
+            "quantity": "15.0000"
+          },
+          {
+            "price": "0.9840",
+            "quantity": "29219.0000"
+          },
+          {
+            "price": "0.9900",
+            "quantity": "1.0000"
+          },
+          {
+            "price": "0.9980",
+            "quantity": "2086430.0000"
+          },
+          {
+            "price": "0.9990",
+            "quantity": "249999.0000"
+          }
+        ]
+      }
+    }
+  ]
+}

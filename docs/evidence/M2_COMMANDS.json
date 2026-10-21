@@ -1,0 +1,258 @@
+{
+  "hypothetical": true,
+  "commands": [
+    {
+      "argv": [
+        "pairs",
+        "load-example",
+        "--fixture",
+        "examples/M2_HYPOTHETICAL.json",
+        "--db",
+        "data/m2-final-demo.sqlite3"
+      ],
+      "exit_code": 0,
+      "status": null,
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "pairs",
+        "candidates",
+        "--db",
+        "data/m2-final-demo.sqlite3"
+      ],
+      "exit_code": 0,
+      "status": null,
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "pairs",
+        "propose",
+        "--kalshi",
+        "HYPOTHETICAL-K",
+        "--polymarket-us",
+        "HYPOTHETICAL-P-DIFFERENT",
+        "--operator",
+        "HYPOTHETICAL proposer",
+        "--db",
+        "data/m2-final-demo.sqlite3"
+      ],
+      "exit_code": 0,
+      "status": "UNVERIFIED",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "pairs",
+        "review",
+        "1",
+        "--template-output",
+        "data/m2-final-demo-artifacts/different-review.json",
+        "--db",
+        "data/m2-final-demo.sqlite3"
+      ],
+      "exit_code": 0,
+      "status": "UNVERIFIED",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "pairs",
+        "approve",
+        "1",
+        "--review-file",
+        "data/m2-final-demo-artifacts/different-review.json",
+        "--human-review",
+        "--db",
+        "data/m2-final-demo.sqlite3"
+      ],
+      "exit_code": 1,
+      "status": null,
+      "stderr": "Collector/error: human comparison unresolved or different: thresholds_revisions\n"
+    },
+    {
+      "argv": [
+        "pairs",
+        "reject",
+        "1",
+        "--operator",
+        "HYPOTHETICAL reviewer",
+        "--reason",
+        "FIRST vs FINAL report and different revision cutoffs",
+        "--db",
+        "data/m2-final-demo.sqlite3"
+      ],
+      "exit_code": 0,
+      "status": "REJECTED",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "pairs",
+        "propose",
+        "--kalshi",
+        "HYPOTHETICAL-K",
+        "--polymarket-us",
+        "HYPOTHETICAL-P",
+        "--operator",
+        "HYPOTHETICAL proposer",
+        "--db",
+        "data/m2-final-demo.sqlite3"
+      ],
+      "exit_code": 0,
+      "status": "UNVERIFIED",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "pairs",
+        "review",
+        "2",
+        "--template-output",
+        "data/m2-final-demo-artifacts/matching-review.json",
+        "--db",
+        "data/m2-final-demo.sqlite3"
+      ],
+      "exit_code": 0,
+      "status": "UNVERIFIED",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "pairs",
+        "approve",
+        "2",
+        "--review-file",
+        "data/m2-final-demo-artifacts/matching-review.json",
+        "--human-review",
+        "--db",
+        "data/m2-final-demo.sqlite3"
+      ],
+      "exit_code": 0,
+      "status": "APPROVED",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "pairs",
+        "revoke",
+        "2",
+        "--operator",
+        "HYPOTHETICAL reviewer",
+        "--reason",
+        "HYPOTHETICAL withdrawal for fresh review",
+        "--db",
+        "data/m2-final-demo.sqlite3"
+      ],
+      "exit_code": 0,
+      "status": "REVOKED",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "pairs",
+        "propose",
+        "--kalshi",
+        "HYPOTHETICAL-K",
+        "--polymarket-us",
+        "HYPOTHETICAL-P",
+        "--operator",
+        "HYPOTHETICAL proposer",
+        "--db",
+        "data/m2-final-demo.sqlite3"
+      ],
+      "exit_code": 0,
+      "status": "UNVERIFIED",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "pairs",
+        "review",
+        "3",
+        "--template-output",
+        "data/m2-final-demo-artifacts/changed-review.json",
+        "--db",
+        "data/m2-final-demo.sqlite3"
+      ],
+      "exit_code": 0,
+      "status": "UNVERIFIED",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "pairs",
+        "approve",
+        "3",
+        "--review-file",
+        "data/m2-final-demo-artifacts/changed-review.json",
+        "--human-review",
+        "--db",
+        "data/m2-final-demo.sqlite3"
+      ],
+      "exit_code": 0,
+      "status": "APPROVED",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "pairs",
+        "document",
+        "--venue",
+        "kalshi",
+        "--source-id",
+        "HYPOTHETICAL-K",
+        "--url",
+        "https://example.invalid/HYPOTHETICAL-K",
+        "--source-file",
+        "data/m2-final-demo-artifacts/changed-terms.txt",
+        "--text-file",
+        "data/m2-final-demo-artifacts/changed-terms.txt",
+        "--retrieved-at",
+        "2026-10-21T20:22:06.524563+00:00",
+        "--operator",
+        "HYPOTHETICAL importer",
+        "--db",
+        "data/m2-final-demo.sqlite3"
+      ],
+      "exit_code": 0,
+      "status": null,
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "pairs",
+        "review",
+        "3",
+        "--db",
+        "data/m2-final-demo.sqlite3"
+      ],
+      "exit_code": 0,
+      "status": "INVALIDATED",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "pairs",
+        "list",
+        "--db",
+        "data/m2-final-demo.sqlite3"
+      ],
+      "exit_code": 0,
+      "status": null,
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "pairs",
+        "audit",
+        "--db",
+        "data/m2-final-demo.sqlite3"
+      ],
+      "exit_code": 0,
+      "status": null,
+      "stderr": ""
+    }
+  ]
+}
