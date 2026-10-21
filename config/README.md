@@ -1,5 +1,30 @@
 # Configuration
 
-Initial CLI parameters are explicit and safe: read-only endpoints, `--db`, and Kalshi `--limit`. Optional `POLYMARKET_US_DATA_BASE` overrides the default US public data host (must be HTTPS). Verify official data hostname and access conditions before collector use. Do not add secrets or trading credentials here.
+Read-only collection parameters:
 
-Future config: polling intervals, rate budgets, max response size, book age threshold, data retention, venue balances, fee schedule version, and **zero default trade permissions**.
+- `--db`: SQLite path (default `data/research.sqlite3`). Existing starter databases migrate automatically to schema version 1; back up a working archive before upgrading.
+- `--limit`: records per page, 1..1000 (default 20).
+- `--max-pages`: 1..10000 (default 10); exceeding the budget produces `PARTIAL` and exit 2.
+- `--event-ticker`: Kalshi event filter; `--slug`: Polymarket US market filter.
+- `--books`: number of discovered markets for detail/book capture, 0..100 (default 1).
+- `--book`: explicit ID in captured scope, repeatable; overrides `--books` and removes duplicate selections.
+- `--max-age`: positive book age threshold in seconds (default 60).
+
+Transport defaults: verified HTTPS origins, GET only, no redirects/credentials,
+12-second socket timeout, three attempts, 0.25-second minimum request interval
+(at most 4 requests/s per client). Backoff honors `Retry-After`; delays above 60
+seconds stop with an error instead of retrying early. Multiple processes sharing
+an IP also share venue rate budgets; run one collector per venue at a time.
+
+`POLYMARKET_US_DATA_BASE` may only equal `https://gateway.polymarket.us` (optional
+trailing slash). Any other value fails closed. The starter's arbitrary host
+override and unverified institutional URL are no longer supported.
+
+Commands are explicit one-shot collections. They do not poll forever or resume a
+saved cursor automatically. Inspect run status in `predarb report`; rerun with a
+fresh scope/budget after an error. The report's freshness classifications describe
+the capture time. Stored evidence is never a current quote or approved contract
+pair. Retention, disk monitoring and a scheduler remain later milestones.
+
+See [API sources and data rights](../docs/API_SOURCES.md),
+[M1 verification](../docs/M1_RESULTS.md) and each command's `--help`.

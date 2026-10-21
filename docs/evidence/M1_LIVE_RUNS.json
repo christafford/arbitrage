@@ -1,0 +1,73 @@
+[
+  {
+    "id": 1,
+    "venue": "kalshi",
+    "schema_version": "kalshi-3.34.0/m1-v1",
+    "started_at": "2026-10-21T19:58:27.598498+00:00",
+    "finished_at": "2026-10-21T19:58:29.505209+00:00",
+    "status": "COMPLETE",
+    "scope_json": "{\"books\":2,\"filter\":\"KXLNBELITE2GAME-26OCT231430CHASTC\",\"max_age_seconds\":60,\"max_pages\":4,\"page_size\":1,\"selected\":[]}",
+    "pages": 2,
+    "records": 2,
+    "unique_records": 2,
+    "duplicates": 0,
+    "next_page": null,
+    "error": null,
+    "page_counts": [
+      1,
+      1
+    ],
+    "raw_responses": 8,
+    "book_captures": [
+      {
+        "observation_id": 6,
+        "run_id": 1,
+        "source_id": "KXLNBELITE2GAME-26OCT231430CHASTC-STC",
+        "source_ts": null,
+        "freshness": "UNKNOWN_SOURCE_TIME",
+        "liquidity": "TWO_SIDED",
+        "verification": "UNVERIFIED"
+      },
+      {
+        "observation_id": 8,
+        "run_id": 1,
+        "source_id": "KXLNBELITE2GAME-26OCT231430CHASTC-CHA",
+        "source_ts": null,
+        "freshness": "UNKNOWN_SOURCE_TIME",
+        "liquidity": "TWO_SIDED",
+        "verification": "UNVERIFIED"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "venue": "polymarket_us",
+    "schema_version": "polymarket-us-marketservice-1.0.0/m1-v1",
+    "started_at": "2026-10-21T19:58:29.627821+00:00",
+    "finished_at": "2026-10-21T19:58:30.503971+00:00",
+    "status": "COMPLETE",
+    "scope_json": "{\"books\":1,\"filter\":\"tec-mlb-champ-2026-09-27-mil\",\"max_age_seconds\":60,\"max_pages\":3,\"page_size\":1,\"selected\":[]}",
+    "pages": 2,
+    "records": 1,
+    "unique_records": 1,
+    "duplicates": 0,
+    "next_page": null,
+    "error": null,
+    "page_counts": [
+      1,
+      0
+    ],
+    "raw_responses": 4,
+    "book_captures": [
+      {
+        "observation_id": 12,
+        "run_id": 2,
+        "source_id": "tec-mlb-champ-2026-09-27-mil",
+        "source_ts": "2026-10-21T19:58:06.110730908Z",
+        "freshness": "FRESH",
+        "liquidity": "TWO_SIDED",
+        "verification": "UNVERIFIED"
+      }
+    ]
+  }
+]

@@ -1,0 +1,46 @@
+{
+  "python": "3.13.5",
+  "database": "data/m1-postreview.sqlite3",
+  "runs": [
+    {
+      "venue": "kalshi",
+      "started_at": "2026-10-21T20:02:31.266038+00:00",
+      "finished_at": "2026-10-21T20:02:33.187212+00:00",
+      "status": "COMPLETE",
+      "pages": 2,
+      "records": 2,
+      "unique_records": 2,
+      "duplicates": 0
+    },
+    {
+      "venue": "polymarket_us",
+      "started_at": "2026-10-21T20:02:33.312997+00:00",
+      "finished_at": "2026-10-21T20:02:34.223940+00:00",
+      "status": "COMPLETE",
+      "pages": 2,
+      "records": 1,
+      "unique_records": 1,
+      "duplicates": 0
+    }
+  ],
+  "books": [
+    [
+      "FRESH",
+      "TWO_SIDED",
+      1
+    ],
+    [
+      "UNKNOWN_SOURCE_TIME",
+      "TWO_SIDED",
+      2
+    ]
+  ],
+  "hypothetical_examples": [
+    [
+      "400",
+      "391.000",
+      "9.000",
+      1
+    ]
+  ]
+}

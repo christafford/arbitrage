@@ -1,9 +1,10 @@
 import argparse
+import json
 import sys
 from decimal import Decimal
 from .models import AskLevel
 from .math import evaluate
-from .store import connect, save_example, save_raw
+from .store import connect, save_example
 
 
 def demo(db_path):
@@ -20,25 +21,31 @@ def demo(db_path):
 def report(db_path):
     with connect(db_path) as db:
         raw = db.execute("SELECT venue,COUNT(*) FROM raw_observations GROUP BY venue").fetchall()
-        sims = db.execute("SELECT COUNT(*),COALESCE(SUM(CAST(profit AS REAL)),0) FROM opportunities").fetchone()
+        runs = db.execute("SELECT id,venue,status,pages,records,unique_records,duplicates FROM collection_runs ORDER BY id DESC LIMIT 10").fetchall()
+        books = db.execute("SELECT freshness,liquidity,COUNT(*) FROM book_captures GROUP BY freshness,liquidity").fetchall()
+        profits = [Decimal(row[0]) for row in db.execute("SELECT profit FROM opportunities")]
+        sims = (len(profits), sum(profits, Decimal("0")))
     print("Read-only archive counts:", dict(raw))
+    print("Collection runs (id, venue, status, pages, records, unique, duplicates):", runs)
+    print("Book captures (freshness AT CAPTURE, liquidity, count):", books)
+    print("All live catalogue entries and books are UNVERIFIED; no actionable signals")
     print(f"Hypothetical evaluations: {sims[0]} (sum of *example modeled* profits, NOT realized P&L: ${sims[1]:.2f})")
 
 
-def collect_kalshi(db_path, limit):
-    from .kalshi import get_markets
-    url, data = get_markets(limit)
-    with connect(db_path) as db:
-        save_raw(db, "kalshi", url, data)
-    print(f"Archived {len(data['markets'])} Kalshi market records; no matching/trading performed")
-
-
-def collect_poly(db_path):
-    from .polymarket_us import get_reference_data
-    url, data = get_reference_data()
-    with connect(db_path) as db:
-        save_raw(db, "polymarket_us", url, data)
-    print("Archived raw Polymarket US reference response; schema normalization is an M1 task")
+def collect_venue(args):
+    from . import kalshi, polymarket_us
+    from .collector import collect
+    adapter = kalshi if args.cmd == "collect-kalshi" else polymarket_us
+    with connect(args.db) as db:
+        result = collect(db, adapter, page_size=args.limit, max_pages=args.max_pages,
+                         scope=args.event_ticker if adapter is kalshi else args.slug,
+                         books=args.books, selected=args.book, max_age=args.max_age)
+    print(json.dumps(result.as_dict(), sort_keys=True))
+    print("UNVERIFIED read-only evidence; no matching/trading performed")
+    if result.status == "PARTIAL":
+        print("Page budget reached: catalogue is incomplete; continuation recorded", file=sys.stderr)
+        return 2
+    return 0
 
 
 def main():
@@ -47,13 +54,21 @@ def main():
     for name in ("demo", "report", "collect-kalshi", "collect-polymarket-us"):
         sp = s.add_parser(name)
         sp.add_argument("--db", default="data/research.sqlite3")
-        if name == "collect-kalshi": sp.add_argument("--limit", type=int, default=20)
+        if name.startswith("collect-"):
+            sp.add_argument("--limit", type=int, default=20, help="records per page (1..1000)")
+            sp.add_argument("--max-pages", type=int, default=10)
+            sp.add_argument("--books", type=int, default=1, help="capture details and books for first N markets")
+            sp.add_argument("--book", action="append", default=[], help="explicit source ID in captured scope; repeatable")
+            sp.add_argument("--max-age", type=int, default=60, help="book age threshold in seconds")
+            sp.add_argument("--event-ticker" if name == "collect-kalshi" else "--slug")
     args = p.parse_args()
     try:
         if args.cmd == "demo": demo(args.db)
         elif args.cmd == "report": report(args.db)
-        elif args.cmd == "collect-kalshi": collect_kalshi(args.db, args.limit)
-        elif args.cmd == "collect-polymarket-us": collect_poly(args.db)
+        else: return collect_venue(args)
+    except KeyboardInterrupt:
+        print("Collection interrupted; archived evidence retained", file=sys.stderr)
+        return 130
     except (ValueError, OSError, TimeoutError) as exc:
         print(f"Collector/error: {exc}", file=sys.stderr)
         return 1

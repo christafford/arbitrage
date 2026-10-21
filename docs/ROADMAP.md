@@ -11,15 +11,26 @@ Milestones are **not complete merely because files exist**. Every milestone need
 
 Acceptance: `pip install -e .`, `predarb demo`, `predarb report`, all tests succeed offline; collectors fail clearly if inaccessible.
 
-## M1 — Read-only venue catalogues
+## M1 — Read-only venue catalogues — COMPLETE (2026-10-21)
 
-- [ ] Verify current official US API schemas and licensing/ToS; make sanitized fixtures for each.
-- [ ] Kalshi pagination, market/event details, exact rule evidence and book snapshots.
-- [ ] Polymarket US pagination, symbols/instruments/metadata, book data, exact rule evidence.
-- [ ] Strict schema validation, separate provider timestamps, retry/backoff, rate limits, deduplication.
-- [ ] Tests against provider fixtures, error and drift behavior.
+- [x] Verify current official US API schemas and licensing/ToS; make sanitized fixtures for each.
+- [x] Kalshi cursor pagination, selected market/event/series details, exact rule evidence and book snapshots.
+- [x] Polymarket US public gateway offset pagination, instrument identities/side metadata, book data, exact provider rule evidence. Institutional refdata returned 401; public US MarketService is the documented credential-free implementation.
+- [x] Strict consumed-field schema validation, separate provider timestamps, retry/backoff, conservative rate limits, deduplication and explicit partial runs.
+- [x] Tests against real provider fixtures, failure/drift behavior and deterministic complete-run replay.
 
-Acceptance: real raw snapshots from BOTH US venues; known schema, no fabricated defaults; counts reconcile with paginated responses.
+Acceptance passed: real raw snapshots from BOTH US venues; versioned known schemas;
+no fabricated price/quantity/timestamp defaults; counts reconcile with paginated
+responses. Final live scoped runs: Kalshi pages `[1,1]`, 2 unique markets, 2 books,
+8 raw responses; Polymarket US pages `[1,0]`, 1 unique market, 1 book, 4 raw responses.
+Both reached terminal pagination. **41 offline tests passed**, plus installation,
+demo/report and both live collector smoke commands. Full evidence, actual scopes,
+terms restrictions and limitations: [M1 results](M1_RESULTS.md).
+
+No remaining M1 implementation blocker on the public path. Kalshi REST source book
+time remains explicitly unknown. Full-venue atomic completeness, institutional
+access and data redistribution rights are not claimed. All records remain
+`UNVERIFIED`; no live trading was implemented. **Stop before M2.**
 
 ## M2 — Pair review registry
 

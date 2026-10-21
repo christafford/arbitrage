@@ -1,0 +1,14 @@
+{
+  "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXLNBELITE2GAME-26OCT231430CHASTC-STC/orderbook",
+  "retrieved_at": "2026-10-21T19:52:10.873286+00:00",
+  "status": 200,
+  "headers": {
+    "date": "Wed, 21 Oct 2026 19:52:10 GMT",
+    "content-type": "application/json; charset=utf-8"
+  },
+  "body": "{\"orderbook_fp\":{\"no_dollars\":[[\"0.0100\",\"264.00\"],[\"0.0300\",\"89.00\"],[\"0.0500\",\"7.00\"]],\"yes_dollars\":[[\"0.0100\",\"207.00\"],[\"0.0300\",\"78.00\"]]}}",
+  "provenance": "REAL_PUBLIC_US_API_SNAPSHOT; local research fixture; provider rights reserved",
+  "sanitization": "Only HTTP headers retained from an allowlist; response body unchanged; no credentials used",
+  "schema_version": "kalshi-3.34.0/m1-v1",
+  "body_sha256": "798b9882a2c2e5ef49107cbde49836d000f2b36b27cbc303129b119877800792"
+}
