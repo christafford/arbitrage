@@ -2,7 +2,7 @@
 
 A **read-only, Codex-ready** starter for researching fully hedged binary prediction-market opportunities between **Kalshi** and **Polymarket US**. Designed for a modest always-on Linux server, a SQLite database, and an initial bankroll of **$0** during discovery, potentially **$200–$500** for separately authorized experiments, with a **$10,000 lifetime seed-deposit ceiling**.
 
-**Current state:** M1 public US collectors, M2 human pair review and M3 read-only book normalization are implemented and tested. All live evidence remains `UNVERIFIED`; no real pair has been approved. Kalshi REST lacks source time and fails freshness checks. Stream recovery is tested offline only. Fees, a profit scanner and trading remain future work. See [M3 results](docs/M3_RESULTS.md), [book inspection](docs/BOOKS.md) and [human pair review](docs/PAIR_REVIEW.md).
+**Current state:** M1–M3 are complete. M4 economics and recording are implemented and tested; its required **actual 30-day scanner run and audit remain pending**. Read-only research now includes versioned fee evidence, depth/budget/reserve evaluation, settlement-aware ranking, audit, reports and CSV. All live evidence remains `UNVERIFIED`; no real pair or fee profile is approved. Kalshi REST books lack source time and fail freshness checks. Stream recovery is tested offline only. No trading exists. See [M4 results and remaining gaps](docs/M4_RESULTS.md), [economics guide](docs/ECONOMICS.md), [book inspection](docs/BOOKS.md) and [human pair review](docs/PAIR_REVIEW.md).
 
 ## Quick start (Python 3.11+; no external dependencies)
 
@@ -69,6 +69,21 @@ synthetic short-YES exposure. Quote costs exclude fees and do not imply fills.
 The offline demo requires a new empty output directory and shows hypothetical
 depth exhaustion, staleness and sequence/reconnect recovery. See the
 [book guide](docs/BOOKS.md) for rejection reasons, exit codes and comparison gates.
+
+## Economics and recording (M4, acceptance pending)
+
+```bash
+predarb research start --db data/research.sqlite3 --policy examples/M4_RESEARCH_POLICY.json
+predarb research scan SESSION_ID --db data/research.sqlite3
+predarb research summary SESSION_ID --db data/research.sqlite3
+.venv/bin/python scripts/m4_demo.py --output data/my-m4-demo
+```
+
+Use the integer session ID returned by `start`. The sample policy has zero venue
+budgets. Live calculations require current human-approved contracts, fresh books
+and explicitly reviewed fee applicability; unknown costs are rejected. The demo
+uses an isolated hypothetical replay. See the [economics guide](docs/ECONOMICS.md)
+for fee imports, bounded polling/resume, assumptions, exports and retention.
 
 ## Read in this order
 

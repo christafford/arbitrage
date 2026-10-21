@@ -44,3 +44,10 @@ class Replay:
 def real_response(name):
     entry = fixture(name)
     return Response(entry['body'].encode(), entry['status'], entry['headers'])
+
+
+def drop_m4_tables(con):
+    """Reconstruct a pre-M4 database for migration fixtures only."""
+    for table in ('research_details', 'research_evaluations', 'research_cycles', 'research_sessions',
+                  'research_audit', 'research_replays', 'fee_profiles', 'fee_documents', 'fee_imports'):
+        con.execute('DROP TABLE ' + table)

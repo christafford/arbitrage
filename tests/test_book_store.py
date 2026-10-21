@@ -83,10 +83,12 @@ class ArchivedBooksTests(unittest.TestCase):
         self.assertEqual(self.db.execute('SELECT raw_body FROM raw_observations WHERE id=?',(observed,)).fetchone()[0],before)
 
     def test_schema_two_migration_preserves_archive_and_does_not_claim_old_assessments(self):
+        from helpers import drop_m4_tables
+        drop_m4_tables(self.db)
         expected=self.db.execute('SELECT COUNT(*) FROM raw_observations').fetchone()[0]
         self.db.execute('DROP TABLE normalized_books');self.db.execute('PRAGMA user_version=2');self.db.commit();self.db.close()
         self.db=connect(self.path);self.addCleanup(self.db.close)
-        self.assertEqual(self.db.execute('PRAGMA user_version').fetchone()[0],3)
+        self.assertEqual(self.db.execute('PRAGMA user_version').fetchone()[0],4)
         self.assertEqual(self.db.execute('SELECT COUNT(*) FROM normalized_books').fetchone()[0],0)
         self.assertEqual(self.db.execute('SELECT COUNT(*) FROM raw_observations').fetchone()[0],expected)
         # Prior captures can be revalidated from their archived matching detail provenance.

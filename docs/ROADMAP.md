@@ -64,16 +64,32 @@ M2 migration passed. Evidence: [M3 results](M3_RESULTS.md), [book guide](BOOKS.m
 No remaining M3 fixture/normalization acceptance failure. Authenticated streaming
 was not connected; recovery is tested offline. Kalshi REST cannot supply a
 freshness-qualified live comparison. All live evidence remains `UNVERIFIED`, no
-real pair was approved, and no trading was implemented. **Stop before M4.**
+real pair was approved, and no trading was implemented. M4 was separately
+authorized afterward.
 
-## M4 — Economics and recording
+## M4 — Economics and recording — IN PROGRESS (2026-10-21)
 
-- [ ] Versioned exact fee models by venue/instrument/time; do not guess 0 fees.
-- [ ] Per-level achievable two-leg cost, fees, slippage reserve, conservative net edge.
-- [ ] Capital allocations across venues, simultaneous fills assumption labeled, locked-capital ranking.
-- [ ] Retention, aggregates, summary and CSV exports.
+- [x] Versioned supported taker models by venue/instrument/side/time, exact hypothetical fill rounding and conservative quote fee bounds; archived operator-declared applicability, bounded expiry and explicit settlement fees. No guessed zero fees or installed live profiles.
+- [x] Per-level two-leg cost, fee bounds, positive explicit slippage reserve and conservative net edge; complete bounded common-lot search and stale/depth/approval gates.
+- [x] Independent venue research budgets, simultaneous-full-fills assumption labeled, reviewed settlement delays and locked-capital ranking. Synthetic US NO capital mechanics are unsupported and rejected.
+- [x] Derived-detail retention (at least 31 days), durable audit/summaries/source hashes, aggregates and CSV exports. Raw source evidence is retained; total archive growth still needs an operational policy.
+- [x] Bounded/resumable read-only polling, optional public refresh for approved pairs, rejection records, cadence/equal-quote sampling metrics and schema-4 migration.
+- [ ] Actual 30-day scanner run with audit trail, current reviewed pairs and fee applicability, useful fresh cross-venue data, measured quote lifespan and audited rejection records.
 
 Acceptance: 30-day scanner with audit trail; no unreviewed pairs, measured book lifespan and record of rejection reasons.
+
+Implementation evidence: **124 tests passed**, hypothetical end-to-end demo,
+both bounded live collector smoke runs, preserved-copy M3 migration and research
+CLI smoke checks. Hypothetical demo selected 200 contracts / $183.46 modeled
+capital / $16.54 conditional profit bound, then rejected stale books. A live-mode
+smoke recorded an unreviewed-pair rejection and performed no unreviewed economics.
+This is not 30-day evidence. See [M4 results](M4_RESULTS.md),
+[economics guide](ECONOMICS.md).
+
+M4 is **not complete**: no actual 30-day run/audit, no real approved pair or fee
+profile, and no timestamped Kalshi live source. REST's unknown source time remains
+a hard rejection. Real quote-lifespan measurement and operational evidence remain
+pending. No orders, credentials, funding or M5 work were added. **Stop before M5.**
 
 ## M5 — Paper execution and operational hardening
 

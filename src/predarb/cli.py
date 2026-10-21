@@ -72,12 +72,15 @@ def main():
     registry_cli.add_parser(s)
     from . import books_cli
     books_cli.add_parser(s)
+    from . import research_cli
+    research_cli.add_parser(s)
     args = p.parse_args()
     try:
         if args.cmd == "demo": demo(args.db)
         elif args.cmd == "report": report(args.db)
         elif args.cmd == "pairs": return registry_cli.run(args)
         elif args.cmd == "books": return books_cli.run(args)
+        elif args.cmd == "research": return research_cli.run(args)
         else: return collect_venue(args)
     except KeyboardInterrupt:
         print("Collection interrupted; archived evidence retained", file=sys.stderr)

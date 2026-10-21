@@ -1,0 +1,145 @@
+{
+  "commands": [
+    {
+      "command": [
+        ".venv/bin/predarb",
+        "research",
+        "start",
+        "--policy",
+        "examples/M4_RESEARCH_POLICY.json",
+        "--interval",
+        "1",
+        "--db",
+        "data/m4-rejection-smoke.sqlite3"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"session_id\":1}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        ".venv/bin/predarb",
+        "research",
+        "scan",
+        "1",
+        "--cycles",
+        "2",
+        "--refresh",
+        "--db",
+        "data/m4-rejection-smoke.sqlite3"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"cycle_id\":1,\"hypothetical\":false,\"modeled_edges\":0,\"no_pairs\":true,\"pairs_observed\":0,\"rejected\":0,\"trading_authorized\":false}\n{\"cycle_id\":2,\"hypothetical\":false,\"modeled_edges\":0,\"no_pairs\":true,\"pairs_observed\":0,\"rejected\":0,\"trading_authorized\":false}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        ".venv/bin/predarb",
+        "pairs",
+        "propose",
+        "--kalshi",
+        "KXLNBELITE2GAME-26OCT231430CHASTC-CHA",
+        "--polymarket-us",
+        "tec-mlb-champ-2026-09-27-mil",
+        "--operator",
+        "M4 rejection smoke: unrelated scopes, UNVERIFIED only",
+        "--db",
+        "data/m4-rejection-smoke.sqlite3"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"pair_id\":1,\"status\":\"UNVERIFIED\"}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        ".venv/bin/predarb",
+        "research",
+        "scan",
+        "1",
+        "--refresh",
+        "--db",
+        "data/m4-rejection-smoke.sqlite3"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"cycle_id\":3,\"hypothetical\":false,\"modeled_edges\":0,\"no_pairs\":false,\"pairs_observed\":1,\"rejected\":1,\"trading_authorized\":false}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        ".venv/bin/predarb",
+        "research",
+        "summary",
+        "1",
+        "--db",
+        "data/m4-rejection-smoke.sqlite3"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"acceptance_blockers\":[\"30_DAY_OBSERVATION_AND_HUMAN_AUDIT_PENDING\"],\"cadence_coverage\":\"1\",\"continuous_quote_lifespan_verified\":false,\"cycles\":3,\"equal_quote_samples\":[],\"largest_gap_seconds\":\"1.000166\",\"latest_ranked_independent_alternatives\":[],\"mode\":\"LIVE_READ_ONLY\",\"observed_span_seconds\":\"1.211379\",\"observed_window_qualifies_for_audit\":false,\"rejection_counts\":{\"PAIR_NOT_CURRENTLY_APPROVED\":1},\"session_id\":1,\"thirty_day_acceptance\":false,\"trading_authorized\":false,\"unfinished_cycle_attempts\":0,\"verification\":\"UNVERIFIED\"}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        ".venv/bin/predarb",
+        "research",
+        "csv",
+        "1",
+        "--output",
+        "data/m4-rejection-smoke.csv",
+        "--db",
+        "data/m4-rejection-smoke.sqlite3"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"output\":\"data/m4-rejection-smoke.csv\",\"trading_authorized\":false}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        ".venv/bin/predarb",
+        "research",
+        "prune",
+        "--db",
+        "data/m4-rejection-smoke.sqlite3"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"applied\":false,\"candidate_details\":0,\"summaries_and_source_evidence_retained\":true}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        ".venv/bin/predarb",
+        "demo",
+        "--db",
+        "data/m4-rejection-smoke.sqlite3"
+      ],
+      "exit_code": 0,
+      "stdout": "HYPOTHETICAL EXAMPLE ONLY \u2014 not a trade signal or verified exchange quotes\npairs=400 required_capital=$391.000 modeled_profit=$9.000 ROI=2.302%\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        ".venv/bin/predarb",
+        "report",
+        "--db",
+        "data/m4-rejection-smoke.sqlite3"
+      ],
+      "exit_code": 0,
+      "stdout": "Read-only archive counts: {'kalshi': 8, 'polymarket_us': 4}\nCollection runs (id, venue, status, pages, records, unique, duplicates): [(2, 'polymarket_us', 'COMPLETE', 2, 1, 1, 0), (1, 'kalshi', 'COMPLETE', 2, 2, 2, 0)]\nBook captures (freshness AT CAPTURE, liquidity, count): [('FRESH', 'TWO_SIDED', 1), ('UNKNOWN_SOURCE_TIME', 'TWO_SIDED', 2)]\nAll live catalogue entries and books are UNVERIFIED; no actionable signals\nNormalized book assessments (data usable AT ASSESSMENT, count): [(0, 2), (1, 1)]\nPair decisions (hypothetical, status, count; no trading authority): [(0, 'UNVERIFIED', 1)]\nHypothetical evaluations: 1 (sum of *example modeled* profits, NOT realized P&L: $9.00)\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        ".venv/bin/predarb",
+        "research",
+        "summary",
+        "1",
+        "--db",
+        "data/m4-rejection-smoke.sqlite3"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"acceptance_blockers\":[\"30_DAY_OBSERVATION_AND_EVIDENCE_AUDIT_PENDING\"],\"cadence_coverage\":\"1\",\"continuous_quote_lifespan_verified\":false,\"cycles\":3,\"equal_quote_samples\":[],\"largest_gap_seconds\":\"1.000166\",\"latest_ranked_independent_alternatives\":[],\"mode\":\"LIVE_READ_ONLY\",\"observed_span_seconds\":\"1.211379\",\"observed_window_qualifies_for_audit\":false,\"rejection_counts\":{\"PAIR_NOT_CURRENTLY_APPROVED\":1},\"session_id\":1,\"thirty_day_acceptance\":false,\"trading_authorized\":false,\"unfinished_cycle_attempts\":0,\"verification\":\"UNVERIFIED\"}\n",
+      "stderr": ""
+    }
+  ],
+  "network_calls_from_research": 0,
+  "real_pairs_approved": 0
+}

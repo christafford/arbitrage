@@ -31,6 +31,13 @@ Its representative metadata shape derives from the public schemas; it establishe
 no real settlement equivalence or observed stream behavior. Generated variations
 in tests and `scripts/m3_demo.py` are also hypothetical.
 
+`m4-hypothetical.json` extends the synthetic shapes with inverse propositions,
+two long-buy ladders, explicit hypothetical fee applicability/settlement costs
+and budgets. It is used only in isolated replay databases, with a 2030 clock.
+Its fee rates exercise the implemented math; the fixture is not evidence that
+those rates apply to real instruments. Fee-document declarations in the demo
+are visibly hypothetical. The actual official fee-document check is recorded
+separately in [M4 sources](../../docs/API_SOURCES.md).
 
 Offline tests validate unchanged captures and replay their request sequences.
 Altered failure/overlap/empty-book scenarios are explicitly labeled

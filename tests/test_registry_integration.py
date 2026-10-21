@@ -55,11 +55,13 @@ class RegistryIntegrationTests(unittest.TestCase):
             self.collect_page(db, page)
             count = db.execute('SELECT COUNT(*) FROM raw_observations').fetchone()[0]
             # HYPOTHETICAL reconstruction of the previous schema with genuine captured catalogue content.
+            from helpers import drop_m4_tables
+            drop_m4_tables(db)
             for table in ('normalized_books', 'pair_audit', 'pairs', 'document_heads', 'rule_documents', 'registry_instruments', 'rule_versions', 'registry_supplements', 'supplement_versions'):
                 db.execute(f'DROP TABLE {table}')
             db.execute('PRAGMA user_version=1')
         with connect(self.path) as db:
-            self.assertEqual(db.execute('PRAGMA user_version').fetchone()[0], 3)
+            self.assertEqual(db.execute('PRAGMA user_version').fetchone()[0], 4)
             self.assertEqual(db.execute('SELECT COUNT(*) FROM raw_observations').fetchone()[0], count)
             self.assertEqual(db.execute('SELECT COUNT(*) FROM registry_instruments').fetchone()[0], 2)
             self.assertEqual(db.execute('SELECT COUNT(*) FROM pairs').fetchone()[0], 0)

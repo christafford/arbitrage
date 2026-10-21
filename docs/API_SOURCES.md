@@ -130,3 +130,32 @@ and metadata timestamps are never substituted. All quotes remain `UNVERIFIED`.
 See [M3 results](M3_RESULTS.md) for measured evidence and [book inspection](BOOKS.md)
 for fail-closed rules. M1 data-use restrictions above still apply; no new rights
 or real-pair equivalence finding is claimed.
+
+## M4 fee verification — 2026-10-21
+
+Primary documents were checked before implementing fee math. The
+[manifest](evidence/M4_API_CHECKS.json) records downloaded Markdown hashes and
+save times. A direct Kalshi PDF fetch returned HTTP 429; the current official PDF
+was successfully read through the browser tool, without claiming a local PDF hash.
+
+| Official source | Supported use |
+| --- | --- |
+| [Kalshi schedule, effective July 7, 2026](https://kalshi.com/docs/kalshi-fee-schedule.pdf) | General taker coefficient 0.07 times reviewed series multiplier; exceptions and account charges must be checked |
+| [Kalshi fee rounding](https://docs.kalshi.com/getting_started/fee_rounding) | Six-decimal trade-fee ceiling, account balance alignment, per-order accumulator and capped rounding rebates |
+| [Kalshi series](https://docs.kalshi.com/api-reference/market/get-series) and [scheduled fee changes](https://docs.kalshi.com/api-reference/exchange/get-series-fee-changes) | Fee type/multiplier and scheduled applicability; no global default mapping of every instrument |
+| [Polymarket US fee schedule](https://docs.polymarket.us/fees) | Effective October 19, 2026, 17:00 UTC: symmetric taker coefficient 0.0695; Table Tennis 0.10; cent half-even rounding with cumulative taker-order cap |
+
+US combos use a different curve and are unsupported. Maker/tier rebates are not
+credited. The previous flat US fee assumptions are not used. Kalshi balance
+precision differs for direct/non-direct accounts and must be declared. Fee
+applicability, settlement costs, account exceptions and changes are reviewed for
+each exact market/side and bounded time window; no live profile was automatically
+approved. See [economics guide](ECONOMICS.md).
+
+Public depth does not expose resting-order fragmentation. M4 distinguishes exact
+rounding for a declared hypothetical fill partition from conservative fee bounds
+for quotes. Source documents and operator applicability declarations are archived
+with hashes; they do not establish fills, eligibility or trading authority.
+No new authenticated API, account endpoint or order method was called. Terms and
+provider data restrictions above continue to apply. [M4 results](M4_RESULTS.md)
+document the tests and remaining 30-day acceptance gap.

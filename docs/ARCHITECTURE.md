@@ -26,14 +26,17 @@ raw response capture -> normalized instrument / quotes
 - `src/predarb/polymarket_us.py`: versioned US public gateway catalogue, instrument-side metadata and raw book contracts. The institutional refdata interface requires access and is not the public collection path.
 - `src/predarb/collector.py`: bounded traversal, source ID deduplication, loop detection, selected detail/book capture, separate source/receipt times, freshness/liquidity classifications and run accounting. All evidence is `UNVERIFIED`.
 - `src/predarb/models.py`, `math.py`: the existing independent Decimal evaluator for explicitly hypothetical inputs. Collected books do not feed this evaluator.
-- `src/predarb/store.py`: SQLite WAL and atomic schema migrations through version 3; committed raw responses, collection progress, and registry updates on metadata changes. Connection contexts close explicitly.
+- `src/predarb/store.py`: SQLite WAL and atomic schema migrations through version 4; committed raw responses, collection progress, and registry updates on metadata changes. Connection contexts close explicitly.
 - `src/predarb/registry.py`, `registry_schema.py`, `registry_cli.py`: metadata candidates, immutable rule/source versions, human decision forms, explicit payoff review, expiry/invalidation and append-only audit. Registry approval grants no trading authority.
 - `src/predarb/orderbooks.py`: immutable exact ask representations, supported market grids/side semantics, source/receipt/metadata clocks and quote-only depth coverage. All live evidence remains `UNVERIFIED`.
 - `src/predarb/book_stream.py`: offline single-market Kalshi snapshot/delta replay, subscription sequence and connection-generation checks, conservative clock/send frontiers and fail-closed recovery. No live transport.
 - `src/predarb/book_store.py`, `books_cli.py`: archived assessments with raw provenance, use-time validity, supersession and registry/skew comparison gates; local `books` commands.
+- `src/predarb/fees.py`, `fee_store.py`: supported exact hypothetical taker-fill math, conservative quote bounds, immutable imported source evidence, operator-declared per-instrument/side applicability and expiry. No automatically installed live rates.
+- `src/predarb/economics.py`: bounded complete common-lot search, per-venue research budgets, explicit reserve, reviewed settlement delays and conditional profit/capital-days. US synthetic shorts are refused.
+- `src/predarb/research.py`, `research_schema.py`, `research_cli.py`: resumable bounded polling, approval/book/fee gates, rejection audit, immutable summaries, optional detail retention, sampling metrics and CSV. No unreviewed calculations or execution.
 - `src/predarb/cli.py`: hypothetical demo, archival reports, one-shot collectors and local `pairs`/`books` commands. Exit 2 identifies incomplete bounded traversals or requested rejected book inspections.
 
-[Current verified schemas](API_SOURCES.md), [M1 acceptance evidence](M1_RESULTS.md), [M2 acceptance evidence](M2_RESULTS.md), [M3 acceptance evidence](M3_RESULTS.md).
+[Current verified schemas](API_SOURCES.md), [M1 acceptance evidence](M1_RESULTS.md), [M2 acceptance evidence](M2_RESULTS.md), [M3 acceptance evidence](M3_RESULTS.md), [M4 implementation and pending acceptance](M4_RESULTS.md).
 
 ## Assumptions / unknowns
 
@@ -45,7 +48,7 @@ raw response capture -> normalized instrument / quotes
 
 ## M1 archive tables (retained)
 
-These tables were introduced in schema version 1 and remain in current schema 3:
+These tables were introduced in schema version 1 and remain in current schema 4:
 
 - `raw_observations`: original response bytes and SHA-256, JSON/text inspection copy, venue/endpoint, UTC receipt time, separate source time where available, HTTP status, allowlisted headers, validation status/error and local/upstream schema version. Oversized responses are marked truncated and rejected. Starter rows remain `LEGACY_UNVALIDATED`.
 - `collection_runs`: scope, schema version, start/finish times, `RUNNING`/`COMPLETE`/`PARTIAL`/`FAILED`/`INTERRUPTED`, accepted catalogue page count, returned/unique/duplicate record counts, next cursor/offset and failure text.
@@ -69,13 +72,13 @@ The local contract IDs identify which consumed fields are validated, not a promi
 that all upstream fields or future schema versions are supported. Replay fixtures
 preserve bytes, provenance and clocks, and test identical results offline.
 
-M2 registry and M3 assessment tables are described below. M4 economics and M5
-operational simulation remain future work. These paths are not wired to execution.
+M2 registry, M3 assessment and M4 research tables are described below. M5 operational
+simulation remains future work. These paths are not wired to execution.
 
 Storage uses short transactions and indexes by venue/time. Back up existing
 archives before upgrading. Polling is bounded per command, but repeated commands
-accumulate data; scheduled retention, disk thresholds and deployment hardening
-remain later milestones.
+accumulate source evidence. M4 adds a cycle space guard and explicit derived-detail
+pruning; broader source retention, backup rotation and deployment hardening remain.
 
 ## M2 registry storage and validity
 
@@ -106,7 +109,7 @@ or cryptographic identity/tamper protection is claimed. See [the workflow](PAIR_
 
 ## M3 normalization and current validity
 
-Current SQLite schema version is **3**. `normalized_books` stores raw book/detail
+M3 introduced SQLite schema version **3**. `normalized_books` stores raw book/detail
 observation references, normalizer version, evaluation time and age threshold,
 serialized exact levels/rejections and quote usability **at assessment**. Migration
 does not invent old assessments; existing raw evidence and registry history remain.
@@ -129,8 +132,40 @@ authenticated WebSocket transport or undocumented US delta protocol is implement
 Pair comparison rechecks human approval and market identity, both books and
 source/receipt skew. It never computes profit or authorizes trading. Quote-only
 depth walks preserve partial coverage and exhaustion. See [book inspection](BOOKS.md)
-for semantics and limits. M4 economic evaluation/retention and M5 paper execution
-remain unimplemented. The illustrative evaluator and all order paths remain disconnected.
+for semantics and limits. M4 consumes these gates in its separate research path;
+the illustrative evaluator and all order paths remain disconnected.
+
+## M4 economics and audit
+
+Current schema version is **4**. Migration preserves all previous raw data, book
+assessments and registry history; it creates no historical economic observations.
+
+| Tables | Purpose |
+| --- | --- |
+| `fee_imports`, `fee_documents`, `fee_profiles` | Original configuration/source bytes and hashes, import failures, exact identity/time applicability, operator and expiry |
+| `research_sessions`, `research_cycles` | Immutable policy/interval/mode and committed cycle records; a stored 30-day target is not proof of observation |
+| `research_evaluations`, `research_details` | Durable rejection/economics summary and hash, separately expirable full registry/book/fee detail |
+| `research_replays`, `research_audit` | Immutable synthetic input bytes and append-only session/cycle-attempt/pruning history |
+
+Production research first rechecks human registry validity, optionally refreshes
+approved sources using public GET collectors, then rechecks M3 comparability and
+current fee profiles. It rejects unreviewed or incomparable data before economics.
+Kalshi REST therefore remains blocked by unknown source time. Hypothetical replay
+requires isolated storage and matching synthetic identities and cannot become live
+evidence. No authenticated transport was added.
+
+The pure evaluator walks exact depth and every bounded common lot, applying
+independent venue budgets, conservative fee bounds and explicit reserves. Reviewed
+latest settlement scenarios determine capital-days. Only supported long-buy
+mechanics are evaluated. Results assume simultaneous full fills; repeated samples
+and competing pairs are independent alternatives, never summed as realized P&L.
+
+Source archives commit first. Cycle attempts are audited before processing;
+finished summaries/details commit atomically. Summaries/audit/source evidence are
+retained, while explicit pruning can remove derived detail older than 31 days.
+Reports stream historical rows and retain per-pair sampling aggregates. Equal
+quote samples do not prove continuous lifespan. A real 30-day observation and
+reviewed audit remain pending; M4 is not complete. See [economics operations](ECONOMICS.md).
 
 ## Deployment
 

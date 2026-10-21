@@ -1,0 +1,51 @@
+{
+  "runs": [
+    {
+      "venue": "kalshi",
+      "status": "COMPLETE",
+      "pages": 2,
+      "records": 2,
+      "unique_records": 2,
+      "duplicates": 0,
+      "started_at": "2026-10-21T21:58:15.920145+00:00",
+      "finished_at": "2026-10-21T21:58:17.834236+00:00"
+    },
+    {
+      "venue": "polymarket_us",
+      "status": "COMPLETE",
+      "pages": 2,
+      "records": 1,
+      "unique_records": 1,
+      "duplicates": 0,
+      "started_at": "2026-10-21T21:58:17.988704+00:00",
+      "finished_at": "2026-10-21T21:58:19.129164+00:00"
+    }
+  ],
+  "raw_counts": {
+    "kalshi": 8,
+    "polymarket_us": 4
+  },
+  "assessments": [
+    {
+      "venue": "kalshi",
+      "data_usable_at_assessment": false,
+      "rejections": [
+        "UNKNOWN_SOURCE_TIME"
+      ]
+    },
+    {
+      "venue": "kalshi",
+      "data_usable_at_assessment": false,
+      "rejections": [
+        "UNKNOWN_SOURCE_TIME"
+      ]
+    },
+    {
+      "venue": "polymarket_us",
+      "data_usable_at_assessment": true,
+      "rejections": []
+    }
+  ],
+  "real_pairs_approved": 0,
+  "trading_authorized": false
+}

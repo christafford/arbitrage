@@ -2,7 +2,7 @@
 
 Read-only collection parameters:
 
-- `--db`: SQLite path (default `data/research.sqlite3`). Existing starter databases migrate automatically to schema version 3 (M1 archive, M2 registry, M3 books); back up a working archive before upgrading.
+- `--db`: SQLite path (default `data/research.sqlite3`). Existing starter databases migrate automatically to schema version 4 (M1 archive, M2 registry, M3 books, M4 fee/research records); back up a working archive before upgrading.
 - `--limit`: records per page, 1..1000 (default 20).
 - `--max-pages`: 1..10000 (default 10); exceeding the budget produces `PARTIAL` and exit 2.
 - `--event-ticker`: Kalshi event filter; `--slug`: Polymarket US market filter.
@@ -43,3 +43,15 @@ defaults to a 2000 ms maximum source/receipt skew (`--max-skew-ms`, 0..60000).
 `books list --limit` accepts 1..100, default 20. `books inspect --side` requires
 `--quantity` as an exact decimal string. No fees or profit are calculated. See
 [book inspection](../docs/BOOKS.md) for supported increments and fail-closed gates.
+
+M4 research uses an explicit policy file with exact decimal-string contract limit,
+independent venue budgets, positive reserve per leg and minimum profit. The
+provided example budgets are zero. Fees have no automatic defaults; exact
+instrument/side applicability and source files require explicit operator review.
+Fee/source review expires within 24 hours. Research sessions fix their policy and
+interval (1..3600 seconds); `scan` defaults to one cycle, and each invocation is
+bounded to 31 days. Resume by session ID; `--refresh` polls only approved pairs.
+Resource bounds: 50 registered pairs, 10,000 common lot increments per evaluation,
+200 MiB free space before each cycle. Keep one writer. Derived-detail pruning is
+a dry run unless `--apply` is supplied, and retains at least 31 days. See
+[economics configuration](../docs/ECONOMICS.md).
