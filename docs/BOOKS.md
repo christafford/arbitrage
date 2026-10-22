@@ -139,3 +139,11 @@ The demo labels all inputs hypothetical, copies source bytes before parsing and
 archives each replay frame with its hash. See [M3 results](M3_RESULTS.md) for the
 executed tests, live capture results and remaining operational limits, and
 [official sources](API_SOURCES.md) for the documented venue semantics.
+
+## M5A authenticated adapter
+
+M5A now reuses the replay helper for an implemented read-only transport. Actual
+authenticated continuity remains blocked by missing credentials. Schema-7
+WebSocket observations use the same inspection/economic gates, replaying the
+archived generation and refusing disconnected, invalid or stale depth. See
+[setup and limits](KALSHI_WEBSOCKET.md); the M3 descriptions above are historical.

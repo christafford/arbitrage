@@ -231,3 +231,8 @@ state, rejection patterns, paper queue coverage and renewal needs daily.
 Official operational sources and actual validation commands are recorded in
 [the source/unit manifest](evidence/M5_SOURCE_AND_UNIT_CHECKS.json). M5 remains
 open until a multiweek zero-money run and evidence/incident audit actually pass.
+
+M5A follow-up: [bounded Kalshi WebSocket capture](KALSHI_WEBSOCKET.md) uses the
+same writer lock and can optionally scan an existing research session in that
+writer. Do not run it alongside the monitor on the same database. Its live
+continuity is unvalidated, and no WebSocket service was installed or activated.

@@ -207,7 +207,7 @@ class OperationTests(unittest.TestCase):
     def test_schema_four_migration_preserves_session_and_adds_no_fake_observations(self):
         drop_m5_tables(self.con);self.con.execute('PRAGMA user_version=4');self.con.commit();self.con.close()
         self.con=connect(self.path);self.addCleanup(self.con.close)
-        self.assertEqual(self.con.execute('PRAGMA user_version').fetchone()[0],6)
+        self.assertEqual(self.con.execute('PRAGMA user_version').fetchone()[0],7)
         self.assertEqual(self.con.execute('SELECT COUNT(*) FROM research_sessions').fetchone()[0],1)
         self.assertEqual(self.con.execute('SELECT COUNT(*) FROM paper_comparisons').fetchone()[0],0)
 
@@ -258,7 +258,7 @@ class BackupTests(unittest.TestCase):
         with target.open('ab') as handle:handle.write(b'HYPOTHETICAL corruption')
         with self.assertRaisesRegex(ValueError,'hash'):verify(target)
         with self.assertRaises(ValueError):restore(target,self.root/'bad-restore.sqlite3')
-        self.con.execute('PRAGMA user_version=7');self.con.commit()
+        self.con.execute('PRAGMA user_version=8');self.con.commit()
         with self.assertRaisesRegex(ValueError,'unsupported'):backup(self.path,self.root/'future.sqlite3')
 
     def test_manifest_hash_or_logical_digest_tampering_is_detected(self):
@@ -325,7 +325,7 @@ class BackupMonitorTests(unittest.TestCase):
         for key in self.case['manifest']:
             missing=dict(self.case['manifest']);missing.pop(key);cases.append(missing)
         for key,value in [('format','unknown'),('created_at','bad'),('schema_version',True),
-                          ('schema_version',7),('file_sha256','bad'),('logical_sha256','bad'),
+                          ('schema_version',8),('file_sha256','bad'),('logical_sha256','bad'),
                           ('row_counts',{}),('row_counts',{'t':True}),('row_counts',{'t':-1})]:
             cases.append(dict(self.case['manifest'],**{key:value}))
         for value in cases:

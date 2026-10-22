@@ -1,0 +1,127 @@
+{
+  "recorded_at": "2026-10-22T16:55:46.415605+00:00",
+  "archive": "data/m5a-validation/public-evidence.sqlite3",
+  "live_websocket_status": "BLOCKED_NO_CREDENTIALS",
+  "live_websocket_messages": 0,
+  "live_websocket_connection_attempts": 0,
+  "operator_instruction": "No credentials configured; record live validation as blocked",
+  "public_REST_observations": [
+    {
+      "id": 1,
+      "received_at": "2026-10-22T16:55:45.450727+00:00",
+      "endpoint": "https://external-api.kalshi.com/trade-api/v2/markets/KXFEDCUT-31DEC28-31DEC26",
+      "sha256": "2a38dfe9da229a13023f4610b11e7304a40e65bd8f3cfebf355efd017e85c84a",
+      "schema": "kalshi-3.34.0/m1-v1",
+      "validation_status": "VALID"
+    },
+    {
+      "id": 2,
+      "received_at": "2026-10-22T16:55:46.396108+00:00",
+      "endpoint": "https://external-api.kalshi.com/trade-api/v2/markets/KXFEDCUT-31DEC28-31DEC26/orderbook",
+      "sha256": "7422fc5b870f861dde15b98c137cbffe5fcfb158ed3174472e9f1b13b89052d5",
+      "schema": "kalshi-3.34.0/m1-v1",
+      "validation_status": "VALID"
+    }
+  ],
+  "REST_book_rejections": [
+    "UNKNOWN_SOURCE_TIME"
+  ],
+  "real_pairs": 0,
+  "actual_orders_placed": 0,
+  "commands": [
+    {
+      "args": [
+        ".venv/bin/predarb",
+        "stream-kalshi",
+        "--help"
+      ],
+      "exit_code": 0,
+      "stdout": "usage: predarb stream-kalshi [-h] [--db DB]\n                             [--credentials-file CREDENTIALS_FILE]\n                             [--seconds SECONDS] [--max-messages MAX_MESSAGES]\n                             [--max-connections MAX_CONNECTIONS]\n                             [--min-free-mb MIN_FREE_MB]\n                             [--research-session RESEARCH_SESSION]\n                             ticker\n\npositional arguments:\n  ticker\n\noptions:\n  -h, --help            show this help message and exit\n  --db DB\n  --credentials-file CREDENTIALS_FILE\n  --seconds SECONDS     duration budget, 1..3600 seconds\n  --max-messages MAX_MESSAGES\n  --max-connections MAX_CONNECTIONS\n  --min-free-mb MIN_FREE_MB\n  --research-session RESEARCH_SESSION\n                        optionally scan an existing live research session in\n                        this writer\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        ".venv/bin/predarb",
+        "stream-kalshi",
+        "KXFEDCUT-31DEC28-31DEC26",
+        "--db",
+        "data/m5a-validation/missing-credentials.sqlite3",
+        "--credentials-file",
+        "data/m5a-validation/intentionally-absent.json",
+        "--seconds",
+        "1"
+      ],
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "Collector/error: invalid credential configuration, permissions or unsupported private key\n"
+    },
+    {
+      "args": [
+        ".venv/bin/predarb",
+        "books",
+        "list",
+        "--db",
+        "data/m5a-validation/public-evidence.sqlite3"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"evaluated_at\":\"2026-10-22T16:55:46.841967+00:00\",\"historical_replay\":false,\"result\":[{\"data_usable\":false,\"observation_id\":2,\"rejections\":[\"UNKNOWN_SOURCE_TIME\"],\"source_id\":\"KXFEDCUT-31DEC28-31DEC26\",\"venue\":\"kalshi\"}],\"trading_authorized\":false,\"verification\":\"UNVERIFIED\"}\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        ".venv/bin/predarb",
+        "ops",
+        "backup",
+        "--db",
+        "data/m5a-validation/public-evidence.sqlite3",
+        "--output",
+        "data/m5a-validation/schema7-backup.sqlite3"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"created_at\":\"2026-10-22T16:55:47.002921+00:00\",\"destination\":\"/home/chris/code/arbitrage/data/m5a-validation/schema7-backup.sqlite3\",\"file_sha256\":\"08455f146cbdb7d4e9f78527514afc3579a276df4ac29f33e3e6b5498aae09f2\",\"format\":\"predarb-backup/m5-v1\",\"logical_sha256\":\"6a8b6369bba84d6ed9b7a30b558b7fd201a41c06f78550c0739b6e4f13afdbdd\",\"manifest\":\"/home/chris/code/arbitrage/data/m5a-validation/schema7-backup.sqlite3.manifest.json\",\"row_counts\":{\"book_captures\":1,\"catalogue_entries\":1,\"collection_runs\":1,\"discovery_queue\":0,\"discovery_state\":0,\"document_heads\":0,\"fee_documents\":0,\"fee_imports\":0,\"fee_profiles\":0,\"normalized_books\":1,\"opportunities\":0,\"ops_checks\":0,\"ops_events\":0,\"pair_audit\":0,\"pairs\":0,\"paper_comparisons\":0,\"paper_intents\":0,\"paper_tick_inputs\":0,\"raw_observations\":2,\"registry_instruments\":1,\"registry_supplements\":0,\"research_audit\":0,\"research_cycles\":0,\"research_details\":0,\"research_evaluations\":0,\"research_replays\":0,\"research_sessions\":0,\"rule_documents\":0,\"rule_versions\":1,\"supplement_versions\":0,\"ws_connections\":0,\"ws_frames\":0},\"schema_version\":7}\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        ".venv/bin/predarb",
+        "ops",
+        "verify-backup",
+        "data/m5a-validation/schema7-backup.sqlite3"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"created_at\":\"2026-10-22T16:55:47.002921+00:00\",\"file_sha256\":\"08455f146cbdb7d4e9f78527514afc3579a276df4ac29f33e3e6b5498aae09f2\",\"format\":\"predarb-backup/m5-v1\",\"logical_sha256\":\"6a8b6369bba84d6ed9b7a30b558b7fd201a41c06f78550c0739b6e4f13afdbdd\",\"row_counts\":{\"book_captures\":1,\"catalogue_entries\":1,\"collection_runs\":1,\"discovery_queue\":0,\"discovery_state\":0,\"document_heads\":0,\"fee_documents\":0,\"fee_imports\":0,\"fee_profiles\":0,\"normalized_books\":1,\"opportunities\":0,\"ops_checks\":0,\"ops_events\":0,\"pair_audit\":0,\"pairs\":0,\"paper_comparisons\":0,\"paper_intents\":0,\"paper_tick_inputs\":0,\"raw_observations\":2,\"registry_instruments\":1,\"registry_supplements\":0,\"research_audit\":0,\"research_cycles\":0,\"research_details\":0,\"research_evaluations\":0,\"research_replays\":0,\"research_sessions\":0,\"rule_documents\":0,\"rule_versions\":1,\"supplement_versions\":0,\"ws_connections\":0,\"ws_frames\":0},\"schema_version\":7,\"verified\":true}\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        ".venv/bin/predarb",
+        "demo",
+        "--db",
+        "data/m5a-validation/demo.sqlite3"
+      ],
+      "exit_code": 0,
+      "stdout": "HYPOTHETICAL EXAMPLE ONLY \u2014 not a trade signal or verified exchange quotes\npairs=400 required_capital=$391.000 modeled_profit=$9.000 ROI=2.302%\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        ".venv/bin/predarb",
+        "report",
+        "--db",
+        "data/m5a-validation/public-evidence.sqlite3"
+      ],
+      "exit_code": 0,
+      "stdout": "Read-only archive counts: {'kalshi': 2}\nCollection runs (id, venue, status, pages, records, unique, duplicates): [(1, 'kalshi', 'COMPLETE', 1, 1, 1, 0)]\nBook captures (freshness AT CAPTURE, liquidity, count): [('UNKNOWN_SOURCE_TIME', 'UNKNOWN', 1)]\nAll live catalogue entries and books are UNVERIFIED; no actionable signals\nNormalized book assessments (data usable AT ASSESSMENT, count): [(0, 1)]\nPair decisions (hypothetical, status, count; no trading authority): []\nHypothetical evaluations: 0 (sum of *example modeled* profits, NOT realized P&L: $0.00)\n",
+      "stderr": ""
+    }
+  ],
+  "preserved_copy_migration": {
+    "source": "data/discovery-cli-demo.sqlite3",
+    "source_schema": 6,
+    "migrated_copy": "data/m5a-validation/migrated-schema6.sqlite3",
+    "target_schema": 7,
+    "preserved_tables": 30,
+    "all_existing_rows_preserved": true,
+    "new_tables_empty": true
+  }
+}

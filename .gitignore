@@ -3,3 +3,6 @@ __pycache__/
 *.egg-info/
 data/
 *.sqlite3*
+*.pem
+*.key
+kalshi-readonly.json

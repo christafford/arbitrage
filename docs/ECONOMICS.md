@@ -194,3 +194,8 @@ Use a new empty directory. The demo archives synthetic inputs before decoding,
 simulates a human review of inverse propositions and fee applicability in an
 isolated database, records two fresh evaluations and a stale rejection, and
 exports results. These are not real approvals, historical fills or 30-day evidence.
+
+M5A follow-up: the [read-only Kalshi WebSocket adapter](KALSHI_WEBSOCKET.md) now
+feeds the same M3/M4 gates, with an optional existing-session scan callback in
+the capture writer. Actual live continuity remains blocked by absent credentials;
+no live fee validation or approval was added. US books still need fresh evidence.

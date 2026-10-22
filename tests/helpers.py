@@ -55,6 +55,8 @@ def drop_m4_tables(con):
 
 
 def drop_m5_tables(con):
+    con.execute('DROP TABLE ws_frames')
+    con.execute('DROP TABLE ws_connections')
     con.execute('DROP TABLE discovery_queue')
     con.execute('DROP TABLE discovery_state')
     con.execute('DROP INDEX discovery_books_source')

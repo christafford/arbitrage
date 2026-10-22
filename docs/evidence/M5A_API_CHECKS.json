@@ -1,0 +1,32 @@
+[
+  {
+    "url": "https://docs.kalshi.com/getting_started/quick_start_websockets.md",
+    "retrieved_at": "2026-10-22T16:42:06.623962+00:00",
+    "sha256": "580886d472e4d9bba0137aca377015539b4305fc93596032331868496fe07b2a",
+    "local_path": "data/m5a-api-sources/quick_start_websockets.md"
+  },
+  {
+    "url": "https://docs.kalshi.com/getting_started/api_keys.md",
+    "retrieved_at": "2026-10-22T16:42:06.903191+00:00",
+    "sha256": "52ddf65621d2074bd732345a515325949373e4a3d5dfd2d229ecc54839acf891",
+    "local_path": "data/m5a-api-sources/api_keys.md"
+  },
+  {
+    "url": "https://docs.kalshi.com/websockets/orderbook-updates.md",
+    "retrieved_at": "2026-10-22T16:42:07.300648+00:00",
+    "sha256": "8432edeec3ae10347060f144a4b5207d642034abcde6f5ef569db35ea13d9474",
+    "local_path": "data/m5a-api-sources/orderbook-updates.md"
+  },
+  {
+    "url": "https://docs.kalshi.com/websockets/websocket-connection.md",
+    "retrieved_at": "2026-10-22T16:42:07.644568+00:00",
+    "sha256": "f0ad3c146a342f86555f2bf5fbb313a88f95538567d56ee2127e97ad6678264f",
+    "local_path": "data/m5a-api-sources/websocket-connection.md"
+  },
+  {
+    "url": "https://docs.kalshi.com/websockets/connection-keep-alive.md",
+    "retrieved_at": "2026-10-22T16:42:07.947154+00:00",
+    "sha256": "03b3b4e9e1f446cf1782b7021acb6fd5076807f57f4a91fe4d029e098ecf6416",
+    "local_path": "data/m5a-api-sources/connection-keep-alive.md"
+  }
+]

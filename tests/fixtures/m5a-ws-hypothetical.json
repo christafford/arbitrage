@@ -1,0 +1,12 @@
+{
+  "schema": "kalshi-ws/m5a-v1",
+  "hypothetical": true,
+  "purpose": "HYPOTHETICAL acknowledgment used with m3-hypothetical.json snapshots and generated deltas. Never an actual authenticated capture.",
+  "source_checked_at": "2026-10-22T16:42:07.644568+00:00",
+  "official_source": "https://docs.kalshi.com/websockets/websocket-connection",
+  "acknowledgment": {
+    "id": 1,
+    "type": "subscribed",
+    "msg": {"channel": "orderbook_delta", "sid": 7}
+  }
+}

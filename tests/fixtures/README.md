@@ -70,3 +70,11 @@ matching fixture with a 2030 replay clock. It covers alias/description/date and
 threshold normalization. Existing sanitized live pages/details/books supply the
 provider-schema replay; altered test sequences remain hypothetical. No fixture
 attests real contract equivalence.
+
+## M5A WebSocket
+
+`m5a-ws-hypothetical.json` is an explicitly hypothetical acknowledgment fixture
+for local schema `kalshi-ws/m5a-v1`, paired with the existing M3 snapshot and
+generated deltas in `test_kalshi_ws.py`. Its source-check timestamp identifies
+the official document retrieval, **not a live frame receipt**. No authenticated
+live fixture exists: the operator confirmed credentials are unavailable.

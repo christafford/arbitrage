@@ -24,7 +24,7 @@ Discover, record, and evaluate potential *fully hedged* binary-event opportuniti
 
 ## Out of scope for MVP
 
-Trading, authentication/signing, withdrawals/deposits, margin, automated tax filing, multicountry availability, speculative directional positions, market-making, news prediction, and guaranteed return projections.
+Trading, withdrawals/deposits, margin, automated tax filing, multicountry availability, speculative directional positions, market-making, news prediction, and guaranteed return projections. M5A separately authorizes authentication/signing solely for the read-only Kalshi market-data WebSocket handshake; no order or account command is authorized.
 
 ## Success metric
 

@@ -1,4 +1,4 @@
-"""Offline Kalshi orderbook replay; no authenticated transport or credentials.
+"""Transport-independent Kalshi orderbook validation and deterministic replay.
 
 One market per subscription is required: Kalshi seq is scoped to the subscription,
 not the market. clock may repeat across deltas and is not a contiguous sequence.

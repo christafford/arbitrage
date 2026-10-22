@@ -31,6 +31,12 @@ def _raw(con, observation_id):
 
 
 def load_book(con, observation_id, *, now, metadata_observation_id=None):
+    if con.execute('SELECT 1 FROM ws_frames WHERE observation_id=?', (observation_id,)).fetchone():
+        from .ws_store import load_stream_book
+        book, metadata_id, run_id = load_stream_book(con, observation_id, now=now)
+        if metadata_observation_id is not None and metadata_observation_id != metadata_id:
+            raise ValueError('stream metadata reference mismatch')
+        return book, metadata_id, run_id
     row = con.execute('SELECT run_id,source_id FROM book_captures WHERE observation_id=?', (observation_id,)).fetchone()
     if row is None:
         raise ValueError('observation is not an archived book capture')

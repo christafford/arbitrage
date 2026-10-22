@@ -128,6 +128,23 @@ See [verification](DISCOVERY_RESULTS.md) for executed tests/live coverage and
 [operation](DISCOVERY.md) for limits. This extension does not satisfy M4/M5's
 pending sustained-run acceptance or authorize M6. No real equivalence was approved.
 
+## M5A — Live research readiness — IN PROGRESS (2026-10-22 UTC)
+
+Authorized scope for this change is **A/B only; stop after B**.
+
+- [x] A: reuse the implemented discovery extension and ranked UNVERIFIED human-review queue; existing live catalogue coverage remains partial.
+- [x] B implementation: authenticated read-only Kalshi transport, protected external credentials, raw/sanitized provenance, sequenced snapshot/delta validation and recovery, M3/M4 integration, offline tests and documentation.
+- [ ] B live acceptance: actual authenticated timestamped snapshots/deltas and reconnect continuity. **Blocked: operator confirmed no configured credentials.**
+- [ ] Human approval of equivalent real pairs; never an agent decision.
+- [ ] C: live fee validation tooling/operator review — not started under the current scope.
+- [ ] D: payout/collateral/settlement mechanics verification — not started; current short-exposure restrictions remain.
+- [ ] E: research-readiness CLI report — not started.
+
+Evidence and explicit gaps: [M5A results](M5A_RESULTS.md),
+[WebSocket setup and failure behavior](KALSHI_WEBSOCKET.md). Offline simulation
+does not establish live acceptance. M4/M5 sustained-run acceptance remains pending.
+No real equivalence approval, fee approval, order, funding or M6 work.
+
 ## M6 — OPTIONAL live trading proposal (DO NOT IMPLEMENT WITHOUT EXPLICIT GO-AHEAD)
 
 - [ ] Human-approved security/risk design; separate order execution module, off by default.

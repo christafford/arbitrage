@@ -1,0 +1,338 @@
+"""HYPOTHETICAL transport/recovery/signing tests; no exchange authentication."""
+import base64
+from copy import deepcopy
+from datetime import timedelta
+import hashlib
+import json
+from pathlib import Path
+import tempfile
+from types import SimpleNamespace
+import unittest
+from unittest.mock import patch
+
+from predarb import kalshi, ws_store
+from predarb.book_store import inspect_book, load_book
+from predarb.kalshi_auth import Credentials, WS_PATH, WS_URL, private_file
+from predarb.kalshi_ws import capture, open_socket, refresh_metadata
+from predarb.provider import Observation
+from predarb.research import _latest
+from predarb.store import connect, archive_response, validate_observation, start_run, update_run
+from predarb.validation import dumps, utc_time
+from test_orderbooks import sample
+
+try:
+    from cryptography.hazmat.primitives.asymmetric import ed25519, rsa, padding
+    from cryptography.hazmat.primitives import serialization, hashes
+    import websockets
+    HAS_EXTRAS = True
+except ImportError:
+    HAS_EXTRAS = False
+
+
+@unittest.skipUnless(HAS_EXTRAS, 'install .[kalshi-ws] for signing and transport tests')
+class CredentialsTests(unittest.TestCase):
+    def test_both_key_types_sign_only_fixed_handshake_and_never_repr_secrets(self):
+        for key in (ed25519.Ed25519PrivateKey.generate(), rsa.generate_private_key(public_exponent=65537, key_size=2048)):
+            with self.subTest(key=type(key).__name__), tempfile.TemporaryDirectory() as tmp:
+                root = Path(tmp)
+                private = root / 'private.pem'
+                private.write_bytes(key.private_bytes(serialization.Encoding.PEM, serialization.PrivateFormat.PKCS8,
+                                                     serialization.NoEncryption())); private.chmod(0o600)
+                config = root / 'credentials.json'
+                config.write_text(json.dumps({'api_key_id': 'a952bcbe-ec3b-4b5b-b8f9-11dae589608c',
+                                              'private_key_path': 'private.pem'})); config.chmod(0o600)
+                credentials = Credentials.load(config)
+                headers = credentials.headers(timestamp_ms=123456)
+                self.assertNotIn(headers['KALSHI-ACCESS-KEY'], repr(credentials))
+                message = ('123456GET' + WS_PATH).encode()
+                signature = base64.b64decode(headers['KALSHI-ACCESS-SIGNATURE'])
+                if isinstance(key, ed25519.Ed25519PrivateKey): key.public_key().verify(signature, message)
+                else: key.public_key().verify(signature, message, padding.PSS(mgf=padding.MGF1(hashes.SHA256()), salt_length=32), hashes.SHA256())
+                private.chmod(0o644)
+                with self.assertRaisesRegex(ValueError, 'configuration'): Credentials.load(config)
+
+    def test_private_file_rejects_symlinks_checkouts_oversize_and_public_permissions(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp); target = root / 'key'; target.write_bytes(b'HYPOTHETICAL secret'); target.chmod(0o600)
+            link = root / 'link'; link.symlink_to(target)
+            with self.assertRaises(ValueError): private_file(link)
+            target.write_bytes(b'x' * 65537)
+            with self.assertRaises(ValueError): private_file(target)
+            target.write_bytes(b'HYPOTHETICAL'); (root / '.git').mkdir()
+            with self.assertRaisesRegex(ValueError, 'outside Git'): private_file(target)
+
+    def test_redirects_are_refused_and_debug_logger_is_disabled(self):
+        from websockets.sync.client import reconnect
+        from websockets.exceptions import InvalidStatus
+        from websockets.http11 import Response
+        from websockets.datastructures import Headers
+        captured = []
+        def failure(connector, deadline):
+            captured.append(connector)
+            raise InvalidStatus(Response(302, 'Found', Headers({'Location': 'wss://example.invalid/'})))
+        with patch.object(reconnect, 'open_connection', failure), self.assertRaises(InvalidStatus):
+            open_socket({'KALSHI-ACCESS-KEY': 'HYPOTHETICAL_SECRET'})
+        self.assertEqual(len(captured), 1)
+        self.assertEqual(captured[0].uri, WS_URL)
+        self.assertIsNone(captured[0].proxy)
+        self.assertTrue(captured[0].logger.disabled)
+
+
+class FakeCredentials:
+    def headers(self):
+        return {'KALSHI-ACCESS-KEY': 'HYPOTHETICAL_SECRET_KEY',
+                'KALSHI-ACCESS-SIGNATURE': 'HYPOTHETICAL_SECRET_SIGNATURE', 'KALSHI-ACCESS-TIMESTAMP': '1'}
+
+
+class FakeClock:
+    def __init__(self, now): self.at, self.elapsed = now, 0
+    def now(self): return self.at + timedelta(seconds=self.elapsed)
+    def monotonic(self): return self.elapsed
+    def sleep(self, seconds): self.elapsed += seconds
+
+
+class Socket:
+    def __init__(self, frames, clock): self.frames, self.clock, self.sent = list(frames), clock, []
+    def __enter__(self): return self
+    def __exit__(self, *args): pass
+    def send(self, message): self.sent.append(loads(message))
+    def recv(self, timeout):
+        if not self.frames:
+            self.clock.sleep(timeout); raise TimeoutError()
+        self.clock.sleep(.001)
+        item = self.frames.pop(0)
+        if isinstance(item, BaseException): raise item
+        return dumps(item)
+
+
+def loads(value): return json.loads(value)
+
+
+class StreamCaptureTests(unittest.TestCase):
+    def setUp(self):
+        self.tmp = tempfile.TemporaryDirectory(); self.addCleanup(self.tmp.cleanup)
+        self.path = str(Path(self.tmp.name) / 'archive.sqlite3')
+        self.db = connect(self.path); self.addCleanup(self.db.close)
+        self.case = sample(); self.source = self.case['kalshi_metadata']['ticker']
+        self.protocol = loads((Path(__file__).parent / 'fixtures/m5a-ws-hypothetical.json').read_text())
+        self.clock = FakeClock(utc_time(self.case['clock']))
+        self.sockets = []
+
+    def metadata(self, con, source):
+        at = self.clock.now().isoformat()
+        market = self.case['kalshi_metadata']
+        run = start_run(con, 'kalshi', kalshi.SCHEMA_VERSION, {'filter': 'HYPOTHETICAL'})
+        observed = archive_response(con, 'kalshi', kalshi.detail_url(source), dumps({'market': market}).encode(),
+                                    200, {}, at, kalshi.SCHEMA_VERSION)
+        validate_observation(con, observed, 'VALID', None)
+        # Direct seed deliberately avoids presenting synthetic IDs to the live registry.
+        con.execute("INSERT INTO catalogue_entries VALUES(?,?,?,?,?,?,?,'UNVERIFIED')",
+                    (run, source, observed, at, dumps(market), '{}', hashlib.sha256(b'{}').hexdigest()))
+        update_run(con, run, status='COMPLETE', pages=1, records=1, unique=1, next_page=None)
+        return run, Observation(observed, kalshi.detail_url(source), at, {'market': market})
+
+    def ack(self, sid=7):
+        frame = deepcopy(self.protocol['acknowledgment']); frame['msg']['sid'] = sid
+        return frame
+    def snapshot(self, seq=10, sid=7):
+        frame = deepcopy(self.case['kalshi_ws_snapshot']); frame.update(seq=seq, sid=sid)
+        return frame
+    def delta(self, seq=11, **changes):
+        frame = self.snapshot(seq); frame['type'] = 'orderbook_delta'
+        frame['msg'] = {'market_ticker': self.source, 'market_id': frame['msg']['market_id'],
+                        'clock': 101, 'side': 'yes', 'price_dollars': '.42', 'delta_fp': '-.50'} | changes
+        return frame
+
+    def run_capture(self, *sequences, **kwargs):
+        sockets = [Socket(sequence, self.clock) for sequence in sequences]; self.sockets.extend(sockets)
+        def connector(headers): return sockets.pop(0)
+        options = dict(seconds=15, max_connections=len(sequences), max_messages=100,
+                       directory=self.tmp.name, connect_socket=connector, metadata_loader=self.metadata,
+                       now=self.clock.now, monotonic=self.clock.monotonic, sleep=self.clock.sleep)
+        options.update(kwargs)
+        return capture(self.db, self.source, FakeCredentials(), **options)
+
+    def test_snapshot_delta_archive_before_normalization_and_m3_m4_consumption(self):
+        seen = []
+        def inspect(con, observed, now):
+            self.assertEqual(_latest(con, 'kalshi', self.source, now), observed)
+            result = inspect_book(con, observed, now=now)
+            self.assertTrue(result['data_usable']); self.assertEqual(result['transport'], 'KALSHI_AUTHENTICATED_WS')
+            seen.append((observed, now, result))
+        stats = self.run_capture([self.ack(), self.snapshot(), self.delta()], max_messages=3, on_book=inspect)
+        self.assertEqual(stats['status'], 'CAPTURED'); self.assertEqual(len(seen), 2)
+        self.assertEqual(seen[-1][2]['no_asks'][0]['quantity'], '1.00' if isinstance(seen[-1][2]['no_asks'][0]['quantity'], str) else 1)
+        observed, at, result = seen[0]
+        raw = self.db.execute('SELECT raw_body,source_ts FROM raw_observations WHERE id=?', (observed,)).fetchone()
+        self.assertEqual(raw[0], dumps(self.snapshot()).encode())
+        self.assertNotEqual(raw[1], at.isoformat())
+        self.assertTrue(inspect_book(self.db, observed, now=at)['data_usable'])
+        self.assertIn('STREAM_DISCONNECTED', inspect_book(self.db, seen[-1][0], now=self.clock.now())['rejections'])
+        self.assertEqual(self.sockets[0].sent, [{'id': 1, 'cmd': 'subscribe', 'params': {
+            'channels': ['orderbook_delta'], 'market_ticker': self.source}}])
+        self.assertEqual(self.db.execute('SELECT COUNT(*) FROM pairs').fetchone()[0], 0)
+
+    def test_gap_invalidates_old_book_then_new_generation_snapshot_recovers(self):
+        stats = self.run_capture([self.ack(), self.snapshot(), self.delta(12)],
+                                 [self.ack(), self.snapshot(1), self.delta(2)], max_messages=6)
+        self.assertEqual(stats['recoveries'], 1)
+        self.assertEqual(stats['failures'], ['INVALID_STREAM_FRAME'])
+        self.assertEqual(stats['status'], 'INCOMPLETE')
+        rows = self.db.execute("SELECT id,validation_status FROM raw_observations WHERE schema_version=?", (ws_store.SCHEMA_VERSION,)).fetchall()
+        self.assertEqual(rows[2][1], 'REJECTED')
+        with self.assertRaises(ValueError): load_book(self.db, rows[2][0], now=self.clock.now())
+        self.assertIn('STREAM_DISCONNECTED', inspect_book(self.db, rows[1][0], now=self.clock.now())['rejections'])
+
+    def test_transport_disconnect_discards_old_generation_and_requires_snapshot(self):
+        stats = self.run_capture([self.ack(), self.snapshot(), OSError('HYPOTHETICAL_SECRET_SIGNATURE')],
+                                 [self.ack(), self.delta()], max_messages=4)
+        self.assertEqual(stats['deltas'], 0)
+        self.assertEqual(stats['failures'], ['CONNECTION_OR_PROCESSING_FAILED', 'INVALID_STREAM_FRAME'])
+        self.assertNotIn('HYPOTHETICAL_SECRET', dumps(stats))
+
+    def test_source_time_missing_stale_future_wrong_market_clock_or_bad_book(self):
+        cases = []
+        missing = self.snapshot(); del missing['sending_ts_ms']; cases.append(missing)
+        stale = self.snapshot(); stale['sending_ts_ms'] -= 61000; cases.append(stale)
+        future = self.snapshot(); future['sending_ts_ms'] += 6000; cases.append(future)
+        wrong = self.snapshot(); wrong['msg']['market_ticker'] = 'HYPOTHETICAL-OTHER'; cases.append(wrong)
+        crossed = self.snapshot(); crossed['msg']['yes_dollars_fp'] = [['.99','1']]; cases.append(crossed)
+        for frame in cases:
+            with self.subTest(frame=frame):
+                stats = self.run_capture([self.ack(), frame], max_messages=2)
+                self.assertEqual(stats['snapshots'], 0); self.assertFalse(stats['live_continuity_demonstrated'])
+
+    def test_ack_missing_wrong_or_duplicate_cannot_enable_data(self):
+        for sequence in ([self.snapshot()], [self.ack(8), self.snapshot()], [self.ack(), self.ack()]):
+            with self.subTest(sequence=sequence):
+                stats = self.run_capture(sequence, max_messages=len(sequence))
+                self.assertEqual(stats['snapshots'], 0); self.assertIn('INVALID_STREAM_FRAME', stats['failures'])
+
+    def test_partial_depth_preserves_sequence_until_liquidity_returns(self):
+        snapshot = self.snapshot(); snapshot['msg']['yes_dollars_fp'] = []
+        stats = self.run_capture([self.ack(), snapshot, self.delta(delta_fp='1.00')], max_messages=3)
+        self.assertEqual(stats['usable_books'], 1); self.assertEqual(stats['deltas'], 1)
+
+    def test_idle_timeout_and_dead_writer_liveness_fail_closed(self):
+        stats = self.run_capture([self.ack(), self.snapshot()])
+        self.assertIn('MESSAGE_TIMEOUT', stats['failures'])
+        observed = self.db.execute('SELECT MAX(observation_id) FROM book_captures').fetchone()[0]
+        self.db.execute('UPDATE ws_connections SET ended_at=NULL,end_reason=NULL'); self.db.commit()
+        result = inspect_book(self.db, observed, now=self.clock.now())
+        self.assertIn('STREAM_LIVENESS_NOT_DEMONSTRATED', result['rejections'])
+
+    def test_hash_tampering_and_omitted_delta_are_detected_on_replay(self):
+        seen = []
+        self.run_capture([self.ack(), self.snapshot(), self.delta(), self.delta(12)], max_messages=4,
+                         on_book=lambda con, observed, now: seen.append((observed, now)))
+        observed, at = seen[-1]
+        self.db.execute('DELETE FROM ws_frames WHERE observation_id=?', (seen[-2][0],)); self.db.commit()
+        with self.assertRaisesRegex(ValueError, 'sequence gap'): load_book(self.db, observed, now=at)
+        self.db.execute("UPDATE raw_observations SET body_sha256='bad' WHERE id=?", (seen[0][0],)); self.db.commit()
+        with self.assertRaisesRegex(ValueError, 'provenance'): load_book(self.db, seen[0][0], now=seen[0][1])
+
+    def test_privacy_screening_and_raw_hash_provenance(self):
+        frame = self.delta(client_order_id='HYPOTHETICAL_PRIVATE_ACCOUNT_ID')
+        raw = dumps(frame).encode(); safe, digest, kind = ws_store.safe_frame(raw)
+        self.assertEqual(kind, 'ACCOUNT_FIELD_REMOVED'); self.assertNotIn(b'PRIVATE_ACCOUNT', safe)
+        self.assertEqual(digest, hashlib.sha256(raw).hexdigest())
+        for body in (b'{"type":"error","msg":"HYPOTHETICAL_SECRET"}', b'not JSON HYPOTHETICAL_SECRET',
+                     dumps(self.delta(market_id='HYPOTHETICAL_SECRET')).encode(), b'x' * 1000001,
+                     dumps(self.delta(market_id='HYPOTHETICAL_SECRET')).replace('HYPOTHETICAL_SECRET',
+                         ''.join('\\u%04x' % ord(c) for c in 'HYPOTHETICAL_SECRET')).encode()):
+            safe, _, kind = ws_store.safe_frame(body, secrets=('HYPOTHETICAL_SECRET',))
+            self.assertEqual(kind, 'REDACTED'); self.assertNotIn(b'HYPOTHETICAL_SECRET', safe)
+
+    def test_interrupt_closes_generation_and_preserves_archived_frames(self):
+        with self.assertRaises(KeyboardInterrupt):
+            self.run_capture([self.ack(), self.snapshot(), KeyboardInterrupt()])
+        self.assertEqual(self.db.execute('SELECT end_reason FROM ws_connections').fetchone()[0], 'SIGNAL_STOP')
+        self.assertEqual(self.db.execute('SELECT COUNT(*) FROM ws_frames').fetchone()[0], 2)
+
+    def test_low_space_stops_before_network_and_duration_budget_validation(self):
+        with patch('predarb.kalshi_ws.shutil.disk_usage') as disk:
+            disk.return_value.free = 0
+            result = self.run_capture([])
+            self.assertEqual(result['connections'], 0); self.assertEqual(result['failures'], ['LOW_DISK_SPACE'])
+        for option in ({'seconds': 0}, {'max_messages': 0}, {'max_connections': 121}, {'min_free_bytes': 0}):
+            with self.assertRaises(ValueError): self.run_capture([], **option)
+
+    def test_clock_jump_during_receive_archives_but_rejects_frame(self):
+        clock = self.clock
+        def jumped(): return clock.now() + timedelta(seconds=10 if clock.elapsed else 0)
+        stats = self.run_capture([self.ack()], now=jumped, max_messages=1)
+        self.assertEqual(stats['failures'], ['INVALID_STREAM_FRAME'])
+        self.assertEqual(self.db.execute("SELECT COUNT(*) FROM raw_observations WHERE validation_status='REJECTED'").fetchone()[0], 1)
+
+    def test_migration_from_six_preserves_all_existing_rows(self):
+        self.metadata(self.db, self.source)
+        self.db.execute('DROP TABLE ws_frames'); self.db.execute('DROP TABLE ws_connections')
+        self.db.execute('PRAGMA user_version=6'); self.db.commit()
+        old = self.db.execute('SELECT * FROM raw_observations').fetchall()
+        with connect(self.path) as migrated:
+            self.assertEqual(migrated.execute('PRAGMA user_version').fetchone()[0], 7)
+            self.assertEqual(migrated.execute('SELECT * FROM raw_observations').fetchall(), old)
+            self.assertEqual(migrated.execute('SELECT COUNT(*) FROM ws_connections').fetchone()[0], 0)
+
+    def test_periodic_frame_budget_obtains_new_generation_snapshot(self):
+        with patch('predarb.ws_store.MAX_FRAMES', 3):
+            stats = self.run_capture([self.ack(), self.snapshot(), self.delta()],
+                                     [self.ack(), self.snapshot(1), self.delta(2)], max_messages=6)
+        self.assertEqual(stats['connections'], 2); self.assertEqual(stats['snapshots'], 2)
+        self.assertEqual(stats['failures'], [])
+        self.assertEqual(self.db.execute('SELECT end_reason FROM ws_connections ORDER BY id').fetchall(),
+                         [('PERIODIC_RESNAPSHOT',), ('BUDGET_COMPLETE',)])
+
+    def test_rejected_frame_persists_barrier_without_secret_echo(self):
+        stats = self.run_capture([self.ack(), self.snapshot(), self.delta(market_id='HYPOTHETICAL_SECRET_KEY')],
+                                 max_messages=3)
+        self.assertEqual(stats['failures'], ['INVALID_STREAM_FRAME'])
+        observed = _latest(self.db, 'kalshi', self.source, self.clock.now())
+        with self.assertRaises(ValueError): load_book(self.db, observed, now=self.clock.now())
+        rows = self.db.execute('SELECT raw_body,validation_error FROM raw_observations').fetchall()
+        self.assertNotIn('HYPOTHETICAL_SECRET_KEY', repr(rows))
+
+    def test_wall_clock_jump_after_processing_invalidates_connection(self):
+        base = self.clock.at
+        def jump(con, observed, at): self.clock.at += timedelta(seconds=10)
+        stats = self.run_capture([self.ack(), self.snapshot()], max_messages=2, on_book=jump)
+        self.assertEqual(stats['failures'], ['WALL_CLOCK_JUMP'])
+        observed = _latest(self.db, 'kalshi', self.source, self.clock.now())
+        self.assertFalse(inspect_book(self.db, observed, now=self.clock.now())['data_usable'])
+        self.clock.at = base
+
+    def test_metadata_refresh_archives_real_fixture_and_rejects_changed_identity(self):
+        from helpers import real_response, Replay, payload
+        from predarb.provider import HttpClient
+        market = payload('kalshi-market-live')['market']
+        client = HttpClient(self.db, 'kalshi', opener=Replay(real_response('kalshi-market-live')),
+                            utc_now=lambda: self.clock.now().isoformat())
+        run, detail = refresh_metadata(self.db, market['ticker'], client=client)
+        self.assertEqual(detail.data['market']['ticker'], market['ticker'])
+        self.assertEqual(self.db.execute('SELECT status FROM collection_runs WHERE id=?', (run,)).fetchone()[0], 'COMPLETE')
+        client = HttpClient(self.db, 'kalshi', opener=Replay(real_response('kalshi-market-live')))
+        with self.assertRaisesRegex(ValueError, 'identity mismatch'):
+            refresh_metadata(self.db, 'WRONG-TICKER', client=client)
+        self.assertEqual(self.db.execute('SELECT status FROM collection_runs ORDER BY id DESC LIMIT 1').fetchone()[0], 'FAILED')
+
+    def test_cli_existing_live_research_session_callback_and_hypothetical_refusal(self):
+        from predarb import ws_cli
+        from predarb.research import start_session
+        from contextlib import redirect_stdout
+        from io import StringIO
+        config = {'max_contracts': '1', 'kalshi_budget': '0', 'polymarket_us_budget': '0',
+                  'reserve_per_leg': '.01', 'min_profit': '.01'}
+        session_id = start_session(self.db, config, now=self.clock.now(), interval_seconds=1)
+        args = SimpleNamespace(db=self.path, ticker=self.source, credentials_file='HYPOTHETICAL',
+                               seconds=1, max_messages=3, max_connections=1, min_free_mb=1024,
+                               research_session=session_id)
+        def fake_capture(con, source, credentials, **options):
+            options['on_book'](con, 0, self.clock.now())
+            return {'status': 'INCOMPLETE', 'hypothetical_test': True}
+        with patch.object(ws_cli.Credentials, 'load', return_value=FakeCredentials()), \
+                patch.object(ws_cli, 'capture', side_effect=fake_capture), redirect_stdout(StringIO()):
+            self.assertEqual(ws_cli.run(args), 2)
+        self.assertEqual(self.db.execute('SELECT COUNT(*) FROM research_cycles').fetchone()[0], 1)
+        with patch.object(ws_cli.Credentials, 'load', return_value=FakeCredentials()), \
+                patch('predarb.research.session', return_value={'mode': 'HYPOTHETICAL_REPLAY'}):
+            with self.assertRaisesRegex(ValueError, 'hypothetical'): ws_cli.run(args)

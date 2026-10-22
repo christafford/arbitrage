@@ -292,13 +292,15 @@ class DiscoveryTests(unittest.TestCase):
         self.assertEqual(self.db.execute('SELECT COUNT(*) FROM discovery_queue').fetchone()[0], 1)
 
     def test_schema_five_migration_preserves_registry(self):
+        self.db.execute('DROP TABLE ws_frames')
+        self.db.execute('DROP TABLE ws_connections')
         self.db.execute('DROP TABLE discovery_queue')
         self.db.execute('DROP TABLE discovery_state')
         self.db.execute('DROP INDEX discovery_books_source')
         self.db.execute('PRAGMA user_version=5')
         self.db.commit()
         with connect(self.path) as migrated:
-            self.assertEqual(migrated.execute('PRAGMA user_version').fetchone()[0], 6)
+            self.assertEqual(migrated.execute('PRAGMA user_version').fetchone()[0], 7)
             self.assertEqual(migrated.execute('SELECT COUNT(*) FROM registry_instruments').fetchone()[0], 2)
             self.assertEqual(migrated.execute('SELECT COUNT(*) FROM discovery_queue').fetchone()[0], 0)
 

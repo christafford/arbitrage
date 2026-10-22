@@ -205,3 +205,30 @@ The live discovery review exposed core-goods CPI versus core CPI suggestions.
 list the narrower goods component separately from the broader index excluding
 food and energy. Explicit metric and monthly/annual labels now trigger retrieval
 warnings and penalties when they conflict; no legal equivalence is inferred.
+
+## M5A Workstream B verification — 2026-10-22 UTC
+
+Rechecked [WebSocket quickstart](https://docs.kalshi.com/getting_started/quick_start_websockets),
+[API keys](https://docs.kalshi.com/getting_started/api_keys),
+[connection/acknowledgment](https://docs.kalshi.com/websockets/websocket-connection),
+[orderbook updates](https://docs.kalshi.com/websockets/orderbook-updates), and
+[keepalive](https://docs.kalshi.com/websockets/connection-keep-alive).
+The [retrieval manifest](evidence/M5A_API_CHECKS.json) preserves document hashes
+and UTC times. The fixed production endpoint is
+`wss://external-api-ws.kalshi.com/trade-api/ws/v2`. Sign timestamp + GET +
+`/trade-api/ws/v2` using Ed25519 or RSA-PSS/SHA-256 with digest-length salt.
+Only the authenticated orderbook subscription is used. No account/order API is called.
+
+The adapter consumes the already documented fixed-point snapshot/delta fields,
+subscription `seq`, market `clock` and envelope `sending_ts_ms`. Source time
+means provider network send time, never mutation or local receipt time. The
+optional `client_order_id` is account enrichment and is removed before archival;
+redactions are labeled. Unknown/private frames fail closed.
+
+The optional transport is pinned to websockets 17.3 and cryptography 50.0.2.
+The [synchronous client documentation](https://websockets.readthedocs.io/en/stable/reference/sync/client.html)
+and installed 17.3 redirect implementation were inspected. Redirects are
+explicitly refused because generic header stripping does not cover Kalshi
+authentication headers. TLS verification stays enabled and proxies are disabled.
+No live handshake was attempted without credentials. Prior data-use restrictions
+still apply; these source checks do not grant permissions or prove live continuity.
