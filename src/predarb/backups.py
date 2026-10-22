@@ -3,12 +3,13 @@ from contextlib import closing
 from datetime import datetime, timezone
 from hashlib import sha256
 import os
+import re
 from pathlib import Path
 import sqlite3
 import time
 from shutil import disk_usage
 
-from .validation import dumps, load_json, object_value, text_field, utc_time
+from .validation import dumps, field, load_json, object_value, text_field, utc_time
 
 
 def readonly(path):
@@ -96,13 +97,29 @@ def backup(source, destination, *, timeout_seconds=60):
         if partial.exists(): partial.unlink()
 
 
-def verify(path):
-    path = Path(path).resolve(strict=True)
-    with Path(str(path) + '.manifest.json').open('rb') as source: raw = source.read(2000001)
+def read_manifest(path):
+    """Bounded structural validation only; this does not verify snapshot contents."""
+    with Path(path).open('rb') as source: raw = source.read(2000001)
     if len(raw) > 2000000: raise ValueError('backup manifest exceeds size limit')
     manifest = object_value(load_json(raw))
     utc_time(text_field(manifest, 'created_at'))
-    if text_field(manifest, 'format') != 'predarb-backup/m5-v1' or file_hash(path) != text_field(manifest, 'file_sha256'):
+    if text_field(manifest, 'format') != 'predarb-backup/m5-v1':
+        raise ValueError('unsupported backup manifest format')
+    if not 1 <= field(manifest, 'schema_version', int) <= 5:
+        raise ValueError('unsupported backup manifest schema')
+    for key in ('file_sha256', 'logical_sha256'):
+        if not re.fullmatch('[0-9a-f]{64}', text_field(manifest, key)):
+            raise ValueError('invalid backup manifest ' + key)
+    counts = field(manifest, 'row_counts', dict)
+    if not counts or any(not name or type(count) is not int or count < 0 for name, count in counts.items()):
+        raise ValueError('invalid backup manifest row counts')
+    return manifest
+
+
+def verify(path):
+    path = Path(path).resolve(strict=True)
+    manifest = read_manifest(str(path) + '.manifest.json')
+    if file_hash(path) != manifest['file_sha256']:
         raise ValueError('backup file/manifest hash mismatch')
     with closing(readonly(path)) as con:
         actual = fingerprint(con)

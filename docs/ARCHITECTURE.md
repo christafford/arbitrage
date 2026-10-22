@@ -199,8 +199,12 @@ preserves raw evidence and audit attempts.
 CLI writers share a process lock. Reader-only diagnostics, paper reports,
 research summaries/CSV and backups use SQLite read-only connections without
 migrations, and can run while the monitor holds the writer lock. Health gates
-check NTP synchronization state, wall/monotonic divergence, space, database/WAL
-size and integrity. No public server or external alert delivery was added.
+check NTP synchronization state, wall/monotonic divergence before and after work,
+space, database/WAL size and integrity. Separate latest-cycle diagnostics expose
+empty registries and data gates without confusing zero profitable edges with
+missing economic observations. Backup age checks bound manifest reads and require
+nonempty snapshot files; full content verification remains a separate command.
+No public server or external alert delivery was added.
 
 Verified online backups include exact BLOBs, user-table counts, schema/index/trigger
 fingerprints and file hashes, and restore only into new paths. Local restore and

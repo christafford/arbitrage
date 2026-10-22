@@ -10,14 +10,15 @@ import tempfile
 import unittest
 from unittest.mock import patch
 
-from predarb.backups import backup, fingerprint, readonly, restore, verify
+from predarb.backups import backup, fingerprint, read_manifest, readonly, restore, verify
 from predarb import cli
-from predarb.operations import clock_sync, health, metrics_text, run_cycles
-from predarb.research import start_session
+from predarb.operations import backup_alerts, clock_sync, health, metrics_text, run_cycles
+from predarb.research import scan_once, start_session
 from predarb.runtime import writer_lock
 from predarb.store import connect
-from predarb.validation import dumps, load_json
-from helpers import drop_m5_tables
+from predarb.validation import dumps, load_json, utc_time
+from helpers import drop_m5_tables, fixture
+from m5_helpers import seed
 
 SYNC={'synchronized':True,'probe':'HYPOTHETICAL_TEST','offset_measured':False}
 POLICY={'max_contracts':'100','kalshi_budget':'0','polymarket_us_budget':'0','reserve_per_leg':'.005','min_profit':'.01'}
@@ -81,7 +82,7 @@ class OperationTests(unittest.TestCase):
     def test_runner_stops_before_scan_on_health_failure_and_clock_step(self):
         with patch('predarb.operations.clock_sync',return_value=dict(SYNC,synchronized=False)),patch('predarb.operations.scan_once',side_effect=AssertionError('must not scan')),redirect_stdout(StringIO()):
             self.assertEqual(run_cycles(self.config),2)
-        with patch('predarb.operations.clock',side_effect=[self.now,self.now,self.now+timedelta(seconds=10)]),patch('predarb.operations.time.monotonic',return_value=0):
+        with patch('predarb.operations.clock',side_effect=[self.now,self.now,self.now,self.now+timedelta(seconds=10)]),patch('predarb.operations.time.monotonic',return_value=0):
             self.assertEqual(run_cycles(self.config),2)
         self.assertEqual(self.con.execute("SELECT COUNT(*) FROM ops_events WHERE action='WALL_CLOCK_JUMP'").fetchone()[0],1)
 
@@ -95,7 +96,9 @@ class OperationTests(unittest.TestCase):
 
     def test_heartbeat_and_backup_age_warnings_are_not_claimed_verified_backup(self):
         destination=self.root/'backups';destination.mkdir()
-        (destination/'old.manifest.json').write_text(dumps({'created_at':(self.now-timedelta(days=2)).isoformat()}))
+        manifest=dict(fixture('m5-operations-hypothetical')['manifest'],created_at=(self.now-timedelta(days=2)).isoformat())
+        (destination/'old.manifest.json').write_text(dumps(manifest))
+        (destination/'old').write_bytes(b'HYPOTHETICAL snapshot existence only; not verified contents')
         with patch('predarb.operations.clock_sync',return_value=SYNC):
             result=health(self.con,self.session,now=self.now,backup_dir=destination)
         self.assertIn('BACKUP_STALE_OR_FUTURE',[row['code'] for row in result['alerts']])
@@ -103,6 +106,103 @@ class OperationTests(unittest.TestCase):
         with patch('predarb.operations.clock_sync',return_value=SYNC):
             result=health(self.con,self.session,now=self.now,backup_dir=destination)
         self.assertIn('BACKUP_MANIFEST_UNREADABLE',[row['code'] for row in result['alerts']])
+
+    def test_empty_cycles_warn_even_with_a_healthy_heartbeat(self):
+        scan_once(self.con,self.session,now=self.now)
+        with patch('predarb.operations.clock_sync',return_value=SYNC):
+            result=health(self.con,self.session,now=self.now)
+        self.assertTrue(result['ready'])
+        self.assertEqual(result['research']['status'],'NO_PAIRS')
+        self.assertIn('NO_RESEARCH_PAIRS',[a['code'] for a in result['alerts']])
+        self.assertEqual(result['metrics']['research_latest_economics_evaluated'],0)
+
+    def test_economic_coverage_distinguishes_no_edge_from_blocked_stale_and_other_sessions(self):
+        case,now,pair,sid,evaluation=seed(self.con,self.root)
+        with patch('predarb.operations.clock_sync',return_value=SYNC):
+            result=health(self.con,sid,now=now,record=False)
+            self.assertEqual(result['research']['status'],'RECENT_ECONOMICS')
+            self.assertEqual(result['metrics']['research_latest_modeled_edges'],1)
+            # Zero-budget economics still evaluates usable quotes, with no edge.
+            zero=start_session(self.con,POLICY,now=now,hypothetical=True)
+            replay=self.con.execute('SELECT id FROM research_replays').fetchone()[0]
+            scan_once(self.con,zero,now=now,replay_id=replay)
+            result=health(self.con,zero,now=now,record=False)
+            self.assertEqual(result['research']['status'],'RECENT_ECONOMICS')
+            self.assertEqual(result['metrics']['research_latest_rejected'],1)
+            self.assertEqual(result['metrics']['research_latest_economics_evaluated'],1)
+            self.assertNotIn('NO_RECENT_ECONOMIC_OBSERVATIONS',[a['code'] for a in result['alerts']])
+            # A later replay with stale books is a different kind of rejection.
+            later=now+timedelta(seconds=90)
+            scan_once(self.con,zero,now=later,replay_id=replay)
+            result=health(self.con,zero,now=later,record=False)
+            self.assertEqual(result['research']['status'],'DATA_GATED')
+            self.assertIn('NO_RECENT_ECONOMIC_OBSERVATIONS',[a['code'] for a in result['alerts']])
+            result=health(self.con,zero,now=later+timedelta(seconds=121),record=False)
+            self.assertEqual(result['research']['status'],'STALE')
+            result=health(self.con,zero,now=now,record=False)
+            self.assertEqual(result['research']['status'],'FUTURE')
+            self.assertFalse(result['ready'])
+            # Another session's observations must not hide this empty session.
+            result=health(self.con,self.session,now=self.now,record=False)
+            self.assertEqual(result['research']['status'],'NO_CYCLES')
+        self.assertEqual(self.con.execute('SELECT COUNT(*) FROM ops_checks').fetchone()[0],0)
+
+    def test_runner_warns_when_refresh_is_disabled(self):
+        with patch('predarb.operations.clock_sync',return_value=SYNC),redirect_stdout(StringIO()) as output:
+            self.assertEqual(run_cycles(self.config),0)
+        self.assertIn('RUN_REFRESH_DISABLED',output.getvalue())
+        self.assertEqual(self.con.execute("SELECT COUNT(*) FROM ops_events WHERE action='RUN_REFRESH_DISABLED'").fetchone()[0],1)
+
+    def test_final_shadow_phase_clock_divergence_is_detected(self):
+        config=dict(self.config,shadow_policy={'max_hedge_latency_ms':1000,'cancel_after_ms':1000,
+                    'cancel_ack_delay_ms':250,'participation':'1','max_price_drift':'.02'})
+        with patch('predarb.operations.clock',return_value=self.now),patch('predarb.operations.time.monotonic',side_effect=[0,0,0,10]),patch('predarb.operations.clock_sync',return_value=SYNC),redirect_stdout(StringIO()):
+            self.assertEqual(run_cycles(config),2)
+        detail=load_json(self.con.execute("SELECT detail_json FROM ops_events WHERE action='WALL_CLOCK_JUMP'").fetchone()[0])
+        self.assertEqual(detail['phase'],'AFTER_SHADOW')
+        self.assertTrue(detail['cycle_evidence_requires_review'])
+
+    def test_missing_invalid_and_incomplete_cycle_summary_fails_closed(self):
+        for index,summary in enumerate(({}, {'pairs_observed':True}, {'pairs_observed':51}, {'pairs_observed':1})):
+            with self.subTest(summary=summary):
+                stamp=(self.now+timedelta(seconds=index)).isoformat()
+                self.con.execute('''INSERT INTO research_cycles(session_id,evaluated_at,recorded_at,status,summary_json)
+                    VALUES(?,?,?,'COMPLETE',?)''',(self.session,stamp,stamp,dumps(summary)))
+                self.con.commit()
+                with patch('predarb.operations.clock_sync',return_value=SYNC),self.assertRaises(ValueError):
+                    health(self.con,self.session,now=self.now,record=False)
+
+    def test_clock_jump_during_final_scan_stops_before_shadow_and_retains_cycle(self):
+        for jump in fixture('m5-operations-hypothetical')['clock_jumps_seconds']:
+            with self.subTest(jump=jump):
+                current=[self.now]
+                def scanning(con,sid,**kwargs):
+                    result=scan_once(con,sid,now=current[0])
+                    current[0]+=timedelta(seconds=jump)
+                    return result
+                config=dict(self.config,shadow_policy={'max_hedge_latency_ms':1000,'cancel_after_ms':1000,
+                            'cancel_ack_delay_ms':250,'participation':'1','max_price_drift':'.02'})
+                before=self.con.execute('SELECT COUNT(*) FROM research_cycles').fetchone()[0]
+                with patch('predarb.operations.clock',side_effect=lambda:current[0]),patch('predarb.operations.time.monotonic',return_value=0),patch('predarb.operations.clock_sync',return_value=SYNC),patch('predarb.operations.scan_once',side_effect=scanning),patch('predarb.operations.create_intent',side_effect=AssertionError('must not create intent')),patch('predarb.operations.compare',side_effect=AssertionError('must not compare')),redirect_stdout(StringIO()) as output:
+                    self.assertEqual(run_cycles(config),2)
+                self.assertIn('WALL_CLOCK_JUMP',output.getvalue())
+                detail=load_json(self.con.execute("SELECT detail_json FROM ops_events WHERE action='WALL_CLOCK_JUMP' ORDER BY id DESC LIMIT 1").fetchone()[0])
+                self.assertEqual(detail['phase'],'AFTER_SCAN')
+                self.assertTrue(detail['cycle_evidence_requires_review'])
+                self.assertIsInstance(detail['cycle_id'],int)
+                self.assertEqual(self.con.execute('SELECT COUNT(*) FROM research_cycles').fetchone()[0],before+1)
+                self.assertEqual(self.con.execute("SELECT COUNT(*) FROM ops_events WHERE action='RUN_FINISHED'").fetchone()[0],0)
+                self.now+=timedelta(seconds=1)
+
+    def test_slow_scan_without_clock_jump_completes(self):
+        current=[self.now];elapsed=[0]
+        def scanning(con,sid,**kwargs):
+            result=scan_once(con,sid,now=current[0])
+            current[0]+=timedelta(seconds=20);elapsed[0]+=20
+            return result
+        with patch('predarb.operations.clock',side_effect=lambda:current[0]),patch('predarb.operations.time.monotonic',side_effect=lambda:elapsed[0]),patch('predarb.operations.clock_sync',return_value=SYNC),patch('predarb.operations.scan_once',side_effect=scanning),redirect_stdout(StringIO()):
+            self.assertEqual(run_cycles(self.config),0)
+        self.assertEqual(self.con.execute("SELECT COUNT(*) FROM ops_events WHERE action='WALL_CLOCK_JUMP'").fetchone()[0],0)
 
     def test_schema_four_migration_preserves_session_and_adds_no_fake_observations(self):
         drop_m5_tables(self.con);self.con.execute('PRAGMA user_version=4');self.con.commit();self.con.close()
@@ -179,3 +279,59 @@ class BackupTests(unittest.TestCase):
         for value in (None,[],{}):
             Path(str(target)+'.manifest.json').write_text(dumps(value))
             with self.assertRaises(ValueError):verify(target)
+
+
+class BackupMonitorTests(unittest.TestCase):
+    """Synthetic files test age/existence monitoring, never full backup validity."""
+    def setUp(self):
+        self.temp=tempfile.TemporaryDirectory();self.addCleanup(self.temp.cleanup)
+        self.root=Path(self.temp.name)
+        self.case=fixture('m5-operations-hypothetical')
+        self.now=utc_time(self.case['clock'])
+
+    def write_snapshot(self,name,age=timedelta()):
+        path=self.root/name
+        path.write_bytes(b'HYPOTHETICAL snapshot; not a verified SQLite database')
+        manifest=Path(str(path)+'.manifest.json')
+        manifest.write_text(dumps(dict(self.case['manifest'],created_at=(self.now-age).isoformat())))
+        return path,manifest
+
+    def test_valid_metadata_and_daily_jitter_do_not_claim_content_verification(self):
+        self.write_snapshot('recent.sqlite3',timedelta(hours=24,minutes=10))
+        self.assertEqual(backup_alerts(self.root,self.now),[])
+        self.assertEqual(backup_alerts(self.root,self.now+timedelta(hours=2)),['BACKUP_STALE_OR_FUTURE'])
+
+    def test_orphan_and_empty_snapshot_cannot_hide_stale_backup(self):
+        self.write_snapshot('old.sqlite3',timedelta(days=2))
+        path,_=self.write_snapshot('orphan.sqlite3');path.unlink()
+        path,_=self.write_snapshot('empty.sqlite3');path.write_bytes(b'')
+        self.assertEqual(backup_alerts(self.root,self.now),['BACKUP_SNAPSHOT_MISSING','BACKUP_STALE_OR_FUTURE'])
+
+    def test_missing_future_or_unreadable_backups_do_not_suppress_other_faults(self):
+        self.assertEqual(backup_alerts(None,self.now),['BACKUP_NOT_OBSERVED'])
+        self.assertEqual(backup_alerts(self.root/'missing',self.now),['BACKUP_NOT_OBSERVED'])
+        self.write_snapshot('future.sqlite3',timedelta(seconds=-1))
+        (self.root/'bad.manifest.json').write_text('HYPOTHETICAL malformed JSON')
+        self.assertEqual(backup_alerts(self.root,self.now),
+                         ['BACKUP_MANIFEST_UNREADABLE','BACKUP_NOT_OBSERVED','BACKUP_STALE_OR_FUTURE'])
+        self.write_snapshot('old.sqlite3',timedelta(days=2))
+        self.assertEqual(backup_alerts(self.root,self.now),['BACKUP_MANIFEST_UNREADABLE','BACKUP_STALE_OR_FUTURE'])
+        with patch('predarb.operations.read_manifest',side_effect=PermissionError('HYPOTHETICAL denied')):
+            self.assertIn('BACKUP_MANIFEST_UNREADABLE',backup_alerts(self.root,self.now))
+
+    def test_manifest_missing_fields_invalid_types_hashes_and_oversize_fail_closed(self):
+        _,path=self.write_snapshot('test.sqlite3')
+        cases=[{},None,[]]
+        for key in self.case['manifest']:
+            missing=dict(self.case['manifest']);missing.pop(key);cases.append(missing)
+        for key,value in [('format','unknown'),('created_at','bad'),('schema_version',True),
+                          ('schema_version',6),('file_sha256','bad'),('logical_sha256','bad'),
+                          ('row_counts',{}),('row_counts',{'t':True}),('row_counts',{'t':-1})]:
+            cases.append(dict(self.case['manifest'],**{key:value}))
+        for value in cases:
+            with self.subTest(value=value):
+                path.write_text(dumps(value))
+                with self.assertRaises(ValueError):read_manifest(path)
+                self.assertIn('BACKUP_MANIFEST_UNREADABLE',backup_alerts(self.root,self.now))
+        path.write_bytes(b' '*2000001)
+        with self.assertRaisesRegex(ValueError,'size limit'):read_manifest(path)

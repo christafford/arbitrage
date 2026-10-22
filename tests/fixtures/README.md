@@ -47,6 +47,12 @@ observed executions or measured fill probabilities. The generated SQLite paper
 tables preserve input hashes and independent case results; see
 [M5 results](../../docs/M5_RESULTS.md).
 
+`m5-operations-hypothetical.json` contains **HYPOTHETICAL** backup metadata and
+clock faults with a 2030 test clock. Hashes are synthetic placeholders and its
+snapshot stand-ins are deliberately not valid SQLite backups. It tests structural
+and age monitoring, separately from real SQLite backup/restore tests. No venue API
+schema or retrieved host evidence is represented by this fixture.
+
 Offline tests validate unchanged captures and replay their request sequences.
 Altered failure/overlap/empty-book scenarios are explicitly labeled
 **HYPOTHETICAL** in tests and are never written over these captures. Acceptance

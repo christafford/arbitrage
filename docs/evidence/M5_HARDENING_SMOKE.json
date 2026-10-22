@@ -1,0 +1,226 @@
+{
+  "recorded_at": "2026-10-22T02:34:24.581947+00:00",
+  "scope": "Local temporary zero-budget databases; synthetic demo; no venue requests or service activation",
+  "commands": [
+    {
+      "command": [
+        "/home/chris/code/arbitrage/.venv/bin/python",
+        "scripts/m5_demo.py",
+        "--output",
+        "/tmp/predarb-m5-hardening-f_ox9fwr/hypothetical-demo"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"actual_fills_verified\":false,\"cases\":[{\"result\":{\"assumptions\":[\"HYPOTHETICAL_FILLS_FROM_LATER_QUOTES\",\"INDEPENDENT_COMPARISON_NOT_A_POSITION\",\"PARTICIPATION_AND_CANCEL_ACK_ARE_ASSUMED\",\"NO_UNOBSERVED_PRIOR_FILLS_ASSUMED\",\"NO_RESCUE_TRADE_OR_REBALANCING\"],\"best_net_bound\":\"16.5400\",\"cancel_ack_assumed_ms\":1250,\"cancel_request_ms\":1000,\"capital_bound\":\"183.4600\",\"comparison_id\":1,\"downside_bound\":\"0\",\"empirical_fill_probability_estimated\":false,\"flags\":[],\"hedge_latency_ms\":\"100.0\",\"legs\":[{\"arrival_ms\":\"100.0\",\"declared_partition_fee\":\"3.360000\",\"fee_bound_including_settlement\":\"4.0000\",\"filled\":\"200\",\"levels\":[{\"price\":\"0.4000\",\"quantity\":\"200\"}],\"price_cap_threshold\":\"0.4200\",\"price_change\":\"0.0000\",\"quote_cost\":\"80.0000\",\"reason\":\"ASSUMED_VISIBLE_DEPTH_PARTICIPATION\",\"side\":\"YES\",\"unfilled\":\"0\",\"venue\":\"kalshi\"},{\"arrival_ms\":\"200.0\",\"declared_partition_fee\":\"3.46\",\"fee_bound_including_settlement\":\"3.46\",\"filled\":\"200\",\"levels\":[{\"price\":\"0.47\",\"quantity\":\"200\"}],\"price_cap_threshold\":\"0.49\",\"price_change\":\"0.00\",\"quote_cost\":\"94.00\",\"reason\":\"ASSUMED_VISIBLE_DEPTH_PARTICIPATION\",\"side\":\"YES\",\"unfilled\":\"0\",\"venue\":\"polymarket_us\"}],\"reserve\":\"2.000\",\"severity\":\"INFO\",\"status\":\"STRESS_MODELED\",\"trading_authorized\":false,\"unhedged_contracts\":\"0\",\"unobserved_pre_sample_fills_possible\":true,\"verification\":\"UNVERIFIED\",\"version\":\"paper-stress/m5-v1\",\"worst_net_bound\":\"16.5400\",\"worst_reviewed_payout\":\"200\"},\"scenario\":\"HYPOTHETICAL matched full fills\"},{\"result\":{\"assumptions\":[\"HYPOTHETICAL_FILLS_FROM_LATER_QUOTES\",\"INDEPENDENT_COMPARISON_NOT_A_POSITION\",\"PARTICIPATION_AND_CANCEL_ACK_ARE_ASSUMED\",\"NO_UNOBSERVED_PRIOR_FILLS_ASSUMED\",\"NO_RESCUE_TRADE_OR_REBALANCING\"],\"best_net_bound\":\"115.0000\",\"cancel_ack_assumed_ms\":1250,\"cancel_request_ms\":1000,\"capital_bound\":\"85.0000\",\"comparison_id\":2,\"downside_bound\":\"85.0000\",\"empirical_fill_probability_estimated\":false,\"flags\":[\"PARTIAL_OR_NO_FILL\",\"UNHEDGED_PAPER_EXPOSURE\"],\"hedge_latency_ms\":null,\"legs\":[{\"arrival_ms\":\"100.0\",\"declared_partition_fee\":\"3.360000\",\"fee_bound_including_settlement\":\"4.0000\",\"filled\":\"200\",\"levels\":[{\"price\":\"0.4000\",\"quantity\":\"200\"}],\"price_cap_threshold\":\"0.4200\",\"price_change\":\"0.0000\",\"quote_cost\":\"80.0000\",\"reason\":\"ASSUMED_VISIBLE_DEPTH_PARTICIPATION\",\"side\":\"YES\",\"unfilled\":\"0\",\"venue\":\"kalshi\"},{\"arrival_ms\":\"200.0\",\"declared_partition_fee\":\"0\",\"fee_bound_including_settlement\":\"0\",\"filled\":\"0\",\"levels\":[],\"price_cap_threshold\":\"0.49\",\"price_change\":\"0.00\",\"quote_cost\":\"0\",\"reason\":\"HYPOTHETICAL_API_OUTAGE\",\"side\":\"YES\",\"unfilled\":\"200\",\"venue\":\"polymarket_us\"}],\"reserve\":\"1.000\",\"severity\":\"HIGH\",\"status\":\"STRESS_MODELED\",\"trading_authorized\":false,\"unhedged_contracts\":\"200\",\"unobserved_pre_sample_fills_possible\":true,\"verification\":\"UNVERIFIED\",\"version\":\"paper-stress/m5-v1\",\"worst_net_bound\":\"-85.0000\",\"worst_reviewed_payout\":\"0\"},\"scenario\":\"HYPOTHETICAL one-leg API outage\"},{\"result\":{\"assumptions\":[\"HYPOTHETICAL_FILLS_FROM_LATER_QUOTES\",\"INDEPENDENT_COMPARISON_NOT_A_POSITION\",\"PARTICIPATION_AND_CANCEL_ACK_ARE_ASSUMED\",\"NO_UNOBSERVED_PRIOR_FILLS_ASSUMED\",\"NO_RESCUE_TRADE_OR_REBALANCING\"],\"best_net_bound\":\"95.3100\",\"cancel_ack_assumed_ms\":1250,\"cancel_request_ms\":1000,\"capital_bound\":\"104.6900\",\"comparison_id\":3,\"downside_bound\":\"64.6900\",\"empirical_fill_probability_estimated\":false,\"flags\":[\"PARTIAL_OR_NO_FILL\",\"UNHEDGED_PAPER_EXPOSURE\"],\"hedge_latency_ms\":\"100.0\",\"legs\":[{\"arrival_ms\":\"100.0\",\"declared_partition_fee\":\"3.360000\",\"fee_bound_including_settlement\":\"4.0000\",\"filled\":\"200\",\"levels\":[{\"price\":\"0.4000\",\"quantity\":\"200\"}],\"price_cap_threshold\":\"0.4200\",\"price_change\":\"0.0000\",\"quote_cost\":\"80.0000\",\"reason\":\"ASSUMED_VISIBLE_DEPTH_PARTICIPATION\",\"side\":\"YES\",\"unfilled\":\"0\",\"venue\":\"kalshi\"},{\"arrival_ms\":\"200.0\",\"declared_partition_fee\":\"0.69\",\"fee_bound_including_settlement\":\"0.69\",\"filled\":\"40\",\"levels\":[{\"price\":\"0.47\",\"quantity\":\"40\"}],\"price_cap_threshold\":\"0.49\",\"price_change\":\"0.00\",\"quote_cost\":\"18.80\",\"reason\":\"ASSUMED_VISIBLE_DEPTH_PARTICIPATION\",\"side\":\"YES\",\"unfilled\":\"160\",\"venue\":\"polymarket_us\"}],\"reserve\":\"1.200\",\"severity\":\"HIGH\",\"status\":\"STRESS_MODELED\",\"trading_authorized\":false,\"unhedged_contracts\":\"160\",\"unobserved_pre_sample_fills_possible\":true,\"verification\":\"UNVERIFIED\",\"version\":\"paper-stress/m5-v1\",\"worst_net_bound\":\"-64.6900\",\"worst_reviewed_payout\":\"40\"},\"scenario\":\"HYPOTHETICAL unequal partial fills\"},{\"result\":{\"assumptions\":[\"HYPOTHETICAL_FILLS_FROM_LATER_QUOTES\",\"INDEPENDENT_COMPARISON_NOT_A_POSITION\",\"PARTICIPATION_AND_CANCEL_ACK_ARE_ASSUMED\",\"NO_UNOBSERVED_PRIOR_FILLS_ASSUMED\",\"NO_RESCUE_TRADE_OR_REBALANCING\"],\"best_net_bound\":\"115.0000\",\"cancel_ack_assumed_ms\":1250,\"cancel_request_ms\":1000,\"capital_bound\":\"85.0000\",\"comparison_id\":4,\"downside_bound\":\"85.0000\",\"empirical_fill_probability_estimated\":false,\"flags\":[\"PARTIAL_OR_NO_FILL\",\"UNHEDGED_PAPER_EXPOSURE\"],\"hedge_latency_ms\":null,\"legs\":[{\"arrival_ms\":\"100.0\",\"declared_partition_fee\":\"3.360000\",\"fee_bound_including_settlement\":\"4.0000\",\"filled\":\"200\",\"levels\":[{\"price\":\"0.4000\",\"quantity\":\"200\"}],\"price_cap_threshold\":\"0.4200\",\"price_change\":\"0.0000\",\"quote_cost\":\"80.0000\",\"reason\":\"ASSUMED_VISIBLE_DEPTH_PARTICIPATION\",\"side\":\"YES\",\"unfilled\":\"0\",\"venue\":\"kalshi\"},{\"arrival_ms\":\"200.0\",\"declared_partition_fee\":\"0\",\"fee_bound_including_settlement\":\"0\",\"filled\":\"0\",\"levels\":[],\"price_cap_threshold\":\"0.49\",\"price_change\":\"0.08\",\"quote_cost\":\"0\",\"reason\":\"PRICE_CAP_OR_PARTICIPATION_PREVENTS_FILL\",\"side\":\"YES\",\"unfilled\":\"200\",\"venue\":\"polymarket_us\"}],\"reserve\":\"1.000\",\"severity\":\"HIGH\",\"status\":\"STRESS_MODELED\",\"trading_authorized\":false,\"unhedged_contracts\":\"200\",\"unobserved_pre_sample_fills_possible\":true,\"verification\":\"UNVERIFIED\",\"version\":\"paper-stress/m5-v1\",\"worst_net_bound\":\"-85.0000\",\"worst_reviewed_payout\":\"0\"},\"scenario\":\"HYPOTHETICAL adverse selection\"},{\"result\":{\"assumptions\":[\"HYPOTHETICAL_FILLS_FROM_LATER_QUOTES\",\"INDEPENDENT_COMPARISON_NOT_A_POSITION\",\"PARTICIPATION_AND_CANCEL_ACK_ARE_ASSUMED\",\"NO_UNOBSERVED_PRIOR_FILLS_ASSUMED\",\"NO_RESCUE_TRADE_OR_REBALANCING\"],\"best_net_bound\":\"115.0000\",\"cancel_ack_assumed_ms\":1250,\"cancel_request_ms\":1000,\"capital_bound\":\"85.0000\",\"comparison_id\":5,\"downside_bound\":\"85.0000\",\"empirical_fill_probability_estimated\":false,\"flags\":[\"PARTIAL_OR_NO_FILL\",\"UNHEDGED_PAPER_EXPOSURE\"],\"hedge_latency_ms\":null,\"legs\":[{\"arrival_ms\":\"100.0\",\"declared_partition_fee\":\"3.360000\",\"fee_bound_including_settlement\":\"4.0000\",\"filled\":\"200\",\"levels\":[{\"price\":\"0.4000\",\"quantity\":\"200\"}],\"price_cap_threshold\":\"0.4200\",\"price_change\":\"0.0000\",\"quote_cost\":\"80.0000\",\"reason\":\"ASSUMED_VISIBLE_DEPTH_PARTICIPATION\",\"side\":\"YES\",\"unfilled\":\"0\",\"venue\":\"kalshi\"},{\"arrival_ms\":\"1500.0\",\"declared_partition_fee\":\"0\",\"fee_bound_including_settlement\":\"0\",\"filled\":\"0\",\"levels\":[],\"price_cap_threshold\":\"0.49\",\"price_change\":\"0.00\",\"quote_cost\":\"0\",\"reason\":\"CANCEL_ACK_ASSUMED_BEFORE_SAMPLE\",\"side\":\"YES\",\"unfilled\":\"200\",\"venue\":\"polymarket_us\"}],\"reserve\":\"1.000\",\"severity\":\"HIGH\",\"status\":\"STRESS_MODELED\",\"trading_authorized\":false,\"unhedged_contracts\":\"200\",\"unobserved_pre_sample_fills_possible\":true,\"verification\":\"UNVERIFIED\",\"version\":\"paper-stress/m5-v1\",\"worst_net_bound\":\"-85.0000\",\"worst_reviewed_payout\":\"0\"},\"scenario\":\"HYPOTHETICAL missed hedge deadline\"},{\"result\":{\"assumptions\":[\"HYPOTHETICAL_FILLS_FROM_LATER_QUOTES\",\"INDEPENDENT_COMPARISON_NOT_A_POSITION\",\"PARTICIPATION_AND_CANCEL_ACK_ARE_ASSUMED\",\"NO_UNOBSERVED_PRIOR_FILLS_ASSUMED\",\"NO_RESCUE_TRADE_OR_REBALANCING\"],\"best_net_bound\":\"16.5400\",\"cancel_ack_assumed_ms\":1250,\"cancel_request_ms\":1000,\"capital_bound\":\"183.4600\",\"comparison_id\":6,\"downside_bound\":\"0\",\"empirical_fill_probability_estimated\":false,\"flags\":[\"MAX_HEDGE_LATENCY_EXCEEDED\",\"POSSIBLE_FILL_DURING_CANCEL_ACK_WINDOW\"],\"hedge_latency_ms\":\"1100.0\",\"legs\":[{\"arrival_ms\":\"100.0\",\"declared_partition_fee\":\"3.360000\",\"fee_bound_including_settlement\":\"4.0000\",\"filled\":\"200\",\"levels\":[{\"price\":\"0.4000\",\"quantity\":\"200\"}],\"price_cap_threshold\":\"0.4200\",\"price_change\":\"0.0000\",\"quote_cost\":\"80.0000\",\"reason\":\"ASSUMED_VISIBLE_DEPTH_PARTICIPATION\",\"side\":\"YES\",\"unfilled\":\"0\",\"venue\":\"kalshi\"},{\"arrival_ms\":\"1200.0\",\"declared_partition_fee\":\"3.46\",\"fee_bound_including_settlement\":\"3.46\",\"filled\":\"200\",\"levels\":[{\"price\":\"0.47\",\"quantity\":\"200\"}],\"price_cap_threshold\":\"0.49\",\"price_change\":\"0.00\",\"quote_cost\":\"94.00\",\"reason\":\"ASSUMED_VISIBLE_DEPTH_PARTICIPATION\",\"side\":\"YES\",\"unfilled\":\"0\",\"venue\":\"polymarket_us\"}],\"reserve\":\"2.000\",\"severity\":\"HIGH\",\"status\":\"STRESS_MODELED\",\"trading_authorized\":false,\"unhedged_contracts\":\"0\",\"unobserved_pre_sample_fills_possible\":true,\"verification\":\"UNVERIFIED\",\"version\":\"paper-stress/m5-v1\",\"worst_net_bound\":\"16.5400\",\"worst_reviewed_payout\":\"200\"},\"scenario\":\"HYPOTHETICAL cancel race and slow hedge\"},{\"result\":{\"assumptions\":[\"HYPOTHETICAL_FILLS_FROM_LATER_QUOTES\",\"INDEPENDENT_COMPARISON_NOT_A_POSITION\",\"PARTICIPATION_AND_CANCEL_ACK_ARE_ASSUMED\",\"NO_UNOBSERVED_PRIOR_FILLS_ASSUMED\",\"NO_RESCUE_TRADE_OR_REBALANCING\"],\"best_net_bound\":\"0.000\",\"cancel_ack_assumed_ms\":1250,\"cancel_request_ms\":1000,\"capital_bound\":\"0.000\",\"comparison_id\":7,\"downside_bound\":\"0\",\"empirical_fill_probability_estimated\":false,\"flags\":[\"PARTIAL_OR_NO_FILL\"],\"hedge_latency_ms\":null,\"legs\":[{\"arrival_ms\":\"1500.0\",\"declared_partition_fee\":\"0\",\"fee_bound_including_settlement\":\"0\",\"filled\":\"0\",\"levels\":[],\"price_cap_threshold\":\"0.4200\",\"price_change\":\"0.0000\",\"quote_cost\":\"0\",\"reason\":\"CANCEL_ACK_ASSUMED_BEFORE_SAMPLE\",\"side\":\"YES\",\"unfilled\":\"200\",\"venue\":\"kalshi\"},{\"arrival_ms\":\"1600.0\",\"declared_partition_fee\":\"0\",\"fee_bound_including_settlement\":\"0\",\"filled\":\"0\",\"levels\":[],\"price_cap_threshold\":\"0.49\",\"price_change\":\"0.00\",\"quote_cost\":\"0\",\"reason\":\"CANCEL_ACK_ASSUMED_BEFORE_SAMPLE\",\"side\":\"YES\",\"unfilled\":\"200\",\"venue\":\"polymarket_us\"}],\"reserve\":\"0.000\",\"severity\":\"INFO\",\"status\":\"STRESS_MODELED\",\"trading_authorized\":false,\"unhedged_contracts\":\"0\",\"unobserved_pre_sample_fills_possible\":true,\"verification\":\"UNVERIFIED\",\"version\":\"paper-stress/m5-v1\",\"worst_net_bound\":\"0.000\",\"worst_reviewed_payout\":\"0\"},\"scenario\":\"HYPOTHETICAL both samples after cancel ack\"}],\"historical_replay\":true,\"hypothetical\":true,\"multiweek_acceptance\":false,\"report\":{\"continuous_run_verified\":false,\"independent_scenarios_not_realized_pnl\":true,\"multiweek_acceptance\":false,\"paper_intents\":[{\"created_at\":\"2030-01-01T12:00:00+00:00\",\"intent_id\":1,\"latest\":{\"at\":\"2030-01-01T12:00:02+00:00\",\"id\":7,\"result\":{\"assumptions\":[\"HYPOTHETICAL_FILLS_FROM_LATER_QUOTES\",\"INDEPENDENT_COMPARISON_NOT_A_POSITION\",\"PARTICIPATION_AND_CANCEL_ACK_ARE_ASSUMED\",\"NO_UNOBSERVED_PRIOR_FILLS_ASSUMED\",\"NO_RESCUE_TRADE_OR_REBALANCING\"],\"best_net_bound\":\"0.000\",\"cancel_ack_assumed_ms\":1250,\"cancel_request_ms\":1000,\"capital_bound\":\"0.000\",\"downside_bound\":\"0\",\"empirical_fill_probability_estimated\":false,\"flags\":[\"PARTIAL_OR_NO_FILL\"],\"hedge_latency_ms\":null,\"legs\":[{\"arrival_ms\":\"1500.0\",\"declared_partition_fee\":\"0\",\"fee_bound_including_settlement\":\"0\",\"filled\":\"0\",\"levels\":[],\"price_cap_threshold\":\"0.4200\",\"price_change\":\"0.0000\",\"quote_cost\":\"0\",\"reason\":\"CANCEL_ACK_ASSUMED_BEFORE_SAMPLE\",\"side\":\"YES\",\"unfilled\":\"200\",\"venue\":\"kalshi\"},{\"arrival_ms\":\"1600.0\",\"declared_partition_fee\":\"0\",\"fee_bound_including_settlement\":\"0\",\"filled\":\"0\",\"levels\":[],\"price_cap_threshold\":\"0.49\",\"price_change\":\"0.00\",\"quote_cost\":\"0\",\"reason\":\"CANCEL_ACK_ASSUMED_BEFORE_SAMPLE\",\"side\":\"YES\",\"unfilled\":\"200\",\"venue\":\"polymarket_us\"}],\"reserve\":\"0.000\",\"severity\":\"INFO\",\"status\":\"STRESS_MODELED\",\"trading_authorized\":false,\"unhedged_contracts\":\"0\",\"unobserved_pre_sample_fills_possible\":true,\"verification\":\"UNVERIFIED\",\"version\":\"paper-stress/m5-v1\",\"worst_net_bound\":\"0.000\",\"worst_reviewed_payout\":\"0\"}},\"mode\":\"HYPOTHETICAL_REPLAY\"}],\"total_intents\":1,\"trading_authorized\":false,\"truncated\":false},\"trading_authorized\":false}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/home/chris/code/arbitrage/.venv/bin/python",
+        "-m",
+        "predarb.cli",
+        "demo",
+        "--db",
+        "/tmp/predarb-m5-hardening-f_ox9fwr/example.sqlite3"
+      ],
+      "exit_code": 0,
+      "stdout": "HYPOTHETICAL EXAMPLE ONLY \u2014 not a trade signal or verified exchange quotes\npairs=400 required_capital=$391.000 modeled_profit=$9.000 ROI=2.302%\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/home/chris/code/arbitrage/.venv/bin/python",
+        "-m",
+        "predarb.cli",
+        "report",
+        "--db",
+        "/tmp/predarb-m5-hardening-f_ox9fwr/example.sqlite3"
+      ],
+      "exit_code": 0,
+      "stdout": "Read-only archive counts: {}\nCollection runs (id, venue, status, pages, records, unique, duplicates): []\nBook captures (freshness AT CAPTURE, liquidity, count): []\nAll live catalogue entries and books are UNVERIFIED; no actionable signals\nNormalized book assessments (data usable AT ASSESSMENT, count): []\nPair decisions (hypothetical, status, count; no trading authority): []\nHypothetical evaluations: 1 (sum of *example modeled* profits, NOT realized P&L: $9.00)\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/home/chris/code/arbitrage/.venv/bin/python",
+        "-m",
+        "predarb.cli",
+        "research",
+        "start",
+        "--db",
+        "/tmp/predarb-m5-hardening-f_ox9fwr/research.sqlite3",
+        "--policy",
+        "examples/M4_RESEARCH_POLICY.json",
+        "--interval",
+        "1"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"session_id\":1}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/home/chris/code/arbitrage/.venv/bin/python",
+        "-m",
+        "predarb.cli",
+        "ops",
+        "run",
+        "--config",
+        "/tmp/predarb-m5-hardening-f_ox9fwr/monitor.json"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"alert\":\"RUN_REFRESH_DISABLED\",\"reason\":\"This monitor will not fetch new venue observations.\",\"session_id\":1}\n{\"health\":{\"alerts\":[{\"code\":\"NO_RESEARCH_CYCLES\",\"severity\":\"WARN\"},{\"code\":\"NO_CACHED_APPROVED_PAIRS\",\"severity\":\"WARN\"},{\"code\":\"BACKUP_NOT_OBSERVED\",\"severity\":\"WARN\"}],\"clock\":{\"offset_measured\":false,\"probe\":\"timedatectl.NTPSynchronized\",\"synchronized\":true},\"evaluated_at\":\"2026-10-22T02:34:22.553126+00:00\",\"metrics\":{\"cached_approved_pairs\":0,\"collection_failures_total\":0,\"database_bytes\":237648,\"disk_free_bytes\":8491614208,\"paper_comparisons_total\":0,\"paper_high_scenarios_total\":0,\"research_cycles_total\":0,\"research_latest_economics_evaluated\":0,\"research_latest_modeled_edges\":0,\"research_latest_pairs\":0,\"research_latest_rejected\":0},\"ready\":true,\"research\":{\"cycle_id\":null,\"economics_evaluated\":0,\"evaluated_at\":null,\"modeled_edges\":0,\"pairs\":0,\"rejected\":0,\"status\":\"NO_CYCLES\"},\"session_id\":1,\"trading_authorized\":false}}\n{\"cycle\":{\"cycle_id\":1,\"hypothetical\":false,\"modeled_edges\":0,\"no_pairs\":true,\"pairs_observed\":0,\"rejected\":0,\"trading_authorized\":false}}\n{\"health\":{\"alerts\":[{\"code\":\"NO_RESEARCH_PAIRS\",\"severity\":\"WARN\"},{\"code\":\"NO_CACHED_APPROVED_PAIRS\",\"severity\":\"WARN\"},{\"code\":\"BACKUP_NOT_OBSERVED\",\"severity\":\"WARN\"}],\"clock\":{\"offset_measured\":false,\"probe\":\"timedatectl.NTPSynchronized\",\"synchronized\":true},\"evaluated_at\":\"2026-10-22T02:34:23.553235+00:00\",\"metrics\":{\"cached_approved_pairs\":0,\"collection_failures_total\":0,\"database_bytes\":266488,\"disk_free_bytes\":8491581440,\"paper_comparisons_total\":0,\"paper_high_scenarios_total\":0,\"research_cycles_total\":1,\"research_latest_economics_evaluated\":0,\"research_latest_modeled_edges\":0,\"research_latest_pairs\":0,\"research_latest_rejected\":0},\"ready\":true,\"research\":{\"cycle_id\":1,\"economics_evaluated\":0,\"evaluated_at\":\"2026-10-22T02:34:22.754715+00:00\",\"modeled_edges\":0,\"pairs\":0,\"rejected\":0,\"status\":\"NO_PAIRS\"},\"session_id\":1,\"trading_authorized\":false}}\n{\"cycle\":{\"cycle_id\":2,\"hypothetical\":false,\"modeled_edges\":0,\"no_pairs\":true,\"pairs_observed\":0,\"rejected\":0,\"trading_authorized\":false}}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/home/chris/code/arbitrage/.venv/bin/python",
+        "-m",
+        "predarb.cli",
+        "research",
+        "summary",
+        "1",
+        "--db",
+        "/tmp/predarb-m5-hardening-f_ox9fwr/research.sqlite3"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"acceptance_blockers\":[\"30_DAY_OBSERVATION_AND_EVIDENCE_AUDIT_PENDING\"],\"cadence_coverage\":\"1\",\"continuous_quote_lifespan_verified\":false,\"cycles\":2,\"equal_quote_samples\":[],\"largest_gap_seconds\":\"0.809584\",\"latest_ranked_independent_alternatives\":[],\"mode\":\"LIVE_READ_ONLY\",\"observed_span_seconds\":\"0.809584\",\"observed_window_qualifies_for_audit\":false,\"rejection_counts\":{},\"session_id\":1,\"thirty_day_acceptance\":false,\"trading_authorized\":false,\"unfinished_cycle_attempts\":0,\"verification\":\"UNVERIFIED\"}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/home/chris/code/arbitrage/.venv/bin/python",
+        "-m",
+        "predarb.cli",
+        "ops",
+        "backup",
+        "--db",
+        "/tmp/predarb-m5-hardening-f_ox9fwr/research.sqlite3",
+        "--output",
+        "/tmp/predarb-m5-hardening-f_ox9fwr/backups/snapshot.sqlite3"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"created_at\":\"2026-10-22T02:34:23.765806+00:00\",\"destination\":\"/tmp/predarb-m5-hardening-f_ox9fwr/backups/snapshot.sqlite3\",\"file_sha256\":\"1cff407d9245a9600e5dfbcca68d6e484f25e03e8ce0cd2390fb679d8972f430\",\"format\":\"predarb-backup/m5-v1\",\"logical_sha256\":\"7afe6e8c1a9ff847dd98120b3142f7a5ffa116d47adf4a34522b67a41cf908a6\",\"manifest\":\"/tmp/predarb-m5-hardening-f_ox9fwr/backups/snapshot.sqlite3.manifest.json\",\"row_counts\":{\"book_captures\":0,\"catalogue_entries\":0,\"collection_runs\":0,\"document_heads\":0,\"fee_documents\":0,\"fee_imports\":0,\"fee_profiles\":0,\"normalized_books\":0,\"opportunities\":0,\"ops_checks\":2,\"ops_events\":11,\"pair_audit\":0,\"pairs\":0,\"paper_comparisons\":0,\"paper_intents\":0,\"paper_tick_inputs\":0,\"raw_observations\":0,\"registry_instruments\":0,\"registry_supplements\":0,\"research_audit\":5,\"research_cycles\":2,\"research_details\":0,\"research_evaluations\":0,\"research_replays\":0,\"research_sessions\":1,\"rule_documents\":0,\"rule_versions\":0,\"supplement_versions\":0},\"schema_version\":5}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/home/chris/code/arbitrage/.venv/bin/python",
+        "-m",
+        "predarb.cli",
+        "ops",
+        "verify-backup",
+        "/tmp/predarb-m5-hardening-f_ox9fwr/backups/snapshot.sqlite3"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"created_at\":\"2026-10-22T02:34:23.765806+00:00\",\"file_sha256\":\"1cff407d9245a9600e5dfbcca68d6e484f25e03e8ce0cd2390fb679d8972f430\",\"format\":\"predarb-backup/m5-v1\",\"logical_sha256\":\"7afe6e8c1a9ff847dd98120b3142f7a5ffa116d47adf4a34522b67a41cf908a6\",\"row_counts\":{\"book_captures\":0,\"catalogue_entries\":0,\"collection_runs\":0,\"document_heads\":0,\"fee_documents\":0,\"fee_imports\":0,\"fee_profiles\":0,\"normalized_books\":0,\"opportunities\":0,\"ops_checks\":2,\"ops_events\":11,\"pair_audit\":0,\"pairs\":0,\"paper_comparisons\":0,\"paper_intents\":0,\"paper_tick_inputs\":0,\"raw_observations\":0,\"registry_instruments\":0,\"registry_supplements\":0,\"research_audit\":5,\"research_cycles\":2,\"research_details\":0,\"research_evaluations\":0,\"research_replays\":0,\"research_sessions\":1,\"rule_documents\":0,\"rule_versions\":0,\"supplement_versions\":0},\"schema_version\":5,\"verified\":true}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/home/chris/code/arbitrage/.venv/bin/python",
+        "-m",
+        "predarb.cli",
+        "ops",
+        "restore",
+        "/tmp/predarb-m5-hardening-f_ox9fwr/backups/snapshot.sqlite3",
+        "--output",
+        "/tmp/predarb-m5-hardening-f_ox9fwr/restored.sqlite3"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"created_at\":\"2026-10-22T02:34:23.973197+00:00\",\"destination\":\"/tmp/predarb-m5-hardening-f_ox9fwr/restored.sqlite3\",\"file_sha256\":\"1cff407d9245a9600e5dfbcca68d6e484f25e03e8ce0cd2390fb679d8972f430\",\"format\":\"predarb-backup/m5-v1\",\"logical_sha256\":\"7afe6e8c1a9ff847dd98120b3142f7a5ffa116d47adf4a34522b67a41cf908a6\",\"manifest\":\"/tmp/predarb-m5-hardening-f_ox9fwr/restored.sqlite3.manifest.json\",\"restore_verified\":true,\"row_counts\":{\"book_captures\":0,\"catalogue_entries\":0,\"collection_runs\":0,\"document_heads\":0,\"fee_documents\":0,\"fee_imports\":0,\"fee_profiles\":0,\"normalized_books\":0,\"opportunities\":0,\"ops_checks\":2,\"ops_events\":11,\"pair_audit\":0,\"pairs\":0,\"paper_comparisons\":0,\"paper_intents\":0,\"paper_tick_inputs\":0,\"raw_observations\":0,\"registry_instruments\":0,\"registry_supplements\":0,\"research_audit\":5,\"research_cycles\":2,\"research_details\":0,\"research_evaluations\":0,\"research_replays\":0,\"research_sessions\":1,\"rule_documents\":0,\"rule_versions\":0,\"supplement_versions\":0},\"schema_version\":5,\"source_file_sha256\":\"1cff407d9245a9600e5dfbcca68d6e484f25e03e8ce0cd2390fb679d8972f430\"}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/home/chris/code/arbitrage/.venv/bin/python",
+        "-m",
+        "predarb.cli",
+        "ops",
+        "health",
+        "1",
+        "--db",
+        "/tmp/predarb-m5-hardening-f_ox9fwr/research.sqlite3",
+        "--backup-dir",
+        "/tmp/predarb-m5-hardening-f_ox9fwr/backups"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"alerts\":[{\"code\":\"NO_RESEARCH_PAIRS\",\"severity\":\"WARN\"},{\"code\":\"NO_CACHED_APPROVED_PAIRS\",\"severity\":\"WARN\"}],\"clock\":{\"offset_measured\":false,\"probe\":\"timedatectl.NTPSynchronized\",\"synchronized\":true},\"evaluated_at\":\"2026-10-22T02:34:24.072360+00:00\",\"metrics\":{\"cached_approved_pairs\":0,\"collection_failures_total\":0,\"database_bytes\":229376,\"disk_free_bytes\":8491171840,\"paper_comparisons_total\":0,\"paper_high_scenarios_total\":0,\"research_cycles_total\":2,\"research_latest_economics_evaluated\":0,\"research_latest_modeled_edges\":0,\"research_latest_pairs\":0,\"research_latest_rejected\":0},\"ready\":true,\"research\":{\"cycle_id\":2,\"economics_evaluated\":0,\"evaluated_at\":\"2026-10-22T02:34:23.564299+00:00\",\"modeled_edges\":0,\"pairs\":0,\"rejected\":0,\"status\":\"NO_PAIRS\"},\"session_id\":1,\"trading_authorized\":false}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/home/chris/code/arbitrage/.venv/bin/python",
+        "-m",
+        "predarb.cli",
+        "ops",
+        "metrics",
+        "1",
+        "--db",
+        "/tmp/predarb-m5-hardening-f_ox9fwr/research.sqlite3",
+        "--backup-dir",
+        "/tmp/predarb-m5-hardening-f_ox9fwr/backups"
+      ],
+      "exit_code": 0,
+      "stdout": "predarb_health_ready 1\npredarb_disk_free_bytes 8491171840\npredarb_database_bytes 229376\npredarb_cached_approved_pairs 0\npredarb_research_cycles_total 2\npredarb_collection_failures_total 0\npredarb_paper_comparisons_total 0\npredarb_paper_high_scenarios_total 0\npredarb_research_latest_pairs 0\npredarb_research_latest_rejected 0\npredarb_research_latest_modeled_edges 0\npredarb_research_latest_economics_evaluated 0\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/home/chris/code/arbitrage/.venv/bin/python",
+        "-m",
+        "predarb.cli",
+        "ops",
+        "events",
+        "--db",
+        "/tmp/predarb-m5-hardening-f_ox9fwr/research.sqlite3"
+      ],
+      "exit_code": 0,
+      "stdout": "[{\"action\":\"RUN_FINISHED\",\"at\":\"2026-10-22T02:34:23.564539+00:00\",\"detail\":\"{\\\"completed_cycles\\\":2}\",\"id\":11,\"severity\":\"INFO\"},{\"action\":\"RUN_CYCLE_FINISHED\",\"at\":\"2026-10-22T02:34:23.564490+00:00\",\"detail\":\"{\\\"cycle_id\\\":2,\\\"hypothetical\\\":false,\\\"modeled_edges\\\":0,\\\"no_pairs\\\":true,\\\"pairs_observed\\\":0,\\\"rejected\\\":0,\\\"trading_authorized\\\":false}\",\"id\":10,\"severity\":\"INFO\"},{\"action\":\"HEALTH_ALERT\",\"at\":\"2026-10-22T02:34:23.553235+00:00\",\"detail\":\"{\\\"code\\\":\\\"BACKUP_NOT_OBSERVED\\\",\\\"severity\\\":\\\"WARN\\\"}\",\"id\":9,\"severity\":\"WARN\"},{\"action\":\"HEALTH_ALERT\",\"at\":\"2026-10-22T02:34:23.553235+00:00\",\"detail\":\"{\\\"code\\\":\\\"NO_CACHED_APPROVED_PAIRS\\\",\\\"severity\\\":\\\"WARN\\\"}\",\"id\":8,\"severity\":\"WARN\"},{\"action\":\"HEALTH_ALERT\",\"at\":\"2026-10-22T02:34:23.553235+00:00\",\"detail\":\"{\\\"code\\\":\\\"NO_RESEARCH_PAIRS\\\",\\\"severity\\\":\\\"WARN\\\"}\",\"id\":7,\"severity\":\"WARN\"},{\"action\":\"RUN_CYCLE_FINISHED\",\"at\":\"2026-10-22T02:34:22.755005+00:00\",\"detail\":\"{\\\"cycle_id\\\":1,\\\"hypothetical\\\":false,\\\"modeled_edges\\\":0,\\\"no_pairs\\\":true,\\\"pairs_observed\\\":0,\\\"rejected\\\":0,\\\"trading_authorized\\\":false}\",\"id\":6,\"severity\":\"INFO\"},{\"action\":\"HEALTH_ALERT\",\"at\":\"2026-10-22T02:34:22.553126+00:00\",\"detail\":\"{\\\"code\\\":\\\"BACKUP_NOT_OBSERVED\\\",\\\"severity\\\":\\\"WARN\\\"}\",\"id\":5,\"severity\":\"WARN\"},{\"action\":\"HEALTH_ALERT\",\"at\":\"2026-10-22T02:34:22.553126+00:00\",\"detail\":\"{\\\"code\\\":\\\"NO_CACHED_APPROVED_PAIRS\\\",\\\"severity\\\":\\\"WARN\\\"}\",\"id\":4,\"severity\":\"WARN\"},{\"action\":\"HEALTH_ALERT\",\"at\":\"2026-10-22T02:34:22.553126+00:00\",\"detail\":\"{\\\"code\\\":\\\"NO_RESEARCH_CYCLES\\\",\\\"severity\\\":\\\"WARN\\\"}\",\"id\":3,\"severity\":\"WARN\"},{\"action\":\"RUN_REFRESH_DISABLED\",\"at\":\"2026-10-22T02:34:22.553031+00:00\",\"detail\":\"{\\\"reason\\\":\\\"This monitor will not fetch new venue observations.\\\",\\\"session_id\\\":1}\",\"id\":2,\"severity\":\"WARN\"},{\"action\":\"RUN_STARTED\",\"at\":\"2026-10-22T02:34:22.552856+00:00\",\"detail\":\"{\\\"config\\\":{\\\"backup_dir\\\":\\\"/tmp/predarb-m5-hardening-f_ox9fwr/backups\\\",\\\"cycles\\\":2,\\\"db\\\":\\\"/tmp/predarb-m5-hardening-f_ox9fwr/research.sqlite3\\\",\\\"max_clock_jump_ms\\\":1000,\\\"max_db_bytes\\\":10737418240,\\\"min_free_bytes\\\":209715200,\\\"refresh\\\":false,\\\"session_id\\\":1,\\\"shadow_policy\\\":null}}\",\"id\":1,\"severity\":\"INFO\"}]\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/home/chris/code/arbitrage/.venv/bin/python",
+        "-m",
+        "predarb.cli",
+        "paper",
+        "report",
+        "--db",
+        "/tmp/predarb-m5-hardening-f_ox9fwr/research.sqlite3"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"historical_replay\":false,\"result\":{\"continuous_run_verified\":false,\"independent_scenarios_not_realized_pnl\":true,\"multiweek_acceptance\":false,\"paper_intents\":[],\"total_intents\":0,\"trading_authorized\":false,\"truncated\":false},\"trading_authorized\":false}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/home/chris/code/arbitrage/.venv/bin/python",
+        "scripts/daily_backup.py",
+        "--db",
+        "/tmp/predarb-m5-hardening-f_ox9fwr/research.sqlite3",
+        "--directory",
+        "/tmp/predarb-m5-hardening-f_ox9fwr/backups"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"created_at\":\"2026-10-22T02:34:24.459335+00:00\",\"destination\":\"/tmp/predarb-m5-hardening-f_ox9fwr/backups/research-20261022T023424451785Z.sqlite3\",\"file_sha256\":\"1cff407d9245a9600e5dfbcca68d6e484f25e03e8ce0cd2390fb679d8972f430\",\"format\":\"predarb-backup/m5-v1\",\"logical_sha256\":\"7afe6e8c1a9ff847dd98120b3142f7a5ffa116d47adf4a34522b67a41cf908a6\",\"manifest\":\"/tmp/predarb-m5-hardening-f_ox9fwr/backups/research-20261022T023424451785Z.sqlite3.manifest.json\",\"row_counts\":{\"book_captures\":0,\"catalogue_entries\":0,\"collection_runs\":0,\"document_heads\":0,\"fee_documents\":0,\"fee_imports\":0,\"fee_profiles\":0,\"normalized_books\":0,\"opportunities\":0,\"ops_checks\":2,\"ops_events\":11,\"pair_audit\":0,\"pairs\":0,\"paper_comparisons\":0,\"paper_intents\":0,\"paper_tick_inputs\":0,\"raw_observations\":0,\"registry_instruments\":0,\"registry_supplements\":0,\"research_audit\":5,\"research_cycles\":2,\"research_details\":0,\"research_evaluations\":0,\"research_replays\":0,\"research_sessions\":1,\"rule_documents\":0,\"rule_versions\":0,\"supplement_versions\":0},\"schema_version\":5}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/home/chris/code/arbitrage/.venv/bin/python",
+        "-m",
+        "predarb.cli",
+        "ops",
+        "health",
+        "1",
+        "--db",
+        "/tmp/predarb-m5-hardening-f_ox9fwr/research.sqlite3",
+        "--backup-dir",
+        "/tmp/predarb-m5-hardening-f_ox9fwr/backups"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"alerts\":[{\"code\":\"NO_RESEARCH_PAIRS\",\"severity\":\"WARN\"},{\"code\":\"NO_CACHED_APPROVED_PAIRS\",\"severity\":\"WARN\"},{\"code\":\"BACKUP_SNAPSHOT_MISSING\",\"severity\":\"WARN\"}],\"clock\":{\"offset_measured\":false,\"probe\":\"timedatectl.NTPSynchronized\",\"synchronized\":true},\"evaluated_at\":\"2026-10-22T02:34:24.549622+00:00\",\"metrics\":{\"cached_approved_pairs\":0,\"collection_failures_total\":0,\"database_bytes\":229376,\"disk_free_bytes\":8491155456,\"paper_comparisons_total\":0,\"paper_high_scenarios_total\":0,\"research_cycles_total\":2,\"research_latest_economics_evaluated\":0,\"research_latest_modeled_edges\":0,\"research_latest_pairs\":0,\"research_latest_rejected\":0},\"ready\":true,\"research\":{\"cycle_id\":2,\"economics_evaluated\":0,\"evaluated_at\":\"2026-10-22T02:34:23.564299+00:00\",\"modeled_edges\":0,\"pairs\":0,\"rejected\":0,\"status\":\"NO_PAIRS\"},\"session_id\":1,\"trading_authorized\":false}\n",
+      "stderr": ""
+    }
+  ]
+}

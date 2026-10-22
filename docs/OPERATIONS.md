@@ -26,6 +26,26 @@ step. WARN conditions include absent/stale research heartbeat, absent/stale back
 manifest, failed latest collection and no cached approved pair. Cached approval
 counts are descriptive; economic/paper consumers independently revalidate them.
 
+Health also includes a `research` object for the selected session's latest cycle:
+
+| Status | Meaning |
+| --- | --- |
+| `NO_CYCLES` | No committed observation cycle exists |
+| `NO_PAIRS` | A recent cycle ran with an empty registry |
+| `DATA_GATED` | Every pair was rejected before quote-based economics could be evaluated |
+| `RECENT_ECONOMICS` | At least one pair reached economics; a zero budget or no profitable edge can still produce a rejection |
+| `STALE` / `FUTURE` | The latest cycle clock fails the existing heartbeat age checks |
+
+Empty cycles emit `NO_RESEARCH_PAIRS`; cycles entirely blocked by approval,
+book or fee gates emit `NO_RECENT_ECONOMIC_OBSERVATIONS`. Both are WARN conditions.
+Metrics `predarb_research_latest_pairs`, `predarb_research_latest_rejected`,
+`predarb_research_latest_modeled_edges` and
+`predarb_research_latest_economics_evaluated` expose the recorded counts. These
+describe the latest cycle, not current quote validity or multiweek coverage.
+Use the `research` status alongside the counts: stale cycles keep their recorded
+counts. Hypothetical sessions remain explicitly warned and cannot establish live
+coverage. Invalid or incomplete cycle evidence fails the health command.
+
 `ready=true` means the process may run read-only monitoring, not that contracts,
 fees or feeds qualify for economics. Zero approved pairs legitimately produce
 empty/rejected cycles. Old backups and failed feeds remain warnings because a
@@ -46,6 +66,15 @@ Other NTP implementations may require their own operator inspection; this runner
 currently needs the documented timedatectl synchronization property. Do not
 replace unknown state with a guessed successful probe.
 
+Clock divergence is checked before a cycle, after its scan and after optional
+paper processing, including the final cycle. A detected jump exits 2 and emits
+`WALL_CLOCK_JUMP` to SQLite and stdout/journal with its phase and affected cycle
+ID. Already committed source/derived evidence is preserved for review; a cycle
+flagged `cycle_evidence_requires_review=true` must not count as clean observation
+evidence. The post-scan check prevents further paper processing in that invocation.
+These boundary checks cannot detect a clock excursion that reverses entirely
+between checks.
+
 ## Bounded monitor
 
 Copy [the example config](../examples/M5_MONITOR_CONFIG.json) and set an existing
@@ -62,6 +91,15 @@ full object from [the paper policy](../examples/M5_PAPER_POLICY.json), not a pat
 The default example runs **one cycle**, without refresh or shadow generation.
 The fixed M4 session supplies budgets and polling interval; it grants no funding
 or order authority.
+
+When `refresh=false`, startup emits `RUN_REFRESH_DISABLED` to SQLite and stdout/
+journal. With the single writer lock held, this monitor does not ingest new venue
+data. For an intended collection run, configure `refresh=true`; refresh still
+collects only currently approved pairs, and cannot fix missing approvals or the
+unknown Kalshi REST book timestamp. Check the first completed cycle with `ops
+health` and `research summary` before committing to weeks of unattended runtime.
+An operational endurance run with no qualified data is useful, but does not meet
+M4/M5's economic observation acceptance criteria.
 
 Every invocation is bounded to 31 days. For example, a 60-second session with
 30241 cycles schedules approximately 21 days, subject to request latency,
@@ -134,8 +172,15 @@ The [daily helper](../scripts/daily_backup.py) generates unique UTC filenames:
 It deletes nothing. Plan storage for daily backups; retain at least 14 verified
 daily copies and a separately verified recovery copy before manually archiving
 older snapshots. Source/audit deletion is not automated. Check size/free-space
-alerts and backup age daily. The age monitor reads manifests only; full
-`verify-backup` and periodic restore drills remain necessary. Large source/WAL,
+alerts and backup age daily. The age monitor reads each manifest with a 2 MB cap,
+validates its format/schema/hash/count fields and requires the corresponding
+nonempty snapshot file. Orphan/empty snapshots emit `BACKUP_SNAPSHOT_MISSING`;
+malformed/unreadable manifests emit `BACKUP_MANIFEST_UNREADABLE`. Neither can hide
+an older stale backup. Future timestamps are warned and cannot satisfy backup
+freshness. With no eligible snapshot, `BACKUP_NOT_OBSERVED` is also emitted.
+Backups older than **26 hours** warn, allowing daily timer jitter and verification
+time. This check does not read/hash snapshot contents; full `verify-backup` and
+periodic restore drills remain necessary. Large source/WAL,
 space reclamation, rotation and verification duration need deployment measurement.
 
 ## systemd preparation

@@ -99,6 +99,14 @@ destination. Paper fills/cancel acknowledgments are assumed, with explicit
 one-leg downside and unknown-data rejection. The monitor cannot place orders.
 See [paper workflow](docs/PAPER_EXECUTION.md) and [deployment/restore guide](docs/OPERATIONS.md).
 
+Before a multiweek run, inspect health **after the first completed cycle**.
+`ready=true` describes host readiness; the `research.status` field separately
+shows empty, data-gated or recent economic observations. The monitor warns when
+refresh is disabled (as in the one-cycle example). Even with refresh enabled,
+the current approval, fee and Kalshi source-time gaps must be resolved before
+the run can provide useful cross-venue economics. See the
+[M5 hardening verification](docs/M5_HARDENING.md) for changes and remaining limits.
+
 ## Read in this order
 
 1. [AGENTS.md](AGENTS.md) — binding development instructions for Codex.

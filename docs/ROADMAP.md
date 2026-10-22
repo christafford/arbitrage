@@ -97,6 +97,7 @@ separately authorized while this M4 acceptance remained open.
 - [x] Exact hypothetical adverse-selection, one-leg/partial-fill, hedge-deadline, cancellation-race and outage models; reviewed payout downside and fee/reserve bounds. No actual positions or orders.
 - [x] Local health/metrics/journal alerts, clock/disk/WAL checks, single-writer guard, graceful monitor signals, verified SQLite backup/new-path restore and hardened systemd templates/docs. Units syntax-checked, not installed or activated.
 - [x] Implement gated paper intents and immutable later-quote comparison inputs/results, bounded monitor integration and deterministic isolated hypothetical replay.
+- [x] Pre-run M5 hardening: expose empty/data-gated cycles and disabled refresh; reject orphan/malformed backup metadata; detect clock divergence after scan/paper work. See [verification](M5_HARDENING.md).
 - [ ] Actual live forward shadow comparison and multiweek zero-money run; reproducible coverage/incident/downside audit with useful fresh approved data.
 
 Acceptance: multiweek zero-money run, reproducible reports, no high-severity incidents, realistic downside scenarios documented.
