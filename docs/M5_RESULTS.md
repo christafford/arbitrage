@@ -74,7 +74,9 @@ real operational incidents. Repeated scenarios must not be summed as positions.
 
 [Command evidence](evidence/M5_COMMANDS.json) records actual `research start`,
 `ops run`, backup/verify/restore, health, text metrics, events, paper report and
-original demo/report invocations. All recorded commands exited 0.
+original demo/report invocations, plus the daily backup helper. All recorded
+commands exited 0. Read-only event/research reports also succeeded while the
+monitor held its writer lock.
 
 - A zero-budget live-mode smoke completed **three short cycles**, with **zero
   real paper intents**, zero HIGH operational events and no approved pair.

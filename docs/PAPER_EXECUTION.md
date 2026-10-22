@@ -99,9 +99,10 @@ predarb paper compare INTENT_ID --tick-input TICK_INPUT_ID --db isolated.sqlite3
   --at 2030-01-01T12:00:02Z
 ```
 
-The importer accepts synthetic inputs only in storage without live observations
-or live instruments. `--at` creation/comparison is restricted to hypothetical
-mode. Imported JSON must declare `paper-ticks/m5-v1`, `hypothetical=true`, matching
+Raw import is allowed only in storage without live observations or live
+instruments and preserves unvalidated bytes. `--at` creation/comparison is
+restricted to hypothetical mode. Comparison requires JSON declaring
+`paper-ticks/m5-v1`, `hypothetical=true`, matching
 synthetic IDs and explicit outage booleans. It includes complete provider-shaped
 metadata/books, independent receipt clocks and provider timestamps; inspect the
 demo's immutable input rows for the full format.
