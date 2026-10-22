@@ -227,6 +227,6 @@ tie-breaking. `discovery_cli.py` orchestrates bounded public collection and sele
 candidate evidence capture using the existing collector/transport and writer lock.
 `discovery_queue` holds the latest bounded candidate snapshot; `discovery_state`
 records its coverage/time. Atomic replacement cannot modify pair decisions.
-Queue reads recompute validity; immutable source and decision evidence remains in
+Queue reads use a consistent read-only snapshot beside the writer and recompute validity; immutable source and decision evidence remains in
 the existing tables. Migration adds a book source lookup index and preserves all
 previous records. See [discovery operations and limitations](DISCOVERY.md).

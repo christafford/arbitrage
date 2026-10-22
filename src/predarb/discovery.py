@@ -2,11 +2,13 @@
 from collections import Counter, defaultdict
 from datetime import datetime, timezone
 from decimal import Decimal
+from functools import lru_cache
 import hashlib
 import json
 import re
 import sys
 import unicodedata
+from urllib.parse import urlsplit
 
 from . import kalshi, polymarket_us, registry
 from .collector import book_freshness
@@ -25,6 +27,8 @@ CREATE INDEX discovery_books_source ON book_captures(source_id,observation_id DE
 """
 VERSION = 'discovery-v1'
 STOP = set('win winner wins beat beats price game match will would should could reaches reach a an the will be is are was were of on in at by to for and or with this that market contract resolves resolve yes no if as than hypothetical above below over under greater less least most more equal before after between'.split())
+# These describe market format, units, or scheduling, not participant identity.
+RETRIEVAL_STOP = set('vs versus total totals score scored points goals touchdowns yards cover spread handicap victory margin team player first half quarter regular season scheduled end pm am et est edt utc fc election house state jan feb mar apr jun jul aug sep sept oct nov dec'.split())
 MONTHS = {name.lower(): i for i, name in enumerate(
     ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'], 1)}
 ALIASES = {'btc': 'bitcoin', 'eth': 'ethereum', 'cpi': 'consumer price index', 'fed': 'federal reserve', 'relegated': 'relegation'}
@@ -39,8 +43,33 @@ def normalize(text):
     return text
 
 
+@lru_cache(maxsize=8192)
+def _shared_tokens(words):
+    # Many strikes/dates differ only in numbers, so their normalized vocabulary
+    # is identical. Share immutable sets with a bounded cache.
+    return words
+
+
 def tokens(text):
-    return {sys.intern(word) for word in re.findall(r'[a-z]+', normalize(text)) if word not in STOP}
+    return _shared_tokens(frozenset(sys.intern(word) for word in re.findall(r'[a-z]+', normalize(text)) if word not in STOP))
+
+
+
+def measure_facets(title, description):
+    """Recognize explicit labels only; missing/ambiguous qualifiers stay unknown."""
+    labels, periods = set(), set()
+    for value in (title, description):
+        text = normalize(value)
+        for qualifier, label in (('core goods', 'core_goods_cpi'), ('core services', 'core_services_cpi'),
+                                 ('core', 'core_cpi'), ('headline', 'headline_cpi')):
+            if re.search(r'\b' + qualifier + r'\s+consumer price index\b', text):
+                labels.add(label)
+        if re.search(r'\b(mom|month[ -]over[ -]month|one[ -]month)\b', text):
+            periods.add('monthly_change')
+        if re.search(r'\b(yoy|year[ -]over[ -]year|twelve[ -]month|12[ -]month)\b', text):
+            periods.add('annual_change')
+    return {'metric': next(iter(labels)) if len(labels) == 1 else None,
+            'period': next(iter(periods)) if len(periods) == 1 else None}
 
 
 def features(contract):
@@ -79,7 +108,7 @@ def features(contract):
             if side.get('team') is not None:
                 subjects.append(text_field(side['team'], 'name'))
     subject_text = ' '.join(filter(None, subjects))
-    subject = tokens(subject_text) - set(MONTHS)
+    subject = _shared_tokens(tokens(subject_text) - set(MONTHS))
     metadata = contract.get('uninterpreted_metadata', {})
     event_time = None
     for key in ('occurrence_datetime', 'gameStartTime'):
@@ -94,6 +123,7 @@ def features(contract):
     cutoff = contract.get('close_time') or contract.get('endDate')
     return {'title': title, 'subject_text': subject_text, 'subject': subject, 'description': tokens(description),
             'dates': dates, 'text_dates': text_dates, 'event_time': event_time, 'thresholds': thresholds,
+            'measure': measure_facets(title, description),
             'policy': set(re.findall(r'\b(first|final|revised|preliminary|not|cancelled|void)\b', text)),
             'cutoff': utc_time(cutoff).isoformat() if cutoff else None}
 
@@ -107,6 +137,14 @@ def compare(left, right, *, min_score=0):
     score = subject * 5 // 10
     signals = {'subject_bps': subject}
     warnings = []
+    for facet in ('metric', 'period'):
+        a, b = left['measure'][facet], right['measure'][facet]
+        signals[facet] = 'MATCH' if a and a == b else 'CONFLICT' if a and b else 'UNKNOWN'
+        if signals[facet] == 'CONFLICT':
+            warnings.append('SUBJECT_' + facet.upper() + '_CONFLICT')
+            score -= 4000
+        elif signals[facet] == 'UNKNOWN' and (a or b):
+            warnings.append('SUBJECT_' + facet.upper() + '_UNKNOWN')
     for key, weight in (('dates', 1500), ('thresholds', 1500)):
         a, b = left[key], right[key]
         signals[key] = 'MATCH' if a and a == b else 'CONFLICT' if a and b else 'UNKNOWN'
@@ -159,12 +197,15 @@ def _eligible(con, row, now):
     return True
 
 
-def _pools(con, now, max_instruments):
+def _pools(con, now, max_instruments, pair_keys=None):
     pools, coverage = [], {}
     for venue in registry.VENUES:
+        selected = sorted({pair[registry.VENUES.index(venue)] for pair in pair_keys}) if pair_keys is not None else None
+        clause = (' AND h.source_id IN (' + ','.join('?' for _ in selected) + ')') if selected else ' AND 0' if selected is not None else ''
         rows = registry._rows(con, '''SELECT h.*,v.evidence_json,v.hypothetical,v.contract_sha256
             FROM registry_instruments h JOIN rule_versions v ON v.id=h.version_id
-            WHERE h.venue=? ORDER BY h.source_id''', (venue,))
+            WHERE h.venue=?''' + clause + ' ORDER BY h.source_id', (venue, *(selected or [])))
+        stored_count = con.execute('SELECT COUNT(*) FROM registry_instruments WHERE venue=?', (venue,)).fetchone()[0]
         runs = registry._rows(con, 'SELECT * FROM collection_runs WHERE venue=? ORDER BY id DESC', (venue,))
         latest = runs[0] if runs else None
         full = next((run for run in runs if json.loads(run['scope_json']).get('filter') is None), None)
@@ -181,7 +222,8 @@ def _pools(con, now, max_instruments):
                 if members is not None and row['source_id'] not in members:
                     continue
             eligible.append(row)
-        coverage[venue] = {'stored': len(rows), 'eligible': len(eligible),
+        coverage[venue] = {'stored': stored_count, 'eligible': len(eligible),
+                           'scope': 'queued_instruments' if pair_keys is not None else 'all',
                            'latest_run_status': latest['status'] if latest else None,
                            'full_catalogue_status': full['status'] if full else None,
                            'full_catalogue_run_id': full['id'] if full else None,
@@ -224,6 +266,9 @@ def liquidity(con, venue, source_id, now):
             book = data['marketData']
             if book['marketSlug'] != source_id:
                 raise ValueError('book identity mismatch')
+            if book['state'] != 'MARKET_STATE_OPEN':
+                result['quality'] = 'UNAVAILABLE'
+                return result
             sides = [[Decimal(level['qty']) for level in book[key]] for key in ('bids', 'offers')]
         result['depth_proxy'] = str(min(sum(side, Decimal(0)) for side in sides))
     except (ValueError, TypeError):
@@ -234,6 +279,20 @@ def liquidity(con, venue, source_id, now):
 def _links(con, row):
     adapter = kalshi if row['venue'] == 'kalshi' else polymarket_us
     links = [adapter.detail_url(row['source_id'])]
+    contract = json.loads(con.execute('SELECT evidence_json FROM rule_versions WHERE id=?',
+                                     (row['version_id'],)).fetchone()[0])['contract']
+    text = ' '.join(contract.get(key, '') for key in ('description', 'rules_primary', 'rules_secondary'))
+    roots = ('kalshi.com',) if row['venue'] == 'kalshi' else ('polymarket.us', 'polymarketexchange.com')
+    for url in re.findall(r'https://[^\s<>"\']+', text):
+        url = url.rstrip('.,;')
+        try:
+            parsed = urlsplit(url)
+            host = parsed.hostname or ''
+            if (not parsed.username and not parsed.password and parsed.port in (None, 443)
+                    and any(host == root or host.endswith('.' + root) for root in roots)):
+                links.append(url)
+        except ValueError:
+            continue
     for source in registry._rows(con, '''SELECT v.evidence_json,v.source_url FROM registry_supplements h
             JOIN supplement_versions v ON v.id=h.version_id WHERE h.venue=? AND h.source_id=?''',
                                 (row['venue'], row['source_id'])):
@@ -249,10 +308,10 @@ def discover(con, *, limit=20, max_instruments=None, now=None, _pair_keys=None):
     if not 1 <= limit <= 1000 or (max_instruments is not None and not 1 <= max_instruments <= 1000000):
         raise ValueError('candidate limits: 1..1000 results; optional instrument cap 1..1000000')
     now = now or registry.now_utc()
-    pools, coverage = _pools(con, now, max_instruments)
+    pools, coverage = _pools(con, now, max_instruments, _pair_keys)
     index, descriptions = defaultdict(set), defaultdict(set)
     for i, row in enumerate(pools[1]):
-        for token in row['features']['subject']:
+        for token in row['features']['subject'] - RETRIEVAL_STOP:
             index[token].add(i)
         for token in row['features']['description']:
             descriptions[token].add(i)
@@ -316,7 +375,7 @@ def discover(con, *, limit=20, max_instruments=None, now=None, _pair_keys=None):
     result = []
     for _, row, k, p in best:
         row['definition_links'] = {'kalshi': _links(con, k), 'polymarket_us': _links(con, p)}
-        row['features'] = {venue: {key: sorted(value) if isinstance(value, set) else value
+        row['features'] = {venue: {key: sorted(value) if isinstance(value, (set, frozenset)) else value
                                   for key, value in item['features'].items()}
                            for venue, item in (('kalshi', k), ('polymarket_us', p))}
         row['prior_reviews'] = registry._rows(con, '''SELECT id,status,reason FROM pairs
@@ -325,8 +384,10 @@ def discover(con, *, limit=20, max_instruments=None, now=None, _pair_keys=None):
     return {'algorithm': VERSION, 'ranked_at': now.isoformat(), 'coverage': coverage, 'candidates': result}
 
 
-def refresh_queue(con, **kwargs):
+def refresh_queue(con, *, catalogue_coverage_at_refresh=None, **kwargs):
     report = discover(con, **kwargs)
+    if catalogue_coverage_at_refresh is not None:
+        report['catalogue_coverage_at_refresh'] = catalogue_coverage_at_refresh
     try:
         con.execute('BEGIN IMMEDIATE')
         con.execute('DELETE FROM discovery_queue')
@@ -344,6 +405,9 @@ def queue(con, *, limit=20, now=None):
     # Recompute validity/ranking at read time; stored snapshots are never authority.
     keys = con.execute('SELECT kalshi_id,polymarket_us_id FROM discovery_queue').fetchall()
     report = discover(con, limit=limit, now=now, _pair_keys=keys)
-    stored = con.execute('SELECT refreshed_at FROM discovery_state WHERE id=1').fetchone()
+    stored = con.execute('SELECT refreshed_at,report_json FROM discovery_state WHERE id=1').fetchone()
     report['last_queue_refresh'] = stored[0] if stored else None
+    if stored:
+        previous = json.loads(stored[1])
+        report['catalogue_coverage_at_refresh'] = previous.get('catalogue_coverage_at_refresh', previous['coverage'])
     return report

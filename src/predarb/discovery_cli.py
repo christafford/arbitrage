@@ -1,9 +1,11 @@
 """Bounded public discovery refresh, suitable for a periodic systemd timer."""
 from shutil import disk_usage
+from contextlib import closing
 from pathlib import Path
 
 from . import discovery, kalshi, polymarket_us
 from .collector import collect
+from .backups import readonly
 from .provider import HttpClient
 from .store import connect
 from .validation import dumps
@@ -77,7 +79,9 @@ def refresh(con, *, limit=20, page_size=200, max_pages=1000, books=10,
             except (ValueError, OSError) as exc:
                 blocked_venues.add(adapter.VENUE)
                 errors.append({'venue': adapter.VENUE, 'source_id': source_id, 'stage': 'detail', 'error': str(exc)})
-    report = discovery.refresh_queue(con, limit=limit, now=now)
+    report = discovery.refresh_queue(con, limit=limit, now=now,
+                _pair_keys=[(r['kalshi_id'], r['polymarket_us_id']) for r in preliminary['candidates']],
+                catalogue_coverage_at_refresh=preliminary['coverage'])
     report.update(collection_runs=runs, errors=errors)
     return report, 1 if errors else 2 if any(run['status'] != 'COMPLETE' for run in runs) else 0
 
@@ -88,8 +92,9 @@ def run(args):
             raise ValueError('min-free-mb must be positive')
         if disk_usage(Path(args.db).resolve().parent).free < args.min_free_mb * 1024 * 1024:
             raise ValueError('insufficient free disk for discovery archive')
-    with connect(args.db) as con:
+    with (closing(readonly(args.db)) if args.discovery_cmd == 'queue' else connect(args.db)) as con:
         if args.discovery_cmd == 'queue':
+            con.execute('BEGIN')  # One consistent read snapshot alongside the writer.
             report, code = discovery.queue(con, limit=args.limit), 0
         elif args.offline:
             report, code = discovery.refresh_queue(con, limit=args.limit), 0

@@ -38,13 +38,13 @@ class DiscoveryTests(unittest.TestCase):
     def search(self, **kwargs):
         return d.discover(self.db, now=NOW, **kwargs)
 
-    def book(self, venue, source_id, *, quantity='10', at=NOW, source_at=None, invalid=False):
+    def book(self, venue, source_id, *, quantity='10', at=NOW, source_at=None, invalid=False, state='MARKET_STATE_OPEN'):
         adapter = kalshi if venue == 'kalshi' else polymarket_us
         data = payload('kalshi-book-live' if venue == 'kalshi' else 'poly-book-live')
         if venue == 'kalshi':
             data['orderbook_fp'] = {'yes_dollars': [['0.4', quantity]], 'no_dollars': [['0.5', quantity]]}
         else:
-            data['marketData'].update(marketSlug=source_id, transactTime=(source_at or at).isoformat(),
+            data['marketData'].update(state=state, marketSlug=source_id, transactTime=(source_at or at).isoformat(),
                                       bids=[{'px': {'value': '0.4', 'currency': 'USD'}, 'qty': quantity}],
                                       offers=[{'px': {'value': '0.5', 'currency': 'USD'}, 'qty': quantity}])
             if invalid:
@@ -177,6 +177,35 @@ class DiscoveryTests(unittest.TestCase):
         self.assertIn('THRESHOLD_UNITS_UNKNOWN', result[2])
         self.assertIn(('>', '30', 'C'), celsius['thresholds'])
 
+    def test_generic_sports_words_do_not_join_unrelated_participants(self):
+        self.seed('kalshi', K, {'title': 'HYPOTHETICAL James Harden total points'})
+        self.seed('polymarket_us', P, {'question': 'HYPOTHETICAL Stephen Curry total points'})
+        self.assertEqual(self.search()['candidates'], [])
+
+    def test_core_goods_and_core_cpi_and_measure_periods_are_distinct(self):
+        goods = d.features({'title': 'Core goods CPI month-over-month above 0.1% on 2030-01-02'})
+        core = d.features({'title': 'Core CPI MoM above 0.1% on 2030-01-02'})
+        annual = d.features({'title': 'Core CPI YoY above 0.1% on 2030-01-02'})
+        self.assertEqual(goods['measure']['metric'], 'core_goods_cpi')
+        self.assertEqual(core['measure']['metric'], 'core_cpi')
+        self.assertIn('SUBJECT_METRIC_CONFLICT', d.compare(goods, core)[2])
+        self.assertIn('SUBJECT_PERIOD_CONFLICT', d.compare(core, annual)[2])
+        self.assertGreater(d.compare(core, core)[0], d.compare(goods, core)[0])
+        unqualified = d.features({'title': 'CPI forecast'})
+        self.assertIsNone(unqualified['measure']['metric'])
+        self.assertIn('SUBJECT_METRIC_UNKNOWN', d.compare(goods, unqualified)[2])
+        ambiguous = d.features({'title': 'Core CPI MoM', 'description': 'Core goods CPI YoY'})
+        self.assertEqual(ambiguous['measure'], {'metric': None, 'period': None})
+
+    def test_declared_official_rule_links_exclude_international_and_spoofed_hosts(self):
+        contract = deepcopy(DATA['polymarket_us'])
+        official = 'https://www.polymarketexchange.com/files/products/rules.pdf'
+        contract['description'] += ' Full rules: ' + official + ' Other links: https://polymarket.com/rules https://polymarket.us.evil.invalid/rules https://user:pass@polymarket.us/private'
+        self.seed('polymarket_us', P, contract)
+        links = self.search()['candidates'][0]['definition_links']['polymarket_us']
+        self.assertIn(official, links)
+        self.assertEqual(len(links), 2)
+
     def test_unrelated_subjects_are_not_candidates(self):
         self.seed('polymarket_us', P, {'question': 'HYPOTHETICAL London mayor election'})
         self.assertEqual(self.search()['candidates'], [])
@@ -215,6 +244,10 @@ class DiscoveryTests(unittest.TestCase):
         self.assertIsNone(d.liquidity(self.db, 'kalshi', K, NOW)['depth_proxy'])
         self.book('polymarket_us', P, invalid=True)
         self.assertEqual(d.liquidity(self.db, 'polymarket_us', P, NOW)['quality'], 'INVALID')
+        self.book('polymarket_us', P, state='MARKET_STATE_HALTED')
+        unavailable = d.liquidity(self.db, 'polymarket_us', P, NOW)
+        self.assertEqual(unavailable['quality'], 'UNAVAILABLE')
+        self.assertIsNone(unavailable['depth_proxy'])
         self.book('polymarket_us', P, source_at=NOW-timedelta(minutes=2))
         self.assertEqual(d.liquidity(self.db, 'polymarket_us', P, NOW)['quality'], 'STALE_SOURCE')
         raw = self.book('kalshi', K)
@@ -240,7 +273,11 @@ class DiscoveryTests(unittest.TestCase):
         self.assertEqual(d.queue(self.db, now=NOW)['candidates'], [])
         d.refresh_queue(self.db, now=NOW)
         self.seed('polymarket_us', 'HYPOTHETICAL-NEW')
-        self.assertEqual(len(d.queue(self.db, now=NOW)['candidates']), 1)
+        queued = d.queue(self.db, now=NOW)
+        self.assertEqual(len(queued['candidates']), 1)
+        self.assertEqual(queued['coverage']['polymarket_us']['scope'], 'queued_instruments')
+        self.assertEqual(queued['coverage']['polymarket_us']['stored'], 2)
+        self.assertEqual(queued['coverage']['polymarket_us']['eligible'], 1)
         self.assertEqual(len(self.search()['candidates']), 2)
         self.seed('polymarket_us', P, {'question': 'HYPOTHETICAL unrelated election'})
         self.assertEqual(d.queue(self.db, now=NOW)['candidates'], [])
@@ -264,6 +301,20 @@ class DiscoveryTests(unittest.TestCase):
             self.assertEqual(migrated.execute('PRAGMA user_version').fetchone()[0], 6)
             self.assertEqual(migrated.execute('SELECT COUNT(*) FROM registry_instruments').fetchone()[0], 2)
             self.assertEqual(migrated.execute('SELECT COUNT(*) FROM discovery_queue').fetchone()[0], 0)
+
+    def test_queue_remains_readable_while_another_writer_holds_lock(self):
+        import fcntl
+        import os
+        d.refresh_queue(self.db, now=NOW)
+        fd = os.open(self.path + '.writer.lock', os.O_CREAT | os.O_RDWR, 0o600)
+        try:
+            fcntl.flock(fd, fcntl.LOCK_EX | fcntl.LOCK_NB)
+            out = StringIO()
+            with patch('sys.argv', ['predarb', 'discovery', 'queue', '--db', self.path]), patch('predarb.registry.now_utc', return_value=NOW), redirect_stdout(out):
+                self.assertEqual(cli.main(), 0)
+            self.assertEqual(len(json.loads(out.getvalue())['candidates']), 1)
+        finally:
+            os.close(fd)
 
     def test_cli_offline_refresh_and_queue(self):
         for command in ('refresh', 'queue'):

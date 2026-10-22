@@ -15,8 +15,10 @@ predarb pairs candidates --db data/research.sqlite3 --limit 20
 
 `refresh` traverses both active catalogues, archives responses before validation,
 then collects market/event/series details and books for the first `--books` ranked
-pairs (unique instruments are deduplicated). Finally it persists a ranked review
-queue. Public requests are sequential, paced at one request/second per venue by
+pairs (unique instruments are deduplicated). Finally it rechecks those candidate
+identities and persists a ranked review queue, avoiding a second full-catalogue
+match after book capture. Newly discovered or changed candidates outside this
+shortlist enter on the next broad refresh. Public requests are sequential, paced at one request/second per venue by
 default, with the existing bounded retries, exponential backoff and Retry-After
 handling. `--request-interval` accepts .25..60 seconds. It is a per-process budget;
 other applications sharing the source IP still consume provider limits.
@@ -33,10 +35,11 @@ coverage. There is no claim that a partial run is a complete market census.
 
 `--books 0` collects catalogue metadata only. A selected Kalshi market is refreshed
 using its event scope, because that is the documented catalogue filter. Set
-`--offline` to rebuild the queue without network access. All commands hold the
-existing database writer lock; discovery must run between research-monitor
-sessions using the same database. A lock conflict fails clearly instead of
-starting another writer.
+`--offline` to rebuild the queue without network access. Collection and queue refresh hold the existing database writer lock; these must
+run between research-monitor sessions using the same database. A lock conflict
+fails clearly instead of starting another writer. `discovery queue` uses a
+consistent read-only SQLite snapshot and remains available beside the writer;
+it never migrates an archive or alters approval state.
 
 The default free-space guard is 1 GiB (`--min-free-mb`), checked before the cycle
 and before each catalogue/detail/book request. Raw evidence is
@@ -52,7 +55,9 @@ writes. It now searches **all fresh available instruments** by default; optional
 `--max-instruments` is an explicit diagnostic cap. `discovery queue` returns a
 coverage envelope and recomputes ranking/eligibility for persisted queue members
 at read time, along with the
-last persisted refresh time. The saved queue is a derived snapshot, not approval
+last persisted refresh time. Its `coverage.scope=queued_instruments` labels
+eligibility counts for queue members; `stored` still counts the whole venue.
+`catalogue_coverage_at_refresh` preserves coverage from the preceding broad scan. The saved queue is a derived snapshot, not approval
 authority. Both commands return at most the requested 1..1,000 suggestions.
 
 Every result contains:
@@ -60,7 +65,9 @@ Every result contains:
 - Subject and normalized description overlap, extracted dates and numeric
   thresholds, an integer heuristic score and explicit conflicts/unknowns.
 - Links to both official market-definition API responses, collected Kalshi
-  event/series/contract-term sources, and imported official rule documents.
+  event/series/contract-term sources, official US-venue rule links declared in
+  archived descriptions, and imported official rule documents. Declared links
+  are not independently fetched or authenticated by discovery.
 - The immutable rule-version IDs, source IDs, hypothetical marker and previous
   human decisions, including rejections. Refresh never erases or reverses decisions.
 - Recent displayed book depth, raw observation IDs, source/receipt timestamps and
@@ -77,11 +84,19 @@ explicit warning; unknown units are not treated as confirmed equal. Documented `
 provide UTC event dates when present. Close/end timestamps remain separate
 cutoffs, never inferred event dates. Unknown date formats, abbreviated names,
 ranges, unexpressed units and inverse propositions require human interpretation.
-An inverted subject index avoids comparing every possible pair. Description-only
+An inverted subject index avoids comparing every possible pair; generic format,
+unit and scheduling words such as “vs”, “total” and “points” cannot by themselves
+join unrelated participants. Description-only
 retrieval uses up to three rare terms and requires two shared terms when available;
 common boilerplate is excluded. A score upper bound skips detailed comparisons
 that cannot enter the requested result set while preserving score ties. This heuristic can miss genuine matches
 and return false positives. It is not a calibrated probability or legal analysis.
+
+Explicit core-goods/core-services/core/headline CPI labels and monthly/annual
+change periods are separate subject facets. Conflicts receive a strong penalty
+and a `SUBJECT_METRIC_CONFLICT` or `SUBJECT_PERIOD_CONFLICT` warning; missing
+qualifiers stay unknown. This is a small conservative facet set, not general
+semantic understanding.
 
 Conflicting dates, thresholds, first/final/revision/negation language and cutoffs
 lower ranking and surface review warnings. A perfect score still says
@@ -95,7 +110,7 @@ sides and venues, using exact Decimal arithmetic. It has **no price bound** and
 is not an executable hedge quantity. Kalshi REST lacks source book time and is
 explicitly `UNKNOWN_SOURCE_TIME`, even when its receipt is recent. US NO exposure
 still has its existing synthetic-short limitations. Stale receipts/source times,
-invalid prices and unknown quantities are never promoted to fresh executable
+invalid prices, non-open US book states and unknown quantities are never promoted to fresh executable
 liquidity. Economic and approval gates are unchanged.
 
 ## Human review and periodic operation
@@ -106,7 +121,8 @@ not generate approval attestations, choose complementary legs or fill review
 rationales. A prior rejection remains visible even if the candidate reappears.
 
 `deploy/predarb-discovery.service` and `.timer` provide an hourly periodic refresh
-with two minutes of jitter, a two-hour execution bound, SIGINT shutdown and the
+with two minutes of jitter, a two-hour execution bound, a 2 GiB memory ceiling,
+SIGINT shutdown and the
 existing dedicated-user deployment layout (`/opt/predarb`, `/var/lib/predarb`).
 They are templates, not activated by the CLI. After installing the package and
 creating the dedicated account as described in [operations](OPERATIONS.md), copy

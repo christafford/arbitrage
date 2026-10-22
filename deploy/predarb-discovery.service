@@ -20,5 +20,5 @@ PrivateTmp=yes
 UMask=0077
 StateDirectory=predarb
 StateDirectoryMode=0700
-MemoryMax=1G
+MemoryMax=2G
 TasksMax=32

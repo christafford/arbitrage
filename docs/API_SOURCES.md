@@ -199,3 +199,9 @@ these fields; `discovery-hypothetical.json` adds labeled deterministic matching
 cases. Normalized thresholds are text heuristics, not inferred API settlement
 semantics. The new timer uses one request/second per venue by default and retains
 bounded 429 backoff. Provider rights restrictions above still apply.
+
+The live discovery review exposed core-goods CPI versus core CPI suggestions.
+[BLS expenditure-category tables](https://www.bls.gov/news.release/cpi.t01.htm)
+list the narrower goods component separately from the broader index excluding
+food and energy. Explicit metric and monthly/annual labels now trigger retrieval
+warnings and penalties when they conflict; no legal equivalence is inferred.
