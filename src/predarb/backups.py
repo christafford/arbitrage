@@ -17,7 +17,7 @@ def readonly(path):
     con = sqlite3.connect(target.as_uri() + '?mode=ro', uri=True, timeout=5)
     try:
         version = con.execute('PRAGMA user_version').fetchone()[0]
-        if version > 5: raise ValueError('unsupported read-only database schema version ' + str(version))
+        if version > 6: raise ValueError('unsupported read-only database schema version ' + str(version))
         return con
     except BaseException:
         con.close()
@@ -39,7 +39,7 @@ def fingerprint(con):
     if con.execute('PRAGMA foreign_key_check').fetchone() is not None:
         raise ValueError('SQLite foreign-key check failed')
     version = con.execute('PRAGMA user_version').fetchone()[0]
-    if not 1 <= version <= 5:
+    if not 1 <= version <= 6:
         raise ValueError('unsupported backup schema')
     digest = sha256()
     counts = {}
@@ -105,7 +105,7 @@ def read_manifest(path):
     utc_time(text_field(manifest, 'created_at'))
     if text_field(manifest, 'format') != 'predarb-backup/m5-v1':
         raise ValueError('unsupported backup manifest format')
-    if not 1 <= field(manifest, 'schema_version', int) <= 5:
+    if not 1 <= field(manifest, 'schema_version', int) <= 6:
         raise ValueError('unsupported backup manifest schema')
     for key in ('file_sha256', 'logical_sha256'):
         if not re.fullmatch('[0-9a-f]{64}', text_field(manifest, key)):

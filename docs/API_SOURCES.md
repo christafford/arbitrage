@@ -184,3 +184,18 @@ No units or time settings were activated/changed. [M5 results](M5_RESULTS.md)
 distinguish hypothetical stress evidence, actual short host/restore tests and the
 remaining live/multiweek acceptance gaps. Provider rights and review requirements
 above still apply before any ongoing collection.
+
+## Discovery extension verification — 2026-10-22 UTC
+
+Rechecked the official Get Markets, Get Market Orderbook/Get Market Book and
+rate-limit links above. Discovery reuses the existing public US adapters and
+validated book fields; no international endpoint or credentials were introduced.
+The documented optional Kalshi `occurrence_datetime` and US `gameStartTime` are
+parsed as timezone-aware event timestamps when present in archived metadata.
+The documented US `marketSides[].description` and `.team.name` identify long-side
+participants for generic event titles; they are retrieval hints, not payoff mapping.
+Invalid consumed event times fail clearly. Existing sanitized live fixtures retain
+these fields; `discovery-hypothetical.json` adds labeled deterministic matching
+cases. Normalized thresholds are text heuristics, not inferred API settlement
+semantics. The new timer uses one request/second per venue by default and retains
+bounded 429 backoff. Provider rights restrictions above still apply.

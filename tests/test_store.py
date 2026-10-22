@@ -23,7 +23,7 @@ class StorageTests(unittest.TestCase):
             old.commit()
             old.close()
             with connect(path) as db:
-                self.assertEqual(db.execute('PRAGMA user_version').fetchone()[0], 5)
+                self.assertEqual(db.execute('PRAGMA user_version').fetchone()[0], 6)
                 self.assertEqual(db.execute('SELECT id,validation_status,raw_body FROM raw_observations').fetchone(),
                                  (1, 'LEGACY_UNVALIDATED', None))
             with connect(path) as db:
@@ -34,7 +34,7 @@ class StorageTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as temp:
             path = str(Path(temp) / 'future.sqlite3')
             with connect(path) as db:
-                db.execute('PRAGMA user_version=6')
+                db.execute('PRAGMA user_version=7')
             with self.assertRaises(sqlite3.ProgrammingError):
                 db.execute('SELECT 1')
             with self.assertRaisesRegex(ValueError, 'unsupported database schema'):

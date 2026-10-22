@@ -63,7 +63,7 @@ def connect(path: str):
         con.execute('PRAGMA journal_mode=WAL')
         con.execute('PRAGMA busy_timeout=15000')
         version = con.execute('PRAGMA user_version').fetchone()[0]
-        if version > 5:
+        if version > 6:
             raise ValueError(f'unsupported database schema version {version}')
         con.executescript(SCHEMA)
         if version == 0:
@@ -92,6 +92,9 @@ def connect(path: str):
         if version < 5:
             from .paper_schema import M5_SCHEMA
             con.executescript('BEGIN IMMEDIATE;\n' + M5_SCHEMA + '\nPRAGMA user_version=5;\nCOMMIT;')
+        if version < 6:
+            from .discovery import SCHEMA as DISCOVERY_SCHEMA
+            con.executescript('BEGIN IMMEDIATE;\n' + DISCOVERY_SCHEMA + '\nPRAGMA user_version=6;\nCOMMIT;')
         return con
     except BaseException:
         con.close()

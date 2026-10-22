@@ -1,0 +1,11 @@
+[Unit]
+Description=Refresh US market discovery hourly
+
+[Timer]
+OnBootSec=5min
+OnUnitInactiveSec=1h
+RandomizedDelaySec=2min
+Unit=predarb-discovery.service
+
+[Install]
+WantedBy=timers.target

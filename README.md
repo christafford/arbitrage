@@ -35,6 +35,19 @@ Replace those placeholders with real IDs from the catalogue. Use `--books N` for
 
 Collectors use fixed verified US production origins, no credentials and no redirects. The previous arbitrary Polymarket base override is restricted to `https://gateway.polymarket.us`. Review [official API sources and data-use restrictions](docs/API_SOURCES.md) before ongoing collection. Sanitized provider fixtures remain subject to provider rights and are for local research.
 
+## Market discovery
+
+```bash
+predarb discovery refresh --db data/research.sqlite3 --limit 100
+predarb discovery queue --db data/research.sqlite3 --limit 20
+```
+
+Refresh both active US catalogues with paced pagination, rank metadata candidates,
+and archive details/books for the top candidates. The review queue exposes
+matching reasons, conflicts, liquidity uncertainty and official definition links.
+All suggestions remain `UNVERIFIED`. See [discovery](docs/DISCOVERY.md) for coverage,
+exit codes, offline use and the hourly timer templates.
+
 ## Pair review (M2)
 
 ```bash

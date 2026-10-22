@@ -1,0 +1,24 @@
+[Unit]
+Description=Read-only US market discovery and human review queue
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=oneshot
+User=predarb
+Group=predarb
+WorkingDirectory=/opt/predarb
+ExecStart=/usr/bin/env /opt/predarb/.venv/bin/predarb discovery refresh --db /var/lib/predarb/research.sqlite3 --page-size 200 --max-pages 1000 --books 10 --limit 100 --request-interval 1
+TimeoutStartSec=2h
+KillSignal=SIGINT
+TimeoutStopSec=30
+NoNewPrivileges=yes
+ProtectSystem=strict
+ProtectHome=yes
+ReadWritePaths=/var/lib/predarb
+PrivateTmp=yes
+UMask=0077
+StateDirectory=predarb
+StateDirectoryMode=0700
+MemoryMax=1G
+TasksMax=32

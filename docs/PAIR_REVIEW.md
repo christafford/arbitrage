@@ -54,11 +54,14 @@ predarb pairs propose --db data/research.sqlite3 \
 predarb pairs review 1 --db data/research.sqlite3 --template-output data/pair-1-review.json
 ```
 
-`candidates` compares title words from at most 500 available instruments per venue
-and returns at most 100 suggestions. Its integer overlap score is a search aid,
-not equivalence confidence; even a perfect title match is `UNVERIFIED`. Suggestions
-do not write proposals or decisions. A manual proposal can use any collected IDs
-from the two supported US venues. Duplicate current proposals/approvals fail.
+`candidates` searches all fresh available instruments by default, using normalized
+subjects/descriptions, dates and thresholds. Results expose heuristic scores,
+conflicts, recent liquidity proxies, prior decisions and original definition
+links. Scores never establish equivalence. Suggestions do not write proposals
+or decisions. The [discovery guide](DISCOVERY.md) covers periodic collection,
+coverage, bounded queue refreshes and limitations. A manual proposal can use any
+collected IDs from the two supported US venues. Duplicate current
+proposals/approvals fail.
 
 `review` shows exact contract evidence, raw-observation provenance, event/series
 sources, imported resolution text and both current and decision evidence hashes.

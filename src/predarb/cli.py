@@ -75,9 +75,10 @@ def main():
     books_cli.add_parser(s)
     from . import research_cli
     research_cli.add_parser(s)
-    from . import paper_cli, ops_cli
+    from . import paper_cli, ops_cli, discovery_cli
     paper_cli.add_parser(s)
     ops_cli.add_parser(s)
+    discovery_cli.add_parser(s)
     args = p.parse_args()
     try:
         if args.cmd == 'ops': return ops_cli.run(args)
@@ -86,6 +87,7 @@ def main():
         with (nullcontext() if reader else writer_lock(args.db)):
             if args.cmd == "demo": demo(args.db)
             elif args.cmd == "report": report(args.db)
+            elif args.cmd == "discovery": return discovery_cli.run(args)
             elif args.cmd == "pairs": return registry_cli.run(args)
             elif args.cmd == "books": return books_cli.run(args)
             elif args.cmd == "research": return research_cli.run(args)

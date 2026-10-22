@@ -438,32 +438,9 @@ def audit(con, pair_id=None):
     return rows
 
 
-def candidates(con, *, limit=20, max_instruments=500):
-    if not 1 <= limit <= 100 or not 1 <= max_instruments <= 500:
-        raise ValueError('candidate limits: 1..100 results and 1..500 instruments per venue')
-    pools = []
-    for venue in VENUES:
-        rows = _rows(con, '''SELECT h.source_id,v.evidence_json,v.hypothetical FROM registry_instruments h
-            JOIN rule_versions v ON v.id=h.version_id WHERE h.venue=? AND h.available=1 ORDER BY h.source_id LIMIT ?''',
-                     (venue, max_instruments))
-        pools.append(rows)
-    result = []
-    for k in pools[0]:
-        km = json.loads(k['evidence_json'])['contract']
-        kt = km.get('title') or km.get('yes_sub_title') or ''
-        for p in pools[1]:
-            if k['hypothetical'] != p['hypothetical']:
-                continue
-            pm = json.loads(p['evidence_json'])['contract']
-            pt = ' '.join(filter(None, (pm.get('question'), pm.get('title'))))
-            left, right = (set(re.findall(r'[a-z0-9]+', title.lower())) - {'hypothetical'} for title in (kt, pt))
-            score = 10000 * len(left & right) // len(left | right) if left | right else 0
-            if score >= 4000:
-                result.append({'kalshi_id': k['source_id'], 'polymarket_us_id': p['source_id'],
-                               'kalshi_title': kt, 'polymarket_us_title': pt, 'metadata_overlap_bps': score,
-                               'hypothetical': bool(k['hypothetical']), 'status': 'UNVERIFIED',
-                               'reason': 'METADATA_ONLY_NOT_EQUIVALENCE'})
-    return sorted(result, key=lambda row: (-row['metadata_overlap_bps'], row['kalshi_id'], row['polymarket_us_id']))[:limit]
+def candidates(con, *, limit=20, max_instruments=None):
+    from .discovery import discover
+    return discover(con, limit=limit, max_instruments=max_instruments)['candidates']
 
 
 def load_hypothetical(con, data, *, now=None):

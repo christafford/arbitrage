@@ -25,7 +25,7 @@ def add_parser(subparsers):
             parser.add_argument('pair_id', type=int)
         if command == 'candidates':
             parser.add_argument('--limit', type=int, default=20)
-            parser.add_argument('--max-instruments', type=int, default=500)
+            parser.add_argument('--max-instruments', type=int, help='optional explicit per-venue cap; default searches all fresh instruments')
         elif command == 'document':
             parser.add_argument('--venue', choices=registry.VENUES, required=True)
             parser.add_argument('--source-id', required=True)

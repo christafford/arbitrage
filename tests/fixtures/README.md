@@ -64,3 +64,9 @@ uses microsecond precision only when computing ages.
 Provider data rights are reserved by each venue, separately from the MIT license
 on this project's code. Keep these samples local; do not publish or redistribute
 without applicable permission. See [official sources and restrictions](../../docs/API_SOURCES.md).
+
+`discovery-hypothetical.json` is an explicitly hypothetical `discovery-v1`
+matching fixture with a 2030 replay clock. It covers alias/description/date and
+threshold normalization. Existing sanitized live pages/details/books supply the
+provider-schema replay; altered test sequences remain hypothetical. No fixture
+attests real contract equivalence.

@@ -55,5 +55,8 @@ def drop_m4_tables(con):
 
 
 def drop_m5_tables(con):
+    con.execute('DROP TABLE discovery_queue')
+    con.execute('DROP TABLE discovery_state')
+    con.execute('DROP INDEX discovery_books_source')
     for table in ('paper_comparisons', 'paper_intents', 'paper_tick_inputs', 'ops_checks', 'ops_events'):
         con.execute('DROP TABLE ' + table)

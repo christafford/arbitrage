@@ -62,12 +62,14 @@ class RegistryTests(unittest.TestCase):
                                     available=True, hypothetical=True, now=NOW)
 
     def test_metadata_candidates_never_create_or_approve_pairs(self):
-        rows = r.candidates(self.db)
+        from unittest.mock import patch
+        with patch('predarb.registry.now_utc', return_value=NOW):
+            rows = r.candidates(self.db)
         self.assertEqual({row['polymarket_us_id'] for row in rows}, {P, DIFFERENT})
         self.assertTrue(all(row['status'] == 'UNVERIFIED' and row['metadata_overlap_bps'] == 10000 for row in rows))
         self.assertEqual(self.db.execute('SELECT COUNT(*) FROM pairs').fetchone()[0], 1)
         self.assertEqual(r.review(self.db, self.pair_id, now=NOW)['status'], 'UNVERIFIED')
-        for kwargs in ({'limit': 0}, {'max_instruments': 501}):
+        for kwargs in ({'limit': 0}, {'max_instruments': 0}):
             with self.assertRaises(ValueError):
                 r.candidates(self.db, **kwargs)
 

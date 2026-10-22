@@ -116,6 +116,18 @@ enabled service or sustained incident audit. M4's live approval/fee/source-time
 prerequisites remain unresolved. No credentials, real orders/cancellations,
 funding or M6 work were added. **Stop before M6.**
 
+## M1/M2 discovery extension — IMPLEMENTED (2026-10-22 UTC)
+
+- [x] Bounded, rate-paced active catalogue refresh for both US venues and hourly timer templates.
+- [x] Search all fresh instruments by default using subjects, normalized descriptions, event dates and thresholds; expose conflicts and unknowns.
+- [x] Rank by heuristic equivalence with exact displayed-depth tie-breaking and explicit stale/unknown liquidity.
+- [x] Persist a review queue with definition links, evidence versions and prior decisions; preserve every human approval requirement.
+- [x] Schema-6 migration, fixtures, offline integration tests, CLI smoke checks and operational documentation.
+
+See [verification](DISCOVERY_RESULTS.md) for executed tests/live coverage and
+[operation](DISCOVERY.md) for limits. This extension does not satisfy M4/M5's
+pending sustained-run acceptance or authorize M6. No real equivalence was approved.
+
 ## M6 — OPTIONAL live trading proposal (DO NOT IMPLEMENT WITHOUT EXPLICIT GO-AHEAD)
 
 - [ ] Human-approved security/risk design; separate order execution module, off by default.
