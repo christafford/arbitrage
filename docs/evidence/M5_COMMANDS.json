@@ -1,0 +1,172 @@
+{
+  "commands": [
+    {
+      "command": [
+        ".venv/bin/predarb",
+        "research",
+        "start",
+        "--db",
+        "/home/chris/code/arbitrage/data/m5-ops-smoke/research.sqlite3",
+        "--policy",
+        "examples/M4_RESEARCH_POLICY.json",
+        "--interval",
+        "1"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"session_id\":1}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        ".venv/bin/predarb",
+        "ops",
+        "run",
+        "--config",
+        "data/m5-ops-smoke/monitor.json"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"health\":{\"alerts\":[{\"code\":\"NO_RESEARCH_CYCLES\",\"severity\":\"WARN\"},{\"code\":\"NO_CACHED_APPROVED_PAIRS\",\"severity\":\"WARN\"},{\"code\":\"BACKUP_NOT_OBSERVED\",\"severity\":\"WARN\"}],\"clock\":{\"offset_measured\":false,\"probe\":\"timedatectl.NTPSynchronized\",\"synchronized\":true},\"evaluated_at\":\"2026-10-22T02:01:02.224001+00:00\",\"metrics\":{\"cached_approved_pairs\":0,\"collection_failures_total\":0,\"database_bytes\":344120,\"disk_free_bytes\":920930344960,\"paper_comparisons_total\":0,\"paper_high_scenarios_total\":0,\"research_cycles_total\":0},\"ready\":true,\"session_id\":1,\"trading_authorized\":false}}\n{\"cycle\":{\"cycle_id\":1,\"hypothetical\":false,\"modeled_edges\":0,\"no_pairs\":true,\"pairs_observed\":0,\"rejected\":0,\"trading_authorized\":false}}\n{\"health\":{\"alerts\":[{\"code\":\"NO_CACHED_APPROVED_PAIRS\",\"severity\":\"WARN\"},{\"code\":\"BACKUP_NOT_OBSERVED\",\"severity\":\"WARN\"}],\"clock\":{\"offset_measured\":false,\"probe\":\"timedatectl.NTPSynchronized\",\"synchronized\":true},\"evaluated_at\":\"2026-10-22T02:01:03.224115+00:00\",\"metrics\":{\"cached_approved_pairs\":0,\"collection_failures_total\":0,\"database_bytes\":372960,\"disk_free_bytes\":920930308096,\"paper_comparisons_total\":0,\"paper_high_scenarios_total\":0,\"research_cycles_total\":1},\"ready\":true,\"session_id\":1,\"trading_authorized\":false}}\n{\"cycle\":{\"cycle_id\":2,\"hypothetical\":false,\"modeled_edges\":0,\"no_pairs\":true,\"pairs_observed\":0,\"rejected\":0,\"trading_authorized\":false}}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        ".venv/bin/predarb",
+        "ops",
+        "run",
+        "--config",
+        "data/m5-ops-smoke/signal-monitor.json"
+      ],
+      "signal_sent": "SIGTERM after first cycle",
+      "exit_code": 0,
+      "stdout": "{\"health\":{\"alerts\":[{\"code\":\"NO_CACHED_APPROVED_PAIRS\",\"severity\":\"WARN\"},{\"code\":\"BACKUP_NOT_OBSERVED\",\"severity\":\"WARN\"}],\"clock\":{\"offset_measured\":false,\"probe\":\"timedatectl.NTPSynchronized\",\"synchronized\":true},\"evaluated_at\":\"2026-10-22T02:01:03.376652+00:00\",\"metrics\":{\"cached_approved_pairs\":0,\"collection_failures_total\":0,\"database_bytes\":344120,\"disk_free_bytes\":920930332672,\"paper_comparisons_total\":0,\"paper_high_scenarios_total\":0,\"research_cycles_total\":2},\"ready\":true,\"session_id\":1,\"trading_authorized\":false}}\n{\"cycle\":{\"cycle_id\":3,\"hypothetical\":false,\"modeled_edges\":0,\"no_pairs\":true,\"pairs_observed\":0,\"rejected\":0,\"trading_authorized\":false}}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        ".venv/bin/predarb",
+        "ops",
+        "backup",
+        "--db",
+        "/home/chris/code/arbitrage/data/m5-ops-smoke/research.sqlite3",
+        "--output",
+        "/home/chris/code/arbitrage/data/m5-ops-smoke/backups/research.sqlite3"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"created_at\":\"2026-10-22T02:01:03.572853+00:00\",\"destination\":\"/home/chris/code/arbitrage/data/m5-ops-smoke/backups/research.sqlite3\",\"file_sha256\":\"86f8bb2d2d8c4f7cb63943ea6b26a15d16ce6047cf934e41d3f97bdb2d65f761\",\"format\":\"predarb-backup/m5-v1\",\"logical_sha256\":\"21555ccd51b300f9ad0193feb28c321e7516cba1a7f79238ddf8b015680d06c5\",\"manifest\":\"/home/chris/code/arbitrage/data/m5-ops-smoke/backups/research.sqlite3.manifest.json\",\"row_counts\":{\"book_captures\":3,\"catalogue_entries\":3,\"collection_runs\":2,\"document_heads\":0,\"fee_documents\":0,\"fee_imports\":0,\"fee_profiles\":0,\"normalized_books\":3,\"opportunities\":0,\"ops_checks\":3,\"ops_events\":14,\"pair_audit\":0,\"pairs\":0,\"paper_comparisons\":0,\"paper_intents\":0,\"paper_tick_inputs\":0,\"raw_observations\":12,\"registry_instruments\":3,\"registry_supplements\":4,\"research_audit\":7,\"research_cycles\":3,\"research_details\":0,\"research_evaluations\":0,\"research_replays\":0,\"research_sessions\":1,\"rule_documents\":0,\"rule_versions\":3,\"supplement_versions\":4},\"schema_version\":5}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        ".venv/bin/predarb",
+        "ops",
+        "verify-backup",
+        "/home/chris/code/arbitrage/data/m5-ops-smoke/backups/research.sqlite3"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"created_at\":\"2026-10-22T02:01:03.572853+00:00\",\"file_sha256\":\"86f8bb2d2d8c4f7cb63943ea6b26a15d16ce6047cf934e41d3f97bdb2d65f761\",\"format\":\"predarb-backup/m5-v1\",\"logical_sha256\":\"21555ccd51b300f9ad0193feb28c321e7516cba1a7f79238ddf8b015680d06c5\",\"row_counts\":{\"book_captures\":3,\"catalogue_entries\":3,\"collection_runs\":2,\"document_heads\":0,\"fee_documents\":0,\"fee_imports\":0,\"fee_profiles\":0,\"normalized_books\":3,\"opportunities\":0,\"ops_checks\":3,\"ops_events\":14,\"pair_audit\":0,\"pairs\":0,\"paper_comparisons\":0,\"paper_intents\":0,\"paper_tick_inputs\":0,\"raw_observations\":12,\"registry_instruments\":3,\"registry_supplements\":4,\"research_audit\":7,\"research_cycles\":3,\"research_details\":0,\"research_evaluations\":0,\"research_replays\":0,\"research_sessions\":1,\"rule_documents\":0,\"rule_versions\":3,\"supplement_versions\":4},\"schema_version\":5,\"verified\":true}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        ".venv/bin/predarb",
+        "ops",
+        "restore",
+        "/home/chris/code/arbitrage/data/m5-ops-smoke/backups/research.sqlite3",
+        "--output",
+        "/home/chris/code/arbitrage/data/m5-ops-smoke/restored.sqlite3"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"created_at\":\"2026-10-22T02:01:03.813934+00:00\",\"destination\":\"/home/chris/code/arbitrage/data/m5-ops-smoke/restored.sqlite3\",\"file_sha256\":\"86f8bb2d2d8c4f7cb63943ea6b26a15d16ce6047cf934e41d3f97bdb2d65f761\",\"format\":\"predarb-backup/m5-v1\",\"logical_sha256\":\"21555ccd51b300f9ad0193feb28c321e7516cba1a7f79238ddf8b015680d06c5\",\"manifest\":\"/home/chris/code/arbitrage/data/m5-ops-smoke/restored.sqlite3.manifest.json\",\"restore_verified\":true,\"row_counts\":{\"book_captures\":3,\"catalogue_entries\":3,\"collection_runs\":2,\"document_heads\":0,\"fee_documents\":0,\"fee_imports\":0,\"fee_profiles\":0,\"normalized_books\":3,\"opportunities\":0,\"ops_checks\":3,\"ops_events\":14,\"pair_audit\":0,\"pairs\":0,\"paper_comparisons\":0,\"paper_intents\":0,\"paper_tick_inputs\":0,\"raw_observations\":12,\"registry_instruments\":3,\"registry_supplements\":4,\"research_audit\":7,\"research_cycles\":3,\"research_details\":0,\"research_evaluations\":0,\"research_replays\":0,\"research_sessions\":1,\"rule_documents\":0,\"rule_versions\":3,\"supplement_versions\":4},\"schema_version\":5,\"source_file_sha256\":\"86f8bb2d2d8c4f7cb63943ea6b26a15d16ce6047cf934e41d3f97bdb2d65f761\"}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        ".venv/bin/predarb",
+        "ops",
+        "health",
+        "1",
+        "--db",
+        "/home/chris/code/arbitrage/data/m5-ops-smoke/research.sqlite3",
+        "--backup-dir",
+        "/home/chris/code/arbitrage/data/m5-ops-smoke/backups"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"alerts\":[{\"code\":\"NO_CACHED_APPROVED_PAIRS\",\"severity\":\"WARN\"}],\"clock\":{\"offset_measured\":false,\"probe\":\"timedatectl.NTPSynchronized\",\"synchronized\":true},\"evaluated_at\":\"2026-10-22T02:01:03.921734+00:00\",\"metrics\":{\"cached_approved_pairs\":0,\"collection_failures_total\":0,\"database_bytes\":339968,\"disk_free_bytes\":920929677312,\"paper_comparisons_total\":0,\"paper_high_scenarios_total\":0,\"research_cycles_total\":3},\"ready\":true,\"session_id\":1,\"trading_authorized\":false}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        ".venv/bin/predarb",
+        "ops",
+        "metrics",
+        "1",
+        "--db",
+        "/home/chris/code/arbitrage/data/m5-ops-smoke/research.sqlite3",
+        "--backup-dir",
+        "/home/chris/code/arbitrage/data/m5-ops-smoke/backups"
+      ],
+      "exit_code": 0,
+      "stdout": "predarb_health_ready 1\npredarb_disk_free_bytes 920929677312\npredarb_database_bytes 339968\npredarb_cached_approved_pairs 0\npredarb_research_cycles_total 3\npredarb_collection_failures_total 0\npredarb_paper_comparisons_total 0\npredarb_paper_high_scenarios_total 0\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        ".venv/bin/predarb",
+        "ops",
+        "events",
+        "--db",
+        "/home/chris/code/arbitrage/data/m5-ops-smoke/research.sqlite3",
+        "--limit",
+        "10"
+      ],
+      "exit_code": 0,
+      "stdout": "[{\"action\":\"HEALTH_ALERT\",\"at\":\"2026-10-22T02:01:04.052195+00:00\",\"detail\":\"{\\\"code\\\":\\\"NO_CACHED_APPROVED_PAIRS\\\",\\\"severity\\\":\\\"WARN\\\"}\",\"id\":16,\"severity\":\"WARN\"},{\"action\":\"HEALTH_ALERT\",\"at\":\"2026-10-22T02:01:03.921734+00:00\",\"detail\":\"{\\\"code\\\":\\\"NO_CACHED_APPROVED_PAIRS\\\",\\\"severity\\\":\\\"WARN\\\"}\",\"id\":15,\"severity\":\"WARN\"},{\"action\":\"RUN_SIGNAL_STOP\",\"at\":\"2026-10-22T02:01:03.430988+00:00\",\"detail\":\"{\\\"completed_cycles\\\":1}\",\"id\":14,\"severity\":\"INFO\"},{\"action\":\"RUN_CYCLE_FINISHED\",\"at\":\"2026-10-22T02:01:03.396700+00:00\",\"detail\":\"{\\\"cycle_id\\\":3,\\\"hypothetical\\\":false,\\\"modeled_edges\\\":0,\\\"no_pairs\\\":true,\\\"pairs_observed\\\":0,\\\"rejected\\\":0,\\\"trading_authorized\\\":false}\",\"id\":13,\"severity\":\"INFO\"},{\"action\":\"HEALTH_ALERT\",\"at\":\"2026-10-22T02:01:03.376652+00:00\",\"detail\":\"{\\\"code\\\":\\\"BACKUP_NOT_OBSERVED\\\",\\\"severity\\\":\\\"WARN\\\"}\",\"id\":12,\"severity\":\"WARN\"},{\"action\":\"HEALTH_ALERT\",\"at\":\"2026-10-22T02:01:03.376652+00:00\",\"detail\":\"{\\\"code\\\":\\\"NO_CACHED_APPROVED_PAIRS\\\",\\\"severity\\\":\\\"WARN\\\"}\",\"id\":11,\"severity\":\"WARN\"},{\"action\":\"RUN_STARTED\",\"at\":\"2026-10-22T02:01:03.358488+00:00\",\"detail\":\"{\\\"config\\\":{\\\"backup_dir\\\":\\\"/home/chris/code/arbitrage/data/m5-ops-smoke/backups\\\",\\\"cycles\\\":60,\\\"db\\\":\\\"/home/chris/code/arbitrage/data/m5-ops-smoke/research.sqlite3\\\",\\\"max_clock_jump_ms\\\":1000,\\\"max_db_bytes\\\":10737418240,\\\"min_free_bytes\\\":209715200,\\\"refresh\\\":false,\\\"session_id\\\":1,\\\"shadow_policy\\\":null}}\",\"id\":10,\"severity\":\"INFO\"},{\"action\":\"RUN_FINISHED\",\"at\":\"2026-10-22T02:01:03.253682+00:00\",\"detail\":\"{\\\"completed_cycles\\\":2}\",\"id\":9,\"severity\":\"INFO\"},{\"action\":\"RUN_CYCLE_FINISHED\",\"at\":\"2026-10-22T02:01:03.250711+00:00\",\"detail\":\"{\\\"cycle_id\\\":2,\\\"hypothetical\\\":false,\\\"modeled_edges\\\":0,\\\"no_pairs\\\":true,\\\"pairs_observed\\\":0,\\\"rejected\\\":0,\\\"trading_authorized\\\":false}\",\"id\":8,\"severity\":\"INFO\"},{\"action\":\"HEALTH_ALERT\",\"at\":\"2026-10-22T02:01:03.224115+00:00\",\"detail\":\"{\\\"code\\\":\\\"BACKUP_NOT_OBSERVED\\\",\\\"severity\\\":\\\"WARN\\\"}\",\"id\":7,\"severity\":\"WARN\"}]\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        ".venv/bin/predarb",
+        "paper",
+        "report",
+        "--db",
+        "/home/chris/code/arbitrage/data/m5-ops-smoke/research.sqlite3"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"historical_replay\":false,\"result\":{\"continuous_run_verified\":false,\"independent_scenarios_not_realized_pnl\":true,\"multiweek_acceptance\":false,\"paper_intents\":[],\"total_intents\":0,\"trading_authorized\":false,\"truncated\":false},\"trading_authorized\":false}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        ".venv/bin/predarb",
+        "demo",
+        "--db",
+        "/home/chris/code/arbitrage/data/m5-ops-smoke/research.sqlite3"
+      ],
+      "exit_code": 0,
+      "stdout": "HYPOTHETICAL EXAMPLE ONLY \u2014 not a trade signal or verified exchange quotes\npairs=400 required_capital=$391.000 modeled_profit=$9.000 ROI=2.302%\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        ".venv/bin/predarb",
+        "report",
+        "--db",
+        "/home/chris/code/arbitrage/data/m5-ops-smoke/research.sqlite3"
+      ],
+      "exit_code": 0,
+      "stdout": "Read-only archive counts: {'kalshi': 8, 'polymarket_us': 4}\nCollection runs (id, venue, status, pages, records, unique, duplicates): [(2, 'polymarket_us', 'COMPLETE', 2, 1, 1, 0), (1, 'kalshi', 'COMPLETE', 2, 2, 2, 0)]\nBook captures (freshness AT CAPTURE, liquidity, count): [('FRESH', 'TWO_SIDED', 1), ('UNKNOWN_SOURCE_TIME', 'TWO_SIDED', 2)]\nAll live catalogue entries and books are UNVERIFIED; no actionable signals\nNormalized book assessments (data usable AT ASSESSMENT, count): [(0, 2), (1, 1)]\nPair decisions (hypothetical, status, count; no trading authority): []\nHypothetical evaluations: 1 (sum of *example modeled* profits, NOT realized P&L: $9.00)\n",
+      "stderr": ""
+    }
+  ],
+  "summary": {
+    "schema_version": 5,
+    "cycles": 3,
+    "signal_stop_events": 1,
+    "real_paper_intents": 0,
+    "health_high_events": 0
+  },
+  "restore_verified": true,
+  "services_installed": false,
+  "actual_multiweek_run": false,
+  "trading_authorized": false
+}

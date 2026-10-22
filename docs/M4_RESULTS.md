@@ -114,3 +114,6 @@ was committed separately using that existing identity; the staged prerequisite
 tree independently passed all 101 M3 tests before committing. M4 is recorded as
 its own subsequent change. No identity was invented, and nothing was pushed or
 published.
+
+Subsequent authorization: M5 implementation was requested while M4 acceptance
+remained open. See [M5 results](M5_RESULTS.md); no M4 observation gap was waived.

@@ -89,15 +89,31 @@ This is not 30-day evidence. See [M4 results](M4_RESULTS.md),
 M4 is **not complete**: no actual 30-day run/audit, no real approved pair or fee
 profile, and no timestamped Kalshi live source. REST's unknown source time remains
 a hard rejection. Real quote-lifespan measurement and operational evidence remain
-pending. No orders, credentials, funding or M5 work were added. **Stop before M5.**
+pending. No orders, credentials or funding were added. M5 implementation was
+separately authorized while this M4 acceptance remained open.
 
-## M5 — Paper execution and operational hardening
+## M5 — Paper execution and operational hardening — IN PROGRESS (2026-10-22 UTC)
 
-- [ ] Model adverse selection, one-leg fill, partial fills, max hedge latency, cancellations, API outages.
-- [ ] systemd deployment docs, backup/restore drill, metrics, alerting, time sync, disk monitoring.
-- [ ] Forward-test shadow executions without actual orders; compare to later observed ticks.
+- [x] Exact hypothetical adverse-selection, one-leg/partial-fill, hedge-deadline, cancellation-race and outage models; reviewed payout downside and fee/reserve bounds. No actual positions or orders.
+- [x] Local health/metrics/journal alerts, clock/disk/WAL checks, single-writer guard, graceful monitor signals, verified SQLite backup/new-path restore and hardened systemd templates/docs. Units syntax-checked, not installed or activated.
+- [x] Implement gated paper intents and immutable later-quote comparison inputs/results, bounded monitor integration and deterministic isolated hypothetical replay.
+- [ ] Actual live forward shadow comparison and multiweek zero-money run; reproducible coverage/incident/downside audit with useful fresh approved data.
 
 Acceptance: multiweek zero-money run, reproducible reports, no high-severity incidents, realistic downside scenarios documented.
+
+Implementation evidence: **154 tests passed**, seven hypothetical stress cases,
+both live collector compatibility checks, preserved-copy M4 migration, verified
+backup/restore fingerprints, actual SIGTERM stop after a completed cycle and
+systemd unit syntax verification. One-leg outage modeled a conditional $85 loss
+and 200 unhedged contracts; unequal fills modeled $64.69 loss and 160 unhedged.
+These are assumed paper outcomes, not actual losses/fills. Evidence and operational
+limits: [M5 results](M5_RESULTS.md), [paper guide](PAPER_EXECUTION.md),
+[operations](OPERATIONS.md).
+
+M5 is **not complete**: no actual multiweek run, live intent/fill observations,
+enabled service or sustained incident audit. M4's live approval/fee/source-time
+prerequisites remain unresolved. No credentials, real orders/cancellations,
+funding or M6 work were added. **Stop before M6.**
 
 ## M6 — OPTIONAL live trading proposal (DO NOT IMPLEMENT WITHOUT EXPLICIT GO-AHEAD)
 

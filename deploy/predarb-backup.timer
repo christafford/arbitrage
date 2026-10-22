@@ -1,0 +1,11 @@
+[Unit]
+Description=Daily verified research backup
+
+[Timer]
+OnCalendar=*-*-* 04:00:00 UTC
+Persistent=true
+RandomizedDelaySec=300
+Unit=predarb-backup.service
+
+[Install]
+WantedBy=timers.target

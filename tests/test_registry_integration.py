@@ -61,7 +61,7 @@ class RegistryIntegrationTests(unittest.TestCase):
                 db.execute(f'DROP TABLE {table}')
             db.execute('PRAGMA user_version=1')
         with connect(self.path) as db:
-            self.assertEqual(db.execute('PRAGMA user_version').fetchone()[0], 4)
+            self.assertEqual(db.execute('PRAGMA user_version').fetchone()[0], 5)
             self.assertEqual(db.execute('SELECT COUNT(*) FROM raw_observations').fetchone()[0], count)
             self.assertEqual(db.execute('SELECT COUNT(*) FROM registry_instruments').fetchone()[0], 2)
             self.assertEqual(db.execute('SELECT COUNT(*) FROM pairs').fetchone()[0], 0)

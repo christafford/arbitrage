@@ -1,0 +1,45 @@
+[Unit]
+Description=Read-only prediction research and paper comparisons (session %i)
+Wants=network-online.target time-sync.target
+After=network-online.target time-sync.target
+ConditionPathExists=/etc/predarb/session-%i.json
+StartLimitIntervalSec=300
+StartLimitBurst=3
+
+[Service]
+Type=simple
+User=predarb
+Group=predarb
+WorkingDirectory=/opt/predarb
+ExecStart=/usr/bin/env /opt/predarb/.venv/bin/predarb ops run --config /etc/predarb/session-%i.json
+Restart=on-failure
+RestartPreventExitStatus=2
+RestartSec=30
+TimeoutStopSec=90
+KillSignal=SIGTERM
+UMask=0077
+StateDirectory=predarb
+StateDirectoryMode=0700
+RuntimeDirectory=predarb
+RuntimeDirectoryMode=0700
+ReadWritePaths=/var/lib/predarb /run/predarb
+NoNewPrivileges=yes
+ProtectSystem=strict
+ProtectHome=yes
+PrivateTmp=yes
+PrivateDevices=yes
+ProtectKernelTunables=yes
+ProtectKernelModules=yes
+ProtectControlGroups=yes
+ProtectClock=yes
+RestrictSUIDSGID=yes
+RestrictAddressFamilies=AF_UNIX AF_INET AF_INET6
+CapabilityBoundingSet=
+AmbientCapabilities=
+MemoryMax=512M
+TasksMax=32
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,25 @@
+[Unit]
+Description=Verified local SQLite research backup
+
+[Service]
+Type=oneshot
+User=predarb
+Group=predarb
+WorkingDirectory=/opt/predarb
+ExecStart=/usr/bin/env /opt/predarb/.venv/bin/python /opt/predarb/scripts/daily_backup.py --db /var/lib/predarb/research.sqlite3 --directory /var/lib/predarb/backups
+TimeoutStartSec=300
+UMask=0077
+StateDirectory=predarb
+StateDirectoryMode=0700
+ReadWritePaths=/var/lib/predarb
+NoNewPrivileges=yes
+ProtectSystem=strict
+ProtectHome=yes
+PrivateTmp=yes
+PrivateDevices=yes
+ProtectClock=yes
+RestrictSUIDSGID=yes
+CapabilityBoundingSet=
+AmbientCapabilities=
+StandardOutput=journal
+StandardError=journal

@@ -2,7 +2,7 @@
 
 Read-only collection parameters:
 
-- `--db`: SQLite path (default `data/research.sqlite3`). Existing starter databases migrate automatically to schema version 4 (M1 archive, M2 registry, M3 books, M4 fee/research records); back up a working archive before upgrading.
+- `--db`: SQLite path (default `data/research.sqlite3`). Existing starter databases migrate automatically to schema version 5 (M1 archive, M2 registry, M3 books, M4 fees/research, M5 paper/ops); back up a working archive before upgrading. Backup/restore and diagnostic readers never migrate the source.
 - `--limit`: records per page, 1..1000 (default 20).
 - `--max-pages`: 1..10000 (default 10); exceeding the budget produces `PARTIAL` and exit 2.
 - `--event-ticker`: Kalshi event filter; `--slug`: Polymarket US market filter.
@@ -55,3 +55,20 @@ Resource bounds: 50 registered pairs, 10,000 common lot increments per evaluatio
 200 MiB free space before each cycle. Keep one writer. Derived-detail pruning is
 a dry run unless `--apply` is supplied, and retains at least 31 days. See
 [economics configuration](../docs/ECONOMICS.md).
+
+M5 paper policy declares bounded hedge/cancel/ack milliseconds, exact participation
+and price drift. It supplies no trading permissions. Paper intent creation requires
+a current positive M4 evaluation and revalidated approval/book/fee evidence;
+`--at` is restricted to hypothetical replay. Full detail is preserved in immutable
+intent evidence. See [paper configuration](../docs/PAPER_EXECUTION.md).
+
+The M5 monitor accepts exactly the fields in
+[the example](../examples/M5_MONITOR_CONFIG.json), with one cycle/no refresh/no
+shadow generation as defaults. Its NTP-state and wall-clock-jump checks fail
+closed; default free-space floor is 200 MiB and database/WAL ceiling 10 GiB.
+Standalone health/events/metrics, research summaries/CSV and paper reports are
+read-only and can run beside the single writer. The backup helper needs twice
+the estimated snapshot size plus 200 MiB free, uses new destinations and preserves
+the source. No clock/service/alert-destination setup is performed by the CLI.
+See [operations](../docs/OPERATIONS.md) for bounded runtime, lock, signal,
+deployment and restore behavior.

@@ -39,6 +39,14 @@ those rates apply to real instruments. Fee-document declarations in the demo
 are visibly hypothetical. The actual official fee-document check is recorded
 separately in [M4 sources](../../docs/API_SOURCES.md).
 
+`m5-hypothetical.json` declares seven **HYPOTHETICAL** later-quote/outage/liquidity/
+price/latency scenarios and a paper policy. The demo generates full provider-shaped
+ticks from the M4 synthetic fixture and archives each byte sequence before
+normalization. These are assumed fills/cancel windows, not actual feed changes,
+observed executions or measured fill probabilities. The generated SQLite paper
+tables preserve input hashes and independent case results; see
+[M5 results](../../docs/M5_RESULTS.md).
+
 Offline tests validate unchanged captures and replay their request sequences.
 Altered failure/overlap/empty-book scenarios are explicitly labeled
 **HYPOTHETICAL** in tests and are never written over these captures. Acceptance

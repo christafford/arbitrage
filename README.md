@@ -2,7 +2,7 @@
 
 A **read-only, Codex-ready** starter for researching fully hedged binary prediction-market opportunities between **Kalshi** and **Polymarket US**. Designed for a modest always-on Linux server, a SQLite database, and an initial bankroll of **$0** during discovery, potentially **$200–$500** for separately authorized experiments, with a **$10,000 lifetime seed-deposit ceiling**.
 
-**Current state:** M1–M3 are complete. M4 economics and recording are implemented and tested; its required **actual 30-day scanner run and audit remain pending**. Read-only research now includes versioned fee evidence, depth/budget/reserve evaluation, settlement-aware ranking, audit, reports and CSV. All live evidence remains `UNVERIFIED`; no real pair or fee profile is approved. Kalshi REST books lack source time and fail freshness checks. Stream recovery is tested offline only. No trading exists. See [M4 results and remaining gaps](docs/M4_RESULTS.md), [economics guide](docs/ECONOMICS.md), [book inspection](docs/BOOKS.md) and [human pair review](docs/PAIR_REVIEW.md).
+**Current state:** M1–M3 are complete. M4 economics/recording and M5 paper/operations are implemented and tested; **M4's actual 30-day run and M5's actual multiweek run remain pending**. Research includes versioned fees, depth/budget/reserve evaluation, paper downside scenarios, later-quote comparisons, local health/metrics, verified backups and deployment templates. All live evidence remains `UNVERIFIED`; no real pair or fee profile is approved. Kalshi REST lacks source time and fails freshness checks. No live trading or service activation exists. See [M5 results and gaps](docs/M5_RESULTS.md), [paper model](docs/PAPER_EXECUTION.md), [operations](docs/OPERATIONS.md) and [M4 results](docs/M4_RESULTS.md).
 
 ## Quick start (Python 3.11+; no external dependencies)
 
@@ -84,6 +84,20 @@ budgets. Live calculations require current human-approved contracts, fresh books
 and explicitly reviewed fee applicability; unknown costs are rejected. The demo
 uses an isolated hypothetical replay. See the [economics guide](docs/ECONOMICS.md)
 for fee imports, bounded polling/resume, assumptions, exports and retention.
+
+## Paper and operations (M5, acceptance pending)
+
+```bash
+.venv/bin/python scripts/m5_demo.py --output data/my-m5-demo
+predarb paper report --db data/research.sqlite3
+predarb ops health SESSION_ID --db data/research.sqlite3
+predarb ops backup --db data/research.sqlite3 --output data/backups/research-NEW.sqlite3
+```
+
+Use a new empty demo directory, an existing integer session ID and a new backup
+destination. Paper fills/cancel acknowledgments are assumed, with explicit
+one-leg downside and unknown-data rejection. The monitor cannot place orders.
+See [paper workflow](docs/PAPER_EXECUTION.md) and [deployment/restore guide](docs/OPERATIONS.md).
 
 ## Read in this order
 

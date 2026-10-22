@@ -1,7 +1,9 @@
 """Explicit bounded polling and local fee/economics reports. No order APIs."""
 from pathlib import Path
 import time
+from contextlib import closing
 
+from .backups import readonly
 from .fee_store import import_profile
 from .research import clock, export_csv, prune_details, scan_once, session, start_session, summary
 from .store import connect
@@ -33,7 +35,8 @@ def add_parser(subparsers):
 
 
 def run(args):
-    with connect(args.db) as con:
+    context = closing(readonly(args.db)) if args.research_cmd in {'summary', 'csv'} else connect(args.db)
+    with context as con:
         if args.research_cmd == 'fees-import':
             path = Path(args.profile)
             result = {'fee_profile_id': import_profile(con, path.read_bytes(), base=path.parent, now=clock(),

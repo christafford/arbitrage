@@ -1,0 +1,24 @@
+{
+  "verified_on_utc": "2026-10-22T02:03:30.051440+00:00",
+  "official_docs_read_via_browser": [
+    "https://www.sqlite.org/backup.html",
+    "https://www.freedesktop.org/software/systemd/man/latest/systemd.service.html",
+    "https://www.freedesktop.org/software/systemd/man/latest/systemd.exec.html",
+    "https://www.freedesktop.org/software/systemd/man/latest/timedatectl.html"
+  ],
+  "systemd_version": "systemd 257 (257.13-1~deb13u1)",
+  "verification": {
+    "command": [
+      "systemd-analyze",
+      "verify",
+      "deploy/predarb-research@1.service",
+      "deploy/predarb-backup.service",
+      "deploy/predarb-backup.timer"
+    ],
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  "units_installed_or_started": false,
+  "no_new_venue_api_fields": true
+}

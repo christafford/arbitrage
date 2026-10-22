@@ -24,6 +24,17 @@ Before live orders: operator authorization, production-vs-demo environment confi
 
 No API secrets in repo/logs. Minimum permissions (prefer dedicated read-only keys where available). Least-privilege process, TLS verification, time synchronization, database backups, disk alarms, and 2FA where supported. Never expose order endpoints or dashboards to the public internet without a documented security plan.
 
+## Paper model limits (M5)
+
+Paper fills/cancel acknowledgments are assumed scenarios over later quotes,
+not measured executions or account positions. Unknown observations retain
+uncertainty; zero modeled fills after an assumed cancel do not establish zero
+exposure before that sample. Model unequal quantities, adverse selection and
+one-leg downside explicitly. Never sum repeated or competing scenarios as realized
+profit. HIGH paper-risk cases are distinct from real operational incidents.
+Live shadow intents still require current human review, fees and fresh timestamped
+books; an elapsed session or healthy monitor cannot replace those gates.
+
 ## Taxes & access
 
 Verify accounts and contract eligibility for your actual jurisdiction before funding. U.S. venue access and contract availability are not identical. Consult qualified tax advice for realized gains, reporting and treatment; software must retain raw trades and settlements if trading is eventually enabled.

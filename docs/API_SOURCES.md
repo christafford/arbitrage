@@ -159,3 +159,28 @@ with hashes; they do not establish fills, eligibility or trading authority.
 No new authenticated API, account endpoint or order method was called. Terms and
 provider data restrictions above continue to apply. [M4 results](M4_RESULTS.md)
 document the tests and remaining 30-day acceptance gap.
+
+## M5 operational verification — 2026-10-22 UTC
+
+M5 consumes M3's versioned normalized books and M4's fee/provenance contracts;
+it introduces no new venue fields, authenticated connection or order endpoint.
+Paper arrival/cancel/participation fields are explicitly local hypothetical
+model inputs, not claimed exchange execution reports.
+
+Operational implementation checked current primary documentation:
+
+- [SQLite online backup](https://www.sqlite.org/backup.html): use the snapshot API,
+  verify contents and restore to a new path; do not copy a live main file alone.
+- [systemd service](https://www.freedesktop.org/software/systemd/man/latest/systemd.service.html)
+  and [execution environment](https://www.freedesktop.org/software/systemd/man/latest/systemd.exec.html):
+  bounded service lifecycle, exit/restart behavior and filesystem/account limits.
+- [timedatectl](https://www.freedesktop.org/software/systemd/man/latest/timedatectl.html):
+  read synchronization state through machine-readable `show`; this does not
+  establish measured clock offset or configure the host's time service.
+
+The [source/unit manifest](evidence/M5_SOURCE_AND_UNIT_CHECKS.json) records URLs,
+verification time, local systemd version and actual successful unit syntax check.
+No units or time settings were activated/changed. [M5 results](M5_RESULTS.md)
+distinguish hypothetical stress evidence, actual short host/restore tests and the
+remaining live/multiweek acceptance gaps. Provider rights and review requirements
+above still apply before any ongoing collection.

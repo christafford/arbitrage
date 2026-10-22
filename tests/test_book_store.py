@@ -88,7 +88,7 @@ class ArchivedBooksTests(unittest.TestCase):
         expected=self.db.execute('SELECT COUNT(*) FROM raw_observations').fetchone()[0]
         self.db.execute('DROP TABLE normalized_books');self.db.execute('PRAGMA user_version=2');self.db.commit();self.db.close()
         self.db=connect(self.path);self.addCleanup(self.db.close)
-        self.assertEqual(self.db.execute('PRAGMA user_version').fetchone()[0],4)
+        self.assertEqual(self.db.execute('PRAGMA user_version').fetchone()[0],5)
         self.assertEqual(self.db.execute('SELECT COUNT(*) FROM normalized_books').fetchone()[0],0)
         self.assertEqual(self.db.execute('SELECT COUNT(*) FROM raw_observations').fetchone()[0],expected)
         # Prior captures can be revalidated from their archived matching detail provenance.

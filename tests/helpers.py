@@ -48,6 +48,12 @@ def real_response(name):
 
 def drop_m4_tables(con):
     """Reconstruct a pre-M4 database for migration fixtures only."""
+    drop_m5_tables(con)
     for table in ('research_details', 'research_evaluations', 'research_cycles', 'research_sessions',
                   'research_audit', 'research_replays', 'fee_profiles', 'fee_documents', 'fee_imports'):
+        con.execute('DROP TABLE ' + table)
+
+
+def drop_m5_tables(con):
+    for table in ('paper_comparisons', 'paper_intents', 'paper_tick_inputs', 'ops_checks', 'ops_events'):
         con.execute('DROP TABLE ' + table)

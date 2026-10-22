@@ -1,0 +1,11 @@
+{
+  "db": "/var/lib/predarb/research.sqlite3",
+  "session_id": 1,
+  "cycles": 1,
+  "refresh": false,
+  "shadow_policy": null,
+  "min_free_bytes": 209715200,
+  "max_db_bytes": 10737418240,
+  "backup_dir": "/var/lib/predarb/backups",
+  "max_clock_jump_ms": 1000
+}

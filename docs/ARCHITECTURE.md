@@ -13,7 +13,7 @@ raw response capture -> normalized instrument / quotes
                        |
               SQLite + reports
                        |
-         future paper execution replay
+       paper stress / shadow comparison
 
            NO LIVE ORDER PATH IN MVP
 ```
@@ -26,7 +26,7 @@ raw response capture -> normalized instrument / quotes
 - `src/predarb/polymarket_us.py`: versioned US public gateway catalogue, instrument-side metadata and raw book contracts. The institutional refdata interface requires access and is not the public collection path.
 - `src/predarb/collector.py`: bounded traversal, source ID deduplication, loop detection, selected detail/book capture, separate source/receipt times, freshness/liquidity classifications and run accounting. All evidence is `UNVERIFIED`.
 - `src/predarb/models.py`, `math.py`: the existing independent Decimal evaluator for explicitly hypothetical inputs. Collected books do not feed this evaluator.
-- `src/predarb/store.py`: SQLite WAL and atomic schema migrations through version 4; committed raw responses, collection progress, and registry updates on metadata changes. Connection contexts close explicitly.
+- `src/predarb/store.py`: SQLite WAL and atomic schema migrations through version 5; committed raw responses, collection progress, and registry updates on metadata changes. Connection contexts close explicitly.
 - `src/predarb/registry.py`, `registry_schema.py`, `registry_cli.py`: metadata candidates, immutable rule/source versions, human decision forms, explicit payoff review, expiry/invalidation and append-only audit. Registry approval grants no trading authority.
 - `src/predarb/orderbooks.py`: immutable exact ask representations, supported market grids/side semantics, source/receipt/metadata clocks and quote-only depth coverage. All live evidence remains `UNVERIFIED`.
 - `src/predarb/book_stream.py`: offline single-market Kalshi snapshot/delta replay, subscription sequence and connection-generation checks, conservative clock/send frontiers and fail-closed recovery. No live transport.
@@ -34,9 +34,12 @@ raw response capture -> normalized instrument / quotes
 - `src/predarb/fees.py`, `fee_store.py`: supported exact hypothetical taker-fill math, conservative quote bounds, immutable imported source evidence, operator-declared per-instrument/side applicability and expiry. No automatically installed live rates.
 - `src/predarb/economics.py`: bounded complete common-lot search, per-venue research budgets, explicit reserve, reviewed settlement delays and conditional profit/capital-days. US synthetic shorts are refused.
 - `src/predarb/research.py`, `research_schema.py`, `research_cli.py`: resumable bounded polling, approval/book/fee gates, rejection audit, immutable summaries, optional detail retention, sampling metrics and CSV. No unreviewed calculations or execution.
+- `src/predarb/paper.py`, `paper_store.py`, `paper_schema.py`, `paper_cli.py`: exact conditional stress cases, provenance-bound paper intents and later-quote comparisons. Assumed fills/cancel acknowledgments never become real positions.
+- `src/predarb/operations.py`, `ops_cli.py`, `runtime.py`: local health/metrics, bounded monitor, graceful signals and process writer locks; read-only diagnostic/report connections remain available beside the writer.
+- `src/predarb/backups.py`: online snapshot, all-content logical fingerprint, file manifest and verified restore into a new path. Source databases never migrate during backup/diagnostics.
 - `src/predarb/cli.py`: hypothetical demo, archival reports, one-shot collectors and local `pairs`/`books` commands. Exit 2 identifies incomplete bounded traversals or requested rejected book inspections.
 
-[Current verified schemas](API_SOURCES.md), [M1 acceptance evidence](M1_RESULTS.md), [M2 acceptance evidence](M2_RESULTS.md), [M3 acceptance evidence](M3_RESULTS.md), [M4 implementation and pending acceptance](M4_RESULTS.md).
+[Current verified schemas](API_SOURCES.md), [M1 acceptance evidence](M1_RESULTS.md), [M2 acceptance evidence](M2_RESULTS.md), [M3 acceptance evidence](M3_RESULTS.md), [M4 implementation and pending acceptance](M4_RESULTS.md), [M5 implementation and pending acceptance](M5_RESULTS.md).
 
 ## Assumptions / unknowns
 
@@ -48,7 +51,7 @@ raw response capture -> normalized instrument / quotes
 
 ## M1 archive tables (retained)
 
-These tables were introduced in schema version 1 and remain in current schema 4:
+These tables were introduced in schema version 1 and remain in current schema 5:
 
 - `raw_observations`: original response bytes and SHA-256, JSON/text inspection copy, venue/endpoint, UTC receipt time, separate source time where available, HTTP status, allowlisted headers, validation status/error and local/upstream schema version. Oversized responses are marked truncated and rejected. Starter rows remain `LEGACY_UNVALIDATED`.
 - `collection_runs`: scope, schema version, start/finish times, `RUNNING`/`COMPLETE`/`PARTIAL`/`FAILED`/`INTERRUPTED`, accepted catalogue page count, returned/unique/duplicate record counts, next cursor/offset and failure text.
@@ -72,8 +75,8 @@ The local contract IDs identify which consumed fields are validated, not a promi
 that all upstream fields or future schema versions are supported. Replay fixtures
 preserve bytes, provenance and clocks, and test identical results offline.
 
-M2 registry, M3 assessment and M4 research tables are described below. M5 operational
-simulation remains future work. These paths are not wired to execution.
+M2 registry, M3 assessment, M4 research and M5 paper/operations tables are described
+below. None is wired to live execution.
 
 Storage uses short transactions and indexes by venue/time. Back up existing
 archives before upgrading. Polling is bounded per command, but repeated commands
@@ -137,7 +140,7 @@ the illustrative evaluator and all order paths remain disconnected.
 
 ## M4 economics and audit
 
-Current schema version is **4**. Migration preserves all previous raw data, book
+M4 introduced schema version **4**. Migration preserves all previous raw data, book
 assessments and registry history; it creates no historical economic observations.
 
 | Tables | Purpose |
@@ -167,6 +170,47 @@ Reports stream historical rows and retain per-pair sampling aggregates. Equal
 quote samples do not prove continuous lifespan. A real 30-day observation and
 reviewed audit remain pending; M4 is not complete. See [economics operations](ECONOMICS.md).
 
+## M5 paper and operations
+
+Current schema version is **5**, preserving all earlier evidence. `paper_intents`
+copy the complete retained positive M4 evaluation and policy, with immutable
+hashes, after current approval/fee/book checks. `paper_tick_inputs` archive
+hypothetical generated bytes before normalization. `paper_comparisons` retain
+later quote provenance, conditional results and uncertainty; none is an exchange
+order, actual fill or cumulative position ledger. Same-instrument receipt/source
+times must advance causally. Unknown data produces `UNOBSERVABLE` rather than a
+fabricated fill or zero risk.
+
+The pure model applies supported lots, explicit participation and price caps,
+modeled hedge/cancel timing, fee bounds/reserves and all reviewed payout cases.
+It records unequal quantities and downside. Cancel acknowledgments, no unseen
+prior fills and displayed-depth participation remain assumptions; fill probability
+and actual execution latency are not estimated. Live use is blocked by current
+M4 approval/fee/source-time gaps. Synthetic replay stays isolated.
+
+`ops_checks` and `ops_events` record monitor health and local alerts separately
+from HIGH paper-risk findings. A bounded runner can refresh approved public
+sources, evaluate gated economics and compare prior paper intents before creating
+new ones. Unobservable comparisons retry for a bounded 180-second window, with
+per-cycle queue limits and explicit incomplete-coverage warnings. Signals roll
+back unfinished derived writes while existing collector interruption handling
+preserves raw evidence and audit attempts.
+
+CLI writers share a process lock. Reader-only diagnostics, paper reports,
+research summaries/CSV and backups use SQLite read-only connections without
+migrations, and can run while the monitor holds the writer lock. Health gates
+check NTP synchronization state, wall/monotonic divergence, space, database/WAL
+size and integrity. No public server or external alert delivery was added.
+
+Verified online backups include exact BLOBs, user-table counts, schema/index/trigger
+fingerprints and file hashes, and restore only into new paths. Local restore and
+SIGTERM smoke tests passed; systemd templates were verified but not installed.
+Actual runtime deployment, multiweek coverage/incident audit and off-host recovery
+remain pending. See [paper semantics](PAPER_EXECUTION.md) and [operations](OPERATIONS.md).
+
 ## Deployment
 
-Dedicated non-root Linux user, systemd service with restart/backoff, localhost-only dashboard (later), secrets external to repo (later). Backup the database regularly. Start with polling and small selected markets; only graduate to streaming after snapshot correctness and missed-update recovery are tested.
+M5 templates target a dedicated non-root Linux user and protected state directories,
+with restart limits and backup scheduling. They remain inactive until deployed;
+there is no dashboard or secrets path. Start with bounded polling and current
+reviews; timestamped live streaming still requires separate scoped validation.
