@@ -134,7 +134,7 @@ Authorized scope for this change is **A/B only; stop after B**.
 
 - [x] A: reuse the implemented discovery extension and ranked UNVERIFIED human-review queue; existing live catalogue coverage remains partial.
 - [x] B implementation: authenticated read-only Kalshi transport, protected external credentials, raw/sanitized provenance, sequenced snapshot/delta validation and recovery, M3/M4 integration, offline tests and documentation.
-- [ ] B live acceptance: actual authenticated timestamped snapshots/deltas and reconnect continuity. **RSA authentication succeeded on 2026-10-23. Three actual timestamped snapshots were archived across three connections, but all lack the required market clock and fail validation. No accepted deltas or usable books; continuity remains unproven.** See [RSA evidence](evidence/M5A_RSA_VALIDATION.json).
+- [ ] B live acceptance: actual authenticated timestamped snapshots/deltas and reconnect continuity. **RSA authentication succeeds, but production messages lack required market clocks. Follow-up diagnostics on two markets captured four snapshots (including explicit snapshot requests) and 26 deltas, all missing clocks. No accepted deltas or usable books; continuity remains unproven.** See [protocol discrepancy and verification](KALSHI_PROTOCOL_DISCREPANCY.md).
 - [ ] Human approval of equivalent real pairs; never an agent decision.
 - [ ] C: live fee validation tooling/operator review — not started under the current scope.
 - [ ] D: payout/collateral/settlement mechanics verification — not started; current short-exposure restrictions remain.

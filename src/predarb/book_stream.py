@@ -12,6 +12,25 @@ from .orderbooks import _build, _levels, exact, market_rules
 from .validation import SchemaError, field, identifier, text_field
 
 
+class StreamProtocolError(ValueError):
+    """A fixed public error code; never include a provider value or credential."""
+    def __init__(self, code):
+        if code not in {'MISSING_MARKET_CLOCK', 'INVALID_MARKET_CLOCK',
+                        'MISSING_SOURCE_TIMESTAMP', 'INVALID_SOURCE_TIMESTAMP'}:
+            raise ValueError('unknown stream protocol error code')
+        self.code = code
+        super().__init__('stream invalidated: ' + code)
+
+
+def protocol_integer(obj, key, label, maximum):
+    if key not in obj:
+        raise StreamProtocolError('MISSING_' + label)
+    value = obj[key]
+    if type(value) is not int or not 0 <= value <= maximum:
+        raise StreamProtocolError('INVALID_' + label)
+    return value
+
+
 class KalshiBookStream:
     def __init__(self, source_id, metadata, *, metadata_received_at):
         self.source_id = identifier(source_id)
@@ -49,8 +68,8 @@ class KalshiBookStream:
             if message_type not in {'orderbook_snapshot', 'orderbook_delta'}:
                 raise SchemaError('unsupported message type')
             sid, seq = field(frame, 'sid', int), field(frame, 'seq', int)
-            sent = field(frame, 'sending_ts_ms', int)
-            if sid < 1 or seq < 0 or not 0 <= sent <= 253402300799999:
+            sent = protocol_integer(frame, 'sending_ts_ms', 'SOURCE_TIMESTAMP', 253402300799999)
+            if sid < 1 or seq < 0:
                 raise SchemaError('invalid sid/seq/sending timestamp')
             if self.sid is not None and sid != self.sid:
                 raise SchemaError('subscription changed without reconnect')
@@ -60,8 +79,8 @@ class KalshiBookStream:
             if text_field(message, 'market_ticker') != self.source_id:
                 raise SchemaError('wrong market; only a single-market subscription is supported')
             market_id = text_field(message, 'market_id')
-            clock = field(message, 'clock', int)
-            if clock < 0 or (self.clock is not None and clock < self.clock):
+            clock = protocol_integer(message, 'clock', 'MARKET_CLOCK', 2**63 - 1)
+            if self.clock is not None and clock < self.clock:
                 raise SchemaError('clock regressed; reconnect and request a fresh snapshot')
             if self.market_id is not None and market_id != self.market_id:
                 raise SchemaError('market identity changed')
@@ -122,6 +141,9 @@ class KalshiBookStream:
             self.last_send_ms, self.high_seq = sent, seq
             self.state, self.reason, self.current = 'SYNCED', None, book
             return book
+        except StreamProtocolError as exc:
+            self._invalidate(exc.code)
+            raise
         except (ValueError, TypeError, KeyError, OverflowError) as exc:
             self._invalidate(str(exc))
             raise ValueError('stream invalidated: ' + str(exc)) from exc

@@ -2,10 +2,13 @@
 
 The adapter is implemented and tested offline. **Authenticated live continuity
 has not been demonstrated:** replacement RSA credentials now authenticate, and
-actual snapshots carry exchange send timestamps, but all three captured snapshots
-lack the required `msg.clock`. They are archived and rejected without weakening
+actual snapshots carry exchange send timestamps, but captured snapshots and deltas
+lack the required `msg.clock`. Two-market diagnostics, including explicit snapshot
+requests, reproduced this discrepancy. They are archived and rejected without weakening
 validation. Earlier Ed25519 attempts returned HTTP 401; the cause is unproven.
 See [M5A results](M5A_RESULTS.md). Workstreams C–E and M6 are outside this change.
+The [protocol discrepancy report](KALSHI_PROTOCOL_DISCREPANCY.md) records current
+official schema checks, sanitized live evidence and the outstanding venue question.
 
 ## Setup and bounded capture
 
@@ -33,6 +36,12 @@ encrypted private-key files and other key algorithms are refused. Key permission
 operator-managed; the adapter does not inspect the account or infer key scopes.
 It can only sign the fixed WebSocket GET handshake and sends only a single-market
 `orderbook_delta` subscription. There is no order or account command path.
+
+The subscription explicitly sets documented `use_yes_price=false`: NO prices
+remain in NO-leg units as expected by the existing complement conversion. The
+official schema announces a future default flip, so relying on the implicit
+default could silently change price interpretation. This flag does not enable
+market clocks; there is no documented clock-enabling option in the checked schema.
 
 Back up an existing database before its automatic schema-7 migration, then use
 a real ticker from discovery:
@@ -137,3 +146,13 @@ snapshot-only runs or recovered failures; exit 1 is invalid configuration/setup,
 and exit 130 is interruption. Counters describe capture-time observations,
 not present-day book usability, sustained uptime, economic readiness or fills.
 At normal exit the connection is closed and its books are no longer current.
+
+Missing protocol clocks now appear as `MISSING_MARKET_CLOCK` in the CLI `failures`,
+the rejected raw observation's `validation_error`, and the connection end reason.
+`INVALID_MARKET_CLOCK`, `MISSING_SOURCE_TIMESTAMP` and `INVALID_SOURCE_TIMESTAMP`
+separately identify malformed/range-invalid clocks and absent/invalid send time.
+Codes are fixed local strings; provider values and credentials are never included.
+Clock and source-time checks still discard derived depth and require recovery;
+rejected frames cannot be replayed as usable books. Other invalid frames retain
+`INVALID_STREAM_FRAME`. A schema mismatch cannot be repaired by substituting
+receipt time, `seq` or zero for a missing clock.

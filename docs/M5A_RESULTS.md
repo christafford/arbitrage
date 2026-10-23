@@ -6,6 +6,13 @@ Replacement RSA credentials authenticated on **2026-10-23 UTC**. Three real
 snapshots were archived with exchange send timestamps, but each lacks `msg.clock`
 and is correctly rejected. See the RSA follow-up below for current evidence.
 
+**Latest follow-up:** a two-market diagnostic also received 26 deltas and explicit
+snapshot-request responses, all missing the required clock. The validator now
+reports the specific failure and explicitly requests the supported price convention.
+**224 tests passed**; live acceptance remains blocked. See the
+[protocol discrepancy report](KALSHI_PROTOCOL_DISCREPANCY.md) for fresh source
+checks, actual capture evidence and remaining work.
+
 Earlier authentication history:
 Credentials were initially unavailable. On **2026-10-23 UTC**, operator-provided
 OpenSSH Ed25519 credentials loaded after a format-support fix, but live handshakes

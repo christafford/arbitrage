@@ -4,7 +4,7 @@ from datetime import timedelta
 from decimal import Decimal as D
 import unittest
 
-from predarb.book_stream import KalshiBookStream
+from predarb.book_stream import KalshiBookStream, StreamProtocolError
 from predarb.orderbooks import walk_depth
 from predarb.validation import utc_time
 from test_orderbooks import sample
@@ -98,6 +98,23 @@ class StreamReplayTests(unittest.TestCase):
             if change=='message_type': frame['type']='unknown_protocol_shape'
             with self.subTest(change=change), self.assertRaises(ValueError): self.apply(frame)
             self.assertIsNone(self.stream.current)
+
+    def test_protocol_clock_and_source_time_types_ranges_and_absence_fail_closed(self):
+        for key,label,maximum in (('clock','MARKET_CLOCK',2**63-1),
+                                  ('sending_ts_ms','SOURCE_TIMESTAMP',253402300799999)):
+            for value in (None,True,'HYPOTHETICAL_SECRET',-1,maximum+1):
+                with self.subTest(key=key,value=value):
+                    self.stream.reconnect();self.apply(self.snapshot());frame=self.delta()
+                    (frame['msg'] if key=='clock' else frame)[key]=value
+                    with self.assertRaises(StreamProtocolError) as caught:self.apply(frame)
+                    self.assertEqual(caught.exception.code,'INVALID_'+label)
+                    self.assertNotIn('HYPOTHETICAL_SECRET',str(caught.exception))
+                    self.assertIsNone(self.stream.current)
+            self.stream.reconnect();frame=self.snapshot()
+            del (frame['msg'] if key=='clock' else frame)[key]
+            with self.assertRaises(StreamProtocolError) as caught:self.apply(frame)
+            self.assertEqual(caught.exception.code,'MISSING_'+label)
+        with self.assertRaisesRegex(ValueError,'unknown'):StreamProtocolError('HYPOTHETICAL_SECRET')
 
     def test_negative_depth_off_grid_delta_or_price_and_crossing_invalidate(self):
         for quantity,price in (('-2.00','.42'),('.001','.42'),('NaN','.42'),('1','.4201'),('1','.48')):

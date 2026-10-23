@@ -244,3 +244,28 @@ Kalshi. Supporting that encoding does not establish registration or server
 acceptance. Actual fixed-endpoint handshake diagnostics returned HTTP 401 /
 `INCORRECT_API_KEY_SIGNATURE`; raw headers, error bodies and credentials were
 not recorded. See [follow-up evidence](evidence/M5A_CREDENTIAL_VALIDATION.json).
+
+### Workstream B protocol discrepancy — 2026-10-23 UTC
+
+Re-fetched the [official AsyncAPI](https://docs.kalshi.com/asyncapi.yaml),
+orderbook, connection and WebSocket quickstart sources. The
+[source manifest](evidence/M5B_API_CHECKS.json) records exact hashes and UTC
+retrieval times. AsyncAPI API version **2.0.0** lists `msg.clock` as required in
+both `orderbookSnapshotPayload` and `orderbookDeltaPayload`; it is an int64, with
+minimum zero for snapshots and one for deltas. Source time still comes from
+`sending_ts_ms`; stricter local freshness requirements remain in place.
+
+`subscribeCommandPayload.params.use_yes_price` is documented as false by default,
+with a future default flip and eventual removal planned. The adapter now explicitly
+requests false to preserve its supported NO-leg pricing semantics. The schema
+provides no clock-enabling subscription parameter. The documented
+`update_subscription` action `get_snapshot` was also checked in a diagnostic
+capture; its returned snapshot still lacked the clock.
+
+Two bounded production diagnostics archived four actual snapshots and 26 deltas,
+all lacking the required clock. These are rejected evidence, not an alternative
+accepted schema. The [representative fixture](../tests/fixtures/kalshi-ws-missing-clock-live.json)
+includes exact public-shaped wire bodies/hashes, source endpoint, receipt times,
+metadata context and explicit sanitization description. Local archival contract
+remains `kalshi-ws/m5a-v1`, database schema 7; no migration or historical rejection
+promotion was performed. See [discrepancy report](KALSHI_PROTOCOL_DISCREPANCY.md).

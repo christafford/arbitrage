@@ -202,7 +202,7 @@ class StreamCaptureTests(unittest.TestCase):
         self.assertTrue(inspect_book(self.db, observed, now=at)['data_usable'])
         self.assertIn('STREAM_DISCONNECTED', inspect_book(self.db, seen[-1][0], now=self.clock.now())['rejections'])
         self.assertEqual(self.sockets[0].sent, [{'id': 1, 'cmd': 'subscribe', 'params': {
-            'channels': ['orderbook_delta'], 'market_ticker': self.source}}])
+            'channels': ['orderbook_delta'], 'market_ticker': self.source, 'use_yes_price': False}}])
         self.assertEqual(self.db.execute('SELECT COUNT(*) FROM pairs').fetchone()[0], 0)
 
     def test_gap_invalidates_old_book_then_new_generation_snapshot_recovers(self):
@@ -234,6 +234,65 @@ class StreamCaptureTests(unittest.TestCase):
             with self.subTest(frame=frame):
                 stats = self.run_capture([self.ack(), frame], max_messages=2)
                 self.assertEqual(stats['snapshots'], 0); self.assertFalse(stats['live_continuity_demonstrated'])
+
+    def test_missing_protocol_fields_are_archived_with_precise_safe_failure_codes(self):
+        for key,code in (('clock','MISSING_MARKET_CLOCK'),('sending_ts_ms','MISSING_SOURCE_TIMESTAMP')):
+            with self.subTest(key=key):
+                frame=self.snapshot()
+                del (frame['msg'] if key=='clock' else frame)[key]
+                stats=self.run_capture([self.ack(),frame],max_messages=2)
+                self.assertEqual(stats['failures'],[code])
+                self.assertEqual(stats['usable_books'],0)
+                self.assertFalse(stats['live_continuity_demonstrated'])
+                row=self.db.execute('SELECT raw_body,validation_status,validation_error FROM raw_observations ORDER BY id DESC LIMIT 1').fetchone()
+                self.assertEqual(row,(dumps(frame).encode(),'REJECTED',code))
+
+    def test_real_missing_clock_snapshot_replays_through_capture_as_rejected(self):
+        fixture=loads((Path(__file__).parent/'fixtures/kalshi-ws-missing-clock-live.json').read_text())
+        self.assertIs(fixture['hypothetical'],False)
+        self.case['kalshi_metadata']=loads(fixture['metadata']['body'])['market']
+        self.source=self.case['kalshi_metadata']['ticker']
+        self.clock=FakeClock(utc_time(fixture['frames'][1]['retrieved_at']))
+        ack=loads(fixture['frames'][0]['body'])
+        snapshot=loads(fixture['frames'][1]['body'])
+        stats=self.run_capture([ack,snapshot],max_messages=2)
+        self.assertEqual(stats['status'],'INCOMPLETE')
+        self.assertEqual(stats['failures'],['MISSING_MARKET_CLOCK'])
+        self.assertEqual(stats['snapshots'],0)
+        self.assertEqual(stats['usable_books'],0)
+        self.assertEqual(self.db.execute('SELECT COUNT(*) FROM normalized_books').fetchone()[0],0)
+
+    def test_real_fixture_hashes_sanitization_and_snapshot_delta_clock_rejections(self):
+        from predarb.book_stream import KalshiBookStream, StreamProtocolError
+        fixture=loads((Path(__file__).parent/'fixtures/kalshi-ws-missing-clock-live.json').read_text())
+        metadata=loads(fixture['metadata']['body'])['market']
+        for item in [fixture['metadata'],*fixture['frames']]:
+            self.assertEqual(hashlib.sha256(item['body'].encode()).hexdigest(),item['sha256'])
+        observed_types=set()
+        for item in fixture['frames']:
+            safe,wire,kind=ws_store.safe_frame(item['body'])
+            self.assertEqual(kind,'EXACT_WIRE')
+            self.assertEqual(safe,item['body'].encode())
+            self.assertEqual(wire,item['wire_sha256'])
+            frame=loads(item['body']);observed_types.add(frame['type'])
+            if frame['type']=='subscribed':continue
+            stream=KalshiBookStream(metadata['ticker'],metadata,
+                                    metadata_received_at=fixture['metadata']['retrieved_at'])
+            with self.assertRaises(StreamProtocolError) as caught:
+                stream.apply(frame,received_at=item['retrieved_at'],now=utc_time(item['retrieved_at']),generation=stream.generation)
+            self.assertEqual(caught.exception.code,'MISSING_MARKET_CLOCK')
+            self.assertIsNone(stream.current)
+        self.assertEqual(observed_types,{'subscribed','orderbook_snapshot','orderbook_delta'})
+
+    def test_clock_loss_after_valid_snapshot_invalidates_depth_until_new_connection(self):
+        missing=self.delta();del missing['msg']['clock']
+        stats=self.run_capture([self.ack(),self.snapshot(),missing],
+                               [self.ack(),self.snapshot(1),self.delta(2)],max_messages=6)
+        self.assertEqual(stats['failures'],['MISSING_MARKET_CLOCK'])
+        self.assertEqual(stats['recoveries'],1)
+        self.assertEqual(stats['status'],'INCOMPLETE')
+        rejected=self.db.execute("SELECT id FROM raw_observations WHERE validation_error='MISSING_MARKET_CLOCK'").fetchone()[0]
+        with self.assertRaises(ValueError):load_book(self.db,rejected,now=self.clock.now())
 
     def test_ack_missing_wrong_or_duplicate_cannot_enable_data(self):
         for sequence in ([self.snapshot()], [self.ack(8), self.snapshot()], [self.ack(), self.ack()]):

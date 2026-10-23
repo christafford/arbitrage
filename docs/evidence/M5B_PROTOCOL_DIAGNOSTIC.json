@@ -1,0 +1,387 @@
+{
+  "purpose": "Read-only protocol diagnosis; every frame rejected for research use",
+  "db": "data/m5b-diagnostic-20261023T033342Z/capture.sqlite3",
+  "connections": [
+    {
+      "ticker": "KXBTCD-26OCT2317-T83499.99",
+      "frames": [
+        {
+          "id": 2,
+          "received_at": "2026-10-23T03:33:43.306345+00:00",
+          "archive_kind": "EXACT_WIRE",
+          "type": "subscribed",
+          "command_id": 1,
+          "seq": null,
+          "has_clock": false,
+          "has_source_time": true
+        },
+        {
+          "id": 3,
+          "received_at": "2026-10-23T03:33:43.321805+00:00",
+          "archive_kind": "EXACT_WIRE",
+          "type": "orderbook_snapshot",
+          "command_id": null,
+          "seq": 1,
+          "has_clock": false,
+          "has_source_time": true
+        },
+        {
+          "id": 4,
+          "received_at": "2026-10-23T03:33:43.393552+00:00",
+          "archive_kind": "EXACT_WIRE",
+          "type": "orderbook_snapshot",
+          "command_id": 2,
+          "seq": 2,
+          "has_clock": false,
+          "has_source_time": true
+        },
+        {
+          "id": 5,
+          "received_at": "2026-10-23T03:33:43.740390+00:00",
+          "archive_kind": "EXACT_WIRE",
+          "type": "orderbook_delta",
+          "command_id": null,
+          "seq": 3,
+          "has_clock": false,
+          "has_source_time": true
+        },
+        {
+          "id": 6,
+          "received_at": "2026-10-23T03:33:43.755784+00:00",
+          "archive_kind": "EXACT_WIRE",
+          "type": "orderbook_delta",
+          "command_id": null,
+          "seq": 4,
+          "has_clock": false,
+          "has_source_time": true
+        },
+        {
+          "id": 7,
+          "received_at": "2026-10-23T03:33:44.251492+00:00",
+          "archive_kind": "EXACT_WIRE",
+          "type": "orderbook_delta",
+          "command_id": null,
+          "seq": 5,
+          "has_clock": false,
+          "has_source_time": true
+        },
+        {
+          "id": 8,
+          "received_at": "2026-10-23T03:33:44.260547+00:00",
+          "archive_kind": "EXACT_WIRE",
+          "type": "orderbook_delta",
+          "command_id": null,
+          "seq": 6,
+          "has_clock": false,
+          "has_source_time": true
+        },
+        {
+          "id": 9,
+          "received_at": "2026-10-23T03:33:44.326905+00:00",
+          "archive_kind": "EXACT_WIRE",
+          "type": "orderbook_delta",
+          "command_id": null,
+          "seq": 7,
+          "has_clock": false,
+          "has_source_time": true
+        },
+        {
+          "id": 10,
+          "received_at": "2026-10-23T03:33:44.335647+00:00",
+          "archive_kind": "EXACT_WIRE",
+          "type": "orderbook_delta",
+          "command_id": null,
+          "seq": 8,
+          "has_clock": false,
+          "has_source_time": true
+        },
+        {
+          "id": 11,
+          "received_at": "2026-10-23T03:33:45.305953+00:00",
+          "archive_kind": "EXACT_WIRE",
+          "type": "orderbook_delta",
+          "command_id": null,
+          "seq": 9,
+          "has_clock": false,
+          "has_source_time": true
+        },
+        {
+          "id": 12,
+          "received_at": "2026-10-23T03:33:45.321033+00:00",
+          "archive_kind": "EXACT_WIRE",
+          "type": "orderbook_delta",
+          "command_id": null,
+          "seq": 10,
+          "has_clock": false,
+          "has_source_time": true
+        },
+        {
+          "id": 13,
+          "received_at": "2026-10-23T03:33:46.130980+00:00",
+          "archive_kind": "EXACT_WIRE",
+          "type": "orderbook_delta",
+          "command_id": null,
+          "seq": 11,
+          "has_clock": false,
+          "has_source_time": true
+        },
+        {
+          "id": 14,
+          "received_at": "2026-10-23T03:33:46.152425+00:00",
+          "archive_kind": "EXACT_WIRE",
+          "type": "orderbook_delta",
+          "command_id": null,
+          "seq": 12,
+          "has_clock": false,
+          "has_source_time": true
+        },
+        {
+          "id": 15,
+          "received_at": "2026-10-23T03:33:47.181392+00:00",
+          "archive_kind": "EXACT_WIRE",
+          "type": "orderbook_delta",
+          "command_id": null,
+          "seq": 13,
+          "has_clock": false,
+          "has_source_time": true
+        },
+        {
+          "id": 16,
+          "received_at": "2026-10-23T03:33:47.196617+00:00",
+          "archive_kind": "EXACT_WIRE",
+          "type": "orderbook_delta",
+          "command_id": null,
+          "seq": 14,
+          "has_clock": false,
+          "has_source_time": true
+        },
+        {
+          "id": 17,
+          "received_at": "2026-10-23T03:33:49.089522+00:00",
+          "archive_kind": "EXACT_WIRE",
+          "type": "orderbook_delta",
+          "command_id": null,
+          "seq": 15,
+          "has_clock": false,
+          "has_source_time": true
+        },
+        {
+          "id": 18,
+          "received_at": "2026-10-23T03:33:49.105692+00:00",
+          "archive_kind": "EXACT_WIRE",
+          "type": "orderbook_delta",
+          "command_id": null,
+          "seq": 16,
+          "has_clock": false,
+          "has_source_time": true
+        },
+        {
+          "id": 19,
+          "received_at": "2026-10-23T03:33:49.116835+00:00",
+          "archive_kind": "EXACT_WIRE",
+          "type": "orderbook_delta",
+          "command_id": null,
+          "seq": 17,
+          "has_clock": false,
+          "has_source_time": true
+        },
+        {
+          "id": 20,
+          "received_at": "2026-10-23T03:33:49.137757+00:00",
+          "archive_kind": "EXACT_WIRE",
+          "type": "orderbook_delta",
+          "command_id": null,
+          "seq": 18,
+          "has_clock": false,
+          "has_source_time": true
+        },
+        {
+          "id": 21,
+          "received_at": "2026-10-23T03:33:51.869782+00:00",
+          "archive_kind": "EXACT_WIRE",
+          "type": "orderbook_delta",
+          "command_id": null,
+          "seq": 19,
+          "has_clock": false,
+          "has_source_time": true
+        },
+        {
+          "id": 22,
+          "received_at": "2026-10-23T03:33:51.887631+00:00",
+          "archive_kind": "EXACT_WIRE",
+          "type": "orderbook_delta",
+          "command_id": null,
+          "seq": 20,
+          "has_clock": false,
+          "has_source_time": true
+        },
+        {
+          "id": 23,
+          "received_at": "2026-10-23T03:33:51.896565+00:00",
+          "archive_kind": "EXACT_WIRE",
+          "type": "orderbook_delta",
+          "command_id": null,
+          "seq": 21,
+          "has_clock": false,
+          "has_source_time": true
+        },
+        {
+          "id": 24,
+          "received_at": "2026-10-23T03:33:51.911290+00:00",
+          "archive_kind": "EXACT_WIRE",
+          "type": "orderbook_delta",
+          "command_id": null,
+          "seq": 22,
+          "has_clock": false,
+          "has_source_time": true
+        },
+        {
+          "id": 25,
+          "received_at": "2026-10-23T03:33:54.225658+00:00",
+          "archive_kind": "EXACT_WIRE",
+          "type": "orderbook_delta",
+          "command_id": null,
+          "seq": 23,
+          "has_clock": false,
+          "has_source_time": true
+        },
+        {
+          "id": 26,
+          "received_at": "2026-10-23T03:33:54.247599+00:00",
+          "archive_kind": "EXACT_WIRE",
+          "type": "orderbook_delta",
+          "command_id": null,
+          "seq": 24,
+          "has_clock": false,
+          "has_source_time": true
+        },
+        {
+          "id": 27,
+          "received_at": "2026-10-23T03:33:54.262641+00:00",
+          "archive_kind": "EXACT_WIRE",
+          "type": "orderbook_delta",
+          "command_id": null,
+          "seq": 25,
+          "has_clock": false,
+          "has_source_time": true
+        },
+        {
+          "id": 28,
+          "received_at": "2026-10-23T03:33:54.271528+00:00",
+          "archive_kind": "EXACT_WIRE",
+          "type": "orderbook_delta",
+          "command_id": null,
+          "seq": 26,
+          "has_clock": false,
+          "has_source_time": true
+        },
+        {
+          "id": 29,
+          "received_at": "2026-10-23T03:33:54.503802+00:00",
+          "archive_kind": "EXACT_WIRE",
+          "type": "orderbook_delta",
+          "command_id": null,
+          "seq": 27,
+          "has_clock": false,
+          "has_source_time": true
+        },
+        {
+          "id": 30,
+          "received_at": "2026-10-23T03:33:54.512818+00:00",
+          "archive_kind": "EXACT_WIRE",
+          "type": "orderbook_delta",
+          "command_id": null,
+          "seq": 28,
+          "has_clock": false,
+          "has_source_time": true
+        }
+      ],
+      "commands": [
+        {
+          "id": 1,
+          "cmd": "subscribe",
+          "params": {
+            "channels": [
+              "orderbook_delta"
+            ],
+            "market_ticker": "KXBTCD-26OCT2317-T83499.99",
+            "use_yes_price": false
+          }
+        },
+        {
+          "id": 2,
+          "cmd": "update_subscription",
+          "params": {
+            "sid": 1,
+            "market_tickers": [
+              "KXBTCD-26OCT2317-T83499.99"
+            ],
+            "action": "get_snapshot"
+          }
+        }
+      ],
+      "result": "CAPTURED_DIAGNOSTIC_ONLY"
+    },
+    {
+      "ticker": "KXFEDCUT-31DEC28-31DEC26",
+      "frames": [
+        {
+          "id": 32,
+          "received_at": "2026-10-23T03:33:55.857725+00:00",
+          "archive_kind": "EXACT_WIRE",
+          "type": "subscribed",
+          "command_id": 1,
+          "seq": null,
+          "has_clock": false,
+          "has_source_time": true
+        },
+        {
+          "id": 33,
+          "received_at": "2026-10-23T03:33:55.873216+00:00",
+          "archive_kind": "EXACT_WIRE",
+          "type": "orderbook_snapshot",
+          "command_id": null,
+          "seq": 1,
+          "has_clock": false,
+          "has_source_time": true
+        },
+        {
+          "id": 34,
+          "received_at": "2026-10-23T03:33:55.939242+00:00",
+          "archive_kind": "EXACT_WIRE",
+          "type": "orderbook_snapshot",
+          "command_id": 2,
+          "seq": 2,
+          "has_clock": false,
+          "has_source_time": true
+        }
+      ],
+      "commands": [
+        {
+          "id": 1,
+          "cmd": "subscribe",
+          "params": {
+            "channels": [
+              "orderbook_delta"
+            ],
+            "market_ticker": "KXFEDCUT-31DEC28-31DEC26",
+            "use_yes_price": false
+          }
+        },
+        {
+          "id": 2,
+          "cmd": "update_subscription",
+          "params": {
+            "sid": 1,
+            "market_tickers": [
+              "KXFEDCUT-31DEC28-31DEC26"
+            ],
+            "action": "get_snapshot"
+          }
+        }
+      ],
+      "result": "CAPTURED_DIAGNOSTIC_ONLY"
+    }
+  ],
+  "recorded_at": "2026-10-23T03:34:07.884224+00:00"
+}

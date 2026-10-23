@@ -1,0 +1,107 @@
+{
+  "recorded_at": "2026-10-23T03:36:20.588002+00:00",
+  "commands": [
+    {
+      "command": [
+        ".venv/bin/python",
+        "-m",
+        "predarb.cli",
+        "stream-kalshi",
+        "KXBTCD-26OCT2317-T83499.99",
+        "--db",
+        "data/m5b-smoke-20261023T033615Z/capture.sqlite3",
+        "--seconds",
+        "15",
+        "--max-connections",
+        "2",
+        "--max-messages",
+        "50"
+      ],
+      "exit_code": 2,
+      "stdout": "{\"connection_ids\":[1,2],\"connections\":2,\"deltas\":0,\"failures\":[\"MISSING_MARKET_CLOCK\",\"MISSING_MARKET_CLOCK\"],\"live_continuity_demonstrated\":false,\"messages\":4,\"recoveries\":0,\"snapshots\":0,\"status\":\"INCOMPLETE\",\"trading_authorized\":false,\"usable_books\":0,\"verification\":\"UNVERIFIED\"}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        ".venv/bin/python",
+        "-m",
+        "predarb.cli",
+        "stream-kalshi",
+        "--help"
+      ],
+      "exit_code": 0,
+      "stdout": "usage: cli.py stream-kalshi [-h] [--db DB]\n                            [--credentials-file CREDENTIALS_FILE]\n                            [--seconds SECONDS] [--max-messages MAX_MESSAGES]\n                            [--max-connections MAX_CONNECTIONS]\n                            [--min-free-mb MIN_FREE_MB]\n                            [--research-session RESEARCH_SESSION]\n                            ticker\n\npositional arguments:\n  ticker\n\noptions:\n  -h, --help            show this help message and exit\n  --db DB\n  --credentials-file CREDENTIALS_FILE\n  --seconds SECONDS     duration budget, 1..3600 seconds\n  --max-messages MAX_MESSAGES\n  --max-connections MAX_CONNECTIONS\n  --min-free-mb MIN_FREE_MB\n  --research-session RESEARCH_SESSION\n                        optionally scan an existing live research session in\n                        this writer\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        ".venv/bin/python",
+        "-m",
+        "predarb.cli",
+        "books",
+        "list",
+        "--db",
+        "data/m5b-smoke-20261023T033615Z/capture.sqlite3"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"evaluated_at\":\"2026-10-23T03:36:19.776155+00:00\",\"historical_replay\":false,\"result\":[{\"data_usable\":false,\"observation_id\":6,\"rejections\":[\"INVALID_ARCHIVE: invalid stream frame provenance or continuity\"],\"source_id\":\"KXBTCD-26OCT2317-T83499.99\",\"venue\":\"kalshi\"},{\"data_usable\":false,\"observation_id\":5,\"rejections\":[\"INVALID_ARCHIVE: stream has no snapshot\"],\"source_id\":\"KXBTCD-26OCT2317-T83499.99\",\"venue\":\"kalshi\"},{\"data_usable\":false,\"observation_id\":3,\"rejections\":[\"INVALID_ARCHIVE: invalid stream frame provenance or continuity\"],\"source_id\":\"KXBTCD-26OCT2317-T83499.99\",\"venue\":\"kalshi\"},{\"data_usable\":false,\"observation_id\":2,\"rejections\":[\"INVALID_ARCHIVE: stream has no snapshot\"],\"source_id\":\"KXBTCD-26OCT2317-T83499.99\",\"venue\":\"kalshi\"}],\"trading_authorized\":false,\"verification\":\"UNVERIFIED\"}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        ".venv/bin/python",
+        "-m",
+        "predarb.cli",
+        "ops",
+        "backup",
+        "--db",
+        "data/m5b-smoke-20261023T033615Z/capture.sqlite3",
+        "--output",
+        "data/m5b-smoke-20261023T033615Z/backup.sqlite3"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"created_at\":\"2026-10-23T03:36:19.968594+00:00\",\"destination\":\"/home/chris/code/arbitrage/data/m5b-smoke-20261023T033615Z/backup.sqlite3\",\"file_sha256\":\"7f6974411c2bd603191c72259b111b211fb07a5ea065469d00384e173e8d8907\",\"format\":\"predarb-backup/m5-v1\",\"logical_sha256\":\"d095ac5cd2c1d10e7b44e0bb267bf283e49e195a3727b07e7ce24ac72c517ada\",\"manifest\":\"/home/chris/code/arbitrage/data/m5b-smoke-20261023T033615Z/backup.sqlite3.manifest.json\",\"row_counts\":{\"book_captures\":4,\"catalogue_entries\":2,\"collection_runs\":2,\"discovery_queue\":0,\"discovery_state\":0,\"document_heads\":0,\"fee_documents\":0,\"fee_imports\":0,\"fee_profiles\":0,\"normalized_books\":0,\"opportunities\":0,\"ops_checks\":0,\"ops_events\":0,\"pair_audit\":0,\"pairs\":0,\"paper_comparisons\":0,\"paper_intents\":0,\"paper_tick_inputs\":0,\"raw_observations\":6,\"registry_instruments\":1,\"registry_supplements\":0,\"research_audit\":0,\"research_cycles\":0,\"research_details\":0,\"research_evaluations\":0,\"research_replays\":0,\"research_sessions\":0,\"rule_documents\":0,\"rule_versions\":1,\"supplement_versions\":0,\"ws_connections\":2,\"ws_frames\":4},\"schema_version\":7}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        ".venv/bin/python",
+        "-m",
+        "predarb.cli",
+        "ops",
+        "verify-backup",
+        "data/m5b-smoke-20261023T033615Z/backup.sqlite3"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"created_at\":\"2026-10-23T03:36:19.968594+00:00\",\"file_sha256\":\"7f6974411c2bd603191c72259b111b211fb07a5ea065469d00384e173e8d8907\",\"format\":\"predarb-backup/m5-v1\",\"logical_sha256\":\"d095ac5cd2c1d10e7b44e0bb267bf283e49e195a3727b07e7ce24ac72c517ada\",\"row_counts\":{\"book_captures\":4,\"catalogue_entries\":2,\"collection_runs\":2,\"discovery_queue\":0,\"discovery_state\":0,\"document_heads\":0,\"fee_documents\":0,\"fee_imports\":0,\"fee_profiles\":0,\"normalized_books\":0,\"opportunities\":0,\"ops_checks\":0,\"ops_events\":0,\"pair_audit\":0,\"pairs\":0,\"paper_comparisons\":0,\"paper_intents\":0,\"paper_tick_inputs\":0,\"raw_observations\":6,\"registry_instruments\":1,\"registry_supplements\":0,\"research_audit\":0,\"research_cycles\":0,\"research_details\":0,\"research_evaluations\":0,\"research_replays\":0,\"research_sessions\":0,\"rule_documents\":0,\"rule_versions\":1,\"supplement_versions\":0,\"ws_connections\":2,\"ws_frames\":4},\"schema_version\":7,\"verified\":true}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        ".venv/bin/python",
+        "-m",
+        "predarb.cli",
+        "demo",
+        "--db",
+        "data/m5b-smoke-20261023T033615Z/hypothetical.sqlite3"
+      ],
+      "exit_code": 0,
+      "stdout": "HYPOTHETICAL EXAMPLE ONLY \u2014 not a trade signal or verified exchange quotes\npairs=400 required_capital=$391.000 modeled_profit=$9.000 ROI=2.302%\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        ".venv/bin/python",
+        "-m",
+        "predarb.cli",
+        "report",
+        "--db",
+        "data/m5b-smoke-20261023T033615Z/hypothetical.sqlite3"
+      ],
+      "exit_code": 0,
+      "stdout": "Read-only archive counts: {}\nCollection runs (id, venue, status, pages, records, unique, duplicates): []\nBook captures (freshness AT CAPTURE, liquidity, count): []\nAll live catalogue entries and books are UNVERIFIED; no actionable signals\nNormalized book assessments (data usable AT ASSESSMENT, count): []\nPair decisions (hypothetical, status, count; no trading authority): []\nHypothetical evaluations: 1 (sum of *example modeled* profits, NOT realized P&L: $9.00)\n",
+      "stderr": ""
+    }
+  ],
+  "scope": "Bounded read-only production capture and local smoke checks; expected live rejection exit 2"
+}

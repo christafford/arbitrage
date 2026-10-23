@@ -6,9 +6,12 @@ A **read-only, Codex-ready** starter for researching fully hedged binary predict
 
 **M5A A/B:** discovery is implemented. The read-only Kalshi WebSocket adapter is
 implemented with offline tests; **RSA authentication succeeds, but live snapshots
-lack the required market clock and are rejected**. Continuity remains unproven.
+lack the required market clock and are rejected**. Follow-up diagnostics also
+found the clock missing from incremental updates and requested snapshots on two
+markets. The CLI now identifies `MISSING_MARKET_CLOCK` explicitly. Continuity remains unproven.
 Workstreams C–E have not been started. See
-[M5A results](docs/M5A_RESULTS.md) and [WebSocket setup](docs/KALSHI_WEBSOCKET.md).
+[M5A results](docs/M5A_RESULTS.md), [protocol discrepancy](docs/KALSHI_PROTOCOL_DISCREPANCY.md)
+and [WebSocket setup](docs/KALSHI_WEBSOCKET.md).
 
 ## Quick start (Python 3.11+; no external dependencies)
 

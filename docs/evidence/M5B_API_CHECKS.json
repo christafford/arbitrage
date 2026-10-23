@@ -1,0 +1,26 @@
+[
+  {
+    "url": "https://docs.kalshi.com/asyncapi.yaml",
+    "retrieved_at": "2026-10-23T03:17:12.033391+00:00",
+    "sha256": "6b27304fe63969da55b326864d82bb0ea13ac53235f324c24d2dec4a544d7021",
+    "local_path": "data/m5b-protocol-check/asyncapi.yaml"
+  },
+  {
+    "url": "https://docs.kalshi.com/websockets/orderbook-updates.md",
+    "retrieved_at": "2026-10-23T03:17:12.315701+00:00",
+    "sha256": "8432edeec3ae10347060f144a4b5207d642034abcde6f5ef569db35ea13d9474",
+    "local_path": "data/m5b-protocol-check/orderbook-updates.md"
+  },
+  {
+    "url": "https://docs.kalshi.com/websockets/websocket-connection.md",
+    "retrieved_at": "2026-10-23T03:17:12.608342+00:00",
+    "sha256": "f0ad3c146a342f86555f2bf5fbb313a88f95538567d56ee2127e97ad6678264f",
+    "local_path": "data/m5b-protocol-check/websocket-connection.md"
+  },
+  {
+    "url": "https://docs.kalshi.com/getting_started/quick_start_websockets.md",
+    "retrieved_at": "2026-10-23T03:17:13.100721+00:00",
+    "sha256": "bfffbc7832734291a38ed4f0743273a1314be8a1d2bad0904f327e9ddfe30fcf",
+    "local_path": "data/m5b-protocol-check/quick_start_websockets.md"
+  }
+]

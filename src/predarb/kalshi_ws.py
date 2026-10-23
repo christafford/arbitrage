@@ -6,7 +6,7 @@ import shutil
 import time
 
 from . import kalshi, ws_store
-from .book_stream import KalshiBookStream
+from .book_stream import KalshiBookStream, StreamProtocolError
 from .kalshi_auth import WS_URL
 from .provider import HttpClient
 from .store import save_entry, start_run, update_run, validate_observation
@@ -88,7 +88,8 @@ def capture(con, source_id, credentials, *, seconds=60, max_messages=10000, max_
             secrets = (headers['KALSHI-ACCESS-KEY'], headers['KALSHI-ACCESS-SIGNATURE'])
             with connect_socket(headers) as socket:
                 socket.send(dumps({'id': 1, 'cmd': 'subscribe', 'params': {
-                    'channels': ['orderbook_delta'], 'market_ticker': source_id}}))
+                    'channels': ['orderbook_delta'], 'market_ticker': source_id,
+                    'use_yes_price': False}}))
                 sid, frames, last_message = None, 0, monotonic()
                 while monotonic() < deadline and stats['messages'] < max_messages:
                     received = now()
@@ -131,6 +132,9 @@ def capture(con, source_id, credentials, *, seconds=60, max_messages=10000, max_
                             raise ValueError('source/metadata freshness rejected')
                         book = replace(book, transport='KALSHI_AUTHENTICATED_WS')
                         ws_store.record_frame(con, observed, book, now=received)
+                    except StreamProtocolError as exc:
+                        validate_observation(con, observed, 'REJECTED', exc.code)
+                        reason = exc.code; break
                     except (ValueError, TypeError, KeyError, OverflowError):
                         validate_observation(con, observed, 'REJECTED', 'INVALID_STREAM_FRAME')
                         reason = 'INVALID_STREAM_FRAME'; break

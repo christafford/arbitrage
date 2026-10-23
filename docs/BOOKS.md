@@ -143,7 +143,9 @@ executed tests, live capture results and remaining operational limits, and
 ## M5A authenticated adapter
 
 M5A now reuses the replay helper for an implemented read-only transport. Actual
-authenticated continuity remains blocked by missing credentials. Schema-7
+authenticated continuity remains blocked by missing market clocks in the live
+protocol; RSA authentication succeeds. See the
+[discrepancy report](KALSHI_PROTOCOL_DISCREPANCY.md). Schema-7
 WebSocket observations use the same inspection/economic gates, replaying the
 archived generation and refusing disconnected, invalid or stale depth. See
 [setup and limits](KALSHI_WEBSOCKET.md); the M3 descriptions above are historical.
