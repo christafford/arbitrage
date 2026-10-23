@@ -1,0 +1,200 @@
+{
+  "recorded_at": "2026-10-23T12:52:47.585402+00:00",
+  "live_runs": [
+    {
+      "command": [
+        ".venv/bin/predarb",
+        "stream-kalshi",
+        "KXBTCD-26OCT2317-T83499.99",
+        "--db",
+        "data/m5b-sequence-live-20261023T124703Z/capture.sqlite3",
+        "--protocol",
+        "sequence-v1",
+        "--seconds",
+        "65",
+        "--max-connections",
+        "3",
+        "--max-messages",
+        "3000"
+      ],
+      "exit_code": 2,
+      "stdout": "{\"connection_ids\":[1,2,3],\"connections\":3,\"deltas\":219,\"failures\":[\"MESSAGE_TIMEOUT\"],\"live_continuity_demonstrated\":true,\"messages\":225,\"protocol\":\"sequence-v1\",\"protocol_valid_until\":\"2026-10-29T00:00:00+00:00\",\"reconnected_continuity_demonstrated\":true,\"recoveries\":1,\"sequenced_connection_ids\":[1,2,3],\"snapshots\":3,\"status\":\"INCOMPLETE\",\"trading_authorized\":false,\"usable_books\":222,\"verification\":\"UNVERIFIED\"}\n",
+      "stderr": "",
+      "recorded_at": "2026-10-23T12:48:09.022225+00:00"
+    },
+    {
+      "command": [
+        ".venv/bin/predarb",
+        "stream-kalshi",
+        "KXBTCD-26OCT2317-T83499.99",
+        "--db",
+        "data/m5b-sequence-clean-20261023T125005Z/capture.sqlite3",
+        "--protocol",
+        "sequence-v1",
+        "--seconds",
+        "20",
+        "--max-connections",
+        "1",
+        "--max-messages",
+        "10"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"connection_ids\":[1],\"connections\":1,\"deltas\":8,\"failures\":[],\"live_continuity_demonstrated\":true,\"messages\":10,\"protocol\":\"sequence-v1\",\"protocol_valid_until\":\"2026-10-29T00:00:00+00:00\",\"reconnected_continuity_demonstrated\":false,\"recoveries\":0,\"sequenced_connection_ids\":[1],\"snapshots\":1,\"status\":\"CAPTURED\",\"trading_authorized\":false,\"usable_books\":9,\"verification\":\"UNVERIFIED\"}\n",
+      "stderr": "",
+      "recorded_at": "2026-10-23T12:50:08.490000+00:00"
+    }
+  ],
+  "generations": [
+    {
+      "id": 1,
+      "started_at": "2026-10-23T12:47:04.131320+00:00",
+      "ended_at": "2026-10-23T12:47:34.352620+00:00",
+      "end_reason": "PERIODIC_RESNAPSHOT",
+      "frames": {
+        "subscribed": 1,
+        "orderbook_snapshot": 1,
+        "orderbook_delta": 150
+      }
+    },
+    {
+      "id": 2,
+      "started_at": "2026-10-23T12:47:35.574187+00:00",
+      "ended_at": "2026-10-23T12:47:52.688981+00:00",
+      "end_reason": "MESSAGE_TIMEOUT",
+      "frames": {
+        "subscribed": 1,
+        "orderbook_snapshot": 1,
+        "orderbook_delta": 35
+      }
+    },
+    {
+      "id": 3,
+      "started_at": "2026-10-23T12:47:54.946158+00:00",
+      "ended_at": "2026-10-23T12:48:08.937176+00:00",
+      "end_reason": "BUDGET_COMPLETE",
+      "frames": {
+        "subscribed": 1,
+        "orderbook_snapshot": 1,
+        "orderbook_delta": 34
+      }
+    }
+  ],
+  "table_counts": {
+    "raw_observations": 228,
+    "ws_frames": 225,
+    "normalized_books": 222,
+    "pairs": 0,
+    "fee_profiles": 0,
+    "paper_intents": 0
+  },
+  "integrity": "ok",
+  "foreign_key_violations": 0,
+  "all_raw_hashes_verified": true,
+  "backup_restore_logical_sha256": "fdc6cb3ee9f1182df456a60ed66877d32b3f4390cea4cb95e177a0a93f3ff3be",
+  "smoke_commands": [
+    {
+      "command": [
+        ".venv/bin/predarb",
+        "stream-kalshi",
+        "--help"
+      ],
+      "exit_code": 0,
+      "stdout": "usage: predarb stream-kalshi [-h] [--db DB]\n                             [--credentials-file CREDENTIALS_FILE]\n                             [--seconds SECONDS] [--max-messages MAX_MESSAGES]\n                             [--max-connections MAX_CONNECTIONS]\n                             [--min-free-mb MIN_FREE_MB]\n                             [--research-session RESEARCH_SESSION]\n                             [--protocol {clocked,sequence-v1}]\n                             ticker\n\npositional arguments:\n  ticker\n\noptions:\n  -h, --help            show this help message and exit\n  --db DB\n  --credentials-file CREDENTIALS_FILE\n  --seconds SECONDS     duration budget, 1..3600 seconds\n  --max-messages MAX_MESSAGES\n  --max-connections MAX_CONNECTIONS\n  --min-free-mb MIN_FREE_MB\n  --research-session RESEARCH_SESSION\n                        optionally scan an existing live research session in\n                        this writer\n  --protocol {clocked,sequence-v1}\n                        sequence-v1 is explicitly limited to the\n                        pre-2026-10-29 rollout window\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        ".venv/bin/predarb",
+        "books",
+        "inspect",
+        "228",
+        "--db",
+        "data/m5b-sequence-live-20261023T124703Z/capture.sqlite3",
+        "--at",
+        "2026-10-23T12:48:06.421936+00:00"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"evaluated_at\":\"2026-10-23T12:48:06.421936+00:00\",\"historical_replay\":true,\"result\":{\"continuity\":\"SINGLE_SUBSCRIPTION_SEQUENCE_V1\",\"data_usable\":true,\"evaluated_at\":\"2026-10-23T12:48:06.421936+00:00\",\"market_close_at\":\"2026-10-23T21:00:00Z\",\"mechanism_no\":\"BUY_NO_FROM_COMPLEMENTARY_YES_BID\",\"mechanism_yes\":\"BUY_YES_FROM_COMPLEMENTARY_NO_BID\",\"metadata_observation_id\":192,\"metadata_received_at\":\"2026-10-23T12:47:54.928130+00:00\",\"minimum_quantity\":\"0.01\",\"no_asks\":[{\"price\":\"0.9600\",\"quantity\":\"3345.16\"},{\"price\":\"0.9700\",\"quantity\":\"36178.14\"},{\"price\":\"0.9800\",\"quantity\":\"3388.89\"},{\"price\":\"0.9900\",\"quantity\":\"7841.22\"}],\"normalizer_version\":\"binary-books/m3-v1\",\"observation_id\":228,\"price_bands\":[{\"end\":\"1.0000\",\"start\":\"0.0000\",\"step\":\"0.0100\"}],\"quantity_step\":\"0.01\",\"received_at\":\"2026-10-23T12:48:06.421936+00:00\",\"rejections\":[],\"sequence\":35,\"source_id\":\"KXBTCD-26OCT2317-T83499.99\",\"source_ts\":\"2026-10-23T12:48:06.360000+00:00\",\"timestamp_kind\":\"PROVIDER_SEND_TIME\",\"trading_authorized\":false,\"transport\":\"KALSHI_AUTHENTICATED_WS\",\"venue\":\"kalshi\",\"verification\":\"UNVERIFIED\",\"yes_asks\":[{\"price\":\"0.0500\",\"quantity\":\"892.00\"},{\"price\":\"0.0600\",\"quantity\":\"8985.00\"},{\"price\":\"0.0700\",\"quantity\":\"31614.00\"},{\"price\":\"0.0800\",\"quantity\":\"2129.38\"},{\"price\":\"0.0900\",\"quantity\":\"1073.06\"},{\"price\":\"0.1000\",\"quantity\":\"1245.66\"},{\"price\":\"0.1100\",\"quantity\":\"1082.68\"},{\"price\":\"0.1200\",\"quantity\":\"1035.32\"},{\"price\":\"0.1400\",\"quantity\":\"97.00\"},{\"price\":\"0.1500\",\"quantity\":\"1.00\"},{\"price\":\"0.1700\",\"quantity\":\"10.00\"},{\"price\":\"0.2000\",\"quantity\":\"1.00\"},{\"price\":\"0.3300\",\"quantity\":\"32.00\"},{\"price\":\"0.3500\",\"quantity\":\"31.27\"},{\"price\":\"0.3900\",\"quantity\":\"1.00\"},{\"price\":\"0.4200\",\"quantity\":\"150.00\"},{\"price\":\"0.4800\",\"quantity\":\"25.00\"},{\"price\":\"0.4900\",\"quantity\":\"1.00\"},{\"price\":\"0.5000\",\"quantity\":\"25.00\"},{\"price\":\"0.5700\",\"quantity\":\"2272.00\"},{\"price\":\"0.5800\",\"quantity\":\"88.00\"},{\"price\":\"0.5900\",\"quantity\":\"1.00\"},{\"price\":\"0.6000\",\"quantity\":\"2.49\"},{\"price\":\"0.6400\",\"quantity\":\"64.30\"},{\"price\":\"0.6500\",\"quantity\":\"25.00\"},{\"price\":\"0.6900\",\"quantity\":\"1.00\"},{\"price\":\"0.7000\",\"quantity\":\"60.00\"},{\"price\":\"0.7100\",\"quantity\":\"78.18\"},{\"price\":\"0.7200\",\"quantity\":\"31.33\"},{\"price\":\"0.7300\",\"quantity\":\"117.43\"},{\"price\":\"0.7400\",\"quantity\":\"3.55\"},{\"price\":\"0.7900\",\"quantity\":\"1.00\"},{\"price\":\"0.8200\",\"quantity\":\"7599.00\"},{\"price\":\"0.8300\",\"quantity\":\"36.53\"},{\"price\":\"0.8800\",\"quantity\":\"15.01\"},{\"price\":\"0.8900\",\"quantity\":\"101.00\"},{\"price\":\"0.9200\",\"quantity\":\"1.00\"},{\"price\":\"0.9500\",\"quantity\":\"11.00\"},{\"price\":\"0.9600\",\"quantity\":\"45600.00\"},{\"price\":\"0.9700\",\"quantity\":\"301.00\"},{\"price\":\"0.9800\",\"quantity\":\"21.00\"},{\"price\":\"0.9900\",\"quantity\":\"235828.86\"}]},\"trading_authorized\":false,\"verification\":\"UNVERIFIED\"}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        ".venv/bin/predarb",
+        "books",
+        "inspect",
+        "228",
+        "--db",
+        "data/m5b-sequence-live-20261023T124703Z/capture.sqlite3"
+      ],
+      "exit_code": 2,
+      "stdout": "{\"evaluated_at\":\"2026-10-23T12:52:45.930601+00:00\",\"historical_replay\":false,\"result\":{\"continuity\":\"SINGLE_SUBSCRIPTION_SEQUENCE_V1\",\"data_usable\":false,\"evaluated_at\":\"2026-10-23T12:52:45.930601+00:00\",\"market_close_at\":\"2026-10-23T21:00:00Z\",\"mechanism_no\":\"BUY_NO_FROM_COMPLEMENTARY_YES_BID\",\"mechanism_yes\":\"BUY_YES_FROM_COMPLEMENTARY_NO_BID\",\"metadata_observation_id\":192,\"metadata_received_at\":\"2026-10-23T12:47:54.928130+00:00\",\"minimum_quantity\":\"0.01\",\"no_asks\":[{\"price\":\"0.9600\",\"quantity\":\"3345.16\"},{\"price\":\"0.9700\",\"quantity\":\"36178.14\"},{\"price\":\"0.9800\",\"quantity\":\"3388.89\"},{\"price\":\"0.9900\",\"quantity\":\"7841.22\"}],\"normalizer_version\":\"binary-books/m3-v1\",\"observation_id\":228,\"price_bands\":[{\"end\":\"1.0000\",\"start\":\"0.0000\",\"step\":\"0.0100\"}],\"quantity_step\":\"0.01\",\"received_at\":\"2026-10-23T12:48:06.421936+00:00\",\"rejections\":[\"STREAM_DISCONNECTED\",\"STREAM_LIVENESS_NOT_DEMONSTRATED\",\"STALE_RECEIPT\",\"STALE_METADATA\",\"STALE_SOURCE\"],\"sequence\":35,\"source_id\":\"KXBTCD-26OCT2317-T83499.99\",\"source_ts\":\"2026-10-23T12:48:06.360000+00:00\",\"timestamp_kind\":\"PROVIDER_SEND_TIME\",\"trading_authorized\":false,\"transport\":\"KALSHI_AUTHENTICATED_WS\",\"venue\":\"kalshi\",\"verification\":\"UNVERIFIED\",\"yes_asks\":[{\"price\":\"0.0500\",\"quantity\":\"892.00\"},{\"price\":\"0.0600\",\"quantity\":\"8985.00\"},{\"price\":\"0.0700\",\"quantity\":\"31614.00\"},{\"price\":\"0.0800\",\"quantity\":\"2129.38\"},{\"price\":\"0.0900\",\"quantity\":\"1073.06\"},{\"price\":\"0.1000\",\"quantity\":\"1245.66\"},{\"price\":\"0.1100\",\"quantity\":\"1082.68\"},{\"price\":\"0.1200\",\"quantity\":\"1035.32\"},{\"price\":\"0.1400\",\"quantity\":\"97.00\"},{\"price\":\"0.1500\",\"quantity\":\"1.00\"},{\"price\":\"0.1700\",\"quantity\":\"10.00\"},{\"price\":\"0.2000\",\"quantity\":\"1.00\"},{\"price\":\"0.3300\",\"quantity\":\"32.00\"},{\"price\":\"0.3500\",\"quantity\":\"31.27\"},{\"price\":\"0.3900\",\"quantity\":\"1.00\"},{\"price\":\"0.4200\",\"quantity\":\"150.00\"},{\"price\":\"0.4800\",\"quantity\":\"25.00\"},{\"price\":\"0.4900\",\"quantity\":\"1.00\"},{\"price\":\"0.5000\",\"quantity\":\"25.00\"},{\"price\":\"0.5700\",\"quantity\":\"2272.00\"},{\"price\":\"0.5800\",\"quantity\":\"88.00\"},{\"price\":\"0.5900\",\"quantity\":\"1.00\"},{\"price\":\"0.6000\",\"quantity\":\"2.49\"},{\"price\":\"0.6400\",\"quantity\":\"64.30\"},{\"price\":\"0.6500\",\"quantity\":\"25.00\"},{\"price\":\"0.6900\",\"quantity\":\"1.00\"},{\"price\":\"0.7000\",\"quantity\":\"60.00\"},{\"price\":\"0.7100\",\"quantity\":\"78.18\"},{\"price\":\"0.7200\",\"quantity\":\"31.33\"},{\"price\":\"0.7300\",\"quantity\":\"117.43\"},{\"price\":\"0.7400\",\"quantity\":\"3.55\"},{\"price\":\"0.7900\",\"quantity\":\"1.00\"},{\"price\":\"0.8200\",\"quantity\":\"7599.00\"},{\"price\":\"0.8300\",\"quantity\":\"36.53\"},{\"price\":\"0.8800\",\"quantity\":\"15.01\"},{\"price\":\"0.8900\",\"quantity\":\"101.00\"},{\"price\":\"0.9200\",\"quantity\":\"1.00\"},{\"price\":\"0.9500\",\"quantity\":\"11.00\"},{\"price\":\"0.9600\",\"quantity\":\"45600.00\"},{\"price\":\"0.9700\",\"quantity\":\"301.00\"},{\"price\":\"0.9800\",\"quantity\":\"21.00\"},{\"price\":\"0.9900\",\"quantity\":\"235828.86\"}]},\"trading_authorized\":false,\"verification\":\"UNVERIFIED\"}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        ".venv/bin/predarb",
+        "books",
+        "list",
+        "--db",
+        "data/m5b-sequence-live-20261023T124703Z/capture.sqlite3"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"evaluated_at\":\"2026-10-23T12:52:46.125130+00:00\",\"historical_replay\":false,\"result\":[{\"data_usable\":false,\"observation_id\":228,\"rejections\":[\"STREAM_DISCONNECTED\",\"STREAM_LIVENESS_NOT_DEMONSTRATED\",\"STALE_RECEIPT\",\"STALE_METADATA\",\"STALE_SOURCE\"],\"source_id\":\"KXBTCD-26OCT2317-T83499.99\",\"venue\":\"kalshi\"},{\"data_usable\":false,\"observation_id\":227,\"rejections\":[\"STREAM_DISCONNECTED\",\"STREAM_LIVENESS_NOT_DEMONSTRATED\",\"STALE_RECEIPT\",\"STALE_METADATA\",\"STALE_SOURCE\",\"SUPERSEDED_BOOK\"],\"source_id\":\"KXBTCD-26OCT2317-T83499.99\",\"venue\":\"kalshi\"},{\"data_usable\":false,\"observation_id\":226,\"rejections\":[\"STREAM_DISCONNECTED\",\"STREAM_LIVENESS_NOT_DEMONSTRATED\",\"STALE_RECEIPT\",\"STALE_METADATA\",\"STALE_SOURCE\",\"SUPERSEDED_BOOK\"],\"source_id\":\"KXBTCD-26OCT2317-T83499.99\",\"venue\":\"kalshi\"},{\"data_usable\":false,\"observation_id\":225,\"rejections\":[\"STREAM_DISCONNECTED\",\"STREAM_LIVENESS_NOT_DEMONSTRATED\",\"STALE_RECEIPT\",\"STALE_METADATA\",\"STALE_SOURCE\",\"SUPERSEDED_BOOK\"],\"source_id\":\"KXBTCD-26OCT2317-T83499.99\",\"venue\":\"kalshi\"},{\"data_usable\":false,\"observation_id\":224,\"rejections\":[\"STREAM_DISCONNECTED\",\"STREAM_LIVENESS_NOT_DEMONSTRATED\",\"STALE_RECEIPT\",\"STALE_METADATA\",\"STALE_SOURCE\",\"SUPERSEDED_BOOK\"],\"source_id\":\"KXBTCD-26OCT2317-T83499.99\",\"venue\":\"kalshi\"},{\"data_usable\":false,\"observation_id\":223,\"rejections\":[\"STREAM_DISCONNECTED\",\"STREAM_LIVENESS_NOT_DEMONSTRATED\",\"STALE_RECEIPT\",\"STALE_METADATA\",\"STALE_SOURCE\",\"SUPERSEDED_BOOK\"],\"source_id\":\"KXBTCD-26OCT2317-T83499.99\",\"venue\":\"kalshi\"},{\"data_usable\":false,\"observation_id\":222,\"rejections\":[\"STREAM_DISCONNECTED\",\"STREAM_LIVENESS_NOT_DEMONSTRATED\",\"STALE_RECEIPT\",\"STALE_METADATA\",\"STALE_SOURCE\",\"SUPERSEDED_BOOK\"],\"source_id\":\"KXBTCD-26OCT2317-T83499.99\",\"venue\":\"kalshi\"},{\"data_usable\":false,\"observation_id\":221,\"rejections\":[\"STREAM_DISCONNECTED\",\"STREAM_LIVENESS_NOT_DEMONSTRATED\",\"STALE_RECEIPT\",\"STALE_METADATA\",\"STALE_SOURCE\",\"SUPERSEDED_BOOK\"],\"source_id\":\"KXBTCD-26OCT2317-T83499.99\",\"venue\":\"kalshi\"},{\"data_usable\":false,\"observation_id\":220,\"rejections\":[\"STREAM_DISCONNECTED\",\"STREAM_LIVENESS_NOT_DEMONSTRATED\",\"STALE_RECEIPT\",\"STALE_METADATA\",\"STALE_SOURCE\",\"SUPERSEDED_BOOK\"],\"source_id\":\"KXBTCD-26OCT2317-T83499.99\",\"venue\":\"kalshi\"},{\"data_usable\":false,\"observation_id\":219,\"rejections\":[\"STREAM_DISCONNECTED\",\"STREAM_LIVENESS_NOT_DEMONSTRATED\",\"STALE_RECEIPT\",\"STALE_METADATA\",\"STALE_SOURCE\",\"SUPERSEDED_BOOK\"],\"source_id\":\"KXBTCD-26OCT2317-T83499.99\",\"venue\":\"kalshi\"},{\"data_usable\":false,\"observation_id\":218,\"rejections\":[\"STREAM_DISCONNECTED\",\"STREAM_LIVENESS_NOT_DEMONSTRATED\",\"STALE_RECEIPT\",\"STALE_METADATA\",\"STALE_SOURCE\",\"SUPERSEDED_BOOK\"],\"source_id\":\"KXBTCD-26OCT2317-T83499.99\",\"venue\":\"kalshi\"},{\"data_usable\":false,\"observation_id\":217,\"rejections\":[\"STREAM_DISCONNECTED\",\"STREAM_LIVENESS_NOT_DEMONSTRATED\",\"STALE_RECEIPT\",\"STALE_METADATA\",\"STALE_SOURCE\",\"SUPERSEDED_BOOK\"],\"source_id\":\"KXBTCD-26OCT2317-T83499.99\",\"venue\":\"kalshi\"},{\"data_usable\":false,\"observation_id\":216,\"rejections\":[\"STREAM_DISCONNECTED\",\"STREAM_LIVENESS_NOT_DEMONSTRATED\",\"STALE_RECEIPT\",\"STALE_METADATA\",\"STALE_SOURCE\",\"SUPERSEDED_BOOK\"],\"source_id\":\"KXBTCD-26OCT2317-T83499.99\",\"venue\":\"kalshi\"},{\"data_usable\":false,\"observation_id\":215,\"rejections\":[\"STREAM_DISCONNECTED\",\"STREAM_LIVENESS_NOT_DEMONSTRATED\",\"STALE_RECEIPT\",\"STALE_METADATA\",\"STALE_SOURCE\",\"SUPERSEDED_BOOK\"],\"source_id\":\"KXBTCD-26OCT2317-T83499.99\",\"venue\":\"kalshi\"},{\"data_usable\":false,\"observation_id\":214,\"rejections\":[\"STREAM_DISCONNECTED\",\"STREAM_LIVENESS_NOT_DEMONSTRATED\",\"STALE_RECEIPT\",\"STALE_METADATA\",\"STALE_SOURCE\",\"SUPERSEDED_BOOK\"],\"source_id\":\"KXBTCD-26OCT2317-T83499.99\",\"venue\":\"kalshi\"},{\"data_usable\":false,\"observation_id\":213,\"rejections\":[\"STREAM_DISCONNECTED\",\"STREAM_LIVENESS_NOT_DEMONSTRATED\",\"STALE_RECEIPT\",\"STALE_METADATA\",\"STALE_SOURCE\",\"SUPERSEDED_BOOK\"],\"source_id\":\"KXBTCD-26OCT2317-T83499.99\",\"venue\":\"kalshi\"},{\"data_usable\":false,\"observation_id\":212,\"rejections\":[\"STREAM_DISCONNECTED\",\"STREAM_LIVENESS_NOT_DEMONSTRATED\",\"STALE_RECEIPT\",\"STALE_METADATA\",\"STALE_SOURCE\",\"SUPERSEDED_BOOK\"],\"source_id\":\"KXBTCD-26OCT2317-T83499.99\",\"venue\":\"kalshi\"},{\"data_usable\":false,\"observation_id\":211,\"rejections\":[\"STREAM_DISCONNECTED\",\"STREAM_LIVENESS_NOT_DEMONSTRATED\",\"STALE_RECEIPT\",\"STALE_METADATA\",\"STALE_SOURCE\",\"SUPERSEDED_BOOK\"],\"source_id\":\"KXBTCD-26OCT2317-T83499.99\",\"venue\":\"kalshi\"},{\"data_usable\":false,\"observation_id\":210,\"rejections\":[\"STREAM_DISCONNECTED\",\"STREAM_LIVENESS_NOT_DEMONSTRATED\",\"STALE_RECEIPT\",\"STALE_METADATA\",\"STALE_SOURCE\",\"SUPERSEDED_BOOK\"],\"source_id\":\"KXBTCD-26OCT2317-T83499.99\",\"venue\":\"kalshi\"},{\"data_usable\":false,\"observation_id\":209,\"rejections\":[\"STREAM_DISCONNECTED\",\"STREAM_LIVENESS_NOT_DEMONSTRATED\",\"STALE_RECEIPT\",\"STALE_METADATA\",\"STALE_SOURCE\",\"SUPERSEDED_BOOK\"],\"source_id\":\"KXBTCD-26OCT2317-T83499.99\",\"venue\":\"kalshi\"}],\"trading_authorized\":false,\"verification\":\"UNVERIFIED\"}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        ".venv/bin/predarb",
+        "ops",
+        "backup",
+        "--db",
+        "data/m5b-sequence-live-20261023T124703Z/capture.sqlite3",
+        "--output",
+        "data/m5b-sequence-live-20261023T124703Z/verified-backup.sqlite3"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"created_at\":\"2026-10-23T12:52:46.978316+00:00\",\"destination\":\"/home/chris/code/arbitrage/data/m5b-sequence-live-20261023T124703Z/verified-backup.sqlite3\",\"file_sha256\":\"e25b70139a5aaca49636b89296bcfe56007cbfb7a40f44994570a4c0ecf97e53\",\"format\":\"predarb-backup/m5-v1\",\"logical_sha256\":\"fdc6cb3ee9f1182df456a60ed66877d32b3f4390cea4cb95e177a0a93f3ff3be\",\"manifest\":\"/home/chris/code/arbitrage/data/m5b-sequence-live-20261023T124703Z/verified-backup.sqlite3.manifest.json\",\"row_counts\":{\"book_captures\":225,\"catalogue_entries\":3,\"collection_runs\":3,\"discovery_queue\":0,\"discovery_state\":0,\"document_heads\":0,\"fee_documents\":0,\"fee_imports\":0,\"fee_profiles\":0,\"normalized_books\":222,\"opportunities\":0,\"ops_checks\":0,\"ops_events\":0,\"pair_audit\":0,\"pairs\":0,\"paper_comparisons\":0,\"paper_intents\":0,\"paper_tick_inputs\":0,\"raw_observations\":228,\"registry_instruments\":1,\"registry_supplements\":0,\"research_audit\":0,\"research_cycles\":0,\"research_details\":0,\"research_evaluations\":0,\"research_replays\":0,\"research_sessions\":0,\"rule_documents\":0,\"rule_versions\":1,\"supplement_versions\":0,\"ws_connections\":3,\"ws_frames\":225},\"schema_version\":7}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        ".venv/bin/predarb",
+        "ops",
+        "verify-backup",
+        "data/m5b-sequence-live-20261023T124703Z/verified-backup.sqlite3"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"created_at\":\"2026-10-23T12:52:46.978316+00:00\",\"file_sha256\":\"e25b70139a5aaca49636b89296bcfe56007cbfb7a40f44994570a4c0ecf97e53\",\"format\":\"predarb-backup/m5-v1\",\"logical_sha256\":\"fdc6cb3ee9f1182df456a60ed66877d32b3f4390cea4cb95e177a0a93f3ff3be\",\"row_counts\":{\"book_captures\":225,\"catalogue_entries\":3,\"collection_runs\":3,\"discovery_queue\":0,\"discovery_state\":0,\"document_heads\":0,\"fee_documents\":0,\"fee_imports\":0,\"fee_profiles\":0,\"normalized_books\":222,\"opportunities\":0,\"ops_checks\":0,\"ops_events\":0,\"pair_audit\":0,\"pairs\":0,\"paper_comparisons\":0,\"paper_intents\":0,\"paper_tick_inputs\":0,\"raw_observations\":228,\"registry_instruments\":1,\"registry_supplements\":0,\"research_audit\":0,\"research_cycles\":0,\"research_details\":0,\"research_evaluations\":0,\"research_replays\":0,\"research_sessions\":0,\"rule_documents\":0,\"rule_versions\":1,\"supplement_versions\":0,\"ws_connections\":3,\"ws_frames\":225},\"schema_version\":7,\"verified\":true}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        ".venv/bin/predarb",
+        "ops",
+        "restore",
+        "data/m5b-sequence-live-20261023T124703Z/verified-backup.sqlite3",
+        "--output",
+        "data/m5b-sequence-live-20261023T124703Z/verified-restored.sqlite3"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"created_at\":\"2026-10-23T12:52:47.393770+00:00\",\"destination\":\"/home/chris/code/arbitrage/data/m5b-sequence-live-20261023T124703Z/verified-restored.sqlite3\",\"file_sha256\":\"e25b70139a5aaca49636b89296bcfe56007cbfb7a40f44994570a4c0ecf97e53\",\"format\":\"predarb-backup/m5-v1\",\"logical_sha256\":\"fdc6cb3ee9f1182df456a60ed66877d32b3f4390cea4cb95e177a0a93f3ff3be\",\"manifest\":\"/home/chris/code/arbitrage/data/m5b-sequence-live-20261023T124703Z/verified-restored.sqlite3.manifest.json\",\"restore_verified\":true,\"row_counts\":{\"book_captures\":225,\"catalogue_entries\":3,\"collection_runs\":3,\"discovery_queue\":0,\"discovery_state\":0,\"document_heads\":0,\"fee_documents\":0,\"fee_imports\":0,\"fee_profiles\":0,\"normalized_books\":222,\"opportunities\":0,\"ops_checks\":0,\"ops_events\":0,\"pair_audit\":0,\"pairs\":0,\"paper_comparisons\":0,\"paper_intents\":0,\"paper_tick_inputs\":0,\"raw_observations\":228,\"registry_instruments\":1,\"registry_supplements\":0,\"research_audit\":0,\"research_cycles\":0,\"research_details\":0,\"research_evaluations\":0,\"research_replays\":0,\"research_sessions\":0,\"rule_documents\":0,\"rule_versions\":1,\"supplement_versions\":0,\"ws_connections\":3,\"ws_frames\":225},\"schema_version\":7,\"source_file_sha256\":\"e25b70139a5aaca49636b89296bcfe56007cbfb7a40f44994570a4c0ecf97e53\"}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        ".venv/bin/predarb",
+        "report",
+        "--db",
+        "data/m5b-sequence-live-20261023T124703Z/capture.sqlite3"
+      ],
+      "exit_code": 0,
+      "stdout": "Read-only archive counts: {'kalshi': 228}\nCollection runs (id, venue, status, pages, records, unique, duplicates): [(3, 'kalshi', 'COMPLETE', 1, 1, 1, 0), (2, 'kalshi', 'COMPLETE', 1, 1, 1, 0), (1, 'kalshi', 'COMPLETE', 1, 1, 1, 0)]\nBook captures (freshness AT CAPTURE, liquidity, count): [('FRESH', 'TWO_SIDED', 222), ('UNVERIFIED_STREAM', 'UNKNOWN', 3)]\nAll live catalogue entries and books are UNVERIFIED; no actionable signals\nNormalized book assessments (data usable AT ASSESSMENT, count): [(1, 222)]\nPair decisions (hypothetical, status, count; no trading authority): []\nHypothetical evaluations: 0 (sum of *example modeled* profits, NOT realized P&L: $0.00)\n",
+      "stderr": ""
+    }
+  ],
+  "accepted_protocol": "kalshi-ws/m5a-sequence-v1",
+  "protocol_valid_until": "2026-10-29T00:00:00+00:00",
+  "live_reconnect_recovery_demonstrated": true,
+  "multiweek_acceptance": false,
+  "trading_authorized": false
+}

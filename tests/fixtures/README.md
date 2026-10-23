@@ -6,11 +6,21 @@ metadata, acknowledgment, initial snapshot, incremental delta and an explicit
 snapshot-request response. Each body has endpoint, receipt time, local schema,
 SHA-256 and (for frames) verified exact-wire hash. Public-shaped frame bytes are
 unchanged; no signed headers, keys or account identifiers are included. All book
-messages lack the required `msg.clock` and remain unusable. Offline tests replay
-their rejection; they never invent clocks or relabel these as valid books.
+messages lack `msg.clock`. Offline tests preserve their rejection under the
+original clock-required contract; separate explicit pre-rollout tests also
+exercise `sequence-v1`. Original rejected archives are never relabeled or rewritten.
 See [protocol discrepancy](../../docs/KALSHI_PROTOCOL_DISCREPANCY.md).
 
-These are **real public API snapshots**, captured without credentials on
+`kalshi-ws-sequence-live.json` is **actual accepted pre-rollout evidence** captured
+on 2026-10-23 UTC. It retains 225 exact public-shaped frames across three
+connections, with per-generation public metadata, receipt times, schema versions,
+hashes and connection boundaries. It includes real recovery after a message
+timeout. Authentication headers and account identifiers are excluded. All 222
+book states replay identically in two isolated test archives; no market clock is
+invented. Capture-time validity never establishes current quote usability, contract
+equivalence or fills. See [B acceptance](../../docs/M5B_SEQUENCE_RESULTS.md).
+
+The original REST fixtures below are **real public API snapshots**, captured without credentials on
 2026-10-21 UTC. They are historical observations, not hypothetical prices,
 trade signals, approved equivalent contracts, or evidence of fills.
 

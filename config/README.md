@@ -2,7 +2,7 @@
 
 Read-only collection parameters:
 
-- `--db`: SQLite path (default `data/research.sqlite3`). Existing starter databases migrate automatically to schema version 5 (M1 archive, M2 registry, M3 books, M4 fees/research, M5 paper/ops); back up a working archive before upgrading. Backup/restore and diagnostic readers never migrate the source.
+- `--db`: SQLite path (default `data/research.sqlite3`). Existing starter databases migrate automatically to schema version 7 (M1 archive, M2 registry, M3 books, M4 fees/research, M5 paper/ops, discovery and M5A WebSocket provenance); back up a working archive before upgrading. Backup/restore and diagnostic readers never migrate the source.
 - `--limit`: records per page, 1..1000 (default 20).
 - `--max-pages`: 1..10000 (default 10); exceeding the budget produces `PARTIAL` and exit 2.
 - `--event-ticker`: Kalshi event filter; `--slug`: Polymarket US market filter.
@@ -72,3 +72,12 @@ the estimated snapshot size plus 200 MiB free, uses new destinations and preserv
 the source. No clock/service/alert-destination setup is performed by the CLI.
 See [operations](../docs/OPERATIONS.md) for bounded runtime, lock, signal,
 deployment and restore behavior.
+
+M5A `stream-kalshi` defaults to the strict `--protocol clocked` contract. Explicit
+`--protocol sequence-v1` supports the reviewed pre-rollout shape only until
+2026-10-29 00:00 UTC. It keeps exchange send-time, subscription sequence, identity,
+freshness and price/depth checks and never synthesizes a market clock. Archive
+schema tags select the same contract during replay; mixed/unknown versions fail.
+Revalidate the clocked feed before continuing beyond the cutoff. See
+[WebSocket configuration](../docs/KALSHI_WEBSOCKET.md) and
+[live B acceptance](../docs/M5B_SEQUENCE_RESULTS.md).

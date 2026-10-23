@@ -1,0 +1,2102 @@
+{
+  "format": "predarb-kalshi-sequence-live/m5a-v1",
+  "hypothetical": false,
+  "schema_version": "kalshi-ws/m5a-sequence-v1",
+  "protocol": "sequence-v1",
+  "clock_rollout_date": "2026-10-29",
+  "description": "Actual timestamped single-market snapshots/deltas across three connections, including recovery after a message timeout. All evidence UNVERIFIED; no pair/fee approval.",
+  "sanitization": "Authentication headers excluded. Frame bodies already passed credential/account screening; exact-wire frames retain unchanged bytes and hashes. Metadata is public REST evidence.",
+  "command": {
+    "command": [
+      ".venv/bin/predarb",
+      "stream-kalshi",
+      "KXBTCD-26OCT2317-T83499.99",
+      "--db",
+      "data/m5b-sequence-live-20261023T124703Z/capture.sqlite3",
+      "--protocol",
+      "sequence-v1",
+      "--seconds",
+      "65",
+      "--max-connections",
+      "3",
+      "--max-messages",
+      "3000"
+    ],
+    "exit_code": 2,
+    "stdout": "{\"connection_ids\":[1,2,3],\"connections\":3,\"deltas\":219,\"failures\":[\"MESSAGE_TIMEOUT\"],\"live_continuity_demonstrated\":true,\"messages\":225,\"protocol\":\"sequence-v1\",\"protocol_valid_until\":\"2026-10-29T00:00:00+00:00\",\"reconnected_continuity_demonstrated\":true,\"recoveries\":1,\"sequenced_connection_ids\":[1,2,3],\"snapshots\":3,\"status\":\"INCOMPLETE\",\"trading_authorized\":false,\"usable_books\":222,\"verification\":\"UNVERIFIED\"}\n",
+    "stderr": "",
+    "recorded_at": "2026-10-23T12:48:09.022225+00:00"
+  },
+  "connections": [
+    {
+      "original_connection_id": 1,
+      "started_at": "2026-10-23T12:47:04.131320+00:00",
+      "ended_at": "2026-10-23T12:47:34.352620+00:00",
+      "end_reason": "PERIODIC_RESNAPSHOT",
+      "metadata": {
+        "received_at": "2026-10-23T12:47:04.108826+00:00",
+        "endpoint": "https://external-api.kalshi.com/trade-api/v2/markets/KXBTCD-26OCT2317-T83499.99",
+        "schema_version": "kalshi-3.34.0/m1-v1",
+        "body": "{\"market\":{\"can_close_early\":true,\"close_time\":\"2026-10-23T21:00:00Z\",\"created_time\":\"2026-10-16T09:00:37.667266Z\",\"event_ticker\":\"KXBTCD-26OCT2317\",\"exchange_index\":2,\"expected_expiration_time\":\"2026-10-23T21:05:00Z\",\"expiration_time\":\"2026-10-30T21:00:00Z\",\"expiration_value\":\"\",\"floor_strike\":83499.99,\"last_price_dollars\":\"0.0500\",\"latest_expiration_time\":\"2026-10-30T21:00:00Z\",\"market_type\":\"binary\",\"no_ask_dollars\":\"0.9500\",\"no_bid_dollars\":\"0.9400\",\"no_sub_title\":\"$83,500 or above\",\"notional_value_dollars\":\"1.0000\",\"occurrence_datetime\":\"2026-10-23T21:05:00Z\",\"open_interest_fp\":\"23162.07\",\"open_time\":\"2026-10-16T20:00:00Z\",\"previous_price_dollars\":\"0.1500\",\"previous_yes_ask_dollars\":\"0.1500\",\"previous_yes_bid_dollars\":\"0.1400\",\"price_level_structure\":\"linear_cent\",\"price_ranges\":[{\"end\":\"1.0000\",\"start\":\"0.0000\",\"step\":\"0.0100\"}],\"result\":\"\",\"rules_primary\":\"If the simple average of the sixty seconds of CF Benchmarks' Bitcoin Real-Time Index (BRTI) before 5 PM EDT is above 83499.99 at 5 PM EDT on Oct 23, 2026, then the market resolves to Yes.\",\"rules_secondary\":\"Not all cryptocurrency price data is the same. While checking a source like Google or Coinbase may help guide your decision, the price used to determine this market is based on CF Benchmarks' corresponding Real Time Index (RTI). At the last minute before expiration, 60 RTI prices are collected. The official and final value is the average of these prices.\",\"settlement_bounds_type\":\"default\",\"settlement_timer_seconds\":60,\"status\":\"active\",\"strike_type\":\"greater\",\"subtitle\":\"$83,500 or above\",\"ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"title\":\"Bitcoin price on Oct 23, 2026?\",\"updated_time\":\"2026-10-16T20:00:00.80112Z\",\"volume_24h_fp\":\"21286.28\",\"volume_fp\":\"93988.81\",\"yes_ask_dollars\":\"0.0600\",\"yes_ask_size_fp\":\"6845.00\",\"yes_bid_dollars\":\"0.0500\",\"yes_bid_size_fp\":\"75.00\",\"yes_sub_title\":\"$83,500 or above\"}}\n",
+        "sha256": "8668f6d2e5786f916effc6e6030af90da3d15643487e0f03173d9a632b45b74f"
+      },
+      "frames": [
+        {
+          "received_at": "2026-10-23T12:47:04.412186+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"subscribed\",\"id\":1,\"msg\":{\"channel\":\"orderbook_delta\",\"sid\":1},\"sending_ts_ms\":1792759624379}\n",
+          "sha256": "42856f5f9e0b611ea212f66d30f2e9500f341bc30bf03f2c9a667e39d16cd9bd",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "42856f5f9e0b611ea212f66d30f2e9500f341bc30bf03f2c9a667e39d16cd9bd"
+        },
+        {
+          "received_at": "2026-10-23T12:47:04.434275+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_snapshot\",\"sid\":1,\"seq\":1,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"yes_dollars_fp\":[[\"0.0100\",\"3041.22\"],[\"0.0200\",\"3238.89\"],[\"0.0300\",\"36258.14\"],[\"0.0400\",\"3302.18\"],[\"0.0500\",\"75.00\"]],\"no_dollars_fp\":[[\"0.0100\",\"294456.86\"],[\"0.0200\",\"21.00\"],[\"0.0300\",\"301.00\"],[\"0.0400\",\"58628.00\"],[\"0.0500\",\"11.00\"],[\"0.0800\",\"1.00\"],[\"0.1100\",\"101.00\"],[\"0.1200\",\"15214.01\"],[\"0.1700\",\"36.53\"],[\"0.2100\",\"1.00\"],[\"0.2600\",\"3.55\"],[\"0.2700\",\"117.43\"],[\"0.2800\",\"31.33\"],[\"0.2900\",\"4795.18\"],[\"0.3000\",\"60.00\"],[\"0.3100\",\"1.00\"],[\"0.3500\",\"25.00\"],[\"0.3600\",\"64.30\"],[\"0.4000\",\"2.49\"],[\"0.4100\",\"1.00\"],[\"0.4800\",\"91.00\"],[\"0.4900\",\"1994.00\"],[\"0.5000\",\"25.00\"],[\"0.5100\",\"1.00\"],[\"0.5200\",\"25.00\"],[\"0.5800\",\"150.00\"],[\"0.6100\",\"1.00\"],[\"0.6500\",\"31.27\"],[\"0.6700\",\"32.00\"],[\"0.8000\",\"1.00\"],[\"0.8300\",\"10.00\"],[\"0.8500\",\"1.00\"],[\"0.8600\",\"1.00\"],[\"0.8700\",\"96.00\"],[\"0.8800\",\"1042.86\"],[\"0.8900\",\"1082.68\"],[\"0.9000\",\"1045.66\"],[\"0.9100\",\"1073.06\"],[\"0.9200\",\"2814.38\"],[\"0.9300\",\"34074.00\"],[\"0.9400\",\"6845.00\"]]},\"sending_ts_ms\":1792759624379}\n",
+          "sha256": "cf6e221eb2f5421506197ff555d872886b20adbc664fa7d5aee320147cc88c30",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "cf6e221eb2f5421506197ff555d872886b20adbc664fa7d5aee320147cc88c30"
+        },
+        {
+          "received_at": "2026-10-23T12:47:04.665919+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":2,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.0100\",\"delta_fp\":\"-200.00\",\"side\":\"yes\",\"ts\":\"2026-10-23T12:47:04.626Z\",\"ts_ms\":1792759624626},\"sending_ts_ms\":1792759624633}\n",
+          "sha256": "4d0956514c01e0e2e62088416b7e845a014788201638762316d615640f3b1e33",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "4d0956514c01e0e2e62088416b7e845a014788201638762316d615640f3b1e33"
+        },
+        {
+          "received_at": "2026-10-23T12:47:04.694074+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":3,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.9400\",\"delta_fp\":\"-200.00\",\"side\":\"no\",\"ts\":\"2026-10-23T12:47:04.627Z\",\"ts_ms\":1792759624627},\"sending_ts_ms\":1792759624634}\n",
+          "sha256": "fbf706a80ea44a08dbe21a28f794bbaafa46d79127a2d020216a16ce96697fdf",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "fbf706a80ea44a08dbe21a28f794bbaafa46d79127a2d020216a16ce96697fdf"
+        },
+        {
+          "received_at": "2026-10-23T12:47:05.174424+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":4,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.0100\",\"delta_fp\":\"200.00\",\"side\":\"yes\",\"ts\":\"2026-10-23T12:47:05.135Z\",\"ts_ms\":1792759625135},\"sending_ts_ms\":1792759625142}\n",
+          "sha256": "54350e94161695f596938ae6332912b30e96fc53f96c42725a9fc6c4d4d5ca60",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "54350e94161695f596938ae6332912b30e96fc53f96c42725a9fc6c4d4d5ca60"
+        },
+        {
+          "received_at": "2026-10-23T12:47:05.188707+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":5,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.9400\",\"delta_fp\":\"200.00\",\"side\":\"no\",\"ts\":\"2026-10-23T12:47:05.136Z\",\"ts_ms\":1792759625136},\"sending_ts_ms\":1792759625142}\n",
+          "sha256": "8c3a2fb742510cca813d2a6b0fdc42b7cb32e0f881eee8d7930f1a52f4b07ac8",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "8c3a2fb742510cca813d2a6b0fdc42b7cb32e0f881eee8d7930f1a52f4b07ac8"
+        },
+        {
+          "received_at": "2026-10-23T12:47:06.061218+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":6,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.0100\",\"delta_fp\":\"-200.00\",\"side\":\"yes\",\"ts\":\"2026-10-23T12:47:06.02Z\",\"ts_ms\":1792759626020},\"sending_ts_ms\":1792759626028}\n",
+          "sha256": "ab8f47d23ab26acb650da7d122f64f4b6611a2547a044a7a01d11800bc3e5d9c",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "ab8f47d23ab26acb650da7d122f64f4b6611a2547a044a7a01d11800bc3e5d9c"
+        },
+        {
+          "received_at": "2026-10-23T12:47:06.081845+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":7,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.9400\",\"delta_fp\":\"-200.00\",\"side\":\"no\",\"ts\":\"2026-10-23T12:47:06.021Z\",\"ts_ms\":1792759626021},\"sending_ts_ms\":1792759626028}\n",
+          "sha256": "e65fcedf99deb709ba3b048ad18d5f41f1ad839eaf5f1864a94bd05e55e7caa5",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "e65fcedf99deb709ba3b048ad18d5f41f1ad839eaf5f1864a94bd05e55e7caa5"
+        },
+        {
+          "received_at": "2026-10-23T12:47:06.108845+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":8,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.0100\",\"delta_fp\":\"200.00\",\"side\":\"yes\",\"ts\":\"2026-10-23T12:47:06.031Z\",\"ts_ms\":1792759626031},\"sending_ts_ms\":1792759626037}\n",
+          "sha256": "93a4d1fc6c928440ad54b174f554baf60d9fee2a48898f86ea221717069d96da",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "93a4d1fc6c928440ad54b174f554baf60d9fee2a48898f86ea221717069d96da"
+        },
+        {
+          "received_at": "2026-10-23T12:47:06.122828+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":9,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.9400\",\"delta_fp\":\"200.00\",\"side\":\"no\",\"ts\":\"2026-10-23T12:47:06.031Z\",\"ts_ms\":1792759626031},\"sending_ts_ms\":1792759626037}\n",
+          "sha256": "220b00c18f9052247e4c8e8e75cb73f00e18cc10cad345f4dbd944b55549d362",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "220b00c18f9052247e4c8e8e75cb73f00e18cc10cad345f4dbd944b55549d362"
+        },
+        {
+          "received_at": "2026-10-23T12:47:07.233344+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":10,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.0100\",\"delta_fp\":\"-200.00\",\"side\":\"yes\",\"ts\":\"2026-10-23T12:47:07.194Z\",\"ts_ms\":1792759627194},\"sending_ts_ms\":1792759627200}\n",
+          "sha256": "0479b6f5ca17bb2921931000b6ad5237701d8eb715e0e808de171dadd0fb7aab",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "0479b6f5ca17bb2921931000b6ad5237701d8eb715e0e808de171dadd0fb7aab"
+        },
+        {
+          "received_at": "2026-10-23T12:47:07.262676+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":11,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.9400\",\"delta_fp\":\"-200.00\",\"side\":\"no\",\"ts\":\"2026-10-23T12:47:07.194Z\",\"ts_ms\":1792759627194},\"sending_ts_ms\":1792759627202}\n",
+          "sha256": "70245f86c9f797251f05555e34a0c584d73115cb051fc212e4b085697136b846",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "70245f86c9f797251f05555e34a0c584d73115cb051fc212e4b085697136b846"
+        },
+        {
+          "received_at": "2026-10-23T12:47:07.282848+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":12,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.0100\",\"delta_fp\":\"200.00\",\"side\":\"yes\",\"ts\":\"2026-10-23T12:47:07.203Z\",\"ts_ms\":1792759627203},\"sending_ts_ms\":1792759627209}\n",
+          "sha256": "2853071ec90fac5b72866585eb53648641d93bcbb41234f0ef9198a5625bab16",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "2853071ec90fac5b72866585eb53648641d93bcbb41234f0ef9198a5625bab16"
+        },
+        {
+          "received_at": "2026-10-23T12:47:07.306798+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":13,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.9400\",\"delta_fp\":\"200.00\",\"side\":\"no\",\"ts\":\"2026-10-23T12:47:07.204Z\",\"ts_ms\":1792759627204},\"sending_ts_ms\":1792759627211}\n",
+          "sha256": "9b981dc9cdadc2c29410261952ffc52295e27b5d0c0008af5fa0a002dc6e141a",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "9b981dc9cdadc2c29410261952ffc52295e27b5d0c0008af5fa0a002dc6e141a"
+        },
+        {
+          "received_at": "2026-10-23T12:47:08.630057+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":14,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.0100\",\"delta_fp\":\"-200.00\",\"side\":\"yes\",\"ts\":\"2026-10-23T12:47:08.59Z\",\"ts_ms\":1792759628590},\"sending_ts_ms\":1792759628597}\n",
+          "sha256": "32ff26d379702ab96e8a76c8f5ff35704644b749e4b80ecffdf252de572c0649",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "32ff26d379702ab96e8a76c8f5ff35704644b749e4b80ecffdf252de572c0649"
+        },
+        {
+          "received_at": "2026-10-23T12:47:08.660477+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":15,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.9400\",\"delta_fp\":\"-200.00\",\"side\":\"no\",\"ts\":\"2026-10-23T12:47:08.59Z\",\"ts_ms\":1792759628590},\"sending_ts_ms\":1792759628597}\n",
+          "sha256": "1b89d75df96723c7a2f72f711020a789557281c9e75a2aa682a9b6fbcfb3749e",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "1b89d75df96723c7a2f72f711020a789557281c9e75a2aa682a9b6fbcfb3749e"
+        },
+        {
+          "received_at": "2026-10-23T12:47:08.681676+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":16,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.0100\",\"delta_fp\":\"200.00\",\"side\":\"yes\",\"ts\":\"2026-10-23T12:47:08.599Z\",\"ts_ms\":1792759628599},\"sending_ts_ms\":1792759628607}\n",
+          "sha256": "eb0dee677f9e70a4b81859896c4268e8fc1c1c55972bdf861bf6be1b2ee5c4e0",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "eb0dee677f9e70a4b81859896c4268e8fc1c1c55972bdf861bf6be1b2ee5c4e0"
+        },
+        {
+          "received_at": "2026-10-23T12:47:08.696693+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":17,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.9400\",\"delta_fp\":\"200.00\",\"side\":\"no\",\"ts\":\"2026-10-23T12:47:08.6Z\",\"ts_ms\":1792759628600},\"sending_ts_ms\":1792759628607}\n",
+          "sha256": "3e174caada3908358c9a7be526f28e05be97bf746088aa375da4f5dbfd867965",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "3e174caada3908358c9a7be526f28e05be97bf746088aa375da4f5dbfd867965"
+        },
+        {
+          "received_at": "2026-10-23T12:47:09.584050+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":18,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.0300\",\"delta_fp\":\"50.00\",\"side\":\"yes\",\"ts\":\"2026-10-23T12:47:09.546Z\",\"ts_ms\":1792759629546},\"sending_ts_ms\":1792759629551}\n",
+          "sha256": "990f7c58ded41ce78f2132ed9403b9cc93e194542a86c041a5fc8db3962fddc4",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "990f7c58ded41ce78f2132ed9403b9cc93e194542a86c041a5fc8db3962fddc4"
+        },
+        {
+          "received_at": "2026-10-23T12:47:09.788108+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":19,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.0500\",\"delta_fp\":\"1034.07\",\"side\":\"yes\",\"ts\":\"2026-10-23T12:47:09.749Z\",\"ts_ms\":1792759629749},\"sending_ts_ms\":1792759629755}\n",
+          "sha256": "e64cfd66ae4bd9ebd308d1fcdffcd9de4536bc54968b78bdb22e8a32808aeb99",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "e64cfd66ae4bd9ebd308d1fcdffcd9de4536bc54968b78bdb22e8a32808aeb99"
+        },
+        {
+          "received_at": "2026-10-23T12:47:09.809496+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":20,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.0100\",\"delta_fp\":\"-200.00\",\"side\":\"yes\",\"ts\":\"2026-10-23T12:47:09.756Z\",\"ts_ms\":1792759629756},\"sending_ts_ms\":1792759629762}\n",
+          "sha256": "4fb22c9b1d41ee1b7325006d68dc11a9fa41618a602f8088b27363a54fb75682",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "4fb22c9b1d41ee1b7325006d68dc11a9fa41618a602f8088b27363a54fb75682"
+        },
+        {
+          "received_at": "2026-10-23T12:47:09.830573+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":21,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.0500\",\"delta_fp\":\"200.00\",\"side\":\"yes\",\"ts\":\"2026-10-23T12:47:09.756Z\",\"ts_ms\":1792759629756},\"sending_ts_ms\":1792759629762}\n",
+          "sha256": "bedb98093f9f60177f9cc5c971fe1aea067131d1ed562f8faf517491e8cdfbf5",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "bedb98093f9f60177f9cc5c971fe1aea067131d1ed562f8faf517491e8cdfbf5"
+        },
+        {
+          "received_at": "2026-10-23T12:47:09.870907+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":22,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.9400\",\"delta_fp\":\"-8.00\",\"side\":\"no\",\"ts\":\"2026-10-23T12:47:09.832Z\",\"ts_ms\":1792759629832},\"sending_ts_ms\":1792759629838}\n",
+          "sha256": "e15a6f08bba6850b62e0998e6adaf3d13233da70476cf2c8a837af61d014fe41",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "e15a6f08bba6850b62e0998e6adaf3d13233da70476cf2c8a837af61d014fe41"
+        },
+        {
+          "received_at": "2026-10-23T12:47:09.886723+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":23,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.9300\",\"delta_fp\":\"7.00\",\"side\":\"no\",\"ts\":\"2026-10-23T12:47:09.832Z\",\"ts_ms\":1792759629832},\"sending_ts_ms\":1792759629838}\n",
+          "sha256": "b9f241288bdcd0939450bcd7fb97de280c0d34fee22d46af14e3feaaf440cd8d",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "b9f241288bdcd0939450bcd7fb97de280c0d34fee22d46af14e3feaaf440cd8d"
+        },
+        {
+          "received_at": "2026-10-23T12:47:09.908029+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":24,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.0500\",\"delta_fp\":\"-200.00\",\"side\":\"yes\",\"ts\":\"2026-10-23T12:47:09.862Z\",\"ts_ms\":1792759629862},\"sending_ts_ms\":1792759629867}\n",
+          "sha256": "1d2f372a96d2b0067f3d69baf3e17f61da2cdfbbad959f8667b166adae695e0e",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "1d2f372a96d2b0067f3d69baf3e17f61da2cdfbbad959f8667b166adae695e0e"
+        },
+        {
+          "received_at": "2026-10-23T12:47:09.928909+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":25,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.0100\",\"delta_fp\":\"200.00\",\"side\":\"yes\",\"ts\":\"2026-10-23T12:47:09.862Z\",\"ts_ms\":1792759629862},\"sending_ts_ms\":1792759629867}\n",
+          "sha256": "c8bfcaf41ea7f0b0c128030618d4d609b17754da7606d9ee9f2604f0d65062ab",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "c8bfcaf41ea7f0b0c128030618d4d609b17754da7606d9ee9f2604f0d65062ab"
+        },
+        {
+          "received_at": "2026-10-23T12:47:10.033210+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":26,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.8700\",\"delta_fp\":\"-96.00\",\"side\":\"no\",\"ts\":\"2026-10-23T12:47:09.995Z\",\"ts_ms\":1792759629995},\"sending_ts_ms\":1792759630000}\n",
+          "sha256": "530657385407531ff1fecf4175e0ab8f418790f54d717231c35bc87d7a58a063",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "530657385407531ff1fecf4175e0ab8f418790f54d717231c35bc87d7a58a063"
+        },
+        {
+          "received_at": "2026-10-23T12:47:10.062203+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":27,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.8600\",\"delta_fp\":\"96.00\",\"side\":\"no\",\"ts\":\"2026-10-23T12:47:09.995Z\",\"ts_ms\":1792759629995},\"sending_ts_ms\":1792759630000}\n",
+          "sha256": "72284f0462f4afe31fad56498766822ef89d16e0f567e689a45eb7dd22284bd3",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "72284f0462f4afe31fad56498766822ef89d16e0f567e689a45eb7dd22284bd3"
+        },
+        {
+          "received_at": "2026-10-23T12:47:10.136719+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":28,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.0100\",\"delta_fp\":\"-200.00\",\"side\":\"yes\",\"ts\":\"2026-10-23T12:47:10.098Z\",\"ts_ms\":1792759630098},\"sending_ts_ms\":1792759630104}\n",
+          "sha256": "213a0fa9b5c82645da5a1ebe8f4c587f5b33b65aa8decf2bc2c99feee61f69b6",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "213a0fa9b5c82645da5a1ebe8f4c587f5b33b65aa8decf2bc2c99feee61f69b6"
+        },
+        {
+          "received_at": "2026-10-23T12:47:10.157813+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":29,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.0500\",\"delta_fp\":\"200.00\",\"side\":\"yes\",\"ts\":\"2026-10-23T12:47:10.098Z\",\"ts_ms\":1792759630098},\"sending_ts_ms\":1792759630104}\n",
+          "sha256": "b6dc639f1e310e615a5c6ff7a295aa327ce81acb2eefac6a3f5680f7ab422cd5",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "b6dc639f1e310e615a5c6ff7a295aa327ce81acb2eefac6a3f5680f7ab422cd5"
+        },
+        {
+          "received_at": "2026-10-23T12:47:10.238011+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":30,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.0500\",\"delta_fp\":\"-200.00\",\"side\":\"yes\",\"ts\":\"2026-10-23T12:47:10.199Z\",\"ts_ms\":1792759630199},\"sending_ts_ms\":1792759630205}\n",
+          "sha256": "a9ab1a84164d7195e7d1f8e6d758befb0a0222e6f9360d842a6d317a5268b01c",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "a9ab1a84164d7195e7d1f8e6d758befb0a0222e6f9360d842a6d317a5268b01c"
+        },
+        {
+          "received_at": "2026-10-23T12:47:10.258844+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":31,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.0100\",\"delta_fp\":\"200.00\",\"side\":\"yes\",\"ts\":\"2026-10-23T12:47:10.199Z\",\"ts_ms\":1792759630199},\"sending_ts_ms\":1792759630205}\n",
+          "sha256": "03b20811944a5f62a798e3e948e79a9a858618a69ea62ead18a216d05a9091b6",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "03b20811944a5f62a798e3e948e79a9a858618a69ea62ead18a216d05a9091b6"
+        },
+        {
+          "received_at": "2026-10-23T12:47:10.785243+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":32,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.0100\",\"delta_fp\":\"-200.00\",\"side\":\"yes\",\"ts\":\"2026-10-23T12:47:10.748Z\",\"ts_ms\":1792759630748},\"sending_ts_ms\":1792759630752}\n",
+          "sha256": "dbe47ec2dfcaa3f72f4e2b93a2742d61179e2838a84b7d51036817aedb4b32e9",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "dbe47ec2dfcaa3f72f4e2b93a2742d61179e2838a84b7d51036817aedb4b32e9"
+        },
+        {
+          "received_at": "2026-10-23T12:47:10.819010+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":33,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.0500\",\"delta_fp\":\"200.00\",\"side\":\"yes\",\"ts\":\"2026-10-23T12:47:10.748Z\",\"ts_ms\":1792759630748},\"sending_ts_ms\":1792759630752}\n",
+          "sha256": "c32ec417230931e6f9dfb5e55893a5193b58bf64ffa77bc351ad1490f47578f6",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "c32ec417230931e6f9dfb5e55893a5193b58bf64ffa77bc351ad1490f47578f6"
+        },
+        {
+          "received_at": "2026-10-23T12:47:12.207186+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":34,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.0100\",\"delta_fp\":\"5000.00\",\"side\":\"yes\",\"ts\":\"2026-10-23T12:47:12.167Z\",\"ts_ms\":1792759632167},\"sending_ts_ms\":1792759632174}\n",
+          "sha256": "05c8d95594c81866a723b6f30db0f80927ccfadf9d38156823bc2a6d7be3f9f6",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "05c8d95594c81866a723b6f30db0f80927ccfadf9d38156823bc2a6d7be3f9f6"
+        },
+        {
+          "received_at": "2026-10-23T12:47:12.248756+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":35,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.4800\",\"delta_fp\":\"-91.00\",\"side\":\"no\",\"ts\":\"2026-10-23T12:47:12.208Z\",\"ts_ms\":1792759632208},\"sending_ts_ms\":1792759632216}\n",
+          "sha256": "75602dfa4f0ec76b082bac18a146f1c948674e392971bddd513c1582333dc65f",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "75602dfa4f0ec76b082bac18a146f1c948674e392971bddd513c1582333dc65f"
+        },
+        {
+          "received_at": "2026-10-23T12:47:12.269202+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":36,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.5000\",\"delta_fp\":\"79.00\",\"side\":\"no\",\"ts\":\"2026-10-23T12:47:12.209Z\",\"ts_ms\":1792759632209},\"sending_ts_ms\":1792759632216}\n",
+          "sha256": "37c3b9e395fd82e3132c0f831a73e7a14c1234df5475527903ae0cb77ef87073",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "37c3b9e395fd82e3132c0f831a73e7a14c1234df5475527903ae0cb77ef87073"
+        },
+        {
+          "received_at": "2026-10-23T12:47:12.815007+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":37,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.1200\",\"delta_fp\":\"-15199.00\",\"side\":\"no\",\"ts\":\"2026-10-23T12:47:12.778Z\",\"ts_ms\":1792759632778},\"sending_ts_ms\":1792759632782}\n",
+          "sha256": "71011c8a54ec0c8242e5a8b72351ea625538d39d1db4235f0409cbc3ec0e4172",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "71011c8a54ec0c8242e5a8b72351ea625538d39d1db4235f0409cbc3ec0e4172"
+        },
+        {
+          "received_at": "2026-10-23T12:47:12.849651+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":38,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.1300\",\"delta_fp\":\"14030.00\",\"side\":\"no\",\"ts\":\"2026-10-23T12:47:12.778Z\",\"ts_ms\":1792759632778},\"sending_ts_ms\":1792759632782}\n",
+          "sha256": "88e8f6df8a2934f6fc400f4100eaa159ccbb3d2eb9704e7403b7ff911d98103f",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "88e8f6df8a2934f6fc400f4100eaa159ccbb3d2eb9704e7403b7ff911d98103f"
+        },
+        {
+          "received_at": "2026-10-23T12:47:12.865199+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":39,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.2900\",\"delta_fp\":\"-4717.00\",\"side\":\"no\",\"ts\":\"2026-10-23T12:47:12.779Z\",\"ts_ms\":1792759632779},\"sending_ts_ms\":1792759632783}\n",
+          "sha256": "5076bf554bb23432883b95e083954feceac0e56c4dbc0cf870876ec72385e71b",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "5076bf554bb23432883b95e083954feceac0e56c4dbc0cf870876ec72385e71b"
+        },
+        {
+          "received_at": "2026-10-23T12:47:12.885772+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":40,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.3000\",\"delta_fp\":\"4559.00\",\"side\":\"no\",\"ts\":\"2026-10-23T12:47:12.779Z\",\"ts_ms\":1792759632779},\"sending_ts_ms\":1792759632783}\n",
+          "sha256": "14a821018571267eb3bb7948a21684dbcad7d9c1360e646ec05e157026858d81",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "14a821018571267eb3bb7948a21684dbcad7d9c1360e646ec05e157026858d81"
+        },
+        {
+          "received_at": "2026-10-23T12:47:12.900597+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":41,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.4900\",\"delta_fp\":\"-1994.00\",\"side\":\"no\",\"ts\":\"2026-10-23T12:47:12.786Z\",\"ts_ms\":1792759632786},\"sending_ts_ms\":1792759632792}\n",
+          "sha256": "c4dfecfd2e52c9d4dfb362d9dbb1f49b15d68534e3e359956b46140355a80c46",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "c4dfecfd2e52c9d4dfb362d9dbb1f49b15d68534e3e359956b46140355a80c46"
+        },
+        {
+          "received_at": "2026-10-23T12:47:12.928272+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":42,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.5100\",\"delta_fp\":\"1915.00\",\"side\":\"no\",\"ts\":\"2026-10-23T12:47:12.786Z\",\"ts_ms\":1792759632786},\"sending_ts_ms\":1792759632792}\n",
+          "sha256": "97deeb4648e7d2c8badad05f69af6386003407e10704a508f02a038f99b0db7a",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "97deeb4648e7d2c8badad05f69af6386003407e10704a508f02a038f99b0db7a"
+        },
+        {
+          "received_at": "2026-10-23T12:47:13.154241+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":43,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.0500\",\"delta_fp\":\"-200.00\",\"side\":\"yes\",\"ts\":\"2026-10-23T12:47:13.117Z\",\"ts_ms\":1792759633117},\"sending_ts_ms\":1792759633121}\n",
+          "sha256": "b0db55eb68df1164875d9faafce73c9438cf70df9078e43162132a96b9d03479",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "b0db55eb68df1164875d9faafce73c9438cf70df9078e43162132a96b9d03479"
+        },
+        {
+          "received_at": "2026-10-23T12:47:13.182087+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":44,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.0100\",\"delta_fp\":\"200.00\",\"side\":\"yes\",\"ts\":\"2026-10-23T12:47:13.117Z\",\"ts_ms\":1792759633117},\"sending_ts_ms\":1792759633121}\n",
+          "sha256": "9683507ab0ba63404b36d26c5662935054fed503c5ce6e346a59f8cf1f5f9c9d",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "9683507ab0ba63404b36d26c5662935054fed503c5ce6e346a59f8cf1f5f9c9d"
+        },
+        {
+          "received_at": "2026-10-23T12:47:13.931901+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":45,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.0100\",\"delta_fp\":\"-200.00\",\"side\":\"yes\",\"ts\":\"2026-10-23T12:47:13.895Z\",\"ts_ms\":1792759633895},\"sending_ts_ms\":1792759633899}\n",
+          "sha256": "e618a9c4e4ea64967415243c8f7bd780ae11e15292ac38e1319ba65ac7d306cb",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "e618a9c4e4ea64967415243c8f7bd780ae11e15292ac38e1319ba65ac7d306cb"
+        },
+        {
+          "received_at": "2026-10-23T12:47:13.967366+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":46,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.0500\",\"delta_fp\":\"200.00\",\"side\":\"yes\",\"ts\":\"2026-10-23T12:47:13.895Z\",\"ts_ms\":1792759633895},\"sending_ts_ms\":1792759633899}\n",
+          "sha256": "96bee51e25427cd715a3b5cd05d68389895fccd357d50fa5c92a8e43e41ec143",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "96bee51e25427cd715a3b5cd05d68389895fccd357d50fa5c92a8e43e41ec143"
+        },
+        {
+          "received_at": "2026-10-23T12:47:15.201659+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":47,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.0500\",\"delta_fp\":\"-200.00\",\"side\":\"yes\",\"ts\":\"2026-10-23T12:47:15.164Z\",\"ts_ms\":1792759635164},\"sending_ts_ms\":1792759635169}\n",
+          "sha256": "ebe12b5e34d9600b3c1034cfee0596c643520b3cca57f96695042e2dace2cb47",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "ebe12b5e34d9600b3c1034cfee0596c643520b3cca57f96695042e2dace2cb47"
+        },
+        {
+          "received_at": "2026-10-23T12:47:15.229022+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":48,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.0100\",\"delta_fp\":\"200.00\",\"side\":\"yes\",\"ts\":\"2026-10-23T12:47:15.164Z\",\"ts_ms\":1792759635164},\"sending_ts_ms\":1792759635169}\n",
+          "sha256": "620b937c71f99f343aaf609c1d57ecf152a9c870d1c968fff8cc10f7fffdb489",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "620b937c71f99f343aaf609c1d57ecf152a9c870d1c968fff8cc10f7fffdb489"
+        },
+        {
+          "received_at": "2026-10-23T12:47:15.251103+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":49,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.0500\",\"delta_fp\":\"-1034.07\",\"side\":\"yes\",\"ts\":\"2026-10-23T12:47:15.206Z\",\"ts_ms\":1792759635206},\"sending_ts_ms\":1792759635211}\n",
+          "sha256": "356c1051be5286b3c73596d117e1d874489293e5f987e4e8c1a33875537030d0",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "356c1051be5286b3c73596d117e1d874489293e5f987e4e8c1a33875537030d0"
+        },
+        {
+          "received_at": "2026-10-23T12:47:15.271926+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":50,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.9300\",\"delta_fp\":\"-7.00\",\"side\":\"no\",\"ts\":\"2026-10-23T12:47:15.214Z\",\"ts_ms\":1792759635214},\"sending_ts_ms\":1792759635219}\n",
+          "sha256": "d958ba80a1323481ebea4c73054a50f9e0d2b5fe0711bc304be3bb671934ffbc",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "d958ba80a1323481ebea4c73054a50f9e0d2b5fe0711bc304be3bb671934ffbc"
+        },
+        {
+          "received_at": "2026-10-23T12:47:15.287698+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":51,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.9400\",\"delta_fp\":\"8.00\",\"side\":\"no\",\"ts\":\"2026-10-23T12:47:15.214Z\",\"ts_ms\":1792759635214},\"sending_ts_ms\":1792759635219}\n",
+          "sha256": "4d8ed860531d6f623e2ec2e8c14bbff54a5d66ebb1c3abcc0c91983adc9ed204",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "4d8ed860531d6f623e2ec2e8c14bbff54a5d66ebb1c3abcc0c91983adc9ed204"
+        },
+        {
+          "received_at": "2026-10-23T12:47:16.476736+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":52,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.0300\",\"delta_fp\":\"-50.00\",\"side\":\"yes\",\"ts\":\"2026-10-23T12:47:16.438Z\",\"ts_ms\":1792759636438},\"sending_ts_ms\":1792759636444}\n",
+          "sha256": "d1009f12cfe157b4d1c7733bd4499de6352075ab5ed5b17efedc8aa7087a87cc",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "d1009f12cfe157b4d1c7733bd4499de6352075ab5ed5b17efedc8aa7087a87cc"
+        },
+        {
+          "received_at": "2026-10-23T12:47:16.643102+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":53,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.5000\",\"delta_fp\":\"-79.00\",\"side\":\"no\",\"ts\":\"2026-10-23T12:47:16.606Z\",\"ts_ms\":1792759636606},\"sending_ts_ms\":1792759636610}\n",
+          "sha256": "0b6f6b4e1845dc196ca63edaf8f8ee7d89ac674fbbf8a7c8e42c6e4bc79c7e8e",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "0b6f6b4e1845dc196ca63edaf8f8ee7d89ac674fbbf8a7c8e42c6e4bc79c7e8e"
+        },
+        {
+          "received_at": "2026-10-23T12:47:16.671892+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":54,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.5200\",\"delta_fp\":\"91.00\",\"side\":\"no\",\"ts\":\"2026-10-23T12:47:16.606Z\",\"ts_ms\":1792759636606},\"sending_ts_ms\":1792759636612}\n",
+          "sha256": "1df728d39e3f50d1184221aed350e4c050e53258003342178212259606b0997b",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "1df728d39e3f50d1184221aed350e4c050e53258003342178212259606b0997b"
+        },
+        {
+          "received_at": "2026-10-23T12:47:16.812616+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":55,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.3000\",\"delta_fp\":\"-4559.00\",\"side\":\"no\",\"ts\":\"2026-10-23T12:47:16.774Z\",\"ts_ms\":1792759636774},\"sending_ts_ms\":1792759636780}\n",
+          "sha256": "e8dc79a516ef3dcc0d995589f2ad6ff071eeaeeb372ae9df352f39648f42ff97",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "e8dc79a516ef3dcc0d995589f2ad6ff071eeaeeb372ae9df352f39648f42ff97"
+        },
+        {
+          "received_at": "2026-10-23T12:47:16.840089+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":56,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.3100\",\"delta_fp\":\"4412.00\",\"side\":\"no\",\"ts\":\"2026-10-23T12:47:16.774Z\",\"ts_ms\":1792759636774},\"sending_ts_ms\":1792759636780}\n",
+          "sha256": "6f8ccc4471d0354e2474c7fdf8d96961b5d077c745f247f9e4aa6e9c27e6b66d",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "6f8ccc4471d0354e2474c7fdf8d96961b5d077c745f247f9e4aa6e9c27e6b66d"
+        },
+        {
+          "received_at": "2026-10-23T12:47:16.860746+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":57,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.5100\",\"delta_fp\":\"-1915.00\",\"side\":\"no\",\"ts\":\"2026-10-23T12:47:16.775Z\",\"ts_ms\":1792759636775},\"sending_ts_ms\":1792759636780}\n",
+          "sha256": "837daef6a98d6a314b290d67e7215203d56175506f73fca7879f3db772a40ddc",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "837daef6a98d6a314b290d67e7215203d56175506f73fca7879f3db772a40ddc"
+        },
+        {
+          "received_at": "2026-10-23T12:47:16.880881+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":58,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.5300\",\"delta_fp\":\"1843.00\",\"side\":\"no\",\"ts\":\"2026-10-23T12:47:16.775Z\",\"ts_ms\":1792759636775},\"sending_ts_ms\":1792759636780}\n",
+          "sha256": "65b3944875072d9b2cd0b9ad92a79dd0cb35da98fff92951d18d642735a2deb2",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "65b3944875072d9b2cd0b9ad92a79dd0cb35da98fff92951d18d642735a2deb2"
+        },
+        {
+          "received_at": "2026-10-23T12:47:17.092220+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":59,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.0300\",\"delta_fp\":\"50.00\",\"side\":\"yes\",\"ts\":\"2026-10-23T12:47:17.053Z\",\"ts_ms\":1792759637053},\"sending_ts_ms\":1792759637059}\n",
+          "sha256": "4036c24afca0f784f999d7183fbbed85f97670521ad71dfd9b6e104a4733494b",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "4036c24afca0f784f999d7183fbbed85f97670521ad71dfd9b6e104a4733494b"
+        },
+        {
+          "received_at": "2026-10-23T12:47:17.300782+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":60,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.0500\",\"delta_fp\":\"1034.15\",\"side\":\"yes\",\"ts\":\"2026-10-23T12:47:17.264Z\",\"ts_ms\":1792759637264},\"sending_ts_ms\":1792759637268}\n",
+          "sha256": "7ba4e7fde58df271c5bf68f4adfc22eef8cdb8174c93b34e40ab6dbc7c8db506",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "7ba4e7fde58df271c5bf68f4adfc22eef8cdb8174c93b34e40ab6dbc7c8db506"
+        },
+        {
+          "received_at": "2026-10-23T12:47:17.327654+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":61,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.9400\",\"delta_fp\":\"-8.00\",\"side\":\"no\",\"ts\":\"2026-10-23T12:47:17.271Z\",\"ts_ms\":1792759637271},\"sending_ts_ms\":1792759637275}\n",
+          "sha256": "4b7c48ea4fb41e664593953cbbf13d450b0947be0f7b52cba03bb93b82290f85",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "4b7c48ea4fb41e664593953cbbf13d450b0947be0f7b52cba03bb93b82290f85"
+        },
+        {
+          "received_at": "2026-10-23T12:47:17.351309+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":62,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.9300\",\"delta_fp\":\"7.00\",\"side\":\"no\",\"ts\":\"2026-10-23T12:47:17.271Z\",\"ts_ms\":1792759637271},\"sending_ts_ms\":1792759637275}\n",
+          "sha256": "aa47ff0e3eb154ecea5d72aaa96da0178ea9d62d409cf599f7e33b01b85e5c4b",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "aa47ff0e3eb154ecea5d72aaa96da0178ea9d62d409cf599f7e33b01b85e5c4b"
+        },
+        {
+          "received_at": "2026-10-23T12:47:18.231870+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":63,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.0100\",\"delta_fp\":\"-200.00\",\"side\":\"yes\",\"ts\":\"2026-10-23T12:47:18.195Z\",\"ts_ms\":1792759638195},\"sending_ts_ms\":1792759638199}\n",
+          "sha256": "ada8bb788738ecf83cfc657daae9553a2537df7e6d31501e06f657edb0567132",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "ada8bb788738ecf83cfc657daae9553a2537df7e6d31501e06f657edb0567132"
+        },
+        {
+          "received_at": "2026-10-23T12:47:18.264929+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":64,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.0500\",\"delta_fp\":\"200.00\",\"side\":\"yes\",\"ts\":\"2026-10-23T12:47:18.195Z\",\"ts_ms\":1792759638195},\"sending_ts_ms\":1792759638199}\n",
+          "sha256": "326d2f531f1a77336f70e370003fc505623dfcc7e2f876256029275386f3de98",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "326d2f531f1a77336f70e370003fc505623dfcc7e2f876256029275386f3de98"
+        },
+        {
+          "received_at": "2026-10-23T12:47:21.623466+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":65,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.0400\",\"delta_fp\":\"-4.00\",\"side\":\"yes\",\"ts\":\"2026-10-23T12:47:21.585Z\",\"ts_ms\":1792759641585},\"sending_ts_ms\":1792759641591}\n",
+          "sha256": "8c3606ddf191283c29024fc2c5ab8ac1547b2356b6010a30bb86aaf07a6c6509",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "8c3606ddf191283c29024fc2c5ab8ac1547b2356b6010a30bb86aaf07a6c6509"
+        },
+        {
+          "received_at": "2026-10-23T12:47:21.674387+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":66,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.5200\",\"delta_fp\":\"-91.00\",\"side\":\"no\",\"ts\":\"2026-10-23T12:47:21.634Z\",\"ts_ms\":1792759641634},\"sending_ts_ms\":1792759641642}\n",
+          "sha256": "864580b038511b160205a95ad6e9652535535a299b5ee66c7ea1ebe882aadacc",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "864580b038511b160205a95ad6e9652535535a299b5ee66c7ea1ebe882aadacc"
+        },
+        {
+          "received_at": "2026-10-23T12:47:21.688940+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":67,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.3200\",\"delta_fp\":\"66.00\",\"side\":\"no\",\"ts\":\"2026-10-23T12:47:21.635Z\",\"ts_ms\":1792759641635},\"sending_ts_ms\":1792759641642}\n",
+          "sha256": "0256b74f88be50a62db46a7d5849bfed07ca1311b0b53f370ab392ad6491469f",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "0256b74f88be50a62db46a7d5849bfed07ca1311b0b53f370ab392ad6491469f"
+        },
+        {
+          "received_at": "2026-10-23T12:47:21.724456+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":68,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.0100\",\"delta_fp\":\"-58628.00\",\"side\":\"no\",\"ts\":\"2026-10-23T12:47:21.687Z\",\"ts_ms\":1792759641687},\"sending_ts_ms\":1792759641692}\n",
+          "sha256": "65bb84a9f07733f2e42fe83e2c16f585bf1aa335e1baa413c1849c232b2efa99",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "65bb84a9f07733f2e42fe83e2c16f585bf1aa335e1baa413c1849c232b2efa99"
+        },
+        {
+          "received_at": "2026-10-23T12:47:21.738903+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":69,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.0400\",\"delta_fp\":\"-13028.00\",\"side\":\"no\",\"ts\":\"2026-10-23T12:47:21.688Z\",\"ts_ms\":1792759641688},\"sending_ts_ms\":1792759641693}\n",
+          "sha256": "99f5d93feff00005770b122ae388530cb84c04587a8b06a9ded22478e2d3f7e9",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "99f5d93feff00005770b122ae388530cb84c04587a8b06a9ded22478e2d3f7e9"
+        },
+        {
+          "received_at": "2026-10-23T12:47:21.760829+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":70,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.1300\",\"delta_fp\":\"-14030.00\",\"side\":\"no\",\"ts\":\"2026-10-23T12:47:21.688Z\",\"ts_ms\":1792759641688},\"sending_ts_ms\":1792759641695}\n",
+          "sha256": "deac9eb50fa7f54a6090ba63873169d1c14fb5c7a221f76e7eb06a35f59aba78",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "deac9eb50fa7f54a6090ba63873169d1c14fb5c7a221f76e7eb06a35f59aba78"
+        },
+        {
+          "received_at": "2026-10-23T12:47:21.775167+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":71,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.3100\",\"delta_fp\":\"-4412.00\",\"side\":\"no\",\"ts\":\"2026-10-23T12:47:21.696Z\",\"ts_ms\":1792759641696},\"sending_ts_ms\":1792759641701}\n",
+          "sha256": "5c9d633c08c68ffafd353ed8384d88d54ef1afa2d338c4ffa50ec479b936e0d1",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "5c9d633c08c68ffafd353ed8384d88d54ef1afa2d338c4ffa50ec479b936e0d1"
+        },
+        {
+          "received_at": "2026-10-23T12:47:21.803683+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":72,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.1800\",\"delta_fp\":\"7599.00\",\"side\":\"no\",\"ts\":\"2026-10-23T12:47:21.696Z\",\"ts_ms\":1792759641696},\"sending_ts_ms\":1792759641701}\n",
+          "sha256": "04e52eb311ae695fd6f5c1b55c25833a7acde590a99b688dec71442a39b8993d",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "04e52eb311ae695fd6f5c1b55c25833a7acde590a99b688dec71442a39b8993d"
+        },
+        {
+          "received_at": "2026-10-23T12:47:21.833606+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":73,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.5300\",\"delta_fp\":\"-1843.00\",\"side\":\"no\",\"ts\":\"2026-10-23T12:47:21.697Z\",\"ts_ms\":1792759641697},\"sending_ts_ms\":1792759641703}\n",
+          "sha256": "ccd1c9bf9e875c9991c2d3910577f13b8d77c3c3ee3adb52baab51ed51527229",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "ccd1c9bf9e875c9991c2d3910577f13b8d77c3c3ee3adb52baab51ed51527229"
+        },
+        {
+          "received_at": "2026-10-23T12:47:21.842583+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":74,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.3700\",\"delta_fp\":\"2640.00\",\"side\":\"no\",\"ts\":\"2026-10-23T12:47:21.697Z\",\"ts_ms\":1792759641697},\"sending_ts_ms\":1792759641703}\n",
+          "sha256": "4e52d70c77605b1df5907281691b299d5c670be6432257b1f312e052d8164078",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "4e52d70c77605b1df5907281691b299d5c670be6432257b1f312e052d8164078"
+        },
+        {
+          "received_at": "2026-10-23T12:47:22.979482+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":75,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.0500\",\"delta_fp\":\"-200.00\",\"side\":\"yes\",\"ts\":\"2026-10-23T12:47:22.943Z\",\"ts_ms\":1792759642943},\"sending_ts_ms\":1792759642946}\n",
+          "sha256": "e646b803708418557f8aa7275c5dd61003ca397aeb8d20e7775d38ad8ed2643b",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "e646b803708418557f8aa7275c5dd61003ca397aeb8d20e7775d38ad8ed2643b"
+        },
+        {
+          "received_at": "2026-10-23T12:47:22.993888+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":76,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.9400\",\"delta_fp\":\"-200.00\",\"side\":\"no\",\"ts\":\"2026-10-23T12:47:22.944Z\",\"ts_ms\":1792759642944},\"sending_ts_ms\":1792759642950}\n",
+          "sha256": "432c83320ab2dbfa5e3ef37e140489a5cce1ceeb7f7a2485cf489379017229e6",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "432c83320ab2dbfa5e3ef37e140489a5cce1ceeb7f7a2485cf489379017229e6"
+        },
+        {
+          "received_at": "2026-10-23T12:47:23.001660+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":77,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.0500\",\"delta_fp\":\"200.00\",\"side\":\"yes\",\"ts\":\"2026-10-23T12:47:22.949Z\",\"ts_ms\":1792759642949},\"sending_ts_ms\":1792759642955}\n",
+          "sha256": "e6ebeb524ea454c6ed6a9851d20c9d2467a1e7311da7eb84c56a9e7852e403bb",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "e6ebeb524ea454c6ed6a9851d20c9d2467a1e7311da7eb84c56a9e7852e403bb"
+        },
+        {
+          "received_at": "2026-10-23T12:47:23.015567+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":78,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.9400\",\"delta_fp\":\"200.00\",\"side\":\"no\",\"ts\":\"2026-10-23T12:47:22.951Z\",\"ts_ms\":1792759642951},\"sending_ts_ms\":1792759642957}\n",
+          "sha256": "b447fc092514b3e64fc663de15757f4d6e50a8f93a4959ed56fad9e2256e3ab4",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "b447fc092514b3e64fc663de15757f4d6e50a8f93a4959ed56fad9e2256e3ab4"
+        },
+        {
+          "received_at": "2026-10-23T12:47:23.999530+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":79,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.0500\",\"delta_fp\":\"-200.00\",\"side\":\"yes\",\"ts\":\"2026-10-23T12:47:23.961Z\",\"ts_ms\":1792759643961},\"sending_ts_ms\":1792759643967}\n",
+          "sha256": "7cf1dcd057b2df3df0b33659753e068508f69404eedc6fd0c0be3fe32680d274",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "7cf1dcd057b2df3df0b33659753e068508f69404eedc6fd0c0be3fe32680d274"
+        },
+        {
+          "received_at": "2026-10-23T12:47:24.013392+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":80,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.9400\",\"delta_fp\":\"-200.00\",\"side\":\"no\",\"ts\":\"2026-10-23T12:47:23.962Z\",\"ts_ms\":1792759643962},\"sending_ts_ms\":1792759643969}\n",
+          "sha256": "7d186294db5a880839fec276705351a4451ca22017e33eb04c4e42a7f21d29e6",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "7d186294db5a880839fec276705351a4451ca22017e33eb04c4e42a7f21d29e6"
+        },
+        {
+          "received_at": "2026-10-23T12:47:24.020429+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":81,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.0500\",\"delta_fp\":\"200.00\",\"side\":\"yes\",\"ts\":\"2026-10-23T12:47:23.969Z\",\"ts_ms\":1792759643969},\"sending_ts_ms\":1792759643976}\n",
+          "sha256": "9b1b3d875a550612149a4eded1ff47e2087f76ae986442145014d68491b018b4",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "9b1b3d875a550612149a4eded1ff47e2087f76ae986442145014d68491b018b4"
+        },
+        {
+          "received_at": "2026-10-23T12:47:24.033792+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":82,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.9400\",\"delta_fp\":\"200.00\",\"side\":\"no\",\"ts\":\"2026-10-23T12:47:23.971Z\",\"ts_ms\":1792759643971},\"sending_ts_ms\":1792759643976}\n",
+          "sha256": "99942194744555e24fb59325542e1f950e841081db0af6c94413bb0b5811233d",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "99942194744555e24fb59325542e1f950e841081db0af6c94413bb0b5811233d"
+        },
+        {
+          "received_at": "2026-10-23T12:47:24.522573+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":83,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.0500\",\"delta_fp\":\"-200.00\",\"side\":\"yes\",\"ts\":\"2026-10-23T12:47:24.484Z\",\"ts_ms\":1792759644484},\"sending_ts_ms\":1792759644490}\n",
+          "sha256": "fb052f352232650006b8a30ed44094e399f8888ae03503e27977a2654acdf570",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "fb052f352232650006b8a30ed44094e399f8888ae03503e27977a2654acdf570"
+        },
+        {
+          "received_at": "2026-10-23T12:47:24.536519+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":84,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.9400\",\"delta_fp\":\"-200.00\",\"side\":\"no\",\"ts\":\"2026-10-23T12:47:24.484Z\",\"ts_ms\":1792759644484},\"sending_ts_ms\":1792759644492}\n",
+          "sha256": "649a36e4848fd6b797d180c8686fd8304cfcaa0e6fd5de08c43ab3e3f094f71e",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "649a36e4848fd6b797d180c8686fd8304cfcaa0e6fd5de08c43ab3e3f094f71e"
+        },
+        {
+          "received_at": "2026-10-23T12:47:24.544252+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":85,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.0500\",\"delta_fp\":\"200.00\",\"side\":\"yes\",\"ts\":\"2026-10-23T12:47:24.502Z\",\"ts_ms\":1792759644502},\"sending_ts_ms\":1792759644507}\n",
+          "sha256": "74197d7f003470593f73b1ded8b1fb4eff610d99ef8272257984100f713aa592",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "74197d7f003470593f73b1ded8b1fb4eff610d99ef8272257984100f713aa592"
+        },
+        {
+          "received_at": "2026-10-23T12:47:25.040867+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":86,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.9400\",\"delta_fp\":\"200.00\",\"side\":\"no\",\"ts\":\"2026-10-23T12:47:25.003Z\",\"ts_ms\":1792759645003},\"sending_ts_ms\":1792759645008}\n",
+          "sha256": "c20fd791309808b0734d1581ab09c291eabd41fa3aea92f7771a62f32f1af6c0",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "c20fd791309808b0734d1581ab09c291eabd41fa3aea92f7771a62f32f1af6c0"
+        },
+        {
+          "received_at": "2026-10-23T12:47:25.214390+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":87,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.0100\",\"delta_fp\":\"-5000.00\",\"side\":\"yes\",\"ts\":\"2026-10-23T12:47:25.177Z\",\"ts_ms\":1792759645177},\"sending_ts_ms\":1792759645182}\n",
+          "sha256": "0896b4ae34193bdf0e413197ac5d61f8be410e0f7899332169b18df204ecccdf",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "0896b4ae34193bdf0e413197ac5d61f8be410e0f7899332169b18df204ecccdf"
+        },
+        {
+          "received_at": "2026-10-23T12:47:25.726828+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":88,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.0500\",\"delta_fp\":\"-200.00\",\"side\":\"yes\",\"ts\":\"2026-10-23T12:47:25.686Z\",\"ts_ms\":1792759645686},\"sending_ts_ms\":1792759645692}\n",
+          "sha256": "59e48a5696cf2c902df6882c40a8d6091280004d23d16a460e58a9c860a8490e",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "59e48a5696cf2c902df6882c40a8d6091280004d23d16a460e58a9c860a8490e"
+        },
+        {
+          "received_at": "2026-10-23T12:47:25.744725+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":89,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.9400\",\"delta_fp\":\"-200.00\",\"side\":\"no\",\"ts\":\"2026-10-23T12:47:25.687Z\",\"ts_ms\":1792759645687},\"sending_ts_ms\":1792759645692}\n",
+          "sha256": "d16aebc990da891eb0224b00ad69a11931cfc7aadb90d5d8e8de3af711845829",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "d16aebc990da891eb0224b00ad69a11931cfc7aadb90d5d8e8de3af711845829"
+        },
+        {
+          "received_at": "2026-10-23T12:47:25.753535+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":90,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.0500\",\"delta_fp\":\"200.00\",\"side\":\"yes\",\"ts\":\"2026-10-23T12:47:25.694Z\",\"ts_ms\":1792759645694},\"sending_ts_ms\":1792759645698}\n",
+          "sha256": "d33d112410a31a6422d4eba8bd86910d0121e63e57bdb766f8ebd5fa736acb09",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "d33d112410a31a6422d4eba8bd86910d0121e63e57bdb766f8ebd5fa736acb09"
+        },
+        {
+          "received_at": "2026-10-23T12:47:25.763391+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":91,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.9400\",\"delta_fp\":\"200.00\",\"side\":\"no\",\"ts\":\"2026-10-23T12:47:25.695Z\",\"ts_ms\":1792759645695},\"sending_ts_ms\":1792759645700}\n",
+          "sha256": "7440baf7b6ebcdaa94fde0d459480c64b5dd83e7f8c871809595787d717fb555",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "7440baf7b6ebcdaa94fde0d459480c64b5dd83e7f8c871809595787d717fb555"
+        },
+        {
+          "received_at": "2026-10-23T12:47:26.619998+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":92,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.0500\",\"delta_fp\":\"-200.00\",\"side\":\"yes\",\"ts\":\"2026-10-23T12:47:26.58Z\",\"ts_ms\":1792759646580},\"sending_ts_ms\":1792759646587}\n",
+          "sha256": "4b294686c2ed67b3f11de413d213d66ba2d9cf12750ed7aef3465944a8c70f9b",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "4b294686c2ed67b3f11de413d213d66ba2d9cf12750ed7aef3465944a8c70f9b"
+        },
+        {
+          "received_at": "2026-10-23T12:47:26.633958+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":93,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.9400\",\"delta_fp\":\"-200.00\",\"side\":\"no\",\"ts\":\"2026-10-23T12:47:26.581Z\",\"ts_ms\":1792759646581},\"sending_ts_ms\":1792759646587}\n",
+          "sha256": "18e3318bbab0c612641cef00d5e9223c899c146ce2aa5ec1ca9c0a4f2f230690",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "18e3318bbab0c612641cef00d5e9223c899c146ce2aa5ec1ca9c0a4f2f230690"
+        },
+        {
+          "received_at": "2026-10-23T12:47:27.129011+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":94,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.0500\",\"delta_fp\":\"200.00\",\"side\":\"yes\",\"ts\":\"2026-10-23T12:47:27.09Z\",\"ts_ms\":1792759647090},\"sending_ts_ms\":1792759647096}\n",
+          "sha256": "1ddfffb25b369536b5966e83164a63bcd45206bd6c2853a7653ce07cc038c299",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "1ddfffb25b369536b5966e83164a63bcd45206bd6c2853a7653ce07cc038c299"
+        },
+        {
+          "received_at": "2026-10-23T12:47:27.144350+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":95,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.9400\",\"delta_fp\":\"200.00\",\"side\":\"no\",\"ts\":\"2026-10-23T12:47:27.091Z\",\"ts_ms\":1792759647091},\"sending_ts_ms\":1792759647097}\n",
+          "sha256": "97b5dc0b5204a6a1ddc9abbafa8520e55369cd81477eb6034d646871ffeedfd7",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "97b5dc0b5204a6a1ddc9abbafa8520e55369cd81477eb6034d646871ffeedfd7"
+        },
+        {
+          "received_at": "2026-10-23T12:47:28.161772+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":96,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.0500\",\"delta_fp\":\"-200.00\",\"side\":\"yes\",\"ts\":\"2026-10-23T12:47:28.12Z\",\"ts_ms\":1792759648120},\"sending_ts_ms\":1792759648127}\n",
+          "sha256": "04eb02e24179b0366d58fec914121ac0f1d17d2da625dbdac9b8afc8ff851644",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "04eb02e24179b0366d58fec914121ac0f1d17d2da625dbdac9b8afc8ff851644"
+        },
+        {
+          "received_at": "2026-10-23T12:47:28.182177+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":97,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.0100\",\"delta_fp\":\"200.00\",\"side\":\"yes\",\"ts\":\"2026-10-23T12:47:28.12Z\",\"ts_ms\":1792759648120},\"sending_ts_ms\":1792759648127}\n",
+          "sha256": "e42f754288520a34be745237e9444f29b21c337c2709cd3cb718e5d646f3eb59",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "e42f754288520a34be745237e9444f29b21c337c2709cd3cb718e5d646f3eb59"
+        },
+        {
+          "received_at": "2026-10-23T12:47:28.191830+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":98,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.0500\",\"delta_fp\":\"-1034.15\",\"side\":\"yes\",\"ts\":\"2026-10-23T12:47:28.15Z\",\"ts_ms\":1792759648150},\"sending_ts_ms\":1792759648157}\n",
+          "sha256": "25ae7636b979b407c1e093d588dd2fc91251dded369e8c8b9a0e3f67513cb8d3",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "25ae7636b979b407c1e093d588dd2fc91251dded369e8c8b9a0e3f67513cb8d3"
+        },
+        {
+          "received_at": "2026-10-23T12:47:28.210216+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":99,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.9300\",\"delta_fp\":\"-7.00\",\"side\":\"no\",\"ts\":\"2026-10-23T12:47:28.163Z\",\"ts_ms\":1792759648163},\"sending_ts_ms\":1792759648171}\n",
+          "sha256": "4b3cfba0255e2e4b1411eba67e3a243a42c1696db073a019508a8fda6ba896a6",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "4b3cfba0255e2e4b1411eba67e3a243a42c1696db073a019508a8fda6ba896a6"
+        },
+        {
+          "received_at": "2026-10-23T12:47:28.218143+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":100,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.9400\",\"delta_fp\":\"8.00\",\"side\":\"no\",\"ts\":\"2026-10-23T12:47:28.163Z\",\"ts_ms\":1792759648163},\"sending_ts_ms\":1792759648171}\n",
+          "sha256": "6e51c2d3f8f91b68e58cc2e877db40bc77fd8c568790a7dd68f083c1b813ccd1",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "6e51c2d3f8f91b68e58cc2e877db40bc77fd8c568790a7dd68f083c1b813ccd1"
+        },
+        {
+          "received_at": "2026-10-23T12:47:28.232336+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":101,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.0200\",\"delta_fp\":\"-8.00\",\"side\":\"yes\",\"ts\":\"2026-10-23T12:47:28.166Z\",\"ts_ms\":1792759648166},\"sending_ts_ms\":1792759648172}\n",
+          "sha256": "91f5a0987b55edd9c36e151578a72796700d3234c62c68234d21a8bad308d801",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "91f5a0987b55edd9c36e151578a72796700d3234c62c68234d21a8bad308d801"
+        },
+        {
+          "received_at": "2026-10-23T12:47:28.314114+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":102,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.0300\",\"delta_fp\":\"-150.00\",\"side\":\"yes\",\"ts\":\"2026-10-23T12:47:28.276Z\",\"ts_ms\":1792759648276},\"sending_ts_ms\":1792759648281}\n",
+          "sha256": "03ef16d6a09f13edbb6fd3ef5f6b1a50cd2f0f387a0ca182e23ab4030bd36ea1",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "03ef16d6a09f13edbb6fd3ef5f6b1a50cd2f0f387a0ca182e23ab4030bd36ea1"
+        },
+        {
+          "received_at": "2026-10-23T12:47:28.331848+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":103,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.0200\",\"delta_fp\":\"150.00\",\"side\":\"yes\",\"ts\":\"2026-10-23T12:47:28.282Z\",\"ts_ms\":1792759648282},\"sending_ts_ms\":1792759648287}\n",
+          "sha256": "15d8834a64043f344acde14f08696d44e4f756814da03c6161d7fab21d42956e",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "15d8834a64043f344acde14f08696d44e4f756814da03c6161d7fab21d42956e"
+        },
+        {
+          "received_at": "2026-10-23T12:47:28.344777+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":104,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.3200\",\"delta_fp\":\"-66.00\",\"side\":\"no\",\"ts\":\"2026-10-23T12:47:28.301Z\",\"ts_ms\":1792759648301},\"sending_ts_ms\":1792759648307}\n",
+          "sha256": "61d458d9aca1145c1f91372ec06f8c47cbfeb91d533938d747bf084deb0e80a0",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "61d458d9aca1145c1f91372ec06f8c47cbfeb91d533938d747bf084deb0e80a0"
+        },
+        {
+          "received_at": "2026-10-23T12:47:28.351757+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":105,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.3800\",\"delta_fp\":\"91.00\",\"side\":\"no\",\"ts\":\"2026-10-23T12:47:28.302Z\",\"ts_ms\":1792759648302},\"sending_ts_ms\":1792759648307}\n",
+          "sha256": "50eb3bcff3ec61d1b1efe8eca454167104dd07f1a429aa55af641c2a9f268a08",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "50eb3bcff3ec61d1b1efe8eca454167104dd07f1a429aa55af641c2a9f268a08"
+        },
+        {
+          "received_at": "2026-10-23T12:47:28.439430+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":106,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.0300\",\"delta_fp\":\"-50.00\",\"side\":\"yes\",\"ts\":\"2026-10-23T12:47:28.401Z\",\"ts_ms\":1792759648401},\"sending_ts_ms\":1792759648405}\n",
+          "sha256": "85f406caab5bd4febdf7a504d325a67cbf52c1927950b569b347b3cedb281340",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "85f406caab5bd4febdf7a504d325a67cbf52c1927950b569b347b3cedb281340"
+        },
+        {
+          "received_at": "2026-10-23T12:47:28.470458+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":107,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.0400\",\"delta_fp\":\"-17.41\",\"side\":\"yes\",\"ts\":\"2026-10-23T12:47:28.433Z\",\"ts_ms\":1792759648433},\"sending_ts_ms\":1792759648438}\n",
+          "sha256": "6aed994a2aceebd0659afa748d876e352e7a090716393e7196d923a00e9fe2c5",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "6aed994a2aceebd0659afa748d876e352e7a090716393e7196d923a00e9fe2c5"
+        },
+        {
+          "received_at": "2026-10-23T12:47:28.486183+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":108,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.0200\",\"delta_fp\":\"17.43\",\"side\":\"yes\",\"ts\":\"2026-10-23T12:47:28.434Z\",\"ts_ms\":1792759648434},\"sending_ts_ms\":1792759648440}\n",
+          "sha256": "58aec015cdc8f790cefa23b5e14f05db4c9f8787018792b4aa2c4e17317bce5a",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "58aec015cdc8f790cefa23b5e14f05db4c9f8787018792b4aa2c4e17317bce5a"
+        },
+        {
+          "received_at": "2026-10-23T12:47:28.531836+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":109,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.9300\",\"delta_fp\":\"-2500.00\",\"side\":\"no\",\"ts\":\"2026-10-23T12:47:28.494Z\",\"ts_ms\":1792759648494},\"sending_ts_ms\":1792759648499}\n",
+          "sha256": "d447f248d2f1e05257cf79f9a4057b9f80f0963d8df8228ba3f2f69b3fdc3d9e",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "d447f248d2f1e05257cf79f9a4057b9f80f0963d8df8228ba3f2f69b3fdc3d9e"
+        },
+        {
+          "received_at": "2026-10-23T12:47:28.575351+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":110,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.3700\",\"delta_fp\":\"-2640.00\",\"side\":\"no\",\"ts\":\"2026-10-23T12:47:28.538Z\",\"ts_ms\":1792759648538},\"sending_ts_ms\":1792759648542}\n",
+          "sha256": "fb9bec97d787155f08a7ccd8831e8f349bb37d8d6001e6d0c9cc9c6696666fe7",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "fb9bec97d787155f08a7ccd8831e8f349bb37d8d6001e6d0c9cc9c6696666fe7"
+        },
+        {
+          "received_at": "2026-10-23T12:47:28.585163+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":111,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.3900\",\"delta_fp\":\"2505.00\",\"side\":\"no\",\"ts\":\"2026-10-23T12:47:28.538Z\",\"ts_ms\":1792759648538},\"sending_ts_ms\":1792759648542}\n",
+          "sha256": "7b49be5d9276c06558c9d18226fea904859647aab602e41f8d4606b0056c979c",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "7b49be5d9276c06558c9d18226fea904859647aab602e41f8d4606b0056c979c"
+        },
+        {
+          "received_at": "2026-10-23T12:47:29.312320+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":112,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.0200\",\"delta_fp\":\"-150.00\",\"side\":\"yes\",\"ts\":\"2026-10-23T12:47:29.273Z\",\"ts_ms\":1792759649273},\"sending_ts_ms\":1792759649278}\n",
+          "sha256": "21664c53cb08f086c77442b4c569b69e7c959707c5ee7b2e2a4762d2bf1f5805",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "21664c53cb08f086c77442b4c569b69e7c959707c5ee7b2e2a4762d2bf1f5805"
+        },
+        {
+          "received_at": "2026-10-23T12:47:29.329405+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":113,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.0300\",\"delta_fp\":\"150.00\",\"side\":\"yes\",\"ts\":\"2026-10-23T12:47:29.276Z\",\"ts_ms\":1792759649276},\"sending_ts_ms\":1792759649283}\n",
+          "sha256": "c2e265cffbe33c60a82047e4e35f37f311548d59c2c6c22a72126b9eb7007ec3",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "c2e265cffbe33c60a82047e4e35f37f311548d59c2c6c22a72126b9eb7007ec3"
+        },
+        {
+          "received_at": "2026-10-23T12:47:29.336239+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":114,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.0300\",\"delta_fp\":\"50.00\",\"side\":\"yes\",\"ts\":\"2026-10-23T12:47:29.277Z\",\"ts_ms\":1792759649277},\"sending_ts_ms\":1792759649283}\n",
+          "sha256": "13e68f067ea1f7bfc49c41d1706ddf39c920c7df9cbba77f3f1902da3241bda9",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "13e68f067ea1f7bfc49c41d1706ddf39c920c7df9cbba77f3f1902da3241bda9"
+        },
+        {
+          "received_at": "2026-10-23T12:47:29.360893+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":115,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.0300\",\"delta_fp\":\"-150.00\",\"side\":\"yes\",\"ts\":\"2026-10-23T12:47:29.324Z\",\"ts_ms\":1792759649324},\"sending_ts_ms\":1792759649328}\n",
+          "sha256": "a81398a143159c742ade3024b582abae7517bc77f64a3dad1ee0545810dfab51",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "a81398a143159c742ade3024b582abae7517bc77f64a3dad1ee0545810dfab51"
+        },
+        {
+          "received_at": "2026-10-23T12:47:29.368337+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":116,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.0200\",\"delta_fp\":\"150.00\",\"side\":\"yes\",\"ts\":\"2026-10-23T12:47:29.329Z\",\"ts_ms\":1792759649329},\"sending_ts_ms\":1792759649335}\n",
+          "sha256": "d2cf26268e39b1303a5ccb49dc340ece390ba5ac230edd443a9d70cf42708066",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "d2cf26268e39b1303a5ccb49dc340ece390ba5ac230edd443a9d70cf42708066"
+        },
+        {
+          "received_at": "2026-10-23T12:47:29.382245+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":117,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.0200\",\"delta_fp\":\"-150.00\",\"side\":\"yes\",\"ts\":\"2026-10-23T12:47:29.34Z\",\"ts_ms\":1792759649340},\"sending_ts_ms\":1792759649347}\n",
+          "sha256": "d2e1684426e7227009a27f326c5d35936654688cc5a4095274818fb8b6dfbb97",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "d2e1684426e7227009a27f326c5d35936654688cc5a4095274818fb8b6dfbb97"
+        },
+        {
+          "received_at": "2026-10-23T12:47:29.389497+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":118,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.0300\",\"delta_fp\":\"150.00\",\"side\":\"yes\",\"ts\":\"2026-10-23T12:47:29.346Z\",\"ts_ms\":1792759649346},\"sending_ts_ms\":1792759649352}\n",
+          "sha256": "d745372bfc80a514849739c0ec539c54092ef49cb9b62fa7d7ffc396d1c3c0e1",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "d745372bfc80a514849739c0ec539c54092ef49cb9b62fa7d7ffc396d1c3c0e1"
+        },
+        {
+          "received_at": "2026-10-23T12:47:29.485885+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":119,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.0100\",\"delta_fp\":\"-200.00\",\"side\":\"yes\",\"ts\":\"2026-10-23T12:47:29.447Z\",\"ts_ms\":1792759649447},\"sending_ts_ms\":1792759649453}\n",
+          "sha256": "5d89277778f0842eae3d9063a47ca19ce3f8536a5a9889e9ccc59dc756cebed0",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "5d89277778f0842eae3d9063a47ca19ce3f8536a5a9889e9ccc59dc756cebed0"
+        },
+        {
+          "received_at": "2026-10-23T12:47:29.505664+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":120,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.0500\",\"delta_fp\":\"200.00\",\"side\":\"yes\",\"ts\":\"2026-10-23T12:47:29.447Z\",\"ts_ms\":1792759649447},\"sending_ts_ms\":1792759649453}\n",
+          "sha256": "cb3889b09633724790c13c587cb4dcd03775cd2084b52f44f99090b2dea42c04",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "cb3889b09633724790c13c587cb4dcd03775cd2084b52f44f99090b2dea42c04"
+        },
+        {
+          "received_at": "2026-10-23T12:47:29.512878+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":121,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.9400\",\"delta_fp\":\"-200.00\",\"side\":\"no\",\"ts\":\"2026-10-23T12:47:29.448Z\",\"ts_ms\":1792759649448},\"sending_ts_ms\":1792759649458}\n",
+          "sha256": "5871d1e0296bf684045532ddf62bf1d57a297b08d292531b87effb2015705f81",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "5871d1e0296bf684045532ddf62bf1d57a297b08d292531b87effb2015705f81"
+        },
+        {
+          "received_at": "2026-10-23T12:47:29.520344+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":122,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.8900\",\"delta_fp\":\"200.00\",\"side\":\"no\",\"ts\":\"2026-10-23T12:47:29.448Z\",\"ts_ms\":1792759649448},\"sending_ts_ms\":1792759649458}\n",
+          "sha256": "05af0b998c1f787d21d453f5c8ec528a4a2ae941d56d2a249fe512186adf1b00",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "05af0b998c1f787d21d453f5c8ec528a4a2ae941d56d2a249fe512186adf1b00"
+        },
+        {
+          "received_at": "2026-10-23T12:47:29.528089+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":123,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.9400\",\"delta_fp\":\"-8.00\",\"side\":\"no\",\"ts\":\"2026-10-23T12:47:29.456Z\",\"ts_ms\":1792759649456},\"sending_ts_ms\":1792759649461}\n",
+          "sha256": "7948343cad17489577698c2211e6e4e2e4e0d0faa9d2842f874145d7e2e208a8",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "7948343cad17489577698c2211e6e4e2e4e0d0faa9d2842f874145d7e2e208a8"
+        },
+        {
+          "received_at": "2026-10-23T12:47:29.541350+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":124,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.9300\",\"delta_fp\":\"7.00\",\"side\":\"no\",\"ts\":\"2026-10-23T12:47:29.456Z\",\"ts_ms\":1792759649456},\"sending_ts_ms\":1792759649461}\n",
+          "sha256": "dca94903f2080f52f7babf4ef163f4a1b8cca0a46af08c59d42c2f999f20f6d6",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "dca94903f2080f52f7babf4ef163f4a1b8cca0a46af08c59d42c2f999f20f6d6"
+        },
+        {
+          "received_at": "2026-10-23T12:47:29.548451+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":125,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.0200\",\"delta_fp\":\"-17.43\",\"side\":\"yes\",\"ts\":\"2026-10-23T12:47:29.492Z\",\"ts_ms\":1792759649492},\"sending_ts_ms\":1792759649496}\n",
+          "sha256": "6e1ac4d64840093f908b7336e4b519b2cb40f06039c5b9585f911e95b145d259",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "6e1ac4d64840093f908b7336e4b519b2cb40f06039c5b9585f911e95b145d259"
+        },
+        {
+          "received_at": "2026-10-23T12:47:29.556094+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":126,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.0400\",\"delta_fp\":\"17.41\",\"side\":\"yes\",\"ts\":\"2026-10-23T12:47:29.493Z\",\"ts_ms\":1792759649493},\"sending_ts_ms\":1792759649498}\n",
+          "sha256": "13946182dc342253a0db14f1b2877ff60c2c1bd777db0601dfa328ae89b98bd8",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "13946182dc342253a0db14f1b2877ff60c2c1bd777db0601dfa328ae89b98bd8"
+        },
+        {
+          "received_at": "2026-10-23T12:47:30.185070+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":127,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.0500\",\"delta_fp\":\"-200.00\",\"side\":\"yes\",\"ts\":\"2026-10-23T12:47:30.146Z\",\"ts_ms\":1792759650146},\"sending_ts_ms\":1792759650152}\n",
+          "sha256": "b1e431a225c46ccf0dfab6c1783f0780b7b4a199ce5d66835679b677812843f6",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "b1e431a225c46ccf0dfab6c1783f0780b7b4a199ce5d66835679b677812843f6"
+        },
+        {
+          "received_at": "2026-10-23T12:47:30.205496+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":128,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.0100\",\"delta_fp\":\"200.00\",\"side\":\"yes\",\"ts\":\"2026-10-23T12:47:30.146Z\",\"ts_ms\":1792759650146},\"sending_ts_ms\":1792759650152}\n",
+          "sha256": "457a18e38e784dd16ce962b0b872e09cc3a362318431737867990ca76af21f08",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "457a18e38e784dd16ce962b0b872e09cc3a362318431737867990ca76af21f08"
+        },
+        {
+          "received_at": "2026-10-23T12:47:30.212759+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":129,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.8900\",\"delta_fp\":\"-200.00\",\"side\":\"no\",\"ts\":\"2026-10-23T12:47:30.146Z\",\"ts_ms\":1792759650146},\"sending_ts_ms\":1792759650152}\n",
+          "sha256": "5b266df6058776183439baf1f990bd06def1b41ebd56b4fa9322a776065969f2",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "5b266df6058776183439baf1f990bd06def1b41ebd56b4fa9322a776065969f2"
+        },
+        {
+          "received_at": "2026-10-23T12:47:30.220211+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":130,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.9400\",\"delta_fp\":\"200.00\",\"side\":\"no\",\"ts\":\"2026-10-23T12:47:30.146Z\",\"ts_ms\":1792759650146},\"sending_ts_ms\":1792759650152}\n",
+          "sha256": "3fd911226850701d62ff8873acbd98900bffda3abb00cc8f43b87f93ed6a27f6",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "3fd911226850701d62ff8873acbd98900bffda3abb00cc8f43b87f93ed6a27f6"
+        },
+        {
+          "received_at": "2026-10-23T12:47:30.227418+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":131,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.9300\",\"delta_fp\":\"-7.00\",\"side\":\"no\",\"ts\":\"2026-10-23T12:47:30.154Z\",\"ts_ms\":1792759650154},\"sending_ts_ms\":1792759650158}\n",
+          "sha256": "5798e2e04966353fc4b0e9c93c64675ad014e6b628827e1fb464b56feb6d84d4",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "5798e2e04966353fc4b0e9c93c64675ad014e6b628827e1fb464b56feb6d84d4"
+        },
+        {
+          "received_at": "2026-10-23T12:47:30.241012+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":132,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.9400\",\"delta_fp\":\"8.00\",\"side\":\"no\",\"ts\":\"2026-10-23T12:47:30.154Z\",\"ts_ms\":1792759650154},\"sending_ts_ms\":1792759650158}\n",
+          "sha256": "023b2ddb3e93e93b79dd2d69bbcec737c63bc0795e3652e903c3bfafbb85ab78",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "023b2ddb3e93e93b79dd2d69bbcec737c63bc0795e3652e903c3bfafbb85ab78"
+        },
+        {
+          "received_at": "2026-10-23T12:47:30.248222+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":133,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.9300\",\"delta_fp\":\"2500.00\",\"side\":\"no\",\"ts\":\"2026-10-23T12:47:30.196Z\",\"ts_ms\":1792759650196},\"sending_ts_ms\":1792759650200}\n",
+          "sha256": "475227b44c942f5db9d2e23ad079ff5b4cbe5c1618d8314fddb0f2a5fc3a5ad2",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "475227b44c942f5db9d2e23ad079ff5b4cbe5c1618d8314fddb0f2a5fc3a5ad2"
+        },
+        {
+          "received_at": "2026-10-23T12:47:30.453880+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":134,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.0300\",\"delta_fp\":\"-50.00\",\"side\":\"yes\",\"ts\":\"2026-10-23T12:47:30.417Z\",\"ts_ms\":1792759650417},\"sending_ts_ms\":1792759650421}\n",
+          "sha256": "738c658d994c13c96833c208418cdd550e9c91c1b064bda1e3b8539efd9fb131",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "738c658d994c13c96833c208418cdd550e9c91c1b064bda1e3b8539efd9fb131"
+        },
+        {
+          "received_at": "2026-10-23T12:47:30.806813+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":135,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.0200\",\"delta_fp\":\"8.00\",\"side\":\"yes\",\"ts\":\"2026-10-23T12:47:30.769Z\",\"ts_ms\":1792759650769},\"sending_ts_ms\":1792759650774}\n",
+          "sha256": "0587128ca1ed8f6e1c4d19075f8632528bfab09f087c56725477ab0b577ffdf5",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "0587128ca1ed8f6e1c4d19075f8632528bfab09f087c56725477ab0b577ffdf5"
+        },
+        {
+          "received_at": "2026-10-23T12:47:30.986679+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":136,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.0200\",\"delta_fp\":\"-8.00\",\"side\":\"yes\",\"ts\":\"2026-10-23T12:47:30.948Z\",\"ts_ms\":1792759650948},\"sending_ts_ms\":1792759650954}\n",
+          "sha256": "d78905451c341d8c4761d78e7080349f309854a3f104c251403c297863b01d41",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "d78905451c341d8c4761d78e7080349f309854a3f104c251403c297863b01d41"
+        },
+        {
+          "received_at": "2026-10-23T12:47:31.009194+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":137,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.0200\",\"delta_fp\":\"8.00\",\"side\":\"yes\",\"ts\":\"2026-10-23T12:47:30.969Z\",\"ts_ms\":1792759650969},\"sending_ts_ms\":1792759650976}\n",
+          "sha256": "4d2326dc5377bd2616e3be5a4be7d43fa69c2b095a258ad62ab22bebe034f8f3",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "4d2326dc5377bd2616e3be5a4be7d43fa69c2b095a258ad62ab22bebe034f8f3"
+        },
+        {
+          "received_at": "2026-10-23T12:47:31.018116+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":138,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.0200\",\"delta_fp\":\"-8.00\",\"side\":\"yes\",\"ts\":\"2026-10-23T12:47:30.979Z\",\"ts_ms\":1792759650979},\"sending_ts_ms\":1792759650985}\n",
+          "sha256": "850103e86815787765977070a493b1c266fb0a95cc0ffaa57ff9bc21a2f9c885",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "850103e86815787765977070a493b1c266fb0a95cc0ffaa57ff9bc21a2f9c885"
+        },
+        {
+          "received_at": "2026-10-23T12:47:31.272126+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":139,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.0300\",\"delta_fp\":\"-150.00\",\"side\":\"yes\",\"ts\":\"2026-10-23T12:47:31.234Z\",\"ts_ms\":1792759651234},\"sending_ts_ms\":1792759651239}\n",
+          "sha256": "968caf3120432e31d33babec1ed63abb6fc1891c4bb0b39ec4d38e8345c93ed7",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "968caf3120432e31d33babec1ed63abb6fc1891c4bb0b39ec4d38e8345c93ed7"
+        },
+        {
+          "received_at": "2026-10-23T12:47:31.285908+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":140,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.0200\",\"delta_fp\":\"150.00\",\"side\":\"yes\",\"ts\":\"2026-10-23T12:47:31.24Z\",\"ts_ms\":1792759651240},\"sending_ts_ms\":1792759651247}\n",
+          "sha256": "4995e7874ac144e7ecdfd781294314dd7d69fc565b8798903d0a9834b3954d7d",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "4995e7874ac144e7ecdfd781294314dd7d69fc565b8798903d0a9834b3954d7d"
+        },
+        {
+          "received_at": "2026-10-23T12:47:31.759568+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":141,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.0200\",\"delta_fp\":\"-150.00\",\"side\":\"yes\",\"ts\":\"2026-10-23T12:47:31.72Z\",\"ts_ms\":1792759651720},\"sending_ts_ms\":1792759651727}\n",
+          "sha256": "f04a0bc90a55996728c364a79973ef7ae0d886ce7409df81281abaff7e858898",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "f04a0bc90a55996728c364a79973ef7ae0d886ce7409df81281abaff7e858898"
+        },
+        {
+          "received_at": "2026-10-23T12:47:31.773738+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":142,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.0300\",\"delta_fp\":\"150.00\",\"side\":\"yes\",\"ts\":\"2026-10-23T12:47:31.727Z\",\"ts_ms\":1792759651727},\"sending_ts_ms\":1792759651732}\n",
+          "sha256": "92819955946759f34f8a6972c8041c02f33ebc0047654500e3e064a286c9a614",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "92819955946759f34f8a6972c8041c02f33ebc0047654500e3e064a286c9a614"
+        },
+        {
+          "received_at": "2026-10-23T12:47:32.207264+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":143,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.8800\",\"delta_fp\":\"-1042.86\",\"side\":\"no\",\"ts\":\"2026-10-23T12:47:32.169Z\",\"ts_ms\":1792759652169},\"sending_ts_ms\":1792759652174}\n",
+          "sha256": "8716efaafa010f2b7b1b12eafc87afb964cad7ad37f353b76704112ceca8510d",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "8716efaafa010f2b7b1b12eafc87afb964cad7ad37f353b76704112ceca8510d"
+        },
+        {
+          "received_at": "2026-10-23T12:47:32.215097+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":144,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.9300\",\"delta_fp\":\"1042.29\",\"side\":\"no\",\"ts\":\"2026-10-23T12:47:32.17Z\",\"ts_ms\":1792759652170},\"sending_ts_ms\":1792759652176}\n",
+          "sha256": "f032fa0dd4e689b097e1bb49de0fa5afcd1de4f9fb6ead16b7129705e975c4e7",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "f032fa0dd4e689b097e1bb49de0fa5afcd1de4f9fb6ead16b7129705e975c4e7"
+        },
+        {
+          "received_at": "2026-10-23T12:47:32.222820+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":145,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.0400\",\"delta_fp\":\"-17.41\",\"side\":\"yes\",\"ts\":\"2026-10-23T12:47:32.171Z\",\"ts_ms\":1792759652171},\"sending_ts_ms\":1792759652176}\n",
+          "sha256": "09c500ff0d90bd2948eb3c1f1418cd607480647da1e620773490b9c232d545cb",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "09c500ff0d90bd2948eb3c1f1418cd607480647da1e620773490b9c232d545cb"
+        },
+        {
+          "received_at": "2026-10-23T12:47:32.236259+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":146,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.0200\",\"delta_fp\":\"17.45\",\"side\":\"yes\",\"ts\":\"2026-10-23T12:47:32.172Z\",\"ts_ms\":1792759652172},\"sending_ts_ms\":1792759652176}\n",
+          "sha256": "18004e8a60f5ee0b118867527a179cd6bbecfd370ba6c0a566eebdd575332040",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "18004e8a60f5ee0b118867527a179cd6bbecfd370ba6c0a566eebdd575332040"
+        },
+        {
+          "received_at": "2026-10-23T12:47:32.361306+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":147,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.0200\",\"delta_fp\":\"8.00\",\"side\":\"yes\",\"ts\":\"2026-10-23T12:47:32.324Z\",\"ts_ms\":1792759652324},\"sending_ts_ms\":1792759652328}\n",
+          "sha256": "6308aec64ba9a30e2816f3b60de253f72b5c23086f19b8b21b858ebfd2b9257c",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "6308aec64ba9a30e2816f3b60de253f72b5c23086f19b8b21b858ebfd2b9257c"
+        },
+        {
+          "received_at": "2026-10-23T12:47:32.406525+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":148,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.9300\",\"delta_fp\":\"-1042.29\",\"side\":\"no\",\"ts\":\"2026-10-23T12:47:32.368Z\",\"ts_ms\":1792759652368},\"sending_ts_ms\":1792759652374}\n",
+          "sha256": "c26e1c794c5363d25fc80e9709778ac00eb124018536fc2e81c470e0c8922ecc",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "c26e1c794c5363d25fc80e9709778ac00eb124018536fc2e81c470e0c8922ecc"
+        },
+        {
+          "received_at": "2026-10-23T12:47:32.413877+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":149,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.8800\",\"delta_fp\":\"1041.68\",\"side\":\"no\",\"ts\":\"2026-10-23T12:47:32.369Z\",\"ts_ms\":1792759652369},\"sending_ts_ms\":1792759652374}\n",
+          "sha256": "4054322e7dff807c5b8515ee1a051d342a2ca1b0623e0efeb77d6252fb9f44ad",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "4054322e7dff807c5b8515ee1a051d342a2ca1b0623e0efeb77d6252fb9f44ad"
+        },
+        {
+          "received_at": "2026-10-23T12:47:33.256236+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":150,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.0200\",\"delta_fp\":\"-17.45\",\"side\":\"yes\",\"ts\":\"2026-10-23T12:47:33.217Z\",\"ts_ms\":1792759653217},\"sending_ts_ms\":1792759653223}\n",
+          "sha256": "f94a1212d78678ec1a60d306331825626d530cc07e364a87f2f6b69be6b9b9a1",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "f94a1212d78678ec1a60d306331825626d530cc07e364a87f2f6b69be6b9b9a1"
+        },
+        {
+          "received_at": "2026-10-23T12:47:33.285168+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":151,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.0400\",\"delta_fp\":\"17.40\",\"side\":\"yes\",\"ts\":\"2026-10-23T12:47:33.219Z\",\"ts_ms\":1792759653219},\"sending_ts_ms\":1792759653223}\n",
+          "sha256": "9841507c6f2a3af4f2d747fb31af3c39c90904f8ef0bc80be77a04b57e498ec1",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "9841507c6f2a3af4f2d747fb31af3c39c90904f8ef0bc80be77a04b57e498ec1"
+        }
+      ]
+    },
+    {
+      "original_connection_id": 2,
+      "started_at": "2026-10-23T12:47:35.574187+00:00",
+      "ended_at": "2026-10-23T12:47:52.688981+00:00",
+      "end_reason": "MESSAGE_TIMEOUT",
+      "metadata": {
+        "received_at": "2026-10-23T12:47:35.560474+00:00",
+        "endpoint": "https://external-api.kalshi.com/trade-api/v2/markets/KXBTCD-26OCT2317-T83499.99",
+        "schema_version": "kalshi-3.34.0/m1-v1",
+        "body": "{\"market\":{\"can_close_early\":true,\"close_time\":\"2026-10-23T21:00:00Z\",\"created_time\":\"2026-10-16T09:00:37.667266Z\",\"event_ticker\":\"KXBTCD-26OCT2317\",\"exchange_index\":2,\"expected_expiration_time\":\"2026-10-23T21:05:00Z\",\"expiration_time\":\"2026-10-30T21:00:00Z\",\"expiration_value\":\"\",\"floor_strike\":83499.99,\"last_price_dollars\":\"0.0500\",\"latest_expiration_time\":\"2026-10-30T21:00:00Z\",\"market_type\":\"binary\",\"no_ask_dollars\":\"0.9500\",\"no_bid_dollars\":\"0.9400\",\"no_sub_title\":\"$83,500 or above\",\"notional_value_dollars\":\"1.0000\",\"occurrence_datetime\":\"2026-10-23T21:05:00Z\",\"open_interest_fp\":\"23162.07\",\"open_time\":\"2026-10-16T20:00:00Z\",\"previous_price_dollars\":\"0.1500\",\"previous_yes_ask_dollars\":\"0.1500\",\"previous_yes_bid_dollars\":\"0.1400\",\"price_level_structure\":\"linear_cent\",\"price_ranges\":[{\"end\":\"1.0000\",\"start\":\"0.0000\",\"step\":\"0.0100\"}],\"result\":\"\",\"rules_primary\":\"If the simple average of the sixty seconds of CF Benchmarks' Bitcoin Real-Time Index (BRTI) before 5 PM EDT is above 83499.99 at 5 PM EDT on Oct 23, 2026, then the market resolves to Yes.\",\"rules_secondary\":\"Not all cryptocurrency price data is the same. While checking a source like Google or Coinbase may help guide your decision, the price used to determine this market is based on CF Benchmarks' corresponding Real Time Index (RTI). At the last minute before expiration, 60 RTI prices are collected. The official and final value is the average of these prices.\",\"settlement_bounds_type\":\"default\",\"settlement_timer_seconds\":60,\"status\":\"active\",\"strike_type\":\"greater\",\"subtitle\":\"$83,500 or above\",\"ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"title\":\"Bitcoin price on Oct 23, 2026?\",\"updated_time\":\"2026-10-16T20:00:00.80112Z\",\"volume_24h_fp\":\"21286.28\",\"volume_fp\":\"93988.81\",\"yes_ask_dollars\":\"0.0600\",\"yes_ask_size_fp\":\"6845.00\",\"yes_bid_dollars\":\"0.0500\",\"yes_bid_size_fp\":\"75.00\",\"yes_sub_title\":\"$83,500 or above\"}}\n",
+        "sha256": "8668f6d2e5786f916effc6e6030af90da3d15643487e0f03173d9a632b45b74f"
+      },
+      "frames": [
+        {
+          "received_at": "2026-10-23T12:47:35.826346+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"subscribed\",\"id\":1,\"msg\":{\"channel\":\"orderbook_delta\",\"sid\":1},\"sending_ts_ms\":1792759655792}\n",
+          "sha256": "34da54a0048e6802a9988401778510a1c9f209f37dc571a11be7d3a397ea011c",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "34da54a0048e6802a9988401778510a1c9f209f37dc571a11be7d3a397ea011c"
+        },
+        {
+          "received_at": "2026-10-23T12:47:35.837481+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_snapshot\",\"sid\":1,\"seq\":1,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"yes_dollars_fp\":[[\"0.0100\",\"2841.22\"],[\"0.0200\",\"3238.89\"],[\"0.0300\",\"36258.14\"],[\"0.0400\",\"3298.17\"],[\"0.0500\",\"1308.17\"]],\"no_dollars_fp\":[[\"0.0100\",\"235828.86\"],[\"0.0200\",\"21.00\"],[\"0.0300\",\"301.00\"],[\"0.0400\",\"45600.00\"],[\"0.0500\",\"11.00\"],[\"0.0800\",\"1.00\"],[\"0.1100\",\"101.00\"],[\"0.1200\",\"15.01\"],[\"0.1700\",\"36.53\"],[\"0.1800\",\"7599.00\"],[\"0.2100\",\"1.00\"],[\"0.2600\",\"3.55\"],[\"0.2700\",\"117.43\"],[\"0.2800\",\"31.33\"],[\"0.2900\",\"78.18\"],[\"0.3000\",\"60.00\"],[\"0.3100\",\"1.00\"],[\"0.3500\",\"25.00\"],[\"0.3600\",\"64.30\"],[\"0.3800\",\"91.00\"],[\"0.3900\",\"2505.00\"],[\"0.4000\",\"2.49\"],[\"0.4100\",\"1.00\"],[\"0.5000\",\"25.00\"],[\"0.5100\",\"1.00\"],[\"0.5200\",\"25.00\"],[\"0.5800\",\"150.00\"],[\"0.6100\",\"1.00\"],[\"0.6500\",\"31.27\"],[\"0.6700\",\"32.00\"],[\"0.8000\",\"1.00\"],[\"0.8300\",\"10.00\"],[\"0.8500\",\"1.00\"],[\"0.8600\",\"97.00\"],[\"0.8800\",\"1041.68\"],[\"0.8900\",\"1082.68\"],[\"0.9000\",\"1045.66\"],[\"0.9100\",\"1073.06\"],[\"0.9200\",\"2814.38\"],[\"0.9300\",\"34081.00\"],[\"0.9400\",\"6837.00\"]]},\"sending_ts_ms\":1792759655792}\n",
+          "sha256": "ad0256ed8c954f79a5f5ece42340558f153201873cd05e2ec2e6ed79aa54988a",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "ad0256ed8c954f79a5f5ece42340558f153201873cd05e2ec2e6ed79aa54988a"
+        },
+        {
+          "received_at": "2026-10-23T12:47:35.944317+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":2,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.0300\",\"delta_fp\":\"50.00\",\"side\":\"yes\",\"ts\":\"2026-10-23T12:47:35.905Z\",\"ts_ms\":1792759655905},\"sending_ts_ms\":1792759655910}\n",
+          "sha256": "fc6c8804e4fddad7ee5c24987c12beb0b5942492604445e063c492fb16d6ff86",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "fc6c8804e4fddad7ee5c24987c12beb0b5942492604445e063c492fb16d6ff86"
+        },
+        {
+          "received_at": "2026-10-23T12:47:35.972421+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":3,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.3800\",\"delta_fp\":\"-91.00\",\"side\":\"no\",\"ts\":\"2026-10-23T12:47:35.933Z\",\"ts_ms\":1792759655933},\"sending_ts_ms\":1792759655939}\n",
+          "sha256": "effe312e6722ff1a293ec065002a4b07948c7c6f62de7801de0ac319bfd3ec69",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "effe312e6722ff1a293ec065002a4b07948c7c6f62de7801de0ac319bfd3ec69"
+        },
+        {
+          "received_at": "2026-10-23T12:47:35.980529+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":4,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.4000\",\"delta_fp\":\"85.00\",\"side\":\"no\",\"ts\":\"2026-10-23T12:47:35.934Z\",\"ts_ms\":1792759655934},\"sending_ts_ms\":1792759655939}\n",
+          "sha256": "004f783c2fa1e8670d5330b90371f6acef08480d8eedfde78083bb770f4bf025",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "004f783c2fa1e8670d5330b90371f6acef08480d8eedfde78083bb770f4bf025"
+        },
+        {
+          "received_at": "2026-10-23T12:47:36.419654+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":5,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.0500\",\"delta_fp\":\"-1033.17\",\"side\":\"yes\",\"ts\":\"2026-10-23T12:47:36.38Z\",\"ts_ms\":1792759656380},\"sending_ts_ms\":1792759656386}\n",
+          "sha256": "0cb498addc1fe1291ef075a7be3380c2b1e6cb1bca1122c701a1fc7299f0cfc3",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "0cb498addc1fe1291ef075a7be3380c2b1e6cb1bca1122c701a1fc7299f0cfc3"
+        },
+        {
+          "received_at": "2026-10-23T12:47:36.439245+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":6,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.0500\",\"delta_fp\":\"-200.00\",\"side\":\"yes\",\"ts\":\"2026-10-23T12:47:36.387Z\",\"ts_ms\":1792759656387},\"sending_ts_ms\":1792759656391}\n",
+          "sha256": "1fc88fb5d9597ed5e1043d4839ca09a64b088ef6384d8dfc729796cc9d959eea",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "1fc88fb5d9597ed5e1043d4839ca09a64b088ef6384d8dfc729796cc9d959eea"
+        },
+        {
+          "received_at": "2026-10-23T12:47:36.446591+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":7,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.0100\",\"delta_fp\":\"200.00\",\"side\":\"yes\",\"ts\":\"2026-10-23T12:47:36.387Z\",\"ts_ms\":1792759656387},\"sending_ts_ms\":1792759656391}\n",
+          "sha256": "070dac92eec84e91c4aba3fbafc158864805c179bd0c17341d63c61fb77bdba2",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "070dac92eec84e91c4aba3fbafc158864805c179bd0c17341d63c61fb77bdba2"
+        },
+        {
+          "received_at": "2026-10-23T12:47:36.454533+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":8,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.9300\",\"delta_fp\":\"-7.00\",\"side\":\"no\",\"ts\":\"2026-10-23T12:47:36.394Z\",\"ts_ms\":1792759656394},\"sending_ts_ms\":1792759656399}\n",
+          "sha256": "fbbbc95fe64e8ee73f1c3865cacbdde52cf75327abf14d8c560230719b7615f0",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "fbbbc95fe64e8ee73f1c3865cacbdde52cf75327abf14d8c560230719b7615f0"
+        },
+        {
+          "received_at": "2026-10-23T12:47:36.463439+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":9,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.9400\",\"delta_fp\":\"8.00\",\"side\":\"no\",\"ts\":\"2026-10-23T12:47:36.394Z\",\"ts_ms\":1792759656394},\"sending_ts_ms\":1792759656399}\n",
+          "sha256": "5ac9689f9534c716b0e4d85c2109898d67200fc2636c3567f2f115aee0415273",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "5ac9689f9534c716b0e4d85c2109898d67200fc2636c3567f2f115aee0415273"
+        },
+        {
+          "received_at": "2026-10-23T12:47:36.476899+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":10,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.3900\",\"delta_fp\":\"-2505.00\",\"side\":\"no\",\"ts\":\"2026-10-23T12:47:36.435Z\",\"ts_ms\":1792759656435},\"sending_ts_ms\":1792759656440}\n",
+          "sha256": "078bf92a4639d4342002b170b455317ad02c481774c2bbe2db0ee23e9ee3446f",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "078bf92a4639d4342002b170b455317ad02c481774c2bbe2db0ee23e9ee3446f"
+        },
+        {
+          "received_at": "2026-10-23T12:47:36.484162+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":11,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.4100\",\"delta_fp\":\"2383.00\",\"side\":\"no\",\"ts\":\"2026-10-23T12:47:36.435Z\",\"ts_ms\":1792759656435},\"sending_ts_ms\":1792759656440}\n",
+          "sha256": "0696a81b376334e47fc0dbbe07a757fb60ca0007a7ab8f9494de0723df63f60e",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "0696a81b376334e47fc0dbbe07a757fb60ca0007a7ab8f9494de0723df63f60e"
+        },
+        {
+          "received_at": "2026-10-23T12:47:37.460007+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":12,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.0400\",\"delta_fp\":\"-17.40\",\"side\":\"yes\",\"ts\":\"2026-10-23T12:47:37.421Z\",\"ts_ms\":1792759657421},\"sending_ts_ms\":1792759657426}\n",
+          "sha256": "3fbbb9921acc6b4ea53d889164cf6dd60614b0d3aa85cc801f50c4393853e7cf",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "3fbbb9921acc6b4ea53d889164cf6dd60614b0d3aa85cc801f50c4393853e7cf"
+        },
+        {
+          "received_at": "2026-10-23T12:47:37.473703+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":13,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.0200\",\"delta_fp\":\"17.44\",\"side\":\"yes\",\"ts\":\"2026-10-23T12:47:37.421Z\",\"ts_ms\":1792759657421},\"sending_ts_ms\":1792759657426}\n",
+          "sha256": "b0f11ca59bb75ac3fe33916a949b81bc079290e79641cfdebb15eab9fe18c83e",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "b0f11ca59bb75ac3fe33916a949b81bc079290e79641cfdebb15eab9fe18c83e"
+        },
+        {
+          "received_at": "2026-10-23T12:47:37.517381+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":14,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.0300\",\"delta_fp\":\"-150.00\",\"side\":\"yes\",\"ts\":\"2026-10-23T12:47:37.479Z\",\"ts_ms\":1792759657479},\"sending_ts_ms\":1792759657484}\n",
+          "sha256": "42be9ea75cf25387c34c396dc1dfdecdc7d2e733d13665530c6f7ed40de4e834",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "42be9ea75cf25387c34c396dc1dfdecdc7d2e733d13665530c6f7ed40de4e834"
+        },
+        {
+          "received_at": "2026-10-23T12:47:37.525057+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":15,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.0200\",\"delta_fp\":\"150.00\",\"side\":\"yes\",\"ts\":\"2026-10-23T12:47:37.485Z\",\"ts_ms\":1792759657485},\"sending_ts_ms\":1792759657489}\n",
+          "sha256": "ed3de6737152c6b0e831863a99cd8df7b53d5d6e9222bbfcde815bb47b0285c5",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "ed3de6737152c6b0e831863a99cd8df7b53d5d6e9222bbfcde815bb47b0285c5"
+        },
+        {
+          "received_at": "2026-10-23T12:47:38.180644+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":16,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.0200\",\"delta_fp\":\"-8.00\",\"side\":\"yes\",\"ts\":\"2026-10-23T12:47:38.14Z\",\"ts_ms\":1792759658140},\"sending_ts_ms\":1792759658147}\n",
+          "sha256": "3d9a1b9283d04505f6b26cdbc8b46af213f76d14805059a47b1da08184595a53",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "3d9a1b9283d04505f6b26cdbc8b46af213f76d14805059a47b1da08184595a53"
+        },
+        {
+          "received_at": "2026-10-23T12:47:38.241993+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":17,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.0200\",\"delta_fp\":\"8.00\",\"side\":\"yes\",\"ts\":\"2026-10-23T12:47:38.203Z\",\"ts_ms\":1792759658203},\"sending_ts_ms\":1792759658208}\n",
+          "sha256": "791d63949cba2fadbd3c2f86391b4d9383729f6e66fd72582798194110f31e9a",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "791d63949cba2fadbd3c2f86391b4d9383729f6e66fd72582798194110f31e9a"
+        },
+        {
+          "received_at": "2026-10-23T12:47:38.260162+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":18,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.0200\",\"delta_fp\":\"-8.00\",\"side\":\"yes\",\"ts\":\"2026-10-23T12:47:38.222Z\",\"ts_ms\":1792759658222},\"sending_ts_ms\":1792759658226}\n",
+          "sha256": "ce4687df8662a6ae77c6c73651b7123013baf24e5130f382900ea9894ab13237",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "ce4687df8662a6ae77c6c73651b7123013baf24e5130f382900ea9894ab13237"
+        },
+        {
+          "received_at": "2026-10-23T12:47:38.267685+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":19,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.8800\",\"delta_fp\":\"-1041.68\",\"side\":\"no\",\"ts\":\"2026-10-23T12:47:38.222Z\",\"ts_ms\":1792759658222},\"sending_ts_ms\":1792759658226}\n",
+          "sha256": "1ea2764cb8fd71f86d5d9db9aed18de0634a27b3e4b2984296ec45849cf0cef1",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "1ea2764cb8fd71f86d5d9db9aed18de0634a27b3e4b2984296ec45849cf0cef1"
+        },
+        {
+          "received_at": "2026-10-23T12:47:38.275035+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":20,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.9300\",\"delta_fp\":\"1042.27\",\"side\":\"no\",\"ts\":\"2026-10-23T12:47:38.223Z\",\"ts_ms\":1792759658223},\"sending_ts_ms\":1792759658228}\n",
+          "sha256": "b3bfc58a99502a65d70232fe82665e797f3d0eaff7b596808e0dc658deb8b110",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "b3bfc58a99502a65d70232fe82665e797f3d0eaff7b596808e0dc658deb8b110"
+        },
+        {
+          "received_at": "2026-10-23T12:47:38.345055+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":21,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.0200\",\"delta_fp\":\"8.00\",\"side\":\"yes\",\"ts\":\"2026-10-23T12:47:38.305Z\",\"ts_ms\":1792759658305},\"sending_ts_ms\":1792759658311}\n",
+          "sha256": "e065374c4e08aa9ceac0fe471761d7e955fab66fa22ee404fd34a1439a5fd33a",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "e065374c4e08aa9ceac0fe471761d7e955fab66fa22ee404fd34a1439a5fd33a"
+        },
+        {
+          "received_at": "2026-10-23T12:47:38.506664+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":22,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.9300\",\"delta_fp\":\"-1042.27\",\"side\":\"no\",\"ts\":\"2026-10-23T12:47:38.467Z\",\"ts_ms\":1792759658467},\"sending_ts_ms\":1792759658473}\n",
+          "sha256": "06fe750d4582203c34e85fbea0e6140b46324917258f19574d128839dd6b93c9",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "06fe750d4582203c34e85fbea0e6140b46324917258f19574d128839dd6b93c9"
+        },
+        {
+          "received_at": "2026-10-23T12:47:38.520635+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":23,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.8800\",\"delta_fp\":\"1040.52\",\"side\":\"no\",\"ts\":\"2026-10-23T12:47:38.468Z\",\"ts_ms\":1792759658468},\"sending_ts_ms\":1792759658475}\n",
+          "sha256": "cd392b029894eb477cc4ca997a3a74ce90f389ce2730cc3baf35c8e0c4272732",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "cd392b029894eb477cc4ca997a3a74ce90f389ce2730cc3baf35c8e0c4272732"
+        },
+        {
+          "received_at": "2026-10-23T12:47:38.653610+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":24,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.0300\",\"delta_fp\":\"-50.00\",\"side\":\"yes\",\"ts\":\"2026-10-23T12:47:38.615Z\",\"ts_ms\":1792759658615},\"sending_ts_ms\":1792759658620}\n",
+          "sha256": "9b4999c73426bb74ee118c8e0a8480b63ceae8c72f3abe53e21268d5b6dd8eed",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "9b4999c73426bb74ee118c8e0a8480b63ceae8c72f3abe53e21268d5b6dd8eed"
+        },
+        {
+          "received_at": "2026-10-23T12:47:43.306730+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":25,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.0100\",\"delta_fp\":\"-200.00\",\"side\":\"yes\",\"ts\":\"2026-10-23T12:47:43.266Z\",\"ts_ms\":1792759663266},\"sending_ts_ms\":1792759663273}\n",
+          "sha256": "569cc94d854793fd4e8c4ebce5c743b2968a4ada1d28d071d1e1dff6433524c6",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "569cc94d854793fd4e8c4ebce5c743b2968a4ada1d28d071d1e1dff6433524c6"
+        },
+        {
+          "received_at": "2026-10-23T12:47:43.320128+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":26,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.9400\",\"delta_fp\":\"-200.00\",\"side\":\"no\",\"ts\":\"2026-10-23T12:47:43.267Z\",\"ts_ms\":1792759663267},\"sending_ts_ms\":1792759663274}\n",
+          "sha256": "eeed1a918d177f58a86b42f0d95d02dfa90f044986f90994a8cc6590965f33d4",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "eeed1a918d177f58a86b42f0d95d02dfa90f044986f90994a8cc6590965f33d4"
+        },
+        {
+          "received_at": "2026-10-23T12:47:43.327593+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":27,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.0100\",\"delta_fp\":\"200.00\",\"side\":\"yes\",\"ts\":\"2026-10-23T12:47:43.274Z\",\"ts_ms\":1792759663274},\"sending_ts_ms\":1792759663279}\n",
+          "sha256": "f6b99f7cd5f7567c1ee43ca41524418e15a0156fa29c91e2222698d49d2230d5",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "f6b99f7cd5f7567c1ee43ca41524418e15a0156fa29c91e2222698d49d2230d5"
+        },
+        {
+          "received_at": "2026-10-23T12:47:43.341715+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":28,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.9400\",\"delta_fp\":\"200.00\",\"side\":\"no\",\"ts\":\"2026-10-23T12:47:43.276Z\",\"ts_ms\":1792759663276},\"sending_ts_ms\":1792759663280}\n",
+          "sha256": "aa919db4c6558f0cae5045948fc5cb182b4b9b4c757e0c9b48726027e13845a4",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "aa919db4c6558f0cae5045948fc5cb182b4b9b4c757e0c9b48726027e13845a4"
+        },
+        {
+          "received_at": "2026-10-23T12:47:46.348379+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":29,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.0100\",\"delta_fp\":\"-200.00\",\"side\":\"yes\",\"ts\":\"2026-10-23T12:47:46.307Z\",\"ts_ms\":1792759666307},\"sending_ts_ms\":1792759666315}\n",
+          "sha256": "757cf0a0925683770382697ba861853a3d3f5b5bfbbcddba4eea4022a60b41fa",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "757cf0a0925683770382697ba861853a3d3f5b5bfbbcddba4eea4022a60b41fa"
+        },
+        {
+          "received_at": "2026-10-23T12:47:46.362078+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":30,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.9400\",\"delta_fp\":\"-200.00\",\"side\":\"no\",\"ts\":\"2026-10-23T12:47:46.308Z\",\"ts_ms\":1792759666308},\"sending_ts_ms\":1792759666315}\n",
+          "sha256": "26ee2a7a177147a4288a30fc12d1ac9d467e815689e06f8103e0e71faf023536",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "26ee2a7a177147a4288a30fc12d1ac9d467e815689e06f8103e0e71faf023536"
+        },
+        {
+          "received_at": "2026-10-23T12:47:46.369399+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":31,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.0100\",\"delta_fp\":\"200.00\",\"side\":\"yes\",\"ts\":\"2026-10-23T12:47:46.316Z\",\"ts_ms\":1792759666316},\"sending_ts_ms\":1792759666322}\n",
+          "sha256": "9804860ff9c9e29816ff8857eee4187b20e4c815f22ae058e833f01eef2b0802",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "9804860ff9c9e29816ff8857eee4187b20e4c815f22ae058e833f01eef2b0802"
+        },
+        {
+          "received_at": "2026-10-23T12:47:46.382987+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":32,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.9400\",\"delta_fp\":\"200.00\",\"side\":\"no\",\"ts\":\"2026-10-23T12:47:46.316Z\",\"ts_ms\":1792759666316},\"sending_ts_ms\":1792759666322}\n",
+          "sha256": "5e32dabc929df16fc0c60066ec9a729513cb988ca6a529474a9e78cb4e12ba1b",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "5e32dabc929df16fc0c60066ec9a729513cb988ca6a529474a9e78cb4e12ba1b"
+        },
+        {
+          "received_at": "2026-10-23T12:47:47.111622+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":33,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.0100\",\"delta_fp\":\"-200.00\",\"side\":\"yes\",\"ts\":\"2026-10-23T12:47:47.071Z\",\"ts_ms\":1792759667071},\"sending_ts_ms\":1792759667078}\n",
+          "sha256": "5053fc06319c27b54197665d8aad971408a2f5355fb80c90c59750b2ca822970",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "5053fc06319c27b54197665d8aad971408a2f5355fb80c90c59750b2ca822970"
+        },
+        {
+          "received_at": "2026-10-23T12:47:47.125419+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":34,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.9400\",\"delta_fp\":\"-200.00\",\"side\":\"no\",\"ts\":\"2026-10-23T12:47:47.072Z\",\"ts_ms\":1792759667072},\"sending_ts_ms\":1792759667078}\n",
+          "sha256": "6bfad0512446a26aab4cb4f506f13af32183e326d3c6ea11d11bef3e8ffbc8b9",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "6bfad0512446a26aab4cb4f506f13af32183e326d3c6ea11d11bef3e8ffbc8b9"
+        },
+        {
+          "received_at": "2026-10-23T12:47:47.133832+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":35,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.0100\",\"delta_fp\":\"200.00\",\"side\":\"yes\",\"ts\":\"2026-10-23T12:47:47.08Z\",\"ts_ms\":1792759667080},\"sending_ts_ms\":1792759667087}\n",
+          "sha256": "365a6f98932c73fc796582939869e7362051fadea229f12886473245b1721a04",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "365a6f98932c73fc796582939869e7362051fadea229f12886473245b1721a04"
+        },
+        {
+          "received_at": "2026-10-23T12:47:47.618057+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":36,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.9400\",\"delta_fp\":\"200.00\",\"side\":\"no\",\"ts\":\"2026-10-23T12:47:47.58Z\",\"ts_ms\":1792759667580},\"sending_ts_ms\":1792759667584}\n",
+          "sha256": "069e628c20be37d611d63c3163a7b62916e8436118693294763c2bc31c5656d9",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "069e628c20be37d611d63c3163a7b62916e8436118693294763c2bc31c5656d9"
+        }
+      ]
+    },
+    {
+      "original_connection_id": 3,
+      "started_at": "2026-10-23T12:47:54.946158+00:00",
+      "ended_at": "2026-10-23T12:48:08.937176+00:00",
+      "end_reason": "BUDGET_COMPLETE",
+      "metadata": {
+        "received_at": "2026-10-23T12:47:54.928130+00:00",
+        "endpoint": "https://external-api.kalshi.com/trade-api/v2/markets/KXBTCD-26OCT2317-T83499.99",
+        "schema_version": "kalshi-3.34.0/m1-v1",
+        "body": "{\"market\":{\"can_close_early\":true,\"close_time\":\"2026-10-23T21:00:00Z\",\"created_time\":\"2026-10-16T09:00:37.667266Z\",\"event_ticker\":\"KXBTCD-26OCT2317\",\"exchange_index\":2,\"expected_expiration_time\":\"2026-10-23T21:05:00Z\",\"expiration_time\":\"2026-10-30T21:00:00Z\",\"expiration_value\":\"\",\"floor_strike\":83499.99,\"last_price_dollars\":\"0.0500\",\"latest_expiration_time\":\"2026-10-30T21:00:00Z\",\"market_type\":\"binary\",\"no_ask_dollars\":\"0.9500\",\"no_bid_dollars\":\"0.9400\",\"no_sub_title\":\"$83,500 or above\",\"notional_value_dollars\":\"1.0000\",\"occurrence_datetime\":\"2026-10-23T21:05:00Z\",\"open_interest_fp\":\"23162.07\",\"open_time\":\"2026-10-16T20:00:00Z\",\"previous_price_dollars\":\"0.1500\",\"previous_yes_ask_dollars\":\"0.1500\",\"previous_yes_bid_dollars\":\"0.1400\",\"price_level_structure\":\"linear_cent\",\"price_ranges\":[{\"end\":\"1.0000\",\"start\":\"0.0000\",\"step\":\"0.0100\"}],\"result\":\"\",\"rules_primary\":\"If the simple average of the sixty seconds of CF Benchmarks' Bitcoin Real-Time Index (BRTI) before 5 PM EDT is above 83499.99 at 5 PM EDT on Oct 23, 2026, then the market resolves to Yes.\",\"rules_secondary\":\"Not all cryptocurrency price data is the same. While checking a source like Google or Coinbase may help guide your decision, the price used to determine this market is based on CF Benchmarks' corresponding Real Time Index (RTI). At the last minute before expiration, 60 RTI prices are collected. The official and final value is the average of these prices.\",\"settlement_bounds_type\":\"default\",\"settlement_timer_seconds\":60,\"status\":\"active\",\"strike_type\":\"greater\",\"subtitle\":\"$83,500 or above\",\"ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"title\":\"Bitcoin price on Oct 23, 2026?\",\"updated_time\":\"2026-10-16T20:00:00.80112Z\",\"volume_24h_fp\":\"21286.28\",\"volume_fp\":\"93988.81\",\"yes_ask_dollars\":\"0.0600\",\"yes_ask_size_fp\":\"6845.00\",\"yes_bid_dollars\":\"0.0500\",\"yes_bid_size_fp\":\"75.00\",\"yes_sub_title\":\"$83,500 or above\"}}\n",
+        "sha256": "8668f6d2e5786f916effc6e6030af90da3d15643487e0f03173d9a632b45b74f"
+      },
+      "frames": [
+        {
+          "received_at": "2026-10-23T12:47:55.200452+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"subscribed\",\"id\":1,\"msg\":{\"channel\":\"orderbook_delta\",\"sid\":1},\"sending_ts_ms\":1792759675167}\n",
+          "sha256": "80640b431e4b70706fde25dae173da06ea134cf432e0773243fd256a13a856ae",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "80640b431e4b70706fde25dae173da06ea134cf432e0773243fd256a13a856ae"
+        },
+        {
+          "received_at": "2026-10-23T12:47:55.210923+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_snapshot\",\"sid\":1,\"seq\":1,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"yes_dollars_fp\":[[\"0.0100\",\"2841.22\"],[\"0.0200\",\"3406.33\"],[\"0.0300\",\"36116.14\"],[\"0.0400\",\"3265.77\"]],\"no_dollars_fp\":[[\"0.0100\",\"235828.86\"],[\"0.0200\",\"21.00\"],[\"0.0300\",\"301.00\"],[\"0.0400\",\"45600.00\"],[\"0.0500\",\"11.00\"],[\"0.0800\",\"1.00\"],[\"0.1100\",\"101.00\"],[\"0.1200\",\"15.01\"],[\"0.1700\",\"36.53\"],[\"0.1800\",\"7599.00\"],[\"0.2100\",\"1.00\"],[\"0.2600\",\"3.55\"],[\"0.2700\",\"117.43\"],[\"0.2800\",\"31.33\"],[\"0.2900\",\"78.18\"],[\"0.3000\",\"60.00\"],[\"0.3100\",\"1.00\"],[\"0.3500\",\"25.00\"],[\"0.3600\",\"64.30\"],[\"0.4000\",\"2.49\"],[\"0.4100\",\"1.00\"],[\"0.4200\",\"88.00\"],[\"0.4300\",\"2272.00\"],[\"0.5000\",\"25.00\"],[\"0.5100\",\"1.00\"],[\"0.5200\",\"25.00\"],[\"0.5800\",\"150.00\"],[\"0.6100\",\"1.00\"],[\"0.6500\",\"31.27\"],[\"0.6700\",\"32.00\"],[\"0.8000\",\"1.00\"],[\"0.8300\",\"10.00\"],[\"0.8500\",\"1.00\"],[\"0.8600\",\"97.00\"],[\"0.8900\",\"1082.68\"],[\"0.9000\",\"1045.66\"],[\"0.9100\",\"1073.06\"],[\"0.9200\",\"2129.38\"],[\"0.9300\",\"31964.54\"],[\"0.9400\",\"8493.00\"],[\"0.9500\",\"200.00\"]]},\"sending_ts_ms\":1792759675167}\n",
+          "sha256": "7d5c21defc5300298fa3b34cfbcf0e75fcd4e89fdf00dff7111a772f237e4579",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "7d5c21defc5300298fa3b34cfbcf0e75fcd4e89fdf00dff7111a772f237e4579"
+        },
+        {
+          "received_at": "2026-10-23T12:47:55.764620+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":2,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.0400\",\"delta_fp\":\"-200.00\",\"side\":\"yes\",\"ts\":\"2026-10-23T12:47:55.724Z\",\"ts_ms\":1792759675724},\"sending_ts_ms\":1792759675731}\n",
+          "sha256": "201eb78a95bc6eb0f5e5db6dbc5297237168f31323fd526c9b335edc68afb578",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "201eb78a95bc6eb0f5e5db6dbc5297237168f31323fd526c9b335edc68afb578"
+        },
+        {
+          "received_at": "2026-10-23T12:47:55.785118+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":3,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.9400\",\"delta_fp\":\"-200.00\",\"side\":\"no\",\"ts\":\"2026-10-23T12:47:55.725Z\",\"ts_ms\":1792759675725},\"sending_ts_ms\":1792759675731}\n",
+          "sha256": "7078e4aacf128ee1e0618d7d89258b5f66c6e4d9d6a170475a4f9423562adc1a",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "7078e4aacf128ee1e0618d7d89258b5f66c6e4d9d6a170475a4f9423562adc1a"
+        },
+        {
+          "received_at": "2026-10-23T12:47:55.792579+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":4,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.0400\",\"delta_fp\":\"200.00\",\"side\":\"yes\",\"ts\":\"2026-10-23T12:47:55.732Z\",\"ts_ms\":1792759675732},\"sending_ts_ms\":1792759675738}\n",
+          "sha256": "840e8c4db44d10391ee347d25b5efc8af0be011feafbbd16f69fc246a45c9915",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "840e8c4db44d10391ee347d25b5efc8af0be011feafbbd16f69fc246a45c9915"
+        },
+        {
+          "received_at": "2026-10-23T12:47:55.805350+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":5,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.8900\",\"delta_fp\":\"200.00\",\"side\":\"no\",\"ts\":\"2026-10-23T12:47:55.732Z\",\"ts_ms\":1792759675732},\"sending_ts_ms\":1792759675738}\n",
+          "sha256": "0a27e5a46f7f8e878170cc83eb36a31b09790ed7e58dccb3d3739f30e85bfd65",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "0a27e5a46f7f8e878170cc83eb36a31b09790ed7e58dccb3d3739f30e85bfd65"
+        },
+        {
+          "received_at": "2026-10-23T12:47:56.091842+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":6,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.9500\",\"delta_fp\":\"692.00\",\"side\":\"no\",\"ts\":\"2026-10-23T12:47:56.052Z\",\"ts_ms\":1792759676052},\"sending_ts_ms\":1792759676059}\n",
+          "sha256": "30fcdf38321bd217ce4b7ef491f7a495c0a1af6bb36572dc08544850d39998fa",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "30fcdf38321bd217ce4b7ef491f7a495c0a1af6bb36572dc08544850d39998fa"
+        },
+        {
+          "received_at": "2026-10-23T12:47:56.111682+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":7,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.9400\",\"delta_fp\":\"692.00\",\"side\":\"no\",\"ts\":\"2026-10-23T12:47:56.052Z\",\"ts_ms\":1792759676052},\"sending_ts_ms\":1792759676059}\n",
+          "sha256": "864b00a77dbf1c22ff41b0467171393edc231dc11a94a606797f56a6c77c7436",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "864b00a77dbf1c22ff41b0467171393edc231dc11a94a606797f56a6c77c7436"
+        },
+        {
+          "received_at": "2026-10-23T12:47:56.119242+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":8,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.9300\",\"delta_fp\":\"692.00\",\"side\":\"no\",\"ts\":\"2026-10-23T12:47:56.053Z\",\"ts_ms\":1792759676053},\"sending_ts_ms\":1792759676059}\n",
+          "sha256": "4cd539fd27845de8e2d13dcc8b3e7e4386150196b84bbfd0d9f23ba4592dc4c6",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "4cd539fd27845de8e2d13dcc8b3e7e4386150196b84bbfd0d9f23ba4592dc4c6"
+        },
+        {
+          "received_at": "2026-10-23T12:47:56.126611+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":9,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.0400\",\"delta_fp\":\"62.00\",\"side\":\"yes\",\"ts\":\"2026-10-23T12:47:56.053Z\",\"ts_ms\":1792759676053},\"sending_ts_ms\":1792759676059}\n",
+          "sha256": "53805ad57f20a4d20bfd1c624a6608531ce2820a3ea77047bcb765853ec22858",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "53805ad57f20a4d20bfd1c624a6608531ce2820a3ea77047bcb765853ec22858"
+        },
+        {
+          "received_at": "2026-10-23T12:47:56.133651+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":10,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.0300\",\"delta_fp\":\"62.00\",\"side\":\"yes\",\"ts\":\"2026-10-23T12:47:56.053Z\",\"ts_ms\":1792759676053},\"sending_ts_ms\":1792759676059}\n",
+          "sha256": "9c8419f2412243c873bfc429017a900a586d91a5d2343285b5dd6cbabb16a3cc",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "9c8419f2412243c873bfc429017a900a586d91a5d2343285b5dd6cbabb16a3cc"
+        },
+        {
+          "received_at": "2026-10-23T12:47:56.634536+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":11,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.0400\",\"delta_fp\":\"-200.00\",\"side\":\"yes\",\"ts\":\"2026-10-23T12:47:56.594Z\",\"ts_ms\":1792759676594},\"sending_ts_ms\":1792759676601}\n",
+          "sha256": "dfe92bafd9a7078389127a006b6a03d70daf7f70b4624812877e673f90a6f792",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "dfe92bafd9a7078389127a006b6a03d70daf7f70b4624812877e673f90a6f792"
+        },
+        {
+          "received_at": "2026-10-23T12:47:56.642263+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":12,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.8900\",\"delta_fp\":\"-200.00\",\"side\":\"no\",\"ts\":\"2026-10-23T12:47:56.595Z\",\"ts_ms\":1792759676595},\"sending_ts_ms\":1792759676601}\n",
+          "sha256": "6971660cba182fdb9fd468c3c7ac39ac44aa331f1a269278cb010893938b60af",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "6971660cba182fdb9fd468c3c7ac39ac44aa331f1a269278cb010893938b60af"
+        },
+        {
+          "received_at": "2026-10-23T12:47:57.145199+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":13,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.0400\",\"delta_fp\":\"200.00\",\"side\":\"yes\",\"ts\":\"2026-10-23T12:47:57.104Z\",\"ts_ms\":1792759677104},\"sending_ts_ms\":1792759677112}\n",
+          "sha256": "62096a4c90f0e3dd48fc397c0f08c8aa89827649b587ee78f7011bce1068ea61",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "62096a4c90f0e3dd48fc397c0f08c8aa89827649b587ee78f7011bce1068ea61"
+        },
+        {
+          "received_at": "2026-10-23T12:47:57.159206+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":14,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.8900\",\"delta_fp\":\"200.00\",\"side\":\"no\",\"ts\":\"2026-10-23T12:47:57.104Z\",\"ts_ms\":1792759677104},\"sending_ts_ms\":1792759677112}\n",
+          "sha256": "9d3853406cca2e0dbb62d978cb8478d2367925b5ccd9fc08a528a966cfa2ae1d",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "9d3853406cca2e0dbb62d978cb8478d2367925b5ccd9fc08a528a966cfa2ae1d"
+        },
+        {
+          "received_at": "2026-10-23T12:48:00.539263+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":15,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.9300\",\"delta_fp\":\"-1042.54\",\"side\":\"no\",\"ts\":\"2026-10-23T12:48:00.5Z\",\"ts_ms\":1792759680500},\"sending_ts_ms\":1792759680506}\n",
+          "sha256": "a2ceba958bbf99f59dfd854552fe773924e478afd3f582446eb3caa1fda94d93",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "a2ceba958bbf99f59dfd854552fe773924e478afd3f582446eb3caa1fda94d93"
+        },
+        {
+          "received_at": "2026-10-23T12:48:00.552624+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":16,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.8800\",\"delta_fp\":\"1041.53\",\"side\":\"no\",\"ts\":\"2026-10-23T12:48:00.501Z\",\"ts_ms\":1792759680501},\"sending_ts_ms\":1792759680506}\n",
+          "sha256": "f0298d9041e8142124cffdda78274b901510609d11bb6217d98d93f122d661fc",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "f0298d9041e8142124cffdda78274b901510609d11bb6217d98d93f122d661fc"
+        },
+        {
+          "received_at": "2026-10-23T12:48:00.853908+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":17,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.8900\",\"delta_fp\":\"-200.00\",\"side\":\"no\",\"ts\":\"2026-10-23T12:48:00.815Z\",\"ts_ms\":1792759680815},\"sending_ts_ms\":1792759680821}\n",
+          "sha256": "470430f9d29110af40357e254feebefab88e7d8795142a95bf27ee06032ec27b",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "470430f9d29110af40357e254feebefab88e7d8795142a95bf27ee06032ec27b"
+        },
+        {
+          "received_at": "2026-10-23T12:48:00.872332+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":18,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.8900\",\"delta_fp\":\"200.00\",\"side\":\"no\",\"ts\":\"2026-10-23T12:48:00.833Z\",\"ts_ms\":1792759680833},\"sending_ts_ms\":1792759680839}\n",
+          "sha256": "b5329d22563ea1abd4d848637b429e7af8201a8f0bc8acb364bfa62b492f168a",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "b5329d22563ea1abd4d848637b429e7af8201a8f0bc8acb364bfa62b492f168a"
+        },
+        {
+          "received_at": "2026-10-23T12:48:00.888195+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":19,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.0200\",\"delta_fp\":\"-150.00\",\"side\":\"yes\",\"ts\":\"2026-10-23T12:48:00.849Z\",\"ts_ms\":1792759680849},\"sending_ts_ms\":1792759680855}\n",
+          "sha256": "f4cf8d9ca1044caff49fa2ff673e229a2534fa8cbec98ba84930f5071696c256",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "f4cf8d9ca1044caff49fa2ff673e229a2534fa8cbec98ba84930f5071696c256"
+        },
+        {
+          "received_at": "2026-10-23T12:48:00.896018+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":20,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.8900\",\"delta_fp\":\"-200.00\",\"side\":\"no\",\"ts\":\"2026-10-23T12:48:00.853Z\",\"ts_ms\":1792759680853},\"sending_ts_ms\":1792759680858}\n",
+          "sha256": "79cefae0a3561a1cfb5569965a84b86d32d0c41c43e741f9441f1eb6fc775b14",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "79cefae0a3561a1cfb5569965a84b86d32d0c41c43e741f9441f1eb6fc775b14"
+        },
+        {
+          "received_at": "2026-10-23T12:48:00.905110+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":21,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.0300\",\"delta_fp\":\"150.00\",\"side\":\"yes\",\"ts\":\"2026-10-23T12:48:00.855Z\",\"ts_ms\":1792759680855},\"sending_ts_ms\":1792759680861}\n",
+          "sha256": "67887943aef8fe920ef7bab00198c89a785121c7d802e8fdfc86901a55d79944",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "67887943aef8fe920ef7bab00198c89a785121c7d802e8fdfc86901a55d79944"
+        },
+        {
+          "received_at": "2026-10-23T12:48:01.042692+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":22,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.9000\",\"delta_fp\":\"200.00\",\"side\":\"no\",\"ts\":\"2026-10-23T12:48:01.003Z\",\"ts_ms\":1792759681003},\"sending_ts_ms\":1792759681010}\n",
+          "sha256": "d44186156f91f93123e4c8d22675455821ae71675fb996f614f572fe9fd5f151",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "d44186156f91f93123e4c8d22675455821ae71675fb996f614f572fe9fd5f151"
+        },
+        {
+          "received_at": "2026-10-23T12:48:01.056519+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":23,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.0200\",\"delta_fp\":\"-17.44\",\"side\":\"yes\",\"ts\":\"2026-10-23T12:48:01.008Z\",\"ts_ms\":1792759681008},\"sending_ts_ms\":1792759681014}\n",
+          "sha256": "d5af081d2b60c878a1865f3119d0da20267c2c95f311f3c1293d15236a670ffe",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "d5af081d2b60c878a1865f3119d0da20267c2c95f311f3c1293d15236a670ffe"
+        },
+        {
+          "received_at": "2026-10-23T12:48:01.063665+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":24,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.0400\",\"delta_fp\":\"17.41\",\"side\":\"yes\",\"ts\":\"2026-10-23T12:48:01.009Z\",\"ts_ms\":1792759681009},\"sending_ts_ms\":1792759681016}\n",
+          "sha256": "de7cc7744dad49da7e28561174d2ca60925a3f7e0830697a1cc3f0709ac48b62",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "de7cc7744dad49da7e28561174d2ca60925a3f7e0830697a1cc3f0709ac48b62"
+        },
+        {
+          "received_at": "2026-10-23T12:48:05.202592+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":25,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.0100\",\"delta_fp\":\"5000.00\",\"side\":\"yes\",\"ts\":\"2026-10-23T12:48:05.165Z\",\"ts_ms\":1792759685165},\"sending_ts_ms\":1792759685169}\n",
+          "sha256": "419370f05cc993bf420c1f9f4c633fd16ea3cc0c72ce847877c18cad746b850f",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "419370f05cc993bf420c1f9f4c633fd16ea3cc0c72ce847877c18cad746b850f"
+        },
+        {
+          "received_at": "2026-10-23T12:48:05.338978+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":26,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.0400\",\"delta_fp\":\"-17.41\",\"side\":\"yes\",\"ts\":\"2026-10-23T12:48:05.3Z\",\"ts_ms\":1792759685300},\"sending_ts_ms\":1792759685306}\n",
+          "sha256": "0f4877d9745179034f1804c866abf218115f6ef358d5aa8e5448cb235ae83dc7",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "0f4877d9745179034f1804c866abf218115f6ef358d5aa8e5448cb235ae83dc7"
+        },
+        {
+          "received_at": "2026-10-23T12:48:05.346106+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":27,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.0200\",\"delta_fp\":\"17.45\",\"side\":\"yes\",\"ts\":\"2026-10-23T12:48:05.3Z\",\"ts_ms\":1792759685300},\"sending_ts_ms\":1792759685306}\n",
+          "sha256": "c2a8e6e35d65c61ea3c85400b90c7e3d3d29ed342540c70cf6508f519c7cbef4",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "c2a8e6e35d65c61ea3c85400b90c7e3d3d29ed342540c70cf6508f519c7cbef4"
+        },
+        {
+          "received_at": "2026-10-23T12:48:05.527727+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":28,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.0300\",\"delta_fp\":\"-150.00\",\"side\":\"yes\",\"ts\":\"2026-10-23T12:48:05.489Z\",\"ts_ms\":1792759685489},\"sending_ts_ms\":1792759685495}\n",
+          "sha256": "a2d817383e02b521cb44ec5eae2d776bb3de9bbf4c472eab15466a2eeae62e5c",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "a2d817383e02b521cb44ec5eae2d776bb3de9bbf4c472eab15466a2eeae62e5c"
+        },
+        {
+          "received_at": "2026-10-23T12:48:05.548364+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":29,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.0200\",\"delta_fp\":\"150.00\",\"side\":\"yes\",\"ts\":\"2026-10-23T12:48:05.496Z\",\"ts_ms\":1792759685496},\"sending_ts_ms\":1792759685500}\n",
+          "sha256": "f7350603d2145d0657976ce45dd7cf73d208bb2293e044c2e9379d1954755a7f",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "f7350603d2145d0657976ce45dd7cf73d208bb2293e044c2e9379d1954755a7f"
+        },
+        {
+          "received_at": "2026-10-23T12:48:05.733998+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":30,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.8800\",\"delta_fp\":\"-1041.53\",\"side\":\"no\",\"ts\":\"2026-10-23T12:48:05.696Z\",\"ts_ms\":1792759685696},\"sending_ts_ms\":1792759685701}\n",
+          "sha256": "7b70aeb13e86636916deb6385a7f43620b0cccb1dbb520556194e5b83ffca2d6",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "7b70aeb13e86636916deb6385a7f43620b0cccb1dbb520556194e5b83ffca2d6"
+        },
+        {
+          "received_at": "2026-10-23T12:48:05.748025+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":31,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.9300\",\"delta_fp\":\"1041.76\",\"side\":\"no\",\"ts\":\"2026-10-23T12:48:05.696Z\",\"ts_ms\":1792759685696},\"sending_ts_ms\":1792759685701}\n",
+          "sha256": "c14c1aef54e7c6a65715602707b6560b8b839e57cf19f143603d423bced2afa4",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "c14c1aef54e7c6a65715602707b6560b8b839e57cf19f143603d423bced2afa4"
+        },
+        {
+          "received_at": "2026-10-23T12:48:06.387760+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":32,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.9300\",\"delta_fp\":\"-1041.76\",\"side\":\"no\",\"ts\":\"2026-10-23T12:48:06.349Z\",\"ts_ms\":1792759686349},\"sending_ts_ms\":1792759686354}\n",
+          "sha256": "45244d2cca077647906cfd5c80cacb769da0364da0466259ec492888bcf7f869",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "45244d2cca077647906cfd5c80cacb769da0364da0466259ec492888bcf7f869"
+        },
+        {
+          "received_at": "2026-10-23T12:48:06.407668+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":33,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.8800\",\"delta_fp\":\"1035.32\",\"side\":\"no\",\"ts\":\"2026-10-23T12:48:06.349Z\",\"ts_ms\":1792759686349},\"sending_ts_ms\":1792759686354}\n",
+          "sha256": "de3b8b8bd04806b32cd0f51e0513cce62f978393c0915ce098df081e48135206",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "de3b8b8bd04806b32cd0f51e0513cce62f978393c0915ce098df081e48135206"
+        },
+        {
+          "received_at": "2026-10-23T12:48:06.414841+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":34,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.0200\",\"delta_fp\":\"-17.45\",\"side\":\"yes\",\"ts\":\"2026-10-23T12:48:06.354Z\",\"ts_ms\":1792759686354},\"sending_ts_ms\":1792759686359}\n",
+          "sha256": "9c3277ef186b5907f418ff8be75a7b800ad66ba4b1c8b48d8b7b2af86dcd6069",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "9c3277ef186b5907f418ff8be75a7b800ad66ba4b1c8b48d8b7b2af86dcd6069"
+        },
+        {
+          "received_at": "2026-10-23T12:48:06.421936+00:00",
+          "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+          "schema_version": "kalshi-ws/m5a-sequence-v1",
+          "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":35,\"msg\":{\"market_ticker\":\"KXBTCD-26OCT2317-T83499.99\",\"market_id\":\"01a143f1-1d8e-7049-97bf-bfbe0209af27\",\"price_dollars\":\"0.0400\",\"delta_fp\":\"17.39\",\"side\":\"yes\",\"ts\":\"2026-10-23T12:48:06.355Z\",\"ts_ms\":1792759686355},\"sending_ts_ms\":1792759686360}\n",
+          "sha256": "43cd436117ef9026ac60d6ac1ce1b68c98117cc39469ae1c30c316e08d5eb87b",
+          "archive_kind": "EXACT_WIRE",
+          "wire_sha256": "43cd436117ef9026ac60d6ac1ce1b68c98117cc39469ae1c30c316e08d5eb87b"
+        }
+      ]
+    }
+  ]
+}

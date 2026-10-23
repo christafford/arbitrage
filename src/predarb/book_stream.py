@@ -9,14 +9,21 @@ from decimal import Decimal, localcontext
 
 from . import kalshi
 from .orderbooks import _build, _levels, exact, market_rules
-from .validation import SchemaError, field, identifier, text_field
+from .validation import SchemaError, field, identifier, text_field, utc_time
+
+# The official changelog dates send timestamps to Oct 1 and market clocks to
+# Oct 29. This reviewed compatibility window is deliberately not open-ended.
+SEQUENCE_PROTOCOL_START = datetime(2026, 10, 1, tzinfo=timezone.utc)
+SEQUENCE_PROTOCOL_END = datetime(2026, 10, 29, tzinfo=timezone.utc)
+PROTOCOLS = ('clocked', 'sequence-v1')
 
 
 class StreamProtocolError(ValueError):
     """A fixed public error code; never include a provider value or credential."""
     def __init__(self, code):
         if code not in {'MISSING_MARKET_CLOCK', 'INVALID_MARKET_CLOCK',
-                        'MISSING_SOURCE_TIMESTAMP', 'INVALID_SOURCE_TIMESTAMP'}:
+                        'MISSING_SOURCE_TIMESTAMP', 'INVALID_SOURCE_TIMESTAMP',
+                        'PROTOCOL_REVIEW_REQUIRED', 'UNEXPECTED_MARKET_CLOCK'}:
             raise ValueError('unknown stream protocol error code')
         self.code = code
         super().__init__('stream invalidated: ' + code)
@@ -31,8 +38,18 @@ def protocol_integer(obj, key, label, maximum):
     return value
 
 
+def validate_protocol(protocol, at):
+    if protocol not in PROTOCOLS:
+        raise ValueError('unknown Kalshi stream protocol')
+    if protocol == 'sequence-v1' and not SEQUENCE_PROTOCOL_START <= at < SEQUENCE_PROTOCOL_END:
+        raise StreamProtocolError('PROTOCOL_REVIEW_REQUIRED')
+
+
 class KalshiBookStream:
-    def __init__(self, source_id, metadata, *, metadata_received_at):
+    def __init__(self, source_id, metadata, *, metadata_received_at, protocol='clocked'):
+        if protocol not in PROTOCOLS:
+            raise ValueError('unknown Kalshi stream protocol')
+        self.protocol = protocol
         self.source_id = identifier(source_id)
         self.metadata, self.metadata_received_at = deepcopy(metadata), metadata_received_at
         self.generation = 0
@@ -62,6 +79,8 @@ class KalshiBookStream:
     def apply(self, frame, *, received_at, now, generation):
         """Replay a previously archived frame. Any error discards derived depth."""
         try:
+            validate_protocol(self.protocol, now)
+            validate_protocol(self.protocol, utc_time(received_at))
             if not self.connected or generation != self.generation:
                 raise SchemaError('reconnect required or wrong connection generation')
             message_type = text_field(frame, 'type')
@@ -79,9 +98,14 @@ class KalshiBookStream:
             if text_field(message, 'market_ticker') != self.source_id:
                 raise SchemaError('wrong market; only a single-market subscription is supported')
             market_id = text_field(message, 'market_id')
-            clock = protocol_integer(message, 'clock', 'MARKET_CLOCK', 2**63 - 1)
-            if self.clock is not None and clock < self.clock:
-                raise SchemaError('clock regressed; reconnect and request a fresh snapshot')
+            if self.protocol == 'clocked':
+                clock = protocol_integer(message, 'clock', 'MARKET_CLOCK', 2**63 - 1)
+                if self.clock is not None and clock < self.clock:
+                    raise SchemaError('clock regressed; reconnect and request a fresh snapshot')
+            else:
+                if 'clock' in message:
+                    raise StreamProtocolError('UNEXPECTED_MARKET_CLOCK')
+                clock = None  # No fabricated exchange clock or cross-connection merge.
             if self.market_id is not None and market_id != self.market_id:
                 raise SchemaError('market identity changed')
             if self.last_send_ms is not None and sent < self.last_send_ms:
@@ -106,7 +130,7 @@ class KalshiBookStream:
                     self.no = {level.price: level.quantity for level in no}
                     self.snapshot_clock = clock
                 else:
-                    if clock <= self.snapshot_clock:
+                    if self.protocol == 'clocked' and clock <= self.snapshot_clock:
                         raise SchemaError('delta overlaps the snapshot clock')
                     side = text_field(message, 'side')
                     if side not in {'yes', 'no'}:
@@ -131,10 +155,12 @@ class KalshiBookStream:
                 # Integer arithmetic preserves provider millisecond time exactly.
                 source_ts = datetime.fromtimestamp(sent // 1000, timezone.utc).replace(
                     microsecond=(sent % 1000) * 1000).isoformat()
+                validate_protocol(self.protocol, utc_time(source_ts))
                 book = _build('kalshi', self.source_id, payload, self.metadata, received_at=received_at,
                               metadata_received_at=self.metadata_received_at, source_ts=source_ts,
                               timestamp_kind='PROVIDER_SEND_TIME', transport='OFFLINE_WS_REPLAY',
-                              continuity='SEQUENCED', now=now, sequence=seq)
+                              continuity=('SEQUENCED' if self.protocol == 'clocked' else
+                                          'SINGLE_SUBSCRIPTION_SEQUENCE_V1'), now=now, sequence=seq)
                 if any(reason.startswith('INVALID_BOOK') for reason in book.rejections):
                     raise SchemaError('; '.join(book.rejections))
             self.sid, self.seq, self.clock, self.market_id = sid, seq, clock, market_id

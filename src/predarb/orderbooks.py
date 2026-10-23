@@ -186,7 +186,7 @@ def _build(venue, source_id, payload, metadata, *, received_at, metadata_receive
             no = tuple(sorted(no, key=lambda level: level.price))
             if not yes and not no: reasons.append('EMPTY_BOOK')
             elif not yes or not no: reasons.append('PARTIAL_BOOK')
-            if continuity not in {'INDEPENDENT_FULL_SNAPSHOT', 'SEQUENCED'}:
+            if continuity not in {'INDEPENDENT_FULL_SNAPSHOT', 'SEQUENCED', 'SINGLE_SUBSCRIPTION_SEQUENCE_V1'}:
                 reasons.append('UNVERIFIED_CONTINUITY')
         except (ValueError, TypeError, KeyError) as exc:
             yes = no = ()

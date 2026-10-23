@@ -234,5 +234,8 @@ open until a multiweek zero-money run and evidence/incident audit actually pass.
 
 M5A follow-up: [bounded Kalshi WebSocket capture](KALSHI_WEBSOCKET.md) uses the
 same writer lock and can optionally scan an existing research session in that
-writer. Do not run it alongside the monitor on the same database. Its live
-continuity is unvalidated, and no WebSocket service was installed or activated.
+writer. Do not run it alongside the monitor on the same database. Its explicit
+pre-rollout `sequence-v1` mode passed live reconnect/recovery checks, but expires
+at 2026-10-29 00:00 UTC. Revalidate `clocked` mode before proceeding beyond that
+boundary. No WebSocket service was installed or activated; coordinated US polling
+and multiweek operation remain pending. See [B results](M5B_SEQUENCE_RESULTS.md).

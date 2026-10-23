@@ -143,9 +143,10 @@ executed tests, live capture results and remaining operational limits, and
 ## M5A authenticated adapter
 
 M5A now reuses the replay helper for an implemented read-only transport. Actual
-authenticated continuity remains blocked by missing market clocks in the live
-protocol; RSA authentication succeeds. See the
-[discrepancy report](KALSHI_PROTOCOL_DISCREPANCY.md). Schema-7
+authenticated snapshot/delta reconstruction and reconnect recovery passed in
+explicit `sequence-v1` mode, which expires on 2026-10-29 UTC. Default `clocked`
+mode still needs live revalidation after the announced rollout. See
+[B results](M5B_SEQUENCE_RESULTS.md). Schema-7
 WebSocket observations use the same inspection/economic gates, replaying the
 archived generation and refusing disconnected, invalid or stale depth. See
 [setup and limits](KALSHI_WEBSOCKET.md); the M3 descriptions above are historical.

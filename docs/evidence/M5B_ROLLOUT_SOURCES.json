@@ -1,0 +1,17 @@
+{
+  "sources": [
+    {
+      "url": "https://docs.kalshi.com/changelog.md",
+      "retrieved_at": "2026-10-23T12:42:18.969017+00:00",
+      "local_path": "data/m5b-protocol-check/changelog.md",
+      "sha256": "1bc9107b63ae4e702e5522ccc309c905d2b47b179aafdd1074aaf662f1b4ebf4"
+    },
+    {
+      "url": "https://docs.kalshi.com/getting_started/api_environments.md",
+      "retrieved_at": "2026-10-23T12:42:19.232655+00:00",
+      "local_path": "data/m5b-protocol-check/api_environments.md",
+      "sha256": "c9b49a92cd46347df22c1a564d52e6b9fc1632a8a36f68ec9756a0f410dd37a9"
+    }
+  ],
+  "interpretation": "The published October 29, 2026 clock addition is future-dated relative to the October 23 capture. Sequence-only support is explicit and bounded to a locally reviewed pre-rollout window; clocked validation remains default."
+}

@@ -1,17 +1,19 @@
 # M5A — Live research readiness: A/B only
 
 Scope follows the operator's instruction: reuse Workstream A, implement B, then
-stop. **M5A is incomplete. Workstream B's live continuity acceptance is blocked.**
-Replacement RSA credentials authenticated on **2026-10-23 UTC**. Three real
-snapshots were archived with exchange send timestamps, but each lacks `msg.clock`
-and is correctly rejected. See the RSA follow-up below for current evidence.
+stop. **M5A is incomplete; B's bounded pre-rollout live acceptance has passed.**
+Kalshi's changelog dates market-clock introduction to October 29; earlier work
+had treated the ahead-of-rollout reference schema as current. Explicit
+`sequence-v1` mode now validates the reviewed single-subscription contract with
+required source timestamps and no invented market clock. It expires at
+**2026-10-29 00:00 UTC**. Default `clocked` mode retains its stricter requirement
+and still needs live revalidation after rollout.
 
-**Latest follow-up:** a two-market diagnostic also received 26 deltas and explicit
-snapshot-request responses, all missing the required clock. The validator now
-reports the specific failure and explicitly requests the supported price convention.
-**224 tests passed**; live acceptance remains blocked. See the
-[protocol discrepancy report](KALSHI_PROTOCOL_DISCREPANCY.md) for fresh source
-checks, actual capture evidence and remaining work.
+**Latest follow-up:** 3 snapshots and 219 deltas accepted across 3 live generations,
+including recovery after a real message timeout; a separate clean run exited 0.
+All **231 tests passed**, including deterministic replay of 225 real frames in
+two isolated archives. See [B acceptance evidence](M5B_SEQUENCE_RESULTS.md).
+The earlier diagnosis and rejected evidence below remain historical records.
 
 Earlier authentication history:
 Credentials were initially unavailable. On **2026-10-23 UTC**, operator-provided
@@ -34,7 +36,7 @@ still expires. No new broad collection or matching pass was run for this task.
 See [discovery results](DISCOVERY_RESULTS.md) and the local
 `data/discovery-review-queue.json`. No real pair is agent-approved.
 
-## Workstream B — implemented, live proof pending
+## Workstream B — initial implementation before the rollout check
 
 Implemented fixed-origin authenticated read-only transport, Ed25519/RSA signing
 from protected external files, credential-safe errors/logging, explicit redirect
@@ -136,17 +138,17 @@ general incompatibility with that algorithm. C–E and M6 remain untouched.
 | --- | --- |
 | A: ranked real candidate queue with original sources | Existing partial-catalogue evidence reused; human decisions remain pending |
 | B: authenticated read-only adapter and offline recovery tests | Implemented; executed checks recorded below |
-| Actual authenticated Kalshi snapshot plus incremental live deltas | **PARTIAL: RSA authentication and three timestamped snapshots captured; snapshots rejected for missing market clocks; no accepted deltas** |
-| Live disconnect/reconnect continuity | **NOT DEMONSTRATED**; only deterministic hypothetical recovery tests |
-| Three M5 blockers resolved | **No**: human pair decisions, validated live fees and live WS proof remain open |
+| Actual authenticated Kalshi snapshot plus incremental live deltas | **PASSED for explicit pre-rollout `sequence-v1`**, with source timestamps and versioned replay |
+| Live disconnect/reconnect continuity | **PASSED for `sequence-v1`**: actual periodic reconnect and recovery after a real message timeout |
+| Three M5 blockers resolved | **No**: human pair decisions and validated live fees remain open; clocked protocol needs live revalidation after the October 29 cutoff |
 | C: live fee validation | **Not started**, per stop-after-B instruction |
 | D: payout/collateral mechanics verification | **Not started**; existing unsupported-short rejection preserved |
 | E: research-readiness dashboard | **Not started** |
 | Real pair approval by agent / actual orders | None / none |
 | M4 30-day / M5 multiweek / M6 | Still pending / still pending / not started |
 
-Live acceptance must later capture real authenticated snapshots and sequential
-deltas with source timestamps, inspect archived provenance, and demonstrate a
-fresh generation after an actual reconnect. Offline tests, public REST metadata,
-or installing dependencies do not satisfy that requirement. No readiness or
-milestone completion is inferred from implemented code.
+Pre-rollout B acceptance is supported by actual capture, provenance/replay and
+reconnect evidence, not just offline tests. This is bounded protocol acceptance;
+it establishes neither multiweek readiness nor C–E completion. Stop before C–E
+under this task's scope, and revalidate the clocked protocol before collecting
+beyond the October 29 review boundary.

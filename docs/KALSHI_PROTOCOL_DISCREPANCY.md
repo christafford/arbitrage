@@ -1,5 +1,14 @@
 # Workstream B: production market-clock discrepancy
 
+**Historical diagnosis, corrected by the rollout check at 12:42 UTC on
+2026-10-23.** Kalshi's official changelog dates market-clock introduction to
+October 29, explaining why the newer reference schema differs from October 23
+production. Explicit, bounded pre-rollout support has now passed live acceptance.
+See [current B results and limits](M5B_SEQUENCE_RESULTS.md). The earlier rejected
+archives below retain their original schema and rejected status.
+
+## Earlier finding
+
 **Workstream B live acceptance remains blocked.** Authentication, subscription
 and real market-data reception work. Production snapshots and deltas lack the
 market clock required by the current official schema and by this project's

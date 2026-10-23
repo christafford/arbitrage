@@ -4,6 +4,7 @@ import signal
 
 from .kalshi_auth import Credentials
 from .kalshi_ws import capture
+from .book_stream import PROTOCOLS
 from .store import connect
 from .validation import dumps
 
@@ -18,6 +19,8 @@ def add_parser(subparsers):
     parser.add_argument('--max-connections', type=int, default=10)
     parser.add_argument('--min-free-mb', type=int, default=1024)
     parser.add_argument('--research-session', type=int, help='optionally scan an existing live research session in this writer')
+    parser.add_argument('--protocol', choices=PROTOCOLS, default='clocked',
+                        help='sequence-v1 is explicitly limited to the pre-2026-10-29 rollout window')
 
 
 def run(args):
@@ -43,7 +46,7 @@ def run(args):
             result = capture(con, args.ticker, credentials, seconds=args.seconds,
                              max_messages=args.max_messages, max_connections=args.max_connections,
                              min_free_bytes=args.min_free_mb * 1024**2,
-                             directory=str(Path(args.db).resolve().parent), on_book=callback)
+                             directory=str(Path(args.db).resolve().parent), on_book=callback, protocol=args.protocol)
         print(dumps(result))
         return 0 if result['status'] == 'CAPTURED' else 2
     finally:

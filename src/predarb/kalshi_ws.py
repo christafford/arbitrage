@@ -6,7 +6,7 @@ import shutil
 import time
 
 from . import kalshi, ws_store
-from .book_stream import KalshiBookStream, StreamProtocolError
+from .book_stream import KalshiBookStream, StreamProtocolError, validate_protocol, SEQUENCE_PROTOCOL_END
 from .kalshi_auth import WS_URL
 from .provider import HttpClient
 from .store import save_entry, start_run, update_run, validate_observation
@@ -56,16 +56,19 @@ def refresh_metadata(con, source_id, *, client=None):
 
 def capture(con, source_id, credentials, *, seconds=60, max_messages=10000, max_connections=10,
             min_free_bytes=1024**3, directory='.', connect_socket=open_socket, metadata_loader=refresh_metadata,
-            now=clock, monotonic=time.monotonic, sleep=time.sleep, on_book=None):
+            now=clock, monotonic=time.monotonic, sleep=time.sleep, on_book=None, protocol='clocked'):
     identifier(source_id)
     for value, low, high in ((seconds, 1, 3600), (max_messages, 1, 100000), (max_connections, 1, 120)):
         if type(value) is not int or not low <= value <= high:
             raise ValueError('invalid stream duration/message/connection budget')
     if type(min_free_bytes) is not int or min_free_bytes < 200 * 1024**2:
         raise ValueError('stream free-space floor must be at least 200 MiB')
+    validate_protocol(protocol, now())
     stats = {'connections': 0, 'messages': 0, 'snapshots': 0, 'deltas': 0, 'usable_books': 0,
              'recoveries': 0, 'failures': [], 'connection_ids': [], 'verification': 'UNVERIFIED',
-             'trading_authorized': False, 'live_continuity_demonstrated': False}
+             'trading_authorized': False, 'live_continuity_demonstrated': False,
+             'protocol': protocol, 'protocol_valid_until': SEQUENCE_PROTOCOL_END.isoformat() if protocol == 'sequence-v1' else None,
+             'sequenced_connection_ids': [], 'reconnected_continuity_demonstrated': False}
     deadline = monotonic() + seconds
     attempts, had_failure = 0, False
     # An interrupted earlier invocation has no demonstrable transport continuity.
@@ -82,7 +85,8 @@ def capture(con, source_id, credentials, *, seconds=60, max_messages=10000, max_
             run, detail = metadata_loader(con, source_id)
             connection_id = ws_store.begin_connection(con, source_id, run, detail.id, at=now().isoformat())
             stats['connection_ids'].append(connection_id)
-            stream = KalshiBookStream(source_id, detail.data['market'], metadata_received_at=detail.received_at)
+            stream = KalshiBookStream(source_id, detail.data['market'], metadata_received_at=detail.received_at,
+                                     protocol=protocol)
             stream.generation = connection_id
             headers = credentials.headers()
             secrets = (headers['KALSHI-ACCESS-KEY'], headers['KALSHI-ACCESS-SIGNATURE'])
@@ -93,6 +97,10 @@ def capture(con, source_id, credentials, *, seconds=60, max_messages=10000, max_
                 sid, frames, last_message = None, 0, monotonic()
                 while monotonic() < deadline and stats['messages'] < max_messages:
                     received = now()
+                    try:
+                        validate_protocol(protocol, received)
+                    except StreamProtocolError as exc:
+                        reason = exc.code; break
                     if abs((received - wall_start).total_seconds() - (monotonic() - mono_start)) > 1:
                         reason = 'WALL_CLOCK_JUMP'; break
                     if monotonic() - mono_start >= 30 or frames >= ws_store.MAX_FRAMES:
@@ -108,7 +116,7 @@ def capture(con, source_id, credentials, *, seconds=60, max_messages=10000, max_
                     received = now()  # Receipt captured before security screening/normalization.
                     last_message = monotonic()
                     observed, safe, kind = ws_store.archive_frame(con, connection_id, body,
-                                                                 at=received.isoformat(), secrets=secrets)
+                                                                 at=received.isoformat(), secrets=secrets, protocol=protocol)
                     stats['messages'] += 1; frames += 1
                     try:
                         if abs((received - wall_start).total_seconds() - (monotonic() - mono_start)) > 1:
@@ -140,7 +148,10 @@ def capture(con, source_id, credentials, *, seconds=60, max_messages=10000, max_
                         reason = 'INVALID_STREAM_FRAME'; break
                     key = 'snapshots' if frame['type'] == 'orderbook_snapshot' else 'deltas'
                     stats[key] += 1
-                    if not book.issues(now=received): stats['usable_books'] += 1
+                    if not book.issues(now=received):
+                        stats['usable_books'] += 1
+                        if key == 'deltas' and connection_id not in stats['sequenced_connection_ids']:
+                            stats['sequenced_connection_ids'].append(connection_id)
                     if had_failure and key == 'snapshots':
                         stats['recoveries'] += 1; had_failure = False
                     if on_book is not None:
@@ -159,7 +170,7 @@ def capture(con, source_id, credentials, *, seconds=60, max_messages=10000, max_
             if stream is not None: stream.disconnect()
             if connection_id is not None:
                 ws_store.end_connection(con, connection_id, at=now().isoformat(), reason=reason)
-        if reason in {'WALL_CLOCK_JUMP', 'LOW_DISK_SPACE'}:
+        if reason in {'WALL_CLOCK_JUMP', 'LOW_DISK_SPACE', 'PROTOCOL_REVIEW_REQUIRED', 'UNEXPECTED_MARKET_CLOCK'}:
             stats['failures'].append(reason); break
         if reason not in {'BUDGET_COMPLETE', 'PERIODIC_RESNAPSHOT'}:
             stats['failures'].append(reason); had_failure = True; attempts += 1
@@ -168,7 +179,8 @@ def capture(con, source_id, credentials, *, seconds=60, max_messages=10000, max_
         remaining = deadline - monotonic()
         if remaining > 0 and stats['messages'] < max_messages and stats['connections'] < max_connections:
             sleep(min(remaining, min(30, 2 ** min(attempts, 5))))
-    stats['live_continuity_demonstrated'] = stats['snapshots'] > 0 and stats['deltas'] > 0 and stats['usable_books'] > 0
+    stats['live_continuity_demonstrated'] = bool(stats['sequenced_connection_ids'])
+    stats['reconnected_continuity_demonstrated'] = len(stats['sequenced_connection_ids']) >= 2
     # This only describes captured protocol continuity, never sustained uptime or readiness.
     stats['status'] = 'CAPTURED' if stats['live_continuity_demonstrated'] and not stats['failures'] else 'INCOMPLETE'
     return stats

@@ -269,3 +269,29 @@ includes exact public-shaped wire bodies/hashes, source endpoint, receipt times,
 metadata context and explicit sanitization description. Local archival contract
 remains `kalshi-ws/m5a-v1`, database schema 7; no migration or historical rejection
 promotion was performed. See [discrepancy report](KALSHI_PROTOCOL_DISCREPANCY.md).
+
+### Workstream B rollout correction — 2026-10-23 at 12:42 UTC
+
+The [official changelog](https://docs.kalshi.com/changelog) dates the addition of
+`clock` on Predictions snapshots/deltas to **October 29, 2026** and send timestamps
+to October 1. The published reference/AsyncAPI therefore describes a later
+rollout than the October 23 captures. This explains the observed difference and
+corrects the earlier assumption that the clock field already applied in production.
+[Source hashes and retrieval times](evidence/M5B_ROLLOUT_SOURCES.json) preserve this
+finding and the official endpoint check. No alternate endpoint was used.
+
+An explicit local `kalshi-ws/m5a-sequence-v1` contract now supports the reviewed
+pre-rollout shape: one market/subscription, complete initial snapshot, contiguous
+subscription sequence, fixed identity, required nonregressing exchange send time,
+freshness/price/quantity checks, and fresh state after every reconnect. Clock
+absence is specific to this version; unexpected clock presence, mixed versions,
+unknown shapes or invalid fields fail closed. No clock values are synthesized.
+`kalshi-ws/m5a-v1` remains clock-required and is still the default.
+
+Compatibility is conservatively bounded to October 1 inclusive through October 29
+exclusive in UTC, checked against source/receipt/evaluation times. That cutoff is
+a local review policy based on the date, not a venue deployment-hour claim. After
+it, recheck the rollout and validate the clocked feed rather than automatically
+extending compatibility. [Live acceptance and replay evidence](M5B_SEQUENCE_RESULTS.md)
+include 3 snapshots, 219 deltas and actual reconnect recovery. Existing rejected
+archives retain their original validation status; database schema remains 7.

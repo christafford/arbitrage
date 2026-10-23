@@ -1,14 +1,12 @@
 # Kalshi read-only WebSocket capture (M5A Workstream B)
 
-The adapter is implemented and tested offline. **Authenticated live continuity
-has not been demonstrated:** replacement RSA credentials now authenticate, and
-actual snapshots carry exchange send timestamps, but captured snapshots and deltas
-lack the required `msg.clock`. Two-market diagnostics, including explicit snapshot
-requests, reproduced this discrepancy. They are archived and rejected without weakening
-validation. Earlier Ed25519 attempts returned HTTP 401; the cause is unproven.
-See [M5A results](M5A_RESULTS.md). Workstreams C–E and M6 are outside this change.
-The [protocol discrepancy report](KALSHI_PROTOCOL_DISCREPANCY.md) records current
-official schema checks, sanitized live evidence and the outstanding venue question.
+**Live acceptance passed for explicit pre-rollout `sequence-v1` mode**, including
+actual snapshot/delta reconstruction and recovery after a message timeout.
+Kalshi's official changelog dates market-clock introduction to October 29, so
+the newer reference schema had been applied prematurely to October 23 production.
+The earlier rejected archives remain rejected under their original contract.
+See [B results](M5B_SEQUENCE_RESULTS.md) and [M5A results](M5A_RESULTS.md).
+Workstreams C–E and M6 are outside this change.
 
 ## Setup and bounded capture
 
@@ -48,8 +46,24 @@ a real ticker from discovery:
 
 ```bash
 predarb stream-kalshi KALSHI_TICKER --db data/research.sqlite3 \
-  --seconds 60 --max-messages 10000 --max-connections 10
+  --protocol sequence-v1 --seconds 60 --max-messages 10000 --max-connections 10
 ```
+
+`--protocol` defaults to **`clocked`**, which always requires `msg.clock`.
+The explicit `sequence-v1` mode supports the reviewed October 1–28 production
+contract: one market per subscription, initial snapshot, contiguous `seq`, fixed
+market/subscription identity and required exchange `sending_ts_ms`. It neither
+invents a market clock nor merges books across connections. A received `clock`
+field triggers `UNEXPECTED_MARKET_CLOCK` and stops for protocol review.
+
+`sequence-v1` is permitted only for source, receipt and evaluation timestamps in
+**[2026-10-01 00:00 UTC, 2026-10-29 00:00 UTC)**. The UTC cutoff is a conservative
+local review boundary based on the published rollout date, not a claimed venue
+deployment hour. Startup, running capture and current archive reads reject use
+outside that window with `PROTOCOL_REVIEW_REQUIRED`. Historical `--at` replay
+inside the original window remains available. Recheck official rollout status and
+validate `clocked` mode live before continuing beyond the cutoff; there is no
+automatic fallback or extension. This mode cannot run uninterrupted for weeks.
 
 `--credentials-file` changes only the local configuration path. The production
 origin is fixed to `wss://external-api-ws.kalshi.com/trade-api/ws/v2`. TLS certificate
@@ -77,9 +91,10 @@ still match the public key registered to the configured Kalshi API key ID.
 ## Continuity and fail-closed behavior
 
 The [documented protocol](https://docs.kalshi.com/websockets/orderbook-updates)
-requires a snapshot before deltas. `KalshiBookStream` checks subscription ID,
-contiguous subscription sequence, connection generation, market identity,
-nonregressing market clock and send time. Clocks may repeat/skip on deltas;
+requires a snapshot before deltas. Both protocols check subscription ID,
+contiguous subscription sequence, connection generation, market identity and
+nonregressing send time. Default `clocked` additionally requires a nonregressing
+market clock. Clocks may repeat/skip on deltas;
 post-snapshot deltas must exceed the snapshot clock. A new connection resets
 frontiers, accommodating documented maintenance resets, and requires a fresh
 snapshot. One market per subscription avoids confusing per-market and
@@ -146,6 +161,13 @@ snapshot-only runs or recovered failures; exit 1 is invalid configuration/setup,
 and exit 130 is interruption. Counters describe capture-time observations,
 not present-day book usability, sustained uptime, economic readiness or fills.
 At normal exit the connection is closed and its books are no longer current.
+
+The result also reports the selected `protocol`, its `protocol_valid_until`
+(null for the default clocked contract), and `sequenced_connection_ids` whose
+snapshots were followed by usable deltas. `reconnected_continuity_demonstrated`
+requires at least two such generations; it does not mean there was observation
+coverage during a disconnect. A recovered failure remains in `failures` and
+keeps the run at exit 2, so recovery cannot hide the incident.
 
 Missing protocol clocks now appear as `MISSING_MARKET_CLOCK` in the CLI `failures`,
 the rejected raw observation's `validation_error`, and the connection end reason.

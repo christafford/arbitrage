@@ -284,6 +284,152 @@ class StreamCaptureTests(unittest.TestCase):
             self.assertIsNone(stream.current)
         self.assertEqual(observed_types,{'subscribed','orderbook_snapshot','orderbook_delta'})
 
+    def sequence_case(self):
+        """Actual pre-rollout fixture; any mutations in fault tests are hypothetical."""
+        fixture=loads((Path(__file__).parent/'fixtures/kalshi-ws-missing-clock-live.json').read_text())
+        self.case['kalshi_metadata']=loads(fixture['metadata']['body'])['market']
+        self.source=self.case['kalshi_metadata']['ticker']
+        self.clock=FakeClock(utc_time(fixture['frames'][-1]['retrieved_at']))
+        return [loads(item['body']) for item in fixture['frames']]
+
+    def test_explicit_sequence_protocol_accepts_real_frames_and_replays_same_version(self):
+        frames=self.sequence_case();seen=[]
+        def inspect(con,observed,now):
+            book=inspect_book(con,observed,now=now)
+            self.assertTrue(book['data_usable'])
+            self.assertEqual(book['continuity'],'SINGLE_SUBSCRIPTION_SEQUENCE_V1')
+            seen.append((observed,now,book))
+        stats=self.run_capture(frames,protocol='sequence-v1',max_messages=4,on_book=inspect)
+        self.assertEqual(stats['status'],'CAPTURED')
+        self.assertEqual(stats['sequenced_connection_ids'],[1])
+        self.assertFalse(stats['reconnected_continuity_demonstrated'])
+        self.assertEqual(stats['protocol'],'sequence-v1')
+        schemas=self.db.execute('SELECT DISTINCT r.schema_version FROM raw_observations r JOIN ws_frames f ON f.observation_id=r.id').fetchall()
+        self.assertEqual(schemas,[(ws_store.PROTOCOL_SCHEMAS['sequence-v1'],)])
+        # Fake close shares the final frame's timestamp, so that last instant
+        # correctly counts as disconnected. Earlier historical frames replay.
+        for observed,at,expected in seen[:-1]:
+            self.assertEqual(inspect_book(self.db,observed,now=at),expected)
+        self.assertFalse(inspect_book(self.db,seen[-1][0],now=self.clock.now())['data_usable'])
+
+    def test_sequence_protocol_preserves_gap_reconnect_and_no_cross_generation_merge(self):
+        frames=self.sequence_case()
+        # HYPOTHETICAL omission: drop seq 2, so the seq 3 delta must fail.
+        stats=self.run_capture([frames[0],frames[1],frames[3]],frames,
+                               protocol='sequence-v1',max_messages=7)
+        self.assertEqual(stats['failures'],['INVALID_STREAM_FRAME'])
+        self.assertEqual(stats['recoveries'],1)
+        self.assertEqual(stats['sequenced_connection_ids'],[2])
+        self.assertFalse(stats['reconnected_continuity_demonstrated'])
+        self.assertEqual(stats['status'],'INCOMPLETE')
+        # A successful resnapshot/reconnect needs a usable delta on both connections.
+        with patch('predarb.ws_store.MAX_FRAMES',4):
+            stats=self.run_capture(frames,frames,protocol='sequence-v1',max_messages=8)
+        self.assertTrue(stats['reconnected_continuity_demonstrated'])
+        self.assertEqual(stats['status'],'CAPTURED')
+
+    def test_sequence_mode_never_relaxes_missing_time_identity_prices_or_clock_schema(self):
+        frames=self.sequence_case()
+        mutations=[('time',None),('clock',0),('clock',None),('market','HYPOTHETICAL-WRONG'),
+                   ('price','2'),('quantity','-1'),('stale',None)]
+        for key,value in mutations:
+            with self.subTest(key=key,value=value):
+                changed=deepcopy(frames[1])
+                if key=='time':del changed['sending_ts_ms']
+                elif key=='clock':changed['msg']['clock']=value
+                elif key=='market':changed['msg']['market_ticker']=value
+                elif key=='price':changed['msg']['yes_dollars_fp'][0][0]=value
+                elif key=='quantity':changed['msg']['yes_dollars_fp'][0][1]=value
+                else:changed['sending_ts_ms']-=61000
+                stats=self.run_capture([frames[0],changed],protocol='sequence-v1',max_messages=2)
+                self.assertEqual(stats['usable_books'],0)
+                self.assertFalse(stats['live_continuity_demonstrated'])
+                if key=='clock':self.assertEqual(stats['failures'],['UNEXPECTED_MARKET_CLOCK' if value is not None else 'INVALID_STREAM_FRAME'])
+                if key=='time':self.assertEqual(stats['failures'],['MISSING_SOURCE_TIMESTAMP'])
+
+    def test_sequence_mode_window_is_checked_before_network_during_capture_and_on_read(self):
+        from predarb.book_stream import SEQUENCE_PROTOCOL_START,SEQUENCE_PROTOCOL_END
+        frames=self.sequence_case();seen=[]
+        self.run_capture(frames,protocol='sequence-v1',max_messages=4,
+                         on_book=lambda con,observed,at:seen.append((observed,at)))
+        with self.assertRaisesRegex(ValueError,'PROTOCOL_REVIEW_REQUIRED'):
+            load_book(self.db,seen[-1][0],now=SEQUENCE_PROTOCOL_END)
+        for stamp in (SEQUENCE_PROTOCOL_START-timedelta(seconds=1),SEQUENCE_PROTOCOL_END):
+            self.clock=FakeClock(stamp)
+            with self.assertRaisesRegex(ValueError,'PROTOCOL_REVIEW_REQUIRED'):
+                self.run_capture(frames,protocol='sequence-v1')
+        self.clock=FakeClock(SEQUENCE_PROTOCOL_END-timedelta(milliseconds=1))
+        stats=self.run_capture(frames,protocol='sequence-v1',max_messages=4)
+        self.assertEqual(stats['failures'],['PROTOCOL_REVIEW_REQUIRED'])
+        self.assertEqual(stats['snapshots'],0)
+
+    def test_stream_replay_rejects_mixed_or_unknown_protocol_schemas(self):
+        frames=self.sequence_case();seen=[]
+        self.run_capture(frames,protocol='sequence-v1',max_messages=4,
+                         on_book=lambda con,observed,at:seen.append((observed,at)))
+        for schema in (ws_store.SCHEMA_VERSION,'HYPOTHETICAL-UNKNOWN'):
+            self.db.execute('UPDATE raw_observations SET schema_version=? WHERE id=?',(schema,seen[-1][0]));self.db.commit()
+            with self.assertRaisesRegex(ValueError,'provenance'):load_book(self.db,seen[-1][0],now=seen[-1][1])
+        with self.assertRaisesRegex(ValueError,'unknown'):
+            self.run_capture(frames,protocol='HYPOTHETICAL-UNKNOWN')
+
+    def test_partial_sequence_book_requires_liquidity_before_continuity_claim(self):
+        frames=self.sequence_case()
+        snapshot=deepcopy(frames[1]);snapshot['msg']['yes_dollars_fp']=[]
+        delta=deepcopy(frames[3]);delta['seq']=2
+        delta['msg'].update(side='yes',price_dollars='.01',delta_fp='1.00')
+        stats=self.run_capture([frames[0],snapshot,delta],protocol='sequence-v1',max_messages=3)
+        self.assertEqual(stats['usable_books'],1)
+        self.assertTrue(stats['live_continuity_demonstrated'])
+
+    def test_actual_multigeneration_sequence_fixture_replays_identically_with_provenance(self):
+        from predarb.book_stream import KalshiBookStream
+        fixture=loads((Path(__file__).parent/'fixtures/kalshi-ws-sequence-live.json').read_text())
+        self.assertIs(fixture['hypothetical'],False)
+        outputs=[]
+        for attempt in range(2):
+            results=[]
+            with connect(str(Path(self.tmp.name)/f'live-replay-{attempt}.sqlite3')) as con:
+                for generation in fixture['connections']:
+                    meta=generation['metadata'];body=meta['body'].encode()
+                    self.assertEqual(hashlib.sha256(body).hexdigest(),meta['sha256'])
+                    run=start_run(con,'kalshi',kalshi.SCHEMA_VERSION,{'fixture_replay':True})
+                    mid=archive_response(con,'kalshi',meta['endpoint'],body,200,{},meta['received_at'],meta['schema_version'])
+                    data=loads(body);kalshi.validate_detail(data)
+                    validate_observation(con,mid,'VALID',None)
+                    source=data['market']['ticker']
+                    con.execute("INSERT INTO catalogue_entries VALUES(?,?,?,?,?,?,?,'UNVERIFIED')",
+                                (run,source,mid,meta['received_at'],dumps(data['market']),'{}',hashlib.sha256(b'{}').hexdigest()))
+                    update_run(con,run,status='COMPLETE',pages=1,records=1,unique=1,next_page=None)
+                    cid=ws_store.begin_connection(con,source,run,mid,at=generation['started_at'])
+                    stream=KalshiBookStream(source,data['market'],metadata_received_at=meta['received_at'],protocol='sequence-v1')
+                    stream.generation=cid
+                    for item in generation['frames']:
+                        raw=item['body'].encode()
+                        self.assertEqual(hashlib.sha256(raw).hexdigest(),item['sha256'])
+                        self.assertEqual(item['sha256'],item['wire_sha256'])
+                        observed,safe,kind=ws_store.archive_frame(con,cid,raw,at=item['received_at'],protocol='sequence-v1')
+                        self.assertEqual(safe,raw);self.assertEqual(kind,'EXACT_WIRE')
+                        frame=loads(safe);at=utc_time(item['received_at'])
+                        if frame['type']=='subscribed':
+                            validate_observation(con,observed,'VALID',None);continue
+                        book=stream.apply(frame,received_at=item['received_at'],now=at,generation=cid)
+                        self.assertEqual(book.issues(now=at),())
+                        self.assertIsNone(stream.clock);self.assertIsNone(stream.snapshot_clock)
+                        ws_store.record_frame(con,observed,book,now=at)
+                        results.append(dumps(book.as_dict(now=at)))
+                    # Replay the complete generation independently from stored bytes.
+                    replayed=inspect_book(con,observed,now=at)
+                    self.assertTrue(replayed['data_usable'])
+                    self.assertEqual(replayed['yes_asks'],book.as_dict(now=at)['yes_asks'])
+                    self.assertEqual(replayed['no_asks'],book.as_dict(now=at)['no_asks'])
+                    ws_store.end_connection(con,cid,at=generation['ended_at'],reason=generation['end_reason'])
+                    self.assertIn('STREAM_DISCONNECTED',inspect_book(con,observed,now=utc_time(generation['ended_at']))['rejections'])
+                self.assertEqual(con.execute('SELECT COUNT(*) FROM pairs').fetchone()[0],0)
+            outputs.append(results)
+        self.assertEqual(outputs[0],outputs[1])
+        self.assertEqual(len(outputs[0]),222)
+
     def test_clock_loss_after_valid_snapshot_invalidates_depth_until_new_connection(self):
         missing=self.delta();del missing['msg']['clock']
         stats=self.run_capture([self.ack(),self.snapshot(),missing],
@@ -417,7 +563,7 @@ class StreamCaptureTests(unittest.TestCase):
         session_id = start_session(self.db, config, now=self.clock.now(), interval_seconds=1)
         args = SimpleNamespace(db=self.path, ticker=self.source, credentials_file='HYPOTHETICAL',
                                seconds=1, max_messages=3, max_connections=1, min_free_mb=1024,
-                               research_session=session_id)
+                               research_session=session_id, protocol='clocked')
         def fake_capture(con, source, credentials, **options):
             options['on_book'](con, 0, self.clock.now())
             return {'status': 'INCOMPLETE', 'hypothetical_test': True}

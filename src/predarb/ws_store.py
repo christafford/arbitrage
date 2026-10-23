@@ -5,12 +5,13 @@ import hashlib
 import re
 
 from . import kalshi
-from .book_stream import KalshiBookStream
+from .book_stream import KalshiBookStream, validate_protocol
 from .kalshi_auth import WS_URL
 from .store import archive_response, validate_observation
 from .validation import dumps, load_json, utc_time
 
 SCHEMA_VERSION = 'kalshi-ws/m5a-v1'
+PROTOCOL_SCHEMAS = {'clocked': SCHEMA_VERSION, 'sequence-v1': 'kalshi-ws/m5a-sequence-v1'}
 MAX_FRAMES = 1000
 SCHEMA = """
 CREATE TABLE ws_connections (
@@ -94,9 +95,11 @@ def connection(con, connection_id):
     return row
 
 
-def archive_frame(con, connection_id, body, *, at, secrets=()):
+def archive_frame(con, connection_id, body, *, at, secrets=(), protocol='clocked'):
+    if protocol not in PROTOCOL_SCHEMAS:
+        raise ValueError('unknown Kalshi stream protocol')
     safe, wire_hash, kind = safe_frame(body, secrets)
-    observed = archive_response(con, 'kalshi', WS_URL, safe, 101, {}, at, SCHEMA_VERSION)
+    observed = archive_response(con, 'kalshi', WS_URL, safe, 101, {}, at, PROTOCOL_SCHEMAS[protocol])
     con.execute('INSERT INTO ws_frames VALUES(?,?,?,?)', (observed, connection_id, wire_hash, kind))
     # Every frame is a pending barrier until validated, including a crash between writes.
     source, run, *_ = connection(con, connection_id)
@@ -144,8 +147,6 @@ def load_stream_book(con, observation_id, *, now):
                    (run, source, metadata_id)).fetchone() is None:
         raise ValueError('stream metadata run mismatch')
     detail = load_json(meta['raw_body']); kalshi.validate_detail(detail)
-    stream = KalshiBookStream(source, detail['market'], metadata_received_at=meta['ts_utc'])
-    stream.generation = connection_id
     rows = con.execute('''SELECT r.id,r.ts_utc,r.raw_body,r.body_sha256,r.validation_status,r.schema_version,
                          r.endpoint,r.http_status,r.truncated,f.archive_kind,f.wire_sha256
                          FROM ws_frames f JOIN raw_observations r ON r.id=f.observation_id
@@ -153,9 +154,14 @@ def load_stream_book(con, observation_id, *, now):
                        (connection_id, observation_id, MAX_FRAMES + 2)).fetchall()
     if not rows or len(rows) > MAX_FRAMES + 1 or rows[-1][0] != observation_id:
         raise ValueError('stream replay exceeds bound or is incomplete')
+    schema_version = rows[0][5]
+    protocol = next((name for name, version in PROTOCOL_SCHEMAS.items() if version == schema_version), None)
+    validate_protocol(protocol, now)
+    stream = KalshiBookStream(source, detail['market'], metadata_received_at=meta['ts_utc'], protocol=protocol)
+    stream.generation = connection_id
     book, previous_receipt, sid = None, utc_time(started), None
     for observed, receipt, body, sha, status, schema, endpoint, http, truncated, kind, wire_sha in rows:
-        if (status != 'VALID' or schema != SCHEMA_VERSION or endpoint != WS_URL or http != 101 or
+        if (status != 'VALID' or schema != schema_version or endpoint != WS_URL or http != 101 or
                 truncated or body is None or hashlib.sha256(body).hexdigest() != sha or
                 kind not in {'EXACT_WIRE', 'ACCOUNT_FIELD_REMOVED'} or
                 (kind == 'EXACT_WIRE' and sha != wire_sha)):
