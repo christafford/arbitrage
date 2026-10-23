@@ -2,9 +2,14 @@
 
 Scope follows the operator's instruction: reuse Workstream A, implement B, then
 stop. **M5A is incomplete. Workstream B's authenticated live acceptance is blocked.**
-The operator explicitly confirmed no Kalshi credentials are configured and asked
-that live validation be recorded as blocked. No credential was invented, requested
-in chat, generated at the exchange or obtained from another account.
+Credentials were initially unavailable. On **2026-10-23 UTC**, operator-provided
+OpenSSH Ed25519 credentials loaded after a format-support fix, but live handshakes
+returned HTTP 401. A diagnostic identified `INCORRECT_API_KEY_SIGNATURE`; host NTP
+reported synchronized and local time was within one second of the server Date.
+The operator also reported a venue location-verification warning; a connection
+between that warning and the API error has not been established. No further
+network attempts were made after that report. No credential contents were exposed
+or rewritten. No exchange key registration or account change was performed.
 
 ## Workstream A — existing evidence reused
 
@@ -37,7 +42,7 @@ locally under `data/m5a-api-sources/`. The new acknowledgment fixture and genera
 stream tests are explicitly hypothetical, based on the documented protocol and
 existing M3 snapshot fixture. They are **not actual authenticated messages**.
 
-## Verification actually executed
+## Initial verification actually executed
 
 - Installed the optional dependencies in the project virtual environment:
   websockets 17.3 and cryptography 50.0.2.
@@ -58,9 +63,31 @@ existing M3 snapshot fixture. They are **not actual authenticated messages**.
   `UNKNOWN_SOURCE_TIME`; it did not become a timestamped WebSocket book.
 
 [Machine-readable evidence](evidence/M5A_VALIDATION.json) contains exact commands,
-exit statuses, public-response provenance and migration results. **Zero live
-WebSocket connection attempts and zero live WebSocket messages** are recorded.
+exit statuses, public-response provenance and migration results. That initial run recorded **zero live WebSocket connection attempts and messages**;
+the subsequent credential follow-up below records actual handshake attempts.
 No service was activated and no continuous or multiweek run was launched.
+
+## Credential-format follow-up — 2026-10-23 UTC
+
+Added OpenSSH private-key loading through the cryptography library while retaining
+Ed25519/RSA restrictions, owner-only external files, in-memory signing, and fixed
+read-only endpoint behavior. The `.pem` filename does not determine the encoding.
+The operator says the OpenSSH file was downloaded directly from Kalshi; it was a
+valid key in a format the original loader did not handle.
+
+The bounded live command attempted three connections and exited 2 with zero
+received frames. Two additional fixed-endpoint handshake diagnostics returned
+HTTP 401; the second identified the fixed error category above. Diagnostics retain
+only status/category/time checks, never headers or free-text response bodies.
+Public market metadata remains archived in
+`data/m5a-authenticated-20261023T013700Z/capture.sqlite3`.
+
+Full suite: **219 tests passed**, including generated hypothetical OpenSSH
+Ed25519/RSA signature checks, unchanged-file assertions, and encrypted/corrupt/
+unsupported-key rejection. See [test output](evidence/M5A_CREDENTIAL_TESTS.txt)
+and [sanitized diagnostics](evidence/M5A_CREDENTIAL_VALIDATION.json). Live
+snapshots, deltas and reconnect continuity remain unproven. No orders, real pair
+approvals, fees, C–E work or service activation were added.
 
 ## Acceptance and remaining work
 
@@ -68,7 +95,7 @@ No service was activated and no continuous or multiweek run was launched.
 | --- | --- |
 | A: ranked real candidate queue with original sources | Existing partial-catalogue evidence reused; human decisions remain pending |
 | B: authenticated read-only adapter and offline recovery tests | Implemented; executed checks recorded below |
-| Actual authenticated Kalshi snapshot plus incremental live deltas | **BLOCKED: no configured credentials; zero live WS messages captured** |
+| Actual authenticated Kalshi snapshot plus incremental live deltas | **BLOCKED: HTTP 401 / INCORRECT_API_KEY_SIGNATURE; zero live WS messages captured** |
 | Live disconnect/reconnect continuity | **NOT DEMONSTRATED**; only deterministic hypothetical recovery tests |
 | Three M5 blockers resolved | **No**: human pair decisions, validated live fees and live WS proof remain open |
 | C: live fee validation | **Not started**, per stop-after-B instruction |

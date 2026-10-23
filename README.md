@@ -6,7 +6,7 @@ A **read-only, Codex-ready** starter for researching fully hedged binary predict
 
 **M5A A/B:** discovery is implemented. The read-only Kalshi WebSocket adapter is
 implemented with offline tests; **actual authenticated continuity remains blocked
-by missing credentials**. Workstreams C–E have not been started. See
+by HTTP 401 authentication rejection**. Workstreams C–E have not been started. See
 [M5A results](docs/M5A_RESULTS.md) and [WebSocket setup](docs/KALSHI_WEBSOCKET.md).
 
 ## Quick start (Python 3.11+; no external dependencies)

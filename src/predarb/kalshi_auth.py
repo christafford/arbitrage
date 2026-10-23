@@ -38,7 +38,7 @@ class Credentials:
     @classmethod
     def load(cls, path):
         try:
-            from cryptography.hazmat.primitives.serialization import load_pem_private_key
+            from cryptography.hazmat.primitives.serialization import load_pem_private_key, load_ssh_private_key
             from cryptography.hazmat.primitives.asymmetric import rsa, ed25519
             from cryptography.exceptions import UnsupportedAlgorithm
         except ImportError:
@@ -51,7 +51,10 @@ class Credentials:
             key_path = Path(config['private_key_path']).expanduser()
             if not key_path.is_absolute():
                 key_path = Path(path).expanduser().parent / key_path
-            key = load_pem_private_key(private_file(key_path), password=None)
+            body = private_file(key_path)
+            loader = (load_ssh_private_key if body.lstrip().startswith(b'-----BEGIN OPENSSH PRIVATE KEY-----')
+                      else load_pem_private_key)
+            key = loader(body, password=None)
             if not isinstance(key, (rsa.RSAPrivateKey, ed25519.Ed25519PrivateKey)):
                 raise ValueError()
             if isinstance(key, rsa.RSAPrivateKey) and key.key_size < 2048:

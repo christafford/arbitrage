@@ -1,7 +1,9 @@
 # Kalshi read-only WebSocket capture (M5A Workstream B)
 
 The adapter is implemented and tested offline. **Authenticated live continuity
-has not been demonstrated:** the operator confirmed no credentials are configured.
+has not been demonstrated:** credentials now load, but live handshakes returned
+HTTP 401 with `INCORRECT_API_KEY_SIGNATURE`. The operator also reported an
+unresolved location-verification warning; its relationship to the API error is unknown.
 See [M5A results](M5A_RESULTS.md). Workstreams C–E and M6 are outside this change.
 
 ## Setup and bounded capture
@@ -26,7 +28,7 @@ final-component symlinks are refused. An example of the **shape**, not credentia
 Do not paste credentials into chat, CLI arguments, environment variables, source,
 logs or database imports. Apply mode `0600` to both files and protect their parent
 directory. Ed25519 and RSA-PSS/SHA-256 keys of at least 2048 bits are supported;
-encrypted PEM files and other key algorithms are refused. Key permissions are
+encrypted private-key files and other key algorithms are refused. Key permissions are
 operator-managed; the adapter does not inspect the account or infer key scopes.
 It can only sign the fixed WebSocket GET handshake and sends only a single-market
 `orderbook_delta` subscription. There is no order or account command path.
@@ -56,6 +58,11 @@ Each generation fetches fresh public market detail through the existing paced,
 GET-only REST adapter. It checks the returned ticker and updates the existing
 registry evidence; it never creates a pair, approves equivalence or imports fees.
 Event/series/legal evidence still requires the existing review workflow.
+
+The loader accepts both standard PEM and OpenSSH private-key serialization for
+Ed25519 or RSA. An `OPENSSH PRIVATE KEY` header describes the file format, not
+an unsupported signing algorithm. Loading does not rewrite the file. The key must
+still match the public key registered to the configured Kalshi API key ID.
 
 ## Continuity and fail-closed behavior
 

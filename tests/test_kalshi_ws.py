@@ -31,6 +31,39 @@ except ImportError:
 
 @unittest.skipUnless(HAS_EXTRAS, 'install .[kalshi-ws] for signing and transport tests')
 class CredentialsTests(unittest.TestCase):
+    def test_openssh_keys_sign_handshake_without_rewriting_credential_file(self):
+        for key in (ed25519.Ed25519PrivateKey.generate(), rsa.generate_private_key(public_exponent=65537, key_size=2048)):
+            with self.subTest(key=type(key).__name__), tempfile.TemporaryDirectory() as tmp:
+                root = Path(tmp); private = root / 'private.pem'; config = root / 'credentials.json'
+                body = key.private_bytes(serialization.Encoding.PEM, serialization.PrivateFormat.OpenSSH,
+                                         serialization.NoEncryption())
+                private.write_bytes(body); private.chmod(0o600)
+                config.write_text(json.dumps({'api_key_id': 'a952bcbe-ec3b-4b5b-b8f9-11dae589608c',
+                                              'private_key_path': 'private.pem'})); config.chmod(0o600)
+                headers = Credentials.load(config).headers(timestamp_ms=123456)
+                signature = base64.b64decode(headers['KALSHI-ACCESS-SIGNATURE'])
+                message = ('123456GET' + WS_PATH).encode()
+                if isinstance(key, ed25519.Ed25519PrivateKey): key.public_key().verify(signature, message)
+                else: key.public_key().verify(signature, message, padding.PSS(mgf=padding.MGF1(hashes.SHA256()), salt_length=32), hashes.SHA256())
+                self.assertEqual(private.read_bytes(), body)
+
+    def test_encrypted_pem_corrupt_openssh_and_unsupported_keys_fail_without_content_leaks(self):
+        from cryptography.hazmat.primitives.asymmetric import ec
+        key = ed25519.Ed25519PrivateKey.generate()
+        bodies = [key.private_bytes(serialization.Encoding.PEM, serialization.PrivateFormat.PKCS8,
+                                    serialization.BestAvailableEncryption(b'HYPOTHETICAL-PASSWORD')),
+                  b'-----BEGIN OPENSSH PRIVATE KEY-----\nHYPOTHETICAL-SECRET\n-----END OPENSSH PRIVATE KEY-----',
+                  ec.generate_private_key(ec.SECP256R1()).private_bytes(serialization.Encoding.PEM,
+                      serialization.PrivateFormat.OpenSSH, serialization.NoEncryption())]
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp); private = root / 'private.pem'; config = root / 'credentials.json'
+            config.write_text(json.dumps({'api_key_id': 'a952bcbe-ec3b-4b5b-b8f9-11dae589608c',
+                                          'private_key_path': 'private.pem'})); config.chmod(0o600)
+            for body in bodies:
+                private.write_bytes(body); private.chmod(0o600)
+                with self.assertRaisesRegex(ValueError, '^invalid credential configuration, permissions or unsupported private key$'):
+                    Credentials.load(config)
+
     def test_both_key_types_sign_only_fixed_handshake_and_never_repr_secrets(self):
         for key in (ed25519.Ed25519PrivateKey.generate(), rsa.generate_private_key(public_exponent=65537, key_size=2048)):
             with self.subTest(key=type(key).__name__), tempfile.TemporaryDirectory() as tmp:

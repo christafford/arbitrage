@@ -232,3 +232,15 @@ explicitly refused because generic header stripping does not cover Kalshi
 authentication headers. TLS verification stays enabled and proxies are disabled.
 No live handshake was attempted without credentials. Prior data-use restrictions
 still apply; these source checks do not grant permissions or prove live continuity.
+
+### Credential-format follow-up — 2026-10-23 UTC
+
+Rechecked the official API-key page and cryptography
+[key serialization documentation](https://cryptography.io/en/latest/hazmat/primitives/asymmetric/serialization/).
+OpenSSH requires `load_ssh_private_key`, whereas standard PEM uses
+`load_pem_private_key`; both return typed keys for the existing Ed25519/RSA
+handshake signer. The operator reports downloading an OpenSSH Ed25519 key from
+Kalshi. Supporting that encoding does not establish registration or server
+acceptance. Actual fixed-endpoint handshake diagnostics returned HTTP 401 /
+`INCORRECT_API_KEY_SIGNATURE`; raw headers, error bodies and credentials were
+not recorded. See [follow-up evidence](evidence/M5A_CREDENTIAL_VALIDATION.json).

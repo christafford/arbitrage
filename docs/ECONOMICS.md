@@ -197,5 +197,5 @@ exports results. These are not real approvals, historical fills or 30-day eviden
 
 M5A follow-up: the [read-only Kalshi WebSocket adapter](KALSHI_WEBSOCKET.md) now
 feeds the same M3/M4 gates, with an optional existing-session scan callback in
-the capture writer. Actual live continuity remains blocked by absent credentials;
+the capture writer. Actual live continuity remains blocked by an unresolved HTTP 401 authentication rejection;
 no live fee validation or approval was added. US books still need fresh evidence.
