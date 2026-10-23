@@ -248,3 +248,15 @@ selects the exact archived contract, rejects mixed/unknown schemas, and checks
 the compatibility window at use time. Database schema remains 7; older rejected
 records are not promoted. No market clock is invented or merged across generations.
 See [B acceptance and cutoff](M5B_SEQUENCE_RESULTS.md).
+
+## M5A Workstream C (schema 7 retained)
+
+`fee_capture.py` shares one deterministic source/validation plan between public
+capture and offline review. Original responses commit to `raw_observations`;
+`fee_imports` stores the immutable capture request and pending/completed/failed
+state, and `fee_documents` stores immutable source copies. Starting a capture
+supersedes earlier fee approvals for that exact identity before any network I/O.
+No new table or migration is required. `fee_store.py` binds live imports/use-time
+checks to the latest successful capture, sources, model and bounded window.
+Human review remains mandatory. Public prose and account terms are not automatically
+interpreted as applicable rates. See [fee review and failure behavior](FEE_REVIEW.md).

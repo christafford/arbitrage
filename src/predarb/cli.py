@@ -84,7 +84,7 @@ def main():
     try:
         if args.cmd == 'ops': return ops_cli.run(args)
         from .runtime import writer_lock
-        reader = (args.cmd == 'research' and args.research_cmd in {'summary', 'csv'}) or (args.cmd == 'paper' and args.paper_cmd == 'report') or (args.cmd == 'discovery' and args.discovery_cmd == 'queue')
+        reader = (args.cmd == 'research' and args.research_cmd in {'summary', 'csv', 'fees-review'}) or (args.cmd == 'paper' and args.paper_cmd == 'report') or (args.cmd == 'discovery' and args.discovery_cmd == 'queue')
         with (nullcontext() if reader else writer_lock(args.db)):
             if args.cmd == "demo": demo(args.db)
             elif args.cmd == "report": report(args.db)

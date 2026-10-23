@@ -18,6 +18,12 @@ ORIGINS = {
     'kalshi': 'https://external-api.kalshi.com',
     'polymarket_us': 'https://gateway.polymarket.us',
 }
+# Exact public documentation URLs used by fee review. No arbitrary URL fetcher.
+FEE_DOCUMENT_URLS = {
+    'kalshi': ('https://docs.kalshi.com/api-reference/market/get-series.md',
+               'https://docs.kalshi.com/getting_started/fee_rounding.md'),
+    'polymarket_us': ('https://docs.polymarket.us/fees.md',),
+}
 
 
 class NoRedirect(HTTPRedirectHandler):
@@ -30,7 +36,7 @@ class Observation:
     id: int
     endpoint: str
     received_at: str
-    data: dict
+    data: dict | bytes
 
 
 class HttpClient:
@@ -50,12 +56,20 @@ class HttpClient:
         parsed = urlsplit(url)
         if f'{parsed.scheme}://{parsed.netloc}' != ORIGINS[self.venue] or parsed.fragment:
             raise ValueError('only the verified production US venue origin is permitted')
+        return self._get(url, schema_version, validator)
+
+    def get_fee_document(self, url, schema_version):
+        if url not in FEE_DOCUMENT_URLS[self.venue]:
+            raise ValueError('only fixed official fee documentation URLs are permitted')
+        return self._get(url, schema_version, None, document=True)
+
+    def _get(self, url, schema_version, validator, *, document=False):
         for attempt in range(self.attempts):
             if self.last_request is not None:
                 self.sleep(max(0, self.interval - (self.monotonic() - self.last_request)))
             self.last_request = self.monotonic()
             req = Request(url, headers={'User-Agent': 'prediction-arb-research/0.1 (read-only)',
-                                       'Accept': 'application/json'}, method='GET')
+                                       'Accept': 'text/markdown,text/plain' if document else 'application/json'}, method='GET')
             try:
                 try:
                     response = self.opener.open(req, timeout=self.timeout)
@@ -83,10 +97,19 @@ class HttpClient:
                     validate_observation(self.con, observation_id, 'HTTP_ERROR', f'HTTP {status}')
                     raise OSError(f'HTTP {status} for {url}; raw response archived')
                 try:
-                    if 'json' not in headers.get('Content-Type', '').lower():
-                        raise ValueError('unexpected Content-Type; expected JSON')
-                    data = load_json(body)
-                    validator(data)
+                    if document:
+                        content_type = headers.get('Content-Type', '').split(';')[0].lower()
+                        if content_type not in {'text/markdown', 'text/plain', 'text/x-markdown'}:
+                            raise ValueError('unexpected fee document Content-Type')
+                        if not 0 < len(body) <= 2000000:
+                            raise ValueError('fee document must contain 1..2000000 bytes')
+                        body.decode('utf-8')
+                        data = body  # Prose is evidence for human review, never a parsed rate.
+                    else:
+                        if 'json' not in headers.get('Content-Type', '').lower():
+                            raise ValueError('unexpected Content-Type; expected JSON')
+                        data = load_json(body)
+                        validator(data)
                 except (ValueError, TypeError) as exc:
                     validate_observation(self.con, observation_id, 'REJECTED', str(exc))
                     raise ValueError(f'{url}: {exc}; raw response archived') from exc

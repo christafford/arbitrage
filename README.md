@@ -4,12 +4,15 @@ A **read-only, Codex-ready** starter for researching fully hedged binary predict
 
 **Current state:** M1–M3 are complete. M4 economics/recording and M5 paper/operations are implemented and tested; **M4's actual 30-day run and M5's actual multiweek run remain pending**. Research includes versioned fees, depth/budget/reserve evaluation, paper downside scenarios, later-quote comparisons, local health/metrics, verified backups and deployment templates. All live evidence remains `UNVERIFIED`; no real pair or fee profile is approved. Kalshi REST lacks source time and fails freshness checks. No live trading or service activation exists. See [M5 results and gaps](docs/M5_RESULTS.md), [paper model](docs/PAPER_EXECUTION.md), [operations](docs/OPERATIONS.md) and [M4 results](docs/M4_RESULTS.md).
 
-**M5A A/B:** discovery is implemented. The read-only Kalshi WebSocket adapter is
+**M5A A–C:** discovery is implemented. The read-only Kalshi WebSocket adapter is
 **validated live in explicit `sequence-v1` mode**, including recovery after a
 message timeout. Kalshi's changelog dates market-clock rollout to October 29;
 the pre-rollout mode expires **2026-10-29 00:00 UTC**. Default `clocked` mode
-still requires the clock and needs live revalidation after rollout. Workstreams
-C–E have not been started. See [B acceptance evidence](docs/M5B_SEQUENCE_RESULTS.md),
+still requires the clock and needs live revalidation after rollout.
+**C fee capture/review tooling is implemented**; live captures passed, but real
+fee applicability still requires operator review. D/E remain unstarted. See
+[fee review workflow](docs/FEE_REVIEW.md), [C evidence](docs/M5C_RESULTS.md),
+[B acceptance evidence](docs/M5B_SEQUENCE_RESULTS.md),
 [M5A results](docs/M5A_RESULTS.md) and [WebSocket setup](docs/KALSHI_WEBSOCKET.md).
 
 ## Quick start (Python 3.11+; no external dependencies)

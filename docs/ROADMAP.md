@@ -130,13 +130,15 @@ pending sustained-run acceptance or authorize M6. No real equivalence was approv
 
 ## M5A — Live research readiness — IN PROGRESS (2026-10-22 UTC)
 
-Authorized scope for this change is **A/B only; stop after B**.
+A/B were authorized first. The operator separately authorized **Workstream C** on
+2026-10-23; stop before D/E and M6.
 
 - [x] A: reuse the implemented discovery extension and ranked UNVERIFIED human-review queue; existing live catalogue coverage remains partial.
 - [x] B implementation: authenticated read-only Kalshi transport, protected external credentials, raw/sanitized provenance, sequenced snapshot/delta validation and recovery, M3/M4 integration, offline tests and documentation.
 - [x] B live acceptance for explicit pre-rollout `sequence-v1`: authenticated timestamped snapshots/deltas, actual reconnect recovery and deterministic replay passed on 2026-10-23. The longer run captured 3 snapshots and 219 deltas across 3 generations and recovered after a real message timeout; a separate clean run exited 0. **Compatibility expires 2026-10-29 00:00 UTC; the default clocked protocol still requires live revalidation after the announced rollout.** See [B acceptance evidence](M5B_SEQUENCE_RESULTS.md).
 - [ ] Human approval of equivalent real pairs; never an agent decision.
-- [ ] C: live fee validation tooling/operator review — not started under the current scope.
+- [x] C tooling: public fee-source capture, unapproved review packets, exact model/provenance and scheduled-change gates, failed-refresh invalidation, offline replay and live capture checks. See [C results](M5C_RESULTS.md).
+- [ ] C operator acceptance: account/instrument applicability and actual live fee profiles remain unapproved; sample packets are ready for review.
 - [ ] D: payout/collateral/settlement mechanics verification — not started; current short-exposure restrictions remain.
 - [ ] E: research-readiness CLI report — not started.
 

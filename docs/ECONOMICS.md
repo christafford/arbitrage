@@ -74,26 +74,32 @@ The profile is a JSON object with these fields:
 | `settlement_fee_per_contract` | Required verified decimal-string amount; absence never means zero |
 | `effective_from`, `effective_until`, `expires_at` | UTC-aware applicability window and local expiry |
 | `hypothetical`, `applicability_reviewed`, `operator` | Boolean separation, explicit review attestation and reviewer name |
-| `documents` | 1..10 objects with official HTTPS `url`, local `path`, `retrieved_at` |
+| `documents` | Hypothetical: 1..10 source objects. Live: up to 10 supplemental sources with official HTTPS `url`, local `path`, `retrieved_at`; Kalshi schedule PDF required |
+| `capture_id`, `capture_sha256` | Live only: latest successful M5A C capture and exact source manifest digest |
+| `schedule_reviewed`, `category_reviewed` | Live only: nonempty human review explanations |
 
 Live profiles additionally require nonempty `instrument_scope` and
 `scheduled_changes_checked` explanations, and `account_fee_extras_checked` exactly
 `NONE_CONFIRMED`. Additional account/FCM charges are currently unsupported. Review
 must cover the exact instrument/category, account precision, settlement fees,
 exceptions and scheduled changes; a general fee document alone does not establish
-market-specific applicability. Kalshi series fee type/multiplier and scheduled
-changes need checking. US category distinctions include Table Tennis; combos and
+market-specific applicability. M5A C checks Kalshi series parameters, event overrides and both scheduled-change
+sources, plus the US market coefficient. Capture proposes a model; the operator
+confirms applicability. Start with [the fee capture/review workflow](FEE_REVIEW.md). US category distinctions include Table Tennis; combos and
 unknown/flat schedules are unsupported. See [official sources](API_SOURCES.md).
 
 Document paths resolve against the profile's directory. Original configuration
 bytes are archived before parsing; imported source bytes and SHA-256 hashes are
 retained separately. URLs are restricted to official US venue hosts; hypothetical
 profiles require `HYPOTHETICAL-` IDs, matching hypothetical registry evidence and
-`example.invalid` sources. Source fidelity/applicability are operator-declared,
-not independently authenticated by this local importer. Maximum profile/source
+`example.invalid` sources. Captured public sources are fetched over fixed-origin HTTPS and hash-bound to the
+profile. Supplemental file source fidelity and all applicability decisions remain
+operator-declared; a source fetch is not account verification. Maximum profile/source
 size is 2 MB each.
 
-Expiry cannot exceed 24 hours after review or any source retrieval. Import new
+Expiry cannot exceed 24 hours after capture/review or any source retrieval, or a
+known scheduled fee change. Starting a new live capture supersedes the prior fee
+approval before network I/O, even if the capture fails or is interrupted. Import new
 reviewed profiles to renew them; do not extend old rows. The newest profile wins,
 including when future-effective or expired. A failed refresh with a parseable
 market/side identity also blocks fallback to an earlier profile. Missing,
@@ -197,5 +203,7 @@ exports results. These are not real approvals, historical fills or 30-day eviden
 
 M5A follow-up: the [read-only Kalshi WebSocket adapter](KALSHI_WEBSOCKET.md) now
 feeds the same M3/M4 gates, with an optional existing-session scan callback in
-the capture writer. Actual live continuity remains blocked by an unresolved HTTP 401 authentication rejection;
-no live fee validation or approval was added. US books still need fresh evidence.
+the capture writer. The bounded pre-rollout `sequence-v1` feed passed live recovery
+checks; see [B evidence and October 29 cutoff](M5B_SEQUENCE_RESULTS.md).
+[Workstream C](M5C_RESULTS.md) adds live fee capture/validation tooling; actual
+operator fee approvals remain pending. US books still need fresh evidence.

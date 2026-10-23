@@ -1,0 +1,65 @@
+{
+  "live_captures": [
+    {
+      "venue": "kalshi",
+      "archive": "data/m5c-live.sqlite3",
+      "review_packet": "data/m5c-review-kalshi",
+      "capture_id": 1,
+      "capture_sha256": "4006b0b6729134c0223e7abab67f4cc8f6f3fe34fa3df8ca2ef6fe183930f798",
+      "source_id": "KXBTCD-26OCT2317-T83499.99",
+      "raw_response_count": 7,
+      "approved_fee_profiles": 0,
+      "approved_pairs": 0,
+      "captured_parameters": {
+        "next_change": null,
+        "parameters": {
+          "kind": "quadratic",
+          "multiplier": "1"
+        },
+        "scope": {
+          "event_override": false,
+          "event_ticker": "KXBTCD-26OCT2317",
+          "series_ticker": "KXBTCD"
+        }
+      },
+      "status": "NEEDS_OPERATOR_REVIEW",
+      "expires_no_later_than": "2026-10-24T21:09:50.531441+00:00"
+    },
+    {
+      "venue": "polymarket_us",
+      "archive": "data/m5c-us-live.sqlite3",
+      "review_packet": "data/m5c-review-us",
+      "capture_id": 1,
+      "capture_sha256": "05c15284e786fc3f4fae3b89105a9c962e5005e7c6a5915199b303f39bb927dc",
+      "source_id": "tec-mlb-champ-2026-09-27-mil",
+      "raw_response_count": 2,
+      "approved_fee_profiles": 0,
+      "approved_pairs": 0,
+      "captured_parameters": {
+        "next_change": null,
+        "parameters": {
+          "kind": "standard"
+        },
+        "scope": {
+          "category_review_required": true,
+          "fee_coefficient": "0.0695",
+          "market_id": "7930",
+          "single_contract_only": true
+        }
+      },
+      "status": "NEEDS_OPERATOR_REVIEW",
+      "expires_no_later_than": "2026-10-24T21:09:59.304637+00:00"
+    }
+  ],
+  "trading_authorized": false,
+  "tests_command": ".venv/bin/python -m unittest discover -s tests -v",
+  "tests_executed": 250,
+  "tests_result": "PASS",
+  "limitations": [
+    "No human fee applicability or real pair approval",
+    "Local PDF retrieval time requires operator confirmation",
+    "Capture scopes are technical samples, not an equivalent tradable pair",
+    "No scheduled fee changes returned live; override and change paths tested with explicitly hypothetical mutations",
+    "No multiweek acceptance or Workstream D/E implementation"
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "verified_at": "2026-10-23T21:13:43.546590+00:00",
+  "local_schema": "live-fee-evidence/m5a-c-v1",
+  "upstream_versions": {
+    "kalshi": "3.34.0",
+    "polymarket_us": "MarketService 1.0.0"
+  },
+  "official_sources": [
+    {
+      "url": "https://docs.kalshi.com/api-reference/market/get-market.md",
+      "retrieved_at": "2026-10-23T21:13:41.121060+00:00",
+      "status": 200,
+      "sha256": "ae9d917509f33d278b59657e5793277574846208635e845cc07f5762a6178bea",
+      "local_archive": "data/m5c-sources/official-01.md"
+    },
+    {
+      "url": "https://docs.kalshi.com/api-reference/events/get-event.md",
+      "retrieved_at": "2026-10-23T21:13:41.454001+00:00",
+      "status": 200,
+      "sha256": "3d578cfe0a3817fb5da3d1933f9440dccd57b896ca59fc31c0a31dc9515db991",
+      "local_archive": "data/m5c-sources/official-02.md"
+    },
+    {
+      "url": "https://docs.kalshi.com/api-reference/market/get-series.md",
+      "retrieved_at": "2026-10-23T21:13:41.722365+00:00",
+      "status": 200,
+      "sha256": "3112e2e5ae8c4e11b557033e5ec8b72991457ea08a34d0f810e56d91b83fe2f4",
+      "local_archive": "data/m5c-sources/official-03.md"
+    },
+    {
+      "url": "https://docs.kalshi.com/api-reference/exchange/get-series-fee-changes.md",
+      "retrieved_at": "2026-10-23T21:13:42.032286+00:00",
+      "status": 200,
+      "sha256": "0e89ceee6124b97aad2225e8da3ca5172469d1e90bd8b70dd1c0178e1a77978d",
+      "local_archive": "data/m5c-sources/official-04.md"
+    },
+    {
+      "url": "https://docs.kalshi.com/api-reference/events/get-event-fee-changes.md",
+      "retrieved_at": "2026-10-23T21:13:42.306335+00:00",
+      "status": 200,
+      "sha256": "0bfa439901cd21fb38cade43fa0c57df2d9546d95d03a8c53dc9eb1a5fcffcac",
+      "local_archive": "data/m5c-sources/official-05.md"
+    },
+    {
+      "url": "https://docs.kalshi.com/getting_started/fee_rounding.md",
+      "retrieved_at": "2026-10-23T21:13:42.577250+00:00",
+      "status": 200,
+      "sha256": "40504be2568a9ae740938e0d3384e13d2867d2ce95766e7b8978525bae22ec27",
+      "local_archive": "data/m5c-sources/official-06.md"
+    },
+    {
+      "url": "https://docs.polymarket.us/api-reference/markets/get-market-by-slug.md",
+      "retrieved_at": "2026-10-23T21:13:43.218797+00:00",
+      "status": 200,
+      "sha256": "16f599df2f2606ae8e661b557793274d61d50e33862a10d033e52c09e783f7cf",
+      "local_archive": "data/m5c-sources/official-07.md"
+    },
+    {
+      "url": "https://docs.polymarket.us/fees.md",
+      "retrieved_at": "2026-10-23T21:13:43.538315+00:00",
+      "status": 200,
+      "sha256": "a52a2853a30f519f5808aa2e60cbe9a7ea260a03d8e33159abc32ec6ed65e266",
+      "local_archive": "data/m5c-sources/official-08.md"
+    }
+  ],
+  "operator_supplied_pdf": {
+    "source_url": "https://kalshi.com/docs/kalshi-fee-schedule.pdf",
+    "sha256": "c326a69f596a11e8f8be2620402d39a8d4823920c21cc97c93a114d862699601",
+    "bytes": 281129,
+    "provenance": "USER_SUPPLIED_LOCAL_DOWNLOAD; operator to confirm actual retrieval time",
+    "local_file_modified_at": "2026-10-23T21:11:55.421546+00:00",
+    "first_inspected_at": "2026-10-23T21:13:43.538993+00:00",
+    "effective_date_read_from_document": "2026-07-07",
+    "direct_http_download": "HTTP_429; not used as source bytes",
+    "local_archive": "data/m5c-review-kalshi/kalshi-fee-schedule.pdf"
+  }
+}

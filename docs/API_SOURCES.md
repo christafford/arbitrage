@@ -295,3 +295,40 @@ it, recheck the rollout and validate the clocked feed rather than automatically
 extending compatibility. [Live acceptance and replay evidence](M5B_SEQUENCE_RESULTS.md)
 include 3 snapshots, 219 deltas and actual reconnect recovery. Existing rejected
 archives retain their original validation status; database schema remains 7.
+
+### Workstream C fee applicability sources — 2026-10-23 UTC
+
+Rechecked the official documents and public endpoints; exact document hashes and
+UTC retrieval times are in [the C source manifest](evidence/M5C_API_CHECKS.json).
+Upstream embedded versions remain Kalshi **3.34.0** and US MarketService **1.0.0**.
+The new local consumed-field/capture contract is **`live-fee-evidence/m5a-c-v1`**.
+SQLite remains version 7. Original responses precede conversion, and unknown or
+missing consumed fields fail closed; additive unconsumed fields remain archived.
+
+| Official source | C use |
+| --- | --- |
+| [Kalshi market](https://docs.kalshi.com/api-reference/market/get-market) | Exact ticker/event link, binary type; a present fee-waiver expiry is unsupported |
+| [Kalshi event](https://docs.kalshi.com/api-reference/events/get-event) | Exact event/series link; optional paired `fee_type_override`/`fee_multiplier_override`, absent/null means series inheritance |
+| [Kalshi series](https://docs.kalshi.com/api-reference/market/get-series) | Required documented `fee_type` and numeric `fee_multiplier`; only supported quadratic taker models |
+| [Series fee changes](https://docs.kalshi.com/api-reference/exchange/get-series-fee-changes) | `/series/fee_changes?series_ticker=...&show_historical=false`; required `series_fee_change_arr`, IDs, type, numeric multiplier and `scheduled_ts` |
+| [Event fee changes](https://docs.kalshi.com/api-reference/events/get-event-fee-changes) | `/events/fee_changes?event_ticker=...&limit=1000`; required `event_fee_changes` and terminal empty `cursor`; exact identities, override pair and schedule time. Null/null clears the override |
+| [Kalshi rounding](https://docs.kalshi.com/getting_started/fee_rounding) | Captured human-review evidence for account precision/rounding, not account-status discovery |
+| [US market by slug](https://docs.polymarket.us/api-reference/markets/get-market-by-slug) | Required local numeric `feeCoefficient`; the upstream optional/null field is rejected locally if unavailable |
+| [US fees](https://docs.polymarket.us/fees) | Captured human-review schedule evidence; effective October 19, 2026 17:00 UTC; supported standard/Table Tennis coefficients unchanged |
+| [Kalshi fee PDF](https://kalshi.com/docs/kalshi-fee-schedule.pdf) | Operator-supplied supplemental document required at live import; current downloaded copy states effective July 7, 2026 |
+
+Documentation is captured from exact official `.md` counterparts; prose remains
+raw evidence rather than an automatically parsed fee schedule. Current API numeric
+parameters are proposed applicability only. The PDF's general quadratic formula
+is consistent with the existing model; account precision/extras, scope/exceptions
+and settlement costs still require explicit human decisions.
+
+Two real fixture packages preserve **7 Kalshi and 2 US** raw responses, URLs,
+receipt times, allowlisted headers and hashes. No credential was used. Kalshi's
+sample had multiplier 1, no event override and empty upcoming/history arrays;
+US reported 0.0695. Scheduled-change/override behavior is consequently verified
+with explicitly hypothetical fixture mutations, not claimed as observed live.
+The Kalshi sample was captured after its trading close; these are technical fee
+captures, not a tradable pair or a readiness claim. The supplied PDF is archived
+locally and hash-recorded with its filesystem clock distinguished from an
+operator-confirmed retrieval time. [C results](M5C_RESULTS.md) list remaining gaps.

@@ -5,6 +5,7 @@ from pathlib import Path
 from urllib.parse import urlsplit
 
 from .fees import model_from_profile
+from .fee_capture import KALSHI_SCHEDULE, validate_profile_capture
 from .validation import dumps, field, identifier, load_json, text_field, utc_time
 
 
@@ -38,8 +39,20 @@ def import_profile(con, raw, *, base, now, attested=False):
         if not now < expires <= now + timedelta(hours=24):
             raise ValueError('fee expiry must be future and at most 24 hours')
         documents = field(data, 'documents', list)
-        if not 1 <= len(documents) <= 10:
-            raise ValueError('1..10 fee source documents required')
+        if hypothetical:
+            if not 1 <= len(documents) <= 10:
+                raise ValueError('1..10 fee source documents required')
+        else:
+            validate_profile_capture(con, data, now=now)
+            if len(documents) > 10:
+                raise ValueError('at most 10 supplemental fee documents allowed')
+            if model.venue == 'kalshi' and not any(text_field(doc, 'url') == KALSHI_SCHEDULE for doc in documents):
+                raise ValueError('current official Kalshi fee schedule PDF required')
+            # Copy the reviewed capture bytes, never accept caller replacements.
+            con.execute('''INSERT INTO fee_documents(import_id,source_url,retrieved_at,raw_bytes,sha256)
+                SELECT ?,source_url,retrieved_at,raw_bytes,sha256 FROM fee_documents WHERE import_id=?''',
+                        (imported, data['capture_id']))
+            con.commit()
         for doc in documents:
             url, retrieved = text_field(doc, 'url'), utc_time(text_field(doc, 'retrieved_at'))
             host = urlsplit(url)
@@ -55,6 +68,8 @@ def import_profile(con, raw, *, base, now, attested=False):
             con.execute('INSERT INTO fee_documents(import_id,source_url,retrieved_at,raw_bytes,sha256) VALUES(?,?,?,?,?)',
                         (imported, url, retrieved.isoformat(), body, sha256(body).hexdigest()))
             con.commit()
+            if not hypothetical and url == KALSHI_SCHEDULE and not body.startswith(b'%PDF-'):
+                raise ValueError('Kalshi schedule must be the downloaded PDF, not an error page')
             if retrieved > now + timedelta(seconds=5) or expires > retrieved + timedelta(hours=24):
                 raise ValueError('stale or future fee source; expiry must respect every source clock')
         if not hypothetical:
@@ -98,7 +113,10 @@ def current_profile(con, venue, source_id, side, *, now, hypothetical):
     docs = con.execute('SELECT raw_bytes,sha256 FROM fee_documents WHERE import_id=?', (imported,)).fetchall()
     if not docs or any(sha256(body).hexdigest() != expected for body, expected in docs):
         raise ValueError('fee source hash mismatch')
-    model = model_from_profile(load_json(text))
+    data = load_json(text)
+    if not hypothetical:
+        validate_profile_capture(con, data, now=now)
+    model = model_from_profile(data)
     model.check(venue=venue, source_id=source_id, side=side, now=now)
     return model, {'id': profile_id, 'sha256': digest, 'profile': load_json(text),
                    'source_hashes': [expected for _, expected in docs], 'provenance': 'OPERATOR_DECLARED_APPLICABILITY'}

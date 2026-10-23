@@ -98,3 +98,20 @@ for local schema `kalshi-ws/m5a-v1`, paired with the existing M3 snapshot and
 generated deltas in `test_kalshi_ws.py`. Its source-check timestamp identifies
 the official document retrieval, **not a live frame receipt**. No authenticated
 live fixture exists: the operator confirmed credentials are unavailable.
+
+## M5A C fee sources (2026-10-23 UTC)
+
+`m5c-kalshi-live.json` and `m5c-polymarket_us-live.json` preserve 7 and 2 actual
+credential-free responses, respectively. Each includes the original UTF-8 body,
+URL, HTTP status, allowlisted headers, exact receipt time, SHA-256 and local schema
+`live-fee-evidence/m5a-c-v1`. Kalshi upstream API is 3.34.0; US MarketService is
+1.0.0. Source Markdown is retained verbatim alongside JSON. The top-level request
+is the local capture manifest, not a venue response. Provider rights reserved;
+these are local research/replay fixtures, not redistribution permission.
+
+Test mutations for fee changes, overrides, malformed fields, clock drift and
+simulated human approvals are explicitly HYPOTHETICAL. No real fee or pair
+approval is a fixture outcome. The sample Kalshi market had already reached its
+close; fee capture does not establish trading availability or book freshness.
+The operator-supplied PDF stays in ignored local data storage; its hash/provenance
+are recorded in `docs/evidence/M5C_API_CHECKS.json`.
