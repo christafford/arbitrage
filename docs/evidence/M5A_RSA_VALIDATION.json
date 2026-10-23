@@ -1,0 +1,128 @@
+{
+  "recorded_at": "2026-10-23T03:05:09.346293+00:00",
+  "scope": "M5A B only; RSA credential retry",
+  "authentication": {
+    "checked_at": "2026-10-23T03:03:55.956026+00:00",
+    "purpose": "Read-only retry with operator-provided RSA credentials",
+    "key_type": "RSA",
+    "orders_placed": 0,
+    "handshake": "ACCEPTED"
+  },
+  "capture": {
+    "command": [
+      ".venv/bin/predarb",
+      "stream-kalshi",
+      "KXBTCD-26OCT2317-T83499.99",
+      "--db",
+      "data/m5a-rsa-live-20261023T030355Z/capture.sqlite3",
+      "--seconds",
+      "60",
+      "--max-connections",
+      "3",
+      "--max-messages",
+      "3000"
+    ],
+    "exit_code": 2,
+    "stdout": "{\"connection_ids\":[1,2,3],\"connections\":3,\"deltas\":0,\"failures\":[\"INVALID_STREAM_FRAME\",\"INVALID_STREAM_FRAME\",\"INVALID_STREAM_FRAME\"],\"live_continuity_demonstrated\":false,\"messages\":6,\"recoveries\":0,\"snapshots\":0,\"status\":\"INCOMPLETE\",\"trading_authorized\":false,\"usable_books\":0,\"verification\":\"UNVERIFIED\"}\n",
+    "stderr": ""
+  },
+  "frames": [
+    {
+      "observation_id": 2,
+      "connection_id": 1,
+      "archive_kind": "EXACT_WIRE",
+      "wire_hash_verified": true,
+      "received_at": "2026-10-23T03:04:08.815792+00:00",
+      "type": "subscribed",
+      "sending_ts_ms": 1792724648781
+    },
+    {
+      "observation_id": 3,
+      "connection_id": 1,
+      "archive_kind": "EXACT_WIRE",
+      "wire_hash_verified": true,
+      "received_at": "2026-10-23T03:04:08.831210+00:00",
+      "type": "orderbook_snapshot",
+      "sending_ts_ms": 1792724648781,
+      "replay": "REJECTED",
+      "missing_market_clock": true,
+      "missing_clock_rejection_confirmed": true
+    },
+    {
+      "observation_id": 5,
+      "connection_id": 2,
+      "archive_kind": "EXACT_WIRE",
+      "wire_hash_verified": true,
+      "received_at": "2026-10-23T03:04:11.409057+00:00",
+      "type": "subscribed",
+      "sending_ts_ms": 1792724651375
+    },
+    {
+      "observation_id": 6,
+      "connection_id": 2,
+      "archive_kind": "EXACT_WIRE",
+      "wire_hash_verified": true,
+      "received_at": "2026-10-23T03:04:11.424361+00:00",
+      "type": "orderbook_snapshot",
+      "sending_ts_ms": 1792724651375,
+      "replay": "REJECTED",
+      "missing_market_clock": true,
+      "missing_clock_rejection_confirmed": true
+    },
+    {
+      "observation_id": 8,
+      "connection_id": 3,
+      "archive_kind": "EXACT_WIRE",
+      "wire_hash_verified": true,
+      "received_at": "2026-10-23T03:04:16.005496+00:00",
+      "type": "subscribed",
+      "sending_ts_ms": 1792724655970
+    },
+    {
+      "observation_id": 9,
+      "connection_id": 3,
+      "archive_kind": "EXACT_WIRE",
+      "wire_hash_verified": true,
+      "received_at": "2026-10-23T03:04:16.022358+00:00",
+      "type": "orderbook_snapshot",
+      "sending_ts_ms": 1792724655970,
+      "replay": "REJECTED",
+      "missing_market_clock": true,
+      "missing_clock_rejection_confirmed": true
+    }
+  ],
+  "sqlite_integrity": "ok",
+  "foreign_key_violations": 0,
+  "connections": [
+    {
+      "id": 1,
+      "started_at": "2026-10-23T03:04:08.525782+00:00",
+      "ended_at": "2026-10-23T03:04:08.899730+00:00",
+      "end_reason": "INVALID_STREAM_FRAME"
+    },
+    {
+      "id": 2,
+      "started_at": "2026-10-23T03:04:11.148995+00:00",
+      "ended_at": "2026-10-23T03:04:11.493244+00:00",
+      "end_reason": "INVALID_STREAM_FRAME"
+    },
+    {
+      "id": 3,
+      "started_at": "2026-10-23T03:04:15.740193+00:00",
+      "ended_at": "2026-10-23T03:04:16.088596+00:00",
+      "end_reason": "INVALID_STREAM_FRAME"
+    }
+  ],
+  "live_continuity_demonstrated": false,
+  "current_blocker": "All three live snapshots have exchange sending_ts_ms but lack msg.clock; strict replay rejects them. No accepted deltas or usable books.",
+  "official_protocol": "https://docs.kalshi.com/websockets/orderbook-updates",
+  "orders_placed": 0,
+  "credentials_recorded": false,
+  "tests": {
+    "command": ".venv/bin/python -m unittest discover -s tests -v",
+    "exit_code": 0,
+    "passed": 219,
+    "output_path": "data/m5a-rsa-live-20261023T030355Z/tests.txt",
+    "sha256": "71eb6a51e569105762065b051326b17548dacc0b78af9a680811ce66623ce5b8"
+  }
+}

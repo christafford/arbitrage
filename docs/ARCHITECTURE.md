@@ -30,7 +30,7 @@ raw response capture -> normalized instrument / quotes
 - `src/predarb/registry.py`, `registry_schema.py`, `registry_cli.py`: metadata candidates, immutable rule/source versions, human decision forms, explicit payoff review, expiry/invalidation and append-only audit. Registry approval grants no trading authority.
 - `src/predarb/orderbooks.py`: immutable exact ask representations, supported market grids/side semantics, source/receipt/metadata clocks and quote-only depth coverage. All live evidence remains `UNVERIFIED`.
 - `src/predarb/book_stream.py`: transport-independent single-market Kalshi snapshot/delta replay, subscription sequence and connection-generation checks, conservative clock/send frontiers and fail-closed recovery.
-- `src/predarb/kalshi_auth.py`, `kalshi_ws.py`, `ws_store.py`, `ws_cli.py`: fixed-origin read-only transport, protected file signing, privacy screening, generation/frame provenance and bounded replay through existing book gates. Live authentication/continuity is still unvalidated: configured credentials load but the exchange rejects the handshake.
+- `src/predarb/kalshi_auth.py`, `kalshi_ws.py`, `ws_store.py`, `ws_cli.py`: fixed-origin read-only transport, protected file signing, privacy screening, generation/frame provenance and bounded replay through existing book gates. RSA authentication now succeeds; live snapshots are archived but rejected for missing market clocks. Continuity remains unvalidated.
 - `src/predarb/book_store.py`, `books_cli.py`: archived assessments with raw provenance, use-time validity, supersession and registry/skew comparison gates; local `books` commands.
 - `src/predarb/fees.py`, `fee_store.py`: supported exact hypothetical taker-fill math, conservative quote bounds, immutable imported source evidence, operator-declared per-instrument/side applicability and expiry. No automatically installed live rates.
 - `src/predarb/economics.py`: bounded complete common-lot search, per-venue research budgets, explicit reserve, reviewed settlement delays and conditional profit/capital-days. US synthetic shorts are refused.
@@ -240,5 +240,6 @@ reusing `KalshiBookStream` and the M3/M4 book path. Frames are replayed from
 archived bytes with source time, sequence, metadata and generation checks.
 Current use rejects disconnected or stale generations. Read
 [KALSHI_WEBSOCKET.md](KALSHI_WEBSOCKET.md) for privacy screening, signing,
-resource limits and the single-writer research callback. Live proof is blocked
-by an unresolved HTTP 401 authentication rejection; no historical acceptance gap is waived.
+resource limits and the single-writer research callback. RSA authentication succeeds,
+but live proof is blocked by missing market clocks in captured snapshots; no
+historical acceptance gap is waived.

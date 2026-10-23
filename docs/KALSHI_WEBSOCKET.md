@@ -1,9 +1,10 @@
 # Kalshi read-only WebSocket capture (M5A Workstream B)
 
 The adapter is implemented and tested offline. **Authenticated live continuity
-has not been demonstrated:** credentials now load, but live handshakes returned
-HTTP 401 with `INCORRECT_API_KEY_SIGNATURE`. The operator also reported an
-unresolved location-verification warning; its relationship to the API error is unknown.
+has not been demonstrated:** replacement RSA credentials now authenticate, and
+actual snapshots carry exchange send timestamps, but all three captured snapshots
+lack the required `msg.clock`. They are archived and rejected without weakening
+validation. Earlier Ed25519 attempts returned HTTP 401; the cause is unproven.
 See [M5A results](M5A_RESULTS.md). Workstreams C–E and M6 are outside this change.
 
 ## Setup and bounded capture

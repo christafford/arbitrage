@@ -5,8 +5,9 @@ A **read-only, Codex-ready** starter for researching fully hedged binary predict
 **Current state:** M1–M3 are complete. M4 economics/recording and M5 paper/operations are implemented and tested; **M4's actual 30-day run and M5's actual multiweek run remain pending**. Research includes versioned fees, depth/budget/reserve evaluation, paper downside scenarios, later-quote comparisons, local health/metrics, verified backups and deployment templates. All live evidence remains `UNVERIFIED`; no real pair or fee profile is approved. Kalshi REST lacks source time and fails freshness checks. No live trading or service activation exists. See [M5 results and gaps](docs/M5_RESULTS.md), [paper model](docs/PAPER_EXECUTION.md), [operations](docs/OPERATIONS.md) and [M4 results](docs/M4_RESULTS.md).
 
 **M5A A/B:** discovery is implemented. The read-only Kalshi WebSocket adapter is
-implemented with offline tests; **actual authenticated continuity remains blocked
-by HTTP 401 authentication rejection**. Workstreams C–E have not been started. See
+implemented with offline tests; **RSA authentication succeeds, but live snapshots
+lack the required market clock and are rejected**. Continuity remains unproven.
+Workstreams C–E have not been started. See
 [M5A results](docs/M5A_RESULTS.md) and [WebSocket setup](docs/KALSHI_WEBSOCKET.md).
 
 ## Quick start (Python 3.11+; no external dependencies)

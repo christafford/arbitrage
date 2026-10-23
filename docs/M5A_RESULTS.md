@@ -1,15 +1,21 @@
 # M5A — Live research readiness: A/B only
 
 Scope follows the operator's instruction: reuse Workstream A, implement B, then
-stop. **M5A is incomplete. Workstream B's authenticated live acceptance is blocked.**
+stop. **M5A is incomplete. Workstream B's live continuity acceptance is blocked.**
+Replacement RSA credentials authenticated on **2026-10-23 UTC**. Three real
+snapshots were archived with exchange send timestamps, but each lacks `msg.clock`
+and is correctly rejected. See the RSA follow-up below for current evidence.
+
+Earlier authentication history:
 Credentials were initially unavailable. On **2026-10-23 UTC**, operator-provided
 OpenSSH Ed25519 credentials loaded after a format-support fix, but live handshakes
 returned HTTP 401. A diagnostic identified `INCORRECT_API_KEY_SIGNATURE`; host NTP
 reported synchronized and local time was within one second of the server Date.
 The operator also reported a venue location-verification warning; a connection
-between that warning and the API error has not been established. No further
-network attempts were made after that report. No credential contents were exposed
-or rewritten. No exchange key registration or account change was performed.
+between that warning and the API error has not been established. Later retries
+were explicitly requested by the operator, who subsequently reported location
+confirmation and supplied replacement RSA credentials. No credential contents
+were exposed. No exchange key registration or account change was performed by the agent.
 
 ## Workstream A — existing evidence reused
 
@@ -89,13 +95,41 @@ and [sanitized diagnostics](evidence/M5A_CREDENTIAL_VALIDATION.json). Live
 snapshots, deltas and reconnect continuity remain unproven. No orders, real pair
 approvals, fees, C–E work or service activation were added.
 
+## RSA credential follow-up — 2026-10-23 UTC
+
+The operator supplied a new 2048-bit RSA private key and API key ID. The file
+named `rsa.pub` contained the ID, not a cryptographic public key. Validated both
+locally, restricted source/destination files to 0600 and directories to 0700,
+installed the private key outside Git, backed up the prior configuration in the
+protected credential directory, and atomically selected the new key/ID. Neither
+credential contents nor signed headers were logged or archived.
+
+The authentication-only handshake succeeded at **03:03:55 UTC**. The subsequent
+bounded CLI run authenticated and subscribed on three connections, archiving
+three acknowledgments and three snapshots as exact wire bytes with local UTC
+receipt times and hashes. Each snapshot has `sending_ts_ms` but lacks `msg.clock`,
+which the [current official protocol](https://docs.kalshi.com/websockets/orderbook-updates)
+documents. Historical replay independently confirmed all three missing-clock
+rejections. The CLI exited 2 with `INVALID_STREAM_FRAME` on each connection,
+zero accepted snapshots/deltas and zero usable books. No clocks were invented,
+and source-time or continuity requirements were not relaxed.
+
+[Sanitized RSA evidence](evidence/M5A_RSA_VALIDATION.json) records the command,
+UTC times, connection outcomes, replay checks and verified frame hashes. The raw
+archive is `data/m5a-rsa-live-20261023T030355Z/capture.sqlite3`; SQLite integrity
+and foreign-key checks passed. The full unittest suite was rerun: **219 tests
+passed**, with the output path/hash recorded in the RSA evidence. Authentication
+and reception are demonstrated;
+validated book continuity is not. Earlier Ed25519 failures do not establish a
+general incompatibility with that algorithm. C–E and M6 remain untouched.
+
 ## Acceptance and remaining work
 
 | Criterion | Status |
 | --- | --- |
 | A: ranked real candidate queue with original sources | Existing partial-catalogue evidence reused; human decisions remain pending |
 | B: authenticated read-only adapter and offline recovery tests | Implemented; executed checks recorded below |
-| Actual authenticated Kalshi snapshot plus incremental live deltas | **BLOCKED: HTTP 401 / INCORRECT_API_KEY_SIGNATURE; zero live WS messages captured** |
+| Actual authenticated Kalshi snapshot plus incremental live deltas | **PARTIAL: RSA authentication and three timestamped snapshots captured; snapshots rejected for missing market clocks; no accepted deltas** |
 | Live disconnect/reconnect continuity | **NOT DEMONSTRATED**; only deterministic hypothetical recovery tests |
 | Three M5 blockers resolved | **No**: human pair decisions, validated live fees and live WS proof remain open |
 | C: live fee validation | **Not started**, per stop-after-B instruction |
