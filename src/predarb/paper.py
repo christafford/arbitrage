@@ -3,12 +3,13 @@ from dataclasses import asdict
 from decimal import Decimal, ROUND_FLOOR, localcontext
 
 from .economics import seconds
+from . import mechanics
 from .fees import fill_fees, quote_fee_bound
 from .models import AskLevel
 from .orderbooks import exact, walk_depth
 from .validation import field, object_value, utc_time
 
-VERSION = 'paper-stress/m5-v1'
+VERSION = 'paper-stress/m5a-d-v1'
 
 
 def policy(data):
@@ -39,6 +40,9 @@ def simulate(initial, later, models, sides, quantity, review, config, *, created
         reserve_per_leg = exact(reserve_per_leg, string=False)
         if len(initial) != 2 or len(later) != 2 or len(models) != 2 or len(sides) != 2:
             raise ValueError('exactly two paper legs required')
+        explicit_mechanics = 'mechanics' in review or any(not book.source_id.startswith('HYPOTHETICAL-') for book in initial)
+        if explicit_mechanics:
+            mechanics.scenario_terms(field(review, 'settlement_scenarios', list), now=now)
         if len(outages) != 2 or any(type(value) is not bool for value in outages):
             raise ValueError('two explicit outage booleans required')
         created = utc_time(created_at)
@@ -52,8 +56,8 @@ def simulate(initial, later, models, sides, quantity, review, config, *, created
                 raise ValueError('PAPER_BOOK_IDENTITY_MISMATCH')
             if book.issues(now=now):
                 raise ValueError('PAPER_BOOK_REJECTED: ' + ';'.join(book.issues(now=now)))
-            if book.venue == 'polymarket_us' and side != 'YES':
-                raise ValueError('synthetic short capital mechanics unsupported')
+            mechanics.check_book(old, side)
+            mechanics.check_book(book, side)
             if book.source_ts is None or old.source_ts is None:
                 raise ValueError('known source times required')
             if utc_time(book.source_ts) > now:
@@ -107,6 +111,10 @@ def simulate(initial, later, models, sides, quantity, review, config, *, created
             payouts.append(sum(leg['filled'] * value for leg, value in zip(legs, values)))
         if not payouts:
             raise ValueError('settlement scenarios required')
+        cashflows = None
+        if explicit_mechanics:
+            cashflows = mechanics.payout_cashflows(review['settlement_scenarios'], [leg['filled'] for leg in legs])
+            payouts = [row['total_payout'] for row in cashflows]
         unhedged = abs(legs[0]['filled'] - legs[1]['filled'])
         if unhedged:
             flags.append('UNHEDGED_PAPER_EXPOSURE')
@@ -114,8 +122,12 @@ def simulate(initial, later, models, sides, quantity, review, config, *, created
         if hedge_latency is not None and hedge_latency > config['max_hedge_latency_ms']:
             flags.append('MAX_HEDGE_LATENCY_EXCEEDED')
         reserve = reserve_per_leg * sum(leg['filled'] for leg in legs)
-        capital = sum(leg['quote_cost'] + leg['fee_bound_including_settlement'] for leg in legs) + reserve
+        funding = [mechanics.capital(book, side, leg['quote_cost'], leg['fee_bound_including_settlement'],
+                                     reserve_per_leg * leg['filled'])
+                   for book, side, leg in zip(later, sides, legs)]
+        capital = sum(leg['research_cash_required'] for leg in funding)
         return {'version': VERSION, 'status': 'STRESS_MODELED', 'legs': legs, 'unhedged_contracts': unhedged,
+                'mechanics_version': mechanics.VERSION, 'funding': funding, 'settlement_cashflows': cashflows,
                 'hedge_latency_ms': hedge_latency, 'cancel_request_ms': request_ms, 'cancel_ack_assumed_ms': ack_ms,
                 'reserve': reserve, 'capital_bound': capital, 'worst_reviewed_payout': min(payouts),
                 'worst_net_bound': min(payouts) - capital, 'best_net_bound': max(payouts) - capital,

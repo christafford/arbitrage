@@ -115,3 +115,20 @@ approval is a fixture outcome. The sample Kalshi market had already reached its
 close; fee capture does not establish trading availability or book freshness.
 The operator-supplied PDF stays in ignored local data storage; its hash/provenance
 are recorded in `docs/evidence/M5C_API_CHECKS.json`.
+
+## M5A D payout/collateral/settlement mechanics
+
+`m5d-us-documents-live.json` contains three unchanged official public US Markdown
+responses, with retrieval UTC, exact URL, allowed headers, original UTF-8 body and
+SHA-256. Local document schema: `official-mechanics-documents/m5a-d-v1`. They are
+prose evidence, not a new venue API schema. Provider rights reserved; local
+research only. The full ten-source retrieval manifest is in
+`docs/evidence/M5D_API_CHECKS.json`; original archives are in ignored local data.
+
+`m5d-hypothetical.json` is an explicitly HYPOTHETICAL operator review for the M4
+synthetic instruments at their fixed 2030 clock. It binds existing synthetic source
+hashes to payout/collateral/timing roles, selects isolated cash-funded longs and
+assumes cash availability one and three days after settlement. These delays,
+account statements and approvals were not observed at either venue. Exceptional
+payouts and altered partial-fill cases exercise fail-closed rounding and downside
+checks. Neither fixture establishes real settlement equivalence or trading authority.

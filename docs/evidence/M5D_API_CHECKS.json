@@ -1,0 +1,124 @@
+{
+  "retrieved_sources": [
+    {
+      "url": "https://docs.polymarket.us/market-structure/collateral-and-margin.md",
+      "retrieved_at": "2026-10-23T21:25:07.928696+00:00",
+      "status": 200,
+      "headers": {
+        "content-type": "text/markdown; charset=utf-8",
+        "date": "Fri, 23 Oct 2026 21:25:07 GMT",
+        "last-modified": "Fri, 23 Oct 2026 21:25:07 GMT"
+      },
+      "body_sha256": "a9219a064e721606ecae9414657b314d8a226340541039445e146d956df4a35a",
+      "local_archive": "data/m5d-sources/source-01.raw"
+    },
+    {
+      "url": "https://docs.polymarket.us/learn/trading/basics/buying-yes-vs-selling-no.md",
+      "retrieved_at": "2026-10-23T21:25:08.391193+00:00",
+      "status": 200,
+      "headers": {
+        "content-type": "text/markdown; charset=utf-8",
+        "date": "Fri, 23 Oct 2026 21:25:08 GMT",
+        "last-modified": "Fri, 23 Oct 2026 21:25:08 GMT"
+      },
+      "body_sha256": "e7e62b037569c6fb616b6647f1942907db7a4f596dfbcf25948d18adcf3d07b5",
+      "local_archive": "data/m5d-sources/source-02.raw"
+    },
+    {
+      "url": "https://docs.polymarket.us/learn/markets/contract-settlement.md",
+      "retrieved_at": "2026-10-23T21:25:08.810614+00:00",
+      "status": 200,
+      "headers": {
+        "content-type": "text/markdown; charset=utf-8",
+        "date": "Fri, 23 Oct 2026 21:25:08 GMT",
+        "last-modified": "Fri, 23 Oct 2026 21:25:08 GMT"
+      },
+      "body_sha256": "86b9a5bf54b27614019b95d608bed6a83c5a6714af54616ebd41e3f34ad95ad3",
+      "local_archive": "data/m5d-sources/source-03.raw"
+    },
+    {
+      "url": "https://docs.polymarket.us/learn/markets/market-resolution.md",
+      "retrieved_at": "2026-10-23T21:25:09.939207+00:00",
+      "status": 200,
+      "headers": {
+        "content-type": "text/markdown; charset=utf-8",
+        "date": "Fri, 23 Oct 2026 21:25:08 GMT",
+        "last-modified": "Fri, 23 Oct 2026 21:25:09 GMT"
+      },
+      "body_sha256": "f90a072ad98f86dcd2ccee7064a47b7508d4da60e52fc3ea12bc2614b542e76c",
+      "local_archive": "data/m5d-sources/source-04.raw"
+    },
+    {
+      "url": "https://docs.polymarket.us/market-structure/mutually-exclusive-collateral-return.md",
+      "retrieved_at": "2026-10-23T21:25:10.393108+00:00",
+      "status": 200,
+      "headers": {
+        "content-type": "text/markdown; charset=utf-8",
+        "date": "Fri, 23 Oct 2026 21:25:10 GMT",
+        "last-modified": "Fri, 23 Oct 2026 21:25:10 GMT"
+      },
+      "body_sha256": "3b81ae4809cac94bd8ddb5076b6c2d049a25c6e164214c922afe48e1dcc792b7",
+      "local_archive": "data/m5d-sources/source-05.raw"
+    },
+    {
+      "url": "https://docs.polymarket.us/learn/trading/basics/fractional-shares.md",
+      "retrieved_at": "2026-10-23T21:25:10.835626+00:00",
+      "status": 200,
+      "headers": {
+        "content-type": "text/markdown; charset=utf-8",
+        "date": "Fri, 23 Oct 2026 21:25:10 GMT",
+        "last-modified": "Fri, 23 Oct 2026 21:25:10 GMT"
+      },
+      "body_sha256": "2abd2dbd86339186dde86ed283ab185f6348cee2aea9c35325dcd1f76c5994d6",
+      "local_archive": "data/m5d-sources/source-06.raw"
+    },
+    {
+      "url": "https://help.kalshi.com/en/articles/13823844-portfolio-balances-and-positions",
+      "retrieved_at": "2026-10-23T21:25:11.317385+00:00",
+      "status": 200,
+      "headers": {
+        "date": "Fri, 23 Oct 2026 21:25:11 GMT",
+        "content-type": "text/html; charset=utf-8"
+      },
+      "body_sha256": "1aba8fd2223fd7249bcdffb0bcbc27a5e032e5af76f2b03dea4d4cfa86b2e532",
+      "local_archive": "data/m5d-sources/source-07.raw"
+    },
+    {
+      "url": "https://help.kalshi.com/en/articles/13823821-market-faqs",
+      "retrieved_at": "2026-10-23T21:25:11.710374+00:00",
+      "status": 200,
+      "headers": {
+        "date": "Fri, 23 Oct 2026 21:25:11 GMT",
+        "content-type": "text/html; charset=utf-8"
+      },
+      "body_sha256": "39ed818c87729f49e76ac3b81cf32b066af892efbed5b00a70c2bc7c38cff69a",
+      "local_archive": "data/m5d-sources/source-08.raw"
+    },
+    {
+      "url": "https://help.kalshi.com/en/articles/13823816-collateral-return",
+      "retrieved_at": "2026-10-23T21:25:12.341960+00:00",
+      "status": 200,
+      "headers": {
+        "date": "Fri, 23 Oct 2026 21:25:12 GMT",
+        "content-type": "text/html; charset=utf-8"
+      },
+      "body_sha256": "b60fd9324cb5868b0778a4530ca3cddc67b49977cb7369cd6606e51af37ad125",
+      "local_archive": "data/m5d-sources/source-09.raw"
+    },
+    {
+      "url": "https://docs.kalshi.com/getting_started/fee_rounding.md",
+      "retrieved_at": "2026-10-23T21:25:12.707719+00:00",
+      "status": 200,
+      "headers": {
+        "content-type": "text/markdown; charset=utf-8",
+        "date": "Fri, 23 Oct 2026 21:25:12 GMT",
+        "last-modified": "Fri, 23 Oct 2026 21:25:12 GMT"
+      },
+      "body_sha256": "40504be2568a9ae740938e0d3384e13d2867d2ce95766e7b8978525bae22ec27",
+      "local_archive": "data/m5d-sources/source-10.raw"
+    }
+  ],
+  "no_new_venue_api_fields": true,
+  "local_review_schema": "payout-mechanics/m5a-d-v1",
+  "provenance": "PUBLIC_OFFICIAL_US_DOCUMENTS; raw bytes archived before decoding; no credentials"
+}

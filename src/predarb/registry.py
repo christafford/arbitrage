@@ -5,6 +5,7 @@ import json
 import re
 from urllib.parse import urlsplit
 
+from . import mechanics
 from .validation import dumps, field, identifier, text_field, utc_time, decimal_value
 
 VENUES = ('kalshi', 'polymarket_us')
@@ -228,6 +229,9 @@ def _bundle(con, kalshi_id, polymarket_us_id):
         head = _instrument(con, venue, source_id)
         docs = _rows(con, '''SELECT d.* FROM document_heads h JOIN rule_documents d ON d.id=h.document_id
             WHERE h.venue=? AND h.source_id=? ORDER BY h.source_url''', (venue, source_id))
+        if any(hashlib.sha256(doc['raw_bytes']).hexdigest() != doc['raw_sha256'] or
+               hashlib.sha256(doc['text_bytes']).hexdigest() != doc['text_sha256'] for doc in docs):
+            raise ValueError('registry document provenance mismatch')
         head['supplements'] = _rows(con, '''SELECT s.*,v.content_sha256,v.evidence_json,v.source_url
             FROM registry_supplements s JOIN supplement_versions v ON v.id=s.version_id
             WHERE s.venue=? AND s.source_id=? ORDER BY s.kind''', (venue, source_id))
@@ -298,9 +302,14 @@ def review(con, pair_id, *, now=None):
     now = now or now_utc()
     pair = _one(con, 'SELECT * FROM pairs WHERE id=?', (pair_id,))
     bundle = _bundle(con, pair['kalshi_id'], pair['polymarket_us_id'])
+    decision = json.loads(pair['review_json']) if pair['review_json'] else None
+    assessment = mechanics.assess(decision, bundle, now=now)
     if pair['status'] == 'APPROVED':
         reason = ('review evidence changed' if pair['evidence_sha256'] != bundle['evidence_sha256']
                   else _live_reason(con, bundle, now))
+        if not reason and (not bundle['hypothetical'] or 'mechanics' in (decision or {})):
+            if assessment['status'] != 'REVIEWED_RESEARCH_ONLY':
+                reason = 'mechanics review invalid: ' + ';'.join(assessment['reasons'])
         if utc_time(pair['expires_at']) <= now:
             status, reason = 'EXPIRED', 'human approval expired'
         else:
@@ -313,7 +322,8 @@ def review(con, pair_id, *, now=None):
     pair['decision_evidence_sha256'] = pair['evidence_sha256']
     pair['review'] = json.loads(pair.pop('review_json')) if pair['review_json'] else None
     pair.pop('review_json', None)
-    return pair | bundle | {'approval_blocker': _live_reason(con, bundle, now), 'trading_authorized': False}
+    return pair | bundle | {'approval_blocker': _live_reason(con, bundle, now),
+                            'mechanics_assessment': assessment, 'trading_authorized': False}
 
 
 def review_template(con, pair_id, *, now=None):
@@ -323,7 +333,7 @@ def review_template(con, pair_id, *, now=None):
             'expires_at': '', 'reason': '',
             'comparisons': {key: {'equivalent': False, 'rationale': ''} for key in CHECKS},
             'outcome_mapping': {'YES': '', 'NO': ''}, 'legs': {'kalshi': '', 'polymarket_us': ''},
-            'settlement_scenarios': []}
+            'settlement_scenarios': [], **({'mechanics': mechanics.template()} if not data['hypothetical'] else {})}
 
 
 def _validate_review(data, pair_id, bundle, now):
@@ -382,6 +392,8 @@ def _validate_review(data, pair_id, bundle, now):
                 raise ValueError('scenario payouts contradict outcome mapping and selected legs')
     if covered != set(SCENARIOS):
         raise ValueError('YES/NO, void, cancellation, suspension and source revision scenarios all required')
+    if not bundle['hypothetical'] or 'mechanics' in data:
+        mechanics.validate_review(data, bundle, now=now)
     return reviewer, expires
 
 

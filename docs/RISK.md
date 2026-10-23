@@ -38,3 +38,14 @@ books; an elapsed session or healthy monitor cannot replace those gates.
 ## Taxes & access
 
 Verify accounts and contract eligibility for your actual jurisdiction before funding. U.S. venue access and contract availability are not identical. Consult qualified tax advice for realized gains, reporting and treatment; software must retain raw trades and settlements if trading is eventually enabled.
+
+## M5A D payout and cash-timing limits
+
+A quoted complement price does not establish collateral requirements. US synthetic
+NO remains unsupported for economics/paper execution; documented short collateral
+is distinct from buying-power reduction. Supported cash-funded longs require
+explicit source-bound mechanics review. No collateral offsets or proceeds reuse
+are credited. Settlement and cash availability are separate; timing is a human
+research assumption, not a guaranteed release/withdrawal date. Unknown sub-cent
+payout rounding rejects the quantity or makes the paper comparison unobservable.
+See [the supported mechanics](SETTLEMENT_MECHANICS.md).

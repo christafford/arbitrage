@@ -1,0 +1,250 @@
+{
+  "verified_at": "2026-10-23T21:33:34.169941+00:00",
+  "tests_command": ".venv/bin/python -m unittest discover -s tests -v",
+  "tests_executed": 270,
+  "tests_result": "PASS",
+  "full_test_output": "docs/evidence/M5D_TESTS.txt",
+  "official_source_count": 10,
+  "new_api_fields": false,
+  "database_schema": 7,
+  "demo": {
+    "command": ".venv/bin/python scripts/m4_demo.py --output data/m5d-demo --mechanics-fixture tests/fixtures/m5d-hypothetical.json",
+    "exit_code": 0,
+    "hypothetical": true,
+    "fixture_clock": "2030-01-01T12:00:00Z",
+    "cycles": [
+      {
+        "cycle_id": 1,
+        "hypothetical": true,
+        "modeled_edges": 1,
+        "no_pairs": false,
+        "pairs_observed": 1,
+        "rejected": 0,
+        "trading_authorized": false
+      },
+      {
+        "cycle_id": 2,
+        "hypothetical": true,
+        "modeled_edges": 1,
+        "no_pairs": false,
+        "pairs_observed": 1,
+        "rejected": 0,
+        "trading_authorized": false
+      },
+      {
+        "cycle_id": 3,
+        "hypothetical": true,
+        "modeled_edges": 0,
+        "no_pairs": false,
+        "pairs_observed": 1,
+        "rejected": 1,
+        "trading_authorized": false
+      }
+    ],
+    "best": {
+      "capital_per_venue": [
+        "85.0000",
+        "98.460"
+      ],
+      "cash_available_at": [
+        "2030-07-05T12:00:00+00:00",
+        "2030-07-07T12:00:00+00:00"
+      ],
+      "contracts": "200",
+      "depth": [
+        {
+          "complete": true,
+          "covered": "200",
+          "levels": [
+            {
+              "price": "0.4000",
+              "quantity": "200"
+            }
+          ],
+          "quote_cost": "80.0000",
+          "reason": "COVERED",
+          "requested": "200"
+        },
+        {
+          "complete": true,
+          "covered": "200",
+          "levels": [
+            {
+              "price": "0.47",
+              "quantity": "200"
+            }
+          ],
+          "quote_cost": "94.00",
+          "reason": "COVERED",
+          "requested": "200"
+        }
+      ],
+      "fee_bounds": [
+        "4.0000",
+        "3.46"
+      ],
+      "funding": [
+        {
+          "additional_collateral": "0",
+          "fee_cash_reserved": "4.0000",
+          "mechanism": "BUY_YES_FROM_COMPLEMENTARY_NO_BID",
+          "netting": "NONE",
+          "proceeds_reused": false,
+          "purchase_cash_debit": "80.0000",
+          "research_cash_required": "85.0000",
+          "sale_proceeds": "0",
+          "side": "YES",
+          "slippage_cash_reserved": "1.000",
+          "source_id": "HYPOTHETICAL-K",
+          "venue": "kalshi"
+        },
+        {
+          "additional_collateral": "0",
+          "fee_cash_reserved": "3.46",
+          "mechanism": "BUY_LONG_FROM_OFFER",
+          "netting": "NONE",
+          "proceeds_reused": false,
+          "purchase_cash_debit": "94.00",
+          "research_cash_required": "98.460",
+          "sale_proceeds": "0",
+          "side": "YES",
+          "slippage_cash_reserved": "1.000",
+          "source_id": "HYPOTHETICAL-P",
+          "venue": "polymarket_us"
+        }
+      ],
+      "locked_capital_days": "34136.956298611111111111111111111111111111111111111111111111111111111111111111111",
+      "net_profit_bound": "16.5400",
+      "payout_bound": "200",
+      "profit_per_capital_day": "0.00048451888490928357592640262131096267122348714359390809183576103528189416276896653",
+      "quote_costs": [
+        "80.0000",
+        "94.00"
+      ],
+      "reserve_per_venue": "1.000",
+      "settlement_at": [
+        "2030-07-04T12:00:00Z",
+        "2030-07-04T12:00:00Z"
+      ],
+      "settlement_cashflows": [
+        {
+          "case": "YES",
+          "cash_available_at": [
+            "2030-07-05T12:00:00+00:00",
+            "2030-07-07T12:00:00+00:00"
+          ],
+          "condition": "HYPOTHETICAL YES under the documented synthetic terms",
+          "payout_per_venue": [
+            "200",
+            "0"
+          ],
+          "total_payout": "200"
+        },
+        {
+          "case": "NO",
+          "cash_available_at": [
+            "2030-07-05T12:00:00+00:00",
+            "2030-07-07T12:00:00+00:00"
+          ],
+          "condition": "HYPOTHETICAL NO under the documented synthetic terms",
+          "payout_per_venue": [
+            "0",
+            "200"
+          ],
+          "total_payout": "200"
+        },
+        {
+          "case": "VOID",
+          "cash_available_at": [
+            "2030-07-05T12:00:00+00:00",
+            "2030-07-07T12:00:00+00:00"
+          ],
+          "condition": "HYPOTHETICAL VOID under the documented synthetic terms",
+          "payout_per_venue": [
+            "100.00",
+            "100.00"
+          ],
+          "total_payout": "200.00"
+        },
+        {
+          "case": "CANCELLED",
+          "cash_available_at": [
+            "2030-07-05T12:00:00+00:00",
+            "2030-07-07T12:00:00+00:00"
+          ],
+          "condition": "HYPOTHETICAL CANCELLED under the documented synthetic terms",
+          "payout_per_venue": [
+            "100.00",
+            "100.00"
+          ],
+          "total_payout": "200.00"
+        },
+        {
+          "case": "SUSPENDED",
+          "cash_available_at": [
+            "2030-07-05T12:00:00+00:00",
+            "2030-07-07T12:00:00+00:00"
+          ],
+          "condition": "HYPOTHETICAL SUSPENDED under the documented synthetic terms",
+          "payout_per_venue": [
+            "100.00",
+            "100.00"
+          ],
+          "total_payout": "200.00"
+        },
+        {
+          "case": "SOURCE_REVISION",
+          "cash_available_at": [
+            "2030-07-05T12:00:00+00:00",
+            "2030-07-07T12:00:00+00:00"
+          ],
+          "condition": "HYPOTHETICAL SOURCE_REVISION under the documented synthetic terms",
+          "payout_per_venue": [
+            "100.00",
+            "100.00"
+          ],
+          "total_payout": "200.00"
+        }
+      ],
+      "total_capital": "183.4600"
+    },
+    "real_pairs": 0,
+    "real_fee_profiles": 0
+  },
+  "wall_clock_pair_review": {
+    "command": ".venv/bin/predarb pairs review 1 --db data/m5d-demo/research.sqlite3",
+    "exit_code": 0,
+    "status": "INVALIDATED",
+    "mechanics_assessment": {
+      "reasons": [
+        "MECHANICS: stale or future source"
+      ],
+      "status": "UNVERIFIED",
+      "trading_authorized": false
+    },
+    "interpretation": "Expected rejection of future-dated hypothetical evidence at real clock"
+  },
+  "other_smokes": [
+    {
+      "command": ".venv/bin/predarb research summary 1 --db data/m5d-demo/research.sqlite3",
+      "exit_code": 0
+    },
+    {
+      "command": ".venv/bin/predarb demo --db data/m5d-basic-smoke.sqlite3",
+      "exit_code": 0
+    },
+    {
+      "command": ".venv/bin/predarb report --db data/m5d-basic-smoke.sqlite3",
+      "exit_code": 0
+    }
+  ],
+  "real_settlements_observed": false,
+  "real_account_mechanics_approved": false,
+  "trading_authorized": false,
+  "remaining": [
+    "Real instrument/account mechanics reviews",
+    "Real pair equivalence and live fee approvals",
+    "Workstream E",
+    "M4/M5 sustained run acceptance"
+  ]
+}

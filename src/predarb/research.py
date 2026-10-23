@@ -6,7 +6,7 @@ from hashlib import sha256
 from io import StringIO
 from decimal import Decimal, localcontext
 
-from . import registry
+from . import registry, mechanics
 from .book_store import inspect_pair, load_book
 from .economics import evaluate, policy, seconds
 from .fee_store import current_profile
@@ -152,7 +152,12 @@ def _result(con, pair_id, config, *, now, refresh=False, replay=None):
         for row in scenarios:
             if Decimal(row['kalshi_payout']) + Decimal(row['polymarket_us_payout']) != 1:
                 raise ValueError('UNSUPPORTED_REVIEWED_PAYOUT')
-        result = evaluate(books, sides, models, settlement, config, now=now)
+        explicit_mechanics = not pair['hypothetical'] or 'mechanics' in pair['review']
+        if explicit_mechanics:
+            mechanics.validate_review(pair['review'], pair, now=now)
+        detail['mechanics'] = pair['mechanics_assessment']
+        result = evaluate(books, sides, models, settlement, config, now=now,
+                          payout_scenarios=scenarios if explicit_mechanics else None)
         quote = [{'venue': book.venue, 'source_id': book.source_id, 'side': side,
                   'levels': [(str(level.price), str(level.quantity)) for level in
                              (book.yes_asks if side == 'YES' else book.no_asks)]} for book, side in zip(books, sides)]

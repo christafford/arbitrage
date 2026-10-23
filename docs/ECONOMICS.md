@@ -133,8 +133,8 @@ The production path first rechecks M2's current human approval, evidence hash,
 expiry, reviewed legs, fixed combined payout and settlement scenarios. M3 checks
 raw provenance, full depth, state, grids, freshness, identity and source/receipt
 skew. It then selects exact fee profiles. Kalshi REST still lacks a source book
-timestamp, so its live comparisons are rejected. No timestamp substitution or
-live authenticated feed was added.
+timestamp, so REST-only live comparisons are rejected. M5A B provides the separately
+validated bounded streaming path; no timestamp is substituted.
 
 Only long-buy legs with supported capital mechanics are evaluated. US synthetic
 NO from a short YES is refused with
@@ -150,8 +150,11 @@ It reports quantities tested and whether the depth boundary was reached.
 Profit is the reviewed $1 combined payout times quantity minus quote costs,
 fee bounds and reserves. This calculation is conditional on simultaneous full
 fills and holding to reviewed settlement, explicitly labeled hypothetical.
-Settlement delay uses the latest reviewed scenario time per venue. Locked
-capital-days sum each venue's capital times that venue's holding days. Summary
+M5A D uses the latest explicitly reviewed cash-availability assumption per venue
+for locked capital-days, rather than equating settlement with usable cash. Funding
+components and each scenario's cash payout/date are recorded separately. Quantities
+requiring unknown sub-cent payout rounding are skipped; the search continues at
+larger lots. See [mechanics scope and operator review](SETTLEMENT_MECHANICS.md). Summary
 ranking uses profit per capital-day, without annualization.
 
 Ranked results are independent alternatives sharing books and hypothetical

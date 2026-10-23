@@ -131,7 +131,7 @@ pending sustained-run acceptance or authorize M6. No real equivalence was approv
 ## M5A — Live research readiness — IN PROGRESS (2026-10-22 UTC)
 
 A/B were authorized first. The operator separately authorized **Workstream C** on
-2026-10-23; stop before D/E and M6.
+2026-10-23, then **Workstream D**. Stop before E and M6.
 
 - [x] A: reuse the implemented discovery extension and ranked UNVERIFIED human-review queue; existing live catalogue coverage remains partial.
 - [x] B implementation: authenticated read-only Kalshi transport, protected external credentials, raw/sanitized provenance, sequenced snapshot/delta validation and recovery, M3/M4 integration, offline tests and documentation.
@@ -139,7 +139,8 @@ A/B were authorized first. The operator separately authorized **Workstream C** o
 - [ ] Human approval of equivalent real pairs; never an agent decision.
 - [x] C tooling: public fee-source capture, unapproved review packets, exact model/provenance and scheduled-change gates, failed-refresh invalidation, offline replay and live capture checks. See [C results](M5C_RESULTS.md).
 - [ ] C operator acceptance: account/instrument applicability and actual live fee profiles remain unapproved; sample packets are ready for review.
-- [ ] D: payout/collateral/settlement mechanics verification — not started; current short-exposure restrictions remain.
+- [x] D implementation/source verification: explicit mechanics reviews, source/route checks, cash-availability timing, exact scenario cashflows, fractional payout gates and paper integration. US short-exposure restrictions remain; see [D results](M5D_RESULTS.md).
+- [ ] D operator acceptance: real instrument/account mechanics and cash-timing assumptions remain unreviewed; no real settlement observations or approvals were fabricated.
 - [ ] E: research-readiness CLI report — not started.
 
 Evidence and explicit gaps: [M5A results](M5A_RESULTS.md),

@@ -10,7 +10,7 @@ from predarb.store import connect
 from predarb.validation import dumps, load_json, utc_time
 
 
-def run(output):
+def run(output, *, mechanics_fixture=None):
     root=Path(output);root.mkdir(parents=True,exist_ok=False)
     raw=Path('tests/fixtures/m4-hypothetical.json').read_bytes()
     # Original bytes are copied before parsing, then inserted as immutable replay evidence.
@@ -35,6 +35,15 @@ def run(output):
                 'kalshi_payout':('1' if code=='YES' else '0') if normal else '0.50',
                 'polymarket_us_payout':('0' if code=='YES' else '1') if normal else '0.50',
                 'kalshi_settlement_at':'2030-07-04T12:00:00Z','polymarket_us_settlement_at':'2030-07-04T12:00:00Z'})
+        if mechanics_fixture:
+            mechanics_raw=Path(mechanics_fixture).read_bytes()
+            (root/'mechanics-input.json').write_bytes(mechanics_raw)
+            mechanics_case=load_json(mechanics_raw)
+            if (mechanics_case.get('hypothetical') is not True or
+                    mechanics_case.get('schema') != 'm5d-hypothetical/v1' or
+                    mechanics_case.get('clock') != case['clock']):
+                raise ValueError('matching explicitly hypothetical M5D fixture required')
+            form=mechanics_case['review']
         r.approve(con,pair_id,form,human_attested=True,now=now)
         for profile in case['fee_profiles']:
             import_profile(con,dumps(profile).encode(),base=root,now=now,attested=True)
@@ -57,4 +66,6 @@ def run(output):
 if __name__=='__main__':
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--output',required=True)
-    run(parser.parse_args().output)
+    parser.add_argument('--mechanics-fixture',help='optional M5D HYPOTHETICAL source-bound mechanics review')
+    args=parser.parse_args()
+    run(args.output,mechanics_fixture=args.mechanics_fixture)

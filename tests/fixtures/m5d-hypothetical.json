@@ -1,0 +1,167 @@
+{
+  "schema": "m5d-hypothetical/v1",
+  "hypothetical": true,
+  "provenance": "HYPOTHETICAL human review and cash timing; not observed venue settlement or account behavior",
+  "clock": "2030-01-01T12:00:00Z",
+  "review": {
+    "pair_id": 1,
+    "evidence_sha256": "099b1f3033595322347a8898d1390e31aecd6584dbaffe51a8921941e3be3bc0",
+    "hypothetical": true,
+    "reviewer": "HYPOTHETICAL reviewer (simulated)",
+    "human_reviewed": true,
+    "expires_at": "2030-01-01T13:00:00+00:00",
+    "reason": "HYPOTHETICAL ONLY: comparison of synthetic fully specified terms",
+    "comparisons": {
+      "proposition": {
+        "equivalent": true,
+        "rationale": "HYPOTHETICAL fixture terms explicitly agree: proposition"
+      },
+      "event_definition": {
+        "equivalent": true,
+        "rationale": "HYPOTHETICAL fixture terms explicitly agree: event_definition"
+      },
+      "timezone_cutoffs": {
+        "equivalent": true,
+        "rationale": "HYPOTHETICAL fixture terms explicitly agree: timezone_cutoffs"
+      },
+      "resolution_sources": {
+        "equivalent": true,
+        "rationale": "HYPOTHETICAL fixture terms explicitly agree: resolution_sources"
+      },
+      "thresholds_revisions": {
+        "equivalent": true,
+        "rationale": "HYPOTHETICAL fixture terms explicitly agree: thresholds_revisions"
+      },
+      "suspension_void_cancellation": {
+        "equivalent": true,
+        "rationale": "HYPOTHETICAL fixture terms explicitly agree: suspension_void_cancellation"
+      },
+      "payout_semantics": {
+        "equivalent": true,
+        "rationale": "HYPOTHETICAL fixture terms explicitly agree: payout_semantics"
+      },
+      "settlement_timing": {
+        "equivalent": true,
+        "rationale": "HYPOTHETICAL fixture terms explicitly agree: settlement_timing"
+      }
+    },
+    "outcome_mapping": {
+      "YES": "NO",
+      "NO": "YES"
+    },
+    "legs": {
+      "kalshi": "YES",
+      "polymarket_us": "YES"
+    },
+    "settlement_scenarios": [
+      {
+        "case": "YES",
+        "condition": "HYPOTHETICAL YES under the documented synthetic terms",
+        "kalshi_payout": "1",
+        "polymarket_us_payout": "0",
+        "kalshi_settlement_at": "2030-07-04T12:00:00Z",
+        "polymarket_us_settlement_at": "2030-07-04T12:00:00Z",
+        "kalshi_cash_available_at": "2030-07-05T12:00:00+00:00",
+        "polymarket_us_cash_available_at": "2030-07-07T12:00:00+00:00"
+      },
+      {
+        "case": "NO",
+        "condition": "HYPOTHETICAL NO under the documented synthetic terms",
+        "kalshi_payout": "0",
+        "polymarket_us_payout": "1",
+        "kalshi_settlement_at": "2030-07-04T12:00:00Z",
+        "polymarket_us_settlement_at": "2030-07-04T12:00:00Z",
+        "kalshi_cash_available_at": "2030-07-05T12:00:00+00:00",
+        "polymarket_us_cash_available_at": "2030-07-07T12:00:00+00:00"
+      },
+      {
+        "case": "VOID",
+        "condition": "HYPOTHETICAL VOID under the documented synthetic terms",
+        "kalshi_payout": "0.50",
+        "polymarket_us_payout": "0.50",
+        "kalshi_settlement_at": "2030-07-04T12:00:00Z",
+        "polymarket_us_settlement_at": "2030-07-04T12:00:00Z",
+        "kalshi_cash_available_at": "2030-07-05T12:00:00+00:00",
+        "polymarket_us_cash_available_at": "2030-07-07T12:00:00+00:00"
+      },
+      {
+        "case": "CANCELLED",
+        "condition": "HYPOTHETICAL CANCELLED under the documented synthetic terms",
+        "kalshi_payout": "0.50",
+        "polymarket_us_payout": "0.50",
+        "kalshi_settlement_at": "2030-07-04T12:00:00Z",
+        "polymarket_us_settlement_at": "2030-07-04T12:00:00Z",
+        "kalshi_cash_available_at": "2030-07-05T12:00:00+00:00",
+        "polymarket_us_cash_available_at": "2030-07-07T12:00:00+00:00"
+      },
+      {
+        "case": "SUSPENDED",
+        "condition": "HYPOTHETICAL SUSPENDED under the documented synthetic terms",
+        "kalshi_payout": "0.50",
+        "polymarket_us_payout": "0.50",
+        "kalshi_settlement_at": "2030-07-04T12:00:00Z",
+        "polymarket_us_settlement_at": "2030-07-04T12:00:00Z",
+        "kalshi_cash_available_at": "2030-07-05T12:00:00+00:00",
+        "polymarket_us_cash_available_at": "2030-07-07T12:00:00+00:00"
+      },
+      {
+        "case": "SOURCE_REVISION",
+        "condition": "HYPOTHETICAL SOURCE_REVISION under the documented synthetic terms",
+        "kalshi_payout": "0.50",
+        "polymarket_us_payout": "0.50",
+        "kalshi_settlement_at": "2030-07-04T12:00:00Z",
+        "polymarket_us_settlement_at": "2030-07-04T12:00:00Z",
+        "kalshi_cash_available_at": "2030-07-05T12:00:00+00:00",
+        "polymarket_us_cash_available_at": "2030-07-07T12:00:00+00:00"
+      }
+    ],
+    "mechanics": {
+      "schema": "payout-mechanics/m5a-d-v1",
+      "reviewed": true,
+      "position_scope": "NEW_ISOLATED_LONG_POSITIONS",
+      "netting": "NONE",
+      "funding": "CASH_ONLY_NO_PROCEEDS_REUSE",
+      "timing_basis": "OPERATOR_CONSERVATIVE_ASSUMPTION",
+      "venues": {
+        "kalshi": {
+          "route": "BUY_YES_FROM_COMPLEMENTARY_NO_BID",
+          "currency": "USD",
+          "notional": "1",
+          "additional_collateral_per_contract": "0",
+          "account_scope_reviewed": "HYPOTHETICAL isolated cash-funded position; no other holdings, offsets or charges",
+          "payout_precision_reviewed": "HYPOTHETICAL exact cent cash payouts; sub-cent amounts unsupported",
+          "documents": {
+            "payout_rules": [
+              "59148c9bb7a1592fc13f5f9e62a92e0e61bda560f1972a452f2e34d8d6e88e9c"
+            ],
+            "collateral": [
+              "59148c9bb7a1592fc13f5f9e62a92e0e61bda560f1972a452f2e34d8d6e88e9c"
+            ],
+            "settlement_timing": [
+              "59148c9bb7a1592fc13f5f9e62a92e0e61bda560f1972a452f2e34d8d6e88e9c"
+            ]
+          }
+        },
+        "polymarket_us": {
+          "route": "BUY_LONG_FROM_OFFER",
+          "currency": "USD",
+          "notional": "1",
+          "additional_collateral_per_contract": "0",
+          "account_scope_reviewed": "HYPOTHETICAL isolated cash-funded position; no other holdings, offsets or charges",
+          "payout_precision_reviewed": "HYPOTHETICAL exact cent cash payouts; sub-cent amounts unsupported",
+          "documents": {
+            "payout_rules": [
+              "b21279c6fc437b649b6ad18fcc58d2e9bdb0282cb4f2788a9322ae3e65831c98"
+            ],
+            "collateral": [
+              "b21279c6fc437b649b6ad18fcc58d2e9bdb0282cb4f2788a9322ae3e65831c98"
+            ],
+            "settlement_timing": [
+              "b21279c6fc437b649b6ad18fcc58d2e9bdb0282cb4f2788a9322ae3e65831c98"
+            ]
+          }
+        }
+      }
+    }
+  }
+}

@@ -260,3 +260,20 @@ No new table or migration is required. `fee_store.py` binds live imports/use-tim
 checks to the latest successful capture, sources, model and bounded window.
 Human review remains mandatory. Public prose and account terms are not automatically
 interpreted as applicable rates. See [fee review and failure behavior](FEE_REVIEW.md).
+
+## M5A Workstream D (schema 7 retained)
+
+`mechanics.py` validates explicit cash-funded long scope, source-role references,
+selected routes, complementary payouts and cash-availability assumptions. These
+fields are stored in the existing pair review/audit JSON and inherit its evidence
+expiry and invalidation; no table migration is required. Registry use rehashes
+original/text document bytes and invalidates legacy live approvals missing D
+mechanics. Hypothetical legacy replay remains explicitly separated.
+
+`economics/m5a-d-v1` records funding components and scenario cashflows, uses
+cash-availability assumptions for capital-days, and skips quantities requiring
+unknown payout rounding. `paper-stress/m5a-d-v1` applies the same route and payout
+gates to unequal hypothetical fills. Both preserve US synthetic-short rejection.
+The raw book schema and fee formulas are unchanged. No settlement observation,
+margin execution, portfolio ledger or cash-transfer workflow is implemented.
+See [mechanics and limits](SETTLEMENT_MECHANICS.md).

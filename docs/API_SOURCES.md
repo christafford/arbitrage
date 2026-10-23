@@ -332,3 +332,34 @@ The Kalshi sample was captured after its trading close; these are technical fee
 captures, not a tradable pair or a readiness claim. The supplied PDF is archived
 locally and hash-recorded with its filesystem clock distinguished from an
 operator-confirmed retrieval time. [C results](M5C_RESULTS.md) list remaining gaps.
+
+### Workstream D mechanics verification — 2026-10-23 UTC
+
+Ten official US documents were retrieved, with raw bytes saved before decoding.
+[The source manifest](evidence/M5D_API_CHECKS.json) records exact URLs, HTTP status,
+allowlisted headers, UTC receipt times, hashes and local archive paths. The three
+US structure/collateral/settlement bodies are preserved in a sanitized JSON replay
+fixture under local document contract `official-mechanics-documents/m5a-d-v1`.
+These are prose sources, not an invented structured venue API. No new API field,
+credential, account endpoint or order route is introduced.
+
+| Official source | Verified interpretation and limit |
+| --- | --- |
+| [US collateral](https://docs.polymarket.us/market-structure/collateral-and-margin) | A short locks full payout collateral; buying-power reduction is a separate net amount. The scanner retains its short restriction |
+| [US structure](https://docs.polymarket.us/learn/trading/basics/buying-yes-vs-selling-no) | NO is synthetic short-YES exposure, not a separate long NO token |
+| [US settlement](https://docs.polymarket.us/learn/markets/contract-settlement) | Settlement follows finalization; market-specific alternative settlement exists |
+| [US resolution](https://docs.polymarket.us/learn/markets/market-resolution) | Timing varies with reliable source information; no generic guaranteed cash-release time inferred |
+| [US collateral return](https://docs.polymarket.us/market-structure/mutually-exclusive-collateral-return) | Portfolio effects are conditional; no offsets or proceeds reuse are credited locally |
+| [US fractions](https://docs.polymarket.us/learn/trading/basics/fractional-shares) | Fractional trading does not establish exceptional-case payout rounding rules |
+| [Kalshi balances](https://help.kalshi.com/en/articles/13823844-portfolio-balances-and-positions) | Purchase costs, displayed value and contractual payout differ; the specific rules govern payout |
+| [Kalshi market FAQ](https://help.kalshi.com/en/articles/13823821-market-faqs) | Close and determination differ; settlement may await official data |
+| [Kalshi collateral return](https://help.kalshi.com/en/articles/13823816-collateral-return) | Conditional portfolio effects exist; the supported isolated-long model takes no credit for them |
+| [Kalshi rounding](https://docs.kalshi.com/getting_started/fee_rounding) | Existing fill/balance rounding evidence does not justify inventing arbitrary settlement rounding |
+
+D's operator review contract is `payout-mechanics/m5a-d-v1`. It supports cash-funded
+longs only, requires current source-role hashes and treats cash timing as a declared
+research assumption. Payouts needing sub-cent rounding are unsupported locally;
+this is a conservative applicability restriction, not a claimed venue rule.
+No real account mechanics, pair equivalence or settlement event was agent-approved.
+[Implementation results and remaining acceptance](M5D_RESULTS.md) distinguish
+source verification, hypothetical integration evidence and outstanding human work.

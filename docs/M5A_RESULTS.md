@@ -2,7 +2,8 @@
 
 The original scope was A/B. The operator separately authorized C on 2026-10-23;
 [C tooling and live captures passed](M5C_RESULTS.md), with human fee approvals still
-pending. D/E remain unstarted. **M5A is incomplete; B's bounded pre-rollout live
+pending. D was separately authorized and its implementation/source checks
+passed; [real mechanics reviews remain pending](M5D_RESULTS.md). E remains unstarted. **M5A is incomplete; B's bounded pre-rollout live
 acceptance has passed.**
 Kalshi's changelog dates market-clock introduction to October 29; earlier work
 had treated the ahead-of-rollout reference schema as current. Explicit
@@ -144,7 +145,7 @@ general incompatibility with that algorithm. C–E and M6 remain untouched.
 | Live disconnect/reconnect continuity | **PASSED for `sequence-v1`**: actual periodic reconnect and recovery after a real message timeout |
 | Three M5 blockers resolved | **No**: human pair decisions and validated live fees remain open; clocked protocol needs live revalidation after the October 29 cutoff |
 | C: live fee validation | **Tooling/live captures passed**; actual operator fee approval remains pending. See [C results](M5C_RESULTS.md) |
-| D: payout/collateral mechanics verification | **Not started**; existing unsupported-short rejection preserved |
+| D: payout/collateral mechanics verification | **Implementation/source checks passed**; real operator review remains pending; unsupported-short rejection preserved |
 | E: research-readiness dashboard | **Not started** |
 | Real pair approval by agent / actual orders | None / none |
 | M4 30-day / M5 multiweek / M6 | Still pending / still pending / not started |
@@ -152,5 +153,5 @@ general incompatibility with that algorithm. C–E and M6 remain untouched.
 Pre-rollout B acceptance is supported by actual capture, provenance/replay and
 reconnect evidence, not just offline tests. This is bounded protocol acceptance;
 it establishes neither multiweek readiness nor C–E completion. C was subsequently
-authorized and implemented; stop before D/E and revalidate the clocked protocol before collecting
+authorized and implemented, followed by D; stop before E and revalidate the clocked protocol before collecting
 beyond the October 29 review boundary.
