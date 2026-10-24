@@ -1,0 +1,20 @@
+{
+  "schema": "readiness-test/m5a-e-v1",
+  "hypothetical": true,
+  "provenance": "HYPOTHETICAL gate-composition inputs; no venue response, real approval, account or readiness claim.",
+  "clock": "2030-01-01T12:00:00Z",
+  "simulated_review": {
+    "status": "APPROVED",
+    "approval_blocker": null,
+    "reason": "HYPOTHETICAL simulated review result",
+    "expires_at": "2030-01-01T13:00:00Z",
+    "review": {"legs": {"kalshi": "YES", "polymarket_us": "YES"}},
+    "mechanics_assessment": {"status": "REVIEWED_RESEARCH_ONLY"}
+  },
+  "simulated_host": {
+    "ready": true,
+    "alerts": [],
+    "research": {"status": "NO_CYCLES"},
+    "metrics": {"research_cycles_total": 0}
+  }
+}

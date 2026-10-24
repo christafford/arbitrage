@@ -363,3 +363,12 @@ this is a conservative applicability restriction, not a claimed venue rule.
 No real account mechanics, pair equivalence or settlement event was agent-approved.
 [Implementation results and remaining acceptance](M5D_RESULTS.md) distinguish
 source verification, hypothetical integration evidence and outstanding human work.
+
+## M5A E readiness report (2026-10-24)
+
+E consumes archived evidence through the existing A–D validators. It adds no
+venue requests or external API field assumptions, and does not recapture or
+reapprove source documents. Existing schema/provenance and expiry rules apply
+at the current clock. The protocol horizon warning uses B's configured
+`SEQUENCE_PROTOCOL_END`; E neither extends it nor claims a new live clocked
+acceptance. See [readiness](READINESS.md) and [E verification](M5E_RESULTS.md).

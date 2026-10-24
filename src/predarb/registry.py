@@ -298,7 +298,8 @@ def propose(con, kalshi_id, polymarket_us_id, operator, *, now=None):
     return cursor.lastrowid
 
 
-def review(con, pair_id, *, now=None):
+def review(con, pair_id, *, now=None, persist=True):
+    """Recompute validity; diagnostics may opt out of persisting invalidations."""
     now = now or now_utc()
     pair = _one(con, 'SELECT * FROM pairs WHERE id=?', (pair_id,))
     bundle = _bundle(con, pair['kalshi_id'], pair['polymarket_us_id'])
@@ -315,9 +316,10 @@ def review(con, pair_id, *, now=None):
         else:
             status = 'INVALIDATED'
         if reason:
-            con.execute('UPDATE pairs SET status=?,reason=? WHERE id=?', (status, reason, pair_id))
-            _audit(con, pair_id, 'SYSTEM', status, {'reason': reason}, now)
-            con.commit()
+            if persist:
+                con.execute('UPDATE pairs SET status=?,reason=? WHERE id=?', (status, reason, pair_id))
+                _audit(con, pair_id, 'SYSTEM', status, {'reason': reason}, now)
+                con.commit()
             pair['status'], pair['reason'] = status, reason
     pair['decision_evidence_sha256'] = pair['evidence_sha256']
     pair['review'] = json.loads(pair.pop('review_json')) if pair['review_json'] else None

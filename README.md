@@ -4,7 +4,7 @@ A **read-only, Codex-ready** starter for researching fully hedged binary predict
 
 **Current state:** M1–M3 are complete. M4 economics/recording and M5 paper/operations are implemented and tested; **M4's actual 30-day run and M5's actual multiweek run remain pending**. Research includes versioned fees, depth/budget/reserve evaluation, paper downside scenarios, later-quote comparisons, local health/metrics, verified backups and deployment templates. All live evidence remains `UNVERIFIED`; no real pair or fee profile is approved. Kalshi REST lacks source time and fails freshness checks. No live trading or service activation exists. See [M5 results and gaps](docs/M5_RESULTS.md), [paper model](docs/PAPER_EXECUTION.md), [operations](docs/OPERATIONS.md) and [M4 results](docs/M4_RESULTS.md).
 
-**M5A A–D:** discovery is implemented. The read-only Kalshi WebSocket adapter is
+**M5A A–E:** discovery is implemented. The read-only Kalshi WebSocket adapter is
 **validated live in explicit `sequence-v1` mode**, including recovery after a
 message timeout. Kalshi's changelog dates market-clock rollout to October 29;
 the pre-rollout mode expires **2026-10-29 00:00 UTC**. Default `clocked` mode
@@ -12,7 +12,10 @@ still requires the clock and needs live revalidation after rollout.
 **C fee capture/review tooling is implemented**; live captures passed, but real
 fee applicability still requires operator review. **D mechanics checks are
 implemented**, with real account/instrument reviews pending and US synthetic NO
-still blocked. E remains unstarted. See [settlement mechanics](docs/SETTLEMENT_MECHANICS.md),
+still blocked. **E readiness reporting is implemented**: current evidence,
+session/host/backup prerequisites and protocol deadlines, with explicit blockers.
+See [readiness guide](docs/READINESS.md), [E verification](docs/M5E_RESULTS.md),
+[settlement mechanics](docs/SETTLEMENT_MECHANICS.md),
 [D evidence](docs/M5D_RESULTS.md),
 [fee review workflow](docs/FEE_REVIEW.md), [C evidence](docs/M5C_RESULTS.md),
 [B acceptance evidence](docs/M5B_SEQUENCE_RESULTS.md),
@@ -126,7 +129,9 @@ destination. Paper fills/cancel acknowledgments are assumed, with explicit
 one-leg downside and unknown-data rejection. The monitor cannot place orders.
 See [paper workflow](docs/PAPER_EXECUTION.md) and [deployment/restore guide](docs/OPERATIONS.md).
 
-Before a multiweek run, inspect health **after the first completed cycle**.
+Before a multiweek run, use
+`predarb research readiness --db YOUR_DB --session-id SESSION_ID --backup-dir YOUR_BACKUP_DIR`
+and resolve its blockers. Inspect health **after the first completed cycle**.
 `ready=true` describes host readiness; the `research.status` field separately
 shows empty, data-gated or recent economic observations. The monitor warns when
 refresh is disabled (as in the one-cycle example). Even with refresh enabled,

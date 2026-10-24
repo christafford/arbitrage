@@ -1,0 +1,170 @@
+{
+  "evaluated_at": "2026-10-24T04:44:51.953641+00:00",
+  "scope": "M5A E read-only diagnostics; isolated empty live-mode smoke session uses zero budgets. No real approvals or services.",
+  "commands": [
+    {
+      "command": [
+        ".venv/bin/python",
+        "-m",
+        "predarb.cli",
+        "research",
+        "readiness",
+        "--help"
+      ],
+      "exit_code": 0,
+      "stdout": "usage: cli.py research readiness [-h] [--db DB] [--session-id SESSION_ID]\n                                 [--horizon-days HORIZON_DAYS]\n                                 [--backup-dir BACKUP_DIR]\n                                 [--format {text,json}]\n\noptions:\n  -h, --help            show this help message and exit\n  --db DB\n  --session-id SESSION_ID\n  --horizon-days HORIZON_DAYS\n  --backup-dir BACKUP_DIR\n  --format {text,json}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        ".venv/bin/python",
+        "-m",
+        "predarb.cli",
+        "research",
+        "start",
+        "--db",
+        "data/m5e-smoke/empty-live.sqlite3",
+        "--policy",
+        "examples/M4_RESEARCH_POLICY.json"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"session_id\":1}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        ".venv/bin/python",
+        "-m",
+        "predarb.cli",
+        "ops",
+        "backup",
+        "--db",
+        "data/m5e-smoke/empty-live.sqlite3",
+        "--output",
+        "data/m5e-smoke/backups/empty-live.sqlite3"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"created_at\":\"2026-10-24T04:44:27.226380+00:00\",\"destination\":\"/home/chris/code/arbitrage/data/m5e-smoke/backups/empty-live.sqlite3\",\"file_sha256\":\"a9ed3bef345e183cf34ec9677bf10ff9abfac3ce4e1ab84ff6ca8eede79940a5\",\"format\":\"predarb-backup/m5-v1\",\"logical_sha256\":\"d02de037cd9b9ba6c7e681652c12d8140b1dfc4f4a416a98ad1575a511dccc35\",\"manifest\":\"/home/chris/code/arbitrage/data/m5e-smoke/backups/empty-live.sqlite3.manifest.json\",\"row_counts\":{\"book_captures\":0,\"catalogue_entries\":0,\"collection_runs\":0,\"discovery_queue\":0,\"discovery_state\":0,\"document_heads\":0,\"fee_documents\":0,\"fee_imports\":0,\"fee_profiles\":0,\"normalized_books\":0,\"opportunities\":0,\"ops_checks\":0,\"ops_events\":0,\"pair_audit\":0,\"pairs\":0,\"paper_comparisons\":0,\"paper_intents\":0,\"paper_tick_inputs\":0,\"raw_observations\":0,\"registry_instruments\":0,\"registry_supplements\":0,\"research_audit\":1,\"research_cycles\":0,\"research_details\":0,\"research_evaluations\":0,\"research_replays\":0,\"research_sessions\":1,\"rule_documents\":0,\"rule_versions\":0,\"supplement_versions\":0,\"ws_connections\":0,\"ws_frames\":0},\"schema_version\":7}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        ".venv/bin/python",
+        "-m",
+        "predarb.cli",
+        "research",
+        "readiness",
+        "--db",
+        "data/m5e-smoke/empty-live.sqlite3",
+        "--session-id",
+        "1",
+        "--backup-dir",
+        "data/m5e-smoke/backups",
+        "--format",
+        "json"
+      ],
+      "exit_code": 2,
+      "stdout": "{\"checks\":[{\"code\":\"DATABASE_SCHEMA\",\"detail\":{\"actual\":7,\"required\":7},\"expires_at\":null,\"next_action\":\"\",\"status\":\"PASS\"},{\"code\":\"REGISTRY_SCOPE\",\"detail\":{\"hypothetical_pairs\":0,\"pair_limit\":50,\"total_pairs\":0,\"truncated\":false},\"expires_at\":null,\"next_action\":\"\",\"status\":\"PASS\"},{\"code\":\"LIVE_ARCHIVE\",\"detail\":{\"hypothetical_pairs\":0,\"hypothetical_sessions\":0},\"expires_at\":null,\"next_action\":\"\",\"status\":\"PASS\"},{\"code\":\"CURRENT_PAIR_DATA\",\"detail\":{\"ready_pairs\":0},\"expires_at\":null,\"next_action\":\"Resolve the per-pair approval, mechanics, fee and book blockers.\",\"status\":\"BLOCKED\"},{\"code\":\"SESSION\",\"detail\":{\"mode\":\"LIVE_READ_ONLY\",\"started_at\":\"2026-10-24T04:44:27.031132+00:00\"},\"expires_at\":null,\"next_action\":\"\",\"status\":\"PASS\"},{\"code\":\"RESEARCH_BUDGETS\",\"detail\":{\"kalshi_budget\":\"0\",\"max_contracts\":\"100\",\"min_profit\":\".01\",\"polymarket_us_budget\":\"0\",\"reserve_per_leg\":\".005\"},\"expires_at\":null,\"next_action\":\"Declare positive hypothetical research budgets within $10,000; this does not fund accounts.\",\"status\":\"BLOCKED\"},{\"code\":\"SEARCH_LIMIT\",\"detail\":{\"searchable_ready_pairs\":[]},\"expires_at\":null,\"next_action\":\"Resolve pair data or configure 1..10,000 common lot increments for at least one ready pair.\",\"status\":\"BLOCKED\"},{\"code\":\"HOST_HEALTH\",\"detail\":[{\"code\":\"NO_RESEARCH_CYCLES\",\"severity\":\"WARN\"},{\"code\":\"NO_CACHED_APPROVED_PAIRS\",\"severity\":\"WARN\"}],\"expires_at\":null,\"next_action\":\"\",\"status\":\"PASS\"},{\"code\":\"BACKUP_OBSERVED\",\"detail\":{\"alerts\":[],\"full_content_verification_performed\":false},\"expires_at\":null,\"next_action\":\"\",\"status\":\"PASS\"},{\"code\":\"REQUESTED_PROTOCOL_HORIZON\",\"detail\":{\"compatible_ready_pairs\":0},\"expires_at\":null,\"next_action\":\"Resolve current data blockers and any protocol cutoff within the requested horizon.\",\"status\":\"BLOCKED\"}],\"database_schema\":7,\"deployment_verified\":false,\"discovery\":{\"latest_ranked_at\":null,\"queue_size\":0,\"required_for_approved_pair_readiness\":false,\"status\":\"NOT_OBSERVED\"},\"evaluated_at\":\"2026-10-24T04:44:27.375555+00:00\",\"fees_or_profit_evaluated\":false,\"latest_collections\":[],\"multiweek_acceptance\":false,\"next_actions\":[\"Resolve the per-pair approval, mechanics, fee and book blockers.\",\"Declare positive hypothetical research budgets within $10,000; this does not fund accounts.\",\"Resolve pair data or configure 1..10,000 common lot increments for at least one ready pair.\",\"Resolve current data blockers and any protocol cutoff within the requested horizon.\"],\"operations\":{\"alerts\":[{\"code\":\"NO_RESEARCH_CYCLES\",\"severity\":\"WARN\"},{\"code\":\"NO_CACHED_APPROVED_PAIRS\",\"severity\":\"WARN\"}],\"clock\":{\"offset_measured\":false,\"probe\":\"timedatectl.NTPSynchronized\",\"synchronized\":true},\"evaluated_at\":\"2026-10-24T04:44:27.375555+00:00\",\"metrics\":{\"cached_approved_pairs\":0,\"collection_failures_total\":0,\"database_bytes\":258048,\"disk_free_bytes\":916690251776,\"paper_comparisons_total\":0,\"paper_high_scenarios_total\":0,\"research_cycles_total\":0,\"research_latest_economics_evaluated\":0,\"research_latest_modeled_edges\":0,\"research_latest_pairs\":0,\"research_latest_rejected\":0},\"ready\":true,\"research\":{\"cycle_id\":null,\"economics_evaluated\":0,\"evaluated_at\":null,\"modeled_edges\":0,\"pairs\":0,\"rejected\":0,\"status\":\"NO_CYCLES\"},\"session_id\":1,\"trading_authorized\":false},\"pairs\":[],\"prerequisites_pass\":false,\"protocol_constraints\":{\"action\":\"Revalidate clocked mode live before the sequence-v1 cutoff; never extend compatibility automatically.\",\"sequence_v1_valid_until\":\"2026-10-29T00:00:00+00:00\"},\"protocol_supports_requested_horizon\":false,\"ready_now\":false,\"ready_pair_count\":0,\"registry\":{\"hypothetical_pairs\":0,\"pair_limit\":50,\"total_pairs\":0,\"truncated\":false},\"renewal_required\":\"Books need continuous refresh; pair, fee and mechanics evidence expire within 24 hours. Readiness is a snapshot, not a run guarantee.\",\"requested_horizon_days\":21,\"requested_until\":\"2026-11-14T04:44:27.375555+00:00\",\"run_evidence\":{\"cycles\":0,\"latest_observation\":{\"cycle_id\":null,\"economics_evaluated\":0,\"evaluated_at\":null,\"modeled_edges\":0,\"pairs\":0,\"rejected\":0,\"status\":\"NO_CYCLES\"},\"sustained_run_audited\":false},\"schema\":\"research-readiness/m5a-e-v1\",\"session\":{\"config\":{\"kalshi_budget\":\"0\",\"max_contracts\":\"100\",\"min_profit\":\".01\",\"polymarket_us_budget\":\"0\",\"reserve_per_leg\":\".005\"},\"id\":1,\"interval_seconds\":60,\"mode\":\"LIVE_READ_ONLY\",\"started_at\":\"2026-10-24T04:44:27.031132+00:00\",\"target_end\":\"2026-11-23T04:44:27.031132+00:00\"},\"status\":\"BLOCKED\",\"thirty_day_acceptance\":false,\"trading_authorized\":false,\"valid_until\":null,\"verification\":\"UNVERIFIED\"}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        ".venv/bin/python",
+        "-m",
+        "predarb.cli",
+        "research",
+        "readiness",
+        "--db",
+        "data/m5c-live.sqlite3",
+        "--horizon-days",
+        "21",
+        "--format",
+        "json"
+      ],
+      "exit_code": 2,
+      "stdout": "{\"checks\":[{\"code\":\"DATABASE_SCHEMA\",\"detail\":{\"actual\":7,\"required\":7},\"expires_at\":null,\"next_action\":\"\",\"status\":\"PASS\"},{\"code\":\"REGISTRY_SCOPE\",\"detail\":{\"hypothetical_pairs\":0,\"pair_limit\":50,\"total_pairs\":0,\"truncated\":false},\"expires_at\":null,\"next_action\":\"\",\"status\":\"PASS\"},{\"code\":\"LIVE_ARCHIVE\",\"detail\":{\"hypothetical_pairs\":0,\"hypothetical_sessions\":0},\"expires_at\":null,\"next_action\":\"\",\"status\":\"PASS\"},{\"code\":\"CURRENT_PAIR_DATA\",\"detail\":{\"ready_pairs\":0},\"expires_at\":null,\"next_action\":\"Resolve the per-pair approval, mechanics, fee and book blockers.\",\"status\":\"BLOCKED\"},{\"code\":\"SESSION\",\"detail\":\"No session selected.\",\"expires_at\":null,\"next_action\":\"Create or select a LIVE_READ_ONLY session and pass --session-id.\",\"status\":\"BLOCKED\"},{\"code\":\"REQUESTED_PROTOCOL_HORIZON\",\"detail\":{\"compatible_ready_pairs\":0},\"expires_at\":null,\"next_action\":\"Resolve current data blockers and any protocol cutoff within the requested horizon.\",\"status\":\"BLOCKED\"}],\"database_schema\":7,\"deployment_verified\":false,\"discovery\":{\"latest_ranked_at\":null,\"queue_size\":0,\"required_for_approved_pair_readiness\":false,\"status\":\"NOT_OBSERVED\"},\"evaluated_at\":\"2026-10-24T04:44:27.614221+00:00\",\"fees_or_profit_evaluated\":false,\"latest_collections\":[],\"multiweek_acceptance\":false,\"next_actions\":[\"Resolve the per-pair approval, mechanics, fee and book blockers.\",\"Create or select a LIVE_READ_ONLY session and pass --session-id.\",\"Resolve current data blockers and any protocol cutoff within the requested horizon.\"],\"pairs\":[],\"prerequisites_pass\":false,\"protocol_constraints\":{\"action\":\"Revalidate clocked mode live before the sequence-v1 cutoff; never extend compatibility automatically.\",\"sequence_v1_valid_until\":\"2026-10-29T00:00:00+00:00\"},\"protocol_supports_requested_horizon\":false,\"ready_now\":false,\"ready_pair_count\":0,\"registry\":{\"hypothetical_pairs\":0,\"pair_limit\":50,\"total_pairs\":0,\"truncated\":false},\"renewal_required\":\"Books need continuous refresh; pair, fee and mechanics evidence expire within 24 hours. Readiness is a snapshot, not a run guarantee.\",\"requested_horizon_days\":21,\"requested_until\":\"2026-11-14T04:44:27.614221+00:00\",\"schema\":\"research-readiness/m5a-e-v1\",\"status\":\"BLOCKED\",\"thirty_day_acceptance\":false,\"trading_authorized\":false,\"valid_until\":null,\"verification\":\"UNVERIFIED\"}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        ".venv/bin/python",
+        "-m",
+        "predarb.cli",
+        "research",
+        "readiness",
+        "--db",
+        "data/discovery-validation.sqlite3",
+        "--horizon-days",
+        "21",
+        "--format",
+        "json"
+      ],
+      "exit_code": 2,
+      "stdout": "{\"checks\":[{\"code\":\"DATABASE_SCHEMA\",\"detail\":{\"actual\":6,\"required\":7},\"expires_at\":null,\"next_action\":\"Back up and migrate the archive with an authorized writer before using this report.\",\"status\":\"BLOCKED\"}],\"database_schema\":6,\"deployment_verified\":false,\"evaluated_at\":\"2026-10-24T04:44:49.548780+00:00\",\"fees_or_profit_evaluated\":false,\"multiweek_acceptance\":false,\"next_actions\":[\"Back up and migrate the archive with an authorized writer before using this report.\"],\"pairs\":[],\"prerequisites_pass\":false,\"protocol_constraints\":{\"action\":\"Revalidate clocked mode live before the sequence-v1 cutoff; never extend compatibility automatically.\",\"sequence_v1_valid_until\":\"2026-10-29T00:00:00+00:00\"},\"protocol_supports_requested_horizon\":false,\"ready_now\":false,\"renewal_required\":\"Books need continuous refresh; pair, fee and mechanics evidence expire within 24 hours. Readiness is a snapshot, not a run guarantee.\",\"requested_horizon_days\":21,\"requested_until\":\"2026-11-14T04:44:49.548780+00:00\",\"schema\":\"research-readiness/m5a-e-v1\",\"status\":\"BLOCKED\",\"thirty_day_acceptance\":false,\"trading_authorized\":false,\"verification\":\"UNVERIFIED\"}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        ".venv/bin/python",
+        "-m",
+        "predarb.cli",
+        "research",
+        "readiness",
+        "--db",
+        "data/m5d-demo/research.sqlite3",
+        "--horizon-days",
+        "21",
+        "--format",
+        "json"
+      ],
+      "exit_code": 2,
+      "stdout": "{\"checks\":[{\"code\":\"DATABASE_SCHEMA\",\"detail\":{\"actual\":7,\"required\":7},\"expires_at\":null,\"next_action\":\"\",\"status\":\"PASS\"},{\"code\":\"REGISTRY_SCOPE\",\"detail\":{\"hypothetical_pairs\":1,\"pair_limit\":50,\"total_pairs\":1,\"truncated\":false},\"expires_at\":null,\"next_action\":\"\",\"status\":\"PASS\"},{\"code\":\"LIVE_ARCHIVE\",\"detail\":{\"hypothetical_pairs\":1,\"hypothetical_sessions\":1},\"expires_at\":null,\"next_action\":\"Use a separate archive for live research; never promote hypothetical evidence.\",\"status\":\"BLOCKED\"},{\"code\":\"CURRENT_PAIR_DATA\",\"detail\":{\"ready_pairs\":0},\"expires_at\":null,\"next_action\":\"Resolve the per-pair approval, mechanics, fee and book blockers.\",\"status\":\"BLOCKED\"},{\"code\":\"SESSION\",\"detail\":\"No session selected.\",\"expires_at\":null,\"next_action\":\"Create or select a LIVE_READ_ONLY session and pass --session-id.\",\"status\":\"BLOCKED\"},{\"code\":\"REQUESTED_PROTOCOL_HORIZON\",\"detail\":{\"compatible_ready_pairs\":0},\"expires_at\":null,\"next_action\":\"Resolve current data blockers and any protocol cutoff within the requested horizon.\",\"status\":\"BLOCKED\"}],\"database_schema\":7,\"deployment_verified\":false,\"discovery\":{\"latest_ranked_at\":null,\"queue_size\":0,\"required_for_approved_pair_readiness\":false,\"status\":\"NOT_OBSERVED\"},\"evaluated_at\":\"2026-10-24T04:44:51.610906+00:00\",\"fees_or_profit_evaluated\":false,\"latest_collections\":[],\"multiweek_acceptance\":false,\"next_actions\":[\"Use a separate archive for live research; never promote hypothetical evidence.\",\"Resolve the per-pair approval, mechanics, fee and book blockers.\",\"Create or select a LIVE_READ_ONLY session and pass --session-id.\",\"Resolve current data blockers and any protocol cutoff within the requested horizon.\",\"Collect real instruments and complete human pair, fee and mechanics reviews.\"],\"pairs\":[{\"books\":[],\"checks\":[{\"code\":\"REAL_PAIR\",\"detail\":\"Hypothetical registry evidence cannot establish live readiness.\",\"expires_at\":null,\"next_action\":\"Collect real instruments and complete human pair, fee and mechanics reviews.\",\"status\":\"BLOCKED\"}],\"fees\":[],\"horizon_supported\":false,\"hypothetical\":true,\"kalshi_id\":\"HYPOTHETICAL-K\",\"pair_id\":1,\"polymarket_us_id\":\"HYPOTHETICAL-P\",\"ready_now\":false,\"stored_status\":\"INVALIDATED\"}],\"prerequisites_pass\":false,\"protocol_constraints\":{\"action\":\"Revalidate clocked mode live before the sequence-v1 cutoff; never extend compatibility automatically.\",\"sequence_v1_valid_until\":\"2026-10-29T00:00:00+00:00\"},\"protocol_supports_requested_horizon\":false,\"ready_now\":false,\"ready_pair_count\":0,\"registry\":{\"hypothetical_pairs\":1,\"pair_limit\":50,\"total_pairs\":1,\"truncated\":false},\"renewal_required\":\"Books need continuous refresh; pair, fee and mechanics evidence expire within 24 hours. Readiness is a snapshot, not a run guarantee.\",\"requested_horizon_days\":21,\"requested_until\":\"2026-11-14T04:44:51.610906+00:00\",\"schema\":\"research-readiness/m5a-e-v1\",\"status\":\"BLOCKED\",\"thirty_day_acceptance\":false,\"trading_authorized\":false,\"valid_until\":null,\"verification\":\"UNVERIFIED\"}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        ".venv/bin/python",
+        "-m",
+        "predarb.cli",
+        "research",
+        "readiness",
+        "--db",
+        "data/m5c-live.sqlite3"
+      ],
+      "exit_code": 2,
+      "stdout": "Research readiness: BLOCKED\nEvaluated at: 2026-10-24T04:44:51.763674+00:00\nReady pairs: 0; ready now: False\nEarliest ready-pair evidence expiry: not established\nRequested horizon: 21 days; protocol coverage: False\nsequence-v1 cutoff: 2026-10-29T00:00:00+00:00\nRevalidate clocked mode live before the sequence-v1 cutoff; never extend compatibility automatically.\n[PASS] DATABASE_SCHEMA: {'actual': 7, 'required': 7}\n[PASS] REGISTRY_SCOPE: {'total_pairs': 0, 'hypothetical_pairs': 0, 'pair_limit': 50, 'truncated': False}\n[PASS] LIVE_ARCHIVE: {'hypothetical_pairs': 0, 'hypothetical_sessions': 0}\n[BLOCKED] CURRENT_PAIR_DATA: {'ready_pairs': 0}\n[BLOCKED] SESSION: No session selected.\n[BLOCKED] REQUESTED_PROTOCOL_HORIZON: {'compatible_ready_pairs': 0}\nNext: Resolve the per-pair approval, mechanics, fee and book blockers.\nNext: Create or select a LIVE_READ_ONLY session and pass --session-id.\nNext: Resolve current data blockers and any protocol cutoff within the requested horizon.\nBooks need continuous refresh; pair, fee and mechanics evidence expire within 24 hours. Readiness is a snapshot, not a run guarantee.\nMultiweek acceptance: not established. Trading authorized: false.\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        ".venv/bin/python",
+        "-m",
+        "predarb.cli",
+        "research",
+        "readiness",
+        "--db",
+        "data/m5e-smoke/missing.sqlite3"
+      ],
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "Collector/error: [Errno 2] No such file or directory: '/home/chris/code/arbitrage/data/m5e-smoke/missing.sqlite3'\n"
+    }
+  ],
+  "archive_file_checks": [
+    {
+      "database": "data/m5c-live.sqlite3",
+      "file_sha256_before": "647f91d9a41fc230635b80692a0b8411050ada591c631cd44737083a38f3b716",
+      "file_sha256_after": "647f91d9a41fc230635b80692a0b8411050ada591c631cd44737083a38f3b716"
+    },
+    {
+      "database": "data/discovery-validation.sqlite3",
+      "file_sha256_before": "07562cef6c00ae561b3cf4a00dc6c0c844bc1eddc2ae9644e9f95f3a9bde0c87",
+      "file_sha256_after": "07562cef6c00ae561b3cf4a00dc6c0c844bc1eddc2ae9644e9f95f3a9bde0c87"
+    },
+    {
+      "database": "data/m5d-demo/research.sqlite3",
+      "file_sha256_before": "4f31ec91bcf19bc585fc1e5c00f3a21aeb197c422c9e93fff9fbf1117af22d28",
+      "file_sha256_after": "4f31ec91bcf19bc585fc1e5c00f3a21aeb197c422c9e93fff9fbf1117af22d28"
+    }
+  ]
+}

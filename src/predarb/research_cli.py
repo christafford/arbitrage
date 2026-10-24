@@ -9,15 +9,21 @@ from .fee_capture import capture, export_review
 from .research import clock, export_csv, prune_details, scan_once, session, start_session, summary
 from .store import connect
 from .validation import dumps, load_json
+from . import readiness
 
 
 def add_parser(subparsers):
     parser = subparsers.add_parser('research', help='read-only economics, polling and audit')
     commands = parser.add_subparsers(dest='research_cmd', required=True)
-    for name in ('fees-capture', 'fees-review', 'fees-import', 'start', 'scan', 'summary', 'csv', 'prune'):
+    for name in ('fees-capture', 'fees-review', 'fees-import', 'start', 'scan', 'summary', 'csv', 'prune', 'readiness'):
         command = commands.add_parser(name)
         command.add_argument('--db', default='data/research.sqlite3')
-        if name == 'fees-capture':
+        if name == 'readiness':
+            command.add_argument('--session-id', type=int)
+            command.add_argument('--horizon-days', type=int, default=21)
+            command.add_argument('--backup-dir')
+            command.add_argument('--format', choices=('text', 'json'), default='text')
+        elif name == 'fees-capture':
             command.add_argument('venue', choices=('kalshi', 'polymarket_us'))
             command.add_argument('source_id')
             command.add_argument('--side', required=True, choices=('YES', 'NO'))
@@ -44,9 +50,13 @@ def add_parser(subparsers):
 
 
 def run(args):
-    context = closing(readonly(args.db)) if args.research_cmd in {'summary', 'csv', 'fees-review'} else connect(args.db)
+    context = closing(readonly(args.db)) if args.research_cmd in {'summary', 'csv', 'fees-review', 'readiness'} else connect(args.db)
     with context as con:
-        if args.research_cmd == 'fees-capture':
+        if args.research_cmd == 'readiness':
+            result = readiness.report(con, session_id=args.session_id, horizon_days=args.horizon_days, backup_dir=args.backup_dir)
+            print(dumps(result) if args.format == 'json' else readiness.render_text(result), end='\n' if args.format == 'json' else '')
+            return 0 if result['prerequisites_pass'] else 2
+        elif args.research_cmd == 'fees-capture':
             if Path(args.output).exists():
                 raise ValueError('fee review output must be a new directory')
             capture_id = capture(con, args.venue, args.source_id, args.side, now=clock())

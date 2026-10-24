@@ -277,3 +277,14 @@ gates to unequal hypothetical fills. Both preserve US synthetic-short rejection.
 The raw book schema and fee formulas are unchanged. No settlement observation,
 margin execution, portfolio ledger or cash-transfer workflow is implemented.
 See [mechanics and limits](SETTLEMENT_MECHANICS.md).
+
+## M5A E readiness reader
+
+`readiness.py` composes current registry, mechanics, fee, book, policy and host
+validators inside a consistent SQLite read snapshot. `research readiness` uses
+`mode=ro`, bypasses the process writer lock, and never migrates an archive.
+`registry.review(..., persist=False)` recomputes effective expiry/invalidation
+without changing pairs or appending audit records; existing writer callers keep
+the default persistence behavior. Pair inspection is capped at the scanner's 50
+total rows, with explicit truncation failure. No new database schema or external
+API fields are introduced. See [readiness semantics and limits](READINESS.md).
