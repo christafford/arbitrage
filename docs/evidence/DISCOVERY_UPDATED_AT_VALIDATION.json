@@ -1,0 +1,80 @@
+{
+  "verified_at": "2026-10-24T14:33:05.935626+00:00",
+  "official_source": {
+    "url": "https://docs.polymarket.us/api-reference/markets/get-markets.md",
+    "retrieved_at": "2026-10-24T14:30:28.353134+00:00",
+    "sha256": "b3484b1053fb162ea408666b827d67dbd19dbeccd62c454137be798cf374c98a",
+    "headers": {
+      "Content-Type": "text/markdown; charset=utf-8",
+      "Date": "Sat, 24 Oct 2026 14:30:27 GMT",
+      "Last-Modified": "Sat, 24 Oct 2026 14:30:28 GMT"
+    }
+  },
+  "original_response": {
+    "observation_id": 1224,
+    "sha256": "dc0ebc25403522f231bd2e83c3d55f2b5b66f3a594b12abb47d9aa2bc250181b",
+    "markets": 130,
+    "missing_updated_at": 116,
+    "revalidation": "PASS_IN_MEMORY_ONLY",
+    "stored_validation_status": "REJECTED"
+  },
+  "commands": [
+    {
+      "command": [
+        ".venv/bin/python",
+        "-m",
+        "predarb.cli",
+        "collect-polymarket-us",
+        "--db",
+        "data/discovery-updated-at/live.sqlite3",
+        "--slug",
+        "astatc-nhl-ana-phi-2026-10-24-pts-trezeg-gte4",
+        "--limit",
+        "1",
+        "--max-pages",
+        "3",
+        "--books",
+        "0"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"books\": 0, \"duplicates\": 0, \"next_page\": null, \"pages\": 2, \"records\": 1, \"run_id\": 1, \"status\": \"COMPLETE\", \"unique_records\": 1, \"venue\": \"polymarket_us\"}\nUNVERIFIED read-only evidence; no matching/trading performed\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        ".venv/bin/python",
+        "-m",
+        "predarb.cli",
+        "discovery",
+        "refresh",
+        "--offline",
+        "--db",
+        "data/discovery-updated-at/live.sqlite3",
+        "--limit",
+        "5"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"algorithm\":\"discovery-v1\",\"candidates\":[],\"coverage\":{\"kalshi\":{\"eligible\":0,\"full_catalogue_received_at\":null,\"full_catalogue_run_id\":null,\"full_catalogue_status\":null,\"latest_run_status\":null,\"scope\":\"all\",\"stored\":0,\"truncated\":false},\"polymarket_us\":{\"eligible\":1,\"full_catalogue_received_at\":null,\"full_catalogue_run_id\":null,\"full_catalogue_status\":null,\"latest_run_status\":\"COMPLETE\",\"scope\":\"all\",\"stored\":1,\"truncated\":false}},\"ranked_at\":\"2026-10-24T14:33:06.765191+00:00\"}\n",
+      "stderr": ""
+    }
+  ],
+  "live_observations": [
+    {
+      "id": 1,
+      "received_at": "2026-10-24T14:33:06.335909+00:00",
+      "endpoint": "https://gateway.polymarket.us/v1/markets?active=true&closed=false&limit=1&offset=0&orderBy=id&orderDirection=asc&slug=astatc-nhl-ana-phi-2026-10-24-pts-trezeg-gte4",
+      "schema_version": "polymarket-us-marketservice-1.0.0/m1-v1",
+      "body_sha256": "5cdcea2cabe913da4f8467cf18b8c4a636c19ea06a59f56a2a5712cc2f450a71",
+      "validation_status": "VALID"
+    },
+    {
+      "id": 2,
+      "received_at": "2026-10-24T14:33:06.554350+00:00",
+      "endpoint": "https://gateway.polymarket.us/v1/markets?active=true&closed=false&limit=1&offset=1&orderBy=id&orderDirection=asc&slug=astatc-nhl-ana-phi-2026-10-24-pts-trezeg-gte4",
+      "schema_version": "polymarket-us-marketservice-1.0.0/m1-v1",
+      "body_sha256": "f36daaa1fcd896f9fdfd2a991f06ef808c56d5acaceca4e6f89329e7794608d1",
+      "validation_status": "VALID"
+    }
+  ],
+  "live_catalogue_unknown_update_times": 0
+}

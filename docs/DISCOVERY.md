@@ -139,3 +139,37 @@ as a failed oneshot invocation, which is intentional visibility; the timer retri
 on its next scheduled invocation. Stop with `systemctl stop predarb-discovery.timer`
 and, if a cycle is running, `systemctl stop predarb-discovery.service`.
 No service was installed or activated during implementation.
+
+## Missing US catalogue update timestamp (2026-10-24 fix)
+
+Polymarket US documents `Market.updatedAt` as optional/nullable. Newly observed
+markets can omit it. The collector now retains a missing/null metadata update
+clock as SQL `NULL`; it does not substitute creation time or retrieval time.
+Present values must still be nonempty, timezone-aware timestamps. `createdAt`,
+`endDate`, identity, status, side and price checks retain their existing requirements.
+Book `transactTime` remains mandatory and independent of metadata update time.
+Discovery's existing catalogue retrieval-age checks and human approval requirements
+are unchanged. All suggestions remain `UNVERIFIED`.
+
+A prior failed US collection remains failed; `--offline` alone cannot recover it.
+If Kalshi already completed successfully and its observations are still within
+the 24-hour retrieval window, refresh only the failed venue and then rebuild the
+queue from both archived catalogues:
+
+```bash
+predarb collect-polymarket-us --db data/research.sqlite3 --limit 200 --max-pages 1000 --books 0
+predarb discovery refresh --offline --db data/research.sqlite3 --limit 100
+```
+
+The first command starts a new US traversal from offset zero; it does not resume
+or rewrite the failed run. Inspect its exit/status before ranking: exit 0 means
+terminal pagination, 2 means the page budget ended with partial coverage, and 1
+means failure. Failed runs remain ineligible. If Kalshi is stale, rerun the normal
+two-venue `discovery refresh` instead. Offline ranking does not fetch fresh books
+or details, approve candidates, or establish research readiness.
+
+`discovery --limit` bounds the **candidate queue**, not the number of downloaded
+markets. A refresh may therefore traverse hundreds of pages per venue despite
+`--limit 100`. `--max-pages` bounds traversal at the cost of explicitly partial
+coverage. In `collect-polymarket-us`, `--limit` instead controls page size.
+See [verification and recovery limits](DISCOVERY_UPDATED_AT_RESULTS.md).

@@ -32,8 +32,12 @@ def validate_market(market):
     text_field(market, 'description', empty=True)
     for key in ('active', 'closed'):
         field(market, key, bool)
-    for key in ('createdAt', 'updatedAt', 'endDate'):
+    for key in ('createdAt', 'endDate'):
         utc_time(text_field(market, key))
+    # MarketService documents this metadata clock as optional/nullable. It is
+    # never a book timestamp; preserve absence instead of inventing a clock.
+    if market.get('updatedAt') is not None:
+        utc_time(text_field(market, 'updatedAt'))
     if text_field(market, 'status') not in {
         'MARKET_STATUS_UNSPECIFIED', 'MARKET_STATUS_OPEN', 'MARKET_STATUS_CLOSED',
         'MARKET_STATUS_RESOLVING', 'MARKET_STATUS_RESOLVED', 'MARKET_STATUS_HALTED'}:

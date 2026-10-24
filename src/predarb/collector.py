@@ -80,7 +80,7 @@ def collect(con, adapter, *, page_size=20, max_pages=10, scope=None, books=1,
                 source_id = market[adapter.ID_FIELD]
                 seen[source_id] = market
                 save_entry(con, run_id, observation, source_id, market, adapter.rules(market),
-                           market[adapter.TIME_FIELD])
+                           market.get(adapter.TIME_FIELD))
             pages += 1
             records += len(markets)
             following = adapter.next_page(data, continuation, page_size)
@@ -134,8 +134,11 @@ def collect(con, adapter, *, page_size=20, max_pages=10, scope=None, books=1,
                                                    validate_series)
                 rules['series_evidence'] = series[series_id].data['series']
                 rules['series_endpoint'] = series[series_id].endpoint
-            save_entry(con, run_id, detail, source_id, market, rules, market[adapter.TIME_FIELD])
-            validate_observation(con, detail.id, 'VALID', None, market[adapter.TIME_FIELD])
+            # Validated optional metadata clocks remain SQL NULL. Receipt/created
+            # times must not substitute for an absent provider update timestamp.
+            source_ts = market.get(adapter.TIME_FIELD)
+            save_entry(con, run_id, detail, source_id, market, rules, source_ts)
+            validate_observation(con, detail.id, 'VALID', None, source_ts)
 
             def validate_book(data):
                 adapter.validate_book(data)

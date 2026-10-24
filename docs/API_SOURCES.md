@@ -372,3 +372,25 @@ reapprove source documents. Existing schema/provenance and expiry rules apply
 at the current clock. The protocol horizon warning uses B's configured
 `SEQUENCE_PROTOCOL_END`; E neither extends it nor claims a new live clocked
 acceptance. See [readiness](READINESS.md) and [E verification](M5E_RESULTS.md).
+
+## Discovery nullable metadata clock correction — 2026-10-24 UTC
+
+Rechecked the official [Get Markets](https://docs.polymarket.us/api-reference/markets/get-markets)
+embedded OpenAPI via its `.md` source at **2026-10-24 14:30:28 UTC**. Upstream
+MarketService remains **1.0.0**; `gateway.market.v1.Market.updatedAt` is a nullable
+string and not required. The original 05:32:26 UTC failure page contains 130
+markets, 116 with this field omitted. The collector had incorrectly required it.
+
+The compatibility fix retains `polymarket-us-marketservice-1.0.0/m1-v1` and SQLite
+schema 7: metadata source timestamps already allow NULL, and all previously valid
+shapes remain valid. Missing/null update time is preserved; malformed present
+values still fail. No price, quantity, book source time or metadata retrieval time
+is invented. Existing rejected observations and failed runs are not promoted.
+
+[Source/validation manifest](evidence/DISCOVERY_UPDATED_AT_VALIDATION.json) records
+the official document hash/time, original response hash and bounded live smoke.
+The [representative fixture](../tests/fixtures/poly-missing-updated-at-live.json)
+is a clearly labeled one-market excerpt reserialized from the archived raw page;
+it records the parent hash, original schema/time, excerpt hash and allowlisted
+headers. It is not labeled an exact full wire response. Original bytes remain in
+the operator's raw archive. No international API or credentials were used.

@@ -123,6 +123,7 @@ funding or M6 work were added. **Stop before M6.**
 - [x] Rank by heuristic equivalence with exact displayed-depth tie-breaking and explicit stale/unknown liquidity.
 - [x] Persist a review queue with definition links, evidence versions and prior decisions; preserve every human approval requirement.
 - [x] Schema-6 migration, fixtures, offline integration tests, CLI smoke checks and operational documentation.
+- [x] 2026-10-24 correction: accept documented optional/null US metadata `updatedAt` without inventing source time; preserve strict book clocks and failed-run history. See [verification and recovery](DISCOVERY_UPDATED_AT_RESULTS.md).
 
 See [verification](DISCOVERY_RESULTS.md) for executed tests/live coverage and
 [operation](DISCOVERY.md) for limits. This extension does not satisfy M4/M5's

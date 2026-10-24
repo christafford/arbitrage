@@ -11,7 +11,7 @@ from predarb import kalshi, polymarket_us as poly
 from predarb.collector import collect, book_freshness
 from predarb.provider import HttpClient
 from predarb.store import connect
-from predarb.validation import SchemaError, dumps, load_json
+from predarb.validation import SchemaError, dumps, load_json, utc_time
 from helpers import fixture, payload, Response, Replay, real_response
 
 
@@ -99,6 +99,66 @@ class CollectorTests(unittest.TestCase):
         self.assertEqual((result.status, result.pages, result.records), ('COMPLETE', 3, 2))
         self.assertIn('offset=1', replay.requests[1][0].full_url)
         self.assertIn('offset=2', replay.requests[2][0].full_url)
+
+    def test_real_missing_updated_at_excerpt_preserves_unknown_metadata_clock(self):
+        entry = fixture('poly-missing-updated-at-live')
+        self.assertIn('REAL_PUBLIC_US_API_EXCERPT', entry['provenance'])
+        self.assertEqual(hashlib.sha256(entry['body'].encode()).hexdigest(), entry['body_sha256'])
+        self.assertNotIn('set-cookie', entry['headers'])
+        utc_time(entry['retrieved_at'])
+        market = load_json(entry['body'])['markets'][0]
+        self.assertNotIn('updatedAt', market)
+        # HYPOTHETICAL replay sequence: captured excerpt plus synthetic terminal page.
+        client, replay = self.client(poly, real_response('poly-missing-updated-at-live'), Response(b'{"markets":[]}'))
+        result = collect(self.db, poly, page_size=200, max_pages=2, books=0, client=client)
+        self.assertEqual((result.status, result.records), ('COMPLETE', 1))
+        self.assertIn('offset=1', replay.requests[1][0].full_url)
+        source_ts, metadata, verification = self.db.execute('SELECT source_ts,metadata_json,verification FROM catalogue_entries').fetchone()
+        self.assertIsNone(source_ts); self.assertNotIn('updatedAt', load_json(metadata))
+        self.assertEqual(verification, 'UNVERIFIED')
+        self.assertEqual(self.db.execute('SELECT raw_body FROM raw_observations ORDER BY id LIMIT 1').fetchone()[0], entry['body'].encode())
+        self.assertEqual(self.db.execute('SELECT COUNT(*) FROM pairs').fetchone()[0], 0)
+
+    def test_optional_metadata_update_time_on_page_and_detail_keeps_book_clock(self):
+        # HYPOTHETICAL missing/null metadata variations; book time stays provider-supplied.
+        for present in (False, True):
+            page, detail, book = payload('poly-page'), payload('poly-market-live'), payload('poly-book-live')
+            for market in [*page['markets'], detail['market']]:
+                if present: market['updatedAt'] = None
+                else: market.pop('updatedAt')
+            client, _ = self.client(poly, *(Response(dumps(data).encode()) for data in (page, detail, book)))
+            now = utc_time(book['marketData']['transactTime']) + timedelta(seconds=61)
+            client.utc_now = lambda: now.isoformat()
+            result = collect(self.db, poly, page_size=2, max_pages=1, client=client,
+                             now=now)
+            self.assertEqual(result.status, 'PARTIAL')
+            self.assertTrue(all(row[0] is None for row in self.db.execute('SELECT source_ts FROM catalogue_entries WHERE run_id=?', (result.run_id,))))
+            self.assertIsNone(self.db.execute('SELECT source_ts FROM raw_observations WHERE endpoint=? ORDER BY id DESC LIMIT 1',
+                                             (poly.detail_url(detail['market']['slug']),)).fetchone()[0])
+            row = self.db.execute('SELECT source_ts,freshness FROM book_captures WHERE run_id=?', (result.run_id,)).fetchone()
+            self.assertEqual(row[0], book['marketData']['transactTime'])
+            self.assertEqual(row[1], 'STALE_SOURCE')
+
+    def test_invalid_optional_update_timestamps_are_still_archived_and_rejected(self):
+        # HYPOTHETICAL malformed values must not take the missing-value path.
+        for value in ('', 'not-a-time', '2026-10-24T05:30:00', 0, False, [], {}):
+            with self.subTest(value=value):
+                page = payload('poly-page'); page['markets'][0]['updatedAt'] = value
+                body = dumps(page).encode()
+                client, _ = self.client(poly, Response(body))
+                with self.assertRaisesRegex(ValueError, 'raw response archived'):
+                    collect(self.db, poly, page_size=2, books=0, client=client)
+                self.assertEqual(self.db.execute('SELECT raw_body,validation_status FROM raw_observations ORDER BY id DESC LIMIT 1').fetchone(), (body, 'REJECTED'))
+
+    def test_missing_metadata_update_never_relaxes_required_book_timestamp(self):
+        page, detail, book = payload('poly-page'), payload('poly-market-live'), payload('poly-book-live')
+        for market in [*page['markets'], detail['market']]: market.pop('updatedAt')
+        book['marketData'].pop('transactTime')
+        client, _ = self.client(poly, *(Response(dumps(data).encode()) for data in (page, detail, book)))
+        with self.assertRaisesRegex(ValueError, 'transactTime'):
+            collect(self.db, poly, page_size=2, max_pages=1, client=client)
+        self.assertEqual(self.db.execute('SELECT COUNT(*) FROM book_captures').fetchone()[0], 0)
+        self.assertEqual(self.db.execute('SELECT status FROM collection_runs').fetchone()[0], 'FAILED')
 
     def test_overlap_deduplication_and_counts(self):
         # HYPOTHETICAL overlapping pages caused by catalogue movement.

@@ -1,0 +1,19 @@
+{
+  "provenance": "REAL_PUBLIC_US_API_EXCERPT; one unchanged market extracted from archived response, JSON reserialized. No credentials/private headers.",
+  "endpoint": "https://gateway.polymarket.us/v1/markets?active=true&closed=false&limit=200&offset=81000&orderBy=id&orderDirection=asc",
+  "retrieved_at": "2026-10-24T05:32:26.653418+00:00",
+  "schema_version": "polymarket-us-marketservice-1.0.0/m1-v1",
+  "status": 200,
+  "headers": {
+    "content-type": "application/json",
+    "date": "Sat, 24 Oct 2026 05:32:26 GMT",
+    "last-modified": "Sat, 24 Oct 2026 05:32:26 GMT"
+  },
+  "original_observation_id": 1224,
+  "original_body_sha256": "dc0ebc25403522f231bd2e83c3d55f2b5b66f3a594b12abb47d9aa2bc250181b",
+  "original_validation_status": "REJECTED",
+  "original_market_count": 130,
+  "omitted_updated_at_count": 116,
+  "body": "{\"markets\":[{\"active\":true,\"archived\":false,\"assetPriceTerms\":null,\"category\":\"sports\",\"closed\":false,\"color\":\"#fa6115\",\"comboEnabled\":false,\"createdAt\":\"2026-10-24T05:30:30Z\",\"darkColor\":\"#E36D28\",\"description\":\"This market will settle to Yes if Trevor Zegras records 4 or more points (the cumulative sum of goals plus assists) in the ANA Ducks vs PHI Flyers NHL game scheduled for October 24, 2026 at 1:00PM ET (as of the listing of the event's first instrument). Overtime is included if played. Goals scored in a shootout do not count for purposes of this market. If the listed player does not record any time on ice, the market will settle to the last fair market price. For purposes of this market, stat corrections enforced after settlement will not count. If the game is delayed, postponed, suspended or otherwise rescheduled to a date and time not within two days of the originally scheduled date and time, the market will settle to the last fair market price. Outcome sourced from NHL.\",\"endDate\":\"2026-11-07T22:00:00Z\",\"ep3Status\":\"OPEN\",\"ep3SyncedAt\":\"2026-10-24T05:30:30Z\",\"feeCoefficient\":\"0.0695\",\"gameStartTime\":\"2026-10-24T17:00:00Z\",\"hidden\":false,\"id\":\"1741916\",\"image\":\"https://static.polymarket.us/images/teams/hockey/nhl/phi/jerseys/46.png\",\"imageDisplayType\":\"IMAGE_DISPLAY_TYPE_LOGO\",\"line\":4,\"manualActivation\":false,\"marketSides\":[{\"createdAt\":\"2026-10-24T05:30:30Z\",\"description\":\"Yes\",\"id\":\"3483302\",\"identifier\":\"astatc-nhl-ana-phi-2026-10-24-pts-trezeg-gte4\",\"long\":true,\"marketId\":1741916,\"marketSideType\":\"MARKET_SIDE_TYPE_INSTRUMENT\",\"price\":\"0.9900\",\"tradable\":true,\"updatedAt\":\"2026-10-24T05:30:30Z\"},{\"createdAt\":\"2026-10-24T05:30:30Z\",\"description\":\"No\",\"id\":\"3483303\",\"identifier\":\"astatc-nhl-ana-phi-2026-10-24-pts-trezeg-gte4\",\"long\":false,\"marketId\":1741916,\"marketSideType\":\"MARKET_SIDE_TYPE_INSTRUMENT\",\"tradable\":true,\"updatedAt\":\"2026-10-24T05:30:30Z\"}],\"marketType\":\"props\",\"metadata\":{\"playerAbbreviation\":\"trezeg\",\"playerId\":2095,\"playerName\":\"Trevor Zegras\",\"teamId\":1496},\"minimumTradeQty\":\"0.01\",\"orderPriceMinTickSize\":\"0.01\",\"outcomePrices\":\"[\\\"0.9900\\\"]\",\"outcomes\":\"[\\\"Yes\\\",\\\"No\\\"]\",\"politics\":null,\"question\":\"Will Trevor Zegras record at least 4 points in ANA vs PHI?\",\"slug\":\"astatc-nhl-ana-phi-2026-10-24-pts-trezeg-gte4\",\"sportsMarketType\":\"hockey_player_points\",\"sportsMarketTypeV2\":\"SPORTS_MARKET_TYPE_PROP\",\"startDate\":\"2026-10-24T05:30:30Z\",\"status\":\"MARKET_STATUS_OPEN\",\"tags\":[],\"title\":\"Trevor Zegras\",\"titleShort\":\"Trevor Zegras\"}]}",
+  "body_sha256": "7bac1862a85e6e77161e515be2063de89741ff804ba3861576048357501a475c"
+}
