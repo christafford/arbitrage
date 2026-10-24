@@ -1,0 +1,64 @@
+{
+  "verified_at": "2026-10-24T22:41:24.498968+00:00",
+  "test_command": ".venv/bin/python -m unittest discover -s tests -v",
+  "test_exit_code": 0,
+  "tests_run": 291,
+  "test_log": "TESTS.txt",
+  "test_log_sha256": "6703eaef7de9302a88499a30d315c91acbec82793b8dff91e4a8f48b92ed73dc",
+  "smoke_commands": [
+    {
+      "command": [
+        ".venv/bin/predarb",
+        "pairs",
+        "review",
+        "1",
+        "--db",
+        "data/research.sqlite3"
+      ],
+      "exit_code": 0,
+      "stdout": "main-review.json",
+      "stderr": "main-review.json.stderr"
+    },
+    {
+      "command": [
+        ".venv/bin/predarb",
+        "pairs",
+        "audit",
+        "--pair-id",
+        "1",
+        "--db",
+        "data/research.sqlite3"
+      ],
+      "exit_code": 0,
+      "stdout": "main-audit.json",
+      "stderr": "main-audit.json.stderr"
+    },
+    {
+      "command": [
+        ".venv/bin/predarb",
+        "research",
+        "readiness",
+        "--format",
+        "json",
+        "--db",
+        "data/research.sqlite3"
+      ],
+      "exit_code": 2,
+      "stdout": "main-readiness.json",
+      "stderr": "main-readiness.json.stderr"
+    }
+  ],
+  "source_files_verified": 68,
+  "source_status_counts": {
+    "200": 65,
+    "302": 2,
+    "429": 1
+  },
+  "decision_sha256": "3bde3aac9539727c0f9539baec7cfb2d0abf768250559298b9ed01c237e9d7f7",
+  "manifest_sha256": "376d9aef199962c4bb85af38a9f9053387fadd6e29fc3a4deec24e9c35a4237d",
+  "database_quick_checks": "ok: main and packet",
+  "rejection_persisted": true,
+  "approved_pairs": 0,
+  "trading_authorized": false,
+  "comparison_links_valid": true
+}
