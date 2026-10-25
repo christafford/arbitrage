@@ -223,6 +223,14 @@ reviews; timestamped live streaming still requires separate scoped validation.
 
 ## Discovery extension (schema 6)
 
+The `discovery-v2-sports` algorithm retains database schema 7. Its pure
+`sports_discovery.py` extractor/index key identifies supported NBA/NFL full-game
+winner propositions from league-scoped aliases, rule dates and side metadata.
+Known sports with incomplete/unsupported identity do not enter generic retrieval.
+An identity match retains payout-rule warnings and is never an approval. Both
+paths preserve raw contracts and use-time freshness/eligibility. The derived queue
+can be rebuilt without a migration; old queue reads cannot discover new members.
+
 `discovery.py` extracts explainable metadata features, indexes retrieval tokens,
 rechecks catalogue eligibility and ranks by semantic score with displayed-depth
 tie-breaking. `discovery_cli.py` orchestrates bounded public collection and selected

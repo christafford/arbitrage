@@ -10,7 +10,7 @@ import sys
 import unicodedata
 from urllib.parse import urlsplit
 
-from . import kalshi, polymarket_us, registry
+from . import kalshi, polymarket_us, registry, sports_discovery
 from .collector import book_freshness
 from .validation import dumps, load_json, utc_time, text_field
 
@@ -25,7 +25,7 @@ CREATE TABLE discovery_state (
 );
 CREATE INDEX discovery_books_source ON book_captures(source_id,observation_id DESC);
 """
-VERSION = 'discovery-v1'
+VERSION = 'discovery-v2-sports'
 STOP = set('win winner wins beat beats price game match will would should could reaches reach a an the will be is are was were of on in at by to for and or with this that market contract resolves resolve yes no if as than hypothetical above below over under greater less least most more equal before after between'.split())
 # These describe market format, units, or scheduling, not participant identity.
 RETRIEVAL_STOP = set('vs versus total totals score scored points goals touchdowns yards cover spread handicap victory margin team player first half quarter regular season scheduled end pm am et est edt utc fc election house state jan feb mar apr jun jul aug sep sept oct nov dec'.split())
@@ -124,6 +124,7 @@ def features(contract):
     return {'title': title, 'subject_text': subject_text, 'subject': subject, 'description': tokens(description),
             'dates': dates, 'text_dates': text_dates, 'event_time': event_time, 'thresholds': thresholds,
             'measure': measure_facets(title, description),
+            'sports': sports_discovery.features(contract),
             'policy': set(re.findall(r'\b(first|final|revised|preliminary|not|cancelled|void)\b', text)),
             'cutoff': utc_time(cutoff).isoformat() if cutoff else None}
 
@@ -133,6 +134,8 @@ def overlap(left, right):
 
 
 def compare(left, right, *, min_score=0):
+    if left.get('sports') is not None or right.get('sports') is not None:
+        return sports_discovery.compare(left, right, min_score=min_score)
     subject = overlap(left['subject'], right['subject'])
     score = subject * 5 // 10
     signals = {'subject_bps': subject}
@@ -304,13 +307,19 @@ def _links(con, row):
     return list(dict.fromkeys(links))
 
 
-def discover(con, *, limit=20, max_instruments=None, now=None, _pair_keys=None):
+def discover(con, *, limit=20, max_instruments=None, now=None, _pair_keys=None, sports_only=False):
     if not 1 <= limit <= 1000 or (max_instruments is not None and not 1 <= max_instruments <= 1000000):
         raise ValueError('candidate limits: 1..1000 results; optional instrument cap 1..1000000')
     now = now or registry.now_utc()
     pools, coverage = _pools(con, now, max_instruments, _pair_keys)
-    index, descriptions = defaultdict(set), defaultdict(set)
+    index, descriptions, sports_index = defaultdict(set), defaultdict(set), defaultdict(set)
     for i, row in enumerate(pools[1]):
+        sport = row['features']['sports']
+        if sport is not None:
+            identity = sports_discovery.key(sport)
+            if identity is not None: sports_index[identity].add(i)
+            continue
+        if sports_only: continue
         for token in row['features']['subject'] - RETRIEVAL_STOP:
             index[token].add(i)
         for token in row['features']['description']:
@@ -333,8 +342,16 @@ def discover(con, *, limit=20, max_instruments=None, now=None, _pair_keys=None):
     def matches():
         for k in pools[0]:
             possible = set()
+            sport = k['features']['sports']
+            identity = sports_discovery.key(sport)
+            if sport is not None and identity is None:
+                continue
+            if sports_only and identity is None:
+                continue
             if _pair_keys is not None:
                 possible = allowed[k['source_id']]
+            elif identity is not None:
+                possible = sports_index.get(identity, ())
             else:
                 for token in k['features']['subject']:
                     possible.update(index.get(token, ()))
@@ -361,6 +378,8 @@ def discover(con, *, limit=20, max_instruments=None, now=None, _pair_keys=None):
                        'signals': signals, 'warnings': warnings, 'hypothetical': bool(k['hypothetical']),
                        'status': 'UNVERIFIED', 'trading_authorized': False,
                        'reason': 'HEURISTIC_ONLY_HUMAN_REVIEW_REQUIRED', 'algorithm': VERSION,
+                       'match_basis': 'SPORTS_EVENT_IDENTITY' if identity is not None else 'TEXT_HEURISTIC',
+                       'equivalence_verified': False,
                        'liquidity': {'kalshi': kd, 'polymarket_us': pd, 'paired_depth_proxy': str(quantity) if quantity is not None else None},
                        'versions': [k['version_id'], p['version_id']]}
                 yield (-score, -quality, -(quantity or Decimal(0)), k['source_id'], p['source_id']), row, k, p
@@ -381,7 +400,15 @@ def discover(con, *, limit=20, max_instruments=None, now=None, _pair_keys=None):
         row['prior_reviews'] = registry._rows(con, '''SELECT id,status,reason FROM pairs
             WHERE kalshi_id=? AND polymarket_us_id=? ORDER BY id''', (k['source_id'], p['source_id']))
         result.append(row)
-    return {'algorithm': VERSION, 'ranked_at': now.isoformat(), 'coverage': coverage, 'candidates': result}
+    sports_counts = {venue: {'recognized': sum(row['features']['sports'] is not None for row in pool),
+                            'supported_game_winners': sum(sports_discovery.key(row['features']['sports']) is not None for row in pool),
+                            'unsupported_reasons': dict(Counter(issue for row in pool
+                                if row['features']['sports'] is not None
+                                for issue in row['features']['sports']['issues']))}
+                     for venue, pool in zip(registry.VENUES, pools)}
+    return {'algorithm': VERSION, 'ranked_at': now.isoformat(), 'coverage': coverage,
+            'candidate_scope': 'NBA_NFL_GAME_WINNERS' if sports_only else 'ALL_SUPPORTED',
+            'sports_coverage': sports_counts, 'candidates': result}
 
 
 def refresh_queue(con, *, catalogue_coverage_at_refresh=None, **kwargs):
@@ -401,10 +428,10 @@ def refresh_queue(con, *, catalogue_coverage_at_refresh=None, **kwargs):
     return report
 
 
-def queue(con, *, limit=20, now=None):
+def queue(con, *, limit=20, now=None, sports_only=False):
     # Recompute validity/ranking at read time; stored snapshots are never authority.
     keys = con.execute('SELECT kalshi_id,polymarket_us_id FROM discovery_queue').fetchall()
-    report = discover(con, limit=limit, now=now, _pair_keys=keys)
+    report = discover(con, limit=limit, now=now, _pair_keys=keys, sports_only=sports_only)
     stored = con.execute('SELECT refreshed_at,report_json FROM discovery_state WHERE id=1').fetchone()
     report['last_queue_refresh'] = stored[0] if stored else None
     if stored:

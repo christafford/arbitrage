@@ -1,0 +1,16 @@
+[
+  {
+    "url": "https://docs.kalshi.com/api-reference/market/get-market.md",
+    "status": 200,
+    "file": "data/sports-discovery-sources-20261025/kalshi-market.md",
+    "retrieved_at": "2026-10-25T21:18:25.099268+00:00",
+    "sha256": "ae9d917509f33d278b59657e5793277574846208635e845cc07f5762a6178bea"
+  },
+  {
+    "url": "https://docs.polymarket.us/api-reference/markets/get-market-by-slug.md",
+    "status": 200,
+    "file": "data/sports-discovery-sources-20261025/us-market.md",
+    "retrieved_at": "2026-10-25T21:18:25.625720+00:00",
+    "sha256": "16f599df2f2606ae8e661b557793274d61d50e33862a10d033e52c09e783f7cf"
+  }
+]

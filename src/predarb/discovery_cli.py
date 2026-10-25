@@ -30,6 +30,7 @@ def add_parser(commands):
         parser = actions.add_parser(name)
         parser.add_argument('--db', default='data/research.sqlite3')
         parser.add_argument('--limit', type=int, default=20, help='ranked queue size (1..1000)')
+        parser.add_argument('--sports-only', action='store_true', help='supported NBA/NFL full-game winner candidates only')
         if name == 'refresh':
             parser.add_argument('--offline', action='store_true', help='rebuild queue from existing evidence only')
             parser.add_argument('--page-size', type=int, default=200)
@@ -40,7 +41,7 @@ def add_parser(commands):
 
 
 def refresh(con, *, limit=20, page_size=200, max_pages=1000, books=10,
-            request_interval=1.0, client_factory=HttpClient, now=None):
+            request_interval=1.0, client_factory=HttpClient, now=None, sports_only=False):
     if not 1 <= limit <= 1000 or not 0 <= books <= 100:
         raise ValueError('limit must be 1..1000 and books 0..100')
     if not 1 <= page_size <= 1000 or not 1 <= max_pages <= 10000:
@@ -57,7 +58,7 @@ def refresh(con, *, limit=20, page_size=200, max_pages=1000, books=10,
         except (ValueError, OSError) as exc:
             blocked_venues.add(adapter.VENUE)
             errors.append({'venue': adapter.VENUE, 'stage': 'catalogue', 'error': str(exc)})
-    preliminary = discovery.discover(con, limit=limit, now=now)
+    preliminary = discovery.discover(con, limit=limit, now=now, sports_only=sports_only)
     captured = set()
     for row in preliminary['candidates'][:books]:
         if row['hypothetical']:
@@ -80,6 +81,7 @@ def refresh(con, *, limit=20, page_size=200, max_pages=1000, books=10,
                 blocked_venues.add(adapter.VENUE)
                 errors.append({'venue': adapter.VENUE, 'source_id': source_id, 'stage': 'detail', 'error': str(exc)})
     report = discovery.refresh_queue(con, limit=limit, now=now,
+                sports_only=sports_only,
                 _pair_keys=[(r['kalshi_id'], r['polymarket_us_id']) for r in preliminary['candidates']],
                 catalogue_coverage_at_refresh=preliminary['coverage'])
     report.update(collection_runs=runs, errors=errors)
@@ -95,11 +97,12 @@ def run(args):
     with (closing(readonly(args.db)) if args.discovery_cmd == 'queue' else connect(args.db)) as con:
         if args.discovery_cmd == 'queue':
             con.execute('BEGIN')  # One consistent read snapshot alongside the writer.
-            report, code = discovery.queue(con, limit=args.limit), 0
+            report, code = discovery.queue(con, limit=args.limit, sports_only=args.sports_only), 0
         elif args.offline:
-            report, code = discovery.refresh_queue(con, limit=args.limit), 0
+            report, code = discovery.refresh_queue(con, limit=args.limit, sports_only=args.sports_only), 0
         else:
             report, code = refresh(con, limit=args.limit, page_size=args.page_size, max_pages=args.max_pages,
+                                   sports_only=args.sports_only,
                                    books=args.books, request_interval=args.request_interval,
                                    client_factory=lambda con, venue, **kw: SpaceCheckedClient(
                                        con, venue, min_free_mb=args.min_free_mb, **kw))

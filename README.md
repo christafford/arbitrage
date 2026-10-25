@@ -71,6 +71,11 @@ matching reasons, conflicts, liquidity uncertainty and official definition links
 All suggestions remain `UNVERIFIED`. See [discovery](docs/DISCOVERY.md) for coverage,
 exit codes, offline use and the hourly timer templates.
 
+NBA/NFL full-game winners now match by league, participants, selected team and
+the scheduled date in the rules. Use `predarb discovery queue --sports-only`
+for the sports review shortlist. Rule differences remain explicit; same-event
+identity does not approve settlement equivalence. See [sports results](docs/SPORTS_DISCOVERY_RESULTS.md).
+
 ## Pair review (M2)
 
 ```bash

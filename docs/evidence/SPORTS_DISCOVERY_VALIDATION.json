@@ -1,0 +1,664 @@
+{
+  "verified_at": "2026-10-25T21:30:08.440498+00:00",
+  "algorithm": "discovery-v2-sports",
+  "scope": "Bounded seven NBA and one NFL game seed refresh, not a complete current sports catalogue. Older broad catalogues were not renewed.",
+  "selection": {
+    "scope": "Seven NBA and one NFL game from archived October 25 schedule; bounded seed set, not a complete current catalogue",
+    "selected": [
+      {
+        "event": "KXNBAGAME-26OCT25DETPHI",
+        "kalshi_id": "KXNBAGAME-26OCT25DETPHI-DET",
+        "polymarket_us_id": "aec-nba-det-phi-2026-10-25",
+        "sports_identity": [
+          "NBA",
+          "FULL_GAME_WINNER",
+          [
+            "DET",
+            "PHI"
+          ],
+          "2026-10-25",
+          "DET"
+        ]
+      },
+      {
+        "event": "KXNBAGAME-26OCT25INDBKN",
+        "kalshi_id": "KXNBAGAME-26OCT25INDBKN-IND",
+        "polymarket_us_id": "aec-nba-ind-bkn-2026-10-25",
+        "sports_identity": [
+          "NBA",
+          "FULL_GAME_WINNER",
+          [
+            "BKN",
+            "IND"
+          ],
+          "2026-10-25",
+          "IND"
+        ]
+      },
+      {
+        "event": "KXNBAGAME-26OCT25LACOKC",
+        "kalshi_id": "KXNBAGAME-26OCT25LACOKC-LAC",
+        "polymarket_us_id": "aec-nba-lac-okc-2026-10-25",
+        "sports_identity": [
+          "NBA",
+          "FULL_GAME_WINNER",
+          [
+            "LAC",
+            "OKC"
+          ],
+          "2026-10-25",
+          "LAC"
+        ]
+      },
+      {
+        "event": "KXNBAGAME-26OCT25LALUTA",
+        "kalshi_id": "KXNBAGAME-26OCT25LALUTA-LAL",
+        "polymarket_us_id": "aec-nba-lal-uta-2026-10-25",
+        "sports_identity": [
+          "NBA",
+          "FULL_GAME_WINNER",
+          [
+            "LAL",
+            "UTA"
+          ],
+          "2026-10-25",
+          "LAL"
+        ]
+      },
+      {
+        "event": "KXNBAGAME-26OCT25MEMSAC",
+        "kalshi_id": "KXNBAGAME-26OCT25MEMSAC-MEM",
+        "polymarket_us_id": "aec-nba-mem-sac-2026-10-25",
+        "sports_identity": [
+          "NBA",
+          "FULL_GAME_WINNER",
+          [
+            "MEM",
+            "SAC"
+          ],
+          "2026-10-25",
+          "MEM"
+        ]
+      },
+      {
+        "event": "KXNBAGAME-26OCT25ORLNYK",
+        "kalshi_id": "KXNBAGAME-26OCT25ORLNYK-ORL",
+        "polymarket_us_id": "aec-nba-orl-ny-2026-10-25",
+        "sports_identity": [
+          "NBA",
+          "FULL_GAME_WINNER",
+          [
+            "NYK",
+            "ORL"
+          ],
+          "2026-10-25",
+          "ORL"
+        ]
+      },
+      {
+        "event": "KXNBAGAME-26OCT25TORMIN",
+        "kalshi_id": "KXNBAGAME-26OCT25TORMIN-TOR",
+        "polymarket_us_id": "aec-nba-tor-min-2026-10-25",
+        "sports_identity": [
+          "NBA",
+          "FULL_GAME_WINNER",
+          [
+            "MIN",
+            "TOR"
+          ],
+          "2026-10-25",
+          "TOR"
+        ]
+      },
+      {
+        "event": "KXNFLGAME-26OCT25KCSEA",
+        "kalshi_id": "KXNFLGAME-26OCT25KCSEA-KC",
+        "polymarket_us_id": "aec-nfl-kc-sea-2026-10-25",
+        "sports_identity": [
+          "NFL",
+          "FULL_GAME_WINNER",
+          [
+            "KC",
+            "SEA"
+          ],
+          "2026-10-25",
+          "KC"
+        ]
+      }
+    ]
+  },
+  "collections": {
+    "errors": [],
+    "records": [
+      {
+        "books": 1,
+        "duplicates": 0,
+        "next_page": null,
+        "pages": 1,
+        "records": 2,
+        "run_id": 4,
+        "status": "COMPLETE",
+        "unique_records": 2,
+        "venue": "kalshi"
+      },
+      {
+        "books": 1,
+        "duplicates": 0,
+        "next_page": null,
+        "pages": 2,
+        "records": 1,
+        "run_id": 5,
+        "status": "COMPLETE",
+        "unique_records": 1,
+        "venue": "polymarket_us"
+      },
+      {
+        "books": 1,
+        "duplicates": 0,
+        "next_page": null,
+        "pages": 1,
+        "records": 2,
+        "run_id": 6,
+        "status": "COMPLETE",
+        "unique_records": 2,
+        "venue": "kalshi"
+      },
+      {
+        "books": 1,
+        "duplicates": 0,
+        "next_page": null,
+        "pages": 2,
+        "records": 1,
+        "run_id": 7,
+        "status": "COMPLETE",
+        "unique_records": 1,
+        "venue": "polymarket_us"
+      },
+      {
+        "books": 1,
+        "duplicates": 0,
+        "next_page": null,
+        "pages": 1,
+        "records": 2,
+        "run_id": 8,
+        "status": "COMPLETE",
+        "unique_records": 2,
+        "venue": "kalshi"
+      },
+      {
+        "books": 1,
+        "duplicates": 0,
+        "next_page": null,
+        "pages": 2,
+        "records": 1,
+        "run_id": 9,
+        "status": "COMPLETE",
+        "unique_records": 1,
+        "venue": "polymarket_us"
+      },
+      {
+        "books": 1,
+        "duplicates": 0,
+        "next_page": null,
+        "pages": 1,
+        "records": 2,
+        "run_id": 10,
+        "status": "COMPLETE",
+        "unique_records": 2,
+        "venue": "kalshi"
+      },
+      {
+        "books": 1,
+        "duplicates": 0,
+        "next_page": null,
+        "pages": 2,
+        "records": 1,
+        "run_id": 11,
+        "status": "COMPLETE",
+        "unique_records": 1,
+        "venue": "polymarket_us"
+      },
+      {
+        "books": 1,
+        "duplicates": 0,
+        "next_page": null,
+        "pages": 1,
+        "records": 2,
+        "run_id": 12,
+        "status": "COMPLETE",
+        "unique_records": 2,
+        "venue": "kalshi"
+      },
+      {
+        "books": 1,
+        "duplicates": 0,
+        "next_page": null,
+        "pages": 2,
+        "records": 1,
+        "run_id": 13,
+        "status": "COMPLETE",
+        "unique_records": 1,
+        "venue": "polymarket_us"
+      },
+      {
+        "books": 1,
+        "duplicates": 0,
+        "next_page": null,
+        "pages": 1,
+        "records": 2,
+        "run_id": 14,
+        "status": "COMPLETE",
+        "unique_records": 2,
+        "venue": "kalshi"
+      },
+      {
+        "books": 1,
+        "duplicates": 0,
+        "next_page": null,
+        "pages": 2,
+        "records": 1,
+        "run_id": 15,
+        "status": "COMPLETE",
+        "unique_records": 1,
+        "venue": "polymarket_us"
+      },
+      {
+        "books": 1,
+        "duplicates": 0,
+        "next_page": null,
+        "pages": 1,
+        "records": 2,
+        "run_id": 16,
+        "status": "COMPLETE",
+        "unique_records": 2,
+        "venue": "kalshi"
+      },
+      {
+        "books": 1,
+        "duplicates": 0,
+        "next_page": null,
+        "pages": 2,
+        "records": 1,
+        "run_id": 17,
+        "status": "COMPLETE",
+        "unique_records": 1,
+        "venue": "polymarket_us"
+      },
+      {
+        "books": 1,
+        "duplicates": 0,
+        "next_page": null,
+        "pages": 1,
+        "records": 2,
+        "run_id": 18,
+        "status": "COMPLETE",
+        "unique_records": 2,
+        "venue": "kalshi"
+      },
+      {
+        "books": 1,
+        "duplicates": 0,
+        "next_page": null,
+        "pages": 2,
+        "records": 1,
+        "run_id": 19,
+        "status": "COMPLETE",
+        "unique_records": 1,
+        "venue": "polymarket_us"
+      }
+    ]
+  },
+  "candidate_count": 8,
+  "candidates": [
+    {
+      "kalshi_id": "KXNBAGAME-26OCT25DETPHI-DET",
+      "polymarket_us_id": "aec-nba-det-phi-2026-10-25",
+      "status": "UNVERIFIED",
+      "sports": {
+        "date_source": "rules_primary",
+        "issues": [],
+        "league": "NBA",
+        "market_type": "FULL_GAME_WINNER",
+        "participants": [
+          "DET",
+          "PHI"
+        ],
+        "postponement_window": "48_HOURS",
+        "scheduled_date": "2026-10-25",
+        "selection": "DET",
+        "supported": true
+      },
+      "warnings": [
+        "SPORTS_IDENTITY_ONLY_NOT_EQUIVALENCE",
+        "SPORTS_SETTLEMENT_REVIEW_REQUIRED",
+        "POSTPONEMENT_WINDOW_INTERPRETATION_REQUIRED",
+        "OCCURRENCE_AND_START_TIMES_NOT_COMPARABLE",
+        "ADMINISTRATIVE_CUTOFFS_DIFFER"
+      ]
+    },
+    {
+      "kalshi_id": "KXNBAGAME-26OCT25INDBKN-IND",
+      "polymarket_us_id": "aec-nba-ind-bkn-2026-10-25",
+      "status": "UNVERIFIED",
+      "sports": {
+        "date_source": "rules_primary",
+        "issues": [],
+        "league": "NBA",
+        "market_type": "FULL_GAME_WINNER",
+        "participants": [
+          "BKN",
+          "IND"
+        ],
+        "postponement_window": "48_HOURS",
+        "scheduled_date": "2026-10-25",
+        "selection": "IND",
+        "supported": true
+      },
+      "warnings": [
+        "SPORTS_IDENTITY_ONLY_NOT_EQUIVALENCE",
+        "SPORTS_SETTLEMENT_REVIEW_REQUIRED",
+        "POSTPONEMENT_WINDOW_INTERPRETATION_REQUIRED",
+        "OCCURRENCE_AND_START_TIMES_NOT_COMPARABLE",
+        "ADMINISTRATIVE_CUTOFFS_DIFFER"
+      ]
+    },
+    {
+      "kalshi_id": "KXNBAGAME-26OCT25LACOKC-LAC",
+      "polymarket_us_id": "aec-nba-lac-okc-2026-10-25",
+      "status": "UNVERIFIED",
+      "sports": {
+        "date_source": "rules_primary",
+        "issues": [],
+        "league": "NBA",
+        "market_type": "FULL_GAME_WINNER",
+        "participants": [
+          "LAC",
+          "OKC"
+        ],
+        "postponement_window": "48_HOURS",
+        "scheduled_date": "2026-10-25",
+        "selection": "LAC",
+        "supported": true
+      },
+      "warnings": [
+        "SPORTS_IDENTITY_ONLY_NOT_EQUIVALENCE",
+        "SPORTS_SETTLEMENT_REVIEW_REQUIRED",
+        "POSTPONEMENT_WINDOW_INTERPRETATION_REQUIRED",
+        "OCCURRENCE_AND_START_TIMES_NOT_COMPARABLE",
+        "ADMINISTRATIVE_CUTOFFS_DIFFER"
+      ]
+    },
+    {
+      "kalshi_id": "KXNBAGAME-26OCT25LALUTA-LAL",
+      "polymarket_us_id": "aec-nba-lal-uta-2026-10-25",
+      "status": "UNVERIFIED",
+      "sports": {
+        "date_source": "rules_primary",
+        "issues": [],
+        "league": "NBA",
+        "market_type": "FULL_GAME_WINNER",
+        "participants": [
+          "LAL",
+          "UTA"
+        ],
+        "postponement_window": "48_HOURS",
+        "scheduled_date": "2026-10-25",
+        "selection": "LAL",
+        "supported": true
+      },
+      "warnings": [
+        "SPORTS_IDENTITY_ONLY_NOT_EQUIVALENCE",
+        "SPORTS_SETTLEMENT_REVIEW_REQUIRED",
+        "POSTPONEMENT_WINDOW_INTERPRETATION_REQUIRED",
+        "OCCURRENCE_AND_START_TIMES_NOT_COMPARABLE",
+        "ADMINISTRATIVE_CUTOFFS_DIFFER"
+      ]
+    },
+    {
+      "kalshi_id": "KXNBAGAME-26OCT25MEMSAC-MEM",
+      "polymarket_us_id": "aec-nba-mem-sac-2026-10-25",
+      "status": "UNVERIFIED",
+      "sports": {
+        "date_source": "rules_primary",
+        "issues": [],
+        "league": "NBA",
+        "market_type": "FULL_GAME_WINNER",
+        "participants": [
+          "MEM",
+          "SAC"
+        ],
+        "postponement_window": "48_HOURS",
+        "scheduled_date": "2026-10-25",
+        "selection": "MEM",
+        "supported": true
+      },
+      "warnings": [
+        "SPORTS_IDENTITY_ONLY_NOT_EQUIVALENCE",
+        "SPORTS_SETTLEMENT_REVIEW_REQUIRED",
+        "POSTPONEMENT_WINDOW_INTERPRETATION_REQUIRED",
+        "OCCURRENCE_AND_START_TIMES_NOT_COMPARABLE",
+        "ADMINISTRATIVE_CUTOFFS_DIFFER"
+      ]
+    },
+    {
+      "kalshi_id": "KXNBAGAME-26OCT25ORLNYK-ORL",
+      "polymarket_us_id": "aec-nba-orl-ny-2026-10-25",
+      "status": "UNVERIFIED",
+      "sports": {
+        "date_source": "rules_primary",
+        "issues": [],
+        "league": "NBA",
+        "market_type": "FULL_GAME_WINNER",
+        "participants": [
+          "NYK",
+          "ORL"
+        ],
+        "postponement_window": "48_HOURS",
+        "scheduled_date": "2026-10-25",
+        "selection": "ORL",
+        "supported": true
+      },
+      "warnings": [
+        "SPORTS_IDENTITY_ONLY_NOT_EQUIVALENCE",
+        "SPORTS_SETTLEMENT_REVIEW_REQUIRED",
+        "POSTPONEMENT_WINDOW_INTERPRETATION_REQUIRED",
+        "OCCURRENCE_AND_START_TIMES_NOT_COMPARABLE",
+        "ADMINISTRATIVE_CUTOFFS_DIFFER"
+      ]
+    },
+    {
+      "kalshi_id": "KXNBAGAME-26OCT25TORMIN-TOR",
+      "polymarket_us_id": "aec-nba-tor-min-2026-10-25",
+      "status": "UNVERIFIED",
+      "sports": {
+        "date_source": "rules_primary",
+        "issues": [],
+        "league": "NBA",
+        "market_type": "FULL_GAME_WINNER",
+        "participants": [
+          "MIN",
+          "TOR"
+        ],
+        "postponement_window": "48_HOURS",
+        "scheduled_date": "2026-10-25",
+        "selection": "TOR",
+        "supported": true
+      },
+      "warnings": [
+        "SPORTS_IDENTITY_ONLY_NOT_EQUIVALENCE",
+        "SPORTS_SETTLEMENT_REVIEW_REQUIRED",
+        "POSTPONEMENT_WINDOW_INTERPRETATION_REQUIRED",
+        "OCCURRENCE_AND_START_TIMES_NOT_COMPARABLE",
+        "ADMINISTRATIVE_CUTOFFS_DIFFER"
+      ]
+    },
+    {
+      "kalshi_id": "KXNFLGAME-26OCT25KCSEA-KC",
+      "polymarket_us_id": "aec-nfl-kc-sea-2026-10-25",
+      "status": "UNVERIFIED",
+      "sports": {
+        "date_source": "rules_primary",
+        "issues": [],
+        "league": "NFL",
+        "market_type": "FULL_GAME_WINNER",
+        "participants": [
+          "KC",
+          "SEA"
+        ],
+        "postponement_window": "48_HOURS",
+        "scheduled_date": "2026-10-25",
+        "selection": "KC",
+        "supported": true
+      },
+      "warnings": [
+        "SPORTS_IDENTITY_ONLY_NOT_EQUIVALENCE",
+        "SPORTS_SETTLEMENT_REVIEW_REQUIRED",
+        "POSTPONEMENT_WINDOW_CONFLICT",
+        "OCCURRENCE_AND_START_TIMES_NOT_COMPARABLE",
+        "ADMINISTRATIVE_CUTOFFS_DIFFER"
+      ]
+    }
+  ],
+  "main_raw_hashes_verified": 72,
+  "pair_states_preserved": [
+    [
+      1,
+      "REJECTED"
+    ]
+  ],
+  "commands": [
+    {
+      "command": ".venv/bin/predarb discovery refresh --offline --sports-only --db data/research.sqlite3 --limit 100",
+      "exit_code": 0
+    },
+    {
+      "command": ".venv/bin/predarb discovery queue --sports-only --db data/research.sqlite3 --limit 100",
+      "exit_code": 0
+    },
+    {
+      "command": ".venv/bin/predarb discovery queue --db data/research.sqlite3 --limit 100",
+      "exit_code": 0
+    },
+    {
+      "command": ".venv/bin/predarb soak run --output data/sports-discovery-20261025/lakers-90s --kalshi-ticker KXNBAGAME-26OCT25LALUTA-LAL --us-slug aec-nba-lal-uta-2026-10-25 --seconds 90 --protocol sequence-v1",
+      "exit_code": 0
+    }
+  ],
+  "activity_report": {
+    "backups": [
+      {
+        "created_at": "2026-10-25T21:24:55.190683+00:00",
+        "destination": "/home/chris/code/arbitrage/data/sports-discovery-20261025/lakers-90s/backups/snapshot-001.sqlite3",
+        "file_sha256": "0bfdd3d2fb869f3cfbbe42bf9f7684643486f274b73e8a4273ebdd3253979e26",
+        "logical_sha256": "faffc6ab9fdcb06f0dfdc649f5bdd1dc55bee489ead6afaaca36c7babf3e2436"
+      },
+      {
+        "created_at": "2026-10-25T21:26:25.525542+00:00",
+        "destination": "/home/chris/code/arbitrage/data/sports-discovery-20261025/lakers-90s/backups/snapshot-002.sqlite3",
+        "file_sha256": "08b40498dca77d7156165fa01313e90cb94c38f86e8bd326ad504b848c53ff9b",
+        "logical_sha256": "c5ec335f3f0cad452bd1e898f04d1f9afd9d726afa469d67460897a19dc22c0c"
+      }
+    ],
+    "clock": {
+      "offset_measured": false,
+      "probe": "timedatectl.NTPSynchronized",
+      "synchronized": true
+    },
+    "config": {
+      "backup_seconds": 21600,
+      "kalshi_ticker": "KXNBAGAME-26OCT25LALUTA-LAL",
+      "max_storage_mb": 4096,
+      "min_free_mb": 1024,
+      "poll_seconds": 10,
+      "protocol": "sequence-v1",
+      "seconds": 90,
+      "segment_seconds": 60,
+      "us_slug": "aec-nba-lal-uta-2026-10-25"
+    },
+    "counts": {
+      "backups_complete": 2,
+      "both_fresh_samples": 7,
+      "kalshi_connections": 4,
+      "kalshi_deltas": 2579,
+      "kalshi_fresh_samples": 7,
+      "kalshi_messages": 2587,
+      "kalshi_recoveries": 0,
+      "kalshi_snapshots": 4,
+      "kalshi_usable_books": 2583,
+      "polymarket_us_fresh_samples": 8,
+      "samples": 8,
+      "segments": 2,
+      "timestamps_within_2s_samples": 0,
+      "us_books_usable_at_capture": 8,
+      "us_poll_attempts": 8,
+      "us_polls_complete": 8
+    },
+    "coverage_assessment": "OBSERVATIONS_RECORDED",
+    "elapsed_seconds": 90,
+    "equivalence_verified": false,
+    "failures": {},
+    "fees_or_profit_evaluated": false,
+    "heartbeat_at": "2026-10-25T21:26:25.604140+00:00",
+    "latest_sample": {
+      "books": {
+        "kalshi": {
+          "data_usable": false,
+          "observation_id": 2607,
+          "received_at": "2026-10-25T21:26:24.309543+00:00",
+          "rejections": [
+            "STREAM_DISCONNECTED"
+          ],
+          "source_ts": "2026-10-25T21:26:24.286000+00:00"
+        },
+        "polymarket_us": {
+          "data_usable": true,
+          "observation_id": 2547,
+          "received_at": "2026-10-25T21:26:16.503180+00:00",
+          "rejections": [],
+          "source_ts": "2026-10-25T21:26:12.241489723Z"
+        }
+      },
+      "both_fresh": false,
+      "equivalence_verified": false,
+      "fees_or_profit_evaluated": false,
+      "timestamps_within_2s": false
+    },
+    "max_poll_duration_ms": 2118,
+    "max_sample_gap_ms": 12119,
+    "pid": 432898,
+    "planned_end_at": "2026-10-25T21:26:24.958332+00:00",
+    "sample_rejections": {
+      "kalshi:MISSING_OR_INVALID_BOOK": 1
+    },
+    "schema": "collection-soak/v1",
+    "started_at": "2026-10-25T21:24:54.958332+00:00",
+    "status": "COMPLETED",
+    "stop_reason": "DURATION_COMPLETE",
+    "storage_bytes": 33854027,
+    "trading_authorized": false,
+    "verification": "UNVERIFIED"
+  },
+  "activity_raw_hashes_verified": 2607,
+  "activity_backups_verified": 2,
+  "fed_soak": {
+    "pid": 342346,
+    "status": "RUNNING",
+    "elapsed_seconds": 22210,
+    "heartbeat_at": "2026-10-25T21:30:04.153446+00:00",
+    "heartbeat_age_seconds": 4
+  },
+  "trading_authorized": false,
+  "full_suite": {
+    "command": ".venv/bin/python -m unittest discover -s tests -v",
+    "exit_code": 0,
+    "tests": 319,
+    "log": "docs/evidence/SPORTS_DISCOVERY_TESTS.txt",
+    "sha256": "0d71e2c641d43426aaded57dcd1fd32df6cadb7fe3749b90b6c7980ccc54f720"
+  },
+  "schema_version": 7,
+  "implementation_sha256": {
+    "src/predarb/sports_discovery.py": "1feee63cd3692c9fb92b20de15746542f629d122f791b86d16e73adbc28d5f30",
+    "src/predarb/discovery.py": "939f670f09c2354aaf80b911568b48bda134a6fa58167d945b2d927f8a5b5ba2",
+    "src/predarb/discovery_cli.py": "d053e8b0868be5a69dd43df2e1fba505adee4211bfa87e5ce5108d304ffbfb08"
+  }
+}

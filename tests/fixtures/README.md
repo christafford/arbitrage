@@ -143,3 +143,11 @@ is isolated so synthetic IDs cannot enter the real registry.
 Each has its official endpoint, original receipt time, schema, body hash and
 allowlisted headers. No credentials/private account payloads are included. Replay
 retains `STALE_SOURCE`; receiving the response does not invent a new source time.
+
+`sports-discovery-live.json` preserves six exact public market-detail responses
+for the Denver–Arizona, Lakers–Jazz and Memphis–Sacramento event identities. It
+also includes two explicitly reserialized market excerpts from archived catalogue
+pages for the observed soccer/college-football false match. Original parent hashes,
+receipt clocks, URLs, schemas and representation labels distinguish excerpts from
+whole responses. Same-event identity is not payout equivalence. Mutations and
+registry decisions in the sports tests are hypothetical; no live pair is approved.

@@ -369,6 +369,10 @@ class RefreshTests(unittest.TestCase):
                   occurrence_datetime='2030-01-02T12:00:00Z')
         pm.update(question=km['title'], description=km['rules_primary'], endDate=km['close_time'],
                   gameStartTime=km['occurrence_datetime'], active=True, closed=False, status='MARKET_STATUS_OPEN')
+        # This is a hypothetical Bitcoin contract, not the sports fixture it was
+        # copied from. Keeping the provider's sports tags would be contradictory.
+        for key in ('category', 'sportsMarketType', 'sportsMarketTypeV2'):
+            pm.pop(key, None)
         event = payload('kalshi-event-live')
         event['event']['event_ticker'] = km['event_ticker']
         series = payload('kalshi-series-live')

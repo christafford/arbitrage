@@ -10,6 +10,7 @@ The existing [pair review requirements](PAIR_REVIEW.md) remain mandatory.
 predarb discovery refresh --db data/research.sqlite3 \
   --page-size 200 --max-pages 1000 --books 10 --limit 100
 predarb discovery queue --db data/research.sqlite3 --limit 20
+predarb discovery queue --db data/research.sqlite3 --sports-only --limit 20
 predarb pairs candidates --db data/research.sqlite3 --limit 20
 ```
 
@@ -74,13 +75,72 @@ Every result contains:
   quality. Missing and stale quantities remain null; observed empty/one-sided
   depth is zero. Liquidity breaks ties after semantic score.
 
+## Sports discovery (v2)
+
+`discovery-v2-sports` adds a dedicated matcher for **NBA and NFL full-game winner**
+contracts. It uses a league-scoped team alias table and requires both participants,
+the selected team, the full-game market type, and the original scheduled calendar
+date to agree. US long-side team metadata must agree with the rule description;
+the other side must identify the opponent in the same instrument. It does not
+assume that the first side, home team or opponent is the YES/long selection.
+
+The date comes from the explicit scheduled-date phrase in the rules (including
+verified abbreviated month forms). An NBA game scheduled for October 25 Eastern
+can have a US start clock and Kalshi occurrence clock on different UTC dates.
+Those different fields do not establish different games. Neither clock is
+rewritten, and no fixed three-hour adjustment is invented. Missing, conflicting
+or unrecognized rule dates stay unsupported rather than being guessed from a
+ticker or settlement timestamp.
+
+Candidates are labeled `match_basis=SPORTS_EVENT_IDENTITY`, `UNVERIFIED`, and
+`equivalence_verified=false`. The legacy `equivalence_score_bps` field is a
+**ranking heuristic, not an equivalence probability**. An 8000 score can still
+include a known postponement conflict. Identity is sufficient to recommend
+reviewing two definitions, never to approve their payout mapping.
+
+Postponement-window differences remain explicit. Forty-eight hours versus two
+weeks is a conflict; forty-eight hours versus two calendar days requires
+interpretation. Missing windows, cancellations, fair-price payouts, overtime,
+ties and other exceptions still require complete source-bound human review.
+This matcher does not determine that any exceptional payout is equivalent.
+
+Recognized unsupported sports formats cannot fall back to generic text similarity.
+This excludes the observed soccer both-teams-to-score / college-football quarter
+scoring false match. Props, spreads, totals, periods, other leagues, ambiguous
+teams and unknown schema/type variants are currently outside this dedicated
+matcher. `sports_coverage` reports recognized/supported counts and reasons for
+unsupported records within the current eligible scope. It is not a complete
+sports-market census, and generic unrecognized prose can still produce errors.
+
+Use `--sports-only` with either `refresh` or `queue`. A queue read filters only
+persisted members; it cannot discover omitted matches. Rebuild a fresh archive's
+queue after upgrading:
+
+```bash
+predarb discovery refresh --offline --sports-only --db data/research.sqlite3 --limit 100
+predarb discovery queue --sports-only --db data/research.sqlite3 --limit 20
+```
+
+Offline refresh does not renew stale catalogues. Without `--offline`, a sports-only
+refresh still traverses both complete venue catalogues; the flag filters matching
+and selected book captures, not the venue download scope. Existing freshness,
+full-catalogue membership and failed-run gates are unchanged. All-scope discovery
+also uses the sports matcher, while retaining generic matching for non-sports.
+
+The October 25 live verification refreshed a **bounded eight-game seed set** from
+the archived schedule and rebuilt the main queue. It did not traverse all current
+markets. See [results and current shortlist](SPORTS_DISCOVERY_RESULTS.md).
+
+## Generic matching and liquidity
+
 Normalization handles Unicode, a small explicit alias set (BTC/Bitcoin,
 ETH/Ethereum, CPI/consumer price index, Fed/federal reserve), ISO and full English
 month dates, participant subtitles and US long-side descriptions/team names,
 and common greater/less-than thresholds with inclusivity, dollar,
 percent, points, basis points, C/F temperature units and magnitude markers.
 Equal numeric values with unspecified units receive only partial credit and an
-explicit warning; unknown units are not treated as confirmed equal. Documented `occurrence_datetime`/`gameStartTime`
+explicit warning; unknown units are not treated as confirmed equal. Outside the
+dedicated sports path, documented `occurrence_datetime`/`gameStartTime`
 provide UTC event dates when present. Close/end timestamps remain separate
 cutoffs, never inferred event dates. Unknown date formats, abbreviated names,
 ranges, unexpressed units and inverse propositions require human interpretation.

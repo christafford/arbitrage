@@ -414,3 +414,32 @@ headers from the live smoke. Its successful HTTP response really had a stale boo
 source timestamp; it is not relabeled as fresh. Fault injection and accelerated
 runner inputs in `soak-hypothetical.json` are separately labeled hypothetical.
 See [operating limits](COLLECTION_SOAK.md) and [results](SOAK_RESULTS.md).
+
+## Sports discovery correction — 2026-10-25 UTC
+
+Re-fetched the official [Kalshi market schema](https://docs.kalshi.com/api-reference/market/get-market)
+and [US market-by-slug schema](https://docs.polymarket.us/api-reference/markets/get-market-by-slug).
+[Document hashes and retrieval times](evidence/SPORTS_DISCOVERY_API_CHECKS.json)
+identify raw `.md` captures. Kalshi documents `occurrence_datetime` as recorded
+event occurrence when available; US calls `gameStartTime` the game start (a
+deprecated optional field). They do not define identical scheduling clocks.
+The sports matcher therefore preserves both and uses explicit scheduled-date
+rule text for same-event discovery, without synthesizing a start/end conversion.
+
+US `category`, `marketType`, `sportsMarketType`, `sportsMarketTypeV2`, side
+`identifier`/`long`/`description`/`marketSideType`, and `team.name`/`team.league` are
+documented. Supported string variants, team aliases and rule-phrase patterns are
+bounded local heuristics checked against captured official responses, not a
+guarantee that the API will preserve slug/ticker naming conventions. Unknown or
+conflicting formats remain unsupported for sports discovery. Underlying adapter
+schema versions remain unchanged; the local discovery algorithm becomes
+`discovery-v2-sports` and does not change money, book or approval gates.
+
+The [sports fixture](../tests/fixtures/sports-discovery-live.json) contains six
+exact public detail responses for three matching event identities and two
+reserialized market excerpts from original archived catalogue pages demonstrating
+the soccer/college-football false match. Each records URL, receipt clock, schema,
+body hash, representation and parent hash for excerpts. Original full pages stay
+in SQLite. No private account data or international source was used. Alterations
+in regression tests are explicitly hypothetical. Live scoped refresh and the
+Lakers–Jazz activity capture remain unapproved research evidence.
