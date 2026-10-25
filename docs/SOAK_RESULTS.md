@@ -62,6 +62,20 @@ isolated. Source-document URLs, retrieval times and hashes are in
 
 ## Outstanding acceptance
 
+The authorized background run started **2026-10-25 15:19:54 UTC** (11:19:54 AM
+Eastern), using implementation commit `01af682`. Its planned end is
+**2026-10-26 15:19:54 UTC**, followed by finalization/backup time. The isolated
+directory is `data/soak-24h-20261025/`; stdout/stderr go to
+`data/soak-24h-20261025.log`. [Launch evidence](evidence/SOAK_24H_LAUNCH.json)
+records the command, PID and initial heartbeat. This is a process launch, not a
+service/reboot deployment or completed operational acceptance.
+
+Check it with:
+
+```bash
+predarb soak report data/soak-24h-20261025
+```
+
 The 24-hour operational test and post-run inspection remain pending. A successful
 start or completed duration alone does not satisfy acceptance. Review actual
 freshness/skew samples, gaps, recovery, resource growth and restore/replay before

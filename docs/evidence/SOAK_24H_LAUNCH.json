@@ -1,0 +1,200 @@
+{
+  "command": [
+    "/home/chris/code/arbitrage/.venv/bin/predarb",
+    "soak",
+    "run",
+    "--output",
+    "data/soak-24h-20261025",
+    "--kalshi-ticker",
+    "KXFEDCUT-31DEC28-31DEC26",
+    "--us-slug",
+    "cbpac-usfed-2026-cut",
+    "--seconds",
+    "86400",
+    "--protocol",
+    "sequence-v1"
+  ],
+  "pid": 342346,
+  "launched_at": "2026-10-25T15:19:53.697686+00:00",
+  "implementation_commit": "01af682fc01c8ad62f1fdea6ad5ed66dffe9a784",
+  "directory": "data/soak-24h-20261025",
+  "log": "data/soak-24h-20261025.log",
+  "acceptance_complete": false,
+  "trading_authorized": false,
+  "initial_report": {
+    "backups": [
+      {
+        "created_at": "2026-10-25T15:19:54.393823+00:00",
+        "destination": "/home/chris/code/arbitrage/data/soak-24h-20261025/backups/snapshot-001.sqlite3",
+        "file_sha256": "4756b5aea9bcae738660a8ba3b5a398b779edf057488c4bc3e536a086b0f0734",
+        "logical_sha256": "cec8ceaf88b62de17903b524a1ad0306abfd81f35e4052935d754aa70ed90556"
+      }
+    ],
+    "clock": {
+      "offset_measured": false,
+      "probe": "timedatectl.NTPSynchronized",
+      "synchronized": true
+    },
+    "config": {
+      "backup_seconds": 21600,
+      "kalshi_ticker": "KXFEDCUT-31DEC28-31DEC26",
+      "max_storage_mb": 4096,
+      "min_free_mb": 1024,
+      "poll_seconds": 10,
+      "protocol": "sequence-v1",
+      "seconds": 86400,
+      "segment_seconds": 60,
+      "us_slug": "cbpac-usfed-2026-cut"
+    },
+    "counts": {
+      "backups_complete": 1,
+      "both_fresh_samples": 0,
+      "kalshi_fresh_samples": 0,
+      "polymarket_us_fresh_samples": 0,
+      "samples": 1,
+      "timestamps_within_2s_samples": 0,
+      "us_books_usable_at_capture": 0,
+      "us_poll_attempts": 1,
+      "us_polls_complete": 1
+    },
+    "elapsed_seconds": 1,
+    "equivalence_verified": false,
+    "failures": {},
+    "fees_or_profit_evaluated": false,
+    "heartbeat_at": "2026-10-25T15:19:55.519757+00:00",
+    "latest_sample": {
+      "books": {
+        "kalshi": {
+          "data_usable": false,
+          "observation_id": null,
+          "received_at": null,
+          "rejections": [
+            "MISSING_OR_INVALID_BOOK"
+          ],
+          "source_ts": null
+        },
+        "polymarket_us": {
+          "data_usable": false,
+          "observation_id": 2,
+          "received_at": "2026-10-25T15:19:55.487476+00:00",
+          "rejections": [
+            "STALE_SOURCE"
+          ],
+          "source_ts": "2026-10-25T15:14:43.507142144Z"
+        }
+      },
+      "both_fresh": false,
+      "equivalence_verified": false,
+      "fees_or_profit_evaluated": false,
+      "timestamps_within_2s": false
+    },
+    "max_poll_duration_ms": 1114,
+    "max_sample_gap_ms": 0,
+    "pid": 342346,
+    "planned_end_at": "2026-10-26T15:19:54.081955+00:00",
+    "sample_rejections": {
+      "kalshi:MISSING_OR_INVALID_BOOK": 1,
+      "polymarket_us:STALE_SOURCE": 1
+    },
+    "schema": "collection-soak/v1",
+    "started_at": "2026-10-25T15:19:54.081955+00:00",
+    "status": "RUNNING",
+    "stop_reason": null,
+    "storage_bytes": 697079,
+    "trading_authorized": false,
+    "verification": "UNVERIFIED"
+  },
+  "confirmed_report": {
+    "backups": [
+      {
+        "created_at": "2026-10-25T15:19:54.393823+00:00",
+        "destination": "/home/chris/code/arbitrage/data/soak-24h-20261025/backups/snapshot-001.sqlite3",
+        "file_sha256": "4756b5aea9bcae738660a8ba3b5a398b779edf057488c4bc3e536a086b0f0734",
+        "logical_sha256": "cec8ceaf88b62de17903b524a1ad0306abfd81f35e4052935d754aa70ed90556"
+      }
+    ],
+    "clock": {
+      "offset_measured": false,
+      "probe": "timedatectl.NTPSynchronized",
+      "synchronized": true
+    },
+    "config": {
+      "backup_seconds": 21600,
+      "kalshi_ticker": "KXFEDCUT-31DEC28-31DEC26",
+      "max_storage_mb": 4096,
+      "min_free_mb": 1024,
+      "poll_seconds": 10,
+      "protocol": "sequence-v1",
+      "seconds": 86400,
+      "segment_seconds": 60,
+      "us_slug": "cbpac-usfed-2026-cut"
+    },
+    "counts": {
+      "backups_complete": 1,
+      "both_fresh_samples": 0,
+      "kalshi_fresh_samples": 2,
+      "polymarket_us_fresh_samples": 0,
+      "samples": 4,
+      "timestamps_within_2s_samples": 0,
+      "us_books_usable_at_capture": 0,
+      "us_poll_attempts": 4,
+      "us_polls_complete": 4
+    },
+    "elapsed_seconds": 35,
+    "equivalence_verified": false,
+    "failures": {},
+    "fees_or_profit_evaluated": false,
+    "heartbeat_at": "2026-10-25T15:20:29.333976+00:00",
+    "latest_sample": {
+      "books": {
+        "kalshi": {
+          "data_usable": true,
+          "observation_id": 18,
+          "received_at": "2026-10-25T15:20:26.728156+00:00",
+          "rejections": [],
+          "source_ts": "2026-10-25T15:20:26.687000+00:00"
+        },
+        "polymarket_us": {
+          "data_usable": false,
+          "observation_id": 20,
+          "received_at": "2026-10-25T15:20:29.305173+00:00",
+          "rejections": [
+            "STALE_SOURCE"
+          ],
+          "source_ts": "2026-10-25T15:14:43.507142144Z"
+        }
+      },
+      "both_fresh": false,
+      "equivalence_verified": false,
+      "fees_or_profit_evaluated": false,
+      "timestamps_within_2s": false
+    },
+    "max_poll_duration_ms": 1114,
+    "max_sample_gap_ms": 11564,
+    "pid": 342346,
+    "planned_end_at": "2026-10-26T15:19:54.081955+00:00",
+    "sample_rejections": {
+      "kalshi:MISSING_OR_INVALID_BOOK": 1,
+      "kalshi:STREAM_LIVENESS_NOT_DEMONSTRATED": 1,
+      "polymarket_us:STALE_SOURCE": 4
+    },
+    "schema": "collection-soak/v1",
+    "started_at": "2026-10-25T15:19:54.081955+00:00",
+    "status": "RUNNING",
+    "stop_reason": null,
+    "storage_bytes": 1699052,
+    "trading_authorized": false,
+    "verification": "UNVERIFIED"
+  },
+  "archive_counts": {
+    "raw_by_venue": {
+      "kalshi": 12,
+      "polymarket_us": 8
+    },
+    "ws_frames": 8,
+    "normalized_kalshi_books": 4,
+    "pairs": 0,
+    "fee_profiles": 0,
+    "research_sessions": 0
+  }
+}
