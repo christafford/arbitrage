@@ -132,3 +132,14 @@ assumes cash availability one and three days after settlement. These delays,
 account statements and approvals were not observed at either venue. Exceptional
 payouts and altered partial-fill cases exercise fail-closed rounding and downside
 checks. Neither fixture establishes real settlement equivalence or trading authority.
+
+`soak-hypothetical.json` is a local collection-run configuration used with the
+synthetic M3 metadata/books and an accelerated clock. Transport errors, timing,
+disk conditions and shutdowns in those tests are hypothetical. Registry observation
+is isolated so synthetic IDs cannot enter the real registry.
+
+`soak-us-stale-live.json` instead contains two exact public API bodies from the
+2026-10-25 smoke: US market detail and a book with an actually stale source clock.
+Each has its official endpoint, original receipt time, schema, body hash and
+allowlisted headers. No credentials/private account payloads are included. Replay
+retains `STALE_SOURCE`; receiving the response does not invent a new source time.

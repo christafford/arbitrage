@@ -54,6 +54,12 @@ Collectors use fixed verified US production origins, no credentials and no redir
 
 ## Market discovery
 
+For a bounded collection-only operational test, use `predarb soak run` and
+`predarb soak report`. This coordinates Kalshi streaming and US polling in a new
+isolated archive, with heartbeat/freshness diagnostics, backups and storage guards.
+Start with a short smoke before a 24-hour run. See [collection soak](docs/COLLECTION_SOAK.md).
+Rejected pairs may test transport; this command never evaluates arbitrage.
+
 ```bash
 predarb discovery refresh --db data/research.sqlite3 --limit 100
 predarb discovery queue --db data/research.sqlite3 --limit 20

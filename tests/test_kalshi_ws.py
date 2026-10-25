@@ -216,6 +216,19 @@ class StreamCaptureTests(unittest.TestCase):
         with self.assertRaises(ValueError): load_book(self.db, rows[2][0], now=self.clock.now())
         self.assertIn('STREAM_DISCONNECTED', inspect_book(self.db, rows[1][0], now=self.clock.now())['rejections'])
 
+    def test_coordinator_tick_runs_during_quiet_backoff_and_preserves_capture_stats(self):
+        ticks = []
+        def stop(db, at):
+            ticks.append(self.clock.monotonic())
+            return self.clock.monotonic() >= 6
+        result = self.run_capture([self.ack(), self.snapshot(), self.delta()],
+                                  [self.ack(), self.snapshot(), self.delta()], on_tick=stop)
+        self.assertIn('MESSAGE_TIMEOUT', result['failures'])
+        self.assertIn('COORDINATOR_STOP', result['failures'])
+        self.assertEqual(result['connections'], 1)
+        self.assertTrue(result['live_continuity_demonstrated'])
+        self.assertGreater(len(ticks), 10)
+
     def test_transport_disconnect_discards_old_generation_and_requires_snapshot(self):
         stats = self.run_capture([self.ack(), self.snapshot(), OSError('HYPOTHETICAL_SECRET_SIGNATURE')],
                                  [self.ack(), self.delta()], max_messages=4)

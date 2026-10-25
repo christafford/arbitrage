@@ -75,14 +75,16 @@ def main():
     books_cli.add_parser(s)
     from . import research_cli
     research_cli.add_parser(s)
-    from . import paper_cli, ops_cli, discovery_cli, ws_cli
+    from . import paper_cli, ops_cli, discovery_cli, ws_cli, soak_cli
     paper_cli.add_parser(s)
     ops_cli.add_parser(s)
     discovery_cli.add_parser(s)
     ws_cli.add_parser(s)
+    soak_cli.add_parser(s)
     args = p.parse_args()
     try:
         if args.cmd == 'ops': return ops_cli.run(args)
+        if args.cmd == 'soak': return soak_cli.run(args)
         from .runtime import writer_lock
         reader = (args.cmd == 'research' and args.research_cmd in {'summary', 'csv', 'fees-review', 'readiness'}) or (args.cmd == 'paper' and args.paper_cmd == 'report') or (args.cmd == 'discovery' and args.discovery_cmd == 'queue')
         with (nullcontext() if reader else writer_lock(args.db)):

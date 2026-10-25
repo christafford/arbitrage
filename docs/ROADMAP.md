@@ -150,6 +150,16 @@ Evidence and explicit gaps: [M5A results](M5A_RESULTS.md),
 does not establish live acceptance. M4/M5 sustained-run acceptance remains pending.
 No real equivalence approval, fee approval, order, funding or M6 work.
 
+### M5A collection-soak operational extension — authorized 2026-10-25
+
+- [x] Bounded single-writer Kalshi streaming / US polling coordinator in an isolated archive; explicit selected instruments, no pair/economic decisions.
+- [x] Periodic freshness/skew samples, safe retry/cooldown, signal shutdown, protocol horizon, disk/storage guards, heartbeat reporting and verified backup pauses; fixtures, unit/integration tests and operator guide.
+- [ ] Actual 24-hour run and post-run inspection of gaps, freshness, reconnects, growth, restore/replay. Starting a process does not satisfy this criterion.
+
+See [collection soak](COLLECTION_SOAK.md) and [implementation/live evidence](SOAK_RESULTS.md).
+Rejected Fed contracts may be used for collection testing only. Overall M5A,
+M4's 30-day economics and M5's multiweek acceptance remain open.
+
 ## M6 — OPTIONAL live trading proposal (DO NOT IMPLEMENT WITHOUT EXPLICIT GO-AHEAD)
 
 - [ ] Human-approved security/risk design; separate order execution module, off by default.

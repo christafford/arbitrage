@@ -56,7 +56,8 @@ def refresh_metadata(con, source_id, *, client=None):
 
 def capture(con, source_id, credentials, *, seconds=60, max_messages=10000, max_connections=10,
             min_free_bytes=1024**3, directory='.', connect_socket=open_socket, metadata_loader=refresh_metadata,
-            now=clock, monotonic=time.monotonic, sleep=time.sleep, on_book=None, protocol='clocked'):
+            now=clock, monotonic=time.monotonic, sleep=time.sleep, on_book=None, protocol='clocked',
+            on_tick=None):
     identifier(source_id)
     for value, low, high in ((seconds, 1, 3600), (max_messages, 1, 100000), (max_connections, 1, 120)):
         if type(value) is not int or not low <= value <= high:
@@ -70,12 +71,16 @@ def capture(con, source_id, credentials, *, seconds=60, max_messages=10000, max_
              'protocol': protocol, 'protocol_valid_until': SEQUENCE_PROTOCOL_END.isoformat() if protocol == 'sequence-v1' else None,
              'sequenced_connection_ids': [], 'reconnected_continuity_demonstrated': False}
     deadline = monotonic() + seconds
-    attempts, had_failure = 0, False
+    attempts, had_failure, coordinator_stopped = 0, False, False
     # An interrupted earlier invocation has no demonstrable transport continuity.
     con.execute("UPDATE ws_connections SET ended_at=?,end_reason='PREVIOUS_WRITER_STOPPED' WHERE ended_at IS NULL",
                 (now().isoformat(),))
     con.commit()
     while monotonic() < deadline and stats['messages'] < max_messages and stats['connections'] < max_connections:
+        if on_tick is not None and on_tick(con, now()):
+            stats['failures'].append('COORDINATOR_STOP'); break
+        if monotonic() >= deadline:
+            break
         if shutil.disk_usage(directory).free < min_free_bytes:
             stats['failures'].append('LOW_DISK_SPACE'); break
         connection_id, reason, stream = None, 'CONNECTION_FAILED', None
@@ -96,6 +101,10 @@ def capture(con, source_id, credentials, *, seconds=60, max_messages=10000, max_
                     'use_yes_price': False}}))
                 sid, frames, last_message = None, 0, monotonic()
                 while monotonic() < deadline and stats['messages'] < max_messages:
+                    if on_tick is not None and on_tick(con, now()):
+                        reason = 'COORDINATOR_STOP'; break
+                    if monotonic() >= deadline:
+                        reason = 'BUDGET_COMPLETE'; break
                     received = now()
                     try:
                         validate_protocol(protocol, received)
@@ -170,7 +179,7 @@ def capture(con, source_id, credentials, *, seconds=60, max_messages=10000, max_
             if stream is not None: stream.disconnect()
             if connection_id is not None:
                 ws_store.end_connection(con, connection_id, at=now().isoformat(), reason=reason)
-        if reason in {'WALL_CLOCK_JUMP', 'LOW_DISK_SPACE', 'PROTOCOL_REVIEW_REQUIRED', 'UNEXPECTED_MARKET_CLOCK'}:
+        if reason in {'WALL_CLOCK_JUMP', 'LOW_DISK_SPACE', 'PROTOCOL_REVIEW_REQUIRED', 'UNEXPECTED_MARKET_CLOCK', 'COORDINATOR_STOP'}:
             stats['failures'].append(reason); break
         if reason not in {'BUDGET_COMPLETE', 'PERIODIC_RESNAPSHOT'}:
             stats['failures'].append(reason); had_failure = True; attempts += 1
@@ -178,7 +187,20 @@ def capture(con, source_id, credentials, *, seconds=60, max_messages=10000, max_
             attempts = 0
         remaining = deadline - monotonic()
         if remaining > 0 and stats['messages'] < max_messages and stats['connections'] < max_connections:
-            sleep(min(remaining, min(30, 2 ** min(attempts, 5))))
+            delay = min(remaining, min(30, 2 ** min(attempts, 5)))
+            if on_tick is None:
+                sleep(delay)
+            else:
+                # Poll/heartbeat even when the stream is quiet or reconnecting.
+                until = monotonic() + delay
+                while monotonic() < until:
+                    if on_tick(con, now()):
+                        stats['failures'].append('COORDINATOR_STOP')
+                        coordinator_stopped = True
+                        break
+                    sleep(min(.5, max(0, until - monotonic())))
+                if coordinator_stopped:
+                    break
     stats['live_continuity_demonstrated'] = bool(stats['sequenced_connection_ids'])
     stats['reconnected_continuity_demonstrated'] = len(stats['sequenced_connection_ids']) >= 2
     # This only describes captured protocol continuity, never sustained uptime or readiness.

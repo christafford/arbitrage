@@ -1,0 +1,34 @@
+[
+  {
+    "url": "https://docs.polymarket.us/api-reference/markets/get-market-by-slug.md",
+    "status": 200,
+    "retrieved_at": "2026-10-25T15:04:39.638783+00:00",
+    "path": "data/soak-source-check-20261025/us-detail.md",
+    "sha256": "16f599df2f2606ae8e661b557793274d61d50e33862a10d033e52c09e783f7cf",
+    "truncated": false
+  },
+  {
+    "url": "https://docs.polymarket.us/api-reference/markets/get-market-book.md",
+    "status": 200,
+    "retrieved_at": "2026-10-25T15:04:40.145899+00:00",
+    "path": "data/soak-source-check-20261025/us-book.md",
+    "sha256": "a7067ab36d8372f67f9eae96b8ef177e120b94f33355f85ff7bf49f66d795e29",
+    "truncated": false
+  },
+  {
+    "url": "https://docs.kalshi.com/websockets/orderbook-updates.md",
+    "status": 200,
+    "retrieved_at": "2026-10-25T15:04:40.494664+00:00",
+    "path": "data/soak-source-check-20261025/kalshi-orderbook.md",
+    "sha256": "8432edeec3ae10347060f144a4b5207d642034abcde6f5ef569db35ea13d9474",
+    "truncated": false
+  },
+  {
+    "url": "https://docs.kalshi.com/changelog.md",
+    "status": 200,
+    "retrieved_at": "2026-10-25T15:04:40.857454+00:00",
+    "path": "data/soak-source-check-20261025/kalshi-changelog.md",
+    "sha256": "db04605753fe9996c206e9dcae173c4d7de2f6c067ab2d6ccd3f7ca9bc755713",
+    "truncated": false
+  }
+]

@@ -1,0 +1,16 @@
+{
+  "schema": "collection-soak-test/v1",
+  "hypothetical": true,
+  "provenance": "HYPOTHETICAL local runner configuration; combines synthetic m3 fixture responses with an accelerated clock. No live uptime or account claim.",
+  "config": {
+    "kalshi_ticker": "HYPOTHETICAL-M3",
+    "us_slug": "hypothetical-m3",
+    "seconds": 20,
+    "poll_seconds": 5,
+    "segment_seconds": 10,
+    "backup_seconds": 300,
+    "min_free_mb": 200,
+    "max_storage_mb": 1024,
+    "protocol": "clocked"
+  }
+}

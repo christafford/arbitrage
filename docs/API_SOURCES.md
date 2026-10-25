@@ -394,3 +394,23 @@ is a clearly labeled one-market excerpt reserialized from the archived raw page;
 it records the parent hash, original schema/time, excerpt hash and allowlisted
 headers. It is not labeled an exact full wire response. Original bytes remain in
 the operator's raw archive. No international API or credentials were used.
+
+## Collection-soak operational extension — 2026-10-25 UTC
+
+Rechecked the official US [market detail](https://docs.polymarket.us/api-reference/markets/get-market-by-slug),
+[book](https://docs.polymarket.us/api-reference/markets/get-market-book), Kalshi
+[orderbook stream](https://docs.kalshi.com/websockets/orderbook-updates) and
+[changelog](https://docs.kalshi.com/changelog). Raw `.md` documents were saved before
+inspection; URLs, retrieval clocks and hashes are in
+[the source manifest](evidence/SOAK_API_CHECKS.json). The October 29 clock rollout
+entry remains present. No compatibility deadline was extended.
+
+The coordinator reuses the existing consumed-field schemas, snapshot/delta
+validation and official endpoints. It introduces no new venue fields or trading
+routes. Its local report contract is `collection-soak/v1`; SQLite stays version 7.
+The [real stale-source fixture](../tests/fixtures/soak-us-stale-live.json) preserves
+exact public US detail/book bytes, original hashes/receipt clocks and allowlisted
+headers from the live smoke. Its successful HTTP response really had a stale book
+source timestamp; it is not relabeled as fresh. Fault injection and accelerated
+runner inputs in `soak-hypothetical.json` are separately labeled hypothetical.
+See [operating limits](COLLECTION_SOAK.md) and [results](SOAK_RESULTS.md).

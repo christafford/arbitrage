@@ -1,0 +1,31 @@
+{
+  "schema": "soak-us-live/v1",
+  "hypothetical": false,
+  "provenance": "Exact public US responses from the 2026-10-25 collection smoke. Allowlisted headers only; no authentication. Stale source time is observed, not an injected failure.",
+  "metadata": {
+    "endpoint": "https://gateway.polymarket.us/v1/market/slug/cbpac-usfed-2026-cut",
+    "body": "{\"market\":{\"id\":\"171031\",\"question\":\"Fed Rate Cut in 2026?\",\"slug\":\"cbpac-usfed-2026-cut\",\"endDate\":\"2027-01-15T04:00:00Z\",\"category\":\"macro\",\"startDate\":\"2026-07-02T00:46:50Z\",\"description\":\"This market will settle to Yes if the United States Federal Reserve decreases the upper bound of the target range for the federal funds rate by December 31, 2026, 11:59 PM ET. Outcome sourced from the Federal Reserve.\\n\\nRate changes taken at scheduled FOMC meetings or at unscheduled or emergency meetings will both qualify.\",\"active\":true,\"marketType\":\"futures\",\"closed\":false,\"createdAt\":\"2026-07-02T00:46:50Z\",\"updatedAt\":\"2026-10-25T14:59:40Z\",\"archived\":false,\"orderPriceMinTickSize\":0.01,\"gameStartTime\":\"2027-01-01T04:59:00Z\",\"manualActivation\":false,\"sportsMarketType\":\"futures\",\"marketSides\":[{\"id\":\"341698\",\"marketSideType\":\"MARKET_SIDE_TYPE_INSTRUMENT\",\"identifier\":\"cbpac-usfed-2026-cut\",\"createdAt\":\"2026-07-02T00:46:50Z\",\"updatedAt\":\"2026-07-02T00:46:50Z\",\"description\":\"Yes\",\"price\":\"0.0800\",\"marketId\":171031,\"long\":true,\"quote\":{\"value\":\"0.0800\",\"currency\":\"USD\"},\"tradable\":true},{\"id\":\"341699\",\"marketSideType\":\"MARKET_SIDE_TYPE_INSTRUMENT\",\"identifier\":\"cbpac-usfed-2026-cut\",\"createdAt\":\"2026-07-02T00:46:50Z\",\"updatedAt\":\"2026-07-02T00:46:50Z\",\"description\":\"No\",\"price\":\"0.93\",\"marketId\":171031,\"long\":false,\"quote\":{\"value\":\"0.93\",\"currency\":\"USD\"},\"tradable\":true}],\"outcomes\":\"[\\\"No\\\",\\\"Yes\\\"]\",\"outcomePrices\":\"[\\\"0.0800\\\",\\\"0.93\\\"]\",\"ep3Status\":\"OPEN\",\"status\":\"MARKET_STATUS_OPEN\",\"assetPriceTerms\":null,\"sportsMarketTypeV2\":\"SPORTS_MARKET_TYPE_FUTURE\",\"hidden\":false,\"tags\":[],\"title\":\"Cut\",\"feeCoefficient\":0.0695,\"bestBidQuote\":{\"value\":\"0.0700\",\"currency\":\"USD\"},\"bestAskQuote\":{\"value\":\"0.0800\",\"currency\":\"USD\"},\"titleShort\":\"Cut\",\"ep3SyncedAt\":\"2026-10-22T12:04:02Z\",\"minimumTradeQty\":0.01,\"comboEnabled\":false,\"politics\":null}}",
+    "body_sha256": "807bc0b769d67ac62aee9caf5b3737b4fa1c48360c3e82337302b11c0e4aa6c6",
+    "status": 200,
+    "headers": {
+      "content-type": "application/json",
+      "date": "Sun, 25 Oct 2026 15:10:34 GMT"
+    },
+    "retrieved_at": "2026-10-25T15:10:34.656288+00:00",
+    "schema_version": "polymarket-us-marketservice-1.0.0/m1-v1"
+  },
+  "book": {
+    "endpoint": "https://gateway.polymarket.us/v1/markets/cbpac-usfed-2026-cut/book",
+    "body": "{\"marketData\":{\"marketSlug\":\"cbpac-usfed-2026-cut\",\"bids\":[{\"px\":{\"value\":\"0.0700\",\"currency\":\"USD\"},\"qty\":\"5608.6400\"},{\"px\":{\"value\":\"0.0600\",\"currency\":\"USD\"},\"qty\":\"661.9800\"},{\"px\":{\"value\":\"0.0500\",\"currency\":\"USD\"},\"qty\":\"75201.0000\"},{\"px\":{\"value\":\"0.0300\",\"currency\":\"USD\"},\"qty\":\"0.7200\"},{\"px\":{\"value\":\"0.0200\",\"currency\":\"USD\"},\"qty\":\"86.2200\"},{\"px\":{\"value\":\"0.0100\",\"currency\":\"USD\"},\"qty\":\"12365.7400\"}],\"offers\":[{\"px\":{\"value\":\"0.0800\",\"currency\":\"USD\"},\"qty\":\"2953.6700\"},{\"px\":{\"value\":\"0.0900\",\"currency\":\"USD\"},\"qty\":\"10.0000\"},{\"px\":{\"value\":\"0.7700\",\"currency\":\"USD\"},\"qty\":\"27.1700\"},{\"px\":{\"value\":\"0.7800\",\"currency\":\"USD\"},\"qty\":\"83.0000\"},{\"px\":{\"value\":\"0.9100\",\"currency\":\"USD\"},\"qty\":\"49.9200\"},{\"px\":{\"value\":\"0.9200\",\"currency\":\"USD\"},\"qty\":\"92.0000\"},{\"px\":{\"value\":\"0.9700\",\"currency\":\"USD\"},\"qty\":\"97.0000\"},{\"px\":{\"value\":\"0.9800\",\"currency\":\"USD\"},\"qty\":\"3.9200\"},{\"px\":{\"value\":\"0.9900\",\"currency\":\"USD\"},\"qty\":\"28011.4600\"}],\"state\":\"MARKET_STATE_OPEN\",\"stats\":{\"openPx\":{\"value\":\"0.1200\",\"currency\":\"USD\"},\"closePx\":{\"value\":\"0.1100\",\"currency\":\"USD\"},\"lowPx\":{\"value\":\"0.0300\",\"currency\":\"USD\"},\"highPx\":{\"value\":\"0.8100\",\"currency\":\"USD\"},\"lastTradePx\":{\"value\":\"0.0800\",\"currency\":\"USD\"},\"settlementPx\":{\"value\":\"0.1100\",\"currency\":\"USD\"},\"sharesTraded\":\"5272722.4300\",\"notionalTraded\":{\"value\":\"415224.2675\",\"currency\":\"USD\"},\"lastTradeQty\":\"11.7400\",\"openInterest\":\"70929.5500\",\"openSetTime\":\"2026-09-12T21:07:25.593732371Z\",\"closeSetTime\":\"2026-09-12T21:00:11.305998531Z\",\"highSetTime\":\"2026-10-22T14:29:56.810506887Z\",\"lowSetTime\":\"2026-09-16T23:38:07.727224697Z\",\"lastTradeSetTime\":\"2026-10-25T13:21:57.343225541Z\",\"settlementSetTime\":\"2026-09-12T21:00:11.306145463Z\",\"openInterestSetTime\":\"2026-10-25T13:01:21.851129778Z\",\"notionalSetTime\":\"2026-10-25T13:21:57.343225541Z\",\"settlementPriceCalculationMethod\":\"SETTLEMENT_PRICE_CALCULATION_METHOD_EVENT_TIER_2\",\"currentPx\":{\"value\":\"0.0750\",\"currency\":\"USD\"},\"lastPriceSample\":{\"longPx\":{\"value\":\"0.0800\",\"currency\":\"USD\"},\"shortPx\":{\"value\":\"0.92\",\"currency\":\"USD\"},\"ts\":\"2026-10-25T15:09:27.181226920Z\"}},\"transactTime\":\"2026-10-25T15:09:27.181226920Z\"}}",
+    "body_sha256": "ccfb09dbe59152a5267a016015f888582dece40baeeb8340053db5a48464fb28",
+    "status": 200,
+    "headers": {
+      "content-type": "application/json",
+      "date": "Sun, 25 Oct 2026 15:10:35 GMT",
+      "last-modified": "Sun, 25 Oct 2026 15:10:35 GMT"
+    },
+    "retrieved_at": "2026-10-25T15:10:35.683119+00:00",
+    "schema_version": "polymarket-us-marketservice-1.0.0/m1-v1"
+  },
+  "expected_rejection": "STALE_SOURCE"
+}
