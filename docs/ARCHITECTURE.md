@@ -297,3 +297,16 @@ without changing pairs or appending audit records; existing writer callers keep
 the default persistence behavior. Pair inspection is capped at the scanner's 50
 total rows, with explicit truncation failure. No new database schema or external
 API fields are introduced. See [readiness semantics and limits](READINESS.md).
+
+## Private embedding discovery (schema 8)
+
+`embeddings.py` provides a credential-free HTTPS client, strict OpenAI-compatible
+llama.cpp model/vector schemas, raw archival before validation, persistent circuit
+state and a bounded content/model cache. Schema 8 adds `embedding_cache` and
+`embedding_breakers`; backup/restore recognizes the new version. Existing schema-7
+readiness reads remain supported. Discovery passes only allowlisted public market
+text from eligible rule versions into this client. Semantic neighbours expand
+candidate retrieval; deterministic warning/score/liquidity logic and human approval
+boundaries remain. Queue reads recheck eligibility and version bindings without
+network or writes. Outages discard semantic additions and retain deterministic
+matching. [Limits, setup and benchmark](EMBEDDINGS.md).

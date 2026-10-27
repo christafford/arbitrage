@@ -151,3 +151,16 @@ pages for the observed soccer/college-football false match. Original parent hash
 receipt clocks, URLs, schemas and representation labels distinguish excerpts from
 whole responses. Same-event identity is not payout equivalence. Mutations and
 registry decisions in the sports tests are hypothetical; no live pair is approved.
+
+`embeddings-hypothetical.json` is a synthetic `llama-embeddings/v1` protocol fixture
+plus six hand-labeled review-retrieval pairs and unrelated distractors. Its vectors
+are hand-authored; `retrieved_at=null` intentionally makes no live capture claim.
+The real service benchmark, when available, is separate from offline integration
+recall. No labels approve settlement equivalence.
+
+`embedding-invalid-live.json` records the actual 2026-10-27 private-service probe:
+model ID `qwen3-reranker-0.6b`, with an invalid 1,024-element response containing
+14 nulls and 1,010 zeros. Model info is a labeled sanitized consumed-field excerpt;
+the embedding body is exact. SHA-256, parent hash, UTC retrieval time, endpoint,
+headers and local schema are recorded. Tests replay this as a rejection, never
+promote it to a valid model embedding or normalize nulls to zero.

@@ -443,3 +443,31 @@ body hash, representation and parent hash for excerpts. Original full pages stay
 in SQLite. No private account data or international source was used. Alterations
 in regression tests are explicitly hypothetical. Live scoped refresh and the
 Lakers–Jazz activity capture remain unapproved research evidence.
+
+## Private llama.cpp embeddings — 2026-10-27 UTC
+
+Checked the official [llama.cpp server documentation](https://github.com/ggml-org/llama.cpp/blob/master/tools/server/README.md)
+and upstream server response serializers. [Source manifest](evidence/EMBEDDING_API_CHECKS.json)
+records exact retrieval timestamps, hashes and local raw capture paths.
+No new US venue API fields are consumed; public text reuses existing verified
+contract fields. No international Polymarket API is used.
+
+Local contract `llama-embeddings/v1` consumes `GET /v1/models`'s `object`, `data`
+and single `id`, and posts string-array `input`, `model` and `encoding_format=float`
+to `/v1/embeddings`. Responses must have `object=list`, matching `model` and one
+indexed `object=embedding` numeric vector per input. Dimensions are discovered
+from a fixed probe and validated for every batch. Zero/nonfinite/mixed-dimension
+vectors, missing or duplicate indices, ambiguous models and unknown consumed-field
+shapes fail closed. Additional unconsumed fields stay archived.
+
+The [hypothetical fixture](../tests/fixtures/embeddings-hypothetical.json) is labeled
+synthetic with retrieval time null; it is not a purported response from the gaming
+PC. [Results](EMBEDDING_RESULTS.md) distinguish protocol tests and live acceptance.
+
+The actual private-service probe at **2026-10-27 19:31 UTC** reached both routes.
+`/v1/models` identified `qwen3-reranker-0.6b`; `/v1/embeddings` returned an array
+of length 1,024 with 14 nulls and 1,010 zeros. Validation rejected it. The
+[sanitized live fixture](../tests/fixtures/embedding-invalid-live.json) preserves
+exact embedding bytes and a labeled model-info excerpt with parent hashes and
+precise receipt clocks. Length is observed, not a validated usable dimension.
+No missing/nonfinite coordinate was replaced or repaired locally.

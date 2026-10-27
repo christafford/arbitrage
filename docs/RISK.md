@@ -49,3 +49,13 @@ are credited. Settlement and cash availability are separate; timing is a human
 research assumption, not a guaranteed release/withdrawal date. Unknown sub-cent
 payout rounding rejects the quantity or makes the paper comparison unobservable.
 See [the supported mechanics](SETTLEMENT_MECHANICS.md).
+
+## Private inference boundary
+
+Embedding similarity is review assistance only, never settlement approval or trade
+authorization. Inference receives allowlisted public market text, with no account,
+credential or human-review data. Redirects/proxies/auth headers are disabled and
+TLS remains verified. Service outages fall back to deterministic matching; stale
+catalogues and unknown liquidity remain ineligible/uncertain. Model changes isolate
+cached vector spaces. [Operational limits](EMBEDDINGS.md) include bounded semantic
+coverage and the distinction between hypothetical recall and actual model quality.

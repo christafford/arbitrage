@@ -63,7 +63,7 @@ def connect(path: str):
         con.execute('PRAGMA journal_mode=WAL')
         con.execute('PRAGMA busy_timeout=15000')
         version = con.execute('PRAGMA user_version').fetchone()[0]
-        if version > 7:
+        if version > 8:
             raise ValueError(f'unsupported database schema version {version}')
         con.executescript(SCHEMA)
         if version == 0:
@@ -98,6 +98,9 @@ def connect(path: str):
         if version < 7:
             from .ws_store import SCHEMA as WS_SCHEMA
             con.executescript('BEGIN IMMEDIATE;\n' + WS_SCHEMA + '\nPRAGMA user_version=7;\nCOMMIT;')
+        if version < 8:
+            from .embeddings import SCHEMA as EMBEDDING_SCHEMA
+            con.executescript('BEGIN IMMEDIATE;\n' + EMBEDDING_SCHEMA + '\nPRAGMA user_version=8;\nCOMMIT;')
         return con
     except BaseException:
         con.close()

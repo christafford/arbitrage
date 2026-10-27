@@ -1,0 +1,18 @@
+{
+  "schema_version": "llama-embeddings/v1",
+  "hypothetical": true,
+  "retrieved_at": null,
+  "provenance": "HYPOTHETICAL offline protocol fixture and hand-labeled retrieval cases; vectors are hand-authored, not measured model output. Labels mean worth reviewing, never settlement equivalence.",
+  "clock": "2030-01-01T12:00:00Z",
+  "models": {"object":"list","data":[{"id":"HYPOTHETICAL-embedding-v1","object":"model"}]},
+  "embedding_response": {"object":"list","model":"HYPOTHETICAL-embedding-v1","data":[{"object":"embedding","index":0,"embedding":[1,0,0,0,0,0]}]},
+  "cases": [
+    {"id":"bitcoin", "left":"Bitcoin above $100000 on 2030-01-02", "right":"BTC over $100k on January 2, 2030", "vector":[1,0,0,0,0,0]},
+    {"id":"jobs", "left":"Unemployment declines", "right":"Joblessness falls", "vector":[0,1,0,0,0,0]},
+    {"id":"rates", "left":"Central bank eases monetary policy", "right":"Federal Reserve cuts borrowing costs", "vector":[0,0,1,0,0,0]},
+    {"id":"rain", "left":"Precipitation exceeds the seasonal average", "right":"Rainfall surpasses historical norms", "vector":[0,0,0,1,0,0]},
+    {"id":"inflation", "left":"Consumer price index above 3 percent", "right":"CPI over 3 percent", "vector":[0,0,0,0,1,0]},
+    {"id":"oil", "left":"Crude petroleum becomes more expensive", "right":"Oil prices increase", "vector":[0,0,0,0,0,1]}
+  ],
+  "negative_titles": ["Volcano eruption", "Solar eclipse visible", "Chocolate sales double"]
+}

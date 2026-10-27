@@ -133,7 +133,7 @@ def overlap(left, right):
     return 10000 * len(left & right) // len(left | right) if left | right else 0
 
 
-def compare(left, right, *, min_score=0):
+def compare(left, right, *, min_score=0, semantic=False):
     if left.get('sports') is not None or right.get('sports') is not None:
         return sports_discovery.compare(left, right, min_score=min_score)
     subject = overlap(left['subject'], right['subject'])
@@ -180,7 +180,7 @@ def compare(left, right, *, min_score=0):
     if max(0, score + 2000) < min_score:
         return None
     description = overlap(left['description'], right['description'])
-    if subject < 2000 and description < 3500:
+    if not semantic and subject < 2000 and description < 3500:
         return None
     signals['description_bps'] = description
     score = max(0, score + description * 2 // 10)
@@ -307,11 +307,20 @@ def _links(con, row):
     return list(dict.fromkeys(links))
 
 
-def discover(con, *, limit=20, max_instruments=None, now=None, _pair_keys=None, sports_only=False):
+def discover(con, *, limit=20, max_instruments=None, now=None, _pair_keys=None, sports_only=False, embedding_client=None, _semantic_pairs=None):
     if not 1 <= limit <= 1000 or (max_instruments is not None and not 1 <= max_instruments <= 1000000):
         raise ValueError('candidate limits: 1..1000 results; optional instrument cap 1..1000000')
     now = now or registry.now_utc()
     pools, coverage = _pools(con, now, max_instruments, _pair_keys)
+    semantic_pairs = _semantic_pairs or {}
+    embedding_report = {'status': 'DISABLED'}
+    if embedding_client is not None and not sports_only:
+        from .embeddings import retrieve, EmbeddingError
+        try:
+            semantic_pairs, embedding_report = retrieve(con, pools, embedding_client)
+        except (ValueError, OSError) as exc:
+            semantic_pairs = {}
+            embedding_report = {'status': 'FALLBACK', 'reason': str(exc) if isinstance(exc, EmbeddingError) else 'EMBEDDING_INPUT_OR_IO_ERROR'}
     index, descriptions, sports_index = defaultdict(set), defaultdict(set), defaultdict(set)
     for i, row in enumerate(pools[1]):
         sport = row['features']['sports']
@@ -359,14 +368,22 @@ def discover(con, *, limit=20, max_instruments=None, now=None, _pair_keys=None, 
                                key=lambda t: (len(rare[t]), t))[:3]
                 hits = Counter(i for token in terms for i in rare[token])
                 possible.update(i for i, count in hits.items() if count >= min(2, len(terms)))
+            if identity is None and _pair_keys is None:
+                possible.update(poly_indices[p] for kid, p in semantic_pairs if kid == k['source_id'] and p in poly_indices)
             for i in sorted(possible):
                 p = pools[1][i]
                 if k['hypothetical'] != p['hypothetical']:
                     continue
-                comparison = compare(k['features'], p['features'], min_score=score_floor)
+                semantic = semantic_pairs.get((k['source_id'], p['source_id']))
+                if semantic and semantic.get('versions') != [k['version_id'], p['version_id']]:
+                    semantic = None
+                comparison = compare(k['features'], p['features'], min_score=score_floor, semantic=bool(semantic))
                 if comparison is None:
                     continue
                 score, signals, warnings = comparison
+                if semantic:
+                    signals['embedding'] = semantic
+                    warnings.append('EMBEDDING_RETRIEVAL_ONLY_HUMAN_REVIEW_REQUIRED')
                 kd, pd = depth(k), depth(p)
                 quantities = [d['depth_proxy'] for d in (kd, pd)]
                 quantity = min(map(Decimal, quantities)) if all(q is not None for q in quantities) else None
@@ -378,7 +395,7 @@ def discover(con, *, limit=20, max_instruments=None, now=None, _pair_keys=None, 
                        'signals': signals, 'warnings': warnings, 'hypothetical': bool(k['hypothetical']),
                        'status': 'UNVERIFIED', 'trading_authorized': False,
                        'reason': 'HEURISTIC_ONLY_HUMAN_REVIEW_REQUIRED', 'algorithm': VERSION,
-                       'match_basis': 'SPORTS_EVENT_IDENTITY' if identity is not None else 'TEXT_HEURISTIC',
+                       'match_basis': 'SPORTS_EVENT_IDENTITY' if identity is not None else 'EMBEDDING_ASSISTED' if semantic else 'TEXT_HEURISTIC',
                        'equivalence_verified': False,
                        'liquidity': {'kalshi': kd, 'polymarket_us': pd, 'paired_depth_proxy': str(quantity) if quantity is not None else None},
                        'versions': [k['version_id'], p['version_id']]}
@@ -408,7 +425,7 @@ def discover(con, *, limit=20, max_instruments=None, now=None, _pair_keys=None, 
                      for venue, pool in zip(registry.VENUES, pools)}
     return {'algorithm': VERSION, 'ranked_at': now.isoformat(), 'coverage': coverage,
             'candidate_scope': 'NBA_NFL_GAME_WINNERS' if sports_only else 'ALL_SUPPORTED',
-            'sports_coverage': sports_counts, 'candidates': result}
+            'sports_coverage': sports_counts, 'embedding': embedding_report, 'candidates': result}
 
 
 def refresh_queue(con, *, catalogue_coverage_at_refresh=None, **kwargs):
@@ -431,10 +448,16 @@ def refresh_queue(con, *, catalogue_coverage_at_refresh=None, **kwargs):
 def queue(con, *, limit=20, now=None, sports_only=False):
     # Recompute validity/ranking at read time; stored snapshots are never authority.
     keys = con.execute('SELECT kalshi_id,polymarket_us_id FROM discovery_queue').fetchall()
-    report = discover(con, limit=limit, now=now, _pair_keys=keys, sports_only=sports_only)
+    semantic = {}
+    for (encoded,) in con.execute('SELECT candidate_json FROM discovery_queue'):
+        item = json.loads(encoded)
+        if 'embedding' in item['signals']:
+            semantic[(item['kalshi_id'], item['polymarket_us_id'])] = item['signals']['embedding']
+    report = discover(con, limit=limit, now=now, _pair_keys=keys, sports_only=sports_only, _semantic_pairs=semantic)
     stored = con.execute('SELECT refreshed_at,report_json FROM discovery_state WHERE id=1').fetchone()
     report['last_queue_refresh'] = stored[0] if stored else None
     if stored:
         previous = json.loads(stored[1])
+        report['embedding_at_refresh'] = previous.get('embedding', {'status': 'DISABLED'})
         report['catalogue_coverage_at_refresh'] = previous.get('catalogue_coverage_at_refresh', previous['coverage'])
     return report

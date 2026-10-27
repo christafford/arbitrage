@@ -233,3 +233,14 @@ markets. A refresh may therefore traverse hundreds of pages per venue despite
 `--limit 100`. `--max-pages` bounds traversal at the cost of explicitly partial
 coverage. In `collect-polymarket-us`, `--limit` instead controls page size.
 See [verification and recovery limits](DISCOVERY_UPDATED_AT_RESULTS.md).
+
+## Optional private embedding retrieval
+
+Set `PREDARB_EMBEDDING_URL` to enable llama.cpp retrieval during a refresh. The
+client probes the served model and dimensions, batches/caches public market text,
+and falls back to this deterministic matcher on inference failure. Use
+`discovery embeddings-check` before deployment; `refresh --cached-catalogues`
+allows inference against fresh archived metadata without venue downloads.
+`--offline`, `queue` and `pairs candidates` never initiate inference. Schema 8
+requires a pre-upgrade backup. All semantic suggestions remain `UNVERIFIED`.
+See [setup, bounds and benchmarking](EMBEDDINGS.md) and [current live blocker](EMBEDDING_RESULTS.md).

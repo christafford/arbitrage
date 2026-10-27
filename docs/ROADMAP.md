@@ -166,3 +166,19 @@ M4's 30-day economics and M5's multiweek acceptance remain open.
 - [ ] Human-approved security/risk design; separate order execution module, off by default.
 - [ ] Explicit proof of eligibility, current fee/access/terms, and risk parameters.
 - [ ] Stage-gated $200–$500 funding pilot with operator sign-off before each increase.
+
+## M1/M2 private embedding discovery extension — authorized 2026-10-27
+
+- [x] Environment-configured llama.cpp inference, dynamic dimension validation,
+  batched content/model cache, bounded retries/timeouts and persistent circuit breaker.
+- [x] Existing deterministic matcher survives inference failures; semantic candidates
+  retain stale-data, sports, conflict, human-review and no-trading gates.
+- [x] Schema-8 migration, labeled protocol fixtures, unit/integration tests,
+  repeatable retrieval recall benchmark and operator documentation.
+- [x] Live gaming-PC HTTPS connectivity and raw schema capture; actual invalid
+  vector output is rejected and preserved as a regression fixture.
+- [ ] Valid actual model/dimension probe and measured model recall: the current
+  service returns null/zero coordinates; see [results](EMBEDDING_RESULTS.md).
+
+This is one research discovery extension. It does not complete M4/M5 acceptance,
+provide full-catalogue semantic coverage or authorize M6/live-money work.

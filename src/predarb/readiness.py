@@ -141,9 +141,9 @@ def _report(con, *, now, session_id, horizon_days, backup_dir):
     checks = report['checks']
     version = con.execute('PRAGMA user_version').fetchone()[0]
     report['database_schema'] = version
-    checks.append(check('DATABASE_SCHEMA', version == 7, {'actual': version, 'required': 7},
+    checks.append(check('DATABASE_SCHEMA', version in (7, 8), {'actual': version, 'supported': [7, 8]},
                         'Back up and migrate the archive with an authorized writer before using this report.'))
-    if version != 7:
+    if version not in (7, 8):
         return report
     counts = con.execute('SELECT COUNT(*),COALESCE(SUM(hypothetical),0) FROM pairs').fetchone()
     hypothetical_sessions = con.execute("SELECT COUNT(*) FROM research_sessions WHERE mode='HYPOTHETICAL_REPLAY'").fetchone()[0]

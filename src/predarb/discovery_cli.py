@@ -26,13 +26,17 @@ class SpaceCheckedClient(HttpClient):
 def add_parser(commands):
     root = commands.add_parser('discovery', help='public US catalogue refresh and human review queue')
     actions = root.add_subparsers(dest='discovery_cmd', required=True)
+    probe = actions.add_parser('embeddings-check', help='probe private model identity and actual vector dimensions')
+    probe.add_argument('--db', default='data/research.sqlite3')
     for name in ('refresh', 'queue'):
         parser = actions.add_parser(name)
         parser.add_argument('--db', default='data/research.sqlite3')
         parser.add_argument('--limit', type=int, default=20, help='ranked queue size (1..1000)')
         parser.add_argument('--sports-only', action='store_true', help='supported NBA/NFL full-game winner candidates only')
         if name == 'refresh':
-            parser.add_argument('--offline', action='store_true', help='rebuild queue from existing evidence only')
+            mode = parser.add_mutually_exclusive_group()
+            mode.add_argument('--offline', action='store_true', help='rebuild deterministic queue without network access')
+            mode.add_argument('--cached-catalogues', action='store_true', help='reuse archived catalogue freshness; allow configured embedding inference only')
             parser.add_argument('--page-size', type=int, default=200)
             parser.add_argument('--max-pages', type=int, default=1000, help='per-venue traversal budget; cap reports PARTIAL')
             parser.add_argument('--books', type=int, default=10, help='capture details/books for top N candidates (0..100)')
@@ -41,7 +45,7 @@ def add_parser(commands):
 
 
 def refresh(con, *, limit=20, page_size=200, max_pages=1000, books=10,
-            request_interval=1.0, client_factory=HttpClient, now=None, sports_only=False):
+            request_interval=1.0, client_factory=HttpClient, now=None, sports_only=False, embedding_client=None):
     if not 1 <= limit <= 1000 or not 0 <= books <= 100:
         raise ValueError('limit must be 1..1000 and books 0..100')
     if not 1 <= page_size <= 1000 or not 1 <= max_pages <= 10000:
@@ -58,7 +62,7 @@ def refresh(con, *, limit=20, page_size=200, max_pages=1000, books=10,
         except (ValueError, OSError) as exc:
             blocked_venues.add(adapter.VENUE)
             errors.append({'venue': adapter.VENUE, 'stage': 'catalogue', 'error': str(exc)})
-    preliminary = discovery.discover(con, limit=limit, now=now, sports_only=sports_only)
+    preliminary = discovery.discover(con, limit=limit, now=now, sports_only=sports_only, embedding_client=embedding_client)
     captured = set()
     for row in preliminary['candidates'][:books]:
         if row['hypothetical']:
@@ -82,8 +86,12 @@ def refresh(con, *, limit=20, page_size=200, max_pages=1000, books=10,
                 errors.append({'venue': adapter.VENUE, 'source_id': source_id, 'stage': 'detail', 'error': str(exc)})
     report = discovery.refresh_queue(con, limit=limit, now=now,
                 sports_only=sports_only,
+                _semantic_pairs={(r['kalshi_id'], r['polymarket_us_id']): r['signals']['embedding'] for r in preliminary['candidates'] if 'embedding' in r['signals']},
                 _pair_keys=[(r['kalshi_id'], r['polymarket_us_id']) for r in preliminary['candidates']],
                 catalogue_coverage_at_refresh=preliminary['coverage'])
+    report['embedding'] = preliminary['embedding']
+    con.execute('UPDATE discovery_state SET report_json=? WHERE id=1', (dumps(report),))
+    con.commit()
     report.update(collection_runs=runs, errors=errors)
     return report, 1 if errors else 2 if any(run['status'] != 'COMPLETE' for run in runs) else 0
 
@@ -95,14 +103,25 @@ def run(args):
         if disk_usage(Path(args.db).resolve().parent).free < args.min_free_mb * 1024 * 1024:
             raise ValueError('insufficient free disk for discovery archive')
     with (closing(readonly(args.db)) if args.discovery_cmd == 'queue' else connect(args.db)) as con:
-        if args.discovery_cmd == 'queue':
+        if args.discovery_cmd == 'embeddings-check':
+            from .embeddings import from_environment
+            client = from_environment(con)
+            if client is None:
+                raise ValueError('PREDARB_EMBEDDING_URL is required')
+            report, code = client.probe(), 0
+        elif args.discovery_cmd == 'queue':
             con.execute('BEGIN')  # One consistent read snapshot alongside the writer.
             report, code = discovery.queue(con, limit=args.limit, sports_only=args.sports_only), 0
         elif args.offline:
             report, code = discovery.refresh_queue(con, limit=args.limit, sports_only=args.sports_only), 0
+        elif args.cached_catalogues:
+            from .embeddings import from_environment
+            report, code = discovery.refresh_queue(con, limit=args.limit, sports_only=args.sports_only,
+                                                    embedding_client=from_environment(con)), 0
         else:
+            from .embeddings import from_environment
             report, code = refresh(con, limit=args.limit, page_size=args.page_size, max_pages=args.max_pages,
-                                   sports_only=args.sports_only,
+                                   sports_only=args.sports_only, embedding_client=from_environment(con),
                                    books=args.books, request_interval=args.request_interval,
                                    client_factory=lambda con, venue, **kw: SpaceCheckedClient(
                                        con, venue, min_free_mb=args.min_free_mb, **kw))

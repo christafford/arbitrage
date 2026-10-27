@@ -1,0 +1,127 @@
+{
+  "schema": "embedding-retrieval-benchmark/v1",
+  "hypothetical_corpus": true,
+  "k": 3,
+  "generated_at": "2026-10-27T19:34:54.421433+00:00",
+  "results": {
+    "deterministic": {
+      "recall_at_k": 0.3333333333333333,
+      "precision_at_returned": 1.0,
+      "hits": 2,
+      "relevant_pairs": 6,
+      "returned": 2,
+      "seconds": 0.005653507017996162,
+      "embedding": {
+        "status": "DISABLED"
+      },
+      "queries": [
+        {
+          "query": "HYPOTHETICAL-bitcoin",
+          "hit": true,
+          "retrieved": [
+            "HYPOTHETICAL-bitcoin"
+          ]
+        },
+        {
+          "query": "HYPOTHETICAL-jobs",
+          "hit": false,
+          "retrieved": []
+        },
+        {
+          "query": "HYPOTHETICAL-rates",
+          "hit": false,
+          "retrieved": []
+        },
+        {
+          "query": "HYPOTHETICAL-rain",
+          "hit": false,
+          "retrieved": []
+        },
+        {
+          "query": "HYPOTHETICAL-inflation",
+          "hit": true,
+          "retrieved": [
+            "HYPOTHETICAL-inflation"
+          ]
+        },
+        {
+          "query": "HYPOTHETICAL-oil",
+          "hit": false,
+          "retrieved": []
+        }
+      ]
+    },
+    "embedding_assisted": {
+      "recall_at_k": 1.0,
+      "precision_at_returned": 1.0,
+      "hits": 6,
+      "relevant_pairs": 6,
+      "returned": 6,
+      "seconds": 0.006041063985321671,
+      "embedding": {
+        "status": "READY",
+        "eligible": [
+          6,
+          9
+        ],
+        "embedded": [
+          6,
+          9
+        ],
+        "truncated": false,
+        "model": "HYPOTHETICAL-embedding-v1",
+        "identity": "308021acd4f32ae1c65321ae882ce5de92e931c10622459aabacac5757fbdf05",
+        "dimensions": 6,
+        "requests": 3,
+        "cache_hits": 0
+      },
+      "queries": [
+        {
+          "query": "HYPOTHETICAL-bitcoin",
+          "hit": true,
+          "retrieved": [
+            "HYPOTHETICAL-bitcoin"
+          ]
+        },
+        {
+          "query": "HYPOTHETICAL-jobs",
+          "hit": true,
+          "retrieved": [
+            "HYPOTHETICAL-jobs"
+          ]
+        },
+        {
+          "query": "HYPOTHETICAL-rates",
+          "hit": true,
+          "retrieved": [
+            "HYPOTHETICAL-rates"
+          ]
+        },
+        {
+          "query": "HYPOTHETICAL-rain",
+          "hit": true,
+          "retrieved": [
+            "HYPOTHETICAL-rain"
+          ]
+        },
+        {
+          "query": "HYPOTHETICAL-inflation",
+          "hit": true,
+          "retrieved": [
+            "HYPOTHETICAL-inflation"
+          ]
+        },
+        {
+          "query": "HYPOTHETICAL-oil",
+          "hit": true,
+          "retrieved": [
+            "HYPOTHETICAL-oil"
+          ]
+        }
+      ]
+    }
+  },
+  "limitation": "Small hand-labeled review-relevance corpus, no equivalence approvals; offline vectors test plumbing only.",
+  "inference": "HYPOTHETICAL_VECTORS",
+  "model_quality_measured": false
+}

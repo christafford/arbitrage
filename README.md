@@ -76,6 +76,12 @@ the scheduled date in the rules. Use `predarb discovery queue --sports-only`
 for the sports review shortlist. Rule differences remain explicit; same-event
 identity does not approve settlement equivalence. See [sports results](docs/SPORTS_DISCOVERY_RESULTS.md).
 
+Private llama.cpp embedding retrieval is available through `PREDARB_EMBEDDING_URL`.
+Use `predarb discovery embeddings-check` to discover model identity and actual
+vector dimensions, then `discovery refresh --cached-catalogues` to add semantic
+suggestions from fresh archived metadata. Outages retain deterministic matching;
+all suggestions remain `UNVERIFIED`. See [setup and recall benchmark](docs/EMBEDDINGS.md).
+
 ## Pair review (M2)
 
 ```bash

@@ -1,0 +1,26 @@
+[
+  {
+    "url": "https://raw.githubusercontent.com/ggml-org/llama.cpp/master/tools/server/README.md",
+    "retrieved_at": "2026-10-27T19:25:19.903256+00:00",
+    "sha256": "16bd68b38734543748ead27d46d613f0165f41231026f1f017cb217c7cf6abc4",
+    "raw_path": "data/embedding-docs/llama-server.txt"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/ggml-org/llama.cpp/master/tools/server/server-task.cpp",
+    "retrieved_at": "2026-10-27T19:25:20.058724+00:00",
+    "sha256": "d7901c9609a6fe8c859a3777d45a37148e335bb73984313ba08a339d558382ef",
+    "raw_path": "data/embedding-docs/llama-embedding-response.txt"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/ggml-org/llama.cpp/master/tools/server/server-context.cpp",
+    "retrieved_at": "2026-10-27T19:27:20.428165+00:00",
+    "sha256": "b15735d6f9e2d1ab1da396deaf590f2a52fc5ccf3429b5e4feb89c2b652ad292",
+    "raw_path": "data/embedding-docs/llama-context.txt"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/ggml-org/llama.cpp/master/tools/server/server-common.cpp",
+    "retrieved_at": "2026-10-27T19:27:32.199571+00:00",
+    "sha256": "e1373e0c1ddc716014f1e6325ba4dee648a076dae90440f6680ca3eaa1c0d91d",
+    "raw_path": "data/embedding-docs/llama-common.txt"
+  }
+]
