@@ -86,7 +86,9 @@ is a recovery probe; success clears the circuit. Schema failures open the circui
 without retrying unknown data. Errors are sanitized before reporting.
 
 Only the first 512 eligible non-sports instruments per venue (stable source-ID
-order) receive embeddings per refresh. Coverage reports this cap as `truncated`;
+order) receive embeddings per refresh. Coverage reports this cap as `truncated`; `selected` counts planned inputs and
+`embedded` counts completed inputs. `non_sports_eligible` and `excluded_sports`
+explain filtering. A one-sided selection produces EMPTY and zero completed inputs;
 the deterministic matcher still searches its full eligible scope. Retrieval uses
 bounded brute-force cosine similarity, five neighbours per Kalshi instrument and
 a 0.75 minimum similarity. These are retrieval heuristics, not probabilities.
@@ -129,3 +131,9 @@ corpus and include hard negatives before tuning deployment retrieval parameters.
 
 See [verification results](EMBEDDING_RESULTS.md), [source contract](API_SOURCES.md)
 and [raw benchmark output](evidence/EMBEDDING_BENCHMARK.json).
+
+
+US generic futures metadata is interpreted with the explicit market category;
+non-sports futures are eligible for embedding retrieval. Unknown types and
+recognized sports retain conservative gates. See the [category correction](EMBEDDING_CATEGORY_RESULTS.md)
+for the initially empty real-catalogue run and its recovery.

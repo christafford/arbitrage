@@ -353,6 +353,20 @@ class RefreshTests(unittest.TestCase):
         self.assertEqual(report['collection_runs'][0]['status'], 'PARTIAL')
         self.assertIsNotNone(report['collection_runs'][0]['next_page'])
 
+    def test_empty_queue_retains_broad_sports_exclusion_counts(self):
+        # HYPOTHETICAL source context/time, otherwise real sports market payload.
+        pm=payload('poly-market-live')['market']
+        pm.update(endDate='2030-02-01T00:00:00Z',active=True,closed=False,status='MARKET_STATUS_OPEN',
+                  category='sports',sportsMarketType='futures',sportsMarketTypeV2='SPORTS_MARKET_TYPE_FUTURE')
+        (report,code),_=self.run_refresh([Response(b'{"markets":[],"cursor":""}')],
+            [Response(dumps({'markets':[pm]}).encode()),Response(b'{"markets":[]}')])
+        self.assertEqual(code,0)
+        self.assertEqual(report['candidates'],[])
+        self.assertEqual(report['sports_coverage']['polymarket_us']['recognized'],0)
+        self.assertEqual(report['sports_coverage_at_refresh']['polymarket_us']['recognized'],1)
+        self.assertEqual(report['sports_coverage_at_refresh']['polymarket_us']['unsupported_reasons'],
+                         {'UNSUPPORTED_SPORTS_FORMAT':1})
+
     def test_schema_failure_still_collects_other_venue(self):
         (report, code), _ = self.run_refresh([Response(b'{"bad":"schema"}')], [Response(b'{"markets":[]}')])
         self.assertEqual(code, 1)

@@ -484,3 +484,21 @@ record exact UTC receipts and raw/parent hashes. The inputs are explicitly
 hypothetical; vector values are actual observed responses, not fabricated.
 [Live acceptance](EMBEDDING_RESULTS.md) records recall, extra candidates, probe
 fingerprint variation and verified warm-cache reuse.
+
+
+### US generic futures metadata correction — 2026-10-27
+
+Re-fetched the official US [market-by-slug schema](https://docs.polymarket.us/api-reference/markets/get-market-by-slug).
+[The source manifest](evidence/EMBEDDING_CATEGORY_API_CHECK.json) records retrieval
+UTC, exact bytes hash and raw local capture. `category` and `sportsMarketType`
+are nullable strings; the deprecated V2 enum includes `SPORTS_MARKET_TYPE_FUTURE`.
+The documentation does not define every populated type as proof of sports category.
+The bounded category interpretation is a local discovery heuristic supported by
+actual archived responses, not a new venue schema or settlement-equivalence rule.
+
+[Ten representative catalogue excerpts](../tests/fixtures/us-category-futures-live.json)
+include eight explicit non-sports categories, a sports future, and an election
+with the undocumented `SPORTS_MARKET_TYPE_UNSPECIFIED` variant. The last remains
+excluded conservatively. Excerpts retain parent raw hashes, receipt clocks, URLs
+and adapter schema; original complete pages remain in the operator archive.
+No new prices/quantities, credentials or international source were consumed.

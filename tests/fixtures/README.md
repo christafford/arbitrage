@@ -171,3 +171,11 @@ hypothetical benchmark inputs: sanitized model metadata, exact 4,096-dimensional
 probe bytes, and a labeled two-vector excerpt from a 15-input batch. Receipt
 clocks, body/parent hashes and representation descriptions preserve provenance.
 It verifies successful model/dimension discovery and cached batch replay offline.
+
+
+`us-category-futures-live.json` holds ten reserialized market excerpts from the
+operator's October 27 US catalogue run, with exact parent-page hashes/receipt
+clocks and adapter schema. Eight explicit non-sports categories carry generic
+futures fields; a sports future and an undocumented election enum are conservative
+negative cases. These are actual metadata, not equivalence labels or hypothetical
+prices. Test mutations are explicitly hypothetical.

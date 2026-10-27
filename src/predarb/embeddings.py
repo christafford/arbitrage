@@ -265,14 +265,16 @@ def from_environment(con):
 def retrieve(con, pools, client, *, top_k=5, minimum=0.75):
     """Bounded cosine neighbours. Float math is exclusively retrieval, never money."""
     selected = [[row for row in pool if row['features']['sports'] is None][:client.config.max_items] for pool in pools]
-    report = {'status': 'READY', 'eligible': [len(p) for p in pools], 'embedded': [len(p) for p in selected],
+    report = {'status': 'READY', 'eligible': [len(p) for p in pools], 'selected': [len(p) for p in selected], 'embedded': [0, 0],
+              'non_sports_eligible': [sum(r['features']['sports'] is None for r in p) for p in pools],
+              'excluded_sports': [sum(r['features']['sports'] is not None for r in p) for p in pools],
               'truncated': any(sum(r['features']['sports'] is None for r in pool) > len(sel) for pool, sel in zip(pools, selected))}
     if not all(selected):
-        return {}, dict(report, status='EMPTY')
+        return {}, dict(report, status='EMPTY', reason='NO_NON_SPORTS_MARKETS_ON_BOTH_VENUES')
     rows = selected[0] + selected[1]
     texts = [public_text(load_json(con.execute('SELECT evidence_json FROM rule_versions WHERE id=?', (row['version_id'],)).fetchone()[0])['contract']) for row in rows]
     values = client.embed(texts)
-    report.update(model=client.model, identity=client.identity, dimensions=client.dimensions,
+    report.update(embedded=[len(p) for p in selected], model=client.model, identity=client.identity, dimensions=client.dimensions,
                   requests=client.requests, cache_hits=client.hits)
     pairs = {}
     for k, kv in zip(selected[0], values[:len(selected[0])]):

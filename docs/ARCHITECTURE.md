@@ -310,3 +310,10 @@ candidate retrieval; deterministic warning/score/liquidity logic and human appro
 boundaries remain. Queue reads recheck eligibility and version bindings without
 network or writes. Outages discard semantic additions and retain deterministic
 matching. [Limits, setup and benchmark](EMBEDDINGS.md).
+
+
+The `discovery-v3-category` correction routes explicit non-sports US futures back
+to generic/embedding retrieval while preserving dedicated/unknown sports gates.
+Broad sports coverage and embedding diagnostics are stored atomically with the
+queue report before narrowing to queued instruments. SQLite remains schema 8.
+[Correction and validation](EMBEDDING_CATEGORY_RESULTS.md).

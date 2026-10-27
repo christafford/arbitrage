@@ -244,3 +244,40 @@ allows inference against fresh archived metadata without venue downloads.
 `--offline`, `queue` and `pairs candidates` never initiate inference. Schema 8
 requires a pre-upgrade backup. All semantic suggestions remain `UNVERIFIED`.
 See [setup, bounds and benchmarking](EMBEDDINGS.md) and [live acceptance results](EMBEDDING_RESULTS.md).
+
+
+## Non-sports US futures classification correction (2026-10-27)
+
+`discovery-v3-category` fixes a real catalogue combination: Polymarket US can
+populate `sportsMarketType=futures` and `sportsMarketTypeV2=SPORTS_MARKET_TYPE_FUTURE`
+on non-sports contracts. These values alone no longer route explicitly recognized
+non-sports categories into the unsupported-sports gate. The bounded category set
+is politics, culture, crypto, finance, technology, macro, geopolitics and science.
+Explicit sports category, dedicated sports type, team metadata, game identifiers
+or game-rule text still retain the sports gate. Unknown categories/type variants
+remain conservative; `SPORTS_MARKET_TYPE_UNSPECIFIED` was observed but is absent
+from the checked upstream enum and remains outside this exception.
+
+The October 27 partial run had 4,000 Kalshi records and 4,000 US records (3,999
+eligible at ranking). The previous detector routed every US record into sports,
+including 557 non-sports futures. Thus no US input reached inference. This was a
+classification bug, not an embedding-service outage or proof of no matching markets.
+The fix retains partial catalogue status, metadata age/cutoff checks and all human
+approval requirements. Existing cached metadata can be reranked while still fresh:
+
+```bash
+PREDARB_EMBEDDING_URL='https://cachyos.tail2be75f.ts.net/v1/embeddings' \
+  predarb discovery refresh --cached-catalogues --db data/research.sqlite3 --limit 20
+```
+
+A collection refresh now retains `sports_coverage_at_refresh` alongside
+`catalogue_coverage_at_refresh`, so a final empty queue does not erase the broad
+scan's exclusion reasons. Final `sports_coverage`/`coverage` may describe only
+queued instruments, as labeled by `coverage.scope`. Embedding diagnostics separate
+`selected` from successfully `embedded` counts and expose `non_sports_eligible`,
+`excluded_sports` and an explicit EMPTY reason. When one venue has no embedding
+inputs, actual `embedded` counts are `[0,0]` and inference is skipped.
+
+See [correction evidence and limits](EMBEDDING_CATEGORY_RESULTS.md). The first
+20 pages remain a partial, provider-ordered sample; this fix does not claim full
+catalogue coverage or require relaxing sports-equivalence restrictions.

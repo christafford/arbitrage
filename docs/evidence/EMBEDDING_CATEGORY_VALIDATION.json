@@ -1,0 +1,446 @@
+{
+  "verified_at": "2026-10-27T21:21:36.763106+00:00",
+  "schema": "discovery-category-correction/v1",
+  "before": {
+    "report_sha256": "3771354f3e2327ec616ff75bf9709eefe5bf795e2ecd05fba7f92f181fb3ab81",
+    "embedding": {
+      "eligible": [
+        4000,
+        3999
+      ],
+      "embedded": [
+        512,
+        0
+      ],
+      "status": "EMPTY",
+      "truncated": true
+    },
+    "candidates": 0,
+    "catalogue_coverage": {
+      "kalshi": {
+        "eligible": 4000,
+        "full_catalogue_received_at": "2026-10-27T21:04:51.164331+00:00",
+        "full_catalogue_run_id": 20,
+        "full_catalogue_status": "PARTIAL",
+        "latest_run_status": "PARTIAL",
+        "scope": "all",
+        "stored": 167504,
+        "truncated": false
+      },
+      "polymarket_us": {
+        "eligible": 3999,
+        "full_catalogue_received_at": "2026-10-27T21:05:24.687579+00:00",
+        "full_catalogue_run_id": 21,
+        "full_catalogue_status": "PARTIAL",
+        "latest_run_status": "PARTIAL",
+        "scope": "all",
+        "stored": 89229,
+        "truncated": false
+      }
+    }
+  },
+  "after": {
+    "report_sha256": "88d421b9f7d7f1fd67a7b988b69330c76a451e6f6a196d092318dc94e2bb8833",
+    "algorithm": "discovery-v3-category",
+    "ranked_at": "2026-10-27T21:11:58.026876+00:00",
+    "embedding": {
+      "cache_hits": 0,
+      "dimensions": 4096,
+      "eligible": [
+        4000,
+        3999
+      ],
+      "embedded": [
+        512,
+        512
+      ],
+      "excluded_sports": [
+        3198,
+        3442
+      ],
+      "identity": "5ed7432886f2692356bc6502d385c3759fc886ed4b5d9637f403366f5280279a",
+      "model": "qwen3-embedding-8b",
+      "non_sports_eligible": [
+        802,
+        557
+      ],
+      "requests": 66,
+      "selected": [
+        512,
+        512
+      ],
+      "status": "READY",
+      "truncated": true
+    },
+    "coverage": {
+      "kalshi": {
+        "eligible": 4000,
+        "full_catalogue_received_at": "2026-10-27T21:04:51.164331+00:00",
+        "full_catalogue_run_id": 20,
+        "full_catalogue_status": "PARTIAL",
+        "latest_run_status": "PARTIAL",
+        "scope": "all",
+        "stored": 167504,
+        "truncated": false
+      },
+      "polymarket_us": {
+        "eligible": 3999,
+        "full_catalogue_received_at": "2026-10-27T21:05:24.687579+00:00",
+        "full_catalogue_run_id": 21,
+        "full_catalogue_status": "PARTIAL",
+        "latest_run_status": "PARTIAL",
+        "scope": "all",
+        "stored": 89229,
+        "truncated": false
+      }
+    },
+    "sports_coverage": {
+      "kalshi": {
+        "recognized": 3198,
+        "supported_game_winners": 2,
+        "unsupported_reasons": {
+          "UNSUPPORTED_SPORTS_FORMAT": 3196
+        }
+      },
+      "polymarket_us": {
+        "recognized": 3442,
+        "supported_game_winners": 0,
+        "unsupported_reasons": {
+          "UNSUPPORTED_SPORTS_FORMAT": 3442
+        }
+      }
+    },
+    "candidates": 20,
+    "suggestions": [
+      {
+        "kalshi_id": "KX1SONG-DEC2626-MIC",
+        "polymarket_us_id": "ccpc-bilbrd-1song-any2026-fut",
+        "kalshi_title": "Will Michael Jackson have a #1 hit this year?",
+        "polymarket_us_title": "Who Will Have a #1 Song in 2026?",
+        "match_basis": "EMBEDDING_ASSISTED",
+        "score_bps": 0,
+        "warnings": [
+          "DATES_CONFLICT",
+          "THRESHOLDS_UNKNOWN",
+          "EVENT_TIMES_DIFFER",
+          "RESOLUTION_LANGUAGE_DIFFERS",
+          "CUTOFFS_DIFFER",
+          "EMBEDDING_RETRIEVAL_ONLY_HUMAN_REVIEW_REQUIRED"
+        ]
+      },
+      {
+        "kalshi_id": "KX1SONG-DEC2626-MIC",
+        "polymarket_us_id": "ccpc-bilbrd-1song-any2026-jachar",
+        "kalshi_title": "Will Michael Jackson have a #1 hit this year?",
+        "polymarket_us_title": "Who Will Have a #1 Song in 2026?",
+        "match_basis": "EMBEDDING_ASSISTED",
+        "score_bps": 0,
+        "warnings": [
+          "DATES_CONFLICT",
+          "THRESHOLDS_UNKNOWN",
+          "EVENT_TIMES_DIFFER",
+          "RESOLUTION_LANGUAGE_DIFFERS",
+          "CUTOFFS_DIFFER",
+          "EMBEDDING_RETRIEVAL_ONLY_HUMAN_REVIEW_REQUIRED"
+        ]
+      },
+      {
+        "kalshi_id": "KX1SONG-DEC2626-MIC",
+        "polymarket_us_id": "ccpc-bilbrd-1song-any2026-morwal",
+        "kalshi_title": "Will Michael Jackson have a #1 hit this year?",
+        "polymarket_us_title": "Who Will Have a #1 Song in 2026?",
+        "match_basis": "EMBEDDING_ASSISTED",
+        "score_bps": 0,
+        "warnings": [
+          "DATES_CONFLICT",
+          "THRESHOLDS_UNKNOWN",
+          "EVENT_TIMES_DIFFER",
+          "RESOLUTION_LANGUAGE_DIFFERS",
+          "CUTOFFS_DIFFER",
+          "EMBEDDING_RETRIEVAL_ONLY_HUMAN_REVIEW_REQUIRED"
+        ]
+      },
+      {
+        "kalshi_id": "KX1SONG-DEC2626-MIC",
+        "polymarket_us_id": "ccrc-sptfy-n1-song-glbl-yr-2026-billie",
+        "kalshi_title": "Will Michael Jackson have a #1 hit this year?",
+        "polymarket_us_title": "Top Song 2026?",
+        "match_basis": "EMBEDDING_ASSISTED",
+        "score_bps": 0,
+        "warnings": [
+          "DATES_CONFLICT",
+          "THRESHOLDS_UNKNOWN",
+          "EVENT_TIMES_DIFFER",
+          "CUTOFFS_DIFFER",
+          "EMBEDDING_RETRIEVAL_ONLY_HUMAN_REVIEW_REQUIRED"
+        ]
+      },
+      {
+        "kalshi_id": "KX1SONG-DEC2626-MIC",
+        "polymarket_us_id": "ccrc-sptfy-n1-song-us-yr-2026-billie",
+        "kalshi_title": "Will Michael Jackson have a #1 hit this year?",
+        "polymarket_us_title": "Top Song in the US 2026?",
+        "match_basis": "EMBEDDING_ASSISTED",
+        "score_bps": 0,
+        "warnings": [
+          "DATES_CONFLICT",
+          "THRESHOLDS_UNKNOWN",
+          "EVENT_TIMES_DIFFER",
+          "CUTOFFS_DIFFER",
+          "EMBEDDING_RETRIEVAL_ONLY_HUMAN_REVIEW_REQUIRED"
+        ]
+      },
+      {
+        "kalshi_id": "KXBILLBOARDRUNNERUPALBUM-26NOV07-NUM",
+        "polymarket_us_id": "ccpc-bilbrd-1album-any2026-jusbie",
+        "kalshi_title": "Will Number Ones be #2 on the Billboard 200 during the week of Nov 7, 2026",
+        "polymarket_us_title": "Who Will Have a #1 Album in 2026?",
+        "match_basis": "EMBEDDING_ASSISTED",
+        "score_bps": 0,
+        "warnings": [
+          "DATES_CONFLICT",
+          "THRESHOLDS_UNKNOWN",
+          "EVENT_TIMES_DIFFER",
+          "RESOLUTION_LANGUAGE_DIFFERS",
+          "CUTOFFS_DIFFER",
+          "EMBEDDING_RETRIEVAL_ONLY_HUMAN_REVIEW_REQUIRED"
+        ]
+      },
+      {
+        "kalshi_id": "KXBILLBOARDRUNNERUPALBUM-26NOV07-NUM",
+        "polymarket_us_id": "ccpc-bilbrd-1album-any2026-nf",
+        "kalshi_title": "Will Number Ones be #2 on the Billboard 200 during the week of Nov 7, 2026",
+        "polymarket_us_title": "Who Will Have a #1 Album in 2026?",
+        "match_basis": "EMBEDDING_ASSISTED",
+        "score_bps": 0,
+        "warnings": [
+          "DATES_CONFLICT",
+          "THRESHOLDS_UNKNOWN",
+          "EVENT_TIMES_DIFFER",
+          "RESOLUTION_LANGUAGE_DIFFERS",
+          "CUTOFFS_DIFFER",
+          "EMBEDDING_RETRIEVAL_ONLY_HUMAN_REVIEW_REQUIRED"
+        ]
+      },
+      {
+        "kalshi_id": "KXBILLBOARDRUNNERUPALBUM-26NOV07-NUM",
+        "polymarket_us_id": "ccpc-bilbrd-1album-any2026-thewee",
+        "kalshi_title": "Will Number Ones be #2 on the Billboard 200 during the week of Nov 7, 2026",
+        "polymarket_us_title": "Who Will Have a #1 Album in 2026?",
+        "match_basis": "EMBEDDING_ASSISTED",
+        "score_bps": 0,
+        "warnings": [
+          "DATES_CONFLICT",
+          "THRESHOLDS_UNKNOWN",
+          "EVENT_TIMES_DIFFER",
+          "RESOLUTION_LANGUAGE_DIFFERS",
+          "CUTOFFS_DIFFER",
+          "EMBEDDING_RETRIEVAL_ONLY_HUMAN_REVIEW_REQUIRED"
+        ]
+      },
+      {
+        "kalshi_id": "KXBILLBOARDRUNNERUPALBUM-26NOV07-NUM",
+        "polymarket_us_id": "ccpc-bilbrd-1song-any2026-fut",
+        "kalshi_title": "Will Number Ones be #2 on the Billboard 200 during the week of Nov 7, 2026",
+        "polymarket_us_title": "Who Will Have a #1 Song in 2026?",
+        "match_basis": "EMBEDDING_ASSISTED",
+        "score_bps": 0,
+        "warnings": [
+          "DATES_CONFLICT",
+          "THRESHOLDS_UNKNOWN",
+          "EVENT_TIMES_DIFFER",
+          "RESOLUTION_LANGUAGE_DIFFERS",
+          "CUTOFFS_DIFFER",
+          "EMBEDDING_RETRIEVAL_ONLY_HUMAN_REVIEW_REQUIRED"
+        ]
+      },
+      {
+        "kalshi_id": "KXBILLBOARDRUNNERUPALBUM-26NOV07-NUM",
+        "polymarket_us_id": "ccpc-bilbrd-1song-any2026-thewee",
+        "kalshi_title": "Will Number Ones be #2 on the Billboard 200 during the week of Nov 7, 2026",
+        "polymarket_us_title": "Who Will Have a #1 Song in 2026?",
+        "match_basis": "EMBEDDING_ASSISTED",
+        "score_bps": 0,
+        "warnings": [
+          "DATES_CONFLICT",
+          "THRESHOLDS_UNKNOWN",
+          "EVENT_TIMES_DIFFER",
+          "RESOLUTION_LANGUAGE_DIFFERS",
+          "CUTOFFS_DIFFER",
+          "EMBEDDING_RETRIEVAL_ONLY_HUMAN_REVIEW_REQUIRED"
+        ]
+      },
+      {
+        "kalshi_id": "KXBILLBOARDRUNNERUPALBUM-26NOV07-SOC",
+        "polymarket_us_id": "ccpc-bilbrd-1album-any2026-tatmcr",
+        "kalshi_title": "Will So Close To What be #2 on the Billboard 200 during the week of Nov 7, 2026",
+        "polymarket_us_title": "Who Will Have a #1 Album in 2026?",
+        "match_basis": "EMBEDDING_ASSISTED",
+        "score_bps": 0,
+        "warnings": [
+          "DATES_CONFLICT",
+          "THRESHOLDS_UNKNOWN",
+          "EVENT_TIMES_DIFFER",
+          "RESOLUTION_LANGUAGE_DIFFERS",
+          "CUTOFFS_DIFFER",
+          "EMBEDDING_RETRIEVAL_ONLY_HUMAN_REVIEW_REQUIRED"
+        ]
+      },
+      {
+        "kalshi_id": "KXBILLBOARDRUNNERUPSONG-26NOV07-EXP",
+        "polymarket_us_id": "ccpc-bilbrd-1song-any2026-bileil",
+        "kalshi_title": "Will expectations be #2 on the Billboard Hot 100 during the week of Nov 7, 2026",
+        "polymarket_us_title": "Who Will Have a #1 Song in 2026?",
+        "match_basis": "EMBEDDING_ASSISTED",
+        "score_bps": 0,
+        "warnings": [
+          "DATES_CONFLICT",
+          "THRESHOLDS_UNKNOWN",
+          "EVENT_TIMES_DIFFER",
+          "RESOLUTION_LANGUAGE_DIFFERS",
+          "CUTOFFS_DIFFER",
+          "EMBEDDING_RETRIEVAL_ONLY_HUMAN_REVIEW_REQUIRED"
+        ]
+      },
+      {
+        "kalshi_id": "KXBILLBOARDRUNNERUPSONG-26NOV07-EXP",
+        "polymarket_us_id": "ccpc-bilbrd-1song-any2026-fut",
+        "kalshi_title": "Will expectations be #2 on the Billboard Hot 100 during the week of Nov 7, 2026",
+        "polymarket_us_title": "Who Will Have a #1 Song in 2026?",
+        "match_basis": "EMBEDDING_ASSISTED",
+        "score_bps": 0,
+        "warnings": [
+          "DATES_CONFLICT",
+          "THRESHOLDS_UNKNOWN",
+          "EVENT_TIMES_DIFFER",
+          "RESOLUTION_LANGUAGE_DIFFERS",
+          "CUTOFFS_DIFFER",
+          "EMBEDDING_RETRIEVAL_ONLY_HUMAN_REVIEW_REQUIRED"
+        ]
+      },
+      {
+        "kalshi_id": "KXBILLBOARDRUNNERUPSONG-26NOV07-EXP",
+        "polymarket_us_id": "ccpc-bilbrd-1song-any2026-lilbab",
+        "kalshi_title": "Will expectations be #2 on the Billboard Hot 100 during the week of Nov 7, 2026",
+        "polymarket_us_title": "Who Will Have a #1 Song in 2026?",
+        "match_basis": "EMBEDDING_ASSISTED",
+        "score_bps": 0,
+        "warnings": [
+          "DATES_CONFLICT",
+          "THRESHOLDS_UNKNOWN",
+          "EVENT_TIMES_DIFFER",
+          "RESOLUTION_LANGUAGE_DIFFERS",
+          "CUTOFFS_DIFFER",
+          "EMBEDDING_RETRIEVAL_ONLY_HUMAN_REVIEW_REQUIRED"
+        ]
+      },
+      {
+        "kalshi_id": "KXBILLBOARDRUNNERUPSONG-26NOV07-EXP",
+        "polymarket_us_id": "ccpc-bilbrd-1song-any2026-thewee",
+        "kalshi_title": "Will expectations be #2 on the Billboard Hot 100 during the week of Nov 7, 2026",
+        "polymarket_us_title": "Who Will Have a #1 Song in 2026?",
+        "match_basis": "EMBEDDING_ASSISTED",
+        "score_bps": 0,
+        "warnings": [
+          "DATES_CONFLICT",
+          "THRESHOLDS_UNKNOWN",
+          "EVENT_TIMES_DIFFER",
+          "RESOLUTION_LANGUAGE_DIFFERS",
+          "CUTOFFS_DIFFER",
+          "EMBEDDING_RETRIEVAL_ONLY_HUMAN_REVIEW_REQUIRED"
+        ]
+      },
+      {
+        "kalshi_id": "KXBILLBOARDRUNNERUPSONG-26NOV07-EXP",
+        "polymarket_us_id": "ccrc-sptfy-n1-song-us-yr-2026-dropde",
+        "kalshi_title": "Will expectations be #2 on the Billboard Hot 100 during the week of Nov 7, 2026",
+        "polymarket_us_title": "Top Song in the US 2026?",
+        "match_basis": "EMBEDDING_ASSISTED",
+        "score_bps": 0,
+        "warnings": [
+          "DATES_CONFLICT",
+          "THRESHOLDS_UNKNOWN",
+          "EVENT_TIMES_DIFFER",
+          "CUTOFFS_DIFFER",
+          "EMBEDDING_RETRIEVAL_ONLY_HUMAN_REVIEW_REQUIRED"
+        ]
+      },
+      {
+        "kalshi_id": "KXBILLBOARDRUNNERUPSONG-26NOV07-THE",
+        "polymarket_us_id": "ccpc-bilbrd-1song-any2026-bileil",
+        "kalshi_title": "Will the cure be #2 on the Billboard Hot 100 during the week of Nov 7, 2026",
+        "polymarket_us_title": "Who Will Have a #1 Song in 2026?",
+        "match_basis": "EMBEDDING_ASSISTED",
+        "score_bps": 0,
+        "warnings": [
+          "DATES_CONFLICT",
+          "THRESHOLDS_UNKNOWN",
+          "EVENT_TIMES_DIFFER",
+          "RESOLUTION_LANGUAGE_DIFFERS",
+          "CUTOFFS_DIFFER",
+          "EMBEDDING_RETRIEVAL_ONLY_HUMAN_REVIEW_REQUIRED"
+        ]
+      },
+      {
+        "kalshi_id": "KXBILLBOARDRUNNERUPSONG-26NOV07-THE",
+        "polymarket_us_id": "ccpc-bilbrd-1song-any2026-fut",
+        "kalshi_title": "Will the cure be #2 on the Billboard Hot 100 during the week of Nov 7, 2026",
+        "polymarket_us_title": "Who Will Have a #1 Song in 2026?",
+        "match_basis": "EMBEDDING_ASSISTED",
+        "score_bps": 0,
+        "warnings": [
+          "DATES_CONFLICT",
+          "THRESHOLDS_UNKNOWN",
+          "EVENT_TIMES_DIFFER",
+          "RESOLUTION_LANGUAGE_DIFFERS",
+          "CUTOFFS_DIFFER",
+          "EMBEDDING_RETRIEVAL_ONLY_HUMAN_REVIEW_REQUIRED"
+        ]
+      },
+      {
+        "kalshi_id": "KXBILLBOARDRUNNERUPSONG-26NOV07-THE",
+        "polymarket_us_id": "ccpc-bilbrd-1song-any2026-lilbab",
+        "kalshi_title": "Will the cure be #2 on the Billboard Hot 100 during the week of Nov 7, 2026",
+        "polymarket_us_title": "Who Will Have a #1 Song in 2026?",
+        "match_basis": "EMBEDDING_ASSISTED",
+        "score_bps": 0,
+        "warnings": [
+          "DATES_CONFLICT",
+          "THRESHOLDS_UNKNOWN",
+          "EVENT_TIMES_DIFFER",
+          "RESOLUTION_LANGUAGE_DIFFERS",
+          "CUTOFFS_DIFFER",
+          "EMBEDDING_RETRIEVAL_ONLY_HUMAN_REVIEW_REQUIRED"
+        ]
+      },
+      {
+        "kalshi_id": "KXBILLBOARDRUNNERUPSONG-26NOV07-THE",
+        "polymarket_us_id": "ccpc-bilbrd-1song-any2026-thewee",
+        "kalshi_title": "Will the cure be #2 on the Billboard Hot 100 during the week of Nov 7, 2026",
+        "polymarket_us_title": "Who Will Have a #1 Song in 2026?",
+        "match_basis": "EMBEDDING_ASSISTED",
+        "score_bps": 0,
+        "warnings": [
+          "DATES_CONFLICT",
+          "THRESHOLDS_UNKNOWN",
+          "EVENT_TIMES_DIFFER",
+          "RESOLUTION_LANGUAGE_DIFFERS",
+          "CUTOFFS_DIFFER",
+          "EMBEDDING_RETRIEVAL_ONLY_HUMAN_REVIEW_REQUIRED"
+        ]
+      }
+    ],
+    "score_range_bps": [
+      0,
+      0
+    ],
+    "quality_assessment": "All returned candidates have zero deterministic heuristic score and explicit conflicts; these are low-confidence review leads, not verified opportunities."
+  },
+  "queue_candidates": 20,
+  "queue_identity_roundtrip": true,
+  "all_unverified": true,
+  "venue_fetches_during_recovery": 0,
+  "refresh_exit_code": 0,
+  "queue_exit_code": 0,
+  "full_venue_coverage": false
+}

@@ -88,10 +88,9 @@ def refresh(con, *, limit=20, page_size=200, max_pages=1000, books=10,
                 sports_only=sports_only,
                 _semantic_pairs={(r['kalshi_id'], r['polymarket_us_id']): r['signals']['embedding'] for r in preliminary['candidates'] if 'embedding' in r['signals']},
                 _pair_keys=[(r['kalshi_id'], r['polymarket_us_id']) for r in preliminary['candidates']],
-                catalogue_coverage_at_refresh=preliminary['coverage'])
-    report['embedding'] = preliminary['embedding']
-    con.execute('UPDATE discovery_state SET report_json=? WHERE id=1', (dumps(report),))
-    con.commit()
+                catalogue_coverage_at_refresh=preliminary['coverage'],
+                sports_coverage_at_refresh=preliminary['sports_coverage'],
+                embedding_at_refresh=preliminary['embedding'])
     report.update(collection_runs=runs, errors=errors)
     return report, 1 if errors else 2 if any(run['status'] != 'COMPLETE' for run in runs) else 0
 

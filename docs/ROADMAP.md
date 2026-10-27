@@ -184,3 +184,17 @@ M4's 30-day economics and M5's multiweek acceptance remain open.
 
 This is one research discovery extension. It does not complete M4/M5 acceptance,
 provide full-catalogue semantic coverage or authorize M6/live-money work.
+
+
+### Private embedding discovery category correction — 2026-10-27
+
+- [x] Correct generic US futures metadata classification using explicit non-sports
+  categories, retaining unknown/positive-sports exclusions and all approval gates.
+- [x] Preserve broad sports exclusions in queue reports and distinguish selected
+  from completed embedding counts; official source capture and real fixtures.
+- [x] Regression/unit/integration tests and fresh-cache reranking verification;
+  [results and remaining coverage limits](EMBEDDING_CATEGORY_RESULTS.md).
+
+This repairs the existing discovery extension. Partial paging and the 512-input
+per-venue semantic cap remain explicit; no sports-format expansion or trading
+milestone is authorized by this change.

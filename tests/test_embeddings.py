@@ -305,6 +305,37 @@ class EmbeddingTests(unittest.TestCase):
         self.assertEqual(self.con.execute('SELECT count(*) FROM embedding_cache').fetchone()[0],2)
         self.assertEqual(self.con.execute('SELECT count(*) FROM pairs').fetchone()[0],0)
 
+    def test_non_sports_futures_reach_embedding_retrieval_and_unknowns_do_not(self):
+        # HYPOTHETICAL markets using the real provider's generic type/category combination.
+        bm.seed(self.con,DATA)
+        for case in DATA['cases']:
+            registry._record_instrument(self.con,'polymarket_us','HYPOTHETICAL-'+case['id'],
+                {'title':case['right'],'description':'','category':'finance',
+                 'sportsMarketType':'futures','sportsMarketTypeV2':'SPORTS_MARKET_TYPE_FUTURE',
+                 'close_time':'2030-02-01T00:00:00Z'},observed_at=NOW.isoformat(),
+                 available=True,hypothetical=True,now=NOW)
+        result=discovery.discover(self.con,now=NOW,limit=100,embedding_client=self.client())
+        self.assertEqual(result['embedding']['status'],'READY')
+        self.assertEqual(result['embedding']['non_sports_eligible'],[6,9])
+        self.assertEqual(result['embedding']['excluded_sports'],[0,0])
+        self.assertEqual(len(result['candidates']),6)
+        self.assertTrue(all(r['status']=='UNVERIFIED' and not r['trading_authorized'] for r in result['candidates']))
+
+    def test_empty_embedding_report_separates_selection_from_completed_inference(self):
+        # HYPOTHETICAL disjoint pools reproduce the reported one-sided selection.
+        client=self.client(max_items=1)
+        pools=[[{'features':{'sports':None}}, {'features':{'sports':None}}],
+               [{'features':{'sports':{'supported':False}}}]]
+        pairs,report=e.retrieve(self.con,pools,client)
+        self.assertEqual(pairs,{})
+        self.assertEqual(report['status'],'EMPTY')
+        self.assertEqual(report['selected'],[1,0])
+        self.assertEqual(report['embedded'],[0,0])
+        self.assertEqual(report['excluded_sports'],[0,1])
+        self.assertEqual(report['reason'],'NO_NON_SPORTS_MARKETS_ON_BOTH_VENUES')
+        self.assertTrue(report['truncated'])
+        self.assertEqual(client.requests,0)
+
     def test_local_http_protocol_integration(self):
         service=self.service
         class Handler(BaseHTTPRequestHandler):

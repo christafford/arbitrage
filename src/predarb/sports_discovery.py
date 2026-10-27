@@ -113,13 +113,27 @@ def metadata(contract, key):
     return contract.get(key, contract.get('uninterpreted_metadata', {}).get(key))
 
 
+# Observed, explicit non-sports categories; unknown categories remain conservative.
+NON_SPORTS_CATEGORIES = frozenset({'politics', 'culture', 'crypto', 'finance',
+                                  'technology', 'macro', 'geopolitics', 'science'})
+
+
 def detected(contract):
     ticker = contract.get('ticker', '')
     title = words(contract.get('title', '') or contract.get('question', ''))
-    rules = words(contract.get('rules_primary', ''))
-    return (metadata(contract, 'category') == 'sports'
-            or bool(metadata(contract, 'sportsMarketType'))
-            or bool(metadata(contract, 'sportsMarketTypeV2'))
+    rules = words(contract.get('rules_primary', '') + ' ' + contract.get('description', ''))
+    category = metadata(contract, 'category')
+    legacy_type = metadata(contract, 'sportsMarketType')
+    kind = metadata(contract, 'sportsMarketTypeV2')
+    # US uses FUTURE/futures on explicitly non-sports contracts too. Treat
+    # only these documented generic values as neutral in that explicit context.
+    # Unknown variants, missing categories and positive sports evidence still gate.
+    generic_non_sports = (category in NON_SPORTS_CATEGORIES
+                          and legacy_type in (None, '', 'futures')
+                          and kind in (None, '', 'SPORTS_MARKET_TYPE_FUTURE'))
+    return (category == 'sports'
+            or ((bool(legacy_type) or bool(kind)) and not generic_non_sports)
+            or (generic_non_sports and any(side.get('team') for side in contract.get('marketSides', [])))
             or ticker.startswith(('KXNBAGAME-', 'KXNFLGAME-'))
             or contract.get('slug', '').startswith(('aec-nba-', 'aec-nfl-'))
             or title == 'both teams to score'

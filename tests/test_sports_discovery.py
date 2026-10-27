@@ -46,6 +46,32 @@ class SportsIdentityTests(unittest.TestCase):
                            else 'POSTPONEMENT_WINDOW_INTERPRETATION_REQUIRED')
                 self.assertIn(warning, result[2])
 
+    def test_actual_non_sports_categories_with_generic_future_metadata(self):
+        for item in fixture('us-category-futures-live')['records']:
+            with self.subTest(category=item['label']):
+                self.assertEqual(hashlib.sha256(item['body'].encode()).hexdigest(),item['body_sha256'])
+                contract=load_json(item['body'])['market']
+                self.assertEqual(s.features(contract) is not None,item['expected_sports_gate'])
+                envelope=deepcopy(contract)
+                envelope['uninterpreted_metadata']={key:envelope.pop(key) for key in
+                    ('category','sportsMarketType','sportsMarketTypeV2') if key in envelope}
+                self.assertEqual(s.features(envelope) is not None,item['expected_sports_gate'])
+
+    def test_non_sports_future_exception_requires_explicit_category_and_known_types(self):
+        # These modifications are HYPOTHETICAL compatibility/error scenarios.
+        contract={'title':'Bitcoin price','category':'crypto','sportsMarketType':'futures',
+                  'sportsMarketTypeV2':'SPORTS_MARKET_TYPE_FUTURE'}
+        self.assertIsNone(s.features(contract))
+        for changes in ({'category':None},{'category':'unknown-category'},
+                        {'category':'sports'}, {'sportsMarketType':'basketball_team_full_game_winner'},
+                        {'sportsMarketTypeV2':'SPORTS_MARKET_TYPE_NEW'},
+                        {'sportsMarketTypeV2':'SPORTS_MARKET_TYPE_UNSPECIFIED'},
+                        {'ticker':'KXNBAGAME-HYPOTHETICAL'}, {'slug':'aec-nfl-hypothetical'},
+                        {'description':'A professional basketball game'},
+                        {'marketSides':[{'team':{'league':'NBA','name':'Lakers'}}]}):
+            with self.subTest(changes=changes):
+                self.assertIsNotNone(s.features(dict(contract,**changes)))
+
     def test_actual_soccer_college_football_false_match_is_excluded(self):
         rows = self.evidence['unrelated_sports']
         for row in rows:

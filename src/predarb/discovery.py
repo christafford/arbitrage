@@ -25,7 +25,7 @@ CREATE TABLE discovery_state (
 );
 CREATE INDEX discovery_books_source ON book_captures(source_id,observation_id DESC);
 """
-VERSION = 'discovery-v2-sports'
+VERSION = 'discovery-v3-category'
 STOP = set('win winner wins beat beats price game match will would should could reaches reach a an the will be is are was were of on in at by to for and or with this that market contract resolves resolve yes no if as than hypothetical above below over under greater less least most more equal before after between'.split())
 # These describe market format, units, or scheduling, not participant identity.
 RETRIEVAL_STOP = set('vs versus total totals score scored points goals touchdowns yards cover spread handicap victory margin team player first half quarter regular season scheduled end pm am et est edt utc fc election house state jan feb mar apr jun jul aug sep sept oct nov dec'.split())
@@ -428,10 +428,15 @@ def discover(con, *, limit=20, max_instruments=None, now=None, _pair_keys=None, 
             'sports_coverage': sports_counts, 'embedding': embedding_report, 'candidates': result}
 
 
-def refresh_queue(con, *, catalogue_coverage_at_refresh=None, **kwargs):
+def refresh_queue(con, *, catalogue_coverage_at_refresh=None, sports_coverage_at_refresh=None,
+                  embedding_at_refresh=None, **kwargs):
     report = discover(con, **kwargs)
     if catalogue_coverage_at_refresh is not None:
         report['catalogue_coverage_at_refresh'] = catalogue_coverage_at_refresh
+    if sports_coverage_at_refresh is not None:
+        report['sports_coverage_at_refresh'] = sports_coverage_at_refresh
+    if embedding_at_refresh is not None:
+        report['embedding'] = embedding_at_refresh
     try:
         con.execute('BEGIN IMMEDIATE')
         con.execute('DELETE FROM discovery_queue')
@@ -459,5 +464,6 @@ def queue(con, *, limit=20, now=None, sports_only=False):
     if stored:
         previous = json.loads(stored[1])
         report['embedding_at_refresh'] = previous.get('embedding', {'status': 'DISABLED'})
+        report['sports_coverage_at_refresh'] = previous.get('sports_coverage_at_refresh', previous.get('sports_coverage'))
         report['catalogue_coverage_at_refresh'] = previous.get('catalogue_coverage_at_refresh', previous['coverage'])
     return report
