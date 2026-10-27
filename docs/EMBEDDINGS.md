@@ -20,6 +20,10 @@ predarb discovery refresh --cached-catalogues --db data/research.sqlite3 --limit
 predarb discovery queue --db data/research.sqlite3 --limit 20
 ```
 
+The current service has been validated as `qwen3-embedding-8b` with 4,096 dimensions
+and a successful small-corpus live benchmark. Use the plural `/v1/embeddings` URL.
+See [the acceptance results and limitations](EMBEDDING_RESULTS.md).
+
 The check prints the served model ID, cache identity and measured vector dimension;
 it archives the model response and probe response. It does not assume a dimension
 from a model name or GGUF metadata. The service must expose both `GET /v1/models`

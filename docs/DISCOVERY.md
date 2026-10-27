@@ -243,4 +243,4 @@ and falls back to this deterministic matcher on inference failure. Use
 allows inference against fresh archived metadata without venue downloads.
 `--offline`, `queue` and `pairs candidates` never initiate inference. Schema 8
 requires a pre-upgrade backup. All semantic suggestions remain `UNVERIFIED`.
-See [setup, bounds and benchmarking](EMBEDDINGS.md) and [current live blocker](EMBEDDING_RESULTS.md).
+See [setup, bounds and benchmarking](EMBEDDINGS.md) and [live acceptance results](EMBEDDING_RESULTS.md).

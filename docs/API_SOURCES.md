@@ -471,3 +471,16 @@ of length 1,024 with 14 nulls and 1,010 zeros. Validation rejected it. The
 exact embedding bytes and a labeled model-info excerpt with parent hashes and
 precise receipt clocks. Length is observed, not a validated usable dimension.
 No missing/nonfinite coordinate was replaced or repaired locally.
+
+
+### Replacement Qwen3-Embedding-8B validation
+
+The operator's replacement private service passed the unchanged
+`llama-embeddings/v1` schema at the standard plural `/v1/embeddings` route.
+Actual model ID is `qwen3-embedding-8b`; the probe and 15-text batch validated
+4,096 coordinates per input. No new external field or venue API was consumed.
+[Sanitized live excerpts and exact probe](../tests/fixtures/embedding-8b-live.json)
+record exact UTC receipts and raw/parent hashes. The inputs are explicitly
+hypothetical; vector values are actual observed responses, not fabricated.
+[Live acceptance](EMBEDDING_RESULTS.md) records recall, extra candidates, probe
+fingerprint variation and verified warm-cache reuse.

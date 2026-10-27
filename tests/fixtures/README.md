@@ -164,3 +164,10 @@ model ID `qwen3-reranker-0.6b`, with an invalid 1,024-element response containin
 the embedding body is exact. SHA-256, parent hash, UTC retrieval time, endpoint,
 headers and local schema are recorded. Tests replay this as a rejection, never
 promote it to a valid model embedding or normalize nulls to zero.
+
+
+`embedding-8b-live.json` contains actual private Qwen3-Embedding-8B outputs on
+hypothetical benchmark inputs: sanitized model metadata, exact 4,096-dimensional
+probe bytes, and a labeled two-vector excerpt from a 15-input batch. Receipt
+clocks, body/parent hashes and representation descriptions preserve provenance.
+It verifies successful model/dimension discovery and cached batch replay offline.

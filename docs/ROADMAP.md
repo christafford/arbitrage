@@ -177,8 +177,10 @@ M4's 30-day economics and M5's multiweek acceptance remain open.
   repeatable retrieval recall benchmark and operator documentation.
 - [x] Live gaming-PC HTTPS connectivity and raw schema capture; actual invalid
   vector output is rejected and preserved as a regression fixture.
-- [ ] Valid actual model/dimension probe and measured model recall: the current
-  service returns null/zero coordinates; see [results](EMBEDDING_RESULTS.md).
+- [x] Valid actual model/dimension probe and measured model recall: replacement
+  `qwen3-embedding-8b` returns 4,096 valid dimensions; live recall@3 was 6/6 versus
+  2/6 deterministic on the small hypothetical corpus, with 15/15 warm cache hits.
+  See [acceptance evidence and limits](EMBEDDING_RESULTS.md).
 
 This is one research discovery extension. It does not complete M4/M5 acceptance,
 provide full-catalogue semantic coverage or authorize M6/live-money work.

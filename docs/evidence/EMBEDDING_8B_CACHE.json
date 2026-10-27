@@ -1,0 +1,45 @@
+{
+  "first_repeat": {
+    "warm_cache": {
+      "status": "READY",
+      "eligible": [
+        6,
+        9
+      ],
+      "embedded": [
+        6,
+        9
+      ],
+      "truncated": false,
+      "model": "qwen3-embedding-8b",
+      "identity": "6ad290cf06017f5a5aba88e4f878e7b3320b73c8ac1d8018d376aab00d64cb16",
+      "dimensions": 4096,
+      "requests": 3,
+      "cache_hits": 0
+    },
+    "queue_roundtrip": true,
+    "all_unverified": true,
+    "pairs": 0
+  },
+  "next_repeat": {
+    "status": "READY",
+    "eligible": [
+      6,
+      9
+    ],
+    "embedded": [
+      6,
+      9
+    ],
+    "truncated": false,
+    "model": "qwen3-embedding-8b",
+    "identity": "6ad290cf06017f5a5aba88e4f878e7b3320b73c8ac1d8018d376aab00d64cb16",
+    "dimensions": 4096,
+    "requests": 2,
+    "cache_hits": 15
+  },
+  "seconds": 1.5376885890000267,
+  "queue_roundtrip": true,
+  "all_unverified": true,
+  "pairs": 0
+}

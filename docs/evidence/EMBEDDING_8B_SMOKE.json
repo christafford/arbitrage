@@ -1,0 +1,64 @@
+{
+  "at": "2026-10-27T20:56:05.129637+00:00",
+  "results": [
+    {
+      "command": [
+        "predarb",
+        "discovery",
+        "embeddings-check",
+        "--db",
+        "data/embedding-8b-check.sqlite3"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"dimensions\":4096,\"identity\":\"5ed7432886f2692356bc6502d385c3759fc886ed4b5d9637f403366f5280279a\",\"model\":\"qwen3-embedding-8b\"}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "predarb",
+        "demo",
+        "--db",
+        "TEMP_DB"
+      ],
+      "exit_code": 0,
+      "stdout": "HYPOTHETICAL EXAMPLE ONLY \u2014 not a trade signal or verified exchange quotes\npairs=400 required_capital=$391.000 modeled_profit=$9.000 ROI=2.302%\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "predarb",
+        "report",
+        "--db",
+        "TEMP_DB"
+      ],
+      "exit_code": 0,
+      "stdout": "Read-only archive counts: {}\nCollection runs (id, venue, status, pages, records, unique, duplicates): []\nBook captures (freshness AT CAPTURE, liquidity, count): []\nAll live catalogue entries and books are UNVERIFIED; no actionable signals\nNormalized book assessments (data usable AT ASSESSMENT, count): []\nPair decisions (hypothetical, status, count; no trading authority): []\nHypothetical evaluations: 1 (sum of *example modeled* profits, NOT realized P&L: $9.00)\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "predarb",
+        "discovery",
+        "refresh",
+        "--offline",
+        "--db",
+        "TEMP_DB"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"algorithm\":\"discovery-v2-sports\",\"candidate_scope\":\"ALL_SUPPORTED\",\"candidates\":[],\"coverage\":{\"kalshi\":{\"eligible\":0,\"full_catalogue_received_at\":null,\"full_catalogue_run_id\":null,\"full_catalogue_status\":null,\"latest_run_status\":null,\"scope\":\"all\",\"stored\":0,\"truncated\":false},\"polymarket_us\":{\"eligible\":0,\"full_catalogue_received_at\":null,\"full_catalogue_run_id\":null,\"full_catalogue_status\":null,\"latest_run_status\":null,\"scope\":\"all\",\"stored\":0,\"truncated\":false}},\"embedding\":{\"status\":\"DISABLED\"},\"ranked_at\":\"2026-10-27T20:56:04.957207+00:00\",\"sports_coverage\":{\"kalshi\":{\"recognized\":0,\"supported_game_winners\":0,\"unsupported_reasons\":{}},\"polymarket_us\":{\"recognized\":0,\"supported_game_winners\":0,\"unsupported_reasons\":{}}}}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "predarb",
+        "discovery",
+        "queue",
+        "--db",
+        "TEMP_DB"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"algorithm\":\"discovery-v2-sports\",\"candidate_scope\":\"ALL_SUPPORTED\",\"candidates\":[],\"catalogue_coverage_at_refresh\":{\"kalshi\":{\"eligible\":0,\"full_catalogue_received_at\":null,\"full_catalogue_run_id\":null,\"full_catalogue_status\":null,\"latest_run_status\":null,\"scope\":\"all\",\"stored\":0,\"truncated\":false},\"polymarket_us\":{\"eligible\":0,\"full_catalogue_received_at\":null,\"full_catalogue_run_id\":null,\"full_catalogue_status\":null,\"latest_run_status\":null,\"scope\":\"all\",\"stored\":0,\"truncated\":false}},\"coverage\":{\"kalshi\":{\"eligible\":0,\"full_catalogue_received_at\":null,\"full_catalogue_run_id\":null,\"full_catalogue_status\":null,\"latest_run_status\":null,\"scope\":\"queued_instruments\",\"stored\":0,\"truncated\":false},\"polymarket_us\":{\"eligible\":0,\"full_catalogue_received_at\":null,\"full_catalogue_run_id\":null,\"full_catalogue_status\":null,\"latest_run_status\":null,\"scope\":\"queued_instruments\",\"stored\":0,\"truncated\":false}},\"embedding\":{\"status\":\"DISABLED\"},\"embedding_at_refresh\":{\"status\":\"DISABLED\"},\"last_queue_refresh\":\"2026-10-27T20:56:04.957207+00:00\",\"ranked_at\":\"2026-10-27T20:56:05.099472+00:00\",\"sports_coverage\":{\"kalshi\":{\"recognized\":0,\"supported_game_winners\":0,\"unsupported_reasons\":{}},\"polymarket_us\":{\"recognized\":0,\"supported_game_winners\":0,\"unsupported_reasons\":{}}}}\n",
+      "stderr": ""
+    }
+  ]
+}

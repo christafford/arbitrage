@@ -280,6 +280,31 @@ class EmbeddingTests(unittest.TestCase):
         self.assertEqual(len(values),1024)
         self.assertEqual(sum(x is None for x in values),14)
 
+    def test_real_8b_probe_batch_and_cache_replay(self):
+        import hashlib
+        fixture=json.loads((bm.FIXTURE.parent/'embedding-8b-live.json').read_text())
+        responses=iter(fixture['responses'])
+        calls=[]
+        def replay(request,timeout):
+            item=next(responses)
+            self.assertEqual(hashlib.sha256(item['body'].encode()).hexdigest(),item['sha256'])
+            self.assertEqual(request.full_url.rsplit('/',1)[1],item['endpoint'].rsplit('/',1)[1])
+            calls.append(request)
+            return bm.HypotheticalResponse(item['body'].encode())
+        client=self.client(opener=replay)
+        values=client.embed(fixture['inputs'])
+        self.assertEqual(client.model,'qwen3-embedding-8b')
+        self.assertEqual(client.dimensions,4096)
+        self.assertEqual([len(v) for v in values],[4096,4096])
+        self.assertEqual(len(calls),3)
+        cached=client.embed(fixture['inputs'])
+        self.assertEqual(client.hits,2)
+        self.assertEqual(len(calls),3)
+        for actual,expected in zip(cached,values):
+            self.assertLess(max(abs(a-b) for a,b in zip(actual,expected)),1e-12)
+        self.assertEqual(self.con.execute('SELECT count(*) FROM embedding_cache').fetchone()[0],2)
+        self.assertEqual(self.con.execute('SELECT count(*) FROM pairs').fetchone()[0],0)
+
     def test_local_http_protocol_integration(self):
         service=self.service
         class Handler(BaseHTTPRequestHandler):
