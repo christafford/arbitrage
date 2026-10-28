@@ -275,15 +275,27 @@ def unpack(row):
     return values
 
 
-def index_batch(index, client, *, budgets=None, now=None, seconds=120, texts_per_second=8):
+def index_batch(index, client, *, budgets=None, now=None, seconds=120, texts_per_second=8,
+                expected_identity=None):
     budgets=budgets or dict.fromkeys(registry.VENUES,256)
     if set(budgets)!=set(registry.VENUES) or any(type(n)is not int or not 0<=n<=10000 for n in budgets.values()):
         raise ValueError('per-venue budgets must be 0..10000')
     if not 1<=seconds<=3600 or not 0<texts_per_second<=100: raise ValueError('invalid worker throughput/time budget')
+    if expected_identity is not None and (len(expected_identity)!=64 or any(c not in '0123456789abcdef' for c in expected_identity)):
+        raise ValueError('expected identity must be a SHA-256 hex digest')
     start=time.monotonic(); now=now or registry.now_utc()
     report={'status':'READY','completed':dict.fromkeys(registry.VENUES,0),'requests':0,'cache_hits':0}
     try:
         if client.identity is None:client.probe()
+        # A long operational run may pin a previously validated namespace. Never
+        # merge close vectors or relabel another identity to satisfy the pin.
+        # At most three total probes, still inside the client's HTTP budget.
+        if expected_identity is not None:
+            for _ in range(2):
+                if client.identity==expected_identity or time.monotonic()-start>=seconds:break
+                client.probe()
+            if client.identity!=expected_identity:
+                raise e.EmbeddingError('PINNED_MODEL_IDENTITY_MISMATCH')
         index.execute('INSERT OR REPLACE INTO semantic_models VALUES(?,?,?,?)',
                       (client.identity,client.model,client.dimensions,now.isoformat()))
         set_state(index,'active_identity',client.identity);index.commit()

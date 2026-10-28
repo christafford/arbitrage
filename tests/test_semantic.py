@@ -96,6 +96,39 @@ class SemanticTests(unittest.TestCase):
         self.assertEqual(sum(v.get('indexed',0) for v in coverage['venues'].values()),2)
         self.assertTrue(self.retrieve(semantic=False)['retrieval']['deterministic_enabled'])
 
+    def test_pinned_identity_mismatch_preserves_active_namespace_and_vectors(self):
+        self.sync();self.work()
+        identity=s.state(self.index,'active_identity')
+        count=self.index.execute('SELECT count(*) FROM semantic_vectors').fetchone()[0]
+        self.service.fixture['models']['data'][0]['id']='HYPOTHETICAL-upgrade'
+        client=self.client()
+        with patch.object(client,'probe',wraps=client.probe) as probe:
+            report=s.index_batch(self.index,client,now=NOW,expected_identity=identity)
+        self.assertEqual(probe.call_count,3)
+        self.assertEqual(report['reason'],'PINNED_MODEL_IDENTITY_MISMATCH')
+        self.assertEqual(sum(report['completed'].values()),0)
+        self.assertEqual(s.state(self.index,'active_identity'),identity)
+        self.assertEqual(self.index.execute('SELECT count(*) FROM semantic_vectors').fetchone()[0],count)
+        self.assertGreater(len(self.retrieve()['candidates']),0)
+
+    def test_pin_requires_exact_match_and_reuses_validated_cache(self):
+        self.sync();self.work()
+        identity=s.state(self.index,'active_identity')
+        client=self.client();actual=client.probe
+        calls=[]
+        def varying_probe():
+            result=actual();calls.append(result)
+            if len(calls)==1:client.identity='0'*64
+            return result
+        with patch.object(client,'probe',side_effect=varying_probe):
+            report=s.index_batch(self.index,client,now=NOW,expected_identity=identity)
+        self.assertEqual(len(calls),2)
+        self.assertEqual(report['status'],'READY')
+        self.assertEqual(sum(report['completed'].values()),0)
+        self.assertEqual(s.state(self.index,'active_identity'),identity)
+        with self.assertRaisesRegex(ValueError,'SHA-256'):
+            s.index_batch(self.index,self.client(),expected_identity='invalid')
+
     def test_stale_catalogue_and_changed_descriptions_never_use_old_results(self):
         self.sync();self.work();self.retrieve()
         r=s.retrieve(self.source,self.index,now=NOW+timedelta(days=2))

@@ -33,6 +33,10 @@ collector lock. The optional systemd service/timer runs synchronization, inferen
 and retrieval separately from the collector; units are templates, not activated.
 Exit 2 from inference denotes fallback and preserves committed vectors. Missing
 configuration is an error. `index-retrieve --deterministic-only` needs no AI service.
+For a sustained run, `index-work --expected-identity SHA256` pins a previously
+validated model namespace. It makes at most three exact probes within the existing
+HTTP budget. A mismatch returns `FALLBACK` without switching the active namespace
+or embedding market text. Close probe vectors are never merged or relabeled.
 `refresh --cached-catalogues --books 0` synchronizes a bounded metadata batch and
 publishes the source review queue without network requests. `discovery queue`
 revalidates its saved source versions, receipts, snapshot expiry and liquidity.
@@ -129,3 +133,48 @@ Unknown sidecar schema/source bindings are errors. Corrupt vectors are refused;
 use a new sidecar to rebuild derived data while preserving the original evidence.
 Diversity caps both Kalshi event identity and the US scheduled event/normalized
 question group; generic question titles retain their explicit selection title.
+
+## Authorized 24-hour run, October 28–29
+
+The operator authorized ongoing collection and backfill on October 28. The
+[run record](M5I_RUN_20261028.md) distinguishes startup evidence from completed
+acceptance. `scripts/m5i_run.py` supervises two independent local services using
+existing CLI commands; its fixed UTC deadline survives process and host restarts.
+Public catalogue collection has no inference dependency and captures no books.
+
+Collection alternates 20-page invocations, 200 records/page, until both walks are
+complete. It waits six hours after completion before the next refresh. A traversal
+has a 2,000-page ceiling per venue. Semantic work waits for complete catalogues,
+syncs the full metadata scan in 10,000-row invocations (maximum 100), then runs
+600-second inference batches followed by 250-query retrieval and coverage reports.
+Each inference invocation allows up to 1,536 definitions per venue, with the
+existing 100-HTTP-attempt and eight-texts/second ceilings. A fallback still runs
+retrieval, then backs off five minutes. Other command failures get two retries
+after 60/120 seconds, then stop that service. Neither service stops its peer.
+
+Each service is limited to 256 MiB memory plus 64 MiB swap and 16 tasks. The runner
+requires 5 GiB free space and stops when source/index files plus their WAL files
+reach 80 GiB. Each child has a 900-second ceiling, shortened by the run deadline;
+shutdown sends SIGINT, allows 30 seconds for cleanup, then terminates a stuck
+child. Successful batches and page checkpoints remain resumable. Raw evidence
+is retained. These bounds can leave an unfinished backfill at the deadline.
+
+The installed units are enabled in the existing user's systemd manager. User
+lingering was enabled so logout does not end the run. Both services exit at the
+fixed deadline even after reboot; no timer schedules an indefinite future run.
+After the run, disabling the units prevents later boot-time no-op starts.
+
+```bash
+systemctl --user status predarb-m5i-collection-20261028.service predarb-m5i-semantic-20261028.service
+cat data/m5i/run-20261028/collection-status.json
+cat data/m5i/run-20261028/semantic-status.json
+predarb discovery index-coverage --db data/research.sqlite3 --index-db data/m5i/index.sqlite3
+
+# Gracefully stop and disable this run if needed; checkpoints remain.
+systemctl --user disable --now predarb-m5i-collection-20261028.service predarb-m5i-semantic-20261028.service
+```
+
+Exact configuration, installed unit copies, command outputs/stderr, supervisor
+checkpoints, pre-migration backups and manifests are retained under
+`data/m5i/run-20261028/`. Services log status changes to the user journal. A
+`BATCH_COMPLETE` report is progress, not evidence that the whole run has finished.

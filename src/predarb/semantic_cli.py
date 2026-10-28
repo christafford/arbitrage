@@ -22,6 +22,7 @@ def add_parsers(actions):
             p.add_argument('--us-budget',type=int,default=256)
             p.add_argument('--seconds',type=int,default=120)
             p.add_argument('--texts-per-second',type=float,default=8)
+            p.add_argument('--expected-identity',help='require this exact previously validated model fingerprint')
         if name=='index-retrieve':
             p.add_argument('--limit',type=int,default=20)
             p.add_argument('--query-budget',type=int,default=500)
@@ -61,7 +62,8 @@ def run(args):
             if not client.base.split('/')[2].endswith('.ts.net'):
                 raise ValueError('M5I worker requires the private Tailscale HTTPS endpoint')
             report=semantic.index_batch(index,client,budgets={'kalshi':args.kalshi_budget,'polymarket_us':args.us_budget},
-                                        seconds=args.seconds,texts_per_second=args.texts_per_second)
+                                        seconds=args.seconds,texts_per_second=args.texts_per_second,
+                                        expected_identity=args.expected_identity)
         elif args.discovery_cmd=='index-retrieve':
             report=semantic.retrieve(source,index,limit=args.limit,query_budget=args.query_budget,
                                      candidate_cap=args.candidate_cap,semantic=not args.deterministic_only,persist=writable)
