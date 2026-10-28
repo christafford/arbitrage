@@ -1,0 +1,289 @@
+{
+  "format": "charlotte-detroit-review/v1",
+  "checked_at": "2026-10-28T00:46:22.089793+00:00",
+  "packet_path": "data/charlotte-detroit-review-20261028",
+  "database_schema": 8,
+  "hypothetical": false,
+  "status": "UNVERIFIED",
+  "human_reviewed": false,
+  "trading_authorized": false,
+  "economic_evaluation_performed": false,
+  "proposal_id": 1,
+  "evidence_sha256": "161be62c684ab607baecab7697c8b7165292e3fbee62af695d6abb2178af314e",
+  "source_documents": [
+    {
+      "url": "https://docs.kalshi.com/api-reference/market/get-market.md",
+      "path": "data/charlotte-detroit-review-20261028/kalshi-market.md",
+      "retrieved_at": "2026-10-28T00:42:16.221887+00:00",
+      "sha256": "3134644faca99509f47b569c60d323a2c2d4b3a6e7beeee9243fd142353b62f5",
+      "status": 200
+    },
+    {
+      "url": "https://docs.kalshi.com/api-reference/market/get-market-orderbook.md",
+      "path": "data/charlotte-detroit-review-20261028/kalshi-book.md",
+      "retrieved_at": "2026-10-28T00:42:16.564167+00:00",
+      "sha256": "48b3a67a41f0aa341ca33cb123bba1c79eadf4419ac82431145d38666133951d",
+      "status": 200
+    },
+    {
+      "url": "https://docs.kalshi.com/api-reference/events/get-event.md",
+      "path": "data/charlotte-detroit-review-20261028/kalshi-event.md",
+      "retrieved_at": "2026-10-28T00:42:17.038305+00:00",
+      "sha256": "144979947cda0a4eba11ec3cdcea389af7b3c79b3f267153766607d144b9c6fa",
+      "status": 200
+    },
+    {
+      "url": "https://docs.kalshi.com/api-reference/market/get-series.md",
+      "path": "data/charlotte-detroit-review-20261028/kalshi-series.md",
+      "retrieved_at": "2026-10-28T00:42:17.412928+00:00",
+      "sha256": "1166e0fb430a488f18f7718c09d965606fd5b2937d1bfbfcdb96b86a7a2a262e",
+      "status": 200
+    },
+    {
+      "url": "https://docs.polymarket.us/api-reference/markets/get-market-by-slug.md",
+      "path": "data/charlotte-detroit-review-20261028/us-market.md",
+      "retrieved_at": "2026-10-28T00:42:18.246224+00:00",
+      "sha256": "16f599df2f2606ae8e661b557793274d61d50e33862a10d033e52c09e783f7cf",
+      "status": 200
+    },
+    {
+      "url": "https://docs.polymarket.us/api-reference/markets/get-market-book.md",
+      "path": "data/charlotte-detroit-review-20261028/us-book.md",
+      "retrieved_at": "2026-10-28T00:42:18.945709+00:00",
+      "sha256": "a7067ab36d8372f67f9eae96b8ef177e120b94f33355f85ff7bf49f66d795e29",
+      "status": 200
+    },
+    {
+      "url": "https://assets.kalshi.com/contract_terms/BASKETBALLGAMEWIN.pdf",
+      "path": "data/charlotte-detroit-review-20261028/kalshi-terms.pdf",
+      "retrieved_at": "2026-10-28T00:42:39.193645+00:00",
+      "sha256": "7db0904a1d578a2bca0f6a1f55d0d7962d32b76ce5fafb0e23823e5444381556",
+      "status": 200
+    },
+    {
+      "url": "https://assets.kalshi.com/regulatory/product-certifications/BASKETBALLGAMEWIN.pdf",
+      "path": "data/charlotte-detroit-review-20261028/kalshi-certification.pdf",
+      "retrieved_at": "2026-10-28T00:42:39.493349+00:00",
+      "sha256": "7f41003885427b5e077a262cf71f54e3155b5c15e73c4518278ea2b2c8a8993b",
+      "status": 200
+    },
+    {
+      "url": "https://docs.polymarket.us/learn/advanced/rule-structure.md",
+      "path": "data/charlotte-detroit-review-20261028/us-rule-structure.md",
+      "retrieved_at": "2026-10-28T00:42:39.846033+00:00",
+      "sha256": "8c11fd659b4f05dc00ac2c520cd9bcebba709a5b9153c6ad131c28f5870288c4",
+      "status": 200
+    },
+    {
+      "url": "https://docs.polymarket.us/learn/markets/contract-settlement.md",
+      "path": "data/charlotte-detroit-review-20261028/us-settlement.md",
+      "retrieved_at": "2026-10-28T00:42:40.193945+00:00",
+      "sha256": "86b9a5bf54b27614019b95d608bed6a83c5a6714af54616ebd41e3f34ad95ad3",
+      "status": 200
+    },
+    {
+      "url": "https://docs.polymarket.us/faqs/sports-faqs.md",
+      "path": "data/charlotte-detroit-review-20261028/us-sports-faq.md",
+      "retrieved_at": "2026-10-28T00:43:34.204070+00:00",
+      "sha256": "9aae0cfe089256db6efc5f501d20ee4b7ea2ef24556e1d0e2131b79eb0ddb77d",
+      "status": 200
+    },
+    {
+      "url": "https://polymarketexchange.com/files/legal/Polymarket%20US%20Rulebook%20(2026.09.30).pdf",
+      "path": "data/charlotte-detroit-review-20261028/us-rulebook.pdf",
+      "status": 200,
+      "retrieved_at": "2026-10-28T00:43:54.638125+00:00",
+      "sha256": "1635f93f6ee65f0daea036f816ec52ff2d85381692e4415c81efa3695c3d43bc"
+    }
+  ],
+  "raw_observations": [
+    {
+      "observation_id": 1,
+      "venue": "kalshi",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets?status=open&mve_filter=exclude&limit=20&event_ticker=KXNBAGAME-26OCT28CHADET",
+      "received_at": "2026-10-28T00:42:00.807841+00:00",
+      "schema_version": "kalshi-3.34.0/m1-v1",
+      "sha256": "6809e19fddd92e9a7675907a85c10f71a4350f6e5e3a018e17efb0f84fc8b37b",
+      "hypothetical": false
+    },
+    {
+      "observation_id": 2,
+      "venue": "kalshi",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT28CHADET-CHA",
+      "received_at": "2026-10-28T00:42:00.969512+00:00",
+      "schema_version": "kalshi-3.34.0/m1-v1",
+      "sha256": "43f3f63f95a4b551de43e508ca24164ec14e16e04b3f81ee4c03fa1fd403cd2c",
+      "hypothetical": false
+    },
+    {
+      "observation_id": 3,
+      "venue": "kalshi",
+      "url": "https://external-api.kalshi.com/trade-api/v2/events/KXNBAGAME-26OCT28CHADET",
+      "received_at": "2026-10-28T00:42:01.221763+00:00",
+      "schema_version": "kalshi-3.34.0/m1-v1",
+      "sha256": "d31591ff75d0f9225e35a361b768d5deda9fa408b0a4157ecc51d19b0c740706",
+      "hypothetical": false
+    },
+    {
+      "observation_id": 4,
+      "venue": "kalshi",
+      "url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAGAME",
+      "received_at": "2026-10-28T00:42:01.467030+00:00",
+      "schema_version": "kalshi-3.34.0/m1-v1",
+      "sha256": "66683922d0bb6201d4ba6c9e1ee90e6f007ab65b6c6158c4fff3683a80824849",
+      "hypothetical": false
+    },
+    {
+      "observation_id": 5,
+      "venue": "kalshi",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT28CHADET-CHA/orderbook",
+      "received_at": "2026-10-28T00:42:01.719019+00:00",
+      "schema_version": "kalshi-3.34.0/m1-v1",
+      "sha256": "e5abca44e61ff488e92d289d304e55d6be97cb115bc5030bc6a912767e445cef",
+      "hypothetical": false
+    },
+    {
+      "observation_id": 6,
+      "venue": "polymarket_us",
+      "url": "https://gateway.polymarket.us/v1/markets?active=true&closed=false&limit=20&offset=0&orderBy=id&orderDirection=asc&slug=aec-nba-cha-det-2026-10-28",
+      "received_at": "2026-10-28T00:42:13.941125+00:00",
+      "schema_version": "polymarket-us-marketservice-1.0.0/m1-v1",
+      "sha256": "705c036d29c652b5459d09a761aa7f4b88cabf606b13bf0910245e13c9e2183b",
+      "hypothetical": false
+    },
+    {
+      "observation_id": 7,
+      "venue": "polymarket_us",
+      "url": "https://gateway.polymarket.us/v1/markets?active=true&closed=false&limit=20&offset=1&orderBy=id&orderDirection=asc&slug=aec-nba-cha-det-2026-10-28",
+      "received_at": "2026-10-28T00:42:14.051033+00:00",
+      "schema_version": "polymarket-us-marketservice-1.0.0/m1-v1",
+      "sha256": "f36daaa1fcd896f9fdfd2a991f06ef808c56d5acaceca4e6f89329e7794608d1",
+      "hypothetical": false
+    },
+    {
+      "observation_id": 8,
+      "venue": "polymarket_us",
+      "url": "https://gateway.polymarket.us/v1/market/slug/aec-nba-cha-det-2026-10-28",
+      "received_at": "2026-10-28T00:42:14.348412+00:00",
+      "schema_version": "polymarket-us-marketservice-1.0.0/m1-v1",
+      "sha256": "53ad45607da03d0c1651336d5d2f23ffbe8dbcb69a5b342750c6e7f71a6cc92b",
+      "hypothetical": false
+    },
+    {
+      "observation_id": 9,
+      "venue": "polymarket_us",
+      "url": "https://gateway.polymarket.us/v1/markets/aec-nba-cha-det-2026-10-28/book",
+      "received_at": "2026-10-28T00:42:14.599079+00:00",
+      "schema_version": "polymarket-us-marketservice-1.0.0/m1-v1",
+      "sha256": "085967e869965037fcf37eb7b1fd7a7a1c9cbf25aa59db378d7532547bf49b74",
+      "hypothetical": false
+    }
+  ],
+  "collection_runs": [
+    {
+      "venue": "kalshi",
+      "status": "COMPLETE",
+      "pages": 1,
+      "records": 2,
+      "unique_records": 2
+    },
+    {
+      "venue": "polymarket_us",
+      "status": "COMPLETE",
+      "pages": 2,
+      "records": 1,
+      "unique_records": 1
+    }
+  ],
+  "official_document_versions": {
+    "kalshi": "3.35.0",
+    "polymarket_us": "1.0.0"
+  },
+  "pair_gate": {
+    "comparison_ready": false,
+    "fees_or_profit_evaluated": false,
+    "pair_id": 1,
+    "rejections": [
+      "PAIR_NOT_APPROVED",
+      "KALSHI_BOOK_REJECTED",
+      "POLYMARKET_US_BOOK_REJECTED",
+      "EXCESSIVE_RECEIVED_AT_SKEW",
+      "MISSING_COMPARABLE_SOURCE_TIME"
+    ],
+    "trading_authorized": false
+  },
+  "book_at_capture": {
+    "kalshi": {
+      "observation_id": 5,
+      "source_ts": null,
+      "received_at": "2026-10-28T00:42:01.719019+00:00",
+      "data_usable": false,
+      "rejections": [
+        "UNKNOWN_SOURCE_TIME"
+      ]
+    },
+    "us": {
+      "observation_id": 9,
+      "source_ts": "2026-10-28T00:41:56.435930936Z",
+      "received_at": "2026-10-28T00:42:14.599079+00:00",
+      "data_usable": true,
+      "rejections": []
+    }
+  },
+  "verification": {
+    "unittest_command": "python -m unittest discover -s tests -v",
+    "tests": 342,
+    "result": "OK",
+    "elapsed_seconds": "11.397",
+    "live_collectors_complete": 2,
+    "response_hashes_and_validators_passed": 9,
+    "document_hashes_passed": 12,
+    "blank_review_and_zero_approvals_verified": true,
+    "sqlite_integrity_check": "ok",
+    "research_sessions": 0,
+    "economic_opportunities": 0,
+    "pair_book_cli_exit_code": 2
+  },
+  "artifact_sha256": {
+    "us-sports-faq.md": "9aae0cfe089256db6efc5f501d20ee4b7ea2ef24556e1d0e2131b79eb0ddb77d",
+    "us-collection.json": "927a20af523e55de7ed211f9e58316025381c6bfdbba4368f0b7bf48d97535f5",
+    "kalshi-terms.txt": "0a7a7e3691c0893abd42391b33942983adaf2ee7cbc762c424717db7a6a5eea1",
+    "us-book.md": "a7067ab36d8372f67f9eae96b8ef177e120b94f33355f85ff7bf49f66d795e29",
+    "rule-source-manifest.json": "73404380f8772d6af454525767f1d6650441b3c0d8938ac02412b06aef0c2bd0",
+    "us-book-at-capture.json": "8a8c16154cd21788da6f59f4c50f2dbbdefbee0f7ddd0f36bdb40db0653da7e5",
+    "pair-evidence.json": "36acbdd9f8f0e19fe1bf82609c54945d07f1a7014f02c3a5e14bd8d9484e3df4",
+    "observation-8.json": "53ad45607da03d0c1651336d5d2f23ffbe8dbcb69a5b342750c6e7f71a6cc92b",
+    "kalshi-series.md": "1166e0fb430a488f18f7718c09d965606fd5b2937d1bfbfcdb96b86a7a2a262e",
+    "kalshi-market.md": "3134644faca99509f47b569c60d323a2c2d4b3a6e7beeee9243fd142353b62f5",
+    "kalshi-event.md": "144979947cda0a4eba11ec3cdcea389af7b3c79b3f267153766607d144b9c6fa",
+    "us-market.md": "16f599df2f2606ae8e661b557793274d61d50e33862a10d033e52c09e783f7cf",
+    "us-rulebook-redirect-0.html": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "observation-9.json": "085967e869965037fcf37eb7b1fd7a7a1c9cbf25aa59db378d7532547bf49b74",
+    "us-rulebook-redirect-1.html": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "imported-documents.json": "fdc968956aa4a647a3beb315a80c2854c3b8277c08165e816bb72aa86f0f79d5",
+    "human-review-blank.json": "694aa236d9a984f7bc53e38c616a4f95e0ba39573052ee74831cdb8284ec8aef",
+    "unittest.log": "923749e49ae48e2b49191e1cffe40410eaeaacd89b3a03828a8c2410f3037ca0",
+    "rulebook-fetch.json": "2e8287b52e836ad2b173314c59974646cb7137b97fc13591936704fe1b58b82e",
+    "observation-3.json": "d31591ff75d0f9225e35a361b768d5deda9fa408b0a4157ecc51d19b0c740706",
+    "us-rulebook.txt": "a341aaab42501c1e0e5fc9daff70e17b2998244240ebb15a9a06efc722dd9c12",
+    "observation-4.json": "66683922d0bb6201d4ba6c9e1ee90e6f007ab65b6c6158c4fff3683a80824849",
+    "api-source-manifest.json": "8b4eb28fb27cc177ca12a181516f6df670e1146976f0dae7f119765e3d5c176f",
+    "observation-5.json": "e5abca44e61ff488e92d289d304e55d6be97cb115bc5030bc6a912767e445cef",
+    "observation-7.json": "f36daaa1fcd896f9fdfd2a991f06ef808c56d5acaceca4e6f89329e7794608d1",
+    "kalshi-certification.txt": "820d819bf61e30ad074ffa3d82ce5cc46ff21db5e5837ff1878265fa8fa578c4",
+    "kalshi-book.md": "48b3a67a41f0aa341ca33cb123bba1c79eadf4419ac82431145d38666133951d",
+    "us-rule-structure.md": "8c11fd659b4f05dc00ac2c520cd9bcebba709a5b9153c6ad131c28f5870288c4",
+    "kalshi-collection.json": "3c95f05cd9176ee3a712db2fa639fe1f66ed493dd43c718b795e7af52488c26c",
+    "proposal.json": "0fdfe248955022be5dd25b83f03b2cafe14f99adabf450c28021912254c845a6",
+    "observation-2.json": "43f3f63f95a4b551de43e508ca24164ec14e16e04b3f81ee4c03fa1fd403cd2c",
+    "us-rulebook.pdf": "1635f93f6ee65f0daea036f816ec52ff2d85381692e4415c81efa3695c3d43bc",
+    "observation-6.json": "705c036d29c652b5459d09a761aa7f4b88cabf606b13bf0910245e13c9e2183b",
+    "pair-book-gate.json": "5e31b6fcb5f1e076be8a4cd990eb241359891fdc37c989e834510d69b916d881",
+    "us-settlement.md": "86b9a5bf54b27614019b95d608bed6a83c5a6714af54616ebd41e3f34ad95ad3",
+    "kalshi-book-at-capture.json": "f0172fdabf7f86f179df89b59ee6ce224258f21a2c4f30775cd3ca873171b51a",
+    "kalshi-terms.pdf": "7db0904a1d578a2bca0f6a1f55d0d7962d32b76ce5fafb0e23823e5444381556",
+    "kalshi-certification.pdf": "7f41003885427b5e077a262cf71f54e3155b5c15e73c4518278ea2b2c8a8993b",
+    "public-response-fixture.json": "e1e79211b6fca624190525d1d0778957e9a30e0cd6e618812f1453e7cbfdfde6",
+    "observation-1.json": "6809e19fddd92e9a7675907a85c10f71a4350f6e5e3a018e17efb0f84fc8b37b"
+  }
+}
