@@ -26,6 +26,15 @@ class SpaceCheckedClient(HttpClient):
 def add_parser(commands):
     root = commands.add_parser('discovery', help='public US catalogue refresh and human review queue')
     actions = root.add_subparsers(dest='discovery_cmd', required=True)
+    from .semantic_cli import add_parsers
+    add_parsers(actions)
+    walk = actions.add_parser('catalogue-walk', help='resume a bounded complete-catalogue walk without inference')
+    walk.add_argument('--db', default='data/research.sqlite3')
+    walk.add_argument('--venue', choices=('kalshi','polymarket_us'), required=True)
+    walk.add_argument('--page-size', type=int, default=200)
+    walk.add_argument('--max-pages', type=int, default=20)
+    walk.add_argument('--restart', action='store_true')
+    walk.add_argument('--min-free-mb', type=int, default=1024)
     probe = actions.add_parser('embeddings-check', help='probe private model identity and actual vector dimensions')
     probe.add_argument('--db', default='data/research.sqlite3')
     for name in ('refresh', 'queue'):
@@ -96,11 +105,27 @@ def refresh(con, *, limit=20, page_size=200, max_pages=1000, books=10,
 
 
 def run(args):
+    if args.discovery_cmd.startswith('index-'):
+        from .semantic_cli import run as semantic_run
+        return semantic_run(args)
+    if args.discovery_cmd == 'catalogue-walk':
+        from .catalogue_walk import walk
+        if args.min_free_mb < 1:
+            raise ValueError('min-free-mb must be positive')
+        with connect(args.db) as con:
+            result = walk(con, kalshi if args.venue == 'kalshi' else polymarket_us,
+                          page_size=args.page_size, max_pages=args.max_pages, restart=args.restart,
+                          client=SpaceCheckedClient(con,args.venue,min_free_mb=args.min_free_mb,interval=1))
+        print(dumps(result.as_dict()))
+        return 0 if result.status == 'COMPLETE' else 2
     if args.discovery_cmd == 'refresh' and not args.offline:
         if args.min_free_mb < 1:
             raise ValueError('min-free-mb must be positive')
         if disk_usage(Path(args.db).resolve().parent).free < args.min_free_mb * 1024 * 1024:
             raise ValueError('insufficient free disk for discovery archive')
+    if args.discovery_cmd == 'refresh' and not args.offline and not args.sports_only:
+        from .semantic_cli import refresh_archive
+        return refresh_archive(args)
     with (closing(readonly(args.db)) if args.discovery_cmd == 'queue' else connect(args.db)) as con:
         if args.discovery_cmd == 'embeddings-check':
             from .embeddings import from_environment
@@ -120,7 +145,7 @@ def run(args):
         else:
             from .embeddings import from_environment
             report, code = refresh(con, limit=args.limit, page_size=args.page_size, max_pages=args.max_pages,
-                                   sports_only=args.sports_only, embedding_client=from_environment(con),
+                                   sports_only=args.sports_only, embedding_client=None,
                                    books=args.books, request_interval=args.request_interval,
                                    client_factory=lambda con, venue, **kw: SpaceCheckedClient(
                                        con, venue, min_free_mb=args.min_free_mb, **kw))

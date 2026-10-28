@@ -1,0 +1,26 @@
+[Unit]
+Description=Bounded private semantic discovery sidecar worker
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=oneshot
+User=predarb
+Group=predarb
+WorkingDirectory=/opt/predarb
+Environment=PREDARB_EMBEDDING_URL=https://cachyos.tail2be75f.ts.net/v1/embeddings
+ExecStart=/opt/predarb/.venv/bin/predarb discovery index-sync --db /var/lib/predarb/research.sqlite3 --budget 10000
+ExecStart=/opt/predarb/.venv/bin/predarb discovery index-work --db /var/lib/predarb/research.sqlite3 --kalshi-budget 128 --us-budget 128 --seconds 120
+ExecStart=/opt/predarb/.venv/bin/predarb discovery index-retrieve --db /var/lib/predarb/research.sqlite3 --query-budget 250 --limit 100
+SuccessExitStatus=2
+TimeoutStartSec=10min
+KillSignal=SIGINT
+TimeoutStopSec=30
+NoNewPrivileges=yes
+ProtectSystem=strict
+ProtectHome=yes
+ReadWritePaths=/var/lib/predarb
+PrivateTmp=yes
+UMask=0077
+MemoryMax=256M
+TasksMax=16

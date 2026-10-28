@@ -185,7 +185,7 @@ class EmbeddingTests(unittest.TestCase):
         self.con.execute('DROP TABLE embedding_cache');self.con.execute('DROP TABLE embedding_breakers')
         self.con.execute('PRAGMA user_version=7');self.con.commit()
         with connect(self.path) as migrated:
-            self.assertEqual(migrated.execute('PRAGMA user_version').fetchone()[0],8)
+            self.assertEqual(migrated.execute('PRAGMA user_version').fetchone()[0],9)
         with patch.dict('os.environ',{'PREDARB_EMBEDDING_URL':'https://gaming.example.ts.net'}), patch('predarb.embeddings.from_environment',side_effect=AssertionError('network forbidden')), redirect_stdout(StringIO()):
             with patch('sys.argv', ['predarb','discovery','refresh','--offline','--db',self.path]):
                 self.assertEqual(cli.main(),0)
@@ -263,7 +263,7 @@ class EmbeddingTests(unittest.TestCase):
         with patch('predarb.embeddings.from_environment',return_value=self.client()), patch('predarb.registry.now_utc',return_value=NOW), redirect_stdout(StringIO()) as out:
             with patch('sys.argv',['predarb','discovery','refresh','--cached-catalogues','--db',self.path]):
                 self.assertEqual(cli.main(),0)
-        self.assertEqual(json.loads(out.getvalue())['embedding']['status'],'READY')
+        self.assertEqual(json.loads(out.getvalue())['algorithm'],'semantic-discovery/m5i-v1')
 
     def test_real_private_service_invalid_vector_replay_fails_closed(self):
         fixture=json.loads((bm.FIXTURE.parent/'embedding-invalid-live.json').read_text())

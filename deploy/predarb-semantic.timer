@@ -1,0 +1,11 @@
+[Unit]
+Description=Incremental private semantic discovery backfill
+
+[Timer]
+OnBootSec=3min
+OnUnitInactiveSec=3min
+AccuracySec=15s
+Persistent=true
+
+[Install]
+WantedBy=timers.target

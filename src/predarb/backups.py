@@ -17,7 +17,7 @@ def readonly(path):
     con = sqlite3.connect(target.as_uri() + '?mode=ro', uri=True, timeout=5)
     try:
         version = con.execute('PRAGMA user_version').fetchone()[0]
-        if version > 8: raise ValueError('unsupported read-only database schema version ' + str(version))
+        if version > 9: raise ValueError('unsupported read-only database schema version ' + str(version))
         return con
     except BaseException:
         con.close()
@@ -39,7 +39,7 @@ def fingerprint(con):
     if con.execute('PRAGMA foreign_key_check').fetchone() is not None:
         raise ValueError('SQLite foreign-key check failed')
     version = con.execute('PRAGMA user_version').fetchone()[0]
-    if not 1 <= version <= 8:
+    if not 1 <= version <= 9:
         raise ValueError('unsupported backup schema')
     digest = sha256()
     counts = {}
@@ -47,8 +47,15 @@ def fingerprint(con):
         digest.update(dumps([name, sql]).encode())
         count = 0
         quoted = '"' + name.replace('"', '""') + '"'
-        for row in con.execute('SELECT * FROM ' + quoted + ' ORDER BY rowid'):
-            # These schemas use rowid tables; type tags avoid BLOB/string collisions.
+        order = 'rowid'
+        if 'WITHOUT ROWID' in sql.upper():
+            keys = sorted((r[5], r[1]) for r in con.execute('PRAGMA table_info(' + quoted + ')') if r[5])
+            if not keys:
+                raise ValueError('WITHOUT ROWID table lacks a primary key')
+            order = ','.join('"' + name.replace('"', '""') + '"' for _, name in keys)
+        for row in con.execute('SELECT * FROM ' + quoted + ' ORDER BY ' + order):
+            # Type tags avoid BLOB/string collisions, including persistent vectors.
+
             typed = [('bytes', value.hex()) if isinstance(value, bytes) else (type(value).__name__, value) for value in row]
             digest.update(dumps(typed).encode());digest.update(b'\n');count += 1
         counts[name] = count
@@ -105,7 +112,7 @@ def read_manifest(path):
     utc_time(text_field(manifest, 'created_at'))
     if text_field(manifest, 'format') != 'predarb-backup/m5-v1':
         raise ValueError('unsupported backup manifest format')
-    if not 1 <= field(manifest, 'schema_version', int) <= 8:
+    if not 1 <= field(manifest, 'schema_version', int) <= 9:
         raise ValueError('unsupported backup manifest schema')
     for key in ('file_sha256', 'logical_sha256'):
         if not re.fullmatch('[0-9a-f]{64}', text_field(manifest, key)):

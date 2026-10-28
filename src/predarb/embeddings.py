@@ -88,7 +88,7 @@ class Config:
     retries: int = 2
     batch_size: int = 16
     cooldown: int = 60
-    max_items: int = 512  # per venue; explicitly reported coverage cap
+    max_items: int = 512  # legacy synthetic benchmark only; production uses semantic.index_batch
     max_requests: int = 100
     cache_days: int = 30
     cache_rows: int = 20000
@@ -263,7 +263,7 @@ def from_environment(con):
 
 
 def retrieve(con, pools, client, *, top_k=5, minimum=0.75):
-    """Bounded cosine neighbours. Float math is exclusively retrieval, never money."""
+    """Legacy synthetic benchmark helper; production uses the persistent semantic index."""
     selected = [[row for row in pool if row['features']['sports'] is None][:client.config.max_items] for pool in pools]
     report = {'status': 'READY', 'eligible': [len(p) for p in pools], 'selected': [len(p) for p in selected], 'embedded': [0, 0],
               'non_sports_eligible': [sum(r['features']['sports'] is None for r in p) for p in pools],

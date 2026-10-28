@@ -110,7 +110,7 @@ class ReadinessTests(unittest.TestCase):
         self.assertEqual(code, 2)
         self.assertEqual(load_json(text)['checks'][0]['code'], 'DATABASE_SCHEMA')
         self.assertEqual(self.con.execute('PRAGMA user_version').fetchone()[0], 6)
-        self.con.execute('PRAGMA user_version=9'); self.con.commit()
+        self.con.execute('PRAGMA user_version=10'); self.con.commit()
         self.assertEqual(self.invoke()[0], 1)
 
     def test_registry_bound_and_malformed_pair_do_not_hide_other_results(self):

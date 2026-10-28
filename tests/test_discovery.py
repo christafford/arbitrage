@@ -300,7 +300,7 @@ class DiscoveryTests(unittest.TestCase):
         self.db.execute('PRAGMA user_version=5')
         self.db.commit()
         with connect(self.path) as migrated:
-            self.assertEqual(migrated.execute('PRAGMA user_version').fetchone()[0], 8)
+            self.assertEqual(migrated.execute('PRAGMA user_version').fetchone()[0], 9)
             self.assertEqual(migrated.execute('SELECT COUNT(*) FROM registry_instruments').fetchone()[0], 2)
             self.assertEqual(migrated.execute('SELECT COUNT(*) FROM discovery_queue').fetchone()[0], 0)
 

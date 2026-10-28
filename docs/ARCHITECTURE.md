@@ -317,3 +317,16 @@ to generic/embedding retrieval while preserving dedicated/unknown sports gates.
 Broad sports coverage and embedding diagnostics are stored atomically with the
 queue report before narrowing to queued instruments. SQLite remains schema 8.
 [Correction and validation](EMBEDDING_CATEGORY_RESULTS.md).
+
+## M5I asynchronous semantic discovery
+
+Schema 9 adds `catalogue_walk_pages` and lookup indexes. The source archive retains
+its single-writer boundary. `catalogue_walk.py` commits resumable page checkpoints;
+`semantic.py` streams source definitions into a separately locked SQLite sidecar.
+FTS5 documents, model-isolated vector BLOBs, integrity hashes, indexed random
+hyperplane buckets, progress and a bounded diverse event reservoir persist across
+worker restarts. The sidecar archives inference responses before conversion.
+Source IDs/version IDs/raw references remain provenance pointers to the read-only
+source archive. Final retrieval rechecks source eligibility and current versions.
+`semantic_cli.py` provides sync/work/retrieve/coverage commands; ordinary discovery
+refresh never calls inference. See [bounds and failure modes](M5I_OPERATIONS.md).

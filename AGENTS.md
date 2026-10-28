@@ -27,3 +27,22 @@ You are implementing a **capital-constrained, US-only, research-first prediction
 ## Definition of done
 
 Every added path has tests (success, missing fields, stale data, invalid prices, partial liquidity where relevant). Docs explain setup, verification, operational failure modes. Run code; inspect output; do not fabricate evidence. Keep changes focused and committed in small logical units where repository supports commits.
+
+## M5I semantic discovery boundary
+
+- Stop after M5I. No M6, orders, automatic equivalence decisions, or changes to
+  settlement/fee/clock/collateral gates are authorized.
+- Production semantic work uses the separate `.semantic.sqlite3` sidecar. Open the
+  source archive read-only in workers; never hold its writer lock during inference.
+- `discovery refresh` performs collection and bounded indexed retrieval without
+  inference. Use `index-sync`, `index-work`, and `index-retrieve` for resumable
+  asynchronous work. `--cached-catalogues` must make no venue requests.
+- Catalogue coverage, metadata synchronization, vector coverage, and evaluated
+  recall are separate denominators. Report UNKNOWN categories/deadlines honestly.
+  A provider prefix or a filled review queue is not representative coverage.
+- Preserve model namespaces, raw inference provenance, current source versions,
+  stale-data exclusions, and deterministic retrieval during AI outages. Approximate
+  bucket saturation and remaining traversal/backfill must remain visible.
+- Genuine evaluation labels describe ordinary propositions, not legal equivalence.
+  Assistant labels require independent operator adjudication before any quality
+  claim beyond the documented corpus; never convert them into registry approvals.

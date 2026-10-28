@@ -146,7 +146,7 @@ class ResearchTests(unittest.TestCase):
     def test_schema_three_migration_preserves_raw_and_registry_without_fabricated_scans(self):
         drop_m4_tables(self.db);self.db.execute('PRAGMA user_version=3');self.db.commit();self.db.close()
         self.db=connect(self.path);self.addCleanup(self.db.close)
-        self.assertEqual(self.db.execute('PRAGMA user_version').fetchone()[0],8)
+        self.assertEqual(self.db.execute('PRAGMA user_version').fetchone()[0],9)
         self.assertEqual(self.db.execute('SELECT COUNT(*) FROM pairs').fetchone()[0],1)
         self.assertEqual(self.db.execute('SELECT COUNT(*) FROM research_cycles').fetchone()[0],0)
 

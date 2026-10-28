@@ -179,3 +179,13 @@ clocks and adapter schema. Eight explicit non-sports categories carry generic
 futures fields; a sports future and an undocumented election enum are conservative
 negative cases. These are actual metadata, not equivalence labels or hypothetical
 prices. Test mutations are explicitly hypothetical.
+
+`m5i-genuine-evaluation.json` contains 49 genuine, reserialized public market
+excerpts, 18 assistant-labeled ordinary-proposition positives and 20 explicit hard
+negatives. Parent raw response hashes, adapter schema versions, public source URLs,
+receipt clocks and excerpt hashes are retained. Labels are not operator approvals;
+the purposive corpus is not representative or independently adjudicated.
+`m5i-live-review.json` contains two freshly recaptured genuine market excerpts for
+the first final review candidate, with the same provenance fields. Neither fixture
+is hypothetical. Mutations and generated inputs in `test_semantic.py` are explicitly
+hypothetical and cannot become evidence of live equivalence.

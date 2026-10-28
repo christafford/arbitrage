@@ -521,7 +521,7 @@ class StreamCaptureTests(unittest.TestCase):
         self.db.execute('PRAGMA user_version=6'); self.db.commit()
         old = self.db.execute('SELECT * FROM raw_observations').fetchall()
         with connect(self.path) as migrated:
-            self.assertEqual(migrated.execute('PRAGMA user_version').fetchone()[0], 8)
+            self.assertEqual(migrated.execute('PRAGMA user_version').fetchone()[0], 9)
             self.assertEqual(migrated.execute('SELECT * FROM raw_observations').fetchall(), old)
             self.assertEqual(migrated.execute('SELECT COUNT(*) FROM ws_connections').fetchone()[0], 0)
 

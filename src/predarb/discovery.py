@@ -451,7 +451,20 @@ def refresh_queue(con, *, catalogue_coverage_at_refresh=None, sports_coverage_at
 
 
 def queue(con, *, limit=20, now=None, sports_only=False):
+    if not 1 <= limit <= 1000:
+        raise ValueError('queue limit must be 1..1000')
     # Recompute validity/ranking at read time; stored snapshots are never authority.
+    stored = con.execute('SELECT report_json FROM discovery_state WHERE id=1').fetchone()
+    if stored and json.loads(stored[0]).get('algorithm') == 'semantic-discovery/m5i-v1':
+        from .semantic_cli import revalidate_candidates
+        report = json.loads(stored[0])
+        report['candidates'] = revalidate_candidates(con, report['candidates'], now=now)
+        if sports_only:
+            report['candidates'] = [r for r in report['candidates'] if r['match_basis'] == 'SPORTS_EVENT_IDENTITY']
+        report['candidates'] = report['candidates'][:limit]
+        report['last_queue_refresh'] = report['ranked_at']
+        report['validated_at'] = (now or registry.now_utc()).isoformat()
+        return report
     keys = con.execute('SELECT kalshi_id,polymarket_us_id FROM discovery_queue').fetchall()
     semantic = {}
     for (encoded,) in con.execute('SELECT candidate_json FROM discovery_queue'):
