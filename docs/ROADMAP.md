@@ -225,3 +225,16 @@ See [measured results and 20-event review shortlist](M5I_RESULTS.md),
 bounded validation are complete; broad production acceptance is **not complete**.
 No service was activated, real contract approved, or trading/funding path added.
 Stop after M5I; M6 remains unauthorized and previous sustained-run gaps remain open.
+
+### M5I backfill and collection run — authorized October 28, running
+
+- [x] Verified source/sidecar backups, source schema-9 migration, fixed-deadline
+  independent collection and semantic user services; bounded retry/storage/memory
+  controls, exact model fingerprint pin, restart checkpoints and operational tests.
+- [x] First fresh terminal catalogue passes: 156,891 Kalshi and 82,413 unique US
+  markets; complete metadata sync and multiple actual inference/retrieval batches.
+- [ ] Finish and inspect the 24-hour run, final vector coverage, catalogue refreshes,
+  throughput, failures and remaining backlog. Startup is not full-run acceptance.
+
+See [run evidence and monitoring](M5I_RUN_20261028.md). Broad quality adjudication
+and incremental semantic yield remain open. No M6 or trading work is authorized.

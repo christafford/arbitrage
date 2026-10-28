@@ -2,6 +2,11 @@
 
 **Implementation and bounded validation are complete; production backfill and broad quality acceptance remain partial.** All candidates are `UNVERIFIED`. No real contract, fee, collateral review or trading permission was approved. No order, deposit, credential or public inference endpoint was added. Work stops at M5I.
 
+**Operational follow-up:** the operator subsequently authorized a bounded 24-hour
+collection/backfill run on October 28. It is active; see the separate
+[run record](M5I_RUN_20261028.md) for newer coverage and service status. The
+measurements below remain the original M5I implementation snapshot.
+
 ## Measured coverage and performance
 
 The source archive already contained terminal catalogue walks: Kalshi run 22 captured **151,380 unique instruments across 757 pages**, finishing 2026-10-28 00:04 UTC; US run 23 captured **80,066 unique instruments across 402 pages**, finishing 00:18 UTC (three duplicates). M5I reused that evidence instead of treating the earlier 20-page prefix as representative. The source archive stayed at schema 8 and was opened read-only by workers. Schema 9 is used for new archives and adds resumable page checkpoints.
