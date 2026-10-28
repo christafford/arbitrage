@@ -1,0 +1,237 @@
+[
+  {
+    "command": [
+      "/home/chris/code/arbitrage/.venv/bin/predarb",
+      "demo",
+      "--db",
+      "data/m5i/smoke/demo.sqlite3"
+    ],
+    "code": 0,
+    "stdout": "HYPOTHETICAL EXAMPLE ONLY \u2014 not a trade signal or verified exchange quotes\npairs=400 required_capital=$391.000 modeled_profit=$9.000 ROI=2.302%\n",
+    "stderr": "",
+    "elapsed_seconds": 0.2627798459980113
+  },
+  {
+    "command": [
+      "/home/chris/code/arbitrage/.venv/bin/predarb",
+      "report",
+      "--db",
+      "data/m5i/smoke/demo.sqlite3"
+    ],
+    "code": 0,
+    "stdout": "Read-only archive counts: {}\nCollection runs (id, venue, status, pages, records, unique, duplicates): []\nBook captures (freshness AT CAPTURE, liquidity, count): []\nAll live catalogue entries and books are UNVERIFIED; no actionable signals\nNormalized book assessments (data usable AT ASSESSMENT, count): []\nPair decisions (hypothetical, status, count; no trading authority): []\nHypothetical evaluations: 1 (sum of *example modeled* profits, NOT realized P&L: $9.00)\n",
+    "stderr": "",
+    "elapsed_seconds": 0.144001289998414
+  },
+  {
+    "command": [
+      "/home/chris/code/arbitrage/.venv/bin/predarb",
+      "discovery",
+      "refresh",
+      "--offline",
+      "--db",
+      "data/m5i/smoke/demo.sqlite3"
+    ],
+    "code": 0,
+    "stdout": "{\"algorithm\":\"discovery-v3-category\",\"candidate_scope\":\"ALL_SUPPORTED\",\"candidates\":[],\"coverage\":{\"kalshi\":{\"eligible\":0,\"full_catalogue_received_at\":null,\"full_catalogue_run_id\":null,\"full_catalogue_status\":null,\"latest_run_status\":null,\"scope\":\"all\",\"stored\":0,\"truncated\":false},\"polymarket_us\":{\"eligible\":0,\"full_catalogue_received_at\":null,\"full_catalogue_run_id\":null,\"full_catalogue_status\":null,\"latest_run_status\":null,\"scope\":\"all\",\"stored\":0,\"truncated\":false}},\"embedding\":{\"status\":\"DISABLED\"},\"ranked_at\":\"2026-10-28T02:25:42.613203+00:00\",\"sports_coverage\":{\"kalshi\":{\"recognized\":0,\"supported_game_winners\":0,\"unsupported_reasons\":{}},\"polymarket_us\":{\"recognized\":0,\"supported_game_winners\":0,\"unsupported_reasons\":{}}}}\n",
+    "stderr": "",
+    "elapsed_seconds": 0.1638915929979703
+  },
+  {
+    "command": [
+      "/home/chris/code/arbitrage/.venv/bin/predarb",
+      "discovery",
+      "refresh",
+      "--cached-catalogues",
+      "--books",
+      "0",
+      "--db",
+      "data/m5i/smoke/demo.sqlite3"
+    ],
+    "code": 0,
+    "stdout": "{\"algorithm\":\"semantic-discovery/m5i-v1\",\"candidates\":[],\"collection_runs\":[],\"coverage\":{\"at\":\"2026-10-28T02:25:42.906097+00:00\",\"collection\":{\"kalshi\":[null,null],\"polymarket_us\":[null,null]},\"groups\":[],\"horizon_note\":\"Administrative deadline proxy; cash availability and settlement timing remain unverified\",\"identity\":null,\"last_full_scan\":\"2026-10-28T02:25:42.898510+00:00\",\"venues\":{\"kalshi\":{\"source_total\":0,\"unsynced\":0},\"polymarket_us\":{\"source_total\":0,\"unsynced\":0}}},\"errors\":[],\"ranked_at\":\"2026-10-28T02:25:42.906097+00:00\",\"retained_deterministic_candidates\":0,\"retrieval\":{\"approximate\":true,\"bucket_saturations\":0,\"candidate_cap\":256,\"deterministic_enabled\":true,\"identity\":null,\"model\":null,\"queries\":0,\"vector_failures\":0,\"window_complete\":true},\"sidecar_writable\":true}\n",
+    "stderr": "",
+    "elapsed_seconds": 0.3027322479974828
+  },
+  {
+    "command": [
+      "/home/chris/code/arbitrage/.venv/bin/predarb",
+      "discovery",
+      "queue",
+      "--db",
+      "data/m5i/smoke/demo.sqlite3"
+    ],
+    "code": 0,
+    "stdout": "{\"algorithm\":\"semantic-discovery/m5i-v1\",\"candidates\":[],\"collection_runs\":[],\"coverage\":{\"at\":\"2026-10-28T02:25:42.906097+00:00\",\"collection\":{\"kalshi\":[null,null],\"polymarket_us\":[null,null]},\"groups\":[],\"horizon_note\":\"Administrative deadline proxy; cash availability and settlement timing remain unverified\",\"identity\":null,\"last_full_scan\":\"2026-10-28T02:25:42.898510+00:00\",\"venues\":{\"kalshi\":{\"source_total\":0,\"unsynced\":0},\"polymarket_us\":{\"source_total\":0,\"unsynced\":0}}},\"errors\":[],\"last_queue_refresh\":\"2026-10-28T02:25:42.906097+00:00\",\"ranked_at\":\"2026-10-28T02:25:42.906097+00:00\",\"retained_deterministic_candidates\":0,\"retrieval\":{\"approximate\":true,\"bucket_saturations\":0,\"candidate_cap\":256,\"deterministic_enabled\":true,\"identity\":null,\"model\":null,\"queries\":0,\"vector_failures\":0,\"window_complete\":true},\"sidecar_writable\":true,\"validated_at\":\"2026-10-28T02:25:43.080254+00:00\"}\n",
+    "stderr": "",
+    "elapsed_seconds": 0.14723462799884146
+  },
+  {
+    "command": [
+      "/home/chris/code/arbitrage/.venv/bin/predarb",
+      "discovery",
+      "index-coverage",
+      "--db",
+      "data/m5i/smoke/demo.sqlite3"
+    ],
+    "code": 0,
+    "stdout": "{\"at\":\"2026-10-28T02:25:43.244085+00:00\",\"collection\":{\"kalshi\":[null,null],\"polymarket_us\":[null,null]},\"groups\":[],\"horizon_note\":\"Administrative deadline proxy; cash availability and settlement timing remain unverified\",\"identity\":null,\"last_full_scan\":\"2026-10-28T02:25:42.898510+00:00\",\"venues\":{\"kalshi\":{\"source_total\":0,\"unsynced\":0},\"polymarket_us\":{\"source_total\":0,\"unsynced\":0}}}\n",
+    "stderr": "",
+    "elapsed_seconds": 0.1746198840010038
+  },
+  {
+    "command": [
+      "/home/chris/code/arbitrage/.venv/bin/predarb",
+      "discovery",
+      "index-retrieve",
+      "--db",
+      "data/m5i/eval-live/source.sqlite3",
+      "--index-db",
+      "data/m5i/eval-live/index.sqlite3",
+      "--query-budget",
+      "1"
+    ],
+    "code": 0,
+    "stdout": "{\"algorithm\":\"semantic-discovery/m5i-v1\",\"candidates\":[{\"algorithm\":\"semantic-discovery/m5i-v1\",\"definition_links\":{\"kalshi\":\"https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT31PHICHA-PHI\",\"polymarket_us\":\"https://gateway.polymarket.us/v1/market/slug/aec-nba-phi-cha-2026-10-31\"},\"equivalence_score_bps\":8500,\"equivalence_verified\":false,\"event_key\":\"[\\\"NBA\\\",\\\"FULL_GAME_WINNER\\\",[\\\"CHA\\\",\\\"PHI\\\"],\\\"2026-10-31\\\"]\",\"hypothetical\":false,\"kalshi_id\":\"KXNBAGAME-26OCT31PHICHA-PHI\",\"kalshi_title\":\"Philadelphia wins\",\"known_contradictions\":[],\"liquidity\":{\"kalshi\":{\"depth_proxy\":null,\"quality\":\"MISSING\"},\"polymarket_us\":{\"depth_proxy\":null,\"quality\":\"MISSING\"}},\"match_basis\":\"SPORTS_EVENT_IDENTITY\",\"mechanics\":{\"account_applicability\":\"UNVERIFIED\",\"polymarket_us_no\":\"UNSUPPORTED_SYNTHETIC_SHORT\",\"research_path\":\"CASH_FUNDED_LONG_ONLY\"},\"polymarket_event_key\":\"[\\\"NBA\\\",\\\"FULL_GAME_WINNER\\\",[\\\"CHA\\\",\\\"PHI\\\"],\\\"2026-10-31\\\"]\",\"polymarket_us_id\":\"aec-nba-phi-cha-2026-10-31\",\"polymarket_us_title\":\"Who will win in the upcoming basketball event PHI 76ers vs CHA Hornets scheduled for October 31, 2026 at 10:00 PM UTC?\",\"prior_reviews\":[],\"retrieval_reasons\":[\"EXACT_LEAGUE_PARTICIPANTS_RULE_DATE_AND_SELECTION\"],\"review_reason\":\"EVENT_IDENTITY_ONLY\",\"review_snapshot_expires_at\":\"2026-10-28T23:46:39.943182+00:00\",\"settlement_deadlines\":[\"2026-11-02T22:00:00+00:00\",\"2026-11-14T22:00:00+00:00\"],\"signals\":{\"dates\":\"SCHEDULED_RULE_DATE_MATCH\",\"league\":\"NBA\",\"market_type\":\"FULL_GAME_WINNER\",\"participants\":[\"CHA\",\"PHI\"],\"selection\":\"PHI\",\"settlement_equivalence\":\"UNVERIFIED\",\"sports_identity\":\"MATCH\",\"subject_bps\":10000},\"source_observations\":[13,36],\"source_received_at\":[\"2026-10-27T23:46:39.943182+00:00\",\"2026-10-28T00:07:06.177209+00:00\"],\"status\":\"UNVERIFIED\",\"trading_authorized\":false,\"versions\":[13,36],\"warnings\":[\"SPORTS_IDENTITY_ONLY_NOT_EQUIVALENCE\",\"SPORTS_SETTLEMENT_REVIEW_REQUIRED\",\"POSTPONEMENT_WINDOW_UNKNOWN\",\"OCCURRENCE_AND_START_TIMES_NOT_COMPARABLE\",\"ADMINISTRATIVE_CUTOFFS_DIFFER\",\"EXCEPTIONAL_FAIR_PRICE_PAYOUTS_NOT_ESTABLISHED_COMPLEMENTARY\",\"FORFEIT_AND_SOURCE_REVISION_RULES_REQUIRE_REVIEW\"]}],\"coverage\":{\"at\":\"2026-10-28T02:25:43.426799+00:00\",\"collection\":{\"kalshi\":[[1,\"COMPLETE\"],null],\"polymarket_us\":[[2,\"COMPLETE\"],null]},\"groups\":[{\"catalogued\":1,\"category\":\"UNKNOWN\",\"eligible\":1,\"indexed\":1,\"settlement_deadline_horizon\":\"8_30_DAYS\",\"venue\":\"kalshi\"},{\"catalogued\":8,\"category\":\"UNKNOWN\",\"eligible\":8,\"indexed\":8,\"settlement_deadline_horizon\":\"OVER_90_DAYS\",\"venue\":\"kalshi\"},{\"catalogued\":18,\"category\":\"sports\",\"eligible\":18,\"indexed\":18,\"settlement_deadline_horizon\":\"0_7_DAYS\",\"venue\":\"kalshi\"},{\"catalogued\":2,\"category\":\"sports\",\"eligible\":2,\"indexed\":2,\"settlement_deadline_horizon\":\"8_30_DAYS\",\"venue\":\"kalshi\"},{\"catalogued\":10,\"category\":\"macro\",\"eligible\":10,\"indexed\":10,\"settlement_deadline_horizon\":\"8_30_DAYS\",\"venue\":\"polymarket_us\"},{\"catalogued\":10,\"category\":\"sports\",\"eligible\":10,\"indexed\":10,\"settlement_deadline_horizon\":\"8_30_DAYS\",\"venue\":\"polymarket_us\"}],\"horizon_note\":\"Administrative deadline proxy; cash availability and settlement timing remain unverified\",\"identity\":\"6ad290cf06017f5a5aba88e4f878e7b3320b73c8ac1d8018d376aab00d64cb16\",\"last_full_scan\":\"2026-10-28T01:53:05.669510+00:00\",\"venues\":{\"kalshi\":{\"catalogued\":29,\"eligible\":29,\"indexed\":29,\"source_total\":29,\"unsynced\":0},\"polymarket_us\":{\"catalogued\":20,\"eligible\":20,\"indexed\":20,\"source_total\":20,\"unsynced\":0}}},\"ranked_at\":\"2026-10-28T02:25:43.426799+00:00\",\"retrieval\":{\"approximate\":true,\"bucket_saturations\":0,\"candidate_cap\":256,\"deterministic_enabled\":true,\"identity\":\"6ad290cf06017f5a5aba88e4f878e7b3320b73c8ac1d8018d376aab00d64cb16\",\"model\":\"qwen3-embedding-8b\",\"queries\":1,\"vector_failures\":0,\"window_complete\":true},\"sidecar_writable\":true}\n",
+    "stderr": "",
+    "elapsed_seconds": 0.18557376799799385
+  },
+  {
+    "command": [
+      "/home/chris/code/arbitrage/.venv/bin/predarb",
+      "discovery",
+      "--help"
+    ],
+    "code": 0,
+    "stdout": "usage: predarb discovery [-h]\n                         {index-sync,index-work,index-coverage,index-retrieve,catalogue-walk,embeddings-check,refresh,queue} ...\n\npositional arguments:\n  {index-sync,index-work,index-coverage,index-retrieve,catalogue-walk,embeddings-check,refresh,queue}\n    index-sync          M5I persistent sidecar index-sync\n    index-work          M5I persistent sidecar index-work\n    index-coverage      M5I persistent sidecar index-coverage\n    index-retrieve      M5I persistent sidecar index-retrieve\n    catalogue-walk      resume a bounded complete-catalogue walk without\n                        inference\n    embeddings-check    probe private model identity and actual vector\n                        dimensions\n\noptions:\n  -h, --help            show this help message and exit\n",
+    "stderr": "",
+    "elapsed_seconds": 0.16006619899781072
+  },
+  {
+    "command": [
+      "/home/chris/code/arbitrage/.venv/bin/predarb",
+      "discovery",
+      "catalogue-walk",
+      "--db",
+      "data/m5i/smoke/walk.sqlite3",
+      "--venue",
+      "kalshi",
+      "--page-size",
+      "2",
+      "--max-pages",
+      "1"
+    ],
+    "code": 2,
+    "stdout": "{\"books\":0,\"duplicates\":0,\"next_page\":\"CgwIyriF1wYQ8K2i0AISJEtYRVNPQ0NFUkdBTUUtMjZPQ1QyODAxMThPTElWTUlBLVRJRQ\",\"pages\":1,\"records\":2,\"run_id\":1,\"status\":\"PARTIAL\",\"unique_records\":2,\"venue\":\"kalshi\"}\n",
+    "stderr": "",
+    "elapsed_seconds": 0.48686212400207296
+  },
+  {
+    "command": [
+      "/home/chris/code/arbitrage/.venv/bin/predarb",
+      "discovery",
+      "catalogue-walk",
+      "--db",
+      "data/m5i/smoke/walk.sqlite3",
+      "--venue",
+      "kalshi",
+      "--page-size",
+      "2",
+      "--max-pages",
+      "1"
+    ],
+    "code": 2,
+    "stdout": "{\"books\":0,\"duplicates\":0,\"next_page\":\"CgwIyriF1wYQ8K2i0AISJEtYRVNPQ0NFUkdBTUUtMjZPQ1QyODAxMThPTElWTUlBLU1JQQ\",\"pages\":2,\"records\":4,\"run_id\":1,\"status\":\"PARTIAL\",\"unique_records\":4,\"venue\":\"kalshi\"}\n",
+    "stderr": "",
+    "elapsed_seconds": 0.3648341389998677
+  },
+  {
+    "command": [
+      "/home/chris/code/arbitrage/.venv/bin/predarb",
+      "discovery",
+      "catalogue-walk",
+      "--db",
+      "data/m5i/smoke/walk.sqlite3",
+      "--venue",
+      "polymarket_us",
+      "--page-size",
+      "2",
+      "--max-pages",
+      "1"
+    ],
+    "code": 2,
+    "stdout": "{\"books\":0,\"duplicates\":0,\"next_page\":\"2\",\"pages\":1,\"records\":2,\"run_id\":2,\"status\":\"PARTIAL\",\"unique_records\":2,\"venue\":\"polymarket_us\"}\n",
+    "stderr": "",
+    "elapsed_seconds": 0.6474789350031642
+  },
+  {
+    "command": [
+      "/home/chris/code/arbitrage/.venv/bin/predarb",
+      "discovery",
+      "catalogue-walk",
+      "--db",
+      "data/m5i/smoke/walk.sqlite3",
+      "--venue",
+      "polymarket_us",
+      "--page-size",
+      "2",
+      "--max-pages",
+      "1"
+    ],
+    "code": 2,
+    "stdout": "{\"books\":0,\"duplicates\":0,\"next_page\":\"4\",\"pages\":2,\"records\":4,\"run_id\":2,\"status\":\"PARTIAL\",\"unique_records\":4,\"venue\":\"polymarket_us\"}\n",
+    "stderr": "",
+    "elapsed_seconds": 0.34881067400056054
+  },
+  {
+    "command": [
+      "/home/chris/code/arbitrage/.venv/bin/predarb",
+      "discovery",
+      "index-sync",
+      "--db",
+      "data/m5i/eval-live/source.sqlite3",
+      "--index-db",
+      "data/m5i/eval-live/index.sqlite3",
+      "--budget",
+      "10"
+    ],
+    "code": 0,
+    "stdout": "{\"documents\":49,\"processed\":10,\"scan_complete\":false,\"scan_cursor\":10,\"source_instruments\":49}\n",
+    "stderr": "",
+    "elapsed_seconds": 0.20292261600116035,
+    "purpose": "Final post-change smoke without inference or venue requests"
+  },
+  {
+    "command": [
+      "/home/chris/code/arbitrage/.venv/bin/predarb",
+      "discovery",
+      "index-retrieve",
+      "--db",
+      "data/m5i/eval-live/source.sqlite3",
+      "--index-db",
+      "data/m5i/eval-live/index.sqlite3",
+      "--query-budget",
+      "1",
+      "--deterministic-only"
+    ],
+    "code": 0,
+    "stdout": "{\"algorithm\":\"semantic-discovery/m5i-v1\",\"candidates\":[{\"algorithm\":\"semantic-discovery/m5i-v1\",\"definition_links\":{\"kalshi\":\"https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT30CHIBOS-CHI\",\"polymarket_us\":\"https://gateway.polymarket.us/v1/market/slug/aec-nba-chi-bos-2026-10-30\"},\"equivalence_score_bps\":8500,\"equivalence_verified\":false,\"event_key\":\"[\\\"NBA\\\",\\\"FULL_GAME_WINNER\\\",[\\\"BOS\\\",\\\"CHI\\\"],\\\"2026-10-30\\\"]\",\"hypothetical\":false,\"kalshi_id\":\"KXNBAGAME-26OCT30CHIBOS-CHI\",\"kalshi_title\":\"Chicago wins\",\"known_contradictions\":[],\"liquidity\":{\"kalshi\":{\"depth_proxy\":null,\"quality\":\"MISSING\"},\"polymarket_us\":{\"depth_proxy\":null,\"quality\":\"MISSING\"}},\"match_basis\":\"SPORTS_EVENT_IDENTITY\",\"mechanics\":{\"account_applicability\":\"UNVERIFIED\",\"polymarket_us_no\":\"UNSUPPORTED_SYNTHETIC_SHORT\",\"research_path\":\"CASH_FUNDED_LONG_ONLY\"},\"polymarket_event_key\":\"[\\\"NBA\\\",\\\"FULL_GAME_WINNER\\\",[\\\"BOS\\\",\\\"CHI\\\"],\\\"2026-10-30\\\"]\",\"polymarket_us_id\":\"aec-nba-chi-bos-2026-10-30\",\"polymarket_us_title\":\"Who will win in the upcoming basketball event CHI Bulls vs BOS Celtics scheduled for October 30, 2026 at 11:30 PM UTC?\",\"prior_reviews\":[],\"retrieval_reasons\":[\"EXACT_LEAGUE_PARTICIPANTS_RULE_DATE_AND_SELECTION\"],\"review_reason\":\"EVENT_IDENTITY_ONLY\",\"review_snapshot_expires_at\":\"2026-10-28T23:49:29.448301+00:00\",\"settlement_deadlines\":[\"2026-11-01T23:30:00+00:00\",\"2026-11-13T23:30:00+00:00\"],\"signals\":{\"dates\":\"SCHEDULED_RULE_DATE_MATCH\",\"league\":\"NBA\",\"market_type\":\"FULL_GAME_WINNER\",\"participants\":[\"BOS\",\"CHI\"],\"selection\":\"CHI\",\"settlement_equivalence\":\"UNVERIFIED\",\"sports_identity\":\"MATCH\",\"subject_bps\":10000},\"source_observations\":[9,34],\"source_received_at\":[\"2026-10-27T23:49:29.448301+00:00\",\"2026-10-28T00:07:02.297753+00:00\"],\"status\":\"UNVERIFIED\",\"trading_authorized\":false,\"versions\":[9,34],\"warnings\":[\"SPORTS_IDENTITY_ONLY_NOT_EQUIVALENCE\",\"SPORTS_SETTLEMENT_REVIEW_REQUIRED\",\"POSTPONEMENT_WINDOW_UNKNOWN\",\"OCCURRENCE_AND_START_TIMES_NOT_COMPARABLE\",\"ADMINISTRATIVE_CUTOFFS_DIFFER\",\"EXCEPTIONAL_FAIR_PRICE_PAYOUTS_NOT_ESTABLISHED_COMPLEMENTARY\",\"FORFEIT_AND_SOURCE_REVISION_RULES_REQUIRE_REVIEW\"]},{\"algorithm\":\"semantic-discovery/m5i-v1\",\"definition_links\":{\"kalshi\":\"https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT31PHICHA-PHI\",\"polymarket_us\":\"https://gateway.polymarket.us/v1/market/slug/aec-nba-phi-cha-2026-10-31\"},\"equivalence_score_bps\":8500,\"equivalence_verified\":false,\"event_key\":\"[\\\"NBA\\\",\\\"FULL_GAME_WINNER\\\",[\\\"CHA\\\",\\\"PHI\\\"],\\\"2026-10-31\\\"]\",\"hypothetical\":false,\"kalshi_id\":\"KXNBAGAME-26OCT31PHICHA-PHI\",\"kalshi_title\":\"Philadelphia wins\",\"known_contradictions\":[],\"liquidity\":{\"kalshi\":{\"depth_proxy\":null,\"quality\":\"MISSING\"},\"polymarket_us\":{\"depth_proxy\":null,\"quality\":\"MISSING\"}},\"match_basis\":\"SPORTS_EVENT_IDENTITY\",\"mechanics\":{\"account_applicability\":\"UNVERIFIED\",\"polymarket_us_no\":\"UNSUPPORTED_SYNTHETIC_SHORT\",\"research_path\":\"CASH_FUNDED_LONG_ONLY\"},\"polymarket_event_key\":\"[\\\"NBA\\\",\\\"FULL_GAME_WINNER\\\",[\\\"CHA\\\",\\\"PHI\\\"],\\\"2026-10-31\\\"]\",\"polymarket_us_id\":\"aec-nba-phi-cha-2026-10-31\",\"polymarket_us_title\":\"Who will win in the upcoming basketball event PHI 76ers vs CHA Hornets scheduled for October 31, 2026 at 10:00 PM UTC?\",\"prior_reviews\":[],\"retrieval_reasons\":[\"EXACT_LEAGUE_PARTICIPANTS_RULE_DATE_AND_SELECTION\"],\"review_reason\":\"EVENT_IDENTITY_ONLY\",\"review_snapshot_expires_at\":\"2026-10-28T23:46:39.943182+00:00\",\"settlement_deadlines\":[\"2026-11-02T22:00:00+00:00\",\"2026-11-14T22:00:00+00:00\"],\"signals\":{\"dates\":\"SCHEDULED_RULE_DATE_MATCH\",\"league\":\"NBA\",\"market_type\":\"FULL_GAME_WINNER\",\"participants\":[\"CHA\",\"PHI\"],\"selection\":\"PHI\",\"settlement_equivalence\":\"UNVERIFIED\",\"sports_identity\":\"MATCH\",\"subject_bps\":10000},\"source_observations\":[13,36],\"source_received_at\":[\"2026-10-27T23:46:39.943182+00:00\",\"2026-10-28T00:07:06.177209+00:00\"],\"status\":\"UNVERIFIED\",\"trading_authorized\":false,\"versions\":[13,36],\"warnings\":[\"SPORTS_IDENTITY_ONLY_NOT_EQUIVALENCE\",\"SPORTS_SETTLEMENT_REVIEW_REQUIRED\",\"POSTPONEMENT_WINDOW_UNKNOWN\",\"OCCURRENCE_AND_START_TIMES_NOT_COMPARABLE\",\"ADMINISTRATIVE_CUTOFFS_DIFFER\",\"EXCEPTIONAL_FAIR_PRICE_PAYOUTS_NOT_ESTABLISHED_COMPLEMENTARY\",\"FORFEIT_AND_SOURCE_REVISION_RULES_REQUIRE_REVIEW\"]}],\"coverage\":{\"at\":\"2026-10-28T13:01:25.594065+00:00\",\"collection\":{\"kalshi\":[[1,\"COMPLETE\"],null],\"polymarket_us\":[[2,\"COMPLETE\"],null]},\"groups\":[{\"catalogued\":1,\"category\":\"UNKNOWN\",\"eligible\":1,\"indexed\":1,\"settlement_deadline_horizon\":\"8_30_DAYS\",\"venue\":\"kalshi\"},{\"catalogued\":8,\"category\":\"UNKNOWN\",\"eligible\":8,\"indexed\":8,\"settlement_deadline_horizon\":\"OVER_90_DAYS\",\"venue\":\"kalshi\"},{\"catalogued\":18,\"category\":\"sports\",\"eligible\":18,\"indexed\":18,\"settlement_deadline_horizon\":\"0_7_DAYS\",\"venue\":\"kalshi\"},{\"catalogued\":2,\"category\":\"sports\",\"eligible\":2,\"indexed\":2,\"settlement_deadline_horizon\":\"8_30_DAYS\",\"venue\":\"kalshi\"},{\"catalogued\":10,\"category\":\"macro\",\"eligible\":10,\"indexed\":10,\"settlement_deadline_horizon\":\"8_30_DAYS\",\"venue\":\"polymarket_us\"},{\"catalogued\":10,\"category\":\"sports\",\"eligible\":10,\"indexed\":10,\"settlement_deadline_horizon\":\"8_30_DAYS\",\"venue\":\"polymarket_us\"}],\"horizon_note\":\"Administrative deadline proxy; cash availability and settlement timing remain unverified\",\"identity\":\"6ad290cf06017f5a5aba88e4f878e7b3320b73c8ac1d8018d376aab00d64cb16\",\"last_full_scan\":\"2026-10-28T01:53:05.669510+00:00\",\"venues\":{\"kalshi\":{\"catalogued\":29,\"eligible\":29,\"indexed\":29,\"source_total\":29,\"unsynced\":0},\"polymarket_us\":{\"catalogued\":20,\"eligible\":20,\"indexed\":20,\"source_total\":20,\"unsynced\":0}}},\"ranked_at\":\"2026-10-28T13:01:25.594065+00:00\",\"retrieval\":{\"approximate\":true,\"bucket_saturations\":0,\"candidate_cap\":256,\"deterministic_enabled\":true,\"identity\":null,\"model\":null,\"queries\":1,\"vector_failures\":0,\"window_complete\":true},\"sidecar_writable\":true}\n",
+    "stderr": "",
+    "elapsed_seconds": 0.1789646260003792,
+    "purpose": "Final post-change smoke without inference or venue requests"
+  },
+  {
+    "command": [
+      "/home/chris/code/arbitrage/.venv/bin/predarb",
+      "discovery",
+      "queue",
+      "--db",
+      "data/m5i/smoke/demo.sqlite3"
+    ],
+    "code": 0,
+    "stdout": "{\"algorithm\":\"semantic-discovery/m5i-v1\",\"candidates\":[],\"collection_runs\":[],\"coverage\":{\"at\":\"2026-10-28T02:25:42.906097+00:00\",\"collection\":{\"kalshi\":[null,null],\"polymarket_us\":[null,null]},\"groups\":[],\"horizon_note\":\"Administrative deadline proxy; cash availability and settlement timing remain unverified\",\"identity\":null,\"last_full_scan\":\"2026-10-28T02:25:42.898510+00:00\",\"venues\":{\"kalshi\":{\"source_total\":0,\"unsynced\":0},\"polymarket_us\":{\"source_total\":0,\"unsynced\":0}}},\"errors\":[],\"last_queue_refresh\":\"2026-10-28T02:25:42.906097+00:00\",\"ranked_at\":\"2026-10-28T02:25:42.906097+00:00\",\"retained_deterministic_candidates\":0,\"retrieval\":{\"approximate\":true,\"bucket_saturations\":0,\"candidate_cap\":256,\"deterministic_enabled\":true,\"identity\":null,\"model\":null,\"queries\":0,\"vector_failures\":0,\"window_complete\":true},\"sidecar_writable\":true,\"validated_at\":\"2026-10-28T13:01:25.751481+00:00\"}\n",
+    "stderr": "",
+    "elapsed_seconds": 0.1453757279959973,
+    "purpose": "Final post-change smoke without inference or venue requests"
+  }
+]

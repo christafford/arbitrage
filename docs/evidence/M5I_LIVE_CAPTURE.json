@@ -1,0 +1,2739 @@
+{
+  "schema": "m5i-live-review-capture/v1",
+  "hypothetical": false,
+  "archive": "data/m5i/live-review.sqlite3",
+  "captures": [
+    {
+      "kalshi_id": "KXNBAGAME-26OCT28CHADET-CHA",
+      "polymarket_us_id": "aec-nba-cha-det-2026-10-28",
+      "runs": [
+        {
+          "run_id": 1,
+          "venue": "kalshi",
+          "status": "COMPLETE",
+          "pages": 1,
+          "records": 2,
+          "unique_records": 2,
+          "duplicates": 0,
+          "next_page": null,
+          "books": 0
+        },
+        {
+          "run_id": 2,
+          "venue": "polymarket_us",
+          "status": "COMPLETE",
+          "pages": 2,
+          "records": 1,
+          "unique_records": 1,
+          "duplicates": 0,
+          "next_page": null,
+          "books": 0
+        }
+      ],
+      "errors": [],
+      "available": [
+        true,
+        true
+      ],
+      "sports_identities": [
+        [
+          "NBA",
+          "FULL_GAME_WINNER",
+          [
+            "CHA",
+            "DET"
+          ],
+          "2026-10-28",
+          "CHA"
+        ],
+        [
+          "NBA",
+          "FULL_GAME_WINNER",
+          [
+            "CHA",
+            "DET"
+          ],
+          "2026-10-28",
+          "CHA"
+        ]
+      ],
+      "live_identity_confirmed": true,
+      "captured_at": "2026-10-28T02:00:56.242842+00:00",
+      "versions": [
+        2,
+        3
+      ],
+      "status": "UNVERIFIED",
+      "equivalence_verified": false,
+      "trading_authorized": false
+    },
+    {
+      "kalshi_id": "KXNBAGAME-26OCT28DENNOP-DEN",
+      "polymarket_us_id": "aec-nba-den-no-2026-10-28",
+      "runs": [
+        {
+          "run_id": 3,
+          "venue": "kalshi",
+          "status": "COMPLETE",
+          "pages": 1,
+          "records": 2,
+          "unique_records": 2,
+          "duplicates": 0,
+          "next_page": null,
+          "books": 0
+        },
+        {
+          "run_id": 4,
+          "venue": "polymarket_us",
+          "status": "COMPLETE",
+          "pages": 2,
+          "records": 1,
+          "unique_records": 1,
+          "duplicates": 0,
+          "next_page": null,
+          "books": 0
+        }
+      ],
+      "errors": [],
+      "available": [
+        true,
+        true
+      ],
+      "sports_identities": [
+        [
+          "NBA",
+          "FULL_GAME_WINNER",
+          [
+            "DEN",
+            "NOP"
+          ],
+          "2026-10-28",
+          "DEN"
+        ],
+        [
+          "NBA",
+          "FULL_GAME_WINNER",
+          [
+            "DEN",
+            "NOP"
+          ],
+          "2026-10-28",
+          "DEN"
+        ]
+      ],
+      "live_identity_confirmed": true,
+      "captured_at": "2026-10-28T02:00:58.266769+00:00",
+      "versions": [
+        5,
+        6
+      ],
+      "status": "UNVERIFIED",
+      "equivalence_verified": false,
+      "trading_authorized": false
+    },
+    {
+      "kalshi_id": "KXNBAGAME-26OCT28GSWMIN-GSW",
+      "polymarket_us_id": "aec-nba-gs-min-2026-10-28",
+      "runs": [
+        {
+          "run_id": 5,
+          "venue": "kalshi",
+          "status": "COMPLETE",
+          "pages": 1,
+          "records": 2,
+          "unique_records": 2,
+          "duplicates": 0,
+          "next_page": null,
+          "books": 0
+        },
+        {
+          "run_id": 6,
+          "venue": "polymarket_us",
+          "status": "COMPLETE",
+          "pages": 2,
+          "records": 1,
+          "unique_records": 1,
+          "duplicates": 0,
+          "next_page": null,
+          "books": 0
+        }
+      ],
+      "errors": [],
+      "available": [
+        true,
+        true
+      ],
+      "sports_identities": [
+        [
+          "NBA",
+          "FULL_GAME_WINNER",
+          [
+            "GSW",
+            "MIN"
+          ],
+          "2026-10-28",
+          "GSW"
+        ],
+        [
+          "NBA",
+          "FULL_GAME_WINNER",
+          [
+            "GSW",
+            "MIN"
+          ],
+          "2026-10-28",
+          "GSW"
+        ]
+      ],
+      "live_identity_confirmed": true,
+      "captured_at": "2026-10-28T02:01:01.293744+00:00",
+      "versions": [
+        8,
+        9
+      ],
+      "status": "UNVERIFIED",
+      "equivalence_verified": false,
+      "trading_authorized": false
+    },
+    {
+      "kalshi_id": "KXNBAGAME-26OCT28HOUMIL-HOU",
+      "polymarket_us_id": "aec-nba-hou-mil-2026-10-28",
+      "runs": [
+        {
+          "run_id": 7,
+          "venue": "kalshi",
+          "status": "COMPLETE",
+          "pages": 1,
+          "records": 2,
+          "unique_records": 2,
+          "duplicates": 0,
+          "next_page": null,
+          "books": 0
+        },
+        {
+          "run_id": 8,
+          "venue": "polymarket_us",
+          "status": "COMPLETE",
+          "pages": 2,
+          "records": 1,
+          "unique_records": 1,
+          "duplicates": 0,
+          "next_page": null,
+          "books": 0
+        }
+      ],
+      "errors": [],
+      "available": [
+        true,
+        true
+      ],
+      "sports_identities": [
+        [
+          "NBA",
+          "FULL_GAME_WINNER",
+          [
+            "HOU",
+            "MIL"
+          ],
+          "2026-10-28",
+          "HOU"
+        ],
+        [
+          "NBA",
+          "FULL_GAME_WINNER",
+          [
+            "HOU",
+            "MIL"
+          ],
+          "2026-10-28",
+          "HOU"
+        ]
+      ],
+      "live_identity_confirmed": true,
+      "captured_at": "2026-10-28T02:01:04.336879+00:00",
+      "versions": [
+        11,
+        12
+      ],
+      "status": "UNVERIFIED",
+      "equivalence_verified": false,
+      "trading_authorized": false
+    },
+    {
+      "kalshi_id": "KXNBAGAME-26OCT28LALLAC-LAL",
+      "polymarket_us_id": "aec-nba-lal-lac-2026-10-28",
+      "runs": [
+        {
+          "run_id": 9,
+          "venue": "kalshi",
+          "status": "COMPLETE",
+          "pages": 1,
+          "records": 2,
+          "unique_records": 2,
+          "duplicates": 0,
+          "next_page": null,
+          "books": 0
+        },
+        {
+          "run_id": 10,
+          "venue": "polymarket_us",
+          "status": "COMPLETE",
+          "pages": 2,
+          "records": 1,
+          "unique_records": 1,
+          "duplicates": 0,
+          "next_page": null,
+          "books": 0
+        }
+      ],
+      "errors": [],
+      "available": [
+        true,
+        true
+      ],
+      "sports_identities": [
+        [
+          "NBA",
+          "FULL_GAME_WINNER",
+          [
+            "LAC",
+            "LAL"
+          ],
+          "2026-10-28",
+          "LAL"
+        ],
+        [
+          "NBA",
+          "FULL_GAME_WINNER",
+          [
+            "LAC",
+            "LAL"
+          ],
+          "2026-10-28",
+          "LAL"
+        ]
+      ],
+      "live_identity_confirmed": true,
+      "captured_at": "2026-10-28T02:01:05.638840+00:00",
+      "versions": [
+        13,
+        15
+      ],
+      "status": "UNVERIFIED",
+      "equivalence_verified": false,
+      "trading_authorized": false
+    },
+    {
+      "kalshi_id": "KXNBAGAME-26OCT28MIAATL-MIA",
+      "polymarket_us_id": "aec-nba-mia-atl-2026-10-28",
+      "runs": [
+        {
+          "run_id": 11,
+          "venue": "kalshi",
+          "status": "COMPLETE",
+          "pages": 1,
+          "records": 2,
+          "unique_records": 2,
+          "duplicates": 0,
+          "next_page": null,
+          "books": 0
+        },
+        {
+          "run_id": 12,
+          "venue": "polymarket_us",
+          "status": "COMPLETE",
+          "pages": 2,
+          "records": 1,
+          "unique_records": 1,
+          "duplicates": 0,
+          "next_page": null,
+          "books": 0
+        }
+      ],
+      "errors": [],
+      "available": [
+        true,
+        true
+      ],
+      "sports_identities": [
+        [
+          "NBA",
+          "FULL_GAME_WINNER",
+          [
+            "ATL",
+            "MIA"
+          ],
+          "2026-10-28",
+          "MIA"
+        ],
+        [
+          "NBA",
+          "FULL_GAME_WINNER",
+          [
+            "ATL",
+            "MIA"
+          ],
+          "2026-10-28",
+          "MIA"
+        ]
+      ],
+      "live_identity_confirmed": true,
+      "captured_at": "2026-10-28T02:01:07.625596+00:00",
+      "versions": [
+        16,
+        18
+      ],
+      "status": "UNVERIFIED",
+      "equivalence_verified": false,
+      "trading_authorized": false
+    },
+    {
+      "kalshi_id": "KXNBAGAME-26OCT28NYKCHI-NYK",
+      "polymarket_us_id": "aec-nba-ny-chi-2026-10-28",
+      "runs": [
+        {
+          "run_id": 13,
+          "venue": "kalshi",
+          "status": "COMPLETE",
+          "pages": 1,
+          "records": 2,
+          "unique_records": 2,
+          "duplicates": 0,
+          "next_page": null,
+          "books": 0
+        },
+        {
+          "run_id": 14,
+          "venue": "polymarket_us",
+          "status": "COMPLETE",
+          "pages": 2,
+          "records": 1,
+          "unique_records": 1,
+          "duplicates": 0,
+          "next_page": null,
+          "books": 0
+        }
+      ],
+      "errors": [],
+      "available": [
+        true,
+        true
+      ],
+      "sports_identities": [
+        [
+          "NBA",
+          "FULL_GAME_WINNER",
+          [
+            "CHI",
+            "NYK"
+          ],
+          "2026-10-28",
+          "NYK"
+        ],
+        [
+          "NBA",
+          "FULL_GAME_WINNER",
+          [
+            "CHI",
+            "NYK"
+          ],
+          "2026-10-28",
+          "NYK"
+        ]
+      ],
+      "live_identity_confirmed": true,
+      "captured_at": "2026-10-28T02:01:09.681564+00:00",
+      "versions": [
+        19,
+        21
+      ],
+      "status": "UNVERIFIED",
+      "equivalence_verified": false,
+      "trading_authorized": false
+    },
+    {
+      "kalshi_id": "KXNBAGAME-26OCT28OKCDAL-OKC",
+      "polymarket_us_id": "aec-nba-okc-dal-2026-10-28",
+      "runs": [
+        {
+          "run_id": 15,
+          "venue": "kalshi",
+          "status": "COMPLETE",
+          "pages": 1,
+          "records": 2,
+          "unique_records": 2,
+          "duplicates": 0,
+          "next_page": null,
+          "books": 0
+        },
+        {
+          "run_id": 16,
+          "venue": "polymarket_us",
+          "status": "COMPLETE",
+          "pages": 2,
+          "records": 1,
+          "unique_records": 1,
+          "duplicates": 0,
+          "next_page": null,
+          "books": 0
+        }
+      ],
+      "errors": [],
+      "available": [
+        true,
+        true
+      ],
+      "sports_identities": [
+        [
+          "NBA",
+          "FULL_GAME_WINNER",
+          [
+            "DAL",
+            "OKC"
+          ],
+          "2026-10-28",
+          "OKC"
+        ],
+        [
+          "NBA",
+          "FULL_GAME_WINNER",
+          [
+            "DAL",
+            "OKC"
+          ],
+          "2026-10-28",
+          "OKC"
+        ]
+      ],
+      "live_identity_confirmed": true,
+      "captured_at": "2026-10-28T02:01:12.434146+00:00",
+      "versions": [
+        22,
+        24
+      ],
+      "status": "UNVERIFIED",
+      "equivalence_verified": false,
+      "trading_authorized": false
+    },
+    {
+      "kalshi_id": "KXNBAGAME-26OCT28ORLTOR-ORL",
+      "polymarket_us_id": "aec-nba-orl-tor-2026-10-28",
+      "runs": [
+        {
+          "run_id": 17,
+          "venue": "kalshi",
+          "status": "COMPLETE",
+          "pages": 1,
+          "records": 2,
+          "unique_records": 2,
+          "duplicates": 0,
+          "next_page": null,
+          "books": 0
+        },
+        {
+          "run_id": 18,
+          "venue": "polymarket_us",
+          "status": "COMPLETE",
+          "pages": 2,
+          "records": 1,
+          "unique_records": 1,
+          "duplicates": 0,
+          "next_page": null,
+          "books": 0
+        }
+      ],
+      "errors": [],
+      "available": [
+        true,
+        true
+      ],
+      "sports_identities": [
+        [
+          "NBA",
+          "FULL_GAME_WINNER",
+          [
+            "ORL",
+            "TOR"
+          ],
+          "2026-10-28",
+          "ORL"
+        ],
+        [
+          "NBA",
+          "FULL_GAME_WINNER",
+          [
+            "ORL",
+            "TOR"
+          ],
+          "2026-10-28",
+          "ORL"
+        ]
+      ],
+      "live_identity_confirmed": true,
+      "captured_at": "2026-10-28T02:01:13.825915+00:00",
+      "versions": [
+        26,
+        27
+      ],
+      "status": "UNVERIFIED",
+      "equivalence_verified": false,
+      "trading_authorized": false
+    },
+    {
+      "kalshi_id": "KXNBAGAME-26OCT28PHIIND-PHI",
+      "polymarket_us_id": "aec-nba-phi-ind-2026-10-28",
+      "runs": [
+        {
+          "run_id": 19,
+          "venue": "kalshi",
+          "status": "COMPLETE",
+          "pages": 1,
+          "records": 2,
+          "unique_records": 2,
+          "duplicates": 0,
+          "next_page": null,
+          "books": 0
+        },
+        {
+          "run_id": 20,
+          "venue": "polymarket_us",
+          "status": "COMPLETE",
+          "pages": 2,
+          "records": 1,
+          "unique_records": 1,
+          "duplicates": 0,
+          "next_page": null,
+          "books": 0
+        }
+      ],
+      "errors": [],
+      "available": [
+        true,
+        true
+      ],
+      "sports_identities": [
+        [
+          "NBA",
+          "FULL_GAME_WINNER",
+          [
+            "IND",
+            "PHI"
+          ],
+          "2026-10-28",
+          "PHI"
+        ],
+        [
+          "NBA",
+          "FULL_GAME_WINNER",
+          [
+            "IND",
+            "PHI"
+          ],
+          "2026-10-28",
+          "PHI"
+        ]
+      ],
+      "live_identity_confirmed": true,
+      "captured_at": "2026-10-28T02:01:15.853735+00:00",
+      "versions": [
+        28,
+        30
+      ],
+      "status": "UNVERIFIED",
+      "equivalence_verified": false,
+      "trading_authorized": false
+    },
+    {
+      "kalshi_id": "KXNBAGAME-26OCT28SASUTA-SAS",
+      "polymarket_us_id": "aec-nba-sa-uta-2026-10-28",
+      "runs": [
+        {
+          "run_id": 21,
+          "venue": "kalshi",
+          "status": "COMPLETE",
+          "pages": 1,
+          "records": 2,
+          "unique_records": 2,
+          "duplicates": 0,
+          "next_page": null,
+          "books": 0
+        },
+        {
+          "run_id": 22,
+          "venue": "polymarket_us",
+          "status": "COMPLETE",
+          "pages": 2,
+          "records": 1,
+          "unique_records": 1,
+          "duplicates": 0,
+          "next_page": null,
+          "books": 0
+        }
+      ],
+      "errors": [],
+      "available": [
+        true,
+        true
+      ],
+      "sports_identities": [
+        [
+          "NBA",
+          "FULL_GAME_WINNER",
+          [
+            "SAS",
+            "UTA"
+          ],
+          "2026-10-28",
+          "SAS"
+        ],
+        [
+          "NBA",
+          "FULL_GAME_WINNER",
+          [
+            "SAS",
+            "UTA"
+          ],
+          "2026-10-28",
+          "SAS"
+        ]
+      ],
+      "live_identity_confirmed": true,
+      "captured_at": "2026-10-28T02:01:17.860482+00:00",
+      "versions": [
+        32,
+        33
+      ],
+      "status": "UNVERIFIED",
+      "equivalence_verified": false,
+      "trading_authorized": false
+    },
+    {
+      "kalshi_id": "KXNBAGAME-26OCT28WASCLE-WAS",
+      "polymarket_us_id": "aec-nba-was-cle-2026-10-28",
+      "runs": [
+        {
+          "run_id": 23,
+          "venue": "kalshi",
+          "status": "COMPLETE",
+          "pages": 1,
+          "records": 2,
+          "unique_records": 2,
+          "duplicates": 0,
+          "next_page": null,
+          "books": 0
+        },
+        {
+          "run_id": 24,
+          "venue": "polymarket_us",
+          "status": "COMPLETE",
+          "pages": 2,
+          "records": 1,
+          "unique_records": 1,
+          "duplicates": 0,
+          "next_page": null,
+          "books": 0
+        }
+      ],
+      "errors": [],
+      "available": [
+        true,
+        true
+      ],
+      "sports_identities": [
+        [
+          "NBA",
+          "FULL_GAME_WINNER",
+          [
+            "CLE",
+            "WAS"
+          ],
+          "2026-10-28",
+          "WAS"
+        ],
+        [
+          "NBA",
+          "FULL_GAME_WINNER",
+          [
+            "CLE",
+            "WAS"
+          ],
+          "2026-10-28",
+          "WAS"
+        ]
+      ],
+      "live_identity_confirmed": true,
+      "captured_at": "2026-10-28T02:01:19.918545+00:00",
+      "versions": [
+        34,
+        36
+      ],
+      "status": "UNVERIFIED",
+      "equivalence_verified": false,
+      "trading_authorized": false
+    },
+    {
+      "kalshi_id": "KXNBAGAME-26OCT29CLEATL-CLE",
+      "polymarket_us_id": "aec-nba-cle-atl-2026-10-29",
+      "runs": [
+        {
+          "run_id": 25,
+          "venue": "kalshi",
+          "status": "COMPLETE",
+          "pages": 1,
+          "records": 2,
+          "unique_records": 2,
+          "duplicates": 0,
+          "next_page": null,
+          "books": 0
+        },
+        {
+          "run_id": 26,
+          "venue": "polymarket_us",
+          "status": "COMPLETE",
+          "pages": 2,
+          "records": 1,
+          "unique_records": 1,
+          "duplicates": 0,
+          "next_page": null,
+          "books": 0
+        }
+      ],
+      "errors": [],
+      "available": [
+        true,
+        true
+      ],
+      "sports_identities": [
+        [
+          "NBA",
+          "FULL_GAME_WINNER",
+          [
+            "ATL",
+            "CLE"
+          ],
+          "2026-10-29",
+          "CLE"
+        ],
+        [
+          "NBA",
+          "FULL_GAME_WINNER",
+          [
+            "ATL",
+            "CLE"
+          ],
+          "2026-10-29",
+          "CLE"
+        ]
+      ],
+      "live_identity_confirmed": true,
+      "captured_at": "2026-10-28T02:01:21.858242+00:00",
+      "versions": [
+        37,
+        39
+      ],
+      "status": "UNVERIFIED",
+      "equivalence_verified": false,
+      "trading_authorized": false
+    },
+    {
+      "kalshi_id": "KXNBAGAME-26OCT29MEMPOR-MEM",
+      "polymarket_us_id": "aec-nba-mem-por-2026-10-29",
+      "runs": [
+        {
+          "run_id": 27,
+          "venue": "kalshi",
+          "status": "COMPLETE",
+          "pages": 1,
+          "records": 2,
+          "unique_records": 2,
+          "duplicates": 0,
+          "next_page": null,
+          "books": 0
+        },
+        {
+          "run_id": 28,
+          "venue": "polymarket_us",
+          "status": "COMPLETE",
+          "pages": 2,
+          "records": 1,
+          "unique_records": 1,
+          "duplicates": 0,
+          "next_page": null,
+          "books": 0
+        }
+      ],
+      "errors": [],
+      "available": [
+        true,
+        true
+      ],
+      "sports_identities": [
+        [
+          "NBA",
+          "FULL_GAME_WINNER",
+          [
+            "MEM",
+            "POR"
+          ],
+          "2026-10-29",
+          "MEM"
+        ],
+        [
+          "NBA",
+          "FULL_GAME_WINNER",
+          [
+            "MEM",
+            "POR"
+          ],
+          "2026-10-29",
+          "MEM"
+        ]
+      ],
+      "live_identity_confirmed": true,
+      "captured_at": "2026-10-28T02:01:23.806547+00:00",
+      "versions": [
+        41,
+        42
+      ],
+      "status": "UNVERIFIED",
+      "equivalence_verified": false,
+      "trading_authorized": false
+    },
+    {
+      "kalshi_id": "KXNBAGAME-26OCT29SACNOP-SAC",
+      "polymarket_us_id": "aec-nba-sac-no-2026-10-29",
+      "runs": [
+        {
+          "run_id": 29,
+          "venue": "kalshi",
+          "status": "COMPLETE",
+          "pages": 1,
+          "records": 2,
+          "unique_records": 2,
+          "duplicates": 0,
+          "next_page": null,
+          "books": 0
+        },
+        {
+          "run_id": 30,
+          "venue": "polymarket_us",
+          "status": "COMPLETE",
+          "pages": 2,
+          "records": 1,
+          "unique_records": 1,
+          "duplicates": 0,
+          "next_page": null,
+          "books": 0
+        }
+      ],
+      "errors": [],
+      "available": [
+        true,
+        true
+      ],
+      "sports_identities": [
+        [
+          "NBA",
+          "FULL_GAME_WINNER",
+          [
+            "NOP",
+            "SAC"
+          ],
+          "2026-10-29",
+          "SAC"
+        ],
+        [
+          "NBA",
+          "FULL_GAME_WINNER",
+          [
+            "NOP",
+            "SAC"
+          ],
+          "2026-10-29",
+          "SAC"
+        ]
+      ],
+      "live_identity_confirmed": true,
+      "captured_at": "2026-10-28T02:01:25.813729+00:00",
+      "versions": [
+        43,
+        45
+      ],
+      "status": "UNVERIFIED",
+      "equivalence_verified": false,
+      "trading_authorized": false
+    },
+    {
+      "kalshi_id": "KXNBAGAME-26OCT30CHAWAS-CHA",
+      "polymarket_us_id": "aec-nba-cha-was-2026-10-30",
+      "runs": [
+        {
+          "run_id": 31,
+          "venue": "kalshi",
+          "status": "COMPLETE",
+          "pages": 1,
+          "records": 2,
+          "unique_records": 2,
+          "duplicates": 0,
+          "next_page": null,
+          "books": 0
+        },
+        {
+          "run_id": 32,
+          "venue": "polymarket_us",
+          "status": "COMPLETE",
+          "pages": 2,
+          "records": 1,
+          "unique_records": 1,
+          "duplicates": 0,
+          "next_page": null,
+          "books": 0
+        }
+      ],
+      "errors": [],
+      "available": [
+        true,
+        true
+      ],
+      "sports_identities": [
+        [
+          "NBA",
+          "FULL_GAME_WINNER",
+          [
+            "CHA",
+            "WAS"
+          ],
+          "2026-10-30",
+          "CHA"
+        ],
+        [
+          "NBA",
+          "FULL_GAME_WINNER",
+          [
+            "CHA",
+            "WAS"
+          ],
+          "2026-10-30",
+          "CHA"
+        ]
+      ],
+      "live_identity_confirmed": true,
+      "captured_at": "2026-10-28T02:01:28.046819+00:00",
+      "versions": [
+        47,
+        48
+      ],
+      "status": "UNVERIFIED",
+      "equivalence_verified": false,
+      "trading_authorized": false
+    },
+    {
+      "kalshi_id": "KXNBAGAME-26OCT30CHIBOS-CHI",
+      "polymarket_us_id": "aec-nba-chi-bos-2026-10-30",
+      "runs": [
+        {
+          "run_id": 33,
+          "venue": "kalshi",
+          "status": "COMPLETE",
+          "pages": 1,
+          "records": 2,
+          "unique_records": 2,
+          "duplicates": 0,
+          "next_page": null,
+          "books": 0
+        },
+        {
+          "run_id": 34,
+          "venue": "polymarket_us",
+          "status": "COMPLETE",
+          "pages": 2,
+          "records": 1,
+          "unique_records": 1,
+          "duplicates": 0,
+          "next_page": null,
+          "books": 0
+        }
+      ],
+      "errors": [],
+      "available": [
+        true,
+        true
+      ],
+      "sports_identities": [
+        [
+          "NBA",
+          "FULL_GAME_WINNER",
+          [
+            "BOS",
+            "CHI"
+          ],
+          "2026-10-30",
+          "CHI"
+        ],
+        [
+          "NBA",
+          "FULL_GAME_WINNER",
+          [
+            "BOS",
+            "CHI"
+          ],
+          "2026-10-30",
+          "CHI"
+        ]
+      ],
+      "live_identity_confirmed": true,
+      "captured_at": "2026-10-28T02:01:29.831920+00:00",
+      "versions": [
+        49,
+        51
+      ],
+      "status": "UNVERIFIED",
+      "equivalence_verified": false,
+      "trading_authorized": false
+    },
+    {
+      "kalshi_id": "KXNBAGAME-26OCT30DENPHX-DEN",
+      "polymarket_us_id": "aec-nba-den-pho-2026-10-30",
+      "runs": [
+        {
+          "run_id": 35,
+          "venue": "kalshi",
+          "status": "COMPLETE",
+          "pages": 1,
+          "records": 2,
+          "unique_records": 2,
+          "duplicates": 0,
+          "next_page": null,
+          "books": 0
+        },
+        {
+          "run_id": 36,
+          "venue": "polymarket_us",
+          "status": "COMPLETE",
+          "pages": 2,
+          "records": 1,
+          "unique_records": 1,
+          "duplicates": 0,
+          "next_page": null,
+          "books": 0
+        }
+      ],
+      "errors": [],
+      "available": [
+        true,
+        true
+      ],
+      "sports_identities": [
+        [
+          "NBA",
+          "FULL_GAME_WINNER",
+          [
+            "DEN",
+            "PHX"
+          ],
+          "2026-10-30",
+          "DEN"
+        ],
+        [
+          "NBA",
+          "FULL_GAME_WINNER",
+          [
+            "DEN",
+            "PHX"
+          ],
+          "2026-10-30",
+          "DEN"
+        ]
+      ],
+      "live_identity_confirmed": true,
+      "captured_at": "2026-10-28T02:01:31.844188+00:00",
+      "versions": [
+        53,
+        54
+      ],
+      "status": "UNVERIFIED",
+      "equivalence_verified": false,
+      "trading_authorized": false
+    },
+    {
+      "kalshi_id": "KXNBAGAME-26OCT30DETBKN-DET",
+      "polymarket_us_id": "aec-nba-det-bkn-2026-10-30",
+      "runs": [
+        {
+          "run_id": 37,
+          "venue": "kalshi",
+          "status": "COMPLETE",
+          "pages": 1,
+          "records": 2,
+          "unique_records": 2,
+          "duplicates": 0,
+          "next_page": null,
+          "books": 0
+        },
+        {
+          "run_id": 38,
+          "venue": "polymarket_us",
+          "status": "COMPLETE",
+          "pages": 2,
+          "records": 1,
+          "unique_records": 1,
+          "duplicates": 0,
+          "next_page": null,
+          "books": 0
+        }
+      ],
+      "errors": [],
+      "available": [
+        true,
+        true
+      ],
+      "sports_identities": [
+        [
+          "NBA",
+          "FULL_GAME_WINNER",
+          [
+            "BKN",
+            "DET"
+          ],
+          "2026-10-30",
+          "DET"
+        ],
+        [
+          "NBA",
+          "FULL_GAME_WINNER",
+          [
+            "BKN",
+            "DET"
+          ],
+          "2026-10-30",
+          "DET"
+        ]
+      ],
+      "live_identity_confirmed": true,
+      "captured_at": "2026-10-28T02:01:33.852251+00:00",
+      "versions": [
+        55,
+        57
+      ],
+      "status": "UNVERIFIED",
+      "equivalence_verified": false,
+      "trading_authorized": false
+    },
+    {
+      "kalshi_id": "KXNBAGAME-26OCT30HOUDAL-HOU",
+      "polymarket_us_id": "aec-nba-hou-dal-2026-10-30",
+      "runs": [
+        {
+          "run_id": 39,
+          "venue": "kalshi",
+          "status": "COMPLETE",
+          "pages": 1,
+          "records": 2,
+          "unique_records": 2,
+          "duplicates": 0,
+          "next_page": null,
+          "books": 0
+        },
+        {
+          "run_id": 40,
+          "venue": "polymarket_us",
+          "status": "COMPLETE",
+          "pages": 2,
+          "records": 1,
+          "unique_records": 1,
+          "duplicates": 0,
+          "next_page": null,
+          "books": 0
+        }
+      ],
+      "errors": [],
+      "available": [
+        true,
+        true
+      ],
+      "sports_identities": [
+        [
+          "NBA",
+          "FULL_GAME_WINNER",
+          [
+            "DAL",
+            "HOU"
+          ],
+          "2026-10-30",
+          "HOU"
+        ],
+        [
+          "NBA",
+          "FULL_GAME_WINNER",
+          [
+            "DAL",
+            "HOU"
+          ],
+          "2026-10-30",
+          "HOU"
+        ]
+      ],
+      "live_identity_confirmed": true,
+      "captured_at": "2026-10-28T02:01:36.048095+00:00",
+      "versions": [
+        58,
+        60
+      ],
+      "status": "UNVERIFIED",
+      "equivalence_verified": false,
+      "trading_authorized": false
+    },
+    {
+      "kalshi_id": "KXNBAGAME-26OCT30INDMIA-IND",
+      "polymarket_us_id": "aec-nba-ind-mia-2026-10-30",
+      "runs": [
+        {
+          "run_id": 41,
+          "venue": "kalshi",
+          "status": "COMPLETE",
+          "pages": 1,
+          "records": 2,
+          "unique_records": 2,
+          "duplicates": 0,
+          "next_page": null,
+          "books": 0
+        },
+        {
+          "run_id": 42,
+          "venue": "polymarket_us",
+          "status": "COMPLETE",
+          "pages": 2,
+          "records": 1,
+          "unique_records": 1,
+          "duplicates": 0,
+          "next_page": null,
+          "books": 0
+        }
+      ],
+      "errors": [],
+      "available": [
+        true,
+        true
+      ],
+      "sports_identities": [
+        [
+          "NBA",
+          "FULL_GAME_WINNER",
+          [
+            "IND",
+            "MIA"
+          ],
+          "2026-10-30",
+          "IND"
+        ],
+        [
+          "NBA",
+          "FULL_GAME_WINNER",
+          [
+            "IND",
+            "MIA"
+          ],
+          "2026-10-30",
+          "IND"
+        ]
+      ],
+      "live_identity_confirmed": true,
+      "captured_at": "2026-10-28T02:01:37.819012+00:00",
+      "versions": [
+        62,
+        63
+      ],
+      "status": "UNVERIFIED",
+      "equivalence_verified": false,
+      "trading_authorized": false
+    },
+    {
+      "kalshi_id": "KXNBAGAME-26OCT30LACMIN-LAC",
+      "polymarket_us_id": "aec-nba-lac-min-2026-10-30",
+      "runs": [
+        {
+          "run_id": 43,
+          "venue": "kalshi",
+          "status": "COMPLETE",
+          "pages": 1,
+          "records": 2,
+          "unique_records": 2,
+          "duplicates": 0,
+          "next_page": null,
+          "books": 0
+        },
+        {
+          "run_id": 44,
+          "venue": "polymarket_us",
+          "status": "COMPLETE",
+          "pages": 2,
+          "records": 1,
+          "unique_records": 1,
+          "duplicates": 0,
+          "next_page": null,
+          "books": 0
+        }
+      ],
+      "errors": [],
+      "available": [
+        true,
+        true
+      ],
+      "sports_identities": [
+        [
+          "NBA",
+          "FULL_GAME_WINNER",
+          [
+            "LAC",
+            "MIN"
+          ],
+          "2026-10-30",
+          "LAC"
+        ],
+        [
+          "NBA",
+          "FULL_GAME_WINNER",
+          [
+            "LAC",
+            "MIN"
+          ],
+          "2026-10-30",
+          "LAC"
+        ]
+      ],
+      "live_identity_confirmed": true,
+      "captured_at": "2026-10-28T02:01:39.812048+00:00",
+      "versions": [
+        65,
+        66
+      ],
+      "status": "UNVERIFIED",
+      "equivalence_verified": false,
+      "trading_authorized": false
+    },
+    {
+      "kalshi_id": "KXNBAGAME-26OCT30LALGSW-LAL",
+      "polymarket_us_id": "aec-nba-lal-gs-2026-10-30",
+      "runs": [
+        {
+          "run_id": 45,
+          "venue": "kalshi",
+          "status": "COMPLETE",
+          "pages": 1,
+          "records": 2,
+          "unique_records": 2,
+          "duplicates": 0,
+          "next_page": null,
+          "books": 0
+        },
+        {
+          "run_id": 46,
+          "venue": "polymarket_us",
+          "status": "COMPLETE",
+          "pages": 2,
+          "records": 1,
+          "unique_records": 1,
+          "duplicates": 0,
+          "next_page": null,
+          "books": 0
+        }
+      ],
+      "errors": [],
+      "available": [
+        true,
+        true
+      ],
+      "sports_identities": [
+        [
+          "NBA",
+          "FULL_GAME_WINNER",
+          [
+            "GSW",
+            "LAL"
+          ],
+          "2026-10-30",
+          "LAL"
+        ],
+        [
+          "NBA",
+          "FULL_GAME_WINNER",
+          [
+            "GSW",
+            "LAL"
+          ],
+          "2026-10-30",
+          "LAL"
+        ]
+      ],
+      "live_identity_confirmed": true,
+      "captured_at": "2026-10-28T02:01:42.171927+00:00",
+      "versions": [
+        67,
+        69
+      ],
+      "status": "UNVERIFIED",
+      "equivalence_verified": false,
+      "trading_authorized": false
+    },
+    {
+      "kalshi_id": "KXNBAGAME-26OCT30NYKPHI-NYK",
+      "polymarket_us_id": "aec-nba-ny-phi-2026-10-30",
+      "runs": [
+        {
+          "run_id": 47,
+          "venue": "kalshi",
+          "status": "COMPLETE",
+          "pages": 1,
+          "records": 2,
+          "unique_records": 2,
+          "duplicates": 0,
+          "next_page": null,
+          "books": 0
+        },
+        {
+          "run_id": 48,
+          "venue": "polymarket_us",
+          "status": "COMPLETE",
+          "pages": 2,
+          "records": 1,
+          "unique_records": 1,
+          "duplicates": 0,
+          "next_page": null,
+          "books": 0
+        }
+      ],
+      "errors": [],
+      "available": [
+        true,
+        true
+      ],
+      "sports_identities": [
+        [
+          "NBA",
+          "FULL_GAME_WINNER",
+          [
+            "NYK",
+            "PHI"
+          ],
+          "2026-10-30",
+          "NYK"
+        ],
+        [
+          "NBA",
+          "FULL_GAME_WINNER",
+          [
+            "NYK",
+            "PHI"
+          ],
+          "2026-10-30",
+          "NYK"
+        ]
+      ],
+      "live_identity_confirmed": true,
+      "captured_at": "2026-10-28T02:01:44.469000+00:00",
+      "versions": [
+        71,
+        72
+      ],
+      "status": "UNVERIFIED",
+      "equivalence_verified": false,
+      "trading_authorized": false
+    },
+    {
+      "kalshi_id": "KXNBAGAME-26OCT30ORLTOR-ORL",
+      "polymarket_us_id": "aec-nba-orl-tor-2026-10-30",
+      "runs": [
+        {
+          "run_id": 49,
+          "venue": "kalshi",
+          "status": "COMPLETE",
+          "pages": 1,
+          "records": 2,
+          "unique_records": 2,
+          "duplicates": 0,
+          "next_page": null,
+          "books": 0
+        },
+        {
+          "run_id": 50,
+          "venue": "polymarket_us",
+          "status": "COMPLETE",
+          "pages": 2,
+          "records": 1,
+          "unique_records": 1,
+          "duplicates": 0,
+          "next_page": null,
+          "books": 0
+        }
+      ],
+      "errors": [],
+      "available": [
+        true,
+        true
+      ],
+      "sports_identities": [
+        [
+          "NBA",
+          "FULL_GAME_WINNER",
+          [
+            "ORL",
+            "TOR"
+          ],
+          "2026-10-30",
+          "ORL"
+        ],
+        [
+          "NBA",
+          "FULL_GAME_WINNER",
+          [
+            "ORL",
+            "TOR"
+          ],
+          "2026-10-30",
+          "ORL"
+        ]
+      ],
+      "live_identity_confirmed": true,
+      "captured_at": "2026-10-28T02:01:45.814556+00:00",
+      "versions": [
+        74,
+        75
+      ],
+      "status": "UNVERIFIED",
+      "equivalence_verified": false,
+      "trading_authorized": false
+    },
+    {
+      "kalshi_id": "KXNBAGAME-26OCT31ATLNOP-ATL",
+      "polymarket_us_id": "aec-nba-atl-no-2026-10-31",
+      "runs": [
+        {
+          "run_id": 51,
+          "venue": "kalshi",
+          "status": "COMPLETE",
+          "pages": 1,
+          "records": 2,
+          "unique_records": 2,
+          "duplicates": 0,
+          "next_page": null,
+          "books": 0
+        },
+        {
+          "run_id": 52,
+          "venue": "polymarket_us",
+          "status": "COMPLETE",
+          "pages": 2,
+          "records": 1,
+          "unique_records": 1,
+          "duplicates": 0,
+          "next_page": null,
+          "books": 0
+        }
+      ],
+      "errors": [],
+      "available": [
+        true,
+        true
+      ],
+      "sports_identities": [
+        [
+          "NBA",
+          "FULL_GAME_WINNER",
+          [
+            "ATL",
+            "NOP"
+          ],
+          "2026-10-31",
+          "ATL"
+        ],
+        [
+          "NBA",
+          "FULL_GAME_WINNER",
+          [
+            "ATL",
+            "NOP"
+          ],
+          "2026-10-31",
+          "ATL"
+        ]
+      ],
+      "live_identity_confirmed": true,
+      "captured_at": "2026-10-28T02:01:47.858932+00:00",
+      "versions": [
+        77,
+        78
+      ],
+      "status": "UNVERIFIED",
+      "equivalence_verified": false,
+      "trading_authorized": false
+    },
+    {
+      "kalshi_id": "KXNBAGAME-26OCT31PHICHA-PHI",
+      "polymarket_us_id": "aec-nba-phi-cha-2026-10-31",
+      "runs": [
+        {
+          "run_id": 53,
+          "venue": "kalshi",
+          "status": "COMPLETE",
+          "pages": 1,
+          "records": 2,
+          "unique_records": 2,
+          "duplicates": 0,
+          "next_page": null,
+          "books": 0
+        },
+        {
+          "run_id": 54,
+          "venue": "polymarket_us",
+          "status": "COMPLETE",
+          "pages": 2,
+          "records": 1,
+          "unique_records": 1,
+          "duplicates": 0,
+          "next_page": null,
+          "books": 0
+        }
+      ],
+      "errors": [],
+      "available": [
+        true,
+        true
+      ],
+      "sports_identities": [
+        [
+          "NBA",
+          "FULL_GAME_WINNER",
+          [
+            "CHA",
+            "PHI"
+          ],
+          "2026-10-31",
+          "PHI"
+        ],
+        [
+          "NBA",
+          "FULL_GAME_WINNER",
+          [
+            "CHA",
+            "PHI"
+          ],
+          "2026-10-31",
+          "PHI"
+        ]
+      ],
+      "live_identity_confirmed": true,
+      "captured_at": "2026-10-28T02:01:50.310543+00:00",
+      "versions": [
+        79,
+        81
+      ],
+      "status": "UNVERIFIED",
+      "equivalence_verified": false,
+      "trading_authorized": false
+    },
+    {
+      "kalshi_id": "KXNBAGAME-26OCT31PORUTA-POR",
+      "polymarket_us_id": "aec-nba-por-uta-2026-10-31",
+      "runs": [
+        {
+          "run_id": 55,
+          "venue": "kalshi",
+          "status": "COMPLETE",
+          "pages": 1,
+          "records": 2,
+          "unique_records": 2,
+          "duplicates": 0,
+          "next_page": null,
+          "books": 0
+        },
+        {
+          "run_id": 56,
+          "venue": "polymarket_us",
+          "status": "COMPLETE",
+          "pages": 2,
+          "records": 1,
+          "unique_records": 1,
+          "duplicates": 0,
+          "next_page": null,
+          "books": 0
+        }
+      ],
+      "errors": [],
+      "available": [
+        true,
+        true
+      ],
+      "sports_identities": [
+        [
+          "NBA",
+          "FULL_GAME_WINNER",
+          [
+            "POR",
+            "UTA"
+          ],
+          "2026-10-31",
+          "POR"
+        ],
+        [
+          "NBA",
+          "FULL_GAME_WINNER",
+          [
+            "POR",
+            "UTA"
+          ],
+          "2026-10-31",
+          "POR"
+        ]
+      ],
+      "live_identity_confirmed": true,
+      "captured_at": "2026-10-28T02:01:52.490677+00:00",
+      "versions": [
+        83,
+        84
+      ],
+      "status": "UNVERIFIED",
+      "equivalence_verified": false,
+      "trading_authorized": false
+    },
+    {
+      "kalshi_id": "KXNFLGAME-26NOV01ARIDAL-ARI",
+      "polymarket_us_id": "aec-nfl-ari-dal-2026-11-01",
+      "runs": [
+        {
+          "run_id": 57,
+          "venue": "kalshi",
+          "status": "COMPLETE",
+          "pages": 1,
+          "records": 2,
+          "unique_records": 2,
+          "duplicates": 0,
+          "next_page": null,
+          "books": 0
+        },
+        {
+          "run_id": 58,
+          "venue": "polymarket_us",
+          "status": "COMPLETE",
+          "pages": 2,
+          "records": 1,
+          "unique_records": 1,
+          "duplicates": 0,
+          "next_page": null,
+          "books": 0
+        }
+      ],
+      "errors": [],
+      "available": [
+        true,
+        true
+      ],
+      "sports_identities": [
+        [
+          "NFL",
+          "FULL_GAME_WINNER",
+          [
+            "ARI",
+            "DAL"
+          ],
+          "2026-11-01",
+          "ARI"
+        ],
+        [
+          "NFL",
+          "FULL_GAME_WINNER",
+          [
+            "ARI",
+            "DAL"
+          ],
+          "2026-11-01",
+          "ARI"
+        ]
+      ],
+      "live_identity_confirmed": true,
+      "captured_at": "2026-10-28T02:01:54.318002+00:00",
+      "versions": [
+        86,
+        87
+      ],
+      "status": "UNVERIFIED",
+      "equivalence_verified": false,
+      "trading_authorized": false
+    },
+    {
+      "kalshi_id": "KXNFLGAME-26NOV01ATLTB-ATL",
+      "polymarket_us_id": "aec-nfl-atl-tb-2026-11-01",
+      "runs": [
+        {
+          "run_id": 59,
+          "venue": "kalshi",
+          "status": "COMPLETE",
+          "pages": 1,
+          "records": 2,
+          "unique_records": 2,
+          "duplicates": 0,
+          "next_page": null,
+          "books": 0
+        },
+        {
+          "run_id": 60,
+          "venue": "polymarket_us",
+          "status": "COMPLETE",
+          "pages": 2,
+          "records": 1,
+          "unique_records": 1,
+          "duplicates": 0,
+          "next_page": null,
+          "books": 0
+        }
+      ],
+      "errors": [],
+      "available": [
+        true,
+        true
+      ],
+      "sports_identities": [
+        [
+          "NFL",
+          "FULL_GAME_WINNER",
+          [
+            "ATL",
+            "TB"
+          ],
+          "2026-11-01",
+          "ATL"
+        ],
+        [
+          "NFL",
+          "FULL_GAME_WINNER",
+          [
+            "ATL",
+            "TB"
+          ],
+          "2026-11-01",
+          "ATL"
+        ]
+      ],
+      "live_identity_confirmed": true,
+      "captured_at": "2026-10-28T02:01:56.460093+00:00",
+      "versions": [
+        89,
+        90
+      ],
+      "status": "UNVERIFIED",
+      "equivalence_verified": false,
+      "trading_authorized": false
+    }
+  ],
+  "raw_evidence": [
+    {
+      "id": 1,
+      "venue": "kalshi",
+      "endpoint": "https://external-api.kalshi.com/trade-api/v2/markets?status=open&mve_filter=exclude&limit=20&event_ticker=KXNBAGAME-26OCT28CHADET",
+      "received_at": "2026-10-28T02:00:55.080692+00:00",
+      "sha256": "0b9aa117f3304fee3cd8f678af744747a465f73d73654aa10ae682edc3839739",
+      "schema_version": "kalshi-3.34.0/m1-v1",
+      "validation_status": "VALID"
+    },
+    {
+      "id": 2,
+      "venue": "polymarket_us",
+      "endpoint": "https://gateway.polymarket.us/v1/markets?active=true&closed=false&limit=20&offset=0&orderBy=id&orderDirection=asc&slug=aec-nba-cha-det-2026-10-28",
+      "received_at": "2026-10-28T02:00:55.299845+00:00",
+      "sha256": "1a80d90916a90244364e19a589da5729410cda54360677eb8d653f4dc3a8037e",
+      "schema_version": "polymarket-us-marketservice-1.0.0/m1-v1",
+      "validation_status": "VALID"
+    },
+    {
+      "id": 3,
+      "venue": "polymarket_us",
+      "endpoint": "https://gateway.polymarket.us/v1/markets?active=true&closed=false&limit=20&offset=1&orderBy=id&orderDirection=asc&slug=aec-nba-cha-det-2026-10-28",
+      "received_at": "2026-10-28T02:00:56.217058+00:00",
+      "sha256": "f36daaa1fcd896f9fdfd2a991f06ef808c56d5acaceca4e6f89329e7794608d1",
+      "schema_version": "polymarket-us-marketservice-1.0.0/m1-v1",
+      "validation_status": "VALID"
+    },
+    {
+      "id": 4,
+      "venue": "kalshi",
+      "endpoint": "https://external-api.kalshi.com/trade-api/v2/markets?status=open&mve_filter=exclude&limit=20&event_ticker=KXNBAGAME-26OCT28DENNOP",
+      "received_at": "2026-10-28T02:00:56.371661+00:00",
+      "sha256": "75284e02c919b91b66fa9ccf3b3a61cbc451dd842cdfa50bf16239e5643e2624",
+      "schema_version": "kalshi-3.34.0/m1-v1",
+      "validation_status": "VALID"
+    },
+    {
+      "id": 5,
+      "venue": "polymarket_us",
+      "endpoint": "https://gateway.polymarket.us/v1/markets?active=true&closed=false&limit=20&offset=0&orderBy=id&orderDirection=asc&slug=aec-nba-den-no-2026-10-28",
+      "received_at": "2026-10-28T02:00:57.216273+00:00",
+      "sha256": "f5f0eb759295f95ca34e863c53b2aa1577ab2ed25b499510f0ec33c6095c38a9",
+      "schema_version": "polymarket-us-marketservice-1.0.0/m1-v1",
+      "validation_status": "VALID"
+    },
+    {
+      "id": 6,
+      "venue": "polymarket_us",
+      "endpoint": "https://gateway.polymarket.us/v1/markets?active=true&closed=false&limit=20&offset=1&orderBy=id&orderDirection=asc&slug=aec-nba-den-no-2026-10-28",
+      "received_at": "2026-10-28T02:00:58.236097+00:00",
+      "sha256": "f36daaa1fcd896f9fdfd2a991f06ef808c56d5acaceca4e6f89329e7794608d1",
+      "schema_version": "polymarket-us-marketservice-1.0.0/m1-v1",
+      "validation_status": "VALID"
+    },
+    {
+      "id": 7,
+      "venue": "kalshi",
+      "endpoint": "https://external-api.kalshi.com/trade-api/v2/markets?status=open&mve_filter=exclude&limit=20&event_ticker=KXNBAGAME-26OCT28GSWMIN",
+      "received_at": "2026-10-28T02:00:58.409643+00:00",
+      "sha256": "56031b4d1e521d338b676de609856ab1ee85b09d118a2c3eadccd62ca8cf1b1c",
+      "schema_version": "kalshi-3.34.0/m1-v1",
+      "validation_status": "VALID"
+    },
+    {
+      "id": 8,
+      "venue": "polymarket_us",
+      "endpoint": "https://gateway.polymarket.us/v1/markets?active=true&closed=false&limit=20&offset=0&orderBy=id&orderDirection=asc&slug=aec-nba-gs-min-2026-10-28",
+      "received_at": "2026-10-28T02:00:59.448250+00:00",
+      "sha256": "0aa88887c417cdf2d7a9c9e50515833c0308411ce68c4eb923dbbd3401e7f940",
+      "schema_version": "polymarket-us-marketservice-1.0.0/m1-v1",
+      "validation_status": "VALID"
+    },
+    {
+      "id": 9,
+      "venue": "polymarket_us",
+      "endpoint": "https://gateway.polymarket.us/v1/markets?active=true&closed=false&limit=20&offset=1&orderBy=id&orderDirection=asc&slug=aec-nba-gs-min-2026-10-28",
+      "received_at": "2026-10-28T02:01:01.267740+00:00",
+      "sha256": "f36daaa1fcd896f9fdfd2a991f06ef808c56d5acaceca4e6f89329e7794608d1",
+      "schema_version": "polymarket-us-marketservice-1.0.0/m1-v1",
+      "validation_status": "VALID"
+    },
+    {
+      "id": 10,
+      "venue": "kalshi",
+      "endpoint": "https://external-api.kalshi.com/trade-api/v2/markets?status=open&mve_filter=exclude&limit=20&event_ticker=KXNBAGAME-26OCT28HOUMIL",
+      "received_at": "2026-10-28T02:01:01.425638+00:00",
+      "sha256": "462ea2b0b1e2dc80409b4527addbc9158472bf1b43e29df063f2b900d56cf5ad",
+      "schema_version": "kalshi-3.34.0/m1-v1",
+      "validation_status": "VALID"
+    },
+    {
+      "id": 11,
+      "venue": "polymarket_us",
+      "endpoint": "https://gateway.polymarket.us/v1/markets?active=true&closed=false&limit=20&offset=0&orderBy=id&orderDirection=asc&slug=aec-nba-hou-mil-2026-10-28",
+      "received_at": "2026-10-28T02:01:01.581786+00:00",
+      "sha256": "5ba93f081a5d002527f5b3a8cff52d7f86bea3061221b4865fd1b61aff6b156d",
+      "schema_version": "polymarket-us-marketservice-1.0.0/m1-v1",
+      "validation_status": "VALID"
+    },
+    {
+      "id": 12,
+      "venue": "polymarket_us",
+      "endpoint": "https://gateway.polymarket.us/v1/markets?active=true&closed=false&limit=20&offset=1&orderBy=id&orderDirection=asc&slug=aec-nba-hou-mil-2026-10-28",
+      "received_at": "2026-10-28T02:01:04.311603+00:00",
+      "sha256": "f36daaa1fcd896f9fdfd2a991f06ef808c56d5acaceca4e6f89329e7794608d1",
+      "schema_version": "polymarket-us-marketservice-1.0.0/m1-v1",
+      "validation_status": "VALID"
+    },
+    {
+      "id": 13,
+      "venue": "kalshi",
+      "endpoint": "https://external-api.kalshi.com/trade-api/v2/markets?status=open&mve_filter=exclude&limit=20&event_ticker=KXNBAGAME-26OCT28LALLAC",
+      "received_at": "2026-10-28T02:01:04.467041+00:00",
+      "sha256": "d069864316769168aa269c433ee080a031ff4ab4b2c4c6e5f0a4a550825788d8",
+      "schema_version": "kalshi-3.34.0/m1-v1",
+      "validation_status": "VALID"
+    },
+    {
+      "id": 14,
+      "venue": "polymarket_us",
+      "endpoint": "https://gateway.polymarket.us/v1/markets?active=true&closed=false&limit=20&offset=0&orderBy=id&orderDirection=asc&slug=aec-nba-lal-lac-2026-10-28",
+      "received_at": "2026-10-28T02:01:04.617764+00:00",
+      "sha256": "ff22ecb871d13f2bb1f995fcbb60fd60c4d8c2775cd81c4f1bcdf0c4c4693d46",
+      "schema_version": "polymarket-us-marketservice-1.0.0/m1-v1",
+      "validation_status": "VALID"
+    },
+    {
+      "id": 15,
+      "venue": "polymarket_us",
+      "endpoint": "https://gateway.polymarket.us/v1/markets?active=true&closed=false&limit=20&offset=1&orderBy=id&orderDirection=asc&slug=aec-nba-lal-lac-2026-10-28",
+      "received_at": "2026-10-28T02:01:05.619246+00:00",
+      "sha256": "f36daaa1fcd896f9fdfd2a991f06ef808c56d5acaceca4e6f89329e7794608d1",
+      "schema_version": "polymarket-us-marketservice-1.0.0/m1-v1",
+      "validation_status": "VALID"
+    },
+    {
+      "id": 16,
+      "venue": "kalshi",
+      "endpoint": "https://external-api.kalshi.com/trade-api/v2/markets?status=open&mve_filter=exclude&limit=20&event_ticker=KXNBAGAME-26OCT28MIAATL",
+      "received_at": "2026-10-28T02:01:05.778076+00:00",
+      "sha256": "9dd22538880fc93cea57228ec2fe701ac1c513d3ec62f77f6f0ed13c89c0eb98",
+      "schema_version": "kalshi-3.34.0/m1-v1",
+      "validation_status": "VALID"
+    },
+    {
+      "id": 17,
+      "venue": "polymarket_us",
+      "endpoint": "https://gateway.polymarket.us/v1/markets?active=true&closed=false&limit=20&offset=0&orderBy=id&orderDirection=asc&slug=aec-nba-mia-atl-2026-10-28",
+      "received_at": "2026-10-28T02:01:06.651845+00:00",
+      "sha256": "25bf864e1abcbe5ff9cde46399beb3665da2626e37c5bd7e801716b92db65a77",
+      "schema_version": "polymarket-us-marketservice-1.0.0/m1-v1",
+      "validation_status": "VALID"
+    },
+    {
+      "id": 18,
+      "venue": "polymarket_us",
+      "endpoint": "https://gateway.polymarket.us/v1/markets?active=true&closed=false&limit=20&offset=1&orderBy=id&orderDirection=asc&slug=aec-nba-mia-atl-2026-10-28",
+      "received_at": "2026-10-28T02:01:07.600101+00:00",
+      "sha256": "f36daaa1fcd896f9fdfd2a991f06ef808c56d5acaceca4e6f89329e7794608d1",
+      "schema_version": "polymarket-us-marketservice-1.0.0/m1-v1",
+      "validation_status": "VALID"
+    },
+    {
+      "id": 19,
+      "venue": "kalshi",
+      "endpoint": "https://external-api.kalshi.com/trade-api/v2/markets?status=open&mve_filter=exclude&limit=20&event_ticker=KXNBAGAME-26OCT28NYKCHI",
+      "received_at": "2026-10-28T02:01:07.763607+00:00",
+      "sha256": "4b30c53b94c474a9a19b665fa6c0398f1b8a5033faa0e6cf0727d93e66b85f6e",
+      "schema_version": "kalshi-3.34.0/m1-v1",
+      "validation_status": "VALID"
+    },
+    {
+      "id": 20,
+      "venue": "polymarket_us",
+      "endpoint": "https://gateway.polymarket.us/v1/markets?active=true&closed=false&limit=20&offset=0&orderBy=id&orderDirection=asc&slug=aec-nba-ny-chi-2026-10-28",
+      "received_at": "2026-10-28T02:01:08.930461+00:00",
+      "sha256": "e34bc4121e3c796f89867b378f23f853e58b6172c47ca86ab8841e2164784ed7",
+      "schema_version": "polymarket-us-marketservice-1.0.0/m1-v1",
+      "validation_status": "VALID"
+    },
+    {
+      "id": 21,
+      "venue": "polymarket_us",
+      "endpoint": "https://gateway.polymarket.us/v1/markets?active=true&closed=false&limit=20&offset=1&orderBy=id&orderDirection=asc&slug=aec-nba-ny-chi-2026-10-28",
+      "received_at": "2026-10-28T02:01:09.655756+00:00",
+      "sha256": "f36daaa1fcd896f9fdfd2a991f06ef808c56d5acaceca4e6f89329e7794608d1",
+      "schema_version": "polymarket-us-marketservice-1.0.0/m1-v1",
+      "validation_status": "VALID"
+    },
+    {
+      "id": 22,
+      "venue": "kalshi",
+      "endpoint": "https://external-api.kalshi.com/trade-api/v2/markets?status=open&mve_filter=exclude&limit=20&event_ticker=KXNBAGAME-26OCT28OKCDAL",
+      "received_at": "2026-10-28T02:01:09.815151+00:00",
+      "sha256": "64498d30fa875d89c8e6ae9c7532118ff7b01667fdf17b9bcb90459dca376644",
+      "schema_version": "kalshi-3.34.0/m1-v1",
+      "validation_status": "VALID"
+    },
+    {
+      "id": 23,
+      "venue": "polymarket_us",
+      "endpoint": "https://gateway.polymarket.us/v1/markets?active=true&closed=false&limit=20&offset=0&orderBy=id&orderDirection=asc&slug=aec-nba-okc-dal-2026-10-28",
+      "received_at": "2026-10-28T02:01:11.679710+00:00",
+      "sha256": "1eac538d9bc459abaa261d63c7c5537b8d19cb1be66c7fbe2454f43bb66fe858",
+      "schema_version": "polymarket-us-marketservice-1.0.0/m1-v1",
+      "validation_status": "VALID"
+    },
+    {
+      "id": 24,
+      "venue": "polymarket_us",
+      "endpoint": "https://gateway.polymarket.us/v1/markets?active=true&closed=false&limit=20&offset=1&orderBy=id&orderDirection=asc&slug=aec-nba-okc-dal-2026-10-28",
+      "received_at": "2026-10-28T02:01:12.408517+00:00",
+      "sha256": "f36daaa1fcd896f9fdfd2a991f06ef808c56d5acaceca4e6f89329e7794608d1",
+      "schema_version": "polymarket-us-marketservice-1.0.0/m1-v1",
+      "validation_status": "VALID"
+    },
+    {
+      "id": 25,
+      "venue": "kalshi",
+      "endpoint": "https://external-api.kalshi.com/trade-api/v2/markets?status=open&mve_filter=exclude&limit=20&event_ticker=KXNBAGAME-26OCT28ORLTOR",
+      "received_at": "2026-10-28T02:01:12.562128+00:00",
+      "sha256": "b31c4f8a054123ff3d5f3df4abdc701656ffa6ef038c942e57371563cbdba415",
+      "schema_version": "kalshi-3.34.0/m1-v1",
+      "validation_status": "VALID"
+    },
+    {
+      "id": 26,
+      "venue": "polymarket_us",
+      "endpoint": "https://gateway.polymarket.us/v1/markets?active=true&closed=false&limit=20&offset=0&orderBy=id&orderDirection=asc&slug=aec-nba-orl-tor-2026-10-28",
+      "received_at": "2026-10-28T02:01:12.858790+00:00",
+      "sha256": "ac4830a0bed8f7e293226d8362c506043827baabb28359e3c4841d8c62b0dfd7",
+      "schema_version": "polymarket-us-marketservice-1.0.0/m1-v1",
+      "validation_status": "VALID"
+    },
+    {
+      "id": 27,
+      "venue": "polymarket_us",
+      "endpoint": "https://gateway.polymarket.us/v1/markets?active=true&closed=false&limit=20&offset=1&orderBy=id&orderDirection=asc&slug=aec-nba-orl-tor-2026-10-28",
+      "received_at": "2026-10-28T02:01:13.800108+00:00",
+      "sha256": "f36daaa1fcd896f9fdfd2a991f06ef808c56d5acaceca4e6f89329e7794608d1",
+      "schema_version": "polymarket-us-marketservice-1.0.0/m1-v1",
+      "validation_status": "VALID"
+    },
+    {
+      "id": 28,
+      "venue": "kalshi",
+      "endpoint": "https://external-api.kalshi.com/trade-api/v2/markets?status=open&mve_filter=exclude&limit=20&event_ticker=KXNBAGAME-26OCT28PHIIND",
+      "received_at": "2026-10-28T02:01:13.968124+00:00",
+      "sha256": "b886ac28fb63ad1b9f13c5f4119f9311cc685ee8f060902240fed822bb98ec9b",
+      "schema_version": "kalshi-3.34.0/m1-v1",
+      "validation_status": "VALID"
+    },
+    {
+      "id": 29,
+      "venue": "polymarket_us",
+      "endpoint": "https://gateway.polymarket.us/v1/markets?active=true&closed=false&limit=20&offset=0&orderBy=id&orderDirection=asc&slug=aec-nba-phi-ind-2026-10-28",
+      "received_at": "2026-10-28T02:01:15.176846+00:00",
+      "sha256": "2bd3342af9f9b5f994d439067721163283186a222be9c44e5dc3247455ef8dbd",
+      "schema_version": "polymarket-us-marketservice-1.0.0/m1-v1",
+      "validation_status": "VALID"
+    },
+    {
+      "id": 30,
+      "venue": "polymarket_us",
+      "endpoint": "https://gateway.polymarket.us/v1/markets?active=true&closed=false&limit=20&offset=1&orderBy=id&orderDirection=asc&slug=aec-nba-phi-ind-2026-10-28",
+      "received_at": "2026-10-28T02:01:15.834192+00:00",
+      "sha256": "f36daaa1fcd896f9fdfd2a991f06ef808c56d5acaceca4e6f89329e7794608d1",
+      "schema_version": "polymarket-us-marketservice-1.0.0/m1-v1",
+      "validation_status": "VALID"
+    },
+    {
+      "id": 31,
+      "venue": "kalshi",
+      "endpoint": "https://external-api.kalshi.com/trade-api/v2/markets?status=open&mve_filter=exclude&limit=20&event_ticker=KXNBAGAME-26OCT28SASUTA",
+      "received_at": "2026-10-28T02:01:15.988144+00:00",
+      "sha256": "4e8e74404a721191c3bf3a9fca49199827961dcadcfeda394193772516c7d703",
+      "schema_version": "kalshi-3.34.0/m1-v1",
+      "validation_status": "VALID"
+    },
+    {
+      "id": 32,
+      "venue": "polymarket_us",
+      "endpoint": "https://gateway.polymarket.us/v1/markets?active=true&closed=false&limit=20&offset=0&orderBy=id&orderDirection=asc&slug=aec-nba-sa-uta-2026-10-28",
+      "received_at": "2026-10-28T02:01:16.850742+00:00",
+      "sha256": "b1281d2533bc042be56137cdb319a6b7fbd6987f870ac582c1dd3ecf0b1988fe",
+      "schema_version": "polymarket-us-marketservice-1.0.0/m1-v1",
+      "validation_status": "VALID"
+    },
+    {
+      "id": 33,
+      "venue": "polymarket_us",
+      "endpoint": "https://gateway.polymarket.us/v1/markets?active=true&closed=false&limit=20&offset=1&orderBy=id&orderDirection=asc&slug=aec-nba-sa-uta-2026-10-28",
+      "received_at": "2026-10-28T02:01:17.841048+00:00",
+      "sha256": "f36daaa1fcd896f9fdfd2a991f06ef808c56d5acaceca4e6f89329e7794608d1",
+      "schema_version": "polymarket-us-marketservice-1.0.0/m1-v1",
+      "validation_status": "VALID"
+    },
+    {
+      "id": 34,
+      "venue": "kalshi",
+      "endpoint": "https://external-api.kalshi.com/trade-api/v2/markets?status=open&mve_filter=exclude&limit=20&event_ticker=KXNBAGAME-26OCT28WASCLE",
+      "received_at": "2026-10-28T02:01:18.009147+00:00",
+      "sha256": "774bc1b8b4576c57c670dd963c666c4dfe395c07bbc209e69bca65d033e59d5b",
+      "schema_version": "kalshi-3.34.0/m1-v1",
+      "validation_status": "VALID"
+    },
+    {
+      "id": 35,
+      "venue": "polymarket_us",
+      "endpoint": "https://gateway.polymarket.us/v1/markets?active=true&closed=false&limit=20&offset=0&orderBy=id&orderDirection=asc&slug=aec-nba-was-cle-2026-10-28",
+      "received_at": "2026-10-28T02:01:18.804221+00:00",
+      "sha256": "fe73972de8fb67b5e3291479de3f94846e11d0031b224f29b6d465a5c23ab604",
+      "schema_version": "polymarket-us-marketservice-1.0.0/m1-v1",
+      "validation_status": "VALID"
+    },
+    {
+      "id": 36,
+      "venue": "polymarket_us",
+      "endpoint": "https://gateway.polymarket.us/v1/markets?active=true&closed=false&limit=20&offset=1&orderBy=id&orderDirection=asc&slug=aec-nba-was-cle-2026-10-28",
+      "received_at": "2026-10-28T02:01:19.892324+00:00",
+      "sha256": "f36daaa1fcd896f9fdfd2a991f06ef808c56d5acaceca4e6f89329e7794608d1",
+      "schema_version": "polymarket-us-marketservice-1.0.0/m1-v1",
+      "validation_status": "VALID"
+    },
+    {
+      "id": 37,
+      "venue": "kalshi",
+      "endpoint": "https://external-api.kalshi.com/trade-api/v2/markets?status=open&mve_filter=exclude&limit=20&event_ticker=KXNBAGAME-26OCT29CLEATL",
+      "received_at": "2026-10-28T02:01:20.052205+00:00",
+      "sha256": "78f3ee33851044d6bc514d4fa4cabd66c26261c45db14972e4eb6b9c52dcbda9",
+      "schema_version": "kalshi-3.34.0/m1-v1",
+      "validation_status": "VALID"
+    },
+    {
+      "id": 38,
+      "venue": "polymarket_us",
+      "endpoint": "https://gateway.polymarket.us/v1/markets?active=true&closed=false&limit=20&offset=0&orderBy=id&orderDirection=asc&slug=aec-nba-cle-atl-2026-10-29",
+      "received_at": "2026-10-28T02:01:20.802250+00:00",
+      "sha256": "be3bc761bbae34154b32064dcc6a76076b9e2c68ab3f4e6c1d092ccf994be02f",
+      "schema_version": "polymarket-us-marketservice-1.0.0/m1-v1",
+      "validation_status": "VALID"
+    },
+    {
+      "id": 39,
+      "venue": "polymarket_us",
+      "endpoint": "https://gateway.polymarket.us/v1/markets?active=true&closed=false&limit=20&offset=1&orderBy=id&orderDirection=asc&slug=aec-nba-cle-atl-2026-10-29",
+      "received_at": "2026-10-28T02:01:21.832592+00:00",
+      "sha256": "f36daaa1fcd896f9fdfd2a991f06ef808c56d5acaceca4e6f89329e7794608d1",
+      "schema_version": "polymarket-us-marketservice-1.0.0/m1-v1",
+      "validation_status": "VALID"
+    },
+    {
+      "id": 40,
+      "venue": "kalshi",
+      "endpoint": "https://external-api.kalshi.com/trade-api/v2/markets?status=open&mve_filter=exclude&limit=20&event_ticker=KXNBAGAME-26OCT29MEMPOR",
+      "received_at": "2026-10-28T02:01:22.002878+00:00",
+      "sha256": "561f8213b0c032742cec2d8907f2aba5fbb0b010b8eabc78b4e77b7f77c5a598",
+      "schema_version": "kalshi-3.34.0/m1-v1",
+      "validation_status": "VALID"
+    },
+    {
+      "id": 41,
+      "venue": "polymarket_us",
+      "endpoint": "https://gateway.polymarket.us/v1/markets?active=true&closed=false&limit=20&offset=0&orderBy=id&orderDirection=asc&slug=aec-nba-mem-por-2026-10-29",
+      "received_at": "2026-10-28T02:01:22.859771+00:00",
+      "sha256": "7ffb80e290c5be72025c615ec8423e9757e3de9c68a620fa1bf1b363c032249f",
+      "schema_version": "polymarket-us-marketservice-1.0.0/m1-v1",
+      "validation_status": "VALID"
+    },
+    {
+      "id": 42,
+      "venue": "polymarket_us",
+      "endpoint": "https://gateway.polymarket.us/v1/markets?active=true&closed=false&limit=20&offset=1&orderBy=id&orderDirection=asc&slug=aec-nba-mem-por-2026-10-29",
+      "received_at": "2026-10-28T02:01:23.794612+00:00",
+      "sha256": "f36daaa1fcd896f9fdfd2a991f06ef808c56d5acaceca4e6f89329e7794608d1",
+      "schema_version": "polymarket-us-marketservice-1.0.0/m1-v1",
+      "validation_status": "VALID"
+    },
+    {
+      "id": 43,
+      "venue": "kalshi",
+      "endpoint": "https://external-api.kalshi.com/trade-api/v2/markets?status=open&mve_filter=exclude&limit=20&event_ticker=KXNBAGAME-26OCT29SACNOP",
+      "received_at": "2026-10-28T02:01:23.937256+00:00",
+      "sha256": "1c297b4f5e33242772f7bce0cf4ab05f385e5b3d95fb25384e9262849f86f1f3",
+      "schema_version": "kalshi-3.34.0/m1-v1",
+      "validation_status": "VALID"
+    },
+    {
+      "id": 44,
+      "venue": "polymarket_us",
+      "endpoint": "https://gateway.polymarket.us/v1/markets?active=true&closed=false&limit=20&offset=0&orderBy=id&orderDirection=asc&slug=aec-nba-sac-no-2026-10-29",
+      "received_at": "2026-10-28T02:01:24.805965+00:00",
+      "sha256": "549f75cb4eb3cdb336490e5686c32e44b3121e5ec7dc2043333781d49a474a54",
+      "schema_version": "polymarket-us-marketservice-1.0.0/m1-v1",
+      "validation_status": "VALID"
+    },
+    {
+      "id": 45,
+      "venue": "polymarket_us",
+      "endpoint": "https://gateway.polymarket.us/v1/markets?active=true&closed=false&limit=20&offset=1&orderBy=id&orderDirection=asc&slug=aec-nba-sac-no-2026-10-29",
+      "received_at": "2026-10-28T02:01:25.801708+00:00",
+      "sha256": "f36daaa1fcd896f9fdfd2a991f06ef808c56d5acaceca4e6f89329e7794608d1",
+      "schema_version": "polymarket-us-marketservice-1.0.0/m1-v1",
+      "validation_status": "VALID"
+    },
+    {
+      "id": 46,
+      "venue": "kalshi",
+      "endpoint": "https://external-api.kalshi.com/trade-api/v2/markets?status=open&mve_filter=exclude&limit=20&event_ticker=KXNBAGAME-26OCT30CHAWAS",
+      "received_at": "2026-10-28T02:01:25.952915+00:00",
+      "sha256": "6e8962529e8945fdb61d8d6c1741c071eaf05233c9ffa0dd8fcdcf0e99b4dd2c",
+      "schema_version": "kalshi-3.34.0/m1-v1",
+      "validation_status": "VALID"
+    },
+    {
+      "id": 47,
+      "venue": "polymarket_us",
+      "endpoint": "https://gateway.polymarket.us/v1/markets?active=true&closed=false&limit=20&offset=0&orderBy=id&orderDirection=asc&slug=aec-nba-cha-was-2026-10-30",
+      "received_at": "2026-10-28T02:01:27.153142+00:00",
+      "sha256": "341ae0a5fbb4ee25ca919f84ca6740ea68926218a358d83bb0307edff2afbb40",
+      "schema_version": "polymarket-us-marketservice-1.0.0/m1-v1",
+      "validation_status": "VALID"
+    },
+    {
+      "id": 48,
+      "venue": "polymarket_us",
+      "endpoint": "https://gateway.polymarket.us/v1/markets?active=true&closed=false&limit=20&offset=1&orderBy=id&orderDirection=asc&slug=aec-nba-cha-was-2026-10-30",
+      "received_at": "2026-10-28T02:01:28.034992+00:00",
+      "sha256": "f36daaa1fcd896f9fdfd2a991f06ef808c56d5acaceca4e6f89329e7794608d1",
+      "schema_version": "polymarket-us-marketservice-1.0.0/m1-v1",
+      "validation_status": "VALID"
+    },
+    {
+      "id": 49,
+      "venue": "kalshi",
+      "endpoint": "https://external-api.kalshi.com/trade-api/v2/markets?status=open&mve_filter=exclude&limit=20&event_ticker=KXNBAGAME-26OCT30CHIBOS",
+      "received_at": "2026-10-28T02:01:28.174260+00:00",
+      "sha256": "7f2922521f21201f6e56adab86f206912899f3e5e4f54c82e27552a7f1160cc7",
+      "schema_version": "kalshi-3.34.0/m1-v1",
+      "validation_status": "VALID"
+    },
+    {
+      "id": 50,
+      "venue": "polymarket_us",
+      "endpoint": "https://gateway.polymarket.us/v1/markets?active=true&closed=false&limit=20&offset=0&orderBy=id&orderDirection=asc&slug=aec-nba-chi-bos-2026-10-30",
+      "received_at": "2026-10-28T02:01:29.106273+00:00",
+      "sha256": "cc2831797fa48eb0fb1135d67c83ae80087cd73b6261f8e47372b9b37230d090",
+      "schema_version": "polymarket-us-marketservice-1.0.0/m1-v1",
+      "validation_status": "VALID"
+    },
+    {
+      "id": 51,
+      "venue": "polymarket_us",
+      "endpoint": "https://gateway.polymarket.us/v1/markets?active=true&closed=false&limit=20&offset=1&orderBy=id&orderDirection=asc&slug=aec-nba-chi-bos-2026-10-30",
+      "received_at": "2026-10-28T02:01:29.819663+00:00",
+      "sha256": "f36daaa1fcd896f9fdfd2a991f06ef808c56d5acaceca4e6f89329e7794608d1",
+      "schema_version": "polymarket-us-marketservice-1.0.0/m1-v1",
+      "validation_status": "VALID"
+    },
+    {
+      "id": 52,
+      "venue": "kalshi",
+      "endpoint": "https://external-api.kalshi.com/trade-api/v2/markets?status=open&mve_filter=exclude&limit=20&event_ticker=KXNBAGAME-26OCT30DENPHX",
+      "received_at": "2026-10-28T02:01:29.970105+00:00",
+      "sha256": "c5e8e789c77e11a3c47c29217ba3c151042524943a39898b797dfee8dae9969c",
+      "schema_version": "kalshi-3.34.0/m1-v1",
+      "validation_status": "VALID"
+    },
+    {
+      "id": 53,
+      "venue": "polymarket_us",
+      "endpoint": "https://gateway.polymarket.us/v1/markets?active=true&closed=false&limit=20&offset=0&orderBy=id&orderDirection=asc&slug=aec-nba-den-pho-2026-10-30",
+      "received_at": "2026-10-28T02:01:30.837883+00:00",
+      "sha256": "72da24d0de9c31eb9b519fed7abe8f74712b845a43fce70dc00bb147780c9c0b",
+      "schema_version": "polymarket-us-marketservice-1.0.0/m1-v1",
+      "validation_status": "VALID"
+    },
+    {
+      "id": 54,
+      "venue": "polymarket_us",
+      "endpoint": "https://gateway.polymarket.us/v1/markets?active=true&closed=false&limit=20&offset=1&orderBy=id&orderDirection=asc&slug=aec-nba-den-pho-2026-10-30",
+      "received_at": "2026-10-28T02:01:31.832201+00:00",
+      "sha256": "f36daaa1fcd896f9fdfd2a991f06ef808c56d5acaceca4e6f89329e7794608d1",
+      "schema_version": "polymarket-us-marketservice-1.0.0/m1-v1",
+      "validation_status": "VALID"
+    },
+    {
+      "id": 55,
+      "venue": "kalshi",
+      "endpoint": "https://external-api.kalshi.com/trade-api/v2/markets?status=open&mve_filter=exclude&limit=20&event_ticker=KXNBAGAME-26OCT30DETBKN",
+      "received_at": "2026-10-28T02:01:31.985707+00:00",
+      "sha256": "d142c8b0ecb4bbb476d44a3beac22ac57384b42df9753c20d509157e2a403efc",
+      "schema_version": "kalshi-3.34.0/m1-v1",
+      "validation_status": "VALID"
+    },
+    {
+      "id": 56,
+      "venue": "polymarket_us",
+      "endpoint": "https://gateway.polymarket.us/v1/markets?active=true&closed=false&limit=20&offset=0&orderBy=id&orderDirection=asc&slug=aec-nba-det-bkn-2026-10-30",
+      "received_at": "2026-10-28T02:01:32.825778+00:00",
+      "sha256": "3b41fb4c03a55575c1a60da34dedc28d9e40ccedca786f0636da5470613692d4",
+      "schema_version": "polymarket-us-marketservice-1.0.0/m1-v1",
+      "validation_status": "VALID"
+    },
+    {
+      "id": 57,
+      "venue": "polymarket_us",
+      "endpoint": "https://gateway.polymarket.us/v1/markets?active=true&closed=false&limit=20&offset=1&orderBy=id&orderDirection=asc&slug=aec-nba-det-bkn-2026-10-30",
+      "received_at": "2026-10-28T02:01:33.840111+00:00",
+      "sha256": "f36daaa1fcd896f9fdfd2a991f06ef808c56d5acaceca4e6f89329e7794608d1",
+      "schema_version": "polymarket-us-marketservice-1.0.0/m1-v1",
+      "validation_status": "VALID"
+    },
+    {
+      "id": 58,
+      "venue": "kalshi",
+      "endpoint": "https://external-api.kalshi.com/trade-api/v2/markets?status=open&mve_filter=exclude&limit=20&event_ticker=KXNBAGAME-26OCT30HOUDAL",
+      "received_at": "2026-10-28T02:01:33.977685+00:00",
+      "sha256": "78b6611b1a0589f72c30af54dd654b9c4e535c2895e935bd7bbf36e899e94efe",
+      "schema_version": "kalshi-3.34.0/m1-v1",
+      "validation_status": "VALID"
+    },
+    {
+      "id": 59,
+      "venue": "polymarket_us",
+      "endpoint": "https://gateway.polymarket.us/v1/markets?active=true&closed=false&limit=20&offset=0&orderBy=id&orderDirection=asc&slug=aec-nba-hou-dal-2026-10-30",
+      "received_at": "2026-10-28T02:01:35.580111+00:00",
+      "sha256": "0ac3229fbac75d5c6a279e78891118aef36f7af6e1ac0e2b66cf16f271ac0a0f",
+      "schema_version": "polymarket-us-marketservice-1.0.0/m1-v1",
+      "validation_status": "VALID"
+    },
+    {
+      "id": 60,
+      "venue": "polymarket_us",
+      "endpoint": "https://gateway.polymarket.us/v1/markets?active=true&closed=false&limit=20&offset=1&orderBy=id&orderDirection=asc&slug=aec-nba-hou-dal-2026-10-30",
+      "received_at": "2026-10-28T02:01:36.036265+00:00",
+      "sha256": "f36daaa1fcd896f9fdfd2a991f06ef808c56d5acaceca4e6f89329e7794608d1",
+      "schema_version": "polymarket-us-marketservice-1.0.0/m1-v1",
+      "validation_status": "VALID"
+    },
+    {
+      "id": 61,
+      "venue": "kalshi",
+      "endpoint": "https://external-api.kalshi.com/trade-api/v2/markets?status=open&mve_filter=exclude&limit=20&event_ticker=KXNBAGAME-26OCT30INDMIA",
+      "received_at": "2026-10-28T02:01:36.185394+00:00",
+      "sha256": "479e49b90dd6891554dc9268f0725b597b555e37b81128d18f9ff2bb7a29308a",
+      "schema_version": "kalshi-3.34.0/m1-v1",
+      "validation_status": "VALID"
+    },
+    {
+      "id": 62,
+      "venue": "polymarket_us",
+      "endpoint": "https://gateway.polymarket.us/v1/markets?active=true&closed=false&limit=20&offset=0&orderBy=id&orderDirection=asc&slug=aec-nba-ind-mia-2026-10-30",
+      "received_at": "2026-10-28T02:01:37.063679+00:00",
+      "sha256": "afe6a7716a1edad1784c78a3cbdc42921b0dd94714321dc81aff8aea7c4b83c3",
+      "schema_version": "polymarket-us-marketservice-1.0.0/m1-v1",
+      "validation_status": "VALID"
+    },
+    {
+      "id": 63,
+      "venue": "polymarket_us",
+      "endpoint": "https://gateway.polymarket.us/v1/markets?active=true&closed=false&limit=20&offset=1&orderBy=id&orderDirection=asc&slug=aec-nba-ind-mia-2026-10-30",
+      "received_at": "2026-10-28T02:01:37.807144+00:00",
+      "sha256": "f36daaa1fcd896f9fdfd2a991f06ef808c56d5acaceca4e6f89329e7794608d1",
+      "schema_version": "polymarket-us-marketservice-1.0.0/m1-v1",
+      "validation_status": "VALID"
+    },
+    {
+      "id": 64,
+      "venue": "kalshi",
+      "endpoint": "https://external-api.kalshi.com/trade-api/v2/markets?status=open&mve_filter=exclude&limit=20&event_ticker=KXNBAGAME-26OCT30LACMIN",
+      "received_at": "2026-10-28T02:01:37.957676+00:00",
+      "sha256": "cd7ab59c0dc0950276148960f996c6a34a14e6743716818e91d44f0fce169319",
+      "schema_version": "kalshi-3.34.0/m1-v1",
+      "validation_status": "VALID"
+    },
+    {
+      "id": 65,
+      "venue": "polymarket_us",
+      "endpoint": "https://gateway.polymarket.us/v1/markets?active=true&closed=false&limit=20&offset=0&orderBy=id&orderDirection=asc&slug=aec-nba-lac-min-2026-10-30",
+      "received_at": "2026-10-28T02:01:39.152375+00:00",
+      "sha256": "4067fa3ecfa7dcdd36d1fc2dee3a8360ee57c4c1a3916dc3e9e7646e3e2c667e",
+      "schema_version": "polymarket-us-marketservice-1.0.0/m1-v1",
+      "validation_status": "VALID"
+    },
+    {
+      "id": 66,
+      "venue": "polymarket_us",
+      "endpoint": "https://gateway.polymarket.us/v1/markets?active=true&closed=false&limit=20&offset=1&orderBy=id&orderDirection=asc&slug=aec-nba-lac-min-2026-10-30",
+      "received_at": "2026-10-28T02:01:39.793687+00:00",
+      "sha256": "f36daaa1fcd896f9fdfd2a991f06ef808c56d5acaceca4e6f89329e7794608d1",
+      "schema_version": "polymarket-us-marketservice-1.0.0/m1-v1",
+      "validation_status": "VALID"
+    },
+    {
+      "id": 67,
+      "venue": "kalshi",
+      "endpoint": "https://external-api.kalshi.com/trade-api/v2/markets?status=open&mve_filter=exclude&limit=20&event_ticker=KXNBAGAME-26OCT30LALGSW",
+      "received_at": "2026-10-28T02:01:39.964930+00:00",
+      "sha256": "fb6e6490a164e19deedb593fa963f55d48745dbd7a826d6e4ae6884ffa025b9f",
+      "schema_version": "kalshi-3.34.0/m1-v1",
+      "validation_status": "VALID"
+    },
+    {
+      "id": 68,
+      "venue": "polymarket_us",
+      "endpoint": "https://gateway.polymarket.us/v1/markets?active=true&closed=false&limit=20&offset=0&orderBy=id&orderDirection=asc&slug=aec-nba-lal-gs-2026-10-30",
+      "received_at": "2026-10-28T02:01:40.881449+00:00",
+      "sha256": "7984a804b7edaa5688b68e4033db608c4158bb7b81ac9e422967d25d642a2cec",
+      "schema_version": "polymarket-us-marketservice-1.0.0/m1-v1",
+      "validation_status": "VALID"
+    },
+    {
+      "id": 69,
+      "venue": "polymarket_us",
+      "endpoint": "https://gateway.polymarket.us/v1/markets?active=true&closed=false&limit=20&offset=1&orderBy=id&orderDirection=asc&slug=aec-nba-lal-gs-2026-10-30",
+      "received_at": "2026-10-28T02:01:42.159951+00:00",
+      "sha256": "f36daaa1fcd896f9fdfd2a991f06ef808c56d5acaceca4e6f89329e7794608d1",
+      "schema_version": "polymarket-us-marketservice-1.0.0/m1-v1",
+      "validation_status": "VALID"
+    },
+    {
+      "id": 70,
+      "venue": "kalshi",
+      "endpoint": "https://external-api.kalshi.com/trade-api/v2/markets?status=open&mve_filter=exclude&limit=20&event_ticker=KXNBAGAME-26OCT30NYKPHI",
+      "received_at": "2026-10-28T02:01:42.304357+00:00",
+      "sha256": "d11a5d480e112e2c2e0d1f9d53bcb195bddc07484293999ccecb5ab8c9fa5a7b",
+      "schema_version": "kalshi-3.34.0/m1-v1",
+      "validation_status": "VALID"
+    },
+    {
+      "id": 71,
+      "venue": "polymarket_us",
+      "endpoint": "https://gateway.polymarket.us/v1/markets?active=true&closed=false&limit=20&offset=0&orderBy=id&orderDirection=asc&slug=aec-nba-ny-phi-2026-10-30",
+      "received_at": "2026-10-28T02:01:43.486301+00:00",
+      "sha256": "f4b0323eb7d831bd483ff20dcf4e9c5221ce8810af5084dc4d97f78c931c309e",
+      "schema_version": "polymarket-us-marketservice-1.0.0/m1-v1",
+      "validation_status": "VALID"
+    },
+    {
+      "id": 72,
+      "venue": "polymarket_us",
+      "endpoint": "https://gateway.polymarket.us/v1/markets?active=true&closed=false&limit=20&offset=1&orderBy=id&orderDirection=asc&slug=aec-nba-ny-phi-2026-10-30",
+      "received_at": "2026-10-28T02:01:44.450810+00:00",
+      "sha256": "f36daaa1fcd896f9fdfd2a991f06ef808c56d5acaceca4e6f89329e7794608d1",
+      "schema_version": "polymarket-us-marketservice-1.0.0/m1-v1",
+      "validation_status": "VALID"
+    },
+    {
+      "id": 73,
+      "venue": "kalshi",
+      "endpoint": "https://external-api.kalshi.com/trade-api/v2/markets?status=open&mve_filter=exclude&limit=20&event_ticker=KXNBAGAME-26OCT30ORLTOR",
+      "received_at": "2026-10-28T02:01:44.602135+00:00",
+      "sha256": "400e2fba17c7c6f2364a6c58aca9bd09ffbe27fa85c376f9bb89a2e91238882b",
+      "schema_version": "kalshi-3.34.0/m1-v1",
+      "validation_status": "VALID"
+    },
+    {
+      "id": 74,
+      "venue": "polymarket_us",
+      "endpoint": "https://gateway.polymarket.us/v1/markets?active=true&closed=false&limit=20&offset=0&orderBy=id&orderDirection=asc&slug=aec-nba-orl-tor-2026-10-30",
+      "received_at": "2026-10-28T02:01:44.861929+00:00",
+      "sha256": "f77e6f7a0b8116e1838481a15a66a79171f2a9cd8ae3c234b53eac62927aaa50",
+      "schema_version": "polymarket-us-marketservice-1.0.0/m1-v1",
+      "validation_status": "VALID"
+    },
+    {
+      "id": 75,
+      "venue": "polymarket_us",
+      "endpoint": "https://gateway.polymarket.us/v1/markets?active=true&closed=false&limit=20&offset=1&orderBy=id&orderDirection=asc&slug=aec-nba-orl-tor-2026-10-30",
+      "received_at": "2026-10-28T02:01:45.802735+00:00",
+      "sha256": "f36daaa1fcd896f9fdfd2a991f06ef808c56d5acaceca4e6f89329e7794608d1",
+      "schema_version": "polymarket-us-marketservice-1.0.0/m1-v1",
+      "validation_status": "VALID"
+    },
+    {
+      "id": 76,
+      "venue": "kalshi",
+      "endpoint": "https://external-api.kalshi.com/trade-api/v2/markets?status=open&mve_filter=exclude&limit=20&event_ticker=KXNBAGAME-26OCT31ATLNOP",
+      "received_at": "2026-10-28T02:01:45.948047+00:00",
+      "sha256": "cd246d42bf7b624b855e98978ab2e7f925a13e6c761d1dc741f4f1b54b14cc65",
+      "schema_version": "kalshi-3.34.0/m1-v1",
+      "validation_status": "VALID"
+    },
+    {
+      "id": 77,
+      "venue": "polymarket_us",
+      "endpoint": "https://gateway.polymarket.us/v1/markets?active=true&closed=false&limit=20&offset=0&orderBy=id&orderDirection=asc&slug=aec-nba-atl-no-2026-10-31",
+      "received_at": "2026-10-28T02:01:46.807837+00:00",
+      "sha256": "885888620dfbbb97f4721a10c6c2d965846c9eedb40dc48c1be94ce61bbf09f8",
+      "schema_version": "polymarket-us-marketservice-1.0.0/m1-v1",
+      "validation_status": "VALID"
+    },
+    {
+      "id": 78,
+      "venue": "polymarket_us",
+      "endpoint": "https://gateway.polymarket.us/v1/markets?active=true&closed=false&limit=20&offset=1&orderBy=id&orderDirection=asc&slug=aec-nba-atl-no-2026-10-31",
+      "received_at": "2026-10-28T02:01:47.847142+00:00",
+      "sha256": "f36daaa1fcd896f9fdfd2a991f06ef808c56d5acaceca4e6f89329e7794608d1",
+      "schema_version": "polymarket-us-marketservice-1.0.0/m1-v1",
+      "validation_status": "VALID"
+    },
+    {
+      "id": 79,
+      "venue": "kalshi",
+      "endpoint": "https://external-api.kalshi.com/trade-api/v2/markets?status=open&mve_filter=exclude&limit=20&event_ticker=KXNBAGAME-26OCT31PHICHA",
+      "received_at": "2026-10-28T02:01:47.997008+00:00",
+      "sha256": "8bb5b9489e00f4abad81afa7e1d1aa3ee00415a777571431d828509675005823",
+      "schema_version": "kalshi-3.34.0/m1-v1",
+      "validation_status": "VALID"
+    },
+    {
+      "id": 80,
+      "venue": "polymarket_us",
+      "endpoint": "https://gateway.polymarket.us/v1/markets?active=true&closed=false&limit=20&offset=0&orderBy=id&orderDirection=asc&slug=aec-nba-phi-cha-2026-10-31",
+      "received_at": "2026-10-28T02:01:50.155983+00:00",
+      "sha256": "c020e44927971579381bea13323f1db9d06cb8fb46f1b2cae94884b7c3c59132",
+      "schema_version": "polymarket-us-marketservice-1.0.0/m1-v1",
+      "validation_status": "VALID"
+    },
+    {
+      "id": 81,
+      "venue": "polymarket_us",
+      "endpoint": "https://gateway.polymarket.us/v1/markets?active=true&closed=false&limit=20&offset=1&orderBy=id&orderDirection=asc&slug=aec-nba-phi-cha-2026-10-31",
+      "received_at": "2026-10-28T02:01:50.298312+00:00",
+      "sha256": "f36daaa1fcd896f9fdfd2a991f06ef808c56d5acaceca4e6f89329e7794608d1",
+      "schema_version": "polymarket-us-marketservice-1.0.0/m1-v1",
+      "validation_status": "VALID"
+    },
+    {
+      "id": 82,
+      "venue": "kalshi",
+      "endpoint": "https://external-api.kalshi.com/trade-api/v2/markets?status=open&mve_filter=exclude&limit=20&event_ticker=KXNBAGAME-26OCT31PORUTA",
+      "received_at": "2026-10-28T02:01:50.443151+00:00",
+      "sha256": "db72c4474414ea701266f624ba608a8f03b7309b4055054a530b0dcdf4cd7ea2",
+      "schema_version": "kalshi-3.34.0/m1-v1",
+      "validation_status": "VALID"
+    },
+    {
+      "id": 83,
+      "venue": "polymarket_us",
+      "endpoint": "https://gateway.polymarket.us/v1/markets?active=true&closed=false&limit=20&offset=0&orderBy=id&orderDirection=asc&slug=aec-nba-por-uta-2026-10-31",
+      "received_at": "2026-10-28T02:01:51.275535+00:00",
+      "sha256": "32af931910fb32dbde6fe560b5e201ad6ee325426bcfab84c620929885971b80",
+      "schema_version": "polymarket-us-marketservice-1.0.0/m1-v1",
+      "validation_status": "VALID"
+    },
+    {
+      "id": 84,
+      "venue": "polymarket_us",
+      "endpoint": "https://gateway.polymarket.us/v1/markets?active=true&closed=false&limit=20&offset=1&orderBy=id&orderDirection=asc&slug=aec-nba-por-uta-2026-10-31",
+      "received_at": "2026-10-28T02:01:52.478576+00:00",
+      "sha256": "f36daaa1fcd896f9fdfd2a991f06ef808c56d5acaceca4e6f89329e7794608d1",
+      "schema_version": "polymarket-us-marketservice-1.0.0/m1-v1",
+      "validation_status": "VALID"
+    },
+    {
+      "id": 85,
+      "venue": "kalshi",
+      "endpoint": "https://external-api.kalshi.com/trade-api/v2/markets?status=open&mve_filter=exclude&limit=20&event_ticker=KXNFLGAME-26NOV01ARIDAL",
+      "received_at": "2026-10-28T02:01:52.660195+00:00",
+      "sha256": "070135c19e1aa7c1eeb9f7f495fdd810f72ea00cfaa4889dbd3aba45723146c4",
+      "schema_version": "kalshi-3.34.0/m1-v1",
+      "validation_status": "VALID"
+    },
+    {
+      "id": 86,
+      "venue": "polymarket_us",
+      "endpoint": "https://gateway.polymarket.us/v1/markets?active=true&closed=false&limit=20&offset=0&orderBy=id&orderDirection=asc&slug=aec-nfl-ari-dal-2026-11-01",
+      "received_at": "2026-10-28T02:01:53.271905+00:00",
+      "sha256": "95266dc8d7bf0ab852dccfd34c603b9390838ef7e82ccacdf00714c11e7b70e6",
+      "schema_version": "polymarket-us-marketservice-1.0.0/m1-v1",
+      "validation_status": "VALID"
+    },
+    {
+      "id": 87,
+      "venue": "polymarket_us",
+      "endpoint": "https://gateway.polymarket.us/v1/markets?active=true&closed=false&limit=20&offset=1&orderBy=id&orderDirection=asc&slug=aec-nfl-ari-dal-2026-11-01",
+      "received_at": "2026-10-28T02:01:54.305820+00:00",
+      "sha256": "f36daaa1fcd896f9fdfd2a991f06ef808c56d5acaceca4e6f89329e7794608d1",
+      "schema_version": "polymarket-us-marketservice-1.0.0/m1-v1",
+      "validation_status": "VALID"
+    },
+    {
+      "id": 88,
+      "venue": "kalshi",
+      "endpoint": "https://external-api.kalshi.com/trade-api/v2/markets?status=open&mve_filter=exclude&limit=20&event_ticker=KXNFLGAME-26NOV01ATLTB",
+      "received_at": "2026-10-28T02:01:54.457679+00:00",
+      "sha256": "59df0c46b1d3a11a22cb84e9924132d58d0406a3f2b5d9c69be6e1fffe42ecf4",
+      "schema_version": "kalshi-3.34.0/m1-v1",
+      "validation_status": "VALID"
+    },
+    {
+      "id": 89,
+      "venue": "polymarket_us",
+      "endpoint": "https://gateway.polymarket.us/v1/markets?active=true&closed=false&limit=20&offset=0&orderBy=id&orderDirection=asc&slug=aec-nfl-atl-tb-2026-11-01",
+      "received_at": "2026-10-28T02:01:55.323906+00:00",
+      "sha256": "68b3cb9fcb06ce6bf644e99454846bc8e3d8c1a68976edcbca3b6703bb8683aa",
+      "schema_version": "polymarket-us-marketservice-1.0.0/m1-v1",
+      "validation_status": "VALID"
+    },
+    {
+      "id": 90,
+      "venue": "polymarket_us",
+      "endpoint": "https://gateway.polymarket.us/v1/markets?active=true&closed=false&limit=20&offset=1&orderBy=id&orderDirection=asc&slug=aec-nfl-atl-tb-2026-11-01",
+      "received_at": "2026-10-28T02:01:56.448179+00:00",
+      "sha256": "f36daaa1fcd896f9fdfd2a991f06ef808c56d5acaceca4e6f89329e7794608d1",
+      "schema_version": "polymarket-us-marketservice-1.0.0/m1-v1",
+      "validation_status": "VALID"
+    }
+  ]
+}

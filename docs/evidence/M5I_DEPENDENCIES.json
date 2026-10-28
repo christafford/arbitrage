@@ -1,0 +1,21 @@
+{
+  "python": "3.13.5 (main, Aug 10 2026, 12:06:59) [GCC 14.2.0]",
+  "sqlite": "3.46.1",
+  "fts5": true,
+  "dependencies": {
+    "prediction-arb-research": "0.1.0",
+    "websockets": "17.3",
+    "cryptography": "50.0.2"
+  },
+  "pip_check": {
+    "code": 0,
+    "stdout": "No broken requirements found.\n",
+    "stderr": ""
+  },
+  "systemd_verify": {
+    "code": 0,
+    "stdout": "",
+    "stderr": "",
+    "substitution": "/opt/predarb replaced by actual checkout for executable dependency check; templates not activated"
+  }
+}

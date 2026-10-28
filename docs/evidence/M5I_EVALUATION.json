@@ -1,0 +1,1950 @@
+{
+  "schema": "m5i-evaluation-results/v1",
+  "hypothetical": false,
+  "mode": "GENUINE_ARCHIVED_DEFINITIONS_EVENT_RETRIEVAL_ONLY",
+  "dataset_sha256": "4881cf2ec5bd58e8a59f62a86d1d9e3e4b807d8682fc5c4b7076bd8bc640e84a",
+  "evaluated_at": "2026-10-28T01:53:05.669510+00:00",
+  "sampling_limits": "Purposive NBA/NFL and CPI contrast set, not representative, not independently human-adjudicated or held out.",
+  "settlement_equivalence_approved": false,
+  "baseline": {
+    "20": {
+      "relevant_found": 18,
+      "relevant_total": 18,
+      "recall": 1.0,
+      "returned": 74,
+      "precision_among_returned": 0.24324324324324326,
+      "false_negative_categories": {}
+    },
+    "100": {
+      "relevant_found": 18,
+      "relevant_total": 18,
+      "recall": 1.0,
+      "returned": 74,
+      "precision_among_returned": 0.24324324324324326,
+      "false_negative_categories": {}
+    },
+    "hard_negative_retrievals": [
+      {
+        "kalshi_id": "KXNBAGAME-26OCT29CLEATL-ATL",
+        "polymarket_us_id": "aec-nba-cle-atl-2026-10-29",
+        "category": "inverse_outcome",
+        "reason": "Opposite selected winner for the same game; no complementary payoff approval.",
+        "retrieved": false
+      },
+      {
+        "kalshi_id": "KXNBAGAME-26OCT28MIAATL-ATL",
+        "polymarket_us_id": "aec-nba-mia-atl-2026-10-28",
+        "category": "inverse_outcome",
+        "reason": "Opposite selected winner for the same game; no complementary payoff approval.",
+        "retrieved": false
+      },
+      {
+        "kalshi_id": "KXNBAGAME-26OCT31ATLNOP-NOP",
+        "polymarket_us_id": "aec-nba-atl-no-2026-10-31",
+        "category": "inverse_outcome",
+        "reason": "Opposite selected winner for the same game; no complementary payoff approval.",
+        "retrieved": false
+      },
+      {
+        "kalshi_id": "KXNBAGAME-26OCT30DETBKN-BKN",
+        "polymarket_us_id": "aec-nba-det-bkn-2026-10-30",
+        "category": "inverse_outcome",
+        "reason": "Opposite selected winner for the same game; no complementary payoff approval.",
+        "retrieved": false
+      },
+      {
+        "kalshi_id": "KXNBAGAME-26OCT30CHIBOS-BOS",
+        "polymarket_us_id": "aec-nba-chi-bos-2026-10-30",
+        "category": "inverse_outcome",
+        "reason": "Opposite selected winner for the same game; no complementary payoff approval.",
+        "retrieved": false
+      },
+      {
+        "kalshi_id": "KXNBAGAME-26OCT28CHADET-DET",
+        "polymarket_us_id": "aec-nba-cha-det-2026-10-28",
+        "category": "inverse_outcome",
+        "reason": "Opposite selected winner for the same game; no complementary payoff approval.",
+        "retrieved": false
+      },
+      {
+        "kalshi_id": "KXNBAGAME-26OCT31PHICHA-CHA",
+        "polymarket_us_id": "aec-nba-phi-cha-2026-10-31",
+        "category": "inverse_outcome",
+        "reason": "Opposite selected winner for the same game; no complementary payoff approval.",
+        "retrieved": false
+      },
+      {
+        "kalshi_id": "KXNBAGAME-26OCT30CHAWAS-WAS",
+        "polymarket_us_id": "aec-nba-cha-was-2026-10-30",
+        "category": "inverse_outcome",
+        "reason": "Opposite selected winner for the same game; no complementary payoff approval.",
+        "retrieved": false
+      },
+      {
+        "kalshi_id": "KXNFLGAME-26NOV01ARIDAL-DAL",
+        "polymarket_us_id": "aec-nfl-ari-dal-2026-11-01",
+        "category": "inverse_outcome",
+        "reason": "Opposite selected winner for the same game; no complementary payoff approval.",
+        "retrieved": false
+      },
+      {
+        "kalshi_id": "KXNFLGAME-26NOV08ARISEA-SEA",
+        "polymarket_us_id": "aec-nfl-ari-sea-2026-11-08",
+        "category": "inverse_outcome",
+        "reason": "Opposite selected winner for the same game; no complementary payoff approval.",
+        "retrieved": false
+      },
+      {
+        "kalshi_id": "KXCPI-26OCT-T-0.1",
+        "polymarket_us_id": "cpic-uscpi-october-mom-2026-11-10-gt0pt0pct",
+        "category": "different_threshold",
+        "reason": "Different explicit percentage threshold.",
+        "retrieved": true
+      },
+      {
+        "kalshi_id": "KXCPI-26OCT-T0.0",
+        "polymarket_us_id": "cpic-uscpi-october-mom-2026-11-10-gt0pt1pct",
+        "category": "different_threshold",
+        "reason": "Different explicit percentage threshold.",
+        "retrieved": true
+      },
+      {
+        "kalshi_id": "KXCPI-26OCT-T0.1",
+        "polymarket_us_id": "cpic-uscpi-october-mom-2026-11-10-gt0pt2pct",
+        "category": "different_threshold",
+        "reason": "Different explicit percentage threshold.",
+        "retrieved": true
+      },
+      {
+        "kalshi_id": "KXCPI-26OCT-T0.2",
+        "polymarket_us_id": "cpic-uscpi-october-mom-2026-11-10-gt0pt3pct",
+        "category": "different_threshold",
+        "reason": "Different explicit percentage threshold.",
+        "retrieved": true
+      },
+      {
+        "kalshi_id": "KXCPI-26OCT-T0.3",
+        "polymarket_us_id": "cpic-uscpi-october-mom-2026-11-10-gt0pt4pct",
+        "category": "different_threshold",
+        "reason": "Different explicit percentage threshold.",
+        "retrieved": true
+      },
+      {
+        "kalshi_id": "KXCPI-26OCT-T0.4",
+        "polymarket_us_id": "cpic-uscpi-october-mom-2026-11-10-gt0pt5pct",
+        "category": "different_threshold",
+        "reason": "Different explicit percentage threshold.",
+        "retrieved": true
+      },
+      {
+        "kalshi_id": "KXCPI-26OCT-T0.5",
+        "polymarket_us_id": "cpic-uscpi-october-mom-2026-11-10-gt0pt6pct",
+        "category": "different_threshold",
+        "reason": "Different explicit percentage threshold.",
+        "retrieved": true
+      },
+      {
+        "kalshi_id": "KXCPI-26OCT-T0.2",
+        "polymarket_us_id": "cpic-uscpi-october-yoy-2026-11-10-gt3pt2pct",
+        "category": "different_measure_or_settlement_rule",
+        "reason": "Monthly versus annual CPI; or absolute rate threshold versus rounded change bucket. Thematic similarity is insufficient.",
+        "retrieved": true
+      },
+      {
+        "kalshi_id": "KXFED-26OCT-T4.25",
+        "polymarket_us_id": "rdc-usfed-fomc-2026-10-28-cut25",
+        "category": "different_measure_or_settlement_rule",
+        "reason": "Monthly versus annual CPI; or absolute rate threshold versus rounded change bucket. Thematic similarity is insufficient.",
+        "retrieved": false
+      },
+      {
+        "kalshi_id": "KXNBAGAME-26OCT29CLEATL-CLE",
+        "polymarket_us_id": "cpic-uscpi-october-mom-2026-11-10-gt0pt6pct",
+        "category": "obvious_false_positive",
+        "reason": "Basketball game winner versus consumer price index change.",
+        "retrieved": false
+      }
+    ],
+    "elapsed_seconds": 0.05237751900131116,
+    "algorithm": "discovery-v3-category"
+  },
+  "improved": {
+    "20": {
+      "relevant_found": 18,
+      "relevant_total": 18,
+      "recall": 1.0,
+      "returned": 18,
+      "precision_among_returned": 1.0,
+      "false_negative_categories": {}
+    },
+    "100": {
+      "relevant_found": 18,
+      "relevant_total": 18,
+      "recall": 1.0,
+      "returned": 18,
+      "precision_among_returned": 1.0,
+      "false_negative_categories": {}
+    },
+    "hard_negative_retrievals": [
+      {
+        "kalshi_id": "KXNBAGAME-26OCT29CLEATL-ATL",
+        "polymarket_us_id": "aec-nba-cle-atl-2026-10-29",
+        "category": "inverse_outcome",
+        "reason": "Opposite selected winner for the same game; no complementary payoff approval.",
+        "retrieved": false
+      },
+      {
+        "kalshi_id": "KXNBAGAME-26OCT28MIAATL-ATL",
+        "polymarket_us_id": "aec-nba-mia-atl-2026-10-28",
+        "category": "inverse_outcome",
+        "reason": "Opposite selected winner for the same game; no complementary payoff approval.",
+        "retrieved": false
+      },
+      {
+        "kalshi_id": "KXNBAGAME-26OCT31ATLNOP-NOP",
+        "polymarket_us_id": "aec-nba-atl-no-2026-10-31",
+        "category": "inverse_outcome",
+        "reason": "Opposite selected winner for the same game; no complementary payoff approval.",
+        "retrieved": false
+      },
+      {
+        "kalshi_id": "KXNBAGAME-26OCT30DETBKN-BKN",
+        "polymarket_us_id": "aec-nba-det-bkn-2026-10-30",
+        "category": "inverse_outcome",
+        "reason": "Opposite selected winner for the same game; no complementary payoff approval.",
+        "retrieved": false
+      },
+      {
+        "kalshi_id": "KXNBAGAME-26OCT30CHIBOS-BOS",
+        "polymarket_us_id": "aec-nba-chi-bos-2026-10-30",
+        "category": "inverse_outcome",
+        "reason": "Opposite selected winner for the same game; no complementary payoff approval.",
+        "retrieved": false
+      },
+      {
+        "kalshi_id": "KXNBAGAME-26OCT28CHADET-DET",
+        "polymarket_us_id": "aec-nba-cha-det-2026-10-28",
+        "category": "inverse_outcome",
+        "reason": "Opposite selected winner for the same game; no complementary payoff approval.",
+        "retrieved": false
+      },
+      {
+        "kalshi_id": "KXNBAGAME-26OCT31PHICHA-CHA",
+        "polymarket_us_id": "aec-nba-phi-cha-2026-10-31",
+        "category": "inverse_outcome",
+        "reason": "Opposite selected winner for the same game; no complementary payoff approval.",
+        "retrieved": false
+      },
+      {
+        "kalshi_id": "KXNBAGAME-26OCT30CHAWAS-WAS",
+        "polymarket_us_id": "aec-nba-cha-was-2026-10-30",
+        "category": "inverse_outcome",
+        "reason": "Opposite selected winner for the same game; no complementary payoff approval.",
+        "retrieved": false
+      },
+      {
+        "kalshi_id": "KXNFLGAME-26NOV01ARIDAL-DAL",
+        "polymarket_us_id": "aec-nfl-ari-dal-2026-11-01",
+        "category": "inverse_outcome",
+        "reason": "Opposite selected winner for the same game; no complementary payoff approval.",
+        "retrieved": false
+      },
+      {
+        "kalshi_id": "KXNFLGAME-26NOV08ARISEA-SEA",
+        "polymarket_us_id": "aec-nfl-ari-sea-2026-11-08",
+        "category": "inverse_outcome",
+        "reason": "Opposite selected winner for the same game; no complementary payoff approval.",
+        "retrieved": false
+      },
+      {
+        "kalshi_id": "KXCPI-26OCT-T-0.1",
+        "polymarket_us_id": "cpic-uscpi-october-mom-2026-11-10-gt0pt0pct",
+        "category": "different_threshold",
+        "reason": "Different explicit percentage threshold.",
+        "retrieved": false
+      },
+      {
+        "kalshi_id": "KXCPI-26OCT-T0.0",
+        "polymarket_us_id": "cpic-uscpi-october-mom-2026-11-10-gt0pt1pct",
+        "category": "different_threshold",
+        "reason": "Different explicit percentage threshold.",
+        "retrieved": false
+      },
+      {
+        "kalshi_id": "KXCPI-26OCT-T0.1",
+        "polymarket_us_id": "cpic-uscpi-october-mom-2026-11-10-gt0pt2pct",
+        "category": "different_threshold",
+        "reason": "Different explicit percentage threshold.",
+        "retrieved": false
+      },
+      {
+        "kalshi_id": "KXCPI-26OCT-T0.2",
+        "polymarket_us_id": "cpic-uscpi-october-mom-2026-11-10-gt0pt3pct",
+        "category": "different_threshold",
+        "reason": "Different explicit percentage threshold.",
+        "retrieved": false
+      },
+      {
+        "kalshi_id": "KXCPI-26OCT-T0.3",
+        "polymarket_us_id": "cpic-uscpi-october-mom-2026-11-10-gt0pt4pct",
+        "category": "different_threshold",
+        "reason": "Different explicit percentage threshold.",
+        "retrieved": false
+      },
+      {
+        "kalshi_id": "KXCPI-26OCT-T0.4",
+        "polymarket_us_id": "cpic-uscpi-october-mom-2026-11-10-gt0pt5pct",
+        "category": "different_threshold",
+        "reason": "Different explicit percentage threshold.",
+        "retrieved": false
+      },
+      {
+        "kalshi_id": "KXCPI-26OCT-T0.5",
+        "polymarket_us_id": "cpic-uscpi-october-mom-2026-11-10-gt0pt6pct",
+        "category": "different_threshold",
+        "reason": "Different explicit percentage threshold.",
+        "retrieved": false
+      },
+      {
+        "kalshi_id": "KXCPI-26OCT-T0.2",
+        "polymarket_us_id": "cpic-uscpi-october-yoy-2026-11-10-gt3pt2pct",
+        "category": "different_measure_or_settlement_rule",
+        "reason": "Monthly versus annual CPI; or absolute rate threshold versus rounded change bucket. Thematic similarity is insufficient.",
+        "retrieved": false
+      },
+      {
+        "kalshi_id": "KXFED-26OCT-T4.25",
+        "polymarket_us_id": "rdc-usfed-fomc-2026-10-28-cut25",
+        "category": "different_measure_or_settlement_rule",
+        "reason": "Monthly versus annual CPI; or absolute rate threshold versus rounded change bucket. Thematic similarity is insufficient.",
+        "retrieved": false
+      },
+      {
+        "kalshi_id": "KXNBAGAME-26OCT29CLEATL-CLE",
+        "polymarket_us_id": "cpic-uscpi-october-mom-2026-11-10-gt0pt6pct",
+        "category": "obvious_false_positive",
+        "reason": "Basketball game winner versus consumer price index change.",
+        "retrieved": false
+      }
+    ],
+    "elapsed_seconds": 0.22308155499922577,
+    "algorithm": "semantic-discovery/m5i-v1"
+  },
+  "inference": {
+    "status": "READY",
+    "completed": {
+      "kalshi": 29,
+      "polymarket_us": 20
+    },
+    "requests": 6,
+    "cache_hits": 0,
+    "stop_reason": "PER_VENUE_BUDGET_OR_EMPTY",
+    "model": "qwen3-embedding-8b",
+    "identity": "6ad290cf06017f5a5aba88e4f878e7b3320b73c8ac1d8018d376aab00d64cb16",
+    "dimensions": 4096,
+    "elapsed_seconds": 29.753809791000094,
+    "texts_per_second": 1.6468479278516284
+  },
+  "coverage": {
+    "at": "2026-10-28T01:53:05.669510+00:00",
+    "identity": "6ad290cf06017f5a5aba88e4f878e7b3320b73c8ac1d8018d376aab00d64cb16",
+    "venues": {
+      "kalshi": {
+        "catalogued": 29,
+        "eligible": 29,
+        "indexed": 29,
+        "source_total": 29,
+        "unsynced": 0
+      },
+      "polymarket_us": {
+        "catalogued": 20,
+        "eligible": 20,
+        "indexed": 20,
+        "source_total": 20,
+        "unsynced": 0
+      }
+    },
+    "groups": [
+      {
+        "venue": "kalshi",
+        "category": "UNKNOWN",
+        "settlement_deadline_horizon": "8_30_DAYS",
+        "catalogued": 1,
+        "eligible": 1,
+        "indexed": 1
+      },
+      {
+        "venue": "kalshi",
+        "category": "UNKNOWN",
+        "settlement_deadline_horizon": "OVER_90_DAYS",
+        "catalogued": 8,
+        "eligible": 8,
+        "indexed": 8
+      },
+      {
+        "venue": "kalshi",
+        "category": "sports",
+        "settlement_deadline_horizon": "0_7_DAYS",
+        "catalogued": 18,
+        "eligible": 18,
+        "indexed": 18
+      },
+      {
+        "venue": "kalshi",
+        "category": "sports",
+        "settlement_deadline_horizon": "8_30_DAYS",
+        "catalogued": 2,
+        "eligible": 2,
+        "indexed": 2
+      },
+      {
+        "venue": "polymarket_us",
+        "category": "macro",
+        "settlement_deadline_horizon": "8_30_DAYS",
+        "catalogued": 10,
+        "eligible": 10,
+        "indexed": 10
+      },
+      {
+        "venue": "polymarket_us",
+        "category": "sports",
+        "settlement_deadline_horizon": "8_30_DAYS",
+        "catalogued": 10,
+        "eligible": 10,
+        "indexed": 10
+      }
+    ],
+    "horizon_note": "Administrative deadline proxy; cash availability and settlement timing remain unverified",
+    "last_full_scan": "2026-10-28T01:37:07.400883+00:00",
+    "collection": {
+      "kalshi": [
+        [
+          1,
+          "COMPLETE"
+        ],
+        null
+      ],
+      "polymarket_us": [
+        [
+          2,
+          "COMPLETE"
+        ],
+        null
+      ]
+    }
+  },
+  "new_reviewable_events": [],
+  "baseline_reviewable_events": 11,
+  "improved_reviewable_events": 11,
+  "retrieved": {
+    "aec-nba-atl-no-2026-10-31": [
+      {
+        "kalshi_id": "KXNBAGAME-26OCT31ATLNOP-ATL",
+        "polymarket_us_id": "aec-nba-atl-no-2026-10-31",
+        "kalshi_title": "Atlanta wins",
+        "polymarket_us_title": "Who will win in the upcoming basketball event ATL Hawks vs NO Pelicans scheduled for October 31, 2026 at 11:00 PM UTC?",
+        "versions": [
+          5,
+          32
+        ],
+        "event_key": "[\"NBA\",\"FULL_GAME_WINNER\",[\"ATL\",\"NOP\"],\"2026-10-31\"]",
+        "polymarket_event_key": "[\"NBA\",\"FULL_GAME_WINNER\",[\"ATL\",\"NOP\"],\"2026-10-31\"]",
+        "retrieval_reasons": [
+          "EXACT_LEAGUE_PARTICIPANTS_RULE_DATE_AND_SELECTION"
+        ],
+        "signals": {
+          "subject_bps": 10000,
+          "sports_identity": "MATCH",
+          "league": "NBA",
+          "market_type": "FULL_GAME_WINNER",
+          "participants": [
+            "ATL",
+            "NOP"
+          ],
+          "selection": "ATL",
+          "dates": "SCHEDULED_RULE_DATE_MATCH",
+          "settlement_equivalence": "UNVERIFIED"
+        },
+        "warnings": [
+          "SPORTS_IDENTITY_ONLY_NOT_EQUIVALENCE",
+          "SPORTS_SETTLEMENT_REVIEW_REQUIRED",
+          "POSTPONEMENT_WINDOW_UNKNOWN",
+          "OCCURRENCE_AND_START_TIMES_NOT_COMPARABLE",
+          "ADMINISTRATIVE_CUTOFFS_DIFFER",
+          "EXCEPTIONAL_FAIR_PRICE_PAYOUTS_NOT_ESTABLISHED_COMPLEMENTARY",
+          "FORFEIT_AND_SOURCE_REVISION_RULES_REQUIRE_REVIEW"
+        ],
+        "known_contradictions": [],
+        "equivalence_score_bps": 8500,
+        "match_basis": "SPORTS_EVENT_IDENTITY",
+        "status": "UNVERIFIED",
+        "equivalence_verified": false,
+        "trading_authorized": false,
+        "hypothetical": false,
+        "algorithm": "semantic-discovery/m5i-v1",
+        "source_observations": [
+          5,
+          32
+        ],
+        "source_received_at": [
+          "2026-10-27T23:46:30.573099+00:00",
+          "2026-10-28T00:07:06.177209+00:00"
+        ],
+        "review_snapshot_expires_at": "2026-10-28T23:46:30.573099+00:00",
+        "settlement_deadlines": [
+          "2026-11-02T23:00:00+00:00",
+          "2026-11-14T23:00:00+00:00"
+        ],
+        "definition_links": {
+          "kalshi": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT31ATLNOP-ATL",
+          "polymarket_us": "https://gateway.polymarket.us/v1/market/slug/aec-nba-atl-no-2026-10-31"
+        },
+        "review_reason": "EVENT_IDENTITY_ONLY",
+        "liquidity": {
+          "kalshi": {
+            "quality": "MISSING",
+            "depth_proxy": null
+          },
+          "polymarket_us": {
+            "quality": "MISSING",
+            "depth_proxy": null
+          }
+        },
+        "mechanics": {
+          "research_path": "CASH_FUNDED_LONG_ONLY",
+          "polymarket_us_no": "UNSUPPORTED_SYNTHETIC_SHORT",
+          "account_applicability": "UNVERIFIED"
+        },
+        "prior_reviews": []
+      }
+    ],
+    "aec-nba-cha-det-2026-10-28": [
+      {
+        "kalshi_id": "KXNBAGAME-26OCT28CHADET-CHA",
+        "polymarket_us_id": "aec-nba-cha-det-2026-10-28",
+        "kalshi_title": "Charlotte wins",
+        "polymarket_us_title": "Who will win in the upcoming basketball event CHA Hornets vs DET Pistons scheduled for October 28, 2026 at 11:00 PM UTC?",
+        "versions": [
+          11,
+          35
+        ],
+        "event_key": "[\"NBA\",\"FULL_GAME_WINNER\",[\"CHA\",\"DET\"],\"2026-10-28\"]",
+        "polymarket_event_key": "[\"NBA\",\"FULL_GAME_WINNER\",[\"CHA\",\"DET\"],\"2026-10-28\"]",
+        "retrieval_reasons": [
+          "EXACT_LEAGUE_PARTICIPANTS_RULE_DATE_AND_SELECTION"
+        ],
+        "signals": {
+          "subject_bps": 10000,
+          "sports_identity": "MATCH",
+          "league": "NBA",
+          "market_type": "FULL_GAME_WINNER",
+          "participants": [
+            "CHA",
+            "DET"
+          ],
+          "selection": "CHA",
+          "dates": "SCHEDULED_RULE_DATE_MATCH",
+          "settlement_equivalence": "UNVERIFIED"
+        },
+        "warnings": [
+          "SPORTS_IDENTITY_ONLY_NOT_EQUIVALENCE",
+          "SPORTS_SETTLEMENT_REVIEW_REQUIRED",
+          "POSTPONEMENT_WINDOW_UNKNOWN",
+          "OCCURRENCE_AND_START_TIMES_NOT_COMPARABLE",
+          "ADMINISTRATIVE_CUTOFFS_DIFFER",
+          "EXCEPTIONAL_FAIR_PRICE_PAYOUTS_NOT_ESTABLISHED_COMPLEMENTARY",
+          "FORFEIT_AND_SOURCE_REVISION_RULES_REQUIRE_REVIEW"
+        ],
+        "known_contradictions": [],
+        "equivalence_score_bps": 8500,
+        "match_basis": "SPORTS_EVENT_IDENTITY",
+        "status": "UNVERIFIED",
+        "equivalence_verified": false,
+        "trading_authorized": false,
+        "hypothetical": false,
+        "algorithm": "semantic-discovery/m5i-v1",
+        "source_observations": [
+          11,
+          35
+        ],
+        "source_received_at": [
+          "2026-10-27T23:52:06.210353+00:00",
+          "2026-10-28T00:06:47.601406+00:00"
+        ],
+        "review_snapshot_expires_at": "2026-10-28T23:52:06.210353+00:00",
+        "settlement_deadlines": [
+          "2026-10-30T23:00:00+00:00",
+          "2026-11-11T23:00:00+00:00"
+        ],
+        "definition_links": {
+          "kalshi": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT28CHADET-CHA",
+          "polymarket_us": "https://gateway.polymarket.us/v1/market/slug/aec-nba-cha-det-2026-10-28"
+        },
+        "review_reason": "EVENT_IDENTITY_ONLY",
+        "liquidity": {
+          "kalshi": {
+            "quality": "MISSING",
+            "depth_proxy": null
+          },
+          "polymarket_us": {
+            "quality": "MISSING",
+            "depth_proxy": null
+          }
+        },
+        "mechanics": {
+          "research_path": "CASH_FUNDED_LONG_ONLY",
+          "polymarket_us_no": "UNSUPPORTED_SYNTHETIC_SHORT",
+          "account_applicability": "UNVERIFIED"
+        },
+        "prior_reviews": []
+      }
+    ],
+    "aec-nba-cha-was-2026-10-30": [
+      {
+        "kalshi_id": "KXNBAGAME-26OCT30CHAWAS-CHA",
+        "polymarket_us_id": "aec-nba-cha-was-2026-10-30",
+        "kalshi_title": "Charlotte wins",
+        "polymarket_us_title": "Who will win in the upcoming basketball event CHA Hornets vs WAS Wizards scheduled for October 30, 2026 at 11:00 PM UTC?",
+        "versions": [
+          15,
+          37
+        ],
+        "event_key": "[\"NBA\",\"FULL_GAME_WINNER\",[\"CHA\",\"WAS\"],\"2026-10-30\"]",
+        "polymarket_event_key": "[\"NBA\",\"FULL_GAME_WINNER\",[\"CHA\",\"WAS\"],\"2026-10-30\"]",
+        "retrieval_reasons": [
+          "EXACT_LEAGUE_PARTICIPANTS_RULE_DATE_AND_SELECTION"
+        ],
+        "signals": {
+          "subject_bps": 10000,
+          "sports_identity": "MATCH",
+          "league": "NBA",
+          "market_type": "FULL_GAME_WINNER",
+          "participants": [
+            "CHA",
+            "WAS"
+          ],
+          "selection": "CHA",
+          "dates": "SCHEDULED_RULE_DATE_MATCH",
+          "settlement_equivalence": "UNVERIFIED"
+        },
+        "warnings": [
+          "SPORTS_IDENTITY_ONLY_NOT_EQUIVALENCE",
+          "SPORTS_SETTLEMENT_REVIEW_REQUIRED",
+          "POSTPONEMENT_WINDOW_UNKNOWN",
+          "OCCURRENCE_AND_START_TIMES_NOT_COMPARABLE",
+          "ADMINISTRATIVE_CUTOFFS_DIFFER",
+          "EXCEPTIONAL_FAIR_PRICE_PAYOUTS_NOT_ESTABLISHED_COMPLEMENTARY",
+          "FORFEIT_AND_SOURCE_REVISION_RULES_REQUIRE_REVIEW"
+        ],
+        "known_contradictions": [],
+        "equivalence_score_bps": 8500,
+        "match_basis": "SPORTS_EVENT_IDENTITY",
+        "status": "UNVERIFIED",
+        "equivalence_verified": false,
+        "trading_authorized": false,
+        "hypothetical": false,
+        "algorithm": "semantic-discovery/m5i-v1",
+        "source_observations": [
+          15,
+          37
+        ],
+        "source_received_at": [
+          "2026-10-27T23:49:32.521516+00:00",
+          "2026-10-28T00:07:02.297753+00:00"
+        ],
+        "review_snapshot_expires_at": "2026-10-28T23:49:32.521516+00:00",
+        "settlement_deadlines": [
+          "2026-11-01T23:00:00+00:00",
+          "2026-11-13T23:00:00+00:00"
+        ],
+        "definition_links": {
+          "kalshi": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT30CHAWAS-CHA",
+          "polymarket_us": "https://gateway.polymarket.us/v1/market/slug/aec-nba-cha-was-2026-10-30"
+        },
+        "review_reason": "EVENT_IDENTITY_ONLY",
+        "liquidity": {
+          "kalshi": {
+            "quality": "MISSING",
+            "depth_proxy": null
+          },
+          "polymarket_us": {
+            "quality": "MISSING",
+            "depth_proxy": null
+          }
+        },
+        "mechanics": {
+          "research_path": "CASH_FUNDED_LONG_ONLY",
+          "polymarket_us_no": "UNSUPPORTED_SYNTHETIC_SHORT",
+          "account_applicability": "UNVERIFIED"
+        },
+        "prior_reviews": []
+      }
+    ],
+    "aec-nba-chi-bos-2026-10-30": [
+      {
+        "kalshi_id": "KXNBAGAME-26OCT30CHIBOS-CHI",
+        "polymarket_us_id": "aec-nba-chi-bos-2026-10-30",
+        "kalshi_title": "Chicago wins",
+        "polymarket_us_title": "Who will win in the upcoming basketball event CHI Bulls vs BOS Celtics scheduled for October 30, 2026 at 11:30 PM UTC?",
+        "versions": [
+          9,
+          34
+        ],
+        "event_key": "[\"NBA\",\"FULL_GAME_WINNER\",[\"BOS\",\"CHI\"],\"2026-10-30\"]",
+        "polymarket_event_key": "[\"NBA\",\"FULL_GAME_WINNER\",[\"BOS\",\"CHI\"],\"2026-10-30\"]",
+        "retrieval_reasons": [
+          "EXACT_LEAGUE_PARTICIPANTS_RULE_DATE_AND_SELECTION"
+        ],
+        "signals": {
+          "subject_bps": 10000,
+          "sports_identity": "MATCH",
+          "league": "NBA",
+          "market_type": "FULL_GAME_WINNER",
+          "participants": [
+            "BOS",
+            "CHI"
+          ],
+          "selection": "CHI",
+          "dates": "SCHEDULED_RULE_DATE_MATCH",
+          "settlement_equivalence": "UNVERIFIED"
+        },
+        "warnings": [
+          "SPORTS_IDENTITY_ONLY_NOT_EQUIVALENCE",
+          "SPORTS_SETTLEMENT_REVIEW_REQUIRED",
+          "POSTPONEMENT_WINDOW_UNKNOWN",
+          "OCCURRENCE_AND_START_TIMES_NOT_COMPARABLE",
+          "ADMINISTRATIVE_CUTOFFS_DIFFER",
+          "EXCEPTIONAL_FAIR_PRICE_PAYOUTS_NOT_ESTABLISHED_COMPLEMENTARY",
+          "FORFEIT_AND_SOURCE_REVISION_RULES_REQUIRE_REVIEW"
+        ],
+        "known_contradictions": [],
+        "equivalence_score_bps": 8500,
+        "match_basis": "SPORTS_EVENT_IDENTITY",
+        "status": "UNVERIFIED",
+        "equivalence_verified": false,
+        "trading_authorized": false,
+        "hypothetical": false,
+        "algorithm": "semantic-discovery/m5i-v1",
+        "source_observations": [
+          9,
+          34
+        ],
+        "source_received_at": [
+          "2026-10-27T23:49:29.448301+00:00",
+          "2026-10-28T00:07:02.297753+00:00"
+        ],
+        "review_snapshot_expires_at": "2026-10-28T23:49:29.448301+00:00",
+        "settlement_deadlines": [
+          "2026-11-01T23:30:00+00:00",
+          "2026-11-13T23:30:00+00:00"
+        ],
+        "definition_links": {
+          "kalshi": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT30CHIBOS-CHI",
+          "polymarket_us": "https://gateway.polymarket.us/v1/market/slug/aec-nba-chi-bos-2026-10-30"
+        },
+        "review_reason": "EVENT_IDENTITY_ONLY",
+        "liquidity": {
+          "kalshi": {
+            "quality": "MISSING",
+            "depth_proxy": null
+          },
+          "polymarket_us": {
+            "quality": "MISSING",
+            "depth_proxy": null
+          }
+        },
+        "mechanics": {
+          "research_path": "CASH_FUNDED_LONG_ONLY",
+          "polymarket_us_no": "UNSUPPORTED_SYNTHETIC_SHORT",
+          "account_applicability": "UNVERIFIED"
+        },
+        "prior_reviews": []
+      }
+    ],
+    "aec-nba-cle-atl-2026-10-29": [
+      {
+        "kalshi_id": "KXNBAGAME-26OCT29CLEATL-CLE",
+        "polymarket_us_id": "aec-nba-cle-atl-2026-10-29",
+        "kalshi_title": "Cleveland wins",
+        "polymarket_us_title": "Who will win in the upcoming basketball event CLE Cavaliers vs ATL Hawks scheduled for October 29, 2026 at 11:00 PM UTC?",
+        "versions": [
+          1,
+          30
+        ],
+        "event_key": "[\"NBA\",\"FULL_GAME_WINNER\",[\"ATL\",\"CLE\"],\"2026-10-29\"]",
+        "polymarket_event_key": "[\"NBA\",\"FULL_GAME_WINNER\",[\"ATL\",\"CLE\"],\"2026-10-29\"]",
+        "retrieval_reasons": [
+          "EXACT_LEAGUE_PARTICIPANTS_RULE_DATE_AND_SELECTION"
+        ],
+        "signals": {
+          "subject_bps": 10000,
+          "sports_identity": "MATCH",
+          "league": "NBA",
+          "market_type": "FULL_GAME_WINNER",
+          "participants": [
+            "ATL",
+            "CLE"
+          ],
+          "selection": "CLE",
+          "dates": "SCHEDULED_RULE_DATE_MATCH",
+          "settlement_equivalence": "UNVERIFIED"
+        },
+        "warnings": [
+          "SPORTS_IDENTITY_ONLY_NOT_EQUIVALENCE",
+          "SPORTS_SETTLEMENT_REVIEW_REQUIRED",
+          "POSTPONEMENT_WINDOW_UNKNOWN",
+          "OCCURRENCE_AND_START_TIMES_NOT_COMPARABLE",
+          "ADMINISTRATIVE_CUTOFFS_DIFFER",
+          "EXCEPTIONAL_FAIR_PRICE_PAYOUTS_NOT_ESTABLISHED_COMPLEMENTARY",
+          "FORFEIT_AND_SOURCE_REVISION_RULES_REQUIRE_REVIEW"
+        ],
+        "known_contradictions": [],
+        "equivalence_score_bps": 8500,
+        "match_basis": "SPORTS_EVENT_IDENTITY",
+        "status": "UNVERIFIED",
+        "equivalence_verified": false,
+        "trading_authorized": false,
+        "hypothetical": false,
+        "algorithm": "semantic-discovery/m5i-v1",
+        "source_observations": [
+          1,
+          30
+        ],
+        "source_received_at": [
+          "2026-10-27T23:51:10.779711+00:00",
+          "2026-10-28T00:06:56.395719+00:00"
+        ],
+        "review_snapshot_expires_at": "2026-10-28T23:51:10.779711+00:00",
+        "settlement_deadlines": [
+          "2026-10-31T23:00:00+00:00",
+          "2026-11-12T23:00:00+00:00"
+        ],
+        "definition_links": {
+          "kalshi": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT29CLEATL-CLE",
+          "polymarket_us": "https://gateway.polymarket.us/v1/market/slug/aec-nba-cle-atl-2026-10-29"
+        },
+        "review_reason": "EVENT_IDENTITY_ONLY",
+        "liquidity": {
+          "kalshi": {
+            "quality": "MISSING",
+            "depth_proxy": null
+          },
+          "polymarket_us": {
+            "quality": "MISSING",
+            "depth_proxy": null
+          }
+        },
+        "mechanics": {
+          "research_path": "CASH_FUNDED_LONG_ONLY",
+          "polymarket_us_no": "UNSUPPORTED_SYNTHETIC_SHORT",
+          "account_applicability": "UNVERIFIED"
+        },
+        "prior_reviews": []
+      }
+    ],
+    "aec-nba-det-bkn-2026-10-30": [
+      {
+        "kalshi_id": "KXNBAGAME-26OCT30DETBKN-DET",
+        "polymarket_us_id": "aec-nba-det-bkn-2026-10-30",
+        "kalshi_title": "Detroit wins",
+        "polymarket_us_title": "Who will win in the upcoming basketball event DET Pistons vs BKN Nets scheduled for October 30, 2026 at 11:30 PM UTC?",
+        "versions": [
+          7,
+          33
+        ],
+        "event_key": "[\"NBA\",\"FULL_GAME_WINNER\",[\"BKN\",\"DET\"],\"2026-10-30\"]",
+        "polymarket_event_key": "[\"NBA\",\"FULL_GAME_WINNER\",[\"BKN\",\"DET\"],\"2026-10-30\"]",
+        "retrieval_reasons": [
+          "EXACT_LEAGUE_PARTICIPANTS_RULE_DATE_AND_SELECTION"
+        ],
+        "signals": {
+          "subject_bps": 10000,
+          "sports_identity": "MATCH",
+          "league": "NBA",
+          "market_type": "FULL_GAME_WINNER",
+          "participants": [
+            "BKN",
+            "DET"
+          ],
+          "selection": "DET",
+          "dates": "SCHEDULED_RULE_DATE_MATCH",
+          "settlement_equivalence": "UNVERIFIED"
+        },
+        "warnings": [
+          "SPORTS_IDENTITY_ONLY_NOT_EQUIVALENCE",
+          "SPORTS_SETTLEMENT_REVIEW_REQUIRED",
+          "POSTPONEMENT_WINDOW_UNKNOWN",
+          "OCCURRENCE_AND_START_TIMES_NOT_COMPARABLE",
+          "ADMINISTRATIVE_CUTOFFS_DIFFER",
+          "EXCEPTIONAL_FAIR_PRICE_PAYOUTS_NOT_ESTABLISHED_COMPLEMENTARY",
+          "FORFEIT_AND_SOURCE_REVISION_RULES_REQUIRE_REVIEW"
+        ],
+        "known_contradictions": [],
+        "equivalence_score_bps": 8500,
+        "match_basis": "SPORTS_EVENT_IDENTITY",
+        "status": "UNVERIFIED",
+        "equivalence_verified": false,
+        "trading_authorized": false,
+        "hypothetical": false,
+        "algorithm": "semantic-discovery/m5i-v1",
+        "source_observations": [
+          7,
+          33
+        ],
+        "source_received_at": [
+          "2026-10-27T23:49:29.448301+00:00",
+          "2026-10-28T00:07:04.821736+00:00"
+        ],
+        "review_snapshot_expires_at": "2026-10-28T23:49:29.448301+00:00",
+        "settlement_deadlines": [
+          "2026-11-01T23:30:00+00:00",
+          "2026-11-13T23:30:00+00:00"
+        ],
+        "definition_links": {
+          "kalshi": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT30DETBKN-DET",
+          "polymarket_us": "https://gateway.polymarket.us/v1/market/slug/aec-nba-det-bkn-2026-10-30"
+        },
+        "review_reason": "EVENT_IDENTITY_ONLY",
+        "liquidity": {
+          "kalshi": {
+            "quality": "MISSING",
+            "depth_proxy": null
+          },
+          "polymarket_us": {
+            "quality": "MISSING",
+            "depth_proxy": null
+          }
+        },
+        "mechanics": {
+          "research_path": "CASH_FUNDED_LONG_ONLY",
+          "polymarket_us_no": "UNSUPPORTED_SYNTHETIC_SHORT",
+          "account_applicability": "UNVERIFIED"
+        },
+        "prior_reviews": []
+      }
+    ],
+    "aec-nba-mia-atl-2026-10-28": [
+      {
+        "kalshi_id": "KXNBAGAME-26OCT28MIAATL-MIA",
+        "polymarket_us_id": "aec-nba-mia-atl-2026-10-28",
+        "kalshi_title": "Miami wins",
+        "polymarket_us_title": "Who will win in the upcoming basketball event MIA Heat vs ATL Hawks scheduled for October 28, 2026 at 11:00 PM UTC?",
+        "versions": [
+          3,
+          31
+        ],
+        "event_key": "[\"NBA\",\"FULL_GAME_WINNER\",[\"ATL\",\"MIA\"],\"2026-10-28\"]",
+        "polymarket_event_key": "[\"NBA\",\"FULL_GAME_WINNER\",[\"ATL\",\"MIA\"],\"2026-10-28\"]",
+        "retrieval_reasons": [
+          "EXACT_LEAGUE_PARTICIPANTS_RULE_DATE_AND_SELECTION"
+        ],
+        "signals": {
+          "subject_bps": 10000,
+          "sports_identity": "MATCH",
+          "league": "NBA",
+          "market_type": "FULL_GAME_WINNER",
+          "participants": [
+            "ATL",
+            "MIA"
+          ],
+          "selection": "MIA",
+          "dates": "SCHEDULED_RULE_DATE_MATCH",
+          "settlement_equivalence": "UNVERIFIED"
+        },
+        "warnings": [
+          "SPORTS_IDENTITY_ONLY_NOT_EQUIVALENCE",
+          "SPORTS_SETTLEMENT_REVIEW_REQUIRED",
+          "POSTPONEMENT_WINDOW_UNKNOWN",
+          "OCCURRENCE_AND_START_TIMES_NOT_COMPARABLE",
+          "ADMINISTRATIVE_CUTOFFS_DIFFER",
+          "EXCEPTIONAL_FAIR_PRICE_PAYOUTS_NOT_ESTABLISHED_COMPLEMENTARY",
+          "FORFEIT_AND_SOURCE_REVISION_RULES_REQUIRE_REVIEW"
+        ],
+        "known_contradictions": [],
+        "equivalence_score_bps": 8500,
+        "match_basis": "SPORTS_EVENT_IDENTITY",
+        "status": "UNVERIFIED",
+        "equivalence_verified": false,
+        "trading_authorized": false,
+        "hypothetical": false,
+        "algorithm": "semantic-discovery/m5i-v1",
+        "source_observations": [
+          3,
+          31
+        ],
+        "source_received_at": [
+          "2026-10-27T23:52:06.210353+00:00",
+          "2026-10-28T00:06:47.601406+00:00"
+        ],
+        "review_snapshot_expires_at": "2026-10-28T23:52:06.210353+00:00",
+        "settlement_deadlines": [
+          "2026-10-30T23:00:00+00:00",
+          "2026-11-11T23:00:00+00:00"
+        ],
+        "definition_links": {
+          "kalshi": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT28MIAATL-MIA",
+          "polymarket_us": "https://gateway.polymarket.us/v1/market/slug/aec-nba-mia-atl-2026-10-28"
+        },
+        "review_reason": "EVENT_IDENTITY_ONLY",
+        "liquidity": {
+          "kalshi": {
+            "quality": "MISSING",
+            "depth_proxy": null
+          },
+          "polymarket_us": {
+            "quality": "MISSING",
+            "depth_proxy": null
+          }
+        },
+        "mechanics": {
+          "research_path": "CASH_FUNDED_LONG_ONLY",
+          "polymarket_us_no": "UNSUPPORTED_SYNTHETIC_SHORT",
+          "account_applicability": "UNVERIFIED"
+        },
+        "prior_reviews": []
+      }
+    ],
+    "aec-nba-phi-cha-2026-10-31": [
+      {
+        "kalshi_id": "KXNBAGAME-26OCT31PHICHA-PHI",
+        "polymarket_us_id": "aec-nba-phi-cha-2026-10-31",
+        "kalshi_title": "Philadelphia wins",
+        "polymarket_us_title": "Who will win in the upcoming basketball event PHI 76ers vs CHA Hornets scheduled for October 31, 2026 at 10:00 PM UTC?",
+        "versions": [
+          13,
+          36
+        ],
+        "event_key": "[\"NBA\",\"FULL_GAME_WINNER\",[\"CHA\",\"PHI\"],\"2026-10-31\"]",
+        "polymarket_event_key": "[\"NBA\",\"FULL_GAME_WINNER\",[\"CHA\",\"PHI\"],\"2026-10-31\"]",
+        "retrieval_reasons": [
+          "EXACT_LEAGUE_PARTICIPANTS_RULE_DATE_AND_SELECTION"
+        ],
+        "signals": {
+          "subject_bps": 10000,
+          "sports_identity": "MATCH",
+          "league": "NBA",
+          "market_type": "FULL_GAME_WINNER",
+          "participants": [
+            "CHA",
+            "PHI"
+          ],
+          "selection": "PHI",
+          "dates": "SCHEDULED_RULE_DATE_MATCH",
+          "settlement_equivalence": "UNVERIFIED"
+        },
+        "warnings": [
+          "SPORTS_IDENTITY_ONLY_NOT_EQUIVALENCE",
+          "SPORTS_SETTLEMENT_REVIEW_REQUIRED",
+          "POSTPONEMENT_WINDOW_UNKNOWN",
+          "OCCURRENCE_AND_START_TIMES_NOT_COMPARABLE",
+          "ADMINISTRATIVE_CUTOFFS_DIFFER",
+          "EXCEPTIONAL_FAIR_PRICE_PAYOUTS_NOT_ESTABLISHED_COMPLEMENTARY",
+          "FORFEIT_AND_SOURCE_REVISION_RULES_REQUIRE_REVIEW"
+        ],
+        "known_contradictions": [],
+        "equivalence_score_bps": 8500,
+        "match_basis": "SPORTS_EVENT_IDENTITY",
+        "status": "UNVERIFIED",
+        "equivalence_verified": false,
+        "trading_authorized": false,
+        "hypothetical": false,
+        "algorithm": "semantic-discovery/m5i-v1",
+        "source_observations": [
+          13,
+          36
+        ],
+        "source_received_at": [
+          "2026-10-27T23:46:39.943182+00:00",
+          "2026-10-28T00:07:06.177209+00:00"
+        ],
+        "review_snapshot_expires_at": "2026-10-28T23:46:39.943182+00:00",
+        "settlement_deadlines": [
+          "2026-11-02T22:00:00+00:00",
+          "2026-11-14T22:00:00+00:00"
+        ],
+        "definition_links": {
+          "kalshi": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT31PHICHA-PHI",
+          "polymarket_us": "https://gateway.polymarket.us/v1/market/slug/aec-nba-phi-cha-2026-10-31"
+        },
+        "review_reason": "EVENT_IDENTITY_ONLY",
+        "liquidity": {
+          "kalshi": {
+            "quality": "MISSING",
+            "depth_proxy": null
+          },
+          "polymarket_us": {
+            "quality": "MISSING",
+            "depth_proxy": null
+          }
+        },
+        "mechanics": {
+          "research_path": "CASH_FUNDED_LONG_ONLY",
+          "polymarket_us_no": "UNSUPPORTED_SYNTHETIC_SHORT",
+          "account_applicability": "UNVERIFIED"
+        },
+        "prior_reviews": []
+      }
+    ],
+    "aec-nfl-ari-dal-2026-11-01": [
+      {
+        "kalshi_id": "KXNFLGAME-26NOV01ARIDAL-ARI",
+        "polymarket_us_id": "aec-nfl-ari-dal-2026-11-01",
+        "kalshi_title": "Arizona wins",
+        "polymarket_us_title": "Who will win in the upcoming football event Arizona Cardinals vs Dallas Cowboys scheduled for November 1, 2026 at 6:00 PM UTC?",
+        "versions": [
+          17,
+          38
+        ],
+        "event_key": "[\"NFL\",\"FULL_GAME_WINNER\",[\"ARI\",\"DAL\"],\"2026-11-01\"]",
+        "polymarket_event_key": "[\"NFL\",\"FULL_GAME_WINNER\",[\"ARI\",\"DAL\"],\"2026-11-01\"]",
+        "retrieval_reasons": [
+          "EXACT_LEAGUE_PARTICIPANTS_RULE_DATE_AND_SELECTION"
+        ],
+        "signals": {
+          "subject_bps": 10000,
+          "sports_identity": "MATCH",
+          "league": "NFL",
+          "market_type": "FULL_GAME_WINNER",
+          "participants": [
+            "ARI",
+            "DAL"
+          ],
+          "selection": "ARI",
+          "dates": "SCHEDULED_RULE_DATE_MATCH",
+          "settlement_equivalence": "UNVERIFIED"
+        },
+        "warnings": [
+          "SPORTS_IDENTITY_ONLY_NOT_EQUIVALENCE",
+          "SPORTS_SETTLEMENT_REVIEW_REQUIRED",
+          "POSTPONEMENT_WINDOW_UNKNOWN",
+          "OCCURRENCE_AND_START_TIMES_NOT_COMPARABLE",
+          "ADMINISTRATIVE_CUTOFFS_DIFFER",
+          "EXCEPTIONAL_FAIR_PRICE_PAYOUTS_NOT_ESTABLISHED_COMPLEMENTARY",
+          "FORFEIT_AND_SOURCE_REVISION_RULES_REQUIRE_REVIEW"
+        ],
+        "known_contradictions": [],
+        "equivalence_score_bps": 8500,
+        "match_basis": "SPORTS_EVENT_IDENTITY",
+        "status": "UNVERIFIED",
+        "equivalence_verified": false,
+        "trading_authorized": false,
+        "hypothetical": false,
+        "algorithm": "semantic-discovery/m5i-v1",
+        "source_observations": [
+          17,
+          38
+        ],
+        "source_received_at": [
+          "2026-10-27T23:53:21.877076+00:00",
+          "2026-10-28T00:07:16.247900+00:00"
+        ],
+        "review_snapshot_expires_at": "2026-10-28T23:53:21.877076+00:00",
+        "settlement_deadlines": [
+          "2026-11-03T18:00:00+00:00",
+          "2026-11-15T23:00:00+00:00"
+        ],
+        "definition_links": {
+          "kalshi": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26NOV01ARIDAL-ARI",
+          "polymarket_us": "https://gateway.polymarket.us/v1/market/slug/aec-nfl-ari-dal-2026-11-01"
+        },
+        "review_reason": "EVENT_IDENTITY_ONLY",
+        "liquidity": {
+          "kalshi": {
+            "quality": "MISSING",
+            "depth_proxy": null
+          },
+          "polymarket_us": {
+            "quality": "MISSING",
+            "depth_proxy": null
+          }
+        },
+        "mechanics": {
+          "research_path": "CASH_FUNDED_LONG_ONLY",
+          "polymarket_us_no": "UNSUPPORTED_SYNTHETIC_SHORT",
+          "account_applicability": "UNVERIFIED"
+        },
+        "prior_reviews": []
+      }
+    ],
+    "aec-nfl-ari-sea-2026-11-08": [
+      {
+        "kalshi_id": "KXNFLGAME-26NOV08ARISEA-ARI",
+        "polymarket_us_id": "aec-nfl-ari-sea-2026-11-08",
+        "kalshi_title": "Arizona wins",
+        "polymarket_us_title": "Who will win in the upcoming football event Arizona Cardinals vs Seattle Seahawks scheduled for November 8, 2026 at 9:25 PM UTC?",
+        "versions": [
+          19,
+          39
+        ],
+        "event_key": "[\"NFL\",\"FULL_GAME_WINNER\",[\"ARI\",\"SEA\"],\"2026-11-08\"]",
+        "polymarket_event_key": "[\"NFL\",\"FULL_GAME_WINNER\",[\"ARI\",\"SEA\"],\"2026-11-08\"]",
+        "retrieval_reasons": [
+          "EXACT_LEAGUE_PARTICIPANTS_RULE_DATE_AND_SELECTION"
+        ],
+        "signals": {
+          "subject_bps": 10000,
+          "sports_identity": "MATCH",
+          "league": "NFL",
+          "market_type": "FULL_GAME_WINNER",
+          "participants": [
+            "ARI",
+            "SEA"
+          ],
+          "selection": "ARI",
+          "dates": "SCHEDULED_RULE_DATE_MATCH",
+          "settlement_equivalence": "UNVERIFIED"
+        },
+        "warnings": [
+          "SPORTS_IDENTITY_ONLY_NOT_EQUIVALENCE",
+          "SPORTS_SETTLEMENT_REVIEW_REQUIRED",
+          "POSTPONEMENT_WINDOW_UNKNOWN",
+          "OCCURRENCE_AND_START_TIMES_NOT_COMPARABLE",
+          "ADMINISTRATIVE_CUTOFFS_DIFFER",
+          "EXCEPTIONAL_FAIR_PRICE_PAYOUTS_NOT_ESTABLISHED_COMPLEMENTARY",
+          "FORFEIT_AND_SOURCE_REVISION_RULES_REQUIRE_REVIEW"
+        ],
+        "known_contradictions": [],
+        "equivalence_score_bps": 8500,
+        "match_basis": "SPORTS_EVENT_IDENTITY",
+        "status": "UNVERIFIED",
+        "equivalence_verified": false,
+        "trading_authorized": false,
+        "hypothetical": false,
+        "algorithm": "semantic-discovery/m5i-v1",
+        "source_observations": [
+          19,
+          39
+        ],
+        "source_received_at": [
+          "2026-10-27T23:48:45.756569+00:00",
+          "2026-10-28T00:11:16.403862+00:00"
+        ],
+        "review_snapshot_expires_at": "2026-10-28T23:48:45.756569+00:00",
+        "settlement_deadlines": [
+          "2026-11-10T21:25:00+00:00",
+          "2026-11-23T02:25:00+00:00"
+        ],
+        "definition_links": {
+          "kalshi": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26NOV08ARISEA-ARI",
+          "polymarket_us": "https://gateway.polymarket.us/v1/market/slug/aec-nfl-ari-sea-2026-11-08"
+        },
+        "review_reason": "EVENT_IDENTITY_ONLY",
+        "liquidity": {
+          "kalshi": {
+            "quality": "MISSING",
+            "depth_proxy": null
+          },
+          "polymarket_us": {
+            "quality": "MISSING",
+            "depth_proxy": null
+          }
+        },
+        "mechanics": {
+          "research_path": "CASH_FUNDED_LONG_ONLY",
+          "polymarket_us_no": "UNSUPPORTED_SYNTHETIC_SHORT",
+          "account_applicability": "UNVERIFIED"
+        },
+        "prior_reviews": []
+      }
+    ],
+    "cpic-uscpi-october-mom-2026-11-10-gt0pt0pct": [
+      {
+        "kalshi_id": "KXCPI-26OCT-T0.0",
+        "polymarket_us_id": "cpic-uscpi-october-mom-2026-11-10-gt0pt0pct",
+        "kalshi_title": "Will CPI rise more than 0.0% in October 2026?",
+        "polymarket_us_title": "CPI MoM in October",
+        "versions": [
+          22,
+          41
+        ],
+        "event_key": "KXCPI-26OCT",
+        "polymarket_event_key": "[\"consumer price index mom in october\",[\"2026-11-10\"]]",
+        "retrieval_reasons": [
+          "KEYWORD_BM25",
+          "PERSISTENT_VECTOR_COSINE"
+        ],
+        "signals": {
+          "subject_bps": 5000,
+          "metric": "UNKNOWN",
+          "period": "UNKNOWN",
+          "dates": "MATCH",
+          "thresholds": "MATCH",
+          "description_bps": 1098,
+          "embedding": {
+            "cosine": 0.8769075533791736,
+            "identity": "6ad290cf06017f5a5aba88e4f878e7b3320b73c8ac1d8018d376aab00d64cb16",
+            "model": "qwen3-embedding-8b",
+            "dimensions": 4096,
+            "versions": [
+              22,
+              41
+            ]
+          }
+        },
+        "warnings": [
+          "SUBJECT_PERIOD_UNKNOWN",
+          "RESOLUTION_LANGUAGE_DIFFERS",
+          "CUTOFFS_DIFFER",
+          "SETTLEMENT_DEADLINE_HORIZONS_DIFFER",
+          "EMBEDDING_RETRIEVAL_ONLY_HUMAN_REVIEW_REQUIRED"
+        ],
+        "known_contradictions": [
+          "RESOLUTION_LANGUAGE_DIFFERS"
+        ],
+        "equivalence_score_bps": 3719,
+        "match_basis": "EMBEDDING_ASSISTED",
+        "status": "UNVERIFIED",
+        "equivalence_verified": false,
+        "trading_authorized": false,
+        "hypothetical": false,
+        "algorithm": "semantic-discovery/m5i-v1",
+        "source_observations": [
+          22,
+          41
+        ],
+        "source_received_at": [
+          "2026-10-28T00:03:14.922826+00:00",
+          "2026-10-28T00:07:06.177209+00:00"
+        ],
+        "review_snapshot_expires_at": "2026-10-29T00:03:14.922826+00:00",
+        "settlement_deadlines": [
+          "2027-02-09T14:56:00+00:00",
+          "2026-11-25T04:00:00+00:00"
+        ],
+        "definition_links": {
+          "kalshi": "https://external-api.kalshi.com/trade-api/v2/markets/KXCPI-26OCT-T0.0",
+          "polymarket_us": "https://gateway.polymarket.us/v1/market/slug/cpic-uscpi-october-mom-2026-11-10-gt0pt0pct"
+        },
+        "review_reason": "TEXT_SIMILARITY_REQUIRES_PROPOSITION_REVIEW",
+        "liquidity": {
+          "kalshi": {
+            "quality": "MISSING",
+            "depth_proxy": null
+          },
+          "polymarket_us": {
+            "quality": "MISSING",
+            "depth_proxy": null
+          }
+        },
+        "mechanics": {
+          "research_path": "CASH_FUNDED_LONG_ONLY",
+          "polymarket_us_no": "UNSUPPORTED_SYNTHETIC_SHORT",
+          "account_applicability": "UNVERIFIED"
+        },
+        "prior_reviews": []
+      }
+    ],
+    "cpic-uscpi-october-mom-2026-11-10-gt0pt1pct": [
+      {
+        "kalshi_id": "KXCPI-26OCT-T0.1",
+        "polymarket_us_id": "cpic-uscpi-october-mom-2026-11-10-gt0pt1pct",
+        "kalshi_title": "Will CPI rise more than 0.1% in October 2026?",
+        "polymarket_us_title": "CPI MoM in October",
+        "versions": [
+          23,
+          42
+        ],
+        "event_key": "KXCPI-26OCT",
+        "polymarket_event_key": "[\"consumer price index mom in october\",[\"2026-11-10\"]]",
+        "retrieval_reasons": [
+          "KEYWORD_BM25",
+          "PERSISTENT_VECTOR_COSINE"
+        ],
+        "signals": {
+          "subject_bps": 5000,
+          "metric": "UNKNOWN",
+          "period": "UNKNOWN",
+          "dates": "MATCH",
+          "thresholds": "MATCH",
+          "description_bps": 1098,
+          "embedding": {
+            "cosine": 0.8756055741862385,
+            "identity": "6ad290cf06017f5a5aba88e4f878e7b3320b73c8ac1d8018d376aab00d64cb16",
+            "model": "qwen3-embedding-8b",
+            "dimensions": 4096,
+            "versions": [
+              23,
+              42
+            ]
+          }
+        },
+        "warnings": [
+          "SUBJECT_PERIOD_UNKNOWN",
+          "RESOLUTION_LANGUAGE_DIFFERS",
+          "CUTOFFS_DIFFER",
+          "SETTLEMENT_DEADLINE_HORIZONS_DIFFER",
+          "EMBEDDING_RETRIEVAL_ONLY_HUMAN_REVIEW_REQUIRED"
+        ],
+        "known_contradictions": [
+          "RESOLUTION_LANGUAGE_DIFFERS"
+        ],
+        "equivalence_score_bps": 3719,
+        "match_basis": "EMBEDDING_ASSISTED",
+        "status": "UNVERIFIED",
+        "equivalence_verified": false,
+        "trading_authorized": false,
+        "hypothetical": false,
+        "algorithm": "semantic-discovery/m5i-v1",
+        "source_observations": [
+          23,
+          42
+        ],
+        "source_received_at": [
+          "2026-10-28T00:03:14.922826+00:00",
+          "2026-10-28T00:07:06.177209+00:00"
+        ],
+        "review_snapshot_expires_at": "2026-10-29T00:03:14.922826+00:00",
+        "settlement_deadlines": [
+          "2027-02-09T14:56:00+00:00",
+          "2026-11-25T04:00:00+00:00"
+        ],
+        "definition_links": {
+          "kalshi": "https://external-api.kalshi.com/trade-api/v2/markets/KXCPI-26OCT-T0.1",
+          "polymarket_us": "https://gateway.polymarket.us/v1/market/slug/cpic-uscpi-october-mom-2026-11-10-gt0pt1pct"
+        },
+        "review_reason": "TEXT_SIMILARITY_REQUIRES_PROPOSITION_REVIEW",
+        "liquidity": {
+          "kalshi": {
+            "quality": "MISSING",
+            "depth_proxy": null
+          },
+          "polymarket_us": {
+            "quality": "MISSING",
+            "depth_proxy": null
+          }
+        },
+        "mechanics": {
+          "research_path": "CASH_FUNDED_LONG_ONLY",
+          "polymarket_us_no": "UNSUPPORTED_SYNTHETIC_SHORT",
+          "account_applicability": "UNVERIFIED"
+        },
+        "prior_reviews": []
+      }
+    ],
+    "cpic-uscpi-october-mom-2026-11-10-gt0pt2pct": [
+      {
+        "kalshi_id": "KXCPI-26OCT-T0.2",
+        "polymarket_us_id": "cpic-uscpi-october-mom-2026-11-10-gt0pt2pct",
+        "kalshi_title": "Will CPI rise more than 0.2% in October 2026?",
+        "polymarket_us_title": "CPI MoM in October",
+        "versions": [
+          24,
+          43
+        ],
+        "event_key": "KXCPI-26OCT",
+        "polymarket_event_key": "[\"consumer price index mom in october\",[\"2026-11-10\"]]",
+        "retrieval_reasons": [
+          "KEYWORD_BM25",
+          "PERSISTENT_VECTOR_COSINE"
+        ],
+        "signals": {
+          "subject_bps": 5000,
+          "metric": "UNKNOWN",
+          "period": "UNKNOWN",
+          "dates": "MATCH",
+          "thresholds": "MATCH",
+          "description_bps": 1098,
+          "embedding": {
+            "cosine": 0.8728782536328781,
+            "identity": "6ad290cf06017f5a5aba88e4f878e7b3320b73c8ac1d8018d376aab00d64cb16",
+            "model": "qwen3-embedding-8b",
+            "dimensions": 4096,
+            "versions": [
+              24,
+              43
+            ]
+          }
+        },
+        "warnings": [
+          "SUBJECT_PERIOD_UNKNOWN",
+          "RESOLUTION_LANGUAGE_DIFFERS",
+          "CUTOFFS_DIFFER",
+          "SETTLEMENT_DEADLINE_HORIZONS_DIFFER",
+          "EMBEDDING_RETRIEVAL_ONLY_HUMAN_REVIEW_REQUIRED"
+        ],
+        "known_contradictions": [
+          "RESOLUTION_LANGUAGE_DIFFERS"
+        ],
+        "equivalence_score_bps": 3719,
+        "match_basis": "EMBEDDING_ASSISTED",
+        "status": "UNVERIFIED",
+        "equivalence_verified": false,
+        "trading_authorized": false,
+        "hypothetical": false,
+        "algorithm": "semantic-discovery/m5i-v1",
+        "source_observations": [
+          24,
+          43
+        ],
+        "source_received_at": [
+          "2026-10-28T00:03:14.922826+00:00",
+          "2026-10-28T00:07:06.177209+00:00"
+        ],
+        "review_snapshot_expires_at": "2026-10-29T00:03:14.922826+00:00",
+        "settlement_deadlines": [
+          "2027-02-09T14:56:00+00:00",
+          "2026-11-25T04:00:00+00:00"
+        ],
+        "definition_links": {
+          "kalshi": "https://external-api.kalshi.com/trade-api/v2/markets/KXCPI-26OCT-T0.2",
+          "polymarket_us": "https://gateway.polymarket.us/v1/market/slug/cpic-uscpi-october-mom-2026-11-10-gt0pt2pct"
+        },
+        "review_reason": "TEXT_SIMILARITY_REQUIRES_PROPOSITION_REVIEW",
+        "liquidity": {
+          "kalshi": {
+            "quality": "MISSING",
+            "depth_proxy": null
+          },
+          "polymarket_us": {
+            "quality": "MISSING",
+            "depth_proxy": null
+          }
+        },
+        "mechanics": {
+          "research_path": "CASH_FUNDED_LONG_ONLY",
+          "polymarket_us_no": "UNSUPPORTED_SYNTHETIC_SHORT",
+          "account_applicability": "UNVERIFIED"
+        },
+        "prior_reviews": []
+      }
+    ],
+    "cpic-uscpi-october-mom-2026-11-10-gt0pt3pct": [
+      {
+        "kalshi_id": "KXCPI-26OCT-T0.3",
+        "polymarket_us_id": "cpic-uscpi-october-mom-2026-11-10-gt0pt3pct",
+        "kalshi_title": "Will CPI rise more than 0.3% in October 2026?",
+        "polymarket_us_title": "CPI MoM in October",
+        "versions": [
+          25,
+          44
+        ],
+        "event_key": "KXCPI-26OCT",
+        "polymarket_event_key": "[\"consumer price index mom in october\",[\"2026-11-10\"]]",
+        "retrieval_reasons": [
+          "KEYWORD_BM25",
+          "PERSISTENT_VECTOR_COSINE"
+        ],
+        "signals": {
+          "subject_bps": 5000,
+          "metric": "UNKNOWN",
+          "period": "UNKNOWN",
+          "dates": "MATCH",
+          "thresholds": "MATCH",
+          "description_bps": 1098,
+          "embedding": {
+            "cosine": 0.8702595847295178,
+            "identity": "6ad290cf06017f5a5aba88e4f878e7b3320b73c8ac1d8018d376aab00d64cb16",
+            "model": "qwen3-embedding-8b",
+            "dimensions": 4096,
+            "versions": [
+              25,
+              44
+            ]
+          }
+        },
+        "warnings": [
+          "SUBJECT_PERIOD_UNKNOWN",
+          "RESOLUTION_LANGUAGE_DIFFERS",
+          "CUTOFFS_DIFFER",
+          "SETTLEMENT_DEADLINE_HORIZONS_DIFFER",
+          "EMBEDDING_RETRIEVAL_ONLY_HUMAN_REVIEW_REQUIRED"
+        ],
+        "known_contradictions": [
+          "RESOLUTION_LANGUAGE_DIFFERS"
+        ],
+        "equivalence_score_bps": 3719,
+        "match_basis": "EMBEDDING_ASSISTED",
+        "status": "UNVERIFIED",
+        "equivalence_verified": false,
+        "trading_authorized": false,
+        "hypothetical": false,
+        "algorithm": "semantic-discovery/m5i-v1",
+        "source_observations": [
+          25,
+          44
+        ],
+        "source_received_at": [
+          "2026-10-28T00:03:14.922826+00:00",
+          "2026-10-28T00:07:06.177209+00:00"
+        ],
+        "review_snapshot_expires_at": "2026-10-29T00:03:14.922826+00:00",
+        "settlement_deadlines": [
+          "2027-02-09T14:56:00+00:00",
+          "2026-11-25T04:00:00+00:00"
+        ],
+        "definition_links": {
+          "kalshi": "https://external-api.kalshi.com/trade-api/v2/markets/KXCPI-26OCT-T0.3",
+          "polymarket_us": "https://gateway.polymarket.us/v1/market/slug/cpic-uscpi-october-mom-2026-11-10-gt0pt3pct"
+        },
+        "review_reason": "TEXT_SIMILARITY_REQUIRES_PROPOSITION_REVIEW",
+        "liquidity": {
+          "kalshi": {
+            "quality": "MISSING",
+            "depth_proxy": null
+          },
+          "polymarket_us": {
+            "quality": "MISSING",
+            "depth_proxy": null
+          }
+        },
+        "mechanics": {
+          "research_path": "CASH_FUNDED_LONG_ONLY",
+          "polymarket_us_no": "UNSUPPORTED_SYNTHETIC_SHORT",
+          "account_applicability": "UNVERIFIED"
+        },
+        "prior_reviews": []
+      }
+    ],
+    "cpic-uscpi-october-mom-2026-11-10-gt0pt4pct": [
+      {
+        "kalshi_id": "KXCPI-26OCT-T0.4",
+        "polymarket_us_id": "cpic-uscpi-october-mom-2026-11-10-gt0pt4pct",
+        "kalshi_title": "Will CPI rise more than 0.4% in October 2026?",
+        "polymarket_us_title": "CPI MoM in October",
+        "versions": [
+          26,
+          45
+        ],
+        "event_key": "KXCPI-26OCT",
+        "polymarket_event_key": "[\"consumer price index mom in october\",[\"2026-11-10\"]]",
+        "retrieval_reasons": [
+          "KEYWORD_BM25",
+          "PERSISTENT_VECTOR_COSINE"
+        ],
+        "signals": {
+          "subject_bps": 5000,
+          "metric": "UNKNOWN",
+          "period": "UNKNOWN",
+          "dates": "MATCH",
+          "thresholds": "MATCH",
+          "description_bps": 1098,
+          "embedding": {
+            "cosine": 0.8763846521148014,
+            "identity": "6ad290cf06017f5a5aba88e4f878e7b3320b73c8ac1d8018d376aab00d64cb16",
+            "model": "qwen3-embedding-8b",
+            "dimensions": 4096,
+            "versions": [
+              26,
+              45
+            ]
+          }
+        },
+        "warnings": [
+          "SUBJECT_PERIOD_UNKNOWN",
+          "RESOLUTION_LANGUAGE_DIFFERS",
+          "CUTOFFS_DIFFER",
+          "SETTLEMENT_DEADLINE_HORIZONS_DIFFER",
+          "EMBEDDING_RETRIEVAL_ONLY_HUMAN_REVIEW_REQUIRED"
+        ],
+        "known_contradictions": [
+          "RESOLUTION_LANGUAGE_DIFFERS"
+        ],
+        "equivalence_score_bps": 3719,
+        "match_basis": "EMBEDDING_ASSISTED",
+        "status": "UNVERIFIED",
+        "equivalence_verified": false,
+        "trading_authorized": false,
+        "hypothetical": false,
+        "algorithm": "semantic-discovery/m5i-v1",
+        "source_observations": [
+          26,
+          45
+        ],
+        "source_received_at": [
+          "2026-10-28T00:03:14.922826+00:00",
+          "2026-10-28T00:07:06.177209+00:00"
+        ],
+        "review_snapshot_expires_at": "2026-10-29T00:03:14.922826+00:00",
+        "settlement_deadlines": [
+          "2027-02-09T14:56:00+00:00",
+          "2026-11-25T04:00:00+00:00"
+        ],
+        "definition_links": {
+          "kalshi": "https://external-api.kalshi.com/trade-api/v2/markets/KXCPI-26OCT-T0.4",
+          "polymarket_us": "https://gateway.polymarket.us/v1/market/slug/cpic-uscpi-october-mom-2026-11-10-gt0pt4pct"
+        },
+        "review_reason": "TEXT_SIMILARITY_REQUIRES_PROPOSITION_REVIEW",
+        "liquidity": {
+          "kalshi": {
+            "quality": "MISSING",
+            "depth_proxy": null
+          },
+          "polymarket_us": {
+            "quality": "MISSING",
+            "depth_proxy": null
+          }
+        },
+        "mechanics": {
+          "research_path": "CASH_FUNDED_LONG_ONLY",
+          "polymarket_us_no": "UNSUPPORTED_SYNTHETIC_SHORT",
+          "account_applicability": "UNVERIFIED"
+        },
+        "prior_reviews": []
+      }
+    ],
+    "cpic-uscpi-october-mom-2026-11-10-gt0pt5pct": [
+      {
+        "kalshi_id": "KXCPI-26OCT-T0.5",
+        "polymarket_us_id": "cpic-uscpi-october-mom-2026-11-10-gt0pt5pct",
+        "kalshi_title": "Will CPI rise more than 0.5% in October 2026?",
+        "polymarket_us_title": "CPI MoM in October",
+        "versions": [
+          27,
+          46
+        ],
+        "event_key": "KXCPI-26OCT",
+        "polymarket_event_key": "[\"consumer price index mom in october\",[\"2026-11-10\"]]",
+        "retrieval_reasons": [
+          "KEYWORD_BM25",
+          "PERSISTENT_VECTOR_COSINE"
+        ],
+        "signals": {
+          "subject_bps": 5000,
+          "metric": "UNKNOWN",
+          "period": "UNKNOWN",
+          "dates": "MATCH",
+          "thresholds": "MATCH",
+          "description_bps": 1098,
+          "embedding": {
+            "cosine": 0.8741988618670835,
+            "identity": "6ad290cf06017f5a5aba88e4f878e7b3320b73c8ac1d8018d376aab00d64cb16",
+            "model": "qwen3-embedding-8b",
+            "dimensions": 4096,
+            "versions": [
+              27,
+              46
+            ]
+          }
+        },
+        "warnings": [
+          "SUBJECT_PERIOD_UNKNOWN",
+          "RESOLUTION_LANGUAGE_DIFFERS",
+          "CUTOFFS_DIFFER",
+          "SETTLEMENT_DEADLINE_HORIZONS_DIFFER",
+          "EMBEDDING_RETRIEVAL_ONLY_HUMAN_REVIEW_REQUIRED"
+        ],
+        "known_contradictions": [
+          "RESOLUTION_LANGUAGE_DIFFERS"
+        ],
+        "equivalence_score_bps": 3719,
+        "match_basis": "EMBEDDING_ASSISTED",
+        "status": "UNVERIFIED",
+        "equivalence_verified": false,
+        "trading_authorized": false,
+        "hypothetical": false,
+        "algorithm": "semantic-discovery/m5i-v1",
+        "source_observations": [
+          27,
+          46
+        ],
+        "source_received_at": [
+          "2026-10-28T00:03:14.922826+00:00",
+          "2026-10-28T00:07:06.177209+00:00"
+        ],
+        "review_snapshot_expires_at": "2026-10-29T00:03:14.922826+00:00",
+        "settlement_deadlines": [
+          "2027-02-09T14:56:00+00:00",
+          "2026-11-25T04:00:00+00:00"
+        ],
+        "definition_links": {
+          "kalshi": "https://external-api.kalshi.com/trade-api/v2/markets/KXCPI-26OCT-T0.5",
+          "polymarket_us": "https://gateway.polymarket.us/v1/market/slug/cpic-uscpi-october-mom-2026-11-10-gt0pt5pct"
+        },
+        "review_reason": "TEXT_SIMILARITY_REQUIRES_PROPOSITION_REVIEW",
+        "liquidity": {
+          "kalshi": {
+            "quality": "MISSING",
+            "depth_proxy": null
+          },
+          "polymarket_us": {
+            "quality": "MISSING",
+            "depth_proxy": null
+          }
+        },
+        "mechanics": {
+          "research_path": "CASH_FUNDED_LONG_ONLY",
+          "polymarket_us_no": "UNSUPPORTED_SYNTHETIC_SHORT",
+          "account_applicability": "UNVERIFIED"
+        },
+        "prior_reviews": []
+      }
+    ],
+    "cpic-uscpi-october-mom-2026-11-10-gt0pt6pct": [
+      {
+        "kalshi_id": "KXCPI-26OCT-T0.6",
+        "polymarket_us_id": "cpic-uscpi-october-mom-2026-11-10-gt0pt6pct",
+        "kalshi_title": "Will CPI rise more than 0.6% in October 2026?",
+        "polymarket_us_title": "CPI MoM in October",
+        "versions": [
+          28,
+          47
+        ],
+        "event_key": "KXCPI-26OCT",
+        "polymarket_event_key": "[\"consumer price index mom in october\",[\"2026-11-10\"]]",
+        "retrieval_reasons": [
+          "KEYWORD_BM25",
+          "PERSISTENT_VECTOR_COSINE"
+        ],
+        "signals": {
+          "subject_bps": 5000,
+          "metric": "UNKNOWN",
+          "period": "UNKNOWN",
+          "dates": "MATCH",
+          "thresholds": "MATCH",
+          "description_bps": 1098,
+          "embedding": {
+            "cosine": 0.8718560838722438,
+            "identity": "6ad290cf06017f5a5aba88e4f878e7b3320b73c8ac1d8018d376aab00d64cb16",
+            "model": "qwen3-embedding-8b",
+            "dimensions": 4096,
+            "versions": [
+              28,
+              47
+            ]
+          }
+        },
+        "warnings": [
+          "SUBJECT_PERIOD_UNKNOWN",
+          "EVENT_TIMES_DIFFER",
+          "RESOLUTION_LANGUAGE_DIFFERS",
+          "CUTOFFS_DIFFER",
+          "SETTLEMENT_DEADLINE_HORIZONS_DIFFER",
+          "EMBEDDING_RETRIEVAL_ONLY_HUMAN_REVIEW_REQUIRED"
+        ],
+        "known_contradictions": [
+          "RESOLUTION_LANGUAGE_DIFFERS"
+        ],
+        "equivalence_score_bps": 2219,
+        "match_basis": "EMBEDDING_ASSISTED",
+        "status": "UNVERIFIED",
+        "equivalence_verified": false,
+        "trading_authorized": false,
+        "hypothetical": false,
+        "algorithm": "semantic-discovery/m5i-v1",
+        "source_observations": [
+          28,
+          47
+        ],
+        "source_received_at": [
+          "2026-10-27T23:57:01.927931+00:00",
+          "2026-10-28T00:07:06.177209+00:00"
+        ],
+        "review_snapshot_expires_at": "2026-10-28T23:57:01.927931+00:00",
+        "settlement_deadlines": [
+          "2027-02-09T14:56:00+00:00",
+          "2026-11-25T04:00:00+00:00"
+        ],
+        "definition_links": {
+          "kalshi": "https://external-api.kalshi.com/trade-api/v2/markets/KXCPI-26OCT-T0.6",
+          "polymarket_us": "https://gateway.polymarket.us/v1/market/slug/cpic-uscpi-october-mom-2026-11-10-gt0pt6pct"
+        },
+        "review_reason": "TEXT_SIMILARITY_REQUIRES_PROPOSITION_REVIEW",
+        "liquidity": {
+          "kalshi": {
+            "quality": "MISSING",
+            "depth_proxy": null
+          },
+          "polymarket_us": {
+            "quality": "MISSING",
+            "depth_proxy": null
+          }
+        },
+        "mechanics": {
+          "research_path": "CASH_FUNDED_LONG_ONLY",
+          "polymarket_us_no": "UNSUPPORTED_SYNTHETIC_SHORT",
+          "account_applicability": "UNVERIFIED"
+        },
+        "prior_reviews": []
+      }
+    ],
+    "cpic-uscpi-october-mom-2026-11-10-gtneg0pt1pct": [
+      {
+        "kalshi_id": "KXCPI-26OCT-T-0.1",
+        "polymarket_us_id": "cpic-uscpi-october-mom-2026-11-10-gtneg0pt1pct",
+        "kalshi_title": "Will CPI rise more than -0.1% in October 2026?",
+        "polymarket_us_title": "CPI MoM in October",
+        "versions": [
+          21,
+          40
+        ],
+        "event_key": "KXCPI-26OCT",
+        "polymarket_event_key": "[\"consumer price index mom in october\",[\"2026-11-10\"]]",
+        "retrieval_reasons": [
+          "KEYWORD_BM25",
+          "PERSISTENT_VECTOR_COSINE"
+        ],
+        "signals": {
+          "subject_bps": 5000,
+          "metric": "UNKNOWN",
+          "period": "UNKNOWN",
+          "dates": "MATCH",
+          "thresholds": "MATCH",
+          "description_bps": 1098,
+          "embedding": {
+            "cosine": 0.8736464108783241,
+            "identity": "6ad290cf06017f5a5aba88e4f878e7b3320b73c8ac1d8018d376aab00d64cb16",
+            "model": "qwen3-embedding-8b",
+            "dimensions": 4096,
+            "versions": [
+              21,
+              40
+            ]
+          }
+        },
+        "warnings": [
+          "SUBJECT_PERIOD_UNKNOWN",
+          "RESOLUTION_LANGUAGE_DIFFERS",
+          "CUTOFFS_DIFFER",
+          "SETTLEMENT_DEADLINE_HORIZONS_DIFFER",
+          "EMBEDDING_RETRIEVAL_ONLY_HUMAN_REVIEW_REQUIRED"
+        ],
+        "known_contradictions": [
+          "RESOLUTION_LANGUAGE_DIFFERS"
+        ],
+        "equivalence_score_bps": 3719,
+        "match_basis": "EMBEDDING_ASSISTED",
+        "status": "UNVERIFIED",
+        "equivalence_verified": false,
+        "trading_authorized": false,
+        "hypothetical": false,
+        "algorithm": "semantic-discovery/m5i-v1",
+        "source_observations": [
+          21,
+          40
+        ],
+        "source_received_at": [
+          "2026-10-28T00:03:14.922826+00:00",
+          "2026-10-28T00:07:06.177209+00:00"
+        ],
+        "review_snapshot_expires_at": "2026-10-29T00:03:14.922826+00:00",
+        "settlement_deadlines": [
+          "2027-02-09T14:56:00+00:00",
+          "2026-11-25T04:00:00+00:00"
+        ],
+        "definition_links": {
+          "kalshi": "https://external-api.kalshi.com/trade-api/v2/markets/KXCPI-26OCT-T-0.1",
+          "polymarket_us": "https://gateway.polymarket.us/v1/market/slug/cpic-uscpi-october-mom-2026-11-10-gtneg0pt1pct"
+        },
+        "review_reason": "TEXT_SIMILARITY_REQUIRES_PROPOSITION_REVIEW",
+        "liquidity": {
+          "kalshi": {
+            "quality": "MISSING",
+            "depth_proxy": null
+          },
+          "polymarket_us": {
+            "quality": "MISSING",
+            "depth_proxy": null
+          }
+        },
+        "mechanics": {
+          "research_path": "CASH_FUNDED_LONG_ONLY",
+          "polymarket_us_no": "UNSUPPORTED_SYNTHETIC_SHORT",
+          "account_applicability": "UNVERIFIED"
+        },
+        "prior_reviews": []
+      }
+    ]
+  },
+  "model_claim": "Actual Qwen inference",
+  "retrieval_replay": "Final implementation replayed archived genuine vectors at original evaluation clock; no inference repeated."
+}

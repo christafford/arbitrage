@@ -1,0 +1,127 @@
+{
+  "schema": "m5i-validation/v1",
+  "source_archive": {
+    "schema": 8,
+    "collection_runs": [
+      {
+        "id": 22,
+        "venue": "kalshi",
+        "status": "COMPLETE",
+        "pages": 757,
+        "records": 151380,
+        "unique_records": 151380,
+        "finished_at": "2026-10-28T00:04:00.310811+00:00"
+      },
+      {
+        "id": 23,
+        "venue": "polymarket_us",
+        "status": "COMPLETE",
+        "pages": 402,
+        "records": 80069,
+        "unique_records": 80066,
+        "finished_at": "2026-10-28T00:18:10.648440+00:00"
+      }
+    ],
+    "pairs": 1
+  },
+  "catalogue_sync": {
+    "documents": 339137,
+    "processed": 9137,
+    "scan_complete": true,
+    "scan_cursor": 0,
+    "source_instruments": 339137
+  },
+  "worker": {
+    "cache_hits": 0,
+    "completed": {
+      "kalshi": 560,
+      "polymarket_us": 544
+    },
+    "dimensions": 4096,
+    "elapsed_seconds": 606.9207871180006,
+    "identity": "6ad290cf06017f5a5aba88e4f878e7b3320b73c8ac1d8018d376aab00d64cb16",
+    "model": "qwen3-embedding-8b",
+    "requests": 72,
+    "status": "READY",
+    "texts_per_second": 1.819018269653293
+  },
+  "retrieval": {
+    "elapsed_seconds": 36.60570588399787,
+    "memory_before": {
+      "VmHWM": "25552 kB",
+      "VmRSS": "25552 kB"
+    },
+    "memory_after": {
+      "VmHWM": "34256 kB",
+      "VmRSS": "34192 kB"
+    },
+    "queries": {
+      "queries": 250,
+      "window_complete": false,
+      "bucket_saturations": 73,
+      "vector_failures": 0,
+      "candidate_cap": 256,
+      "approximate": true,
+      "identity": "6ad290cf06017f5a5aba88e4f878e7b3320b73c8ac1d8018d376aab00d64cb16",
+      "model": "qwen3-embedding-8b",
+      "deterministic_enabled": true
+    },
+    "candidate_events": 82
+  },
+  "retrieval_bases": {
+    "SPORTS_EVENT_IDENTITY": 52,
+    "TEXT_HEURISTIC": 26,
+    "EMBEDDING_ASSISTED": 4
+  },
+  "different_from_saved_top50": {
+    "count": 39,
+    "bases": {
+      "SPORTS_EVENT_IDENTITY": 9,
+      "TEXT_HEURISTIC": 26,
+      "EMBEDDING_ASSISTED": 4
+    },
+    "interpretation": "Unjudged lead count; different queue limits/windows, not an apples-to-apples semantic gain."
+  },
+  "live_captures": {
+    "candidates": 30,
+    "available_same_identity": 30,
+    "raw_responses": 90
+  },
+  "top20": {
+    "count": 20,
+    "distinct_kalshi_events": 20,
+    "distinct_us_events": 20
+  },
+  "artifacts": {
+    "data/full-embedding-discovery.json": {
+      "bytes": 185480,
+      "sha256": "91a79b7815b1b1bbcf085979823a2cae4c749e5bd412050ed8c9d9e08e3363ef"
+    },
+    "data/m5i/retrieval-final.json": {
+      "bytes": 229824,
+      "sha256": "e3f964b129cc48581d4544a8e77cdd85fb77187ba1ab615e20fa280ee7689735"
+    },
+    "tests/fixtures/m5i-genuine-evaluation.json": {
+      "bytes": 332734,
+      "sha256": "4881cf2ec5bd58e8a59f62a86d1d9e3e4b807d8682fc5c4b7076bd8bc640e84a"
+    }
+  },
+  "final_live_recapture": {
+    "candidates": 20,
+    "available_same_identity": 20,
+    "raw_responses": 60,
+    "first_capture_at": "2026-10-28T12:50:50.231919+00:00",
+    "last_capture_at": "2026-10-28T12:51:28.226674+00:00",
+    "archive": "data/m5i/live-review-final.sqlite3"
+  },
+  "verification": {
+    "test_command": "python -m unittest discover -s tests -v (repository .venv activated)",
+    "tests_executed": 367,
+    "test_seconds": "16.159",
+    "test_log_sha256": "a85a5a4eb6b2a968ce19978726bcd3d604bbd00cfad9d0bb92035072c271aff4",
+    "smoke_commands": 15,
+    "smoke_exit_zero": 11,
+    "expected_partial_walks": 4,
+    "implementation_commit": "f088943"
+  }
+}

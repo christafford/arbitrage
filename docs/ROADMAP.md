@@ -198,3 +198,30 @@ provide full-catalogue semantic coverage or authorize M6/live-money work.
 This repairs the existing discovery extension. Partial paging and the 512-input
 per-venue semantic cap remain explicit; no sports-format expansion or trading
 milestone is authorized by this change.
+
+## M5I — Production-scale semantic discovery — IMPLEMENTED; BROAD ACCEPTANCE PARTIAL (2026-10-28 UTC)
+
+- [x] Resumable public catalogue walks, page checkpoints, bounded per-venue budgets,
+  schema-9 migration and interrupted-page replay; no first-provider-page coverage claim.
+- [x] Separate persistent metadata/FTS/vector sidecar; 339,137 archived heads
+  synchronized, new/modified-version priority, unchanged-text reuse and bounded
+  asynchronous inference. Source collection does not take the AI worker lock.
+- [x] Sports identity + keyword + persistent approximate vector retrieval, current
+  source/TTL/model checks, horizon/mechanics filtering, verified-liquidity tie-breaking,
+  contradiction priority and diversity across both venues' event groupings.
+- [x] Genuine 49-definition labeled corpus, measured Recall@20/@100, precision,
+  false negatives, throughput, model/source provenance and zero additional labeled
+  reviewable events versus the deterministic baseline. No model-quality gain inferred
+  from the earlier synthetic 6/6 benchmark.
+- [x] Failure/restart/model/change/staleness/partial-index tests, full-suite and CLI
+  smoke validation, dependency/unit checks and 20 freshly captured review candidates.
+- [ ] Complete production vector backfill and query traversal; current coverage is
+  576/121,065 Kalshi and 560/9,027 US eligible definitions at the measured snapshot.
+- [ ] Broad independently adjudicated retrieval quality and incremental reviewable
+  semantic yield; approximate bucket saturation and partial coverage remain limits.
+
+See [measured results and 20-event review shortlist](M5I_RESULTS.md),
+[operations](M5I_OPERATIONS.md), and exact linked evidence. Implementation and
+bounded validation are complete; broad production acceptance is **not complete**.
+No service was activated, real contract approved, or trading/funding path added.
+Stop after M5I; M6 remains unauthorized and previous sustained-run gaps remain open.

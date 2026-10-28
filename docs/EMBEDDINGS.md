@@ -1,5 +1,9 @@
 # Private embedding retrieval
 
+**M5I production entry point:** use [persistent sidecar operations](M5I_OPERATIONS.md).
+Production refresh no longer invokes inference. The 512-item pool and inline setup
+below describe the earlier helper retained for the synthetic benchmark.
+
 This discovery extension adds review candidates using the private llama.cpp service.
 Every suggestion remains `UNVERIFIED`, `equivalence_verified=false` and
 `trading_authorized=false`. Human decisions, money calculations and execution
@@ -137,3 +141,13 @@ US generic futures metadata is interpreted with the explicit market category;
 non-sports futures are eligible for embedding retrieval. Unknown types and
 recognized sports retain conservative gates. See the [category correction](EMBEDDING_CATEGORY_RESULTS.md)
 for the initially empty real-catalogue run and its recovery.
+
+## M5I supersedes the production 512-item path
+
+Production refresh now uses the persistent sidecar and does not call inference.
+The setup, limits and synchronous behavior above describe the earlier helper,
+which remains for the historical synthetic benchmark. Use the
+[M5I operational commands](M5I_OPERATIONS.md) for incremental full-catalogue
+synchronization, separate bounded inference, persistent retrieval and coverage.
+The model fingerprint and privacy/schema rules remain unchanged. Do not infer
+full indexing from completion of catalogue collection or metadata synchronization.

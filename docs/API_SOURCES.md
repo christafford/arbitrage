@@ -502,3 +502,20 @@ with the undocumented `SPORTS_MARKET_TYPE_UNSPECIFIED` variant. The last remains
 excluded conservatively. Excerpts retain parent raw hashes, receipt clocks, URLs
 and adapter schema; original complete pages remain in the operator archive.
 No new prices/quantities, credentials or international source were consumed.
+
+## M5I semantic index and resumable catalogue walks — 2026-10-28 UTC
+
+Rechecked the official Kalshi Get Markets and US Get Markets/Get Market By Slug
+schemas before implementation. [Exact document hashes and UTC retrieval times](evidence/M5I_API_CHECKS.json)
+identify upstream Kalshi **3.35.0** and US **1.0.0**. Existing adapter consumed-field
+contracts remain unchanged. Cursor/offset, public definitions, categories, selected
+sides and administrative deadlines are reused; no delta-feed, price, fee or cash
+release fields are invented. The genuine evaluation and fresh review fixtures
+retain adapter schema versions, source links, parent/excerpt hashes and receipts.
+
+The sidecar uses SQLite FTS5 and indexed sparse-hyperplane buckets with bounded
+full-vector reranking. SQLite's [documented CROSS JOIN ordering](https://www.sqlite.org/optoverview.html#manual_control_of_query_plans_using_cross_join)
+keeps bucket lookups from becoming repeated venue-wide metadata scans on a partial
+index. This is a local retrieval implementation, not an exchange schema or legal
+settlement interpretation. All previous US-only endpoints and provider data-use
+restrictions remain in force. No raw source data was published externally.

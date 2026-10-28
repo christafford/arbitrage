@@ -78,8 +78,8 @@ identity does not approve settlement equivalence. See [sports results](docs/SPOR
 
 Private llama.cpp embedding retrieval is available through `PREDARB_EMBEDDING_URL`.
 Use `predarb discovery embeddings-check` to discover model identity and actual
-vector dimensions, then `discovery refresh --cached-catalogues` to add semantic
-suggestions from fresh archived metadata. Outages retain deterministic matching;
+vector dimensions, then the separate `index-sync`, `index-work` and `index-retrieve`
+commands to backfill and query the persistent index. Outages retain deterministic matching;
 all suggestions remain `UNVERIFIED`. See [setup and recall benchmark](docs/EMBEDDINGS.md).
 
 ## Pair review (M2)
@@ -182,3 +182,9 @@ One low-power Linux machine with reliable fiber and substantial local disk. Pyth
 ## License
 
 MIT (see LICENSE). Educational/research software; not investment advice. Check local eligibility, exchange terms, taxes, and regulations before any eventual trading.
+
+M5I production discovery uses a persistent semantic sidecar and separate bounded
+inference workers. `discovery refresh` no longer performs inference inline.
+See [M5I operations](docs/M5I_OPERATIONS.md) and [measured results](docs/M5I_RESULTS.md)
+for incremental backfill, coverage, genuine-definition evaluation and the review
+shortlist. All candidates remain unapproved; no trading functionality is added.
