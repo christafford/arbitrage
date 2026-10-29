@@ -1,7 +1,7 @@
 # M5I contradiction corrections and inference diagnosis — October 29
 
-**The four observed contradiction misses are fixed and tested. Remote inference
-repair remains blocked on verified server access or PC-side status/log output.**
+**The four observed contradiction misses are fixed and tested. The operator has
+restored inference; HTTP health now passes, but the exact model pin does not.**
 Both expired run services remain disabled. No bulk backfill, new model namespace,
 real-money workflow or equivalence approval was started.
 
@@ -112,3 +112,35 @@ supports a local service without public Funnel exposure.
 Official diagnostic docs and current US market-field schemas were captured with
 UTC timestamps and hashes. No new exchange API fields are consumed. Bulk backfill
 remains stopped until inference health, the model pin and a bounded batch pass.
+
+## Recovery check — October 29, 22:46 UTC
+
+The operator reported accidentally closing the server and restarting it. The
+private `/health` endpoint returned HTTP 200 with `status=ok`. Three actual
+embedding probes returned valid 4,096-dimensional `qwen3-embedding-8b` vectors,
+but none matched the existing `6ad290cf…` namespace. The first fingerprint was
+`1bdbff0b…`; the next two both returned `8f1b7456…`. Their cosine similarity to
+the archived pinned probe was approximately 0.99985 and 0.99983 respectively.
+High similarity does not establish cache compatibility or authorize merging.
+
+The bounded worker requested at most 64 Kalshi / 16 US definitions, 60 seconds,
+and eight texts/second. It exited 2 (`PINNED_MODEL_IDENTITY_MISMATCH`) after six
+HTTP requests and 3.056 seconds, before embedding any market text. Zero market
+vectors were added; the active namespace remains the original pin. The expired
+services remain disabled and their deadline/checkpoints were not modified.
+[Health, exact fingerprints, source references and validation](evidence/M5I_RECOVERY_20261029.json).
+
+The operator supplied a launch script naming `Qwen3-Embedding-8B-Q6_K.gguf`,
+last-token pooling, loopback host, port default 8083, GPU layers `auto`, fit `on`,
+768 MiB fit margin, flash attention on, context/batch 2048, microbatch 256,
+parallelism 1 and six threads. Effective runtime parameters, GGUF checksum and
+llama.cpp build are not yet verified. No prior effective launch manifest was
+found in repository documentation. Automatic GPU placement is a diagnostic lead,
+not an established cause: the official help describes automatic GPU layers and
+memory-fitting adjustments. Capture the actual offloaded-layer/backend startup
+lines, build version and model SHA-256 before attempting runtime restoration.
+[Official llama.cpp parameter documentation](https://github.com/ggml-org/llama.cpp/blob/master/tools/server/README.md).
+
+No matching guard or model pin was relaxed. Full tests were rerun: **387 passed
+in 19.048 seconds**; `pip check` reported no broken requirements. This is recovery
+diagnosis, not completed backfill or a new retrieval-quality result.

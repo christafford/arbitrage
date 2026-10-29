@@ -1,0 +1,94 @@
+{
+  "health": {
+    "at": "2026-10-29T22:46:48.019596+00:00",
+    "url": "https://cachyos.tail2be75f.ts.net/health",
+    "status": 200,
+    "raw_id": 1,
+    "body": "{\"status\":\"ok\"}"
+  },
+  "worker": {
+    "cache_hits": 0,
+    "completed": {
+      "kalshi": 0,
+      "polymarket_us": 0
+    },
+    "dimensions": 4096,
+    "elapsed_seconds": 3.0558978670160286,
+    "identity": "8f1b745674ea82993cc5211498d606a86627ecedb6776637daeaf66e42611204",
+    "model": "qwen3-embedding-8b",
+    "reason": "PINNED_MODEL_IDENTITY_MISMATCH",
+    "requests": 6,
+    "status": "FALLBACK",
+    "stop_reason": "PER_VENUE_BUDGET_OR_EMPTY",
+    "texts_per_second": 0.0
+  },
+  "comparison": {
+    "expected_identity": "6ad290cf06017f5a5aba88e4f878e7b3320b73c8ac1d8018d376aab00d64cb16",
+    "active_identity": "6ad290cf06017f5a5aba88e4f878e7b3320b73c8ac1d8018d376aab00d64cb16",
+    "probes": [
+      {
+        "raw_id": 2279,
+        "at": "2026-10-29T22:46:49.311394+00:00",
+        "sha256": "42712cfff4b7e55c63ccfa2e34522602384afc81281d904840bfb51438909bb1",
+        "identity": "1bdbff0b104f3d5ebe7be8b3e5e052542bb18f2f1a950d465cc21196ca2a53ba",
+        "dimensions": 4096,
+        "reference_database": "data/m5i/run-20261028/probe.sqlite3",
+        "reference_raw_id": 2,
+        "max_absolute_difference": 0.0017208243726569879,
+        "cosine": 0.9998474192413701
+      },
+      {
+        "raw_id": 2281,
+        "at": "2026-10-29T22:46:50.327210+00:00",
+        "sha256": "835fd755c9f0a2e7634e87c4cf699e2e00730d0503ee0e332be0d0016734d0f0",
+        "identity": "8f1b745674ea82993cc5211498d606a86627ecedb6776637daeaf66e42611204",
+        "dimensions": 4096,
+        "reference_database": "data/m5i/run-20261028/probe.sqlite3",
+        "reference_raw_id": 2,
+        "max_absolute_difference": 0.003588388022389387,
+        "cosine": 0.9998344949500977
+      },
+      {
+        "raw_id": 2283,
+        "at": "2026-10-29T22:46:51.345660+00:00",
+        "sha256": "835fd755c9f0a2e7634e87c4cf699e2e00730d0503ee0e332be0d0016734d0f0",
+        "identity": "8f1b745674ea82993cc5211498d606a86627ecedb6776637daeaf66e42611204",
+        "dimensions": 4096,
+        "reference_database": "data/m5i/run-20261028/probe.sqlite3",
+        "reference_raw_id": 2,
+        "max_absolute_difference": 0.003588388022389387,
+        "cosine": 0.9998344949500977
+      }
+    ]
+  },
+  "operator_report": "Accidentally closed Qwen3-Embedding-8B server; restarted it.",
+  "operator_launch": {
+    "model_file": "Qwen3-Embedding-8B-Q6_K.gguf",
+    "alias": "qwen3-embedding-8b",
+    "embeddings": true,
+    "pooling": "last",
+    "host": "127.0.0.1",
+    "port": "${PORT:-8083}",
+    "gpu_layers": "auto",
+    "fit": "on",
+    "fit_target": 768,
+    "flash_attn": "on",
+    "ctx_size": 2048,
+    "parallel": 1,
+    "batch_size": 2048,
+    "ubatch_size": 256,
+    "threads": 6,
+    "trailing_arguments": "$@"
+  },
+  "effective_runtime_and_model_file_hash_verified": false,
+  "market_vectors_added": 0,
+  "expired_services": "inactive and disabled; original deadline and checkpoints unchanged",
+  "tests": {
+    "command": ".venv/bin/python -m unittest discover -s tests -v",
+    "count": 387,
+    "seconds": 19.048,
+    "result": "PASS"
+  },
+  "dependency_check": "No broken requirements found",
+  "diagnostic_note": "Initial historical raw-response search stopped without a result; bounded primary-key reads and the small saved probe archive supplied the completed comparison."
+}

@@ -236,13 +236,16 @@ Stop after M5I; M6 remains unauthorized and previous sustained-run gaps remain o
 - [x] Finish and inspect the 24-hour run: both services stopped at the deadline;
   four terminal catalogue refreshes per venue, 100% of eligible US definitions
   indexed and 15.79% of eligible Kalshi definitions indexed at shutdown.
-- [ ] Diagnose private inference 502s, finish the remaining 100,241-definition
-  Kalshi backlog (shutdown count), and complete retrieval traversal.
+- [x] Verify restored private HTTP health after the operator restarted the closed
+  server; valid probes now expose an exact model-fingerprint mismatch.
+- [ ] Resolve the model-fingerprint mismatch without mixing namespaces, finish the
+  remaining 100,241-definition Kalshi backlog (shutdown count), and complete
+  retrieval traversal.
 - [x] Repair contradiction detection for the four genuine semantic misses found
   in the final queue: Fed rounding, Musk thresholds, Supreme Court proposition
   type, and Bitcoin threshold/direction/observation time. Existing approval gates
   remained closed; 387 tests and historical queue replay pass. See
-  [corrections and remaining inference-access blocker](M5I_CORRECTIONS.md).
+  [corrections and remaining model-pin blocker](M5I_CORRECTIONS.md).
   Recognition remains partial; a larger index alone does not establish better matching.
 
 See [post-run findings](M5I_RUN_20261028_RESULTS.md). Broad quality adjudication

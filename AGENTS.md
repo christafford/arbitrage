@@ -53,5 +53,7 @@ Every added path has tests (success, missing fields, stale data, invalid prices,
   of a batch or service startup is not completion of the backfill or run acceptance.
 - The four observed M5I contradiction misses now have genuine regression fixtures
   and versioned on-read guards; see `docs/M5I_CORRECTIONS.md`. Never treat an empty
-  old queue warning list or an unknown parsed field as approval. Inference recovery
-  still requires verified PC access/health and the existing exact model pin.
+  old queue warning list or an unknown parsed field as approval. The operator restored
+  inference on October 29; health passes but three probes miss the exact model
+  pin. See `docs/evidence/M5I_RECOVERY_20261029.json`. Verify effective runtime
+  settings/model provenance; preserve the existing pin and do not merge vectors.
