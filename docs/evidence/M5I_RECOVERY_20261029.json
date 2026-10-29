@@ -90,5 +90,98 @@
     "result": "PASS"
   },
   "dependency_check": "No broken requirements found",
-  "diagnostic_note": "Initial historical raw-response search stopped without a result; bounded primary-key reads and the small saved probe archive supplied the completed comparison."
+  "diagnostic_note": "Initial historical raw-response search stopped without a result; bounded primary-key reads and the small saved probe archive supplied the completed comparison.",
+  "operator_model_sha256": "25e215d4283e3a48ca65a622b70a357599fd480282f48a3ecd6e3e8828d92a66",
+  "operator_build": "0.3.0-dev; build 10705; commit 3f5abc5; GNU 16.2.1; Linux x86_64",
+  "operator_startup_observations": {
+    "effective_batch_size": 256,
+    "microbatch_size": 256,
+    "context_per_slot": 2048,
+    "slots": 1,
+    "threads": 6,
+    "listener": "127.0.0.1:8083",
+    "repeat_probe_prefix_cache": "nine tokens previously processed, n_past reset to eight",
+    "gpu_backend_and_offloaded_layers": "not present in supplied log",
+    "token_warning": "token 128247 '</s>' control type overridden by loader"
+  },
+  "cache_diagnostic": {
+    "at": "2026-10-29T23:11:12.854202+00:00",
+    "diagnostic_only": true,
+    "production_configuration_changed": false,
+    "requests": 6,
+    "results": [
+      {
+        "mode": "default_probe",
+        "result": {
+          "model": "qwen3-embedding-8b",
+          "identity": "8f1b745674ea82993cc5211498d606a86627ecedb6776637daeaf66e42611204",
+          "dimensions": 4096
+        }
+      },
+      {
+        "cache_prompt_requested": false,
+        "raw_id": 4,
+        "identity": "8f1b745674ea82993cc5211498d606a86627ecedb6776637daeaf66e42611204",
+        "request": {
+          "model": "qwen3-embedding-8b",
+          "input": [
+            "Prediction market public event definition dimension probe."
+          ],
+          "encoding_format": "float",
+          "cache_prompt": false
+        }
+      },
+      {
+        "cache_prompt_requested": false,
+        "raw_id": 5,
+        "identity": "8f1b745674ea82993cc5211498d606a86627ecedb6776637daeaf66e42611204",
+        "request": {
+          "model": "qwen3-embedding-8b",
+          "input": [
+            "Prediction market public event definition dimension probe."
+          ],
+          "encoding_format": "float",
+          "cache_prompt": false
+        }
+      },
+      {
+        "cache_prompt_requested": true,
+        "raw_id": 6,
+        "identity": "8f1b745674ea82993cc5211498d606a86627ecedb6776637daeaf66e42611204",
+        "request": {
+          "model": "qwen3-embedding-8b",
+          "input": [
+            "Prediction market public event definition dimension probe."
+          ],
+          "encoding_format": "float",
+          "cache_prompt": true
+        }
+      },
+      {
+        "cache_prompt_requested": false,
+        "raw_id": 7,
+        "identity": "8f1b745674ea82993cc5211498d606a86627ecedb6776637daeaf66e42611204",
+        "request": {
+          "model": "qwen3-embedding-8b",
+          "input": [
+            "Prediction market public event definition dimension probe."
+          ],
+          "encoding_format": "float",
+          "cache_prompt": false
+        }
+      }
+    ]
+  },
+  "props_diagnostic": {
+    "raw_id": 8,
+    "database": "data/m5i/recovery-20261029/diagnostics.sqlite3",
+    "at": "2026-10-29T23:11:49.026986+00:00",
+    "sha256": "6a611b02d28180e9667a8818e372b3da50d6843103bd2aca0ccbe18950a197bd",
+    "build_info": "b10705-3f5abc5",
+    "model_path": "/home/chris/models/Qwen3-Embedding-8B/Qwen3-Embedding-8B-Q6_K.gguf",
+    "total_slots": 1,
+    "context": 2048
+  },
+  "historical_model_file_sha256": "NOT_CAPTURED; cannot establish file equality from current checksum alone",
+  "model_metadata_comparison": "Archived and current /v1/models meta objects agree: Q6_K, 4096 dimensions, 7567295488 parameters, size 6208527136, context 2048. This is not a model-file hash or a runtime-equivalence proof."
 }

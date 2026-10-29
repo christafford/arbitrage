@@ -144,3 +144,31 @@ lines, build version and model SHA-256 before attempting runtime restoration.
 No matching guard or model pin was relaxed. Full tests were rerun: **387 passed
 in 19.048 seconds**; `pip check` reported no broken requirements. This is recovery
 diagnosis, not completed backfill or a new retrieval-quality result.
+
+### Operator runtime evidence and cache diagnostic — 23:11 UTC
+
+The operator supplied SHA-256
+`25e215d4283e3a48ca65a622b70a357599fd480282f48a3ecd6e3e8828d92a66`
+for the GGUF and build 10705 / commit `3f5abc5`. A private GET `/props` independently
+reported `b10705-3f5abc5`, the expected local model path, one slot and context 2048.
+The old/current `/v1/models` metadata agrees on Q6_K, dimensions, parameter count,
+model size and context. The original GGUF checksum was not captured; matching
+metadata cannot establish identical model bytes or effective runtime.
+
+The supplied log explicitly reduces logical batch 2048 to microbatch 256 and
+shows repeated nine-token probes reusing eight cached tokens. It does not show
+GPU/backend or offloaded-layer counts. A six-request isolated diagnostic (one
+model request and five embedding requests) returned `8f1b7456…` throughout,
+including three requests carrying `cache_prompt=false`. No restoration of the
+old pin occurred. The embedding route may ignore this field; no claim that prompt
+reuse was actually disabled follows from HTTP success. Raw requests/results and
+properties provenance are added to the recovery evidence. Production source/index,
+worker settings, services and pin were unchanged in this follow-up.
+
+The next diagnostic is a startup capture with trace logging (`-lv 4`) to expose
+actual backend/offload settings, retaining all existing inference arguments.
+Current upstream documentation identifies level 4 as trace; it is not evidence
+that the running build has identical internals. The exact supplied commit could
+not be retrieved through the web tool. Backfill remains stopped. This follow-up
+changed only documentation/evidence; the preceding 387-test pass remains the
+latest suite result, not a newly executed test run.
