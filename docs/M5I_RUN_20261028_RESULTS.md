@@ -1,5 +1,9 @@
 # M5I 24-hour run — post-run findings
 
+**Follow-up:** the four observed contradiction misses were subsequently corrected;
+see [regression evidence and inference diagnosis](M5I_CORRECTIONS.md).
+The measurements below preserve the original run audit.
+
 **The bounded run stopped successfully; the full backfill and retrieval-quality
 acceptance did not complete.** Both services exited successfully at the configured
 October 29 **13:31:44 UTC / 09:31:44 EDT** deadline. All four full refresh rounds

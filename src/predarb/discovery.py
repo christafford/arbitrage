@@ -10,7 +10,7 @@ import sys
 import unicodedata
 from urllib.parse import urlsplit
 
-from . import kalshi, polymarket_us, registry, sports_discovery
+from . import kalshi, polymarket_us, registry, sports_discovery, propositions
 from .collector import book_freshness
 from .validation import dumps, load_json, utc_time, text_field
 
@@ -125,6 +125,7 @@ def features(contract):
             'dates': dates, 'text_dates': text_dates, 'event_time': event_time, 'thresholds': thresholds,
             'measure': measure_facets(title, description),
             'sports': sports_discovery.features(contract),
+            'proposition': propositions.extract(contract),
             'policy': set(re.findall(r'\b(first|final|revised|preliminary|not|cancelled|void)\b', text)),
             'cutoff': utc_time(cutoff).isoformat() if cutoff else None}
 
@@ -139,7 +140,9 @@ def compare(left, right, *, min_score=0, semantic=False):
     subject = overlap(left['subject'], right['subject'])
     score = subject * 5 // 10
     signals = {'subject_bps': subject}
-    warnings = []
+    warnings = propositions.compare(left.get('proposition'), right.get('proposition'))
+    signals['proposition_guard'] = {'left':left.get('proposition'), 'right':right.get('proposition')}
+    score -= 4000 * sum('CONFLICT' in w for w in warnings)
     for facet in ('metric', 'period'):
         a, b = left['measure'][facet], right['measure'][facet]
         signals[facet] = 'MATCH' if a and a == b else 'CONFLICT' if a and b else 'UNKNOWN'
@@ -399,7 +402,9 @@ def discover(con, *, limit=20, max_instruments=None, now=None, _pair_keys=None, 
                        'equivalence_verified': False,
                        'liquidity': {'kalshi': kd, 'polymarket_us': pd, 'paired_depth_proxy': str(quantity) if quantity is not None else None},
                        'versions': [k['version_id'], p['version_id']]}
-                yield (-score, -quality, -(quantity or Decimal(0)), k['source_id'], p['source_id']), row, k, p
+                material = [w for w in warnings if 'CONFLICT' in w or w == 'RESOLUTION_LANGUAGE_DIFFERS']
+                row['known_contradictions'] = material
+                yield (bool(material), -score, -quality, -(quantity or Decimal(0)), k['source_id'], p['source_id']), row, k, p
     best = []
     for item in matches():
         if len(best) < limit or item[0] < best[-1][0]:
@@ -407,7 +412,7 @@ def discover(con, *, limit=20, max_instruments=None, now=None, _pair_keys=None, 
             best.sort(key=lambda entry: entry[0])
             del best[limit:]
             if len(best) == limit:
-                score_floor = best[-1][1]['equivalence_score_bps']
+                score_floor = best[-1][1]['equivalence_score_bps'] if not best[-1][0][0] else 0
     result = []
     for _, row, k, p in best:
         row['definition_links'] = {'kalshi': _links(con, k), 'polymarket_us': _links(con, p)}

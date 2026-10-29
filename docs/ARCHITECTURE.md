@@ -320,6 +320,12 @@ queue report before narrowing to queued instruments. SQLite remains schema 8.
 
 ## M5I asynchronous semantic discovery
 
+`propositions.py` adds bounded, versioned conflict checks over existing public
+contract text. Deterministic comparison, semantic comparison and queue revalidation
+apply them on read, so old feature rows/candidate warnings do not require a vector
+rebuild. Decimal amounts and explicit observation/proposition/rounding labels are
+review aids, never equivalence decisions. See [correction evidence](M5I_CORRECTIONS.md).
+
 Schema 9 adds `catalogue_walk_pages` and lookup indexes. The source archive retains
 its single-writer boundary. `catalogue_walk.py` commits resumable page checkpoints;
 `semantic.py` streams source definitions into a separately locked SQLite sidecar.

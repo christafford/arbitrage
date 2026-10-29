@@ -1,0 +1,193 @@
+{
+  "at": "2026-10-29T20:20:01.942412+00:00",
+  "test_command": "python -m unittest discover -s tests -v",
+  "tests": 387,
+  "seconds": 17.125,
+  "test_log_sha256": "841a949e54390d9c0f1fcf34a05789e7595082f754748135874fe938375eb3e5",
+  "genuine_fixture_sha256": "f63c0cdbe1dcbfdc358bbcaf310e20b36e3ef37a0dea4c04cc5d353175dd424a",
+  "queue_replay": {
+    "command": "python scripts/m5i_replay_contradictions.py --db data/research.sqlite3 --index-db data/m5i/index.sqlite3 --snapshot docs/evidence/M5I_RUN_20261028_FINAL_QUEUE.json --output data/m5i/corrections-20261029/replay.json",
+    "exit": 0,
+    "candidates": 100,
+    "newly_flagged": 4,
+    "new_inference_requests": 0,
+    "replay_clock": "2026-10-29T13:25:52.761095+00:00"
+  },
+  "corpus_regression": {
+    "command": "python scripts/m5i_evaluate.py --directory data/m5i/corrections-20261029/corpus-replay --output data/m5i/corrections-20261029/corpus-replay.json",
+    "exit": 0,
+    "dataset_sha256": "4881cf2ec5bd58e8a59f62a86d1d9e3e4b807d8682fc5c4b7076bd8bc640e84a",
+    "improved": {
+      "20": {
+        "relevant_found": 18,
+        "relevant_total": 18,
+        "recall": 1.0,
+        "returned": 18,
+        "precision_among_returned": 1.0,
+        "false_negative_categories": {}
+      },
+      "100": {
+        "relevant_found": 18,
+        "relevant_total": 18,
+        "recall": 1.0,
+        "returned": 18,
+        "precision_among_returned": 1.0,
+        "false_negative_categories": {}
+      },
+      "hard_negative_retrievals": [
+        {
+          "kalshi_id": "KXNBAGAME-26OCT29CLEATL-ATL",
+          "polymarket_us_id": "aec-nba-cle-atl-2026-10-29",
+          "category": "inverse_outcome",
+          "reason": "Opposite selected winner for the same game; no complementary payoff approval.",
+          "retrieved": false
+        },
+        {
+          "kalshi_id": "KXNBAGAME-26OCT28MIAATL-ATL",
+          "polymarket_us_id": "aec-nba-mia-atl-2026-10-28",
+          "category": "inverse_outcome",
+          "reason": "Opposite selected winner for the same game; no complementary payoff approval.",
+          "retrieved": false
+        },
+        {
+          "kalshi_id": "KXNBAGAME-26OCT31ATLNOP-NOP",
+          "polymarket_us_id": "aec-nba-atl-no-2026-10-31",
+          "category": "inverse_outcome",
+          "reason": "Opposite selected winner for the same game; no complementary payoff approval.",
+          "retrieved": false
+        },
+        {
+          "kalshi_id": "KXNBAGAME-26OCT30DETBKN-BKN",
+          "polymarket_us_id": "aec-nba-det-bkn-2026-10-30",
+          "category": "inverse_outcome",
+          "reason": "Opposite selected winner for the same game; no complementary payoff approval.",
+          "retrieved": false
+        },
+        {
+          "kalshi_id": "KXNBAGAME-26OCT30CHIBOS-BOS",
+          "polymarket_us_id": "aec-nba-chi-bos-2026-10-30",
+          "category": "inverse_outcome",
+          "reason": "Opposite selected winner for the same game; no complementary payoff approval.",
+          "retrieved": false
+        },
+        {
+          "kalshi_id": "KXNBAGAME-26OCT28CHADET-DET",
+          "polymarket_us_id": "aec-nba-cha-det-2026-10-28",
+          "category": "inverse_outcome",
+          "reason": "Opposite selected winner for the same game; no complementary payoff approval.",
+          "retrieved": false
+        },
+        {
+          "kalshi_id": "KXNBAGAME-26OCT31PHICHA-CHA",
+          "polymarket_us_id": "aec-nba-phi-cha-2026-10-31",
+          "category": "inverse_outcome",
+          "reason": "Opposite selected winner for the same game; no complementary payoff approval.",
+          "retrieved": false
+        },
+        {
+          "kalshi_id": "KXNBAGAME-26OCT30CHAWAS-WAS",
+          "polymarket_us_id": "aec-nba-cha-was-2026-10-30",
+          "category": "inverse_outcome",
+          "reason": "Opposite selected winner for the same game; no complementary payoff approval.",
+          "retrieved": false
+        },
+        {
+          "kalshi_id": "KXNFLGAME-26NOV01ARIDAL-DAL",
+          "polymarket_us_id": "aec-nfl-ari-dal-2026-11-01",
+          "category": "inverse_outcome",
+          "reason": "Opposite selected winner for the same game; no complementary payoff approval.",
+          "retrieved": false
+        },
+        {
+          "kalshi_id": "KXNFLGAME-26NOV08ARISEA-SEA",
+          "polymarket_us_id": "aec-nfl-ari-sea-2026-11-08",
+          "category": "inverse_outcome",
+          "reason": "Opposite selected winner for the same game; no complementary payoff approval.",
+          "retrieved": false
+        },
+        {
+          "kalshi_id": "KXCPI-26OCT-T-0.1",
+          "polymarket_us_id": "cpic-uscpi-october-mom-2026-11-10-gt0pt0pct",
+          "category": "different_threshold",
+          "reason": "Different explicit percentage threshold.",
+          "retrieved": false
+        },
+        {
+          "kalshi_id": "KXCPI-26OCT-T0.0",
+          "polymarket_us_id": "cpic-uscpi-october-mom-2026-11-10-gt0pt1pct",
+          "category": "different_threshold",
+          "reason": "Different explicit percentage threshold.",
+          "retrieved": false
+        },
+        {
+          "kalshi_id": "KXCPI-26OCT-T0.1",
+          "polymarket_us_id": "cpic-uscpi-october-mom-2026-11-10-gt0pt2pct",
+          "category": "different_threshold",
+          "reason": "Different explicit percentage threshold.",
+          "retrieved": false
+        },
+        {
+          "kalshi_id": "KXCPI-26OCT-T0.2",
+          "polymarket_us_id": "cpic-uscpi-october-mom-2026-11-10-gt0pt3pct",
+          "category": "different_threshold",
+          "reason": "Different explicit percentage threshold.",
+          "retrieved": false
+        },
+        {
+          "kalshi_id": "KXCPI-26OCT-T0.3",
+          "polymarket_us_id": "cpic-uscpi-october-mom-2026-11-10-gt0pt4pct",
+          "category": "different_threshold",
+          "reason": "Different explicit percentage threshold.",
+          "retrieved": false
+        },
+        {
+          "kalshi_id": "KXCPI-26OCT-T0.4",
+          "polymarket_us_id": "cpic-uscpi-october-mom-2026-11-10-gt0pt5pct",
+          "category": "different_threshold",
+          "reason": "Different explicit percentage threshold.",
+          "retrieved": false
+        },
+        {
+          "kalshi_id": "KXCPI-26OCT-T0.5",
+          "polymarket_us_id": "cpic-uscpi-october-mom-2026-11-10-gt0pt6pct",
+          "category": "different_threshold",
+          "reason": "Different explicit percentage threshold.",
+          "retrieved": false
+        },
+        {
+          "kalshi_id": "KXCPI-26OCT-T0.2",
+          "polymarket_us_id": "cpic-uscpi-october-yoy-2026-11-10-gt3pt2pct",
+          "category": "different_measure_or_settlement_rule",
+          "reason": "Monthly versus annual CPI; or absolute rate threshold versus rounded change bucket. Thematic similarity is insufficient.",
+          "retrieved": false
+        },
+        {
+          "kalshi_id": "KXFED-26OCT-T4.25",
+          "polymarket_us_id": "rdc-usfed-fomc-2026-10-28-cut25",
+          "category": "different_measure_or_settlement_rule",
+          "reason": "Monthly versus annual CPI; or absolute rate threshold versus rounded change bucket. Thematic similarity is insufficient.",
+          "retrieved": false
+        },
+        {
+          "kalshi_id": "KXNBAGAME-26OCT29CLEATL-CLE",
+          "polymarket_us_id": "cpic-uscpi-october-mom-2026-11-10-gt0pt6pct",
+          "category": "obvious_false_positive",
+          "reason": "Basketball game winner versus consumer price index change.",
+          "retrieved": false
+        }
+      ],
+      "elapsed_seconds": 0.03117512000608258,
+      "algorithm": "semantic-discovery/m5i-v1"
+    },
+    "inference": {
+      "status": "NOT_REQUESTED"
+    },
+    "new_reviewable_events": [],
+    "qualification": "Deterministic historical regression only. Both comparator implementations use current code, not a new before/after model evaluation."
+  },
+  "pip_check": 0,
+  "cli_help": 0,
+  "backfill_restarted": false,
+  "source_and_production_index_opened_readonly": true,
+  "remote_repair_status": "BLOCKED_ON_VERIFIED_SSH_OR_PC_SIDE_LOGS"
+}

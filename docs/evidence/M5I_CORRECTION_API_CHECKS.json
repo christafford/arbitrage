@@ -1,0 +1,25 @@
+[
+  {
+    "url": "https://docs.kalshi.com/api-reference/market/get-market.md",
+    "retrieved_at": "2026-10-29T20:16:33.458480+00:00",
+    "sha256": "3134644faca99509f47b569c60d323a2c2d4b3a6e7beeee9243fd142353b62f5",
+    "path": "data/m5i/corrections-20261029/kalshi-market.md",
+    "fields_checked": [
+      "rules_primary",
+      "rules_secondary",
+      "yes_sub_title",
+      "title"
+    ]
+  },
+  {
+    "url": "https://docs.polymarket.us/api-reference/markets/get-market-by-slug.md",
+    "retrieved_at": "2026-10-29T20:16:33.739360+00:00",
+    "sha256": "16f599df2f2606ae8e661b557793274d61d50e33862a10d033e52c09e783f7cf",
+    "path": "data/m5i/corrections-20261029/us-market.md",
+    "fields_checked": [
+      "description",
+      "question",
+      "title"
+    ]
+  }
+]

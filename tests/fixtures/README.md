@@ -1,5 +1,13 @@
 # Public US provider fixtures
 
+`m5i-contradictions-genuine.json` contains ten genuine archived definitions for the
+five semantic suggestions reviewed after the October 28–29 run. Each excerpt
+retains its official URL, schema, UTC receipt, original version/observation IDs,
+parent raw hash and excerpt hash. Tests replay the original clock. Labels describe
+four conflicts and one ordinary-event review candidate; they are assistant
+assessments, not approvals. Hypothetical variations and perfect-cosine stress
+inputs appear only in clearly labeled test code.
+
 `kalshi-ws-missing-clock-live.json` is **actual rejected production evidence**,
 captured on 2026-10-23 UTC during Workstream B diagnostics. It contains market
 metadata, acknowledgment, initial snapshot, incremental delta and an explicit

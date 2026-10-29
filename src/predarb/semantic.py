@@ -13,7 +13,7 @@ import math
 import struct
 import time
 
-from . import discovery as d, embeddings as e, registry, sports_discovery as sports
+from . import discovery as d, embeddings as e, registry, sports_discovery as sports, propositions
 from .validation import dumps, load_json, utc_time
 
 VERSION = 'semantic-discovery/m5i-v1'
@@ -403,6 +403,10 @@ def rank_pair(source, index, left, right, reasons, semantic, now, context, *, re
     k,p=(left,right) if left['venue']=='kalshi' else (right,left)
     kr,pr=(current(source,k,now,context),current(source,p,now,context)) if recheck else (dict(k,features=decode_features(k['features_json'])),dict(p,features=decode_features(p['features_json'])))
     if kr is None or pr is None:return None
+    # Recompute versioned guards from bounded public evidence, including for old
+    # feature rows and persisted candidates. No vector rebuild/cache invalidation.
+    for row,doc in ((kr,k),(pr,p)):
+        row['features']['proposition']=propositions.from_public_text(doc['public_text'])
     comparison=d.compare(kr['features'],pr['features'],semantic=semantic is not None)
     if comparison is None:return None
     score,signals,warnings=comparison

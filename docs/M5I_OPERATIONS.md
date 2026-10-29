@@ -107,6 +107,11 @@ One Kalshi event contributes at most one review candidate, preventing threshold
 ladders from filling the queue. Sports fair-price, postponement, forfeit and
 revision issues remain explicit even when ordinary event identity is exact.
 
+The October 29 [proposition-guard correction](M5I_CORRECTIONS.md) rechecks amounts,
+inequalities, observation windows, recognized proposition types and rounding on
+read, including existing sidecar/main-queue snapshots. No embedding rebuild is
+needed. Unknown units and unsupported language remain unverified.
+
 ```bash
 python scripts/m5i_evaluate.py --directory data/new-m5i-offline --output data/m5i-offline.json
 python scripts/m5i_evaluate.py --live --directory data/new-m5i-live --output data/m5i-live.json

@@ -519,3 +519,14 @@ keeps bucket lookups from becoming repeated venue-wide metadata scans on a parti
 index. This is a local retrieval implementation, not an exchange schema or legal
 settlement interpretation. All previous US-only endpoints and provider data-use
 restrictions remain in force. No raw source data was published externally.
+
+### M5I proposition corrections — 2026-10-29 UTC
+
+Rechecked the official Kalshi Get Market and US Get Market By Slug documents;
+upstream versions remain 3.35.0 and 1.0.0. The local guard reuses documented
+`rules_primary`, `rules_secondary`, selected titles/subtitles, `question` and
+`description`; no new venue field or endpoint is introduced. Missing units and
+unrecognized wording stay unknown. The ten genuine regression excerpts retain
+their source/schema/receipt/parent-hash provenance.
+[Document hashes and receipts](evidence/M5I_CORRECTION_API_CHECKS.json) and
+[correction results](M5I_CORRECTIONS.md) identify scope and remaining limitations.

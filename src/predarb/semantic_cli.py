@@ -138,16 +138,26 @@ def revalidate_candidates(source,candidates,*,now=None):
     for candidate in candidates:
         expiry=candidate.get('review_snapshot_expires_at')
         if expiry is None or now>semantic.utc_time(expiry):continue
-        valid=True
+        valid=True; instruments=[]
         for venue,version in zip(registry.VENUES,candidate['versions']):
             row=registry._instrument(source,venue,candidate[venue+'_id'])
+            instruments.append(row)
             if row['version_id']!=version or semantic.eligible(source,row,now,context)!='ELIGIBLE':valid=False;break
         if valid:
             candidate=dict(candidate)
+            features=[semantic.d.features(semantic.load_json(r['evidence_json'])['contract']) for r in instruments]
+            comparison=semantic.d.compare(*features,semantic='embedding' in candidate['signals'])
+            if comparison is None:continue
+            score,signals,warnings=comparison
+            candidate['equivalence_score_bps']=score
+            candidate['signals']={**candidate['signals'],**signals}
+            candidate['warnings']=sorted(set(candidate['warnings'])|set(warnings))
+            candidate['known_contradictions']=[w for w in candidate['warnings'] if 'CONFLICT' in w or w=='RESOLUTION_LANGUAGE_DIFFERS']
             candidate['liquidity']={v:semantic.d.liquidity(source,v,candidate[v+'_id'],now) for v in registry.VENUES}
             candidate['prior_reviews']=registry._rows(source,'SELECT id,status,reason FROM pairs WHERE kalshi_id=? AND polymarket_us_id=? ORDER BY id',
                 (candidate['kalshi_id'],candidate['polymarket_us_id']))
             result.append(candidate)
+    result.sort(key=lambda r:(bool(r['known_contradictions']),-r['equivalence_score_bps'],r['kalshi_id'],r['polymarket_us_id']))
     return result
 
 

@@ -1,0 +1,196 @@
+{
+  "schema": "m5i-genuine-evaluation/v1",
+  "hypothetical": false,
+  "created_at": "2026-10-29T13:25:52.761095+00:00",
+  "annotation_author": "codex-research-assistant",
+  "operator_approved": false,
+  "sampling": "Five purposively selected semantic suggestions from the final M5I run queue, not independently adjudicated or representative. Historical clocks are preserved.",
+  "instruments": [
+    {
+      "venue": "kalshi",
+      "source_id": "KXFEDDECISION-26DEC-H25",
+      "observed_at": "2026-10-29T09:43:12.654684+00:00",
+      "original_version_id": 161694,
+      "source_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXFEDDECISION-26DEC-H25",
+      "parent_endpoint": "https://external-api.kalshi.com/trade-api/v2/markets?status=open&mve_filter=exclude&limit=200&cursor=CgwIocybxwYQoP71_QISFUtYU0hPV0VOREZBTUlMWUdVWS0zMA",
+      "parent_observation_id": 7825,
+      "parent_sha256": "5d531c3b15c3072bfc2f62e5eb1fce50ddba380e4af4ac2b5632223522b4f33a",
+      "schema_version": "kalshi-3.34.0/m1-v1",
+      "representation": "RESERIALIZED_GENUINE_MARKET_EXCERPT",
+      "body": "{\"market\":{\"can_close_early\":true,\"close_time\":\"2026-12-09T18:59:00Z\",\"created_time\":\"2025-09-26T15:31:07.682989Z\",\"custom_strike\":{\"Hike\":\"25\"},\"event_ticker\":\"KXFEDDECISION-26DEC\",\"exchange_index\":0,\"expected_expiration_time\":\"2026-12-09T19:05:00Z\",\"expiration_time\":\"2027-03-10T19:01:00Z\",\"expiration_value\":\"\",\"last_price_dollars\":\"0.7800\",\"latest_expiration_time\":\"2027-03-10T19:01:00Z\",\"market_type\":\"binary\",\"no_ask_dollars\":\"0.2300\",\"no_bid_dollars\":\"0.2200\",\"no_sub_title\":\"Hike 25bps\",\"notional_value_dollars\":\"1.0000\",\"open_interest_fp\":\"291046.57\",\"open_time\":\"2025-09-29T14:00:00Z\",\"previous_price_dollars\":\"0.7500\",\"previous_yes_ask_dollars\":\"0.7500\",\"previous_yes_bid_dollars\":\"0.7400\",\"price_level_structure\":\"linear_cent\",\"price_ranges\":[{\"end\":\"1.0000\",\"start\":\"0.0000\",\"step\":\"0.0100\"}],\"result\":\"\",\"rules_primary\":\"If the Federal Reserve does a Hike of 25bps on December 09, 2026, then the market resolves to Yes.\",\"rules_secondary\":\"The outcomes are mutually exclusive: at most one can resolve to Yes. For example, a 50-basis-point hike resolves \\u201cHike   25 bps\\u201d to Yes and \\u201cHike 25 bps\\u201d to No.\\n\\nIf the scheduled FOMC meeting is canceled and does not occur on its scheduled date, \\u201cFed maintains rate\\u201d resolves to Yes and all other outcomes resolve to No.\",\"settlement_bounds_type\":\"default\",\"settlement_timer_seconds\":297,\"status\":\"active\",\"strike_type\":\"custom\",\"subtitle\":\"Hike 25bps\",\"ticker\":\"KXFEDDECISION-26DEC-H25\",\"title\":\"Will the Federal Reserve Hike rates by 25bps at their December 2026 meeting?\",\"updated_time\":\"2026-10-27T18:37:20.014572Z\",\"volume_24h_fp\":\"154838.44\",\"volume_fp\":\"433369.86\",\"yes_ask_dollars\":\"0.7800\",\"yes_ask_size_fp\":\"61.00\",\"yes_bid_dollars\":\"0.7700\",\"yes_bid_size_fp\":\"351.07\",\"yes_sub_title\":\"Hike 25bps\"}}",
+      "body_sha256": "fe1524132aa0f1578657065fc5542fb09b46e6631d3b368c04c5ca66e011c348"
+    },
+    {
+      "venue": "polymarket_us",
+      "source_id": "rdc-usfed-fomc-2026-12-09-hike25",
+      "observed_at": "2026-10-29T09:17:25.322241+00:00",
+      "original_version_id": 177925,
+      "source_url": "https://gateway.polymarket.us/v1/market/slug/rdc-usfed-fomc-2026-12-09-hike25",
+      "parent_endpoint": "https://gateway.polymarket.us/v1/markets?active=true&closed=false&limit=200&offset=14200&orderBy=id&orderDirection=asc",
+      "parent_observation_id": 6815,
+      "parent_sha256": "db69f197aa70353ccdea18d5aff71ba4f30b6226c234f28ad44ee5f00d8b8301",
+      "schema_version": "polymarket-us-marketservice-1.0.0/m1-v1",
+      "representation": "RESERIALIZED_GENUINE_MARKET_EXCERPT",
+      "body": "{\"market\":{\"active\":true,\"archived\":false,\"assetPriceTerms\":null,\"bestAskQuote\":{\"currency\":\"USD\",\"value\":\"0.8000\"},\"bestBidQuote\":{\"currency\":\"USD\",\"value\":\"0.7900\"},\"category\":\"macro\",\"closed\":false,\"comboEnabled\":false,\"createdAt\":\"2026-09-22T18:11:07Z\",\"description\":\"This market will settle to Yes if the Federal Reserve increases the upper bound of the target federal funds rate by 25 basis points at the December 2026 Federal Open Market Committee (FOMC) meeting, currently scheduled for December 8-9. Outcome sourced from the Federal Reserve.\\n\\nIf the change in the specified rate does not precisely match the displayed options, changes smaller than the smallest option of the same direction (increase/decrease) will be rounded to that smallest option, and changes greater than the smallest option of the same direction will be rounded to the nearest displayed option, with values exactly halfway between options being rounded away from zero.\",\"endDate\":\"2026-12-24T04:00:00Z\",\"ep3Status\":\"OPEN\",\"ep3SyncedAt\":\"2026-10-22T12:03:42Z\",\"feeCoefficient\":\"0.0695\",\"gameStartTime\":\"2026-12-09T19:00:00Z\",\"hidden\":false,\"id\":\"1003038\",\"manualActivation\":false,\"marketSides\":[{\"createdAt\":\"2026-09-22T18:11:07Z\",\"description\":\"Yes\",\"id\":\"2005560\",\"identifier\":\"rdc-usfed-fomc-2026-12-09-hike25\",\"long\":true,\"marketId\":1003038,\"marketSideType\":\"MARKET_SIDE_TYPE_INSTRUMENT\",\"price\":\"0.8000\",\"quote\":{\"currency\":\"USD\",\"value\":\"0.8000\"},\"tradable\":true,\"updatedAt\":\"2026-09-22T18:11:07Z\"},{\"createdAt\":\"2026-09-22T18:11:07Z\",\"description\":\"No\",\"id\":\"2005561\",\"identifier\":\"rdc-usfed-fomc-2026-12-09-hike25\",\"long\":false,\"marketId\":1003038,\"marketSideType\":\"MARKET_SIDE_TYPE_INSTRUMENT\",\"price\":\"0.21\",\"quote\":{\"currency\":\"USD\",\"value\":\"0.21\"},\"tradable\":true,\"updatedAt\":\"2026-09-22T18:11:07Z\"}],\"marketType\":\"futures\",\"minimumTradeQty\":\"0.01\",\"orderPriceMinTickSize\":\"0.01\",\"outcomePrices\":\"[\\\"0.8000\\\",\\\"0.21\\\"]\",\"outcomes\":\"[\\\"Yes\\\",\\\"No\\\"]\",\"politics\":null,\"question\":\"Fed Decision in December\",\"slug\":\"rdc-usfed-fomc-2026-12-09-hike25\",\"sortOrder\":2,\"sportsMarketType\":\"futures\",\"sportsMarketTypeV2\":\"SPORTS_MARKET_TYPE_FUTURE\",\"startDate\":\"2026-09-22T18:11:07Z\",\"status\":\"MARKET_STATUS_OPEN\",\"tags\":[],\"title\":\"25 bps Increase\",\"titleShort\":\"25 bps Increase\",\"updatedAt\":\"2026-10-29T04:59:05Z\"}}",
+      "body_sha256": "439e974ff0b3b42c261b5d4eb8ae1df2eaf8f67ea7353d32f0b74a7f8ed5b80c"
+    },
+    {
+      "venue": "kalshi",
+      "source_id": "KXTOPSONGSPOTIFY-26-PIN",
+      "observed_at": "2026-10-29T09:42:29.987728+00:00",
+      "original_version_id": 155401,
+      "source_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXTOPSONGSPOTIFY-26-PIN",
+      "parent_endpoint": "https://external-api.kalshi.com/trade-api/v2/markets?status=open&mve_filter=exclude&limit=200&cursor=CgwIhKHhzQYQwJb55AESFUtYT1NDQVJOT01QSUMtMjctQVZFTg",
+      "parent_observation_id": 7795,
+      "parent_sha256": "b5d7ec7fd172a805e7dd4df9be0836806936ae80d96cc71c0888d38c45314cae",
+      "schema_version": "kalshi-3.34.0/m1-v1",
+      "representation": "RESERIALIZED_GENUINE_MARKET_EXCERPT",
+      "body": "{\"market\":{\"can_close_early\":true,\"close_time\":\"2026-12-31T04:59:00Z\",\"created_time\":\"2026-03-15T20:49:00.372937Z\",\"early_close_condition\":\"This market will close and expire early if the event occurs.\",\"event_ticker\":\"KXTOPSONGSPOTIFY-26\",\"exchange_index\":0,\"expected_expiration_time\":\"2026-12-31T15:00:00Z\",\"expiration_time\":\"2027-01-07T15:00:00Z\",\"expiration_value\":\"\",\"last_price_dollars\":\"0.0100\",\"latest_expiration_time\":\"2027-01-07T15:00:00Z\",\"market_type\":\"binary\",\"no_ask_dollars\":\"1.0000\",\"no_bid_dollars\":\"0.9900\",\"no_sub_title\":\"Stateside + Zara Larsson\",\"notional_value_dollars\":\"1.0000\",\"open_interest_fp\":\"4095.04\",\"open_time\":\"2026-03-15T21:35:00Z\",\"previous_price_dollars\":\"0.0100\",\"previous_yes_ask_dollars\":\"0.0100\",\"previous_yes_bid_dollars\":\"0.0000\",\"price_level_structure\":\"linear_cent\",\"price_ranges\":[{\"end\":\"1.0000\",\"start\":\"0.0000\",\"step\":\"0.0100\"}],\"result\":\"\",\"rules_primary\":\"If Stateside + Zara Larsson is the #1  most streamed Song on Spotify's 2026 Spotify Wrapped Top 10 Songs Globally chart on the date that the chart is released for 2026, then the market resolves to Yes.\",\"rules_secondary\":\"This market and these products have not been endorsed by Spotify. Any references to Spotify, Spotify charts, streaming data, or any associated marks are descriptive only and do not indicate an endorsement of this product or any affiliation between Spotify and Kalshi.\",\"settlement_bounds_type\":\"default\",\"settlement_timer_seconds\":1800,\"status\":\"active\",\"subtitle\":\":: PinkPantheress and Zara Larsson\",\"ticker\":\"KXTOPSONGSPOTIFY-26-PIN\",\"title\":\"Will Stateside be the #1 most streamed Song on the  2026 Spotify Wrapped Top 10 Songs Globally chart on the date that the chart is released for 2026?\",\"updated_time\":\"2026-07-01T20:53:57.813654Z\",\"volume_24h_fp\":\"63.00\",\"volume_fp\":\"4120.04\",\"yes_ask_dollars\":\"0.0100\",\"yes_ask_size_fp\":\"11936.46\",\"yes_bid_dollars\":\"0.0000\",\"yes_bid_size_fp\":\"0.00\",\"yes_sub_title\":\"Stateside + Zara Larsson\"}}",
+      "body_sha256": "d794b13f8580d0cea20768498a9d0f0fd04777811e70b03549307b8a87b13f2b"
+    },
+    {
+      "venue": "polymarket_us",
+      "source_id": "ccrc-sptfy-n1-song-glbl-yr-2026-states",
+      "observed_at": "2026-10-29T09:13:34.623724+00:00",
+      "original_version_id": 165021,
+      "source_url": "https://gateway.polymarket.us/v1/market/slug/ccrc-sptfy-n1-song-glbl-yr-2026-states",
+      "parent_endpoint": "https://gateway.polymarket.us/v1/markets?active=true&closed=false&limit=200&offset=1400&orderBy=id&orderDirection=asc",
+      "parent_observation_id": 6691,
+      "parent_sha256": "c43c22671bdd4a24babe0625ebe9b0078ae4128d0e31846ebcf9cd04b38aa1c4",
+      "schema_version": "polymarket-us-marketservice-1.0.0/m1-v1",
+      "representation": "RESERIALIZED_GENUINE_MARKET_EXCERPT",
+      "body": "{\"market\":{\"active\":true,\"archived\":false,\"assetPriceTerms\":null,\"bestAskQuote\":{\"currency\":\"USD\",\"value\":\"0.0400\"},\"bestBidQuote\":{\"currency\":\"USD\",\"value\":\"0.0300\"},\"category\":\"culture\",\"closed\":false,\"comboEnabled\":false,\"createdAt\":\"2026-07-16T20:39:37Z\",\"description\":\"This market will settle to Yes if Stateside - PinkPantheress & Zara Larsson is ranked the top song globally on Spotify in 2026. Outcome verified by Spotify.\\n\\nThe relevant ranking is the 2026 edition of the Spotify Top Songs Globally ranking released as part of the annual Spotify Wrapped campaign (see past edition: https://newsroom.spotify.com/2025-12-03/wrapped-top-artists-songs-albums-podcasts-audiobooks/). This ranking will be used for resolution even if it is released before the end of calendar year 2026.\\n\\nNote: This market and these products have not been endorsed by Spotify. Any references to Spotify, Spotify charts, streaming data, or any associated marks are descriptive only and do not indicate an endorsement of this product or any affiliation between Spotify and Polymarket. Spotify and related marks are the property of Spotify AB and its group companies.\",\"endDate\":\"2026-12-17T04:00:00Z\",\"ep3Status\":\"OPEN\",\"ep3SyncedAt\":\"2026-10-22T12:04:02Z\",\"feeCoefficient\":\"0.0695\",\"gameStartTime\":\"2026-12-02T17:00:00Z\",\"hidden\":false,\"id\":\"234565\",\"manualActivation\":false,\"marketSides\":[{\"createdAt\":\"2026-07-16T20:39:37Z\",\"description\":\"Yes\",\"id\":\"468694\",\"identifier\":\"ccrc-sptfy-n1-song-glbl-yr-2026-states\",\"long\":true,\"marketId\":234565,\"marketSideType\":\"MARKET_SIDE_TYPE_INSTRUMENT\",\"price\":\"0.0400\",\"quote\":{\"currency\":\"USD\",\"value\":\"0.0400\"},\"tradable\":true,\"updatedAt\":\"2026-07-16T20:39:37Z\"},{\"createdAt\":\"2026-07-16T20:39:37Z\",\"description\":\"No\",\"id\":\"468695\",\"identifier\":\"ccrc-sptfy-n1-song-glbl-yr-2026-states\",\"long\":false,\"marketId\":234565,\"marketSideType\":\"MARKET_SIDE_TYPE_INSTRUMENT\",\"price\":\"0.97\",\"quote\":{\"currency\":\"USD\",\"value\":\"0.97\"},\"tradable\":true,\"updatedAt\":\"2026-07-16T20:39:37Z\"}],\"marketType\":\"futures\",\"minimumTradeQty\":\"0.01\",\"orderPriceMinTickSize\":\"0.01\",\"outcomePrices\":\"[\\\"0.0400\\\",\\\"0.97\\\"]\",\"outcomes\":\"[\\\"No\\\",\\\"Yes\\\"]\",\"politics\":null,\"question\":\"Top Song 2026?\",\"slug\":\"ccrc-sptfy-n1-song-glbl-yr-2026-states\",\"sportsMarketType\":\"futures\",\"sportsMarketTypeV2\":\"SPORTS_MARKET_TYPE_FUTURE\",\"startDate\":\"2026-07-16T20:39:37Z\",\"status\":\"MARKET_STATUS_OPEN\",\"tags\":[],\"title\":\"Stateside - PinkPantheress & Zara Larsson\",\"titleShort\":\"Stateside - PinkPantheress & Zara Larsson\",\"updatedAt\":\"2026-10-29T08:01:16Z\"}}",
+      "body_sha256": "b45384a757ef71f600bf697a01123590857f8d5b943cd7ed00058fa41ecfbc87"
+    },
+    {
+      "venue": "kalshi",
+      "source_id": "KXMUSKWEALTH-27-1700",
+      "observed_at": "2026-10-29T09:40:41.651742+00:00",
+      "original_version_id": 140795,
+      "source_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMUSKWEALTH-27-1700",
+      "parent_endpoint": "https://external-api.kalshi.com/trade-api/v2/markets?status=open&mve_filter=exclude&limit=200&cursor=CgsI7MLK0QYQqMzZNRIUS1hIMjAwTVMtMjdNQVktNi4wMDA",
+      "parent_observation_id": 7722,
+      "parent_sha256": "fd1c7abaed8ad9526bb3297c4355d6881055f7b93eb17da54a95fafb0f2ea882",
+      "schema_version": "kalshi-3.34.0/m1-v1",
+      "representation": "RESERIALIZED_GENUINE_MARKET_EXCERPT",
+      "body": "{\"market\":{\"can_close_early\":true,\"close_time\":\"2027-01-01T15:00:00Z\",\"created_time\":\"2026-06-17T02:35:33.233602Z\",\"early_close_condition\":\"The market will close and expire early if the event occurs.\",\"event_ticker\":\"KXMUSKWEALTH-27\",\"exchange_index\":0,\"expected_expiration_time\":\"2027-01-01T15:00:00Z\",\"expiration_time\":\"2027-01-01T15:00:00Z\",\"expiration_value\":\"\",\"last_price_dollars\":\"0.0700\",\"latest_expiration_time\":\"2027-01-01T15:00:00Z\",\"market_type\":\"binary\",\"no_ask_dollars\":\"0.9700\",\"no_bid_dollars\":\"0.9400\",\"no_sub_title\":\"More than $1.7 trillion\",\"notional_value_dollars\":\"1.0000\",\"occurrence_datetime\":\"2027-01-01T15:00:00Z\",\"open_interest_fp\":\"1362.19\",\"open_time\":\"2026-06-17T03:00:00Z\",\"previous_price_dollars\":\"0.0700\",\"previous_yes_ask_dollars\":\"0.0600\",\"previous_yes_bid_dollars\":\"0.0300\",\"price_level_structure\":\"linear_cent\",\"price_ranges\":[{\"end\":\"1.0000\",\"start\":\"0.0000\",\"step\":\"0.0100\"}],\"result\":\"\",\"rules_primary\":\"If Elon Musk has a net worth more than $1.7 trillion dollars before Jan 1, 2027, then the market resolves to Yes.\",\"rules_secondary\":\"\",\"settlement_bounds_type\":\"default\",\"settlement_timer_seconds\":1800,\"status\":\"active\",\"ticker\":\"KXMUSKWEALTH-27-1700\",\"title\":\"Will Musk have a net worth more than 1700 billion dollars before 2027?\",\"updated_time\":\"2026-06-17T03:00:05.930608Z\",\"volume_24h_fp\":\"0.00\",\"volume_fp\":\"3329.16\",\"yes_ask_dollars\":\"0.0600\",\"yes_ask_size_fp\":\"1.00\",\"yes_bid_dollars\":\"0.0300\",\"yes_bid_size_fp\":\"248.13\",\"yes_sub_title\":\"More than $1.7 trillion\"}}",
+      "body_sha256": "6600d9f6f7a0c4e390daa67a4a8314bf6cc89c0cc3c4556bb4ea151059c85749"
+    },
+    {
+      "venue": "polymarket_us",
+      "source_id": "pnwpc-elonmusk-by-2026-12-31-hit-1pt2t",
+      "observed_at": "2026-10-29T09:13:34.623724+00:00",
+      "original_version_id": 165008,
+      "source_url": "https://gateway.polymarket.us/v1/market/slug/pnwpc-elonmusk-by-2026-12-31-hit-1pt2t",
+      "parent_endpoint": "https://gateway.polymarket.us/v1/markets?active=true&closed=false&limit=200&offset=1400&orderBy=id&orderDirection=asc",
+      "parent_observation_id": 6691,
+      "parent_sha256": "c43c22671bdd4a24babe0625ebe9b0078ae4128d0e31846ebcf9cd04b38aa1c4",
+      "schema_version": "polymarket-us-marketservice-1.0.0/m1-v1",
+      "representation": "RESERIALIZED_GENUINE_MARKET_EXCERPT",
+      "body": "{\"market\":{\"active\":true,\"archived\":false,\"assetPriceTerms\":null,\"bestAskQuote\":{\"currency\":\"USD\",\"value\":\"0.2800\"},\"bestBidQuote\":{\"currency\":\"USD\",\"value\":\"0.2700\"},\"category\":\"finance\",\"closed\":false,\"comboEnabled\":false,\"createdAt\":\"2026-07-16T20:39:31Z\",\"description\":\"This market will settle to Yes if Elon Musk's net worth, according to the Bloomberg Billionaires Index, is greater than or equal to $1.2 trillion at any point between Contract Issuance and December 31, 2026, 11:59 PM ET. Outcome sourced from Bloomberg Billionaires Index.\\n\\nThe Bloomberg Billionaires Index figures are updated after the close of every trading day in New York.\",\"endDate\":\"2027-01-15T04:00:00Z\",\"ep3Status\":\"OPEN\",\"ep3SyncedAt\":\"2026-10-22T12:04:02Z\",\"feeCoefficient\":\"0.0695\",\"gameStartTime\":\"2027-01-01T04:59:00Z\",\"hidden\":false,\"id\":\"234546\",\"manualActivation\":false,\"marketSides\":[{\"createdAt\":\"2026-07-16T20:39:31Z\",\"description\":\"Yes\",\"id\":\"468656\",\"identifier\":\"pnwpc-elonmusk-by-2026-12-31-hit-1pt2t\",\"long\":true,\"marketId\":234546,\"marketSideType\":\"MARKET_SIDE_TYPE_INSTRUMENT\",\"price\":\"0.2800\",\"quote\":{\"currency\":\"USD\",\"value\":\"0.2800\"},\"tradable\":true,\"updatedAt\":\"2026-07-16T20:39:31Z\"},{\"createdAt\":\"2026-07-16T20:39:31Z\",\"description\":\"No\",\"id\":\"468657\",\"identifier\":\"pnwpc-elonmusk-by-2026-12-31-hit-1pt2t\",\"long\":false,\"marketId\":234546,\"marketSideType\":\"MARKET_SIDE_TYPE_INSTRUMENT\",\"price\":\"0.73\",\"quote\":{\"currency\":\"USD\",\"value\":\"0.73\"},\"tradable\":true,\"updatedAt\":\"2026-07-16T20:39:31Z\"}],\"marketType\":\"futures\",\"minimumTradeQty\":\"0.01\",\"orderPriceMinTickSize\":\"0.01\",\"outcomePrices\":\"[\\\"0.2800\\\",\\\"0.73\\\"]\",\"outcomes\":\"[\\\"Yes\\\",\\\"No\\\"]\",\"politics\":null,\"question\":\"What Will Elon's Net Worth Hit By December 31?\",\"slug\":\"pnwpc-elonmusk-by-2026-12-31-hit-1pt2t\",\"sportsMarketType\":\"futures\",\"sportsMarketTypeV2\":\"SPORTS_MARKET_TYPE_FUTURE\",\"startDate\":\"2026-07-16T20:39:30Z\",\"status\":\"MARKET_STATUS_OPEN\",\"tags\":[],\"title\":\"$1.2 Trillion\",\"titleShort\":\"$1.2 Trillion\",\"updatedAt\":\"2026-10-28T22:27:24Z\"}}",
+      "body_sha256": "67b6ed50eac181bd2ce6982d53387a983ce5022480095be60e5e3c61efdd0f74"
+    },
+    {
+      "venue": "kalshi",
+      "source_id": "KXNEWSCOTUSCONF-29JAN20-2",
+      "observed_at": "2026-10-29T09:43:25.389266+00:00",
+      "original_version_id": 163468,
+      "source_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNEWSCOTUSCONF-29JAN20-2",
+      "parent_endpoint": "https://external-api.kalshi.com/trade-api/v2/markets?status=open&mve_filter=exclude&limit=200&cursor=CgsIsKm6ugYQ0Iq_MRINU0VOQVRFT0stMjYtUg",
+      "parent_observation_id": 7834,
+      "parent_sha256": "53059fe4698843914d2b8ec9d425b75e9f1c0eecd5d24eb784c1171736481a8e",
+      "schema_version": "kalshi-3.34.0/m1-v1",
+      "representation": "RESERIALIZED_GENUINE_MARKET_EXCERPT",
+      "body": "{\"market\":{\"can_close_early\":true,\"cap_strike\":2,\"close_time\":\"2029-01-20T15:00:00Z\",\"created_time\":\"2024-11-04T03:15:26.869306Z\",\"event_ticker\":\"KXNEWSCOTUSCONF-29JAN20\",\"exchange_index\":0,\"expected_expiration_time\":\"2029-01-20T15:00:00Z\",\"expiration_time\":\"2029-01-20T15:00:00Z\",\"expiration_value\":\"\",\"floor_strike\":2,\"last_price_dollars\":\"0.1900\",\"latest_expiration_time\":\"2029-01-20T15:00:00Z\",\"market_type\":\"binary\",\"no_ask_dollars\":\"0.8500\",\"no_bid_dollars\":\"0.8300\",\"no_sub_title\":\"2\",\"notional_value_dollars\":\"1.0000\",\"open_interest_fp\":\"9990.41\",\"open_time\":\"2024-11-04T15:00:00Z\",\"previous_price_dollars\":\"0.1900\",\"previous_yes_ask_dollars\":\"0.1800\",\"previous_yes_bid_dollars\":\"0.1600\",\"price_level_structure\":\"tapered_deci_cent\",\"price_ranges\":[{\"end\":\"0.1000\",\"start\":\"0.0000\",\"step\":\"0.0010\"},{\"end\":\"0.9000\",\"start\":\"0.1000\",\"step\":\"0.0100\"},{\"end\":\"1.0000\",\"start\":\"0.9000\",\"step\":\"0.0010\"}],\"result\":\"\",\"rules_primary\":\"If 2 Supreme Court Justices are confirmed during the 2025-2029 presidential term, then the market resolves to Yes.\",\"rules_secondary\":\"\",\"settlement_bounds_type\":\"default\",\"settlement_timer_seconds\":300,\"status\":\"active\",\"strike_type\":\"between\",\"ticker\":\"KXNEWSCOTUSCONF-29JAN20-2\",\"title\":\"Will the next President confirm 2 Supreme Court justices?\",\"updated_time\":\"2026-04-09T10:46:10.283692Z\",\"volume_24h_fp\":\"0.00\",\"volume_fp\":\"58136.87\",\"yes_ask_dollars\":\"0.1700\",\"yes_ask_size_fp\":\"12.00\",\"yes_bid_dollars\":\"0.1500\",\"yes_bid_size_fp\":\"734.00\",\"yes_sub_title\":\"2\"}}",
+      "body_sha256": "05cfaf2a53a7f916bd4515e737c5fca1603dc8ecaad9c4918aa6f4536ec66499"
+    },
+    {
+      "venue": "polymarket_us",
+      "source_id": "nphc-scotus-barlag",
+      "observed_at": "2026-10-29T09:17:20.376435+00:00",
+      "original_version_id": 177394,
+      "source_url": "https://gateway.polymarket.us/v1/market/slug/nphc-scotus-barlag",
+      "parent_endpoint": "https://gateway.polymarket.us/v1/markets?active=true&closed=false&limit=200&offset=13600&orderBy=id&orderDirection=asc",
+      "parent_observation_id": 6812,
+      "parent_sha256": "1efef7d6d5751cef3c8e5ae531c91947f265bcda7b48f9054fdfea96c86a86d2",
+      "schema_version": "polymarket-us-marketservice-1.0.0/m1-v1",
+      "representation": "RESERIALIZED_GENUINE_MARKET_EXCERPT",
+      "body": "{\"market\":{\"active\":true,\"archived\":false,\"assetPriceTerms\":null,\"bestAskQuote\":{\"currency\":\"USD\",\"value\":\"0.0400\"},\"bestBidQuote\":{\"currency\":\"USD\",\"value\":\"0.0300\"},\"category\":\"politics\",\"closed\":false,\"comboEnabled\":false,\"createdAt\":\"2026-09-12T03:29:50Z\",\"description\":\"This market will settle to Yes if Barbara Lagoa is the next person to formally assume the position of United States Supreme Court Justice between Contract Issuance and January 20, 2029, 11:59 PM ET. Outcome sourced from Barbara Lagoa, the White House, and the United States Senate.\\n\\nA person will be considered to assume the position of United States Supreme Court Justice when they are appointed to the role by the President and confirmed to the role by the Senate, or appointed to the role via a recess appointment.\",\"endDate\":\"2029-02-04T04:00:00Z\",\"ep3Status\":\"OPEN\",\"ep3SyncedAt\":\"2026-10-22T12:03:43Z\",\"feeCoefficient\":\"0.0695\",\"gameStartTime\":\"2029-01-21T04:59:00Z\",\"hidden\":false,\"id\":\"800606\",\"image\":\"https://polymarket-upload.s3.us-east-2.amazonaws.com/scotus-barbara-lagoa-cd1aff21e8.jpg\",\"manualActivation\":false,\"marketSides\":[{\"createdAt\":\"2026-09-12T03:29:50Z\",\"description\":\"Yes\",\"id\":\"1600700\",\"identifier\":\"nphc-scotus-barlag\",\"long\":true,\"marketId\":800606,\"marketSideType\":\"MARKET_SIDE_TYPE_INSTRUMENT\",\"price\":\"0.0400\",\"quote\":{\"currency\":\"USD\",\"value\":\"0.0400\"},\"tradable\":true,\"updatedAt\":\"2026-09-12T03:29:50Z\"},{\"createdAt\":\"2026-09-12T03:29:50Z\",\"description\":\"No\",\"id\":\"1600701\",\"identifier\":\"nphc-scotus-barlag\",\"long\":false,\"marketId\":800606,\"marketSideType\":\"MARKET_SIDE_TYPE_INSTRUMENT\",\"price\":\"0.97\",\"quote\":{\"currency\":\"USD\",\"value\":\"0.97\"},\"tradable\":true,\"updatedAt\":\"2026-09-12T03:29:50Z\"}],\"marketType\":\"futures\",\"minimumTradeQty\":\"0.01\",\"orderPriceMinTickSize\":\"0.01\",\"outcomePrices\":\"[\\\"0.0400\\\",\\\"0.97\\\"]\",\"outcomes\":\"[\\\"Yes\\\",\\\"No\\\"]\",\"politics\":null,\"question\":\"Next US Supreme Court Justice?\",\"slug\":\"nphc-scotus-barlag\",\"sportsMarketType\":\"futures\",\"sportsMarketTypeV2\":\"SPORTS_MARKET_TYPE_FUTURE\",\"startDate\":\"2026-09-12T03:29:50Z\",\"status\":\"MARKET_STATUS_OPEN\",\"tags\":[],\"title\":\"Barbara Lagoa\",\"titleShort\":\"Barbara Lagoa\",\"updatedAt\":\"2026-10-28T22:27:23Z\"}}",
+      "body_sha256": "3764ad5a59925c5c52d6838bc47ebc3562cc5573e2575867ccf771af76486d7d"
+    },
+    {
+      "venue": "kalshi",
+      "source_id": "KXBTCMAXY-26DEC31-199999.99",
+      "observed_at": "2026-10-29T09:43:12.654684+00:00",
+      "original_version_id": 161668,
+      "source_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXBTCMAXY-26DEC31-199999.99",
+      "parent_endpoint": "https://external-api.kalshi.com/trade-api/v2/markets?status=open&mve_filter=exclude&limit=200&cursor=CgwIocybxwYQoP71_QISFUtYU0hPV0VOREZBTUlMWUdVWS0zMA",
+      "parent_observation_id": 7825,
+      "parent_sha256": "5d531c3b15c3072bfc2f62e5eb1fce50ddba380e4af4ac2b5632223522b4f33a",
+      "schema_version": "kalshi-3.34.0/m1-v1",
+      "representation": "RESERIALIZED_GENUINE_MARKET_EXCERPT",
+      "body": "{\"market\":{\"can_close_early\":true,\"close_time\":\"2027-01-01T04:59:00Z\",\"created_time\":\"2025-10-01T00:36:12.516169Z\",\"early_close_condition\":\"This market will close and expire early if Bitcoin crosses the specified price threshold.\",\"event_ticker\":\"KXBTCMAXY-26DEC31\",\"exchange_index\":0,\"expected_expiration_time\":\"2027-01-01T04:59:00Z\",\"expiration_time\":\"2027-01-31T04:59:00Z\",\"expiration_value\":\"\",\"floor_strike\":\"199999.99\",\"last_price_dollars\":\"0.0100\",\"latest_expiration_time\":\"2027-01-31T04:59:00Z\",\"market_type\":\"binary\",\"no_ask_dollars\":\"0.9900\",\"no_bid_dollars\":\"0.9800\",\"no_sub_title\":\"Above $199,999.99\",\"notional_value_dollars\":\"1.0000\",\"open_interest_fp\":\"290621.36\",\"open_time\":\"2025-10-01T14:00:00Z\",\"previous_price_dollars\":\"0.0100\",\"previous_yes_ask_dollars\":\"0.0200\",\"previous_yes_bid_dollars\":\"0.0100\",\"price_level_structure\":\"linear_cent\",\"price_ranges\":[{\"end\":\"1.0000\",\"start\":\"0.0000\",\"step\":\"0.0100\"}],\"result\":\"\",\"rules_primary\":\"If the Bitcoin spot price according to the CF Bitcoin Real-Time Index is above $199999.99 starting 10/01/2025 10:00 AM and before Dec 31, 2026 at 11:59 PM ET, then the market resolves to Yes.\",\"rules_secondary\":\"The market resolves based on the CF Bitcoin Real-Time Index (BRTI) using a trimmed mean calculation. The resolution value is calculated by taking all BRTI values for each minute from market issuance until the specified time on the target date, removing the top 20% and bottom 20% of values, then averaging the remaining 60% of values. If the BRTI crosses the threshold at any point during the measurement period (triggering early expiration), the market immediately resolves. If no data is available at the expiration time, the market resolves to No. The market can resolve early if Bitcoin definitively crosses the threshold before the target date and time.\",\"settlement_bounds_type\":\"default\",\"settlement_timer_seconds\":3600,\"status\":\"active\",\"strike_type\":\"greater\",\"ticker\":\"KXBTCMAXY-26DEC31-199999.99\",\"title\":\"Will Bitcoin be above $199,999.99 by Dec 31, 2026 at 11:59 PM ET?\",\"updated_time\":\"2026-04-09T10:34:58.533481Z\",\"volume_24h_fp\":\"0.00\",\"volume_fp\":\"883497.47\",\"yes_ask_dollars\":\"0.0200\",\"yes_ask_size_fp\":\"34600.00\",\"yes_bid_dollars\":\"0.0100\",\"yes_bid_size_fp\":\"398.86\",\"yes_sub_title\":\"Above $199,999.99\"}}",
+      "body_sha256": "bc7ad83e97dc052ffe6c8f8e557160c7473765c4696b63a976dd480344dc5f1a"
+    },
+    {
+      "venue": "polymarket_us",
+      "source_id": "cpc-btc-pricerange-yr-12-31-2026-below-20k",
+      "observed_at": "2026-10-29T09:13:34.623724+00:00",
+      "original_version_id": 257670,
+      "source_url": "https://gateway.polymarket.us/v1/market/slug/cpc-btc-pricerange-yr-12-31-2026-below-20k",
+      "parent_endpoint": "https://gateway.polymarket.us/v1/markets?active=true&closed=false&limit=200&offset=1400&orderBy=id&orderDirection=asc",
+      "parent_observation_id": 6691,
+      "parent_sha256": "c43c22671bdd4a24babe0625ebe9b0078ae4128d0e31846ebcf9cd04b38aa1c4",
+      "schema_version": "polymarket-us-marketservice-1.0.0/m1-v1",
+      "representation": "RESERIALIZED_GENUINE_MARKET_EXCERPT",
+      "body": "{\"market\":{\"active\":true,\"archived\":false,\"assetPriceTerms\":{\"asset\":{\"assetClass\":\"ASSET_CLASS_CRYPTO\",\"symbol\":\"btc\"},\"assetName\":\"\",\"chart\":null,\"direction\":\"ASSET_PRICE_DIRECTION_UNSPECIFIED\",\"horizon\":\"yearly\",\"indexSymbol\":\"BRTI\",\"marketType\":\"ASSET_PRICE_MARKET_TYPE_RANGE\",\"nextWindowStart\":null,\"priceDecimals\":2,\"priceToBeat\":null,\"priceUnit\":\"\",\"rangeKind\":\"ASSET_PRICE_RANGE_KIND_BELOW\",\"rangeLower\":null,\"rangeUpper\":{\"currency\":\"USD\",\"value\":\"19999.99\"},\"settlementPrice\":null,\"strike\":null,\"windowEnd\":\"2027-01-01T05:00:00Z\",\"windowStart\":null},\"bestAskQuote\":{\"currency\":\"USD\",\"value\":\"0.0100\"},\"category\":\"crypto\",\"closed\":false,\"comboEnabled\":false,\"createdAt\":\"2026-07-21T15:30:50Z\",\"description\":\"This market will settle to Yes if the price of Bitcoin is 19,999.99 or below at 12:00 AM ET on January 1, 2027. Only one outcome in this market will resolve to Yes.\\n\\nOutcome sourced from CF Benchmarks' Bitcoin Real-Time Index.\\n\\nThe market settles based on the CF Bitcoin Real-Time Index (BRTI) using a trimmed mean calculation over the sixty second period ending at 12:00 AM ET on January 1, 2027, excluding the top 20% and bottom 20% of values.\",\"endDate\":\"2027-01-15T04:00:00Z\",\"ep3Status\":\"OPEN\",\"ep3SyncedAt\":\"2026-10-27T08:20:49Z\",\"feeCoefficient\":\"0.0695\",\"gameStartTime\":\"2026-07-13T17:48:00Z\",\"hidden\":false,\"id\":\"268656\",\"manualActivation\":false,\"marketSides\":[{\"createdAt\":\"2026-07-21T15:30:50Z\",\"description\":\"Yes\",\"id\":\"536876\",\"identifier\":\"cpc-btc-pricerange-yr-12-31-2026-below-20k\",\"long\":true,\"marketId\":268656,\"marketSideType\":\"MARKET_SIDE_TYPE_INSTRUMENT\",\"price\":\"0.0100\",\"quote\":{\"currency\":\"USD\",\"value\":\"0.0100\"},\"tradable\":true,\"updatedAt\":\"2026-07-21T15:30:50Z\"},{\"createdAt\":\"2026-07-21T15:30:50Z\",\"description\":\"No\",\"id\":\"536877\",\"identifier\":\"cpc-btc-pricerange-yr-12-31-2026-below-20k\",\"long\":false,\"marketId\":268656,\"marketSideType\":\"MARKET_SIDE_TYPE_INSTRUMENT\",\"tradable\":true,\"updatedAt\":\"2026-07-21T15:30:50Z\"}],\"marketType\":\"futures\",\"minimumTradeQty\":\"0.01\",\"orderPriceMinTickSize\":\"0.01\",\"outcomePrices\":\"[\\\"0.0100\\\"]\",\"outcomes\":\"[\\\"No\\\",\\\"Yes\\\"]\",\"politics\":null,\"question\":\"Bitcoin price at the end of 2026?\",\"slug\":\"cpc-btc-pricerange-yr-12-31-2026-below-20k\",\"sortOrder\":28,\"sportsMarketType\":\"futures\",\"sportsMarketTypeV2\":\"SPORTS_MARKET_TYPE_FUTURE\",\"startDate\":\"2026-07-21T15:30:50Z\",\"status\":\"MARKET_STATUS_OPEN\",\"tags\":[],\"title\":\"19,999.99 or below\",\"titleShort\":\"19,999.99 or below\",\"updatedAt\":\"2026-10-29T07:31:11Z\"}}",
+      "body_sha256": "605b2893a6f86454a367a4b1c907d6072b121f0f6d7d57360bf435de2fbfd26e"
+    }
+  ],
+  "cases": [
+    {
+      "kalshi_id": "KXFEDDECISION-26DEC-H25",
+      "polymarket_us_id": "rdc-usfed-fomc-2026-12-09-hike25",
+      "expected_conflicts": [
+        "ROUNDING_CONFLICT"
+      ],
+      "assessment": "MATERIAL_SETTLEMENT_DIFFERENCE",
+      "reason": "Exact 25-basis-point hike versus US rounding of off-grid changes to displayed buckets."
+    },
+    {
+      "kalshi_id": "KXTOPSONGSPOTIFY-26-PIN",
+      "polymarket_us_id": "ccrc-sptfy-n1-song-glbl-yr-2026-states",
+      "expected_conflicts": [],
+      "assessment": "PROMISING_ORDINARY_EVENT_REQUIRES_OPERATOR_REVIEW",
+      "reason": "Both archived definitions name Stateside and the 2026 Spotify Wrapped global top-song ranking; complete legal and exceptional-settlement review remains required."
+    },
+    {
+      "kalshi_id": "KXMUSKWEALTH-27-1700",
+      "polymarket_us_id": "pnwpc-elonmusk-by-2026-12-31-hit-1pt2t",
+      "expected_conflicts": [
+        "PROPOSITION_THRESHOLD_CONFLICT"
+      ],
+      "assessment": "DIFFERENT_THRESHOLD",
+      "reason": "Kalshi requires more than $1.7 trillion; US requires at least $1.2 trillion."
+    },
+    {
+      "kalshi_id": "KXNEWSCOTUSCONF-29JAN20-2",
+      "polymarket_us_id": "nphc-scotus-barlag",
+      "expected_conflicts": [
+        "PROPOSITION_TYPE_CONFLICT"
+      ],
+      "assessment": "DIFFERENT_PROPOSITION",
+      "reason": "Count of confirmations during a presidential term versus Barbara Lagoa becoming the next justice."
+    },
+    {
+      "kalshi_id": "KXBTCMAXY-26DEC31-199999.99",
+      "polymarket_us_id": "cpc-btc-pricerange-yr-12-31-2026-below-20k",
+      "expected_conflicts": [
+        "PROPOSITION_DIRECTION_CONFLICT",
+        "OBSERVATION_WINDOW_CONFLICT"
+      ],
+      "assessment": "DIFFERENT_THRESHOLD_DIRECTION_AND_TIME",
+      "reason": "Bitcoin above $199,999.99 at any point in a window versus at or below $19,999.99 at a specified final time using a trimmed one-minute statistic."
+    }
+  ]
+}

@@ -51,3 +51,7 @@ Every added path has tests (success, missing fields, stale data, invalid prices,
   before further operational work; full backfill and contradiction handling remain open.
   Preserve its fixed deadline, namespace pin and checkpoints on restart. Completion
   of a batch or service startup is not completion of the backfill or run acceptance.
+- The four observed M5I contradiction misses now have genuine regression fixtures
+  and versioned on-read guards; see `docs/M5I_CORRECTIONS.md`. Never treat an empty
+  old queue warning list or an unknown parsed field as approval. Inference recovery
+  still requires verified PC access/health and the existing exact model pin.

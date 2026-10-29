@@ -1,0 +1,114 @@
+# M5I contradiction corrections and inference diagnosis — October 29
+
+**The four observed contradiction misses are fixed and tested. Remote inference
+repair remains blocked on verified server access or PC-side status/log output.**
+Both expired run services remain disabled. No bulk backfill, new model namespace,
+real-money workflow or equivalence approval was started.
+
+## Retrieval changes
+
+`propositions.py` extracts explicit assertions from existing verified public rule,
+description and selected-outcome fields. It compares Decimal amounts, magnitude
+suffixes, inequalities, observation periods, recognized proposition types and
+displayed-bucket rounding. A definition's first settlement assertion takes
+precedence over generic question text; titles/subtitles provide a fallback when
+the assertion has no recognized threshold. Later rule text remains available for
+rounding-policy detection.
+
+Absent units and unrecognized language stay unknown. In the Bitcoin case, the US
+public wording has no explicit currency symbol; it is not silently converted to
+USD. Opposite inequalities and window-versus-instant definitions independently
+establish the reported conflicts.
+
+| Genuine archived candidate | New material flags |
+| --- | --- |
+| December Fed 25-basis-point hike | `ROUNDING_CONFLICT` |
+| Musk $1.7 trillion / $1.2 trillion | `PROPOSITION_THRESHOLD_CONFLICT` |
+| Supreme Court confirmation count / next appointee | `PROPOSITION_TYPE_CONFLICT` |
+| Bitcoin window high / final-time low | `PROPOSITION_DIRECTION_CONFLICT`, `OBSERVATION_WINDOW_CONFLICT` |
+| Spotify “Stateside” | No new conflict detected; still requires operator review |
+
+Both deterministic and persistent semantic retrieval rank material contradictions
+after candidates without detected contradictions, before similarity or liquidity
+tie-breakers. Tests supply a **hypothetical cosine of 1** to all four negative
+cases; conflicts remain authoritative. A dirty candidate's high score cannot
+raise the deterministic pruning floor and hide a lower-scoring clean candidate.
+
+Existing sidecar rows and saved reservoirs recompute versioned guards from their
+bounded public text at comparison time. Main queue reads recompute comparisons
+from current source versions. An old empty `known_contradictions` list therefore
+does not survive simply because its rule version is unchanged. The parse cache
+holds at most 512 public texts, each bounded at 16,000 bytes. No schema migration,
+embedding-text change or vector rebuild is required; model namespaces are preserved.
+
+This is a partial language parser, not proof of identical contracts. Unknown
+clauses, unrecognized phrasing, exceptional settlement and account applicability
+still require human review. Broader M5I coverage and quality gaps remain open.
+
+## Measured regression evidence
+
+- **387 tests passed** with `python -m unittest discover -s tests -v` in 17.125
+  seconds. Ten new tests cover the genuine misses, magnitude/inequality variants,
+  missing units/schema/text, observation periods, old sidecar features/main queues,
+  deterministic ordering, stale evidence and changed source versions.
+- The [genuine fixture](../tests/fixtures/m5i-contradictions-genuine.json) contains
+  ten archived definitions for the five pairs. Adapter schemas, parent/excerpt
+  hashes, URLs, receipt clocks and original version references are preserved.
+  Labels are assistant assessments, not independent adjudication or approvals.
+- Read-only replay of the saved **100-event queue** at its original 13:25 UTC clock
+  newly flagged **exactly the four reviewed misses**, with no inference or database
+  write. Existing vector checksums and source versions were validated.
+  [Before/after scores and warnings](evidence/M5I_CORRECTION_REPLAY.json) retain
+  actual archived cosine provenance. All candidates remain `UNVERIFIED`.
+- The prior 49-definition genuine corpus still finds **18/18** labeled propositions
+  at Recall@20 and Recall@100, with 18/18 precision among returned persistent-index
+  candidates in deterministic historical replay. No new inference ran and no new
+  reviewable event/model-quality gain is claimed. Both comparator implementations
+  use updated code; this regression is not a new old-versus-new ablation.
+- CLI replay/help and dependency checks passed. Exact test output, commands,
+  fixture hashes and corpus metrics are in the
+  [validation manifest](evidence/M5I_CORRECTION_VALIDATION.json).
+
+Reproduce the queue regression without network requests:
+
+```bash
+.venv/bin/python scripts/m5i_replay_contradictions.py \
+  --db data/research.sqlite3 --index-db data/m5i/index.sqlite3 \
+  --snapshot docs/evidence/M5I_RUN_20261028_FINAL_QUEUE.json \
+  --output data/m5i-replayed-queue.json
+```
+
+Replay fails if required source versions or archived vectors are no longer
+available. Use preserved archives for a later historical replay.
+
+## Private inference diagnosis
+
+At 20:02 UTC, the PC responded directly to Tailscale ping (102 ms), and the private
+HTTPS `/v1/models` route returned **HTTP 502 three times** with empty bodies. At
+20:14 UTC, `/health` also returned 502. Exact responses are archived in
+`data/m5i/corrections-20261029/diagnostics.sqlite3`; hashes and clocks are in
+[the diagnosis manifest](evidence/M5I_CORRECTION_DIAGNOSIS.json).
+
+These requests fail before market text reaches embedding inference. A
+front-end/upstream failure is a working hypothesis; a model crash, OOM, wrong
+forward target or stopped local service cannot be distinguished from these
+responses alone. Documented llama.cpp health responses are 200 when ready and
+503 during loading; the empty 502 is not evidence of a normal loading response.
+[Official llama.cpp documentation](https://github.com/ggml-org/llama.cpp/blob/master/tools/server/README.md#api-endpoints).
+
+OpenSSH and the Tailscale SSH wrapper both failed host-key verification. No host
+verification, credentials, firewall or Serve configuration was changed. The
+operator was asked for a verified SSH connection/fingerprint or PC-side status
+output; that information is needed to finish the repair.
+
+On the PC, inspect `tailscale serve status`, identify its actual local upstream,
+and check that upstream's `/health`, service status and logs. Do not assume a
+port from examples or start a competing model process. Restore the existing
+service after identifying its failure, then verify the exact model fingerprint
+with a small bounded embedding batch. Keep the listener private; Tailscale Serve
+supports a local service without public Funnel exposure.
+[Official Serve documentation](https://tailscale.com/docs/features/tailscale-serve).
+
+Official diagnostic docs and current US market-field schemas were captured with
+UTC timestamps and hashes. No new exchange API fields are consumed. Bulk backfill
+remains stopped until inference health, the model pin and a bounded batch pass.

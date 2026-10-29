@@ -238,10 +238,12 @@ Stop after M5I; M6 remains unauthorized and previous sustained-run gaps remain o
   indexed and 15.79% of eligible Kalshi definitions indexed at shutdown.
 - [ ] Diagnose private inference 502s, finish the remaining 100,241-definition
   Kalshi backlog (shutdown count), and complete retrieval traversal.
-- [ ] Repair contradiction detection for the four genuine semantic misses found
+- [x] Repair contradiction detection for the four genuine semantic misses found
   in the final queue: Fed rounding, Musk thresholds, Supreme Court proposition
   type, and Bitcoin threshold/direction/observation time. Existing approval gates
-  remained closed; a larger index alone does not establish better matching.
+  remained closed; 387 tests and historical queue replay pass. See
+  [corrections and remaining inference-access blocker](M5I_CORRECTIONS.md).
+  Recognition remains partial; a larger index alone does not establish better matching.
 
 See [post-run findings](M5I_RUN_20261028_RESULTS.md). Broad quality adjudication
 and incremental semantic yield remain open. No M6 or trading work is authorized.

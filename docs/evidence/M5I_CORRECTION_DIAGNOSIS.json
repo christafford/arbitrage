@@ -1,0 +1,70 @@
+{
+  "observations": [
+    {
+      "id": 1,
+      "at": "2026-10-29T20:02:51.981507+00:00",
+      "endpoint": "https://cachyos.tail2be75f.ts.net/v1/models",
+      "http_status": 502,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "validation_status": "REJECTED",
+      "validation_error": "HTTP_OR_SIZE_ERROR",
+      "bytes": 0
+    },
+    {
+      "id": 2,
+      "at": "2026-10-29T20:02:53.333195+00:00",
+      "endpoint": "https://cachyos.tail2be75f.ts.net/v1/models",
+      "http_status": 502,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "validation_status": "REJECTED",
+      "validation_error": "HTTP_OR_SIZE_ERROR",
+      "bytes": 0
+    },
+    {
+      "id": 3,
+      "at": "2026-10-29T20:02:55.672523+00:00",
+      "endpoint": "https://cachyos.tail2be75f.ts.net/v1/models",
+      "http_status": 502,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "validation_status": "REJECTED",
+      "validation_error": "HTTP_OR_SIZE_ERROR",
+      "bytes": 0
+    },
+    {
+      "id": 4,
+      "at": "2026-10-29T20:14:09.662064+00:00",
+      "endpoint": "https://cachyos.tail2be75f.ts.net/health",
+      "http_status": 502,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "validation_status": "REJECTED",
+      "validation_error": "HTTP_STATUS_502",
+      "bytes": 0
+    }
+  ],
+  "tailscale_ping": {
+    "host": "cachyos",
+    "result": "DIRECT_PONG",
+    "latency_ms": 102
+  },
+  "ssh_checks": {
+    "openssh": "HOST_KEY_VERIFICATION_FAILED",
+    "tailscale_ssh": "HOST_KEY_VERIFICATION_FAILED",
+    "credentials_or_host_trust_changed": false
+  },
+  "inference": "Reachable private HTTPS endpoint returns 502; backend/proxy failure suspected, root cause not established without PC-side logs/configuration.",
+  "bulk_backfill": "STOPPED",
+  "official_docs": [
+    {
+      "url": "https://tailscale.com/docs/features/tailscale-serve",
+      "at": "2026-10-29T20:14:09.431303+00:00",
+      "sha256": "a2ce098a84c7b84cf78bd7cc161ca9799a551c2e27bb82e67c901540a846a207",
+      "path": "data/m5i/corrections-20261029/tailscale-serve.txt"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/ggml-org/llama.cpp/master/tools/server/README.md",
+      "at": "2026-10-29T20:14:09.661713+00:00",
+      "sha256": "8fd5abde2fb52de3b30f30a170631d4c0d92febecc8da44d0541e48b132b35c6",
+      "path": "data/m5i/corrections-20261029/llama-server.txt"
+    }
+  ]
+}
