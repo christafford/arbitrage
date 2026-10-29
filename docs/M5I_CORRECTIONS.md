@@ -173,3 +173,38 @@ not be retrieved through the web tool. Backfill remains stopped. This follow-up
 changed only documentation/evidence. The full suite was nevertheless rerun:
 387 tests passed in 18.012 seconds; exact output is retained locally at
 `data/m5i/recovery-20261029/cache-diagnostic-tests.txt`.
+
+### Full trace and isolated batch — 23:14–23:16 UTC
+
+The operator's trace confirms Vulkan on an RTX 3080, all 37/37 layers offloaded,
+flash attention enabled, f16 KV, context 2048, batch/microbatch 256 and one slot.
+The fitting step explicitly made no adjustment: projected GPU use 6366 MiB versus
+7944 MiB free left 1578 MiB, above the requested 768 MiB margin. This eliminates
+partial offload as an explanation for this particular startup; the original
+run's effective placement is not known. A bounded production-pin retry still
+returned `PINNED_MODEL_IDENTITY_MISMATCH` after six requests and 3.522 seconds,
+adding zero market vectors.
+
+An isolated archive (`data/m5i/recovery-20261029/runtime-validation.sqlite3`)
+then embedded all ten hash-checked genuine definitions from the correction
+fixture. All returned valid 4096-dimensional vectors. Seven HTTP requests,
+including before/after probes, took 6.677 seconds. This is a protocol/runtime
+check on archived text, not a live eligibility or retrieval-quality result.
+Production vectors and the active pin were not changed by the isolated check.
+
+The probe before the batch returned `8f1b7456…`; the first probe after the batch
+returned `1bdbff0b…`, and its repetition returned `8f1b7456…`. This demonstrates
+request-history-dependent exact fingerprints within one running server. It does
+not establish compatibility with the older `6ad290cf…` vectors. The existing
+three-probe pin gate remains unchanged; no numerical tolerance or identity merge
+was introduced.
+
+The operator was offered a separately pinned namespace for the current verified
+runtime, retaining original vectors and checkpoints. This entails re-embedding
+previously indexed definitions for the new namespace, not deleting or recollecting
+all archived market data. Direction is pending because AGENTS explicitly requires
+preserving the existing pin. No new sustained run has started; there is no new
+check-back deadline.
+
+The full suite was rerun: **387 tests passed in 17.523 seconds**. Exact local
+output is recorded in the recovery evidence. No application code changed.

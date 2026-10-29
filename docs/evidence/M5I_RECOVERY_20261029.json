@@ -190,5 +190,191 @@
     "seconds": 18.012,
     "result": "PASS",
     "output": "data/m5i/recovery-20261029/cache-diagnostic-tests.txt"
+  },
+  "trace_startup_operator_evidence": {
+    "build": "b10705-3f5abc5",
+    "backend": "Vulkan0",
+    "device": "NVIDIA GeForce RTX 3080",
+    "gpu_total_mib": 10486,
+    "gpu_free_mib_at_fit": 7944,
+    "fit_adjustments": "none; projected 6366 MiB, margin 1578 >= 768 MiB",
+    "offloaded_layers": "37/37",
+    "flash_attention": true,
+    "batch": 256,
+    "microbatch": 256,
+    "context": 2048,
+    "kv_type": "f16/f16",
+    "kv_unified": false,
+    "slots": 1,
+    "prompt_cache_mib": 8192,
+    "listener": "127.0.0.1:8083"
+  },
+  "restart_pinned_worker": {
+    "cache_hits": 0,
+    "completed": {
+      "kalshi": 0,
+      "polymarket_us": 0
+    },
+    "dimensions": 4096,
+    "elapsed_seconds": 3.522256947006099,
+    "identity": "8f1b745674ea82993cc5211498d606a86627ecedb6776637daeaf66e42611204",
+    "model": "qwen3-embedding-8b",
+    "reason": "PINNED_MODEL_IDENTITY_MISMATCH",
+    "requests": 6,
+    "status": "FALLBACK",
+    "stop_reason": "PER_VENUE_BUDGET_OR_EMPTY",
+    "texts_per_second": 0.0
+  },
+  "isolated_runtime_validation": {
+    "at": "2026-10-29T23:16:02.291203+00:00",
+    "purpose": "Isolated actual inference validation on archived genuine definitions; no current-market eligibility, retrieval-quality, equivalence or cache-compatibility claim",
+    "fixture_sha256": "f63c0cdbe1dcbfdc358bbcaf310e20b36e3ef37a0dea4c04cc5d353175dd424a",
+    "provenance": [
+      {
+        "venue": "kalshi",
+        "source_id": "KXFEDDECISION-26DEC-H25",
+        "observed_at": "2026-10-29T09:43:12.654684+00:00",
+        "source_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXFEDDECISION-26DEC-H25",
+        "body_sha256": "fe1524132aa0f1578657065fc5542fb09b46e6631d3b368c04c5ca66e011c348"
+      },
+      {
+        "venue": "polymarket_us",
+        "source_id": "rdc-usfed-fomc-2026-12-09-hike25",
+        "observed_at": "2026-10-29T09:17:25.322241+00:00",
+        "source_url": "https://gateway.polymarket.us/v1/market/slug/rdc-usfed-fomc-2026-12-09-hike25",
+        "body_sha256": "439e974ff0b3b42c261b5d4eb8ae1df2eaf8f67ea7353d32f0b74a7f8ed5b80c"
+      },
+      {
+        "venue": "kalshi",
+        "source_id": "KXTOPSONGSPOTIFY-26-PIN",
+        "observed_at": "2026-10-29T09:42:29.987728+00:00",
+        "source_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXTOPSONGSPOTIFY-26-PIN",
+        "body_sha256": "d794b13f8580d0cea20768498a9d0f0fd04777811e70b03549307b8a87b13f2b"
+      },
+      {
+        "venue": "polymarket_us",
+        "source_id": "ccrc-sptfy-n1-song-glbl-yr-2026-states",
+        "observed_at": "2026-10-29T09:13:34.623724+00:00",
+        "source_url": "https://gateway.polymarket.us/v1/market/slug/ccrc-sptfy-n1-song-glbl-yr-2026-states",
+        "body_sha256": "b45384a757ef71f600bf697a01123590857f8d5b943cd7ed00058fa41ecfbc87"
+      },
+      {
+        "venue": "kalshi",
+        "source_id": "KXMUSKWEALTH-27-1700",
+        "observed_at": "2026-10-29T09:40:41.651742+00:00",
+        "source_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMUSKWEALTH-27-1700",
+        "body_sha256": "6600d9f6f7a0c4e390daa67a4a8314bf6cc89c0cc3c4556bb4ea151059c85749"
+      },
+      {
+        "venue": "polymarket_us",
+        "source_id": "pnwpc-elonmusk-by-2026-12-31-hit-1pt2t",
+        "observed_at": "2026-10-29T09:13:34.623724+00:00",
+        "source_url": "https://gateway.polymarket.us/v1/market/slug/pnwpc-elonmusk-by-2026-12-31-hit-1pt2t",
+        "body_sha256": "67b6ed50eac181bd2ce6982d53387a983ce5022480095be60e5e3c61efdd0f74"
+      },
+      {
+        "venue": "kalshi",
+        "source_id": "KXNEWSCOTUSCONF-29JAN20-2",
+        "observed_at": "2026-10-29T09:43:25.389266+00:00",
+        "source_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNEWSCOTUSCONF-29JAN20-2",
+        "body_sha256": "05cfaf2a53a7f916bd4515e737c5fca1603dc8ecaad9c4918aa6f4536ec66499"
+      },
+      {
+        "venue": "polymarket_us",
+        "source_id": "nphc-scotus-barlag",
+        "observed_at": "2026-10-29T09:17:20.376435+00:00",
+        "source_url": "https://gateway.polymarket.us/v1/market/slug/nphc-scotus-barlag",
+        "body_sha256": "3764ad5a59925c5c52d6838bc47ebc3562cc5573e2575867ccf771af76486d7d"
+      },
+      {
+        "venue": "kalshi",
+        "source_id": "KXBTCMAXY-26DEC31-199999.99",
+        "observed_at": "2026-10-29T09:43:12.654684+00:00",
+        "source_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXBTCMAXY-26DEC31-199999.99",
+        "body_sha256": "bc7ad83e97dc052ffe6c8f8e557160c7473765c4696b63a976dd480344dc5f1a"
+      },
+      {
+        "venue": "polymarket_us",
+        "source_id": "cpc-btc-pricerange-yr-12-31-2026-below-20k",
+        "observed_at": "2026-10-29T09:13:34.623724+00:00",
+        "source_url": "https://gateway.polymarket.us/v1/market/slug/cpc-btc-pricerange-yr-12-31-2026-below-20k",
+        "body_sha256": "605b2893a6f86454a367a4b1c907d6072b121f0f6d7d57360bf435de2fbfd26e"
+      }
+    ],
+    "production_index_modified": false,
+    "probe_before": {
+      "model": "qwen3-embedding-8b",
+      "identity": "8f1b745674ea82993cc5211498d606a86627ecedb6776637daeaf66e42611204",
+      "dimensions": 4096
+    },
+    "status": "PASS",
+    "completed": 10,
+    "dimensions": [
+      4096
+    ],
+    "probe_after_first": {
+      "model": "qwen3-embedding-8b",
+      "identity": "1bdbff0b104f3d5ebe7be8b3e5e052542bb18f2f1a950d465cc21196ca2a53ba",
+      "dimensions": 4096
+    },
+    "probe_after_second": {
+      "model": "qwen3-embedding-8b",
+      "identity": "8f1b745674ea82993cc5211498d606a86627ecedb6776637daeaf66e42611204",
+      "dimensions": 4096
+    },
+    "requests": 7,
+    "elapsed_seconds": 6.677123664005194,
+    "raw_observations": [
+      {
+        "id": 1,
+        "at": "2026-10-29T23:16:02.742454+00:00",
+        "sha256": "6a2ea44d9e1a1b2cba4c430c3a8ab5f6bf8f21d688d576ceced2a8f6d3e5bf42",
+        "status": 200
+      },
+      {
+        "id": 2,
+        "at": "2026-10-29T23:16:03.525723+00:00",
+        "sha256": "835fd755c9f0a2e7634e87c4cf699e2e00730d0503ee0e332be0d0016734d0f0",
+        "status": 200
+      },
+      {
+        "id": 3,
+        "at": "2026-10-29T23:16:06.571270+00:00",
+        "sha256": "b5ad19e69ce900fe24609b0ad11d50310d5d025795292e984eb44e8700178a4c",
+        "status": 200
+      },
+      {
+        "id": 4,
+        "at": "2026-10-29T23:16:07.195301+00:00",
+        "sha256": "b725dc7ec6c2c25a32f8d58e6cdec1f04cd8f6763e3251441499651684827a18",
+        "status": 200
+      },
+      {
+        "id": 5,
+        "at": "2026-10-29T23:16:07.886017+00:00",
+        "sha256": "42712cfff4b7e55c63ccfa2e34522602384afc81281d904840bfb51438909bb1",
+        "status": 200
+      },
+      {
+        "id": 6,
+        "at": "2026-10-29T23:16:08.272809+00:00",
+        "sha256": "bda46a02824f29e983a4d612ece4d75d1f778cb5d6172049e38d80ae2560fa14",
+        "status": 200
+      },
+      {
+        "id": 7,
+        "at": "2026-10-29T23:16:08.933796+00:00",
+        "sha256": "835fd755c9f0a2e7634e87c4cf699e2e00730d0503ee0e332be0d0016734d0f0",
+        "status": 200
+      }
+    ]
+  },
+  "next_step": "Operator direction requested: new isolated model namespace for current verified runtime; original pin/vectors retained, no merge. No production resume authorized by the request itself.",
+  "runtime_validation_tests": {
+    "command": ".venv/bin/python -m unittest discover -s tests -v",
+    "count": 387,
+    "seconds": 17.523,
+    "result": "PASS",
+    "output": "data/m5i/recovery-20261029/runtime-validation-tests.txt"
   }
 }
