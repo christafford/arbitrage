@@ -183,5 +183,12 @@
     "context": 2048
   },
   "historical_model_file_sha256": "NOT_CAPTURED; cannot establish file equality from current checksum alone",
-  "model_metadata_comparison": "Archived and current /v1/models meta objects agree: Q6_K, 4096 dimensions, 7567295488 parameters, size 6208527136, context 2048. This is not a model-file hash or a runtime-equivalence proof."
+  "model_metadata_comparison": "Archived and current /v1/models meta objects agree: Q6_K, 4096 dimensions, 7567295488 parameters, size 6208527136, context 2048. This is not a model-file hash or a runtime-equivalence proof.",
+  "cache_diagnostic_tests": {
+    "command": ".venv/bin/python -m unittest discover -s tests -v",
+    "count": 387,
+    "seconds": 18.012,
+    "result": "PASS",
+    "output": "data/m5i/recovery-20261029/cache-diagnostic-tests.txt"
+  }
 }

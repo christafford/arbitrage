@@ -170,5 +170,6 @@ actual backend/offload settings, retaining all existing inference arguments.
 Current upstream documentation identifies level 4 as trace; it is not evidence
 that the running build has identical internals. The exact supplied commit could
 not be retrieved through the web tool. Backfill remains stopped. This follow-up
-changed only documentation/evidence; the preceding 387-test pass remains the
-latest suite result, not a newly executed test run.
+changed only documentation/evidence. The full suite was nevertheless rerun:
+387 tests passed in 18.012 seconds; exact output is retained locally at
+`data/m5i/recovery-20261029/cache-diagnostic-tests.txt`.
