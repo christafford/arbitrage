@@ -183,3 +183,15 @@ Exact configuration, installed unit copies, command outputs/stderr, supervisor
 checkpoints, pre-migration backups and manifests are retained under
 `data/m5i/run-20261028/`. Services log status changes to the user journal. A
 `BATCH_COMPLETE` report is progress, not evidence that the whole run has finished.
+
+
+## Separate-namespace recovery run, October 29–30
+
+The operator authorized a physically separate sidecar after verifying the restored
+runtime. Use `--index-db data/m5i/qwen-8f1b.semantic.sqlite3` for this run; the old
+`data/m5i/index.sqlite3` is preserved and is not this run's active sidecar. Do not
+combine coverage or vectors across namespaces. The [run record](M5I_RUN_20261029.md)
+lists services, bounds, exact pin, partial startup measurements and stop commands.
+Its fixed deadline is October 30 11:20:39 UTC (07:20:39 EDT). Inspect status files
+and existing writer services before issuing manual work. The old October 28
+configuration and deadline remain unchanged; its units remain disabled.

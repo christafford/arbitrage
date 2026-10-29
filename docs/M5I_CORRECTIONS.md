@@ -208,3 +208,11 @@ check-back deadline.
 
 The full suite was rerun: **387 tests passed in 17.523 seconds**. Exact local
 output is recorded in the recovery evidence. No application code changed.
+
+
+### Separate namespace authorized
+
+The operator subsequently instructed “proceed with separate namespace.” The
+[new run](M5I_RUN_20261029.md) uses a physically separate sidecar and exact new pin.
+Original vectors remain in the original archive; no compatibility merge is made.
+The earlier pending-direction statements describe the prior diagnostic state.

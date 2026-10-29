@@ -57,3 +57,11 @@ Every added path has tests (success, missing fields, stale data, invalid prices,
   inference on October 29; health passes but three probes miss the exact model
   pin. See `docs/evidence/M5I_RECOVERY_20261029.json`. Verify effective runtime
   settings/model provenance; preserve the existing pin and do not merge vectors.
+
+- On October 29 the operator explicitly authorized a separate namespace. The new
+  12-hour run uses `data/m5i/qwen-8f1b.semantic.sqlite3`, exact pin `8f1b745674ea82993cc5211498d606a86627ecedb6776637daeaf66e42611204`,
+  and `data/m5i/run-20261029-newnamespace/config.json`; its fixed deadline is
+  October 30 11:20:39 UTC (07:20:39 EDT). The original sidecar, namespace and
+  expired run configuration remain preserved. Do not mix or relabel vectors.
+  Inspect `docs/M5I_RUN_20261029.md` and both status files before operational work;
+  startup validation is not completion of backfill or acceptance.

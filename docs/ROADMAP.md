@@ -250,3 +250,16 @@ Stop after M5I; M6 remains unauthorized and previous sustained-run gaps remain o
 
 See [post-run findings](M5I_RUN_20261028_RESULTS.md). Broad quality adjudication
 and incremental semantic yield remain open. No M6 or trading work is authorized.
+
+### M5I separate-namespace recovery run — authorized October 29
+
+- [x] Record GGUF checksum/build/effective Vulkan runtime and reproduce exact
+  fingerprint variation with request history; preserve the old namespace.
+- [x] Operator authorization to use a physically separate sidecar with the new
+  exact pin; successful 32-definition startup batch, full tests and bounded
+  independent collection/semantic services started with a new fixed deadline.
+- [ ] Finish and inspect this run; complete metadata/vector/retrieval coverage
+  and independently adjudicated discovery quality remain open.
+
+See [the new run record](M5I_RUN_20261029.md). The original October 28 run was not
+extended. No vector mixing, equivalence approval, trading or M6 work is authorized.

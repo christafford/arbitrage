@@ -88,3 +88,13 @@ All 20 remain **UNVERIFIED**. US synthetic NO remains unsupported by the cash-fu
 Remaining gaps: finish the **128,956-vector backlog** at the measured snapshot; finish query traversal; measure approximate recall under a populated index and saturated buckets; independently label a broader set of real non-sports events; establish incremental reviewable semantic yield. Missing Kalshi categories remain UNKNOWN. Offset paging is not an atomic venue census. Raw evidence retention still requires disk monitoring and backups. The partial backfill and lack of demonstrated new semantic events prevent claiming completed broad production-quality acceptance.
 
 [Operating commands, resource budgets, restart behavior and failure modes](M5I_OPERATIONS.md). M4/M5 sustained-run acceptance and all human review gates remain unchanged.
+
+
+## October 29 separate-namespace recovery
+
+The operator authorized a separate namespace after the restored server failed the
+original exact probe pin. A new sidecar preserves the previous vectors intact.
+The [12-hour run record](M5I_RUN_20261029.md) documents a successful 32-definition
+startup batch, incomplete metadata coverage and a fixed October 30 deadline.
+These are startup measurements, not completed backfill or new retrieval-quality
+results. The prior run and evaluation evidence above retain their original scope.
