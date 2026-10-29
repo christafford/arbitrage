@@ -46,7 +46,8 @@ Every added path has tests (success, missing fields, stale data, invalid prices,
 - Genuine evaluation labels describe ordinary propositions, not legal equivalence.
   Assistant labels require independent operator adjudication before any quality
   claim beyond the documented corpus; never convert them into registry approvals.
-- The October 28 M5I collection/backfill run is authorized and time-limited. Inspect
-  `docs/M5I_RUN_20261028.md` and its status files before starting competing workers.
+- The October 28 M5I collection/backfill run stopped at its October 29 deadline;
+  its units are disabled. Inspect `docs/M5I_RUN_20261028_RESULTS.md` and status files
+  before further operational work; full backfill and contradiction handling remain open.
   Preserve its fixed deadline, namespace pin and checkpoints on restart. Completion
   of a batch or service startup is not completion of the backfill or run acceptance.

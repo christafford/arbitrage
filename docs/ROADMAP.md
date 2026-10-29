@@ -226,15 +226,22 @@ bounded validation are complete; broad production acceptance is **not complete**
 No service was activated, real contract approved, or trading/funding path added.
 Stop after M5I; M6 remains unauthorized and previous sustained-run gaps remain open.
 
-### M5I backfill and collection run — authorized October 28, running
+### M5I backfill and collection run — stopped October 29; backfill and quality partial
 
 - [x] Verified source/sidecar backups, source schema-9 migration, fixed-deadline
   independent collection and semantic user services; bounded retry/storage/memory
   controls, exact model fingerprint pin, restart checkpoints and operational tests.
 - [x] First fresh terminal catalogue passes: 156,891 Kalshi and 82,413 unique US
   markets; complete metadata sync and multiple actual inference/retrieval batches.
-- [ ] Finish and inspect the 24-hour run, final vector coverage, catalogue refreshes,
-  throughput, failures and remaining backlog. Startup is not full-run acceptance.
+- [x] Finish and inspect the 24-hour run: both services stopped at the deadline;
+  four terminal catalogue refreshes per venue, 100% of eligible US definitions
+  indexed and 15.79% of eligible Kalshi definitions indexed at shutdown.
+- [ ] Diagnose private inference 502s, finish the remaining 100,241-definition
+  Kalshi backlog (shutdown count), and complete retrieval traversal.
+- [ ] Repair contradiction detection for the four genuine semantic misses found
+  in the final queue: Fed rounding, Musk thresholds, Supreme Court proposition
+  type, and Bitcoin threshold/direction/observation time. Existing approval gates
+  remained closed; a larger index alone does not establish better matching.
 
-See [run evidence and monitoring](M5I_RUN_20261028.md). Broad quality adjudication
+See [post-run findings](M5I_RUN_20261028_RESULTS.md). Broad quality adjudication
 and incremental semantic yield remain open. No M6 or trading work is authorized.

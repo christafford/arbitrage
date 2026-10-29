@@ -1,0 +1,556 @@
+{
+  "reviewed_at": "2026-10-29T15:43:24.092948+00:00",
+  "scope": "Five embedding-assisted candidates in final persisted queue; assistant assessment, not independent benchmark or legal approval",
+  "reviews": [
+    {
+      "candidate": {
+        "algorithm": "semantic-discovery/m5i-v1",
+        "definition_links": {
+          "kalshi": "https://external-api.kalshi.com/trade-api/v2/markets/KXFEDDECISION-26DEC-H25",
+          "polymarket_us": "https://gateway.polymarket.us/v1/market/slug/rdc-usfed-fomc-2026-12-09-hike25"
+        },
+        "equivalence_score_bps": 2993,
+        "equivalence_verified": false,
+        "event_key": "KXFEDDECISION-26DEC",
+        "hypothetical": false,
+        "kalshi_id": "KXFEDDECISION-26DEC-H25",
+        "kalshi_title": "Will the Federal Reserve Hike rates by 25bps at their December 2026 meeting?",
+        "known_contradictions": [],
+        "liquidity": {
+          "kalshi": {
+            "depth_proxy": null,
+            "quality": "MISSING"
+          },
+          "polymarket_us": {
+            "depth_proxy": null,
+            "quality": "MISSING"
+          }
+        },
+        "match_basis": "EMBEDDING_ASSISTED",
+        "mechanics": {
+          "account_applicability": "UNVERIFIED",
+          "polymarket_us_no": "UNSUPPORTED_SYNTHETIC_SHORT",
+          "research_path": "CASH_FUNDED_LONG_ONLY"
+        },
+        "polymarket_event_key": "[\"federal reserve decision in december\",[]]",
+        "polymarket_us_id": "rdc-usfed-fomc-2026-12-09-hike25",
+        "polymarket_us_title": "Fed Decision in December",
+        "prior_reviews": [],
+        "retrieval_reasons": [
+          "KEYWORD_BM25",
+          "PERSISTENT_VECTOR_COSINE"
+        ],
+        "review_reason": "TEXT_SIMILARITY_REQUIRES_PROPOSITION_REVIEW",
+        "review_snapshot_expires_at": "2026-10-30T09:17:25.322241+00:00",
+        "settlement_deadlines": [
+          "2027-03-10T19:01:00+00:00",
+          "2026-12-24T04:00:00+00:00"
+        ],
+        "signals": {
+          "dates": "MATCH",
+          "description_bps": 1639,
+          "embedding": {
+            "cosine": 0.9080509314148199,
+            "dimensions": 4096,
+            "identity": "6ad290cf06017f5a5aba88e4f878e7b3320b73c8ac1d8018d376aab00d64cb16",
+            "model": "qwen3-embedding-8b",
+            "versions": [
+              161694,
+              177925
+            ]
+          },
+          "metric": "UNKNOWN",
+          "period": "UNKNOWN",
+          "subject_bps": 3333,
+          "thresholds": "UNKNOWN"
+        },
+        "source_observations": [
+          7825,
+          6815
+        ],
+        "source_received_at": [
+          "2026-10-29T09:43:12.654684+00:00",
+          "2026-10-29T09:17:25.322241+00:00"
+        ],
+        "status": "UNVERIFIED",
+        "trading_authorized": false,
+        "versions": [
+          161694,
+          177925
+        ],
+        "warnings": [
+          "THRESHOLDS_UNKNOWN",
+          "CUTOFFS_DIFFER",
+          "SETTLEMENT_DEADLINE_HORIZONS_DIFFER",
+          "EMBEDDING_RETRIEVAL_ONLY_HUMAN_REVIEW_REQUIRED"
+        ]
+      },
+      "assessment": "MATERIAL_SETTLEMENT_DIFFERENCE",
+      "reason": "Exact 25-basis-point hike versus US rounding of off-grid changes to displayed buckets.",
+      "reviewer": "assistant",
+      "operator_approved": false,
+      "archived_public_definitions": {
+        "kalshi": {
+          "public_contract": {
+            "close_time": "2026-12-09T18:59:00Z",
+            "rules_primary": "If the Federal Reserve does a Hike of 25bps on December 09, 2026, then the market resolves to Yes.",
+            "rules_secondary": "The outcomes are mutually exclusive: at most one can resolve to Yes. For example, a 50-basis-point hike resolves \u201cHike   25 bps\u201d to Yes and \u201cHike 25 bps\u201d to No.\n\nIf the scheduled FOMC meeting is canceled and does not occur on its scheduled date, \u201cFed maintains rate\u201d resolves to Yes and all other outcomes resolve to No.",
+            "subtitle": "Hike 25bps",
+            "title": "Will the Federal Reserve Hike rates by 25bps at their December 2026 meeting?",
+            "yes_sub_title": "Hike 25bps"
+          },
+          "schema": "public-market-text/v1"
+        },
+        "polymarket_us": {
+          "public_contract": {
+            "description": "This market will settle to Yes if the Federal Reserve increases the upper bound of the target federal funds rate by 25 basis points at the December 2026 Federal Open Market Committee (FOMC) meeting, currently scheduled for December 8-9. Outcome sourced from the Federal Reserve.\n\nIf the change in the specified rate does not precisely match the displayed options, changes smaller than the smallest option of the same direction (increase/decrease) will be rounded to that smallest option, and changes greater than the smallest option of the same direction will be rounded to the nearest displayed option, with values exactly halfway between options being rounded away from zero.",
+            "endDate": "2026-12-24T04:00:00Z",
+            "question": "Fed Decision in December",
+            "title": "25 bps Increase"
+          },
+          "schema": "public-market-text/v1"
+        }
+      }
+    },
+    {
+      "candidate": {
+        "algorithm": "semantic-discovery/m5i-v1",
+        "definition_links": {
+          "kalshi": "https://external-api.kalshi.com/trade-api/v2/markets/KXTOPSONGSPOTIFY-26-PIN",
+          "polymarket_us": "https://gateway.polymarket.us/v1/market/slug/ccrc-sptfy-n1-song-glbl-yr-2026-states"
+        },
+        "equivalence_score_bps": 2487,
+        "equivalence_verified": false,
+        "event_key": "KXTOPSONGSPOTIFY-26",
+        "hypothetical": false,
+        "kalshi_id": "KXTOPSONGSPOTIFY-26-PIN",
+        "kalshi_title": "Will Stateside be the #1 most streamed Song on the  2026 Spotify Wrapped Top 10 Songs Globally chart on the date that the chart is released for 2026?",
+        "known_contradictions": [],
+        "liquidity": {
+          "kalshi": {
+            "depth_proxy": null,
+            "quality": "MISSING"
+          },
+          "polymarket_us": {
+            "depth_proxy": null,
+            "quality": "MISSING"
+          }
+        },
+        "match_basis": "EMBEDDING_ASSISTED",
+        "mechanics": {
+          "account_applicability": "UNVERIFIED",
+          "polymarket_us_no": "UNSUPPORTED_SYNTHETIC_SHORT",
+          "research_path": "CASH_FUNDED_LONG_ONLY"
+        },
+        "polymarket_event_key": "[\"top song 2026?\",[\"2025-12-03\"]]",
+        "polymarket_us_id": "ccrc-sptfy-n1-song-glbl-yr-2026-states",
+        "polymarket_us_title": "Top Song 2026?",
+        "prior_reviews": [],
+        "retrieval_reasons": [
+          "KEYWORD_BM25",
+          "PERSISTENT_VECTOR_COSINE"
+        ],
+        "review_reason": "TEXT_SIMILARITY_REQUIRES_PROPOSITION_REVIEW",
+        "review_snapshot_expires_at": "2026-10-30T09:13:34.623724+00:00",
+        "settlement_deadlines": [
+          "2027-01-07T15:00:00+00:00",
+          "2026-12-17T04:00:00+00:00"
+        ],
+        "signals": {
+          "dates": "UNKNOWN",
+          "description_bps": 4225,
+          "embedding": {
+            "cosine": 0.9240448233155764,
+            "dimensions": 4096,
+            "identity": "6ad290cf06017f5a5aba88e4f878e7b3320b73c8ac1d8018d376aab00d64cb16",
+            "model": "qwen3-embedding-8b",
+            "versions": [
+              155401,
+              165021
+            ]
+          },
+          "metric": "UNKNOWN",
+          "period": "UNKNOWN",
+          "subject_bps": 4285,
+          "thresholds": "UNKNOWN"
+        },
+        "source_observations": [
+          7795,
+          6691
+        ],
+        "source_received_at": [
+          "2026-10-29T09:42:29.987728+00:00",
+          "2026-10-29T09:13:34.623724+00:00"
+        ],
+        "status": "UNVERIFIED",
+        "trading_authorized": false,
+        "versions": [
+          155401,
+          165021
+        ],
+        "warnings": [
+          "DATES_UNKNOWN",
+          "THRESHOLDS_UNKNOWN",
+          "CUTOFFS_DIFFER",
+          "SETTLEMENT_DEADLINE_HORIZONS_DIFFER",
+          "EMBEDDING_RETRIEVAL_ONLY_HUMAN_REVIEW_REQUIRED"
+        ]
+      },
+      "assessment": "PROMISING_ORDINARY_EVENT_REQUIRES_OPERATOR_REVIEW",
+      "reason": "Both archived definitions name Stateside and the 2026 Spotify Wrapped global top-song ranking; complete legal and exceptional-settlement review remains required.",
+      "reviewer": "assistant",
+      "operator_approved": false,
+      "archived_public_definitions": {
+        "kalshi": {
+          "public_contract": {
+            "close_time": "2026-12-31T04:59:00Z",
+            "rules_primary": "If Stateside + Zara Larsson is the #1  most streamed Song on Spotify's 2026 Spotify Wrapped Top 10 Songs Globally chart on the date that the chart is released for 2026, then the market resolves to Yes.",
+            "rules_secondary": "This market and these products have not been endorsed by Spotify. Any references to Spotify, Spotify charts, streaming data, or any associated marks are descriptive only and do not indicate an endorsement of this product or any affiliation between Spotify and Kalshi.",
+            "subtitle": ":: PinkPantheress and Zara Larsson",
+            "title": "Will Stateside be the #1 most streamed Song on the  2026 Spotify Wrapped Top 10 Songs Globally chart on the date that the chart is released for 2026?",
+            "yes_sub_title": "Stateside + Zara Larsson"
+          },
+          "schema": "public-market-text/v1"
+        },
+        "polymarket_us": {
+          "public_contract": {
+            "description": "This market will settle to Yes if Stateside - PinkPantheress & Zara Larsson is ranked the top song globally on Spotify in 2026. Outcome verified by Spotify.\n\nThe relevant ranking is the 2026 edition of the Spotify Top Songs Globally ranking released as part of the annual Spotify Wrapped campaign (see past edition: https://newsroom.spotify.com/2025-12-03/wrapped-top-artists-songs-albums-podcasts-audiobooks/). This ranking will be used for resolution even if it is released before the end of calendar year 2026.\n\nNote: This market and these products have not been endorsed by Spotify. Any references to Spotify, Spotify charts, streaming data, or any associated marks are descriptive only and do not indicate an endorsement of this product or any affiliation between Spotify and Polymarket. Spotify and related marks are the property of Spotify AB and its group companies.",
+            "endDate": "2026-12-17T04:00:00Z",
+            "question": "Top Song 2026?",
+            "title": "Stateside - PinkPantheress & Zara Larsson"
+          },
+          "schema": "public-market-text/v1"
+        }
+      }
+    },
+    {
+      "candidate": {
+        "algorithm": "semantic-discovery/m5i-v1",
+        "definition_links": {
+          "kalshi": "https://external-api.kalshi.com/trade-api/v2/markets/KXMUSKWEALTH-27-1700",
+          "polymarket_us": "https://gateway.polymarket.us/v1/market/slug/pnwpc-elonmusk-by-2026-12-31-hit-1pt2t"
+        },
+        "equivalence_score_bps": 1175,
+        "equivalence_verified": false,
+        "event_key": "KXMUSKWEALTH-27",
+        "hypothetical": false,
+        "kalshi_id": "KXMUSKWEALTH-27-1700",
+        "kalshi_title": "Will Musk have a net worth more than 1700 billion dollars before 2027?",
+        "known_contradictions": [],
+        "liquidity": {
+          "kalshi": {
+            "depth_proxy": null,
+            "quality": "MISSING"
+          },
+          "polymarket_us": {
+            "depth_proxy": null,
+            "quality": "MISSING"
+          }
+        },
+        "match_basis": "EMBEDDING_ASSISTED",
+        "mechanics": {
+          "account_applicability": "UNVERIFIED",
+          "polymarket_us_no": "UNSUPPORTED_SYNTHETIC_SHORT",
+          "research_path": "CASH_FUNDED_LONG_ONLY"
+        },
+        "polymarket_event_key": "[\"what will elon's net worth hit by december 31?\",[\"2026-12-31\"]]",
+        "polymarket_us_id": "pnwpc-elonmusk-by-2026-12-31-hit-1pt2t",
+        "polymarket_us_title": "What Will Elon's Net Worth Hit By December 31?",
+        "prior_reviews": [],
+        "retrieval_reasons": [
+          "KEYWORD_BM25",
+          "PERSISTENT_VECTOR_COSINE"
+        ],
+        "review_reason": "TEXT_SIMILARITY_REQUIRES_PROPOSITION_REVIEW",
+        "review_snapshot_expires_at": "2026-10-30T09:13:34.623724+00:00",
+        "settlement_deadlines": [
+          "2027-01-01T15:00:00+00:00",
+          "2027-01-15T04:00:00+00:00"
+        ],
+        "signals": {
+          "dates": "MATCH",
+          "description_bps": 1562,
+          "embedding": {
+            "cosine": 0.877011136334492,
+            "dimensions": 4096,
+            "identity": "6ad290cf06017f5a5aba88e4f878e7b3320b73c8ac1d8018d376aab00d64cb16",
+            "model": "qwen3-embedding-8b",
+            "versions": [
+              140795,
+              165008
+            ]
+          },
+          "metric": "UNKNOWN",
+          "period": "UNKNOWN",
+          "subject_bps": 2727,
+          "thresholds": "UNKNOWN"
+        },
+        "source_observations": [
+          7722,
+          6691
+        ],
+        "source_received_at": [
+          "2026-10-29T09:40:41.651742+00:00",
+          "2026-10-29T09:13:34.623724+00:00"
+        ],
+        "status": "UNVERIFIED",
+        "trading_authorized": false,
+        "versions": [
+          140795,
+          165008
+        ],
+        "warnings": [
+          "THRESHOLDS_UNKNOWN",
+          "EVENT_TIMES_DIFFER",
+          "CUTOFFS_DIFFER",
+          "SETTLEMENT_DEADLINE_HORIZONS_DIFFER",
+          "EMBEDDING_RETRIEVAL_ONLY_HUMAN_REVIEW_REQUIRED"
+        ]
+      },
+      "assessment": "DIFFERENT_THRESHOLD",
+      "reason": "Kalshi requires more than $1.7 trillion; US requires at least $1.2 trillion.",
+      "reviewer": "assistant",
+      "operator_approved": false,
+      "archived_public_definitions": {
+        "kalshi": {
+          "public_contract": {
+            "close_time": "2027-01-01T15:00:00Z",
+            "rules_primary": "If Elon Musk has a net worth more than $1.7 trillion dollars before Jan 1, 2027, then the market resolves to Yes.",
+            "rules_secondary": "",
+            "title": "Will Musk have a net worth more than 1700 billion dollars before 2027?",
+            "yes_sub_title": "More than $1.7 trillion"
+          },
+          "schema": "public-market-text/v1"
+        },
+        "polymarket_us": {
+          "public_contract": {
+            "description": "This market will settle to Yes if Elon Musk's net worth, according to the Bloomberg Billionaires Index, is greater than or equal to $1.2 trillion at any point between Contract Issuance and December 31, 2026, 11:59 PM ET. Outcome sourced from Bloomberg Billionaires Index.\n\nThe Bloomberg Billionaires Index figures are updated after the close of every trading day in New York.",
+            "endDate": "2027-01-15T04:00:00Z",
+            "question": "What Will Elon's Net Worth Hit By December 31?",
+            "title": "$1.2 Trillion"
+          },
+          "schema": "public-market-text/v1"
+        }
+      }
+    },
+    {
+      "candidate": {
+        "algorithm": "semantic-discovery/m5i-v1",
+        "definition_links": {
+          "kalshi": "https://external-api.kalshi.com/trade-api/v2/markets/KXNEWSCOTUSCONF-29JAN20-2",
+          "polymarket_us": "https://gateway.polymarket.us/v1/market/slug/nphc-scotus-barlag"
+        },
+        "equivalence_score_bps": 1157,
+        "equivalence_verified": false,
+        "event_key": "KXNEWSCOTUSCONF-29JAN20",
+        "hypothetical": false,
+        "kalshi_id": "KXNEWSCOTUSCONF-29JAN20-2",
+        "kalshi_title": "Will the next President confirm 2 Supreme Court justices?",
+        "known_contradictions": [],
+        "liquidity": {
+          "kalshi": {
+            "depth_proxy": null,
+            "quality": "MISSING"
+          },
+          "polymarket_us": {
+            "depth_proxy": null,
+            "quality": "MISSING"
+          }
+        },
+        "match_basis": "EMBEDDING_ASSISTED",
+        "mechanics": {
+          "account_applicability": "UNVERIFIED",
+          "polymarket_us_no": "UNSUPPORTED_SYNTHETIC_SHORT",
+          "research_path": "CASH_FUNDED_LONG_ONLY"
+        },
+        "polymarket_event_key": "[\"next us supreme court justice?\",[\"2029-01-20\"]]",
+        "polymarket_us_id": "nphc-scotus-barlag",
+        "polymarket_us_title": "Next US Supreme Court Justice?",
+        "prior_reviews": [],
+        "retrieval_reasons": [
+          "KEYWORD_BM25",
+          "PERSISTENT_VECTOR_COSINE"
+        ],
+        "review_reason": "TEXT_SIMILARITY_REQUIRES_PROPOSITION_REVIEW",
+        "review_snapshot_expires_at": "2026-10-30T09:17:20.376435+00:00",
+        "settlement_deadlines": [
+          "2029-01-20T15:00:00+00:00",
+          "2029-02-04T04:00:00+00:00"
+        ],
+        "signals": {
+          "dates": "UNKNOWN",
+          "description_bps": 789,
+          "embedding": {
+            "cosine": 0.7786878905606887,
+            "dimensions": 4096,
+            "identity": "6ad290cf06017f5a5aba88e4f878e7b3320b73c8ac1d8018d376aab00d64cb16",
+            "model": "qwen3-embedding-8b",
+            "versions": [
+              163468,
+              177394
+            ]
+          },
+          "metric": "UNKNOWN",
+          "period": "UNKNOWN",
+          "subject_bps": 3000,
+          "thresholds": "UNKNOWN"
+        },
+        "source_observations": [
+          7834,
+          6812
+        ],
+        "source_received_at": [
+          "2026-10-29T09:43:25.389266+00:00",
+          "2026-10-29T09:17:20.376435+00:00"
+        ],
+        "status": "UNVERIFIED",
+        "trading_authorized": false,
+        "versions": [
+          163468,
+          177394
+        ],
+        "warnings": [
+          "DATES_UNKNOWN",
+          "THRESHOLDS_UNKNOWN",
+          "CUTOFFS_DIFFER",
+          "SETTLEMENT_DEADLINE_HORIZONS_DIFFER",
+          "EMBEDDING_RETRIEVAL_ONLY_HUMAN_REVIEW_REQUIRED"
+        ]
+      },
+      "assessment": "DIFFERENT_PROPOSITION",
+      "reason": "Count of confirmations during a presidential term versus Barbara Lagoa becoming the next justice.",
+      "reviewer": "assistant",
+      "operator_approved": false,
+      "archived_public_definitions": {
+        "kalshi": {
+          "public_contract": {
+            "close_time": "2029-01-20T15:00:00Z",
+            "rules_primary": "If 2 Supreme Court Justices are confirmed during the 2025-2029 presidential term, then the market resolves to Yes.",
+            "rules_secondary": "",
+            "title": "Will the next President confirm 2 Supreme Court justices?",
+            "yes_sub_title": "2"
+          },
+          "schema": "public-market-text/v1"
+        },
+        "polymarket_us": {
+          "public_contract": {
+            "description": "This market will settle to Yes if Barbara Lagoa is the next person to formally assume the position of United States Supreme Court Justice between Contract Issuance and January 20, 2029, 11:59 PM ET. Outcome sourced from Barbara Lagoa, the White House, and the United States Senate.\n\nA person will be considered to assume the position of United States Supreme Court Justice when they are appointed to the role by the President and confirmed to the role by the Senate, or appointed to the role via a recess appointment.",
+            "endDate": "2029-02-04T04:00:00Z",
+            "question": "Next US Supreme Court Justice?",
+            "title": "Barbara Lagoa"
+          },
+          "schema": "public-market-text/v1"
+        }
+      }
+    },
+    {
+      "candidate": {
+        "algorithm": "semantic-discovery/m5i-v1",
+        "definition_links": {
+          "kalshi": "https://external-api.kalshi.com/trade-api/v2/markets/KXBTCMAXY-26DEC31-199999.99",
+          "polymarket_us": "https://gateway.polymarket.us/v1/market/slug/cpc-btc-pricerange-yr-12-31-2026-below-20k"
+        },
+        "equivalence_score_bps": 1053,
+        "equivalence_verified": false,
+        "event_key": "KXBTCMAXY-26DEC31",
+        "hypothetical": false,
+        "kalshi_id": "KXBTCMAXY-26DEC31-199999.99",
+        "kalshi_title": "Will Bitcoin be above $199,999.99 by Dec 31, 2026 at 11:59 PM ET?",
+        "known_contradictions": [],
+        "liquidity": {
+          "kalshi": {
+            "depth_proxy": null,
+            "quality": "MISSING"
+          },
+          "polymarket_us": {
+            "depth_proxy": null,
+            "quality": "MISSING"
+          }
+        },
+        "match_basis": "EMBEDDING_ASSISTED",
+        "mechanics": {
+          "account_applicability": "UNVERIFIED",
+          "polymarket_us_no": "UNSUPPORTED_SYNTHETIC_SHORT",
+          "research_path": "CASH_FUNDED_LONG_ONLY"
+        },
+        "polymarket_event_key": "[\"bitcoin price at the end of 2026?\",[\"2027-01-01\"]]",
+        "polymarket_us_id": "cpc-btc-pricerange-yr-12-31-2026-below-20k",
+        "polymarket_us_title": "Bitcoin price at the end of 2026?",
+        "prior_reviews": [],
+        "retrieval_reasons": [
+          "PERSISTENT_VECTOR_COSINE"
+        ],
+        "review_reason": "TEXT_SIMILARITY_REQUIRES_PROPOSITION_REVIEW",
+        "review_snapshot_expires_at": "2026-10-30T09:13:34.623724+00:00",
+        "settlement_deadlines": [
+          "2027-01-31T04:59:00+00:00",
+          "2027-01-15T04:00:00+00:00"
+        ],
+        "signals": {
+          "dates": "UNKNOWN",
+          "description_bps": 2769,
+          "embedding": {
+            "cosine": 0.8754516546545984,
+            "dimensions": 4096,
+            "identity": "6ad290cf06017f5a5aba88e4f878e7b3320b73c8ac1d8018d376aab00d64cb16",
+            "model": "qwen3-embedding-8b",
+            "versions": [
+              161668,
+              257670
+            ]
+          },
+          "metric": "UNKNOWN",
+          "period": "UNKNOWN",
+          "subject_bps": 2000,
+          "thresholds": "UNKNOWN"
+        },
+        "source_observations": [
+          7825,
+          6691
+        ],
+        "source_received_at": [
+          "2026-10-29T09:43:12.654684+00:00",
+          "2026-10-29T09:13:34.623724+00:00"
+        ],
+        "status": "UNVERIFIED",
+        "trading_authorized": false,
+        "versions": [
+          161668,
+          257670
+        ],
+        "warnings": [
+          "DATES_UNKNOWN",
+          "THRESHOLDS_UNKNOWN",
+          "CUTOFFS_DIFFER",
+          "SETTLEMENT_DEADLINE_HORIZONS_DIFFER",
+          "EMBEDDING_RETRIEVAL_ONLY_HUMAN_REVIEW_REQUIRED"
+        ]
+      },
+      "assessment": "DIFFERENT_THRESHOLD_DIRECTION_AND_TIME",
+      "reason": "Bitcoin above $199,999.99 at any point in a window versus at or below $19,999.99 at a specified final time using a trimmed one-minute statistic.",
+      "reviewer": "assistant",
+      "operator_approved": false,
+      "archived_public_definitions": {
+        "kalshi": {
+          "public_contract": {
+            "close_time": "2027-01-01T04:59:00Z",
+            "rules_primary": "If the Bitcoin spot price according to the CF Bitcoin Real-Time Index is above $199999.99 starting 10/01/2025 10:00 AM and before Dec 31, 2026 at 11:59 PM ET, then the market resolves to Yes.",
+            "rules_secondary": "The market resolves based on the CF Bitcoin Real-Time Index (BRTI) using a trimmed mean calculation. The resolution value is calculated by taking all BRTI values for each minute from market issuance until the specified time on the target date, removing the top 20% and bottom 20% of values, then averaging the remaining 60% of values. If the BRTI crosses the threshold at any point during the measurement period (triggering early expiration), the market immediately resolves. If no data is available at the expiration time, the market resolves to No. The market can resolve early if Bitcoin definitively crosses the threshold before the target date and time.",
+            "title": "Will Bitcoin be above $199,999.99 by Dec 31, 2026 at 11:59 PM ET?",
+            "yes_sub_title": "Above $199,999.99"
+          },
+          "schema": "public-market-text/v1"
+        },
+        "polymarket_us": {
+          "public_contract": {
+            "description": "This market will settle to Yes if the price of Bitcoin is 19,999.99 or below at 12:00 AM ET on January 1, 2027. Only one outcome in this market will resolve to Yes.\n\nOutcome sourced from CF Benchmarks' Bitcoin Real-Time Index.\n\nThe market settles based on the CF Bitcoin Real-Time Index (BRTI) using a trimmed mean calculation over the sixty second period ending at 12:00 AM ET on January 1, 2027, excluding the top 20% and bottom 20% of values.",
+            "endDate": "2027-01-15T04:00:00Z",
+            "question": "Bitcoin price at the end of 2026?",
+            "title": "19,999.99 or below"
+          },
+          "schema": "public-market-text/v1"
+        }
+      }
+    }
+  ]
+}

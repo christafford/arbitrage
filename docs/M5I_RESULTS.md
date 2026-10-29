@@ -3,8 +3,9 @@
 **Implementation and bounded validation are complete; production backfill and broad quality acceptance remain partial.** All candidates are `UNVERIFIED`. No real contract, fee, collateral review or trading permission was approved. No order, deposit, credential or public inference endpoint was added. Work stops at M5I.
 
 **Operational follow-up:** the operator subsequently authorized a bounded 24-hour
-collection/backfill run on October 28. It is active; see the separate
-[run record](M5I_RUN_20261028.md) for newer coverage and service status. The
+collection/backfill run on October 28. It stopped on October 29; see the separate
+[post-run findings](M5I_RUN_20261028_RESULTS.md) for coverage, inference failures
+and newly identified contradiction-detection gaps. The
 measurements below remain the original M5I implementation snapshot.
 
 ## Measured coverage and performance
