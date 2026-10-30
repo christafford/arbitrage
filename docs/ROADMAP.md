@@ -258,8 +258,13 @@ and incremental semantic yield remain open. No M6 or trading work is authorized.
 - [x] Operator authorization to use a physically separate sidecar with the new
   exact pin; successful 32-definition startup batch, full tests and bounded
   independent collection/semantic services started with a new fixed deadline.
-- [ ] Finish and inspect this run; complete metadata/vector/retrieval coverage
-  and independently adjudicated discovery quality remain open.
+- [x] Finish and inspect the 12-hour run: two complete collection rounds per
+  venue, 457,661 synchronized heads, 12,880 stored vectors, and 20 freshly
+  checked sports event identities; both expired services are disabled.
+- [ ] Complete remaining vector/query coverage (114,413 eligible vectors pending
+  at shutdown); fix further keyword proposition mismatches, profile retrieval
+  overhead, and independently adjudicate production discovery quality.
 
-See [the new run record](M5I_RUN_20261029.md). The original October 28 run was not
+See [the final audit and 20-event shortlist](M5I_RUN_20261029_RESULTS.md).
+The original October 28 run was not
 extended. No vector mixing, equivalence approval, trading or M6 work is authorized.

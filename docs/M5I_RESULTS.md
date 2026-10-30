@@ -98,3 +98,15 @@ The [12-hour run record](M5I_RUN_20261029.md) documents a successful 32-definiti
 startup batch, incomplete metadata coverage and a fixed October 30 deadline.
 These are startup measurements, not completed backfill or new retrieval-quality
 results. The prior run and evaluation evidence above retain their original scope.
+
+
+## October 30 completed-run audit
+
+The separate-namespace run stopped at its deadline. It stored 12,880 vectors and
+indexed 5,680/117,298 eligible Kalshi definitions and 6,277/9,072 eligible US
+definitions at shutdown; 114,413 remained unindexed. Two full refresh rounds per
+venue completed. Further keyword proposition mismatches and substantial retrieval
+overhead remain; incremental semantic yield is unproven. The
+[final audit includes 20 freshly checked distinct candidate events](M5I_RUN_20261029_RESULTS.md),
+source links, retrieval reasons and settlement-review warnings. All remain
+UNVERIFIED. Expired services are disabled; no further run is active.

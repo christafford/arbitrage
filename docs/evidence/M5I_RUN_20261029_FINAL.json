@@ -1,0 +1,1554 @@
+{
+  "at": "2026-10-30T12:34:02.349366+00:00",
+  "deadline": "2026-10-30T11:20:39.979643+00:00",
+  "at_deadline": {
+    "at": "2026-10-30T11:20:39.979643+00:00",
+    "identity": "8f1b745674ea82993cc5211498d606a86627ecedb6776637daeaf66e42611204",
+    "venues": {
+      "kalshi": {
+        "catalogued": 292199,
+        "excluded": 174901,
+        "eligible": 117298,
+        "backlog": 111618,
+        "indexed": 5680,
+        "source_total": 292199,
+        "unsynced": 0
+      },
+      "polymarket_us": {
+        "catalogued": 165462,
+        "excluded": 156390,
+        "eligible": 9072,
+        "indexed": 6277,
+        "backlog": 2795,
+        "source_total": 165462,
+        "unsynced": 0
+      }
+    },
+    "groups": [
+      {
+        "venue": "kalshi",
+        "category": "UNKNOWN",
+        "settlement_deadline_horizon": "0_7_DAYS",
+        "catalogued": 50409,
+        "excluded": 47059,
+        "eligible": 3350,
+        "backlog": 2975,
+        "indexed": 375
+      },
+      {
+        "venue": "kalshi",
+        "category": "UNKNOWN",
+        "settlement_deadline_horizon": "31_90_DAYS",
+        "catalogued": 26069,
+        "excluded": 904,
+        "eligible": 25165,
+        "backlog": 25077,
+        "indexed": 88
+      },
+      {
+        "venue": "kalshi",
+        "category": "UNKNOWN",
+        "settlement_deadline_horizon": "8_30_DAYS",
+        "catalogued": 23827,
+        "excluded": 6926,
+        "eligible": 16901,
+        "backlog": 15260,
+        "indexed": 1641
+      },
+      {
+        "venue": "kalshi",
+        "category": "UNKNOWN",
+        "settlement_deadline_horizon": "OVER_90_DAYS",
+        "catalogued": 72886,
+        "excluded": 1132,
+        "eligible": 71754,
+        "backlog": 68189,
+        "indexed": 3565
+      },
+      {
+        "venue": "kalshi",
+        "category": "UNKNOWN",
+        "settlement_deadline_horizon": "PAST",
+        "catalogued": 6283,
+        "excluded": 6283
+      },
+      {
+        "venue": "kalshi",
+        "category": "sports",
+        "settlement_deadline_horizon": "0_7_DAYS",
+        "catalogued": 62525,
+        "excluded": 62427,
+        "eligible": 98,
+        "backlog": 87,
+        "indexed": 11
+      },
+      {
+        "venue": "kalshi",
+        "category": "sports",
+        "settlement_deadline_horizon": "31_90_DAYS",
+        "catalogued": 122,
+        "excluded": 122
+      },
+      {
+        "venue": "kalshi",
+        "category": "sports",
+        "settlement_deadline_horizon": "8_30_DAYS",
+        "catalogued": 5781,
+        "excluded": 5751,
+        "eligible": 30,
+        "backlog": 30
+      },
+      {
+        "venue": "kalshi",
+        "category": "sports",
+        "settlement_deadline_horizon": "OVER_90_DAYS",
+        "catalogued": 1,
+        "excluded": 1
+      },
+      {
+        "venue": "kalshi",
+        "category": "sports",
+        "settlement_deadline_horizon": "PAST",
+        "catalogued": 44296,
+        "excluded": 44296
+      },
+      {
+        "venue": "polymarket_us",
+        "category": "climate",
+        "settlement_deadline_horizon": "0_7_DAYS",
+        "catalogued": 123,
+        "excluded": 123
+      },
+      {
+        "venue": "polymarket_us",
+        "category": "climate",
+        "settlement_deadline_horizon": "31_90_DAYS",
+        "catalogued": 1,
+        "excluded": 1
+      },
+      {
+        "venue": "polymarket_us",
+        "category": "climate",
+        "settlement_deadline_horizon": "8_30_DAYS",
+        "catalogued": 31,
+        "excluded": 31
+      },
+      {
+        "venue": "polymarket_us",
+        "category": "climate",
+        "settlement_deadline_horizon": "OVER_90_DAYS",
+        "catalogued": 10,
+        "excluded": 10
+      },
+      {
+        "venue": "polymarket_us",
+        "category": "climate",
+        "settlement_deadline_horizon": "PAST",
+        "catalogued": 252,
+        "excluded": 252
+      },
+      {
+        "venue": "polymarket_us",
+        "category": "crypto",
+        "settlement_deadline_horizon": "0_7_DAYS",
+        "catalogued": 620,
+        "excluded": 620
+      },
+      {
+        "venue": "polymarket_us",
+        "category": "crypto",
+        "settlement_deadline_horizon": "31_90_DAYS",
+        "catalogued": 59,
+        "eligible": 59,
+        "indexed": 40,
+        "backlog": 19
+      },
+      {
+        "venue": "polymarket_us",
+        "category": "crypto",
+        "settlement_deadline_horizon": "PAST",
+        "catalogued": 5537,
+        "excluded": 5537
+      },
+      {
+        "venue": "polymarket_us",
+        "category": "culture",
+        "settlement_deadline_horizon": "31_90_DAYS",
+        "catalogued": 490,
+        "eligible": 455,
+        "indexed": 319,
+        "backlog": 136,
+        "excluded": 35
+      },
+      {
+        "venue": "polymarket_us",
+        "category": "culture",
+        "settlement_deadline_horizon": "8_30_DAYS",
+        "catalogued": 245,
+        "excluded": 121,
+        "eligible": 124,
+        "indexed": 88,
+        "backlog": 36
+      },
+      {
+        "venue": "polymarket_us",
+        "category": "culture",
+        "settlement_deadline_horizon": "OVER_90_DAYS",
+        "catalogued": 1060,
+        "eligible": 1030,
+        "backlog": 350,
+        "indexed": 680,
+        "excluded": 30
+      },
+      {
+        "venue": "polymarket_us",
+        "category": "finance",
+        "settlement_deadline_horizon": "0_7_DAYS",
+        "catalogued": 2,
+        "excluded": 2
+      },
+      {
+        "venue": "polymarket_us",
+        "category": "finance",
+        "settlement_deadline_horizon": "31_90_DAYS",
+        "catalogued": 40,
+        "eligible": 40,
+        "backlog": 16,
+        "indexed": 24
+      },
+      {
+        "venue": "polymarket_us",
+        "category": "finance",
+        "settlement_deadline_horizon": "8_30_DAYS",
+        "catalogued": 17,
+        "eligible": 17,
+        "indexed": 12,
+        "backlog": 5
+      },
+      {
+        "venue": "polymarket_us",
+        "category": "finance",
+        "settlement_deadline_horizon": "OVER_90_DAYS",
+        "catalogued": 9,
+        "eligible": 9,
+        "indexed": 8,
+        "backlog": 1
+      },
+      {
+        "venue": "polymarket_us",
+        "category": "finance",
+        "settlement_deadline_horizon": "PAST",
+        "catalogued": 32,
+        "excluded": 32
+      },
+      {
+        "venue": "polymarket_us",
+        "category": "geopolitics",
+        "settlement_deadline_horizon": "31_90_DAYS",
+        "catalogued": 8,
+        "eligible": 8,
+        "indexed": 7,
+        "backlog": 1
+      },
+      {
+        "venue": "polymarket_us",
+        "category": "geopolitics",
+        "settlement_deadline_horizon": "OVER_90_DAYS",
+        "catalogued": 2,
+        "eligible": 2,
+        "indexed": 1,
+        "backlog": 1
+      },
+      {
+        "venue": "polymarket_us",
+        "category": "macro",
+        "settlement_deadline_horizon": "0_7_DAYS",
+        "catalogued": 51,
+        "excluded": 51
+      },
+      {
+        "venue": "polymarket_us",
+        "category": "macro",
+        "settlement_deadline_horizon": "31_90_DAYS",
+        "catalogued": 91,
+        "eligible": 91,
+        "indexed": 66,
+        "backlog": 25
+      },
+      {
+        "venue": "polymarket_us",
+        "category": "macro",
+        "settlement_deadline_horizon": "8_30_DAYS",
+        "catalogued": 132,
+        "excluded": 44,
+        "eligible": 88,
+        "indexed": 68,
+        "backlog": 20
+      },
+      {
+        "venue": "polymarket_us",
+        "category": "macro",
+        "settlement_deadline_horizon": "OVER_90_DAYS",
+        "catalogued": 34,
+        "eligible": 34,
+        "backlog": 9,
+        "indexed": 25
+      },
+      {
+        "venue": "polymarket_us",
+        "category": "politics",
+        "settlement_deadline_horizon": "0_7_DAYS",
+        "catalogued": 5,
+        "eligible": 5,
+        "backlog": 3,
+        "indexed": 2
+      },
+      {
+        "venue": "polymarket_us",
+        "category": "politics",
+        "settlement_deadline_horizon": "31_90_DAYS",
+        "catalogued": 6327,
+        "eligible": 6319,
+        "backlog": 1953,
+        "indexed": 4366,
+        "excluded": 8
+      },
+      {
+        "venue": "polymarket_us",
+        "category": "politics",
+        "settlement_deadline_horizon": "8_30_DAYS",
+        "catalogued": 289,
+        "eligible": 278,
+        "backlog": 85,
+        "indexed": 193,
+        "excluded": 11
+      },
+      {
+        "venue": "polymarket_us",
+        "category": "politics",
+        "settlement_deadline_horizon": "OVER_90_DAYS",
+        "catalogued": 291,
+        "excluded": 4,
+        "eligible": 287,
+        "indexed": 193,
+        "backlog": 94
+      },
+      {
+        "venue": "polymarket_us",
+        "category": "science",
+        "settlement_deadline_horizon": "31_90_DAYS",
+        "catalogued": 3,
+        "eligible": 3,
+        "backlog": 2,
+        "indexed": 1
+      },
+      {
+        "venue": "polymarket_us",
+        "category": "science",
+        "settlement_deadline_horizon": "OVER_90_DAYS",
+        "catalogued": 7,
+        "eligible": 7,
+        "indexed": 6,
+        "backlog": 1
+      },
+      {
+        "venue": "polymarket_us",
+        "category": "sports",
+        "settlement_deadline_horizon": "0_7_DAYS",
+        "catalogued": 6823,
+        "excluded": 6823
+      },
+      {
+        "venue": "polymarket_us",
+        "category": "sports",
+        "settlement_deadline_horizon": "31_90_DAYS",
+        "catalogued": 5667,
+        "excluded": 5667
+      },
+      {
+        "venue": "polymarket_us",
+        "category": "sports",
+        "settlement_deadline_horizon": "8_30_DAYS",
+        "catalogued": 129808,
+        "excluded": 129668,
+        "eligible": 140,
+        "indexed": 131,
+        "backlog": 9
+      },
+      {
+        "venue": "polymarket_us",
+        "category": "sports",
+        "settlement_deadline_horizon": "OVER_90_DAYS",
+        "catalogued": 4417,
+        "excluded": 4417
+      },
+      {
+        "venue": "polymarket_us",
+        "category": "sports",
+        "settlement_deadline_horizon": "PAST",
+        "catalogued": 2903,
+        "excluded": 2903
+      },
+      {
+        "venue": "polymarket_us",
+        "category": "technology",
+        "settlement_deadline_horizon": "31_90_DAYS",
+        "catalogued": 38,
+        "eligible": 38,
+        "indexed": 25,
+        "backlog": 13
+      },
+      {
+        "venue": "polymarket_us",
+        "category": "technology",
+        "settlement_deadline_horizon": "8_30_DAYS",
+        "catalogued": 33,
+        "eligible": 33,
+        "indexed": 18,
+        "backlog": 15
+      },
+      {
+        "venue": "polymarket_us",
+        "category": "technology",
+        "settlement_deadline_horizon": "OVER_90_DAYS",
+        "catalogued": 5,
+        "eligible": 5,
+        "indexed": 4,
+        "backlog": 1
+      }
+    ],
+    "horizon_note": "Administrative deadline proxy; cash availability and settlement timing remain unverified",
+    "last_full_scan": "2026-10-30T07:07:54.262316+00:00",
+    "collection": {
+      "kalshi": [
+        [
+          34,
+          "COMPLETE"
+        ],
+        [
+          34,
+          "COMPLETE"
+        ]
+      ],
+      "polymarket_us": [
+        [
+          35,
+          "COMPLETE"
+        ],
+        [
+          35,
+          "COMPLETE"
+        ]
+      ]
+    }
+  },
+  "at_audit": {
+    "at": "2026-10-30T12:34:02.349366+00:00",
+    "identity": "8f1b745674ea82993cc5211498d606a86627ecedb6776637daeaf66e42611204",
+    "venues": {
+      "kalshi": {
+        "catalogued": 292199,
+        "excluded": 174943,
+        "eligible": 117256,
+        "backlog": 111578,
+        "indexed": 5678,
+        "source_total": 292199,
+        "unsynced": 0
+      },
+      "polymarket_us": {
+        "catalogued": 165462,
+        "excluded": 156390,
+        "eligible": 9072,
+        "indexed": 6277,
+        "backlog": 2795,
+        "source_total": 165462,
+        "unsynced": 0
+      }
+    },
+    "groups": [
+      {
+        "venue": "kalshi",
+        "category": "UNKNOWN",
+        "settlement_deadline_horizon": "0_7_DAYS",
+        "catalogued": 50385,
+        "excluded": 47040,
+        "eligible": 3345,
+        "backlog": 2970,
+        "indexed": 375
+      },
+      {
+        "venue": "kalshi",
+        "category": "UNKNOWN",
+        "settlement_deadline_horizon": "31_90_DAYS",
+        "catalogued": 26069,
+        "excluded": 904,
+        "eligible": 25165,
+        "backlog": 25077,
+        "indexed": 88
+      },
+      {
+        "venue": "kalshi",
+        "category": "UNKNOWN",
+        "settlement_deadline_horizon": "8_30_DAYS",
+        "catalogued": 23807,
+        "excluded": 6943,
+        "eligible": 16864,
+        "backlog": 15225,
+        "indexed": 1639
+      },
+      {
+        "venue": "kalshi",
+        "category": "UNKNOWN",
+        "settlement_deadline_horizon": "OVER_90_DAYS",
+        "catalogued": 72886,
+        "excluded": 1132,
+        "eligible": 71754,
+        "backlog": 68189,
+        "indexed": 3565
+      },
+      {
+        "venue": "kalshi",
+        "category": "UNKNOWN",
+        "settlement_deadline_horizon": "PAST",
+        "catalogued": 6327,
+        "excluded": 6327
+      },
+      {
+        "venue": "kalshi",
+        "category": "sports",
+        "settlement_deadline_horizon": "0_7_DAYS",
+        "catalogued": 62510,
+        "excluded": 62412,
+        "eligible": 98,
+        "backlog": 87,
+        "indexed": 11
+      },
+      {
+        "venue": "kalshi",
+        "category": "sports",
+        "settlement_deadline_horizon": "31_90_DAYS",
+        "catalogued": 122,
+        "excluded": 122
+      },
+      {
+        "venue": "kalshi",
+        "category": "sports",
+        "settlement_deadline_horizon": "8_30_DAYS",
+        "catalogued": 5767,
+        "excluded": 5737,
+        "eligible": 30,
+        "backlog": 30
+      },
+      {
+        "venue": "kalshi",
+        "category": "sports",
+        "settlement_deadline_horizon": "OVER_90_DAYS",
+        "catalogued": 1,
+        "excluded": 1
+      },
+      {
+        "venue": "kalshi",
+        "category": "sports",
+        "settlement_deadline_horizon": "PAST",
+        "catalogued": 44325,
+        "excluded": 44325
+      },
+      {
+        "venue": "polymarket_us",
+        "category": "climate",
+        "settlement_deadline_horizon": "0_7_DAYS",
+        "catalogued": 111,
+        "excluded": 111
+      },
+      {
+        "venue": "polymarket_us",
+        "category": "climate",
+        "settlement_deadline_horizon": "31_90_DAYS",
+        "catalogued": 1,
+        "excluded": 1
+      },
+      {
+        "venue": "polymarket_us",
+        "category": "climate",
+        "settlement_deadline_horizon": "8_30_DAYS",
+        "catalogued": 31,
+        "excluded": 31
+      },
+      {
+        "venue": "polymarket_us",
+        "category": "climate",
+        "settlement_deadline_horizon": "OVER_90_DAYS",
+        "catalogued": 10,
+        "excluded": 10
+      },
+      {
+        "venue": "polymarket_us",
+        "category": "climate",
+        "settlement_deadline_horizon": "PAST",
+        "catalogued": 264,
+        "excluded": 264
+      },
+      {
+        "venue": "polymarket_us",
+        "category": "crypto",
+        "settlement_deadline_horizon": "0_7_DAYS",
+        "catalogued": 620,
+        "excluded": 620
+      },
+      {
+        "venue": "polymarket_us",
+        "category": "crypto",
+        "settlement_deadline_horizon": "31_90_DAYS",
+        "catalogued": 59,
+        "eligible": 59,
+        "indexed": 40,
+        "backlog": 19
+      },
+      {
+        "venue": "polymarket_us",
+        "category": "crypto",
+        "settlement_deadline_horizon": "PAST",
+        "catalogued": 5537,
+        "excluded": 5537
+      },
+      {
+        "venue": "polymarket_us",
+        "category": "culture",
+        "settlement_deadline_horizon": "31_90_DAYS",
+        "catalogued": 490,
+        "eligible": 455,
+        "indexed": 319,
+        "backlog": 136,
+        "excluded": 35
+      },
+      {
+        "venue": "polymarket_us",
+        "category": "culture",
+        "settlement_deadline_horizon": "8_30_DAYS",
+        "catalogued": 245,
+        "excluded": 121,
+        "eligible": 124,
+        "indexed": 88,
+        "backlog": 36
+      },
+      {
+        "venue": "polymarket_us",
+        "category": "culture",
+        "settlement_deadline_horizon": "OVER_90_DAYS",
+        "catalogued": 1060,
+        "eligible": 1030,
+        "backlog": 350,
+        "indexed": 680,
+        "excluded": 30
+      },
+      {
+        "venue": "polymarket_us",
+        "category": "finance",
+        "settlement_deadline_horizon": "0_7_DAYS",
+        "catalogued": 2,
+        "excluded": 2
+      },
+      {
+        "venue": "polymarket_us",
+        "category": "finance",
+        "settlement_deadline_horizon": "31_90_DAYS",
+        "catalogued": 40,
+        "eligible": 40,
+        "backlog": 16,
+        "indexed": 24
+      },
+      {
+        "venue": "polymarket_us",
+        "category": "finance",
+        "settlement_deadline_horizon": "8_30_DAYS",
+        "catalogued": 17,
+        "eligible": 17,
+        "indexed": 12,
+        "backlog": 5
+      },
+      {
+        "venue": "polymarket_us",
+        "category": "finance",
+        "settlement_deadline_horizon": "OVER_90_DAYS",
+        "catalogued": 9,
+        "eligible": 9,
+        "indexed": 8,
+        "backlog": 1
+      },
+      {
+        "venue": "polymarket_us",
+        "category": "finance",
+        "settlement_deadline_horizon": "PAST",
+        "catalogued": 32,
+        "excluded": 32
+      },
+      {
+        "venue": "polymarket_us",
+        "category": "geopolitics",
+        "settlement_deadline_horizon": "31_90_DAYS",
+        "catalogued": 8,
+        "eligible": 8,
+        "indexed": 7,
+        "backlog": 1
+      },
+      {
+        "venue": "polymarket_us",
+        "category": "geopolitics",
+        "settlement_deadline_horizon": "OVER_90_DAYS",
+        "catalogued": 2,
+        "eligible": 2,
+        "indexed": 1,
+        "backlog": 1
+      },
+      {
+        "venue": "polymarket_us",
+        "category": "macro",
+        "settlement_deadline_horizon": "0_7_DAYS",
+        "catalogued": 51,
+        "excluded": 51
+      },
+      {
+        "venue": "polymarket_us",
+        "category": "macro",
+        "settlement_deadline_horizon": "31_90_DAYS",
+        "catalogued": 91,
+        "eligible": 91,
+        "indexed": 66,
+        "backlog": 25
+      },
+      {
+        "venue": "polymarket_us",
+        "category": "macro",
+        "settlement_deadline_horizon": "8_30_DAYS",
+        "catalogued": 132,
+        "excluded": 44,
+        "eligible": 88,
+        "indexed": 68,
+        "backlog": 20
+      },
+      {
+        "venue": "polymarket_us",
+        "category": "macro",
+        "settlement_deadline_horizon": "OVER_90_DAYS",
+        "catalogued": 34,
+        "eligible": 34,
+        "backlog": 9,
+        "indexed": 25
+      },
+      {
+        "venue": "polymarket_us",
+        "category": "politics",
+        "settlement_deadline_horizon": "0_7_DAYS",
+        "catalogued": 5,
+        "eligible": 5,
+        "backlog": 3,
+        "indexed": 2
+      },
+      {
+        "venue": "polymarket_us",
+        "category": "politics",
+        "settlement_deadline_horizon": "31_90_DAYS",
+        "catalogued": 6327,
+        "eligible": 6319,
+        "backlog": 1953,
+        "indexed": 4366,
+        "excluded": 8
+      },
+      {
+        "venue": "polymarket_us",
+        "category": "politics",
+        "settlement_deadline_horizon": "8_30_DAYS",
+        "catalogued": 289,
+        "eligible": 278,
+        "backlog": 85,
+        "indexed": 193,
+        "excluded": 11
+      },
+      {
+        "venue": "polymarket_us",
+        "category": "politics",
+        "settlement_deadline_horizon": "OVER_90_DAYS",
+        "catalogued": 291,
+        "excluded": 4,
+        "eligible": 287,
+        "indexed": 193,
+        "backlog": 94
+      },
+      {
+        "venue": "polymarket_us",
+        "category": "science",
+        "settlement_deadline_horizon": "31_90_DAYS",
+        "catalogued": 3,
+        "eligible": 3,
+        "backlog": 2,
+        "indexed": 1
+      },
+      {
+        "venue": "polymarket_us",
+        "category": "science",
+        "settlement_deadline_horizon": "OVER_90_DAYS",
+        "catalogued": 7,
+        "eligible": 7,
+        "indexed": 6,
+        "backlog": 1
+      },
+      {
+        "venue": "polymarket_us",
+        "category": "sports",
+        "settlement_deadline_horizon": "0_7_DAYS",
+        "catalogued": 6672,
+        "excluded": 6672
+      },
+      {
+        "venue": "polymarket_us",
+        "category": "sports",
+        "settlement_deadline_horizon": "31_90_DAYS",
+        "catalogued": 5667,
+        "excluded": 5667
+      },
+      {
+        "venue": "polymarket_us",
+        "category": "sports",
+        "settlement_deadline_horizon": "8_30_DAYS",
+        "catalogued": 129808,
+        "excluded": 129668,
+        "eligible": 140,
+        "indexed": 131,
+        "backlog": 9
+      },
+      {
+        "venue": "polymarket_us",
+        "category": "sports",
+        "settlement_deadline_horizon": "OVER_90_DAYS",
+        "catalogued": 4417,
+        "excluded": 4417
+      },
+      {
+        "venue": "polymarket_us",
+        "category": "sports",
+        "settlement_deadline_horizon": "PAST",
+        "catalogued": 3054,
+        "excluded": 3054
+      },
+      {
+        "venue": "polymarket_us",
+        "category": "technology",
+        "settlement_deadline_horizon": "31_90_DAYS",
+        "catalogued": 38,
+        "eligible": 38,
+        "indexed": 25,
+        "backlog": 13
+      },
+      {
+        "venue": "polymarket_us",
+        "category": "technology",
+        "settlement_deadline_horizon": "8_30_DAYS",
+        "catalogued": 33,
+        "eligible": 33,
+        "indexed": 18,
+        "backlog": 15
+      },
+      {
+        "venue": "polymarket_us",
+        "category": "technology",
+        "settlement_deadline_horizon": "OVER_90_DAYS",
+        "catalogued": 5,
+        "eligible": 5,
+        "indexed": 4,
+        "backlog": 1
+      }
+    ],
+    "horizon_note": "Administrative deadline proxy; cash availability and settlement timing remain unverified",
+    "last_full_scan": "2026-10-30T07:07:54.262316+00:00",
+    "collection": {
+      "kalshi": [
+        [
+          34,
+          "COMPLETE"
+        ],
+        [
+          34,
+          "COMPLETE"
+        ]
+      ],
+      "polymarket_us": [
+        [
+          35,
+          "COMPLETE"
+        ],
+        [
+          35,
+          "COMPLETE"
+        ]
+      ]
+    }
+  },
+  "vector_counts": [
+    {
+      "identity": "8f1b745674ea82993cc5211498d606a86627ecedb6776637daeaf66e42611204",
+      "vectors": 12880
+    }
+  ],
+  "collection_runs": [
+    {
+      "id": 32,
+      "venue": "kalshi",
+      "status": "COMPLETE",
+      "started_at": "2026-10-29T23:20:52.141776+00:00",
+      "finished_at": "2026-10-30T00:03:33.775428+00:00",
+      "pages": 838,
+      "records": 167478,
+      "unique_records": 167478,
+      "duplicates": 0
+    },
+    {
+      "id": 33,
+      "venue": "polymarket_us",
+      "status": "COMPLETE",
+      "started_at": "2026-10-29T23:21:43.704796+00:00",
+      "finished_at": "2026-10-29T23:53:18.295120+00:00",
+      "pages": 410,
+      "records": 81760,
+      "unique_records": 81754,
+      "duplicates": 6
+    },
+    {
+      "id": 34,
+      "venue": "kalshi",
+      "status": "COMPLETE",
+      "started_at": "2026-10-30T06:03:34.002709+00:00",
+      "finished_at": "2026-10-30T06:38:00.792823+00:00",
+      "pages": 819,
+      "records": 163688,
+      "unique_records": 163688,
+      "duplicates": 0
+    },
+    {
+      "id": 35,
+      "venue": "polymarket_us",
+      "status": "COMPLETE",
+      "started_at": "2026-10-30T06:04:19.341901+00:00",
+      "finished_at": "2026-10-30T06:27:46.127334+00:00",
+      "pages": 399,
+      "records": 79466,
+      "unique_records": 79464,
+      "duplicates": 2
+    }
+  ],
+  "last_inference_observation": [
+    {
+      "id": 943,
+      "ts_utc": "2026-10-30T11:19:20.546028+00:00",
+      "http_status": 200,
+      "validation_status": "VALID"
+    }
+  ],
+  "files": {
+    "/home/chris/code/arbitrage/data/research.sqlite3": {
+      "bytes": 20876570624
+    },
+    "/home/chris/code/arbitrage/data/m5i/qwen-8f1b.semantic.sqlite3": {
+      "bytes": 6044250112
+    },
+    "/home/chris/code/arbitrage/data/m5i/index.sqlite3": {
+      "bytes": 10613997568
+    }
+  },
+  "free_bytes": 866331709440,
+  "old_index_size_mtime_unchanged": true,
+  "old_run_config_hash_unchanged": true,
+  "workers": {
+    "reports": 34,
+    "statuses": {
+      "READY": 33,
+      "FALLBACK": 1
+    },
+    "completed": {
+      "kalshi": 6560,
+      "polymarket_us": 6288
+    },
+    "worker_seconds": 20811.479255363025,
+    "texts_per_worker_second": 0.6173515991992318,
+    "http_attempts": 948,
+    "fallbacks": [
+      {
+        "cache_hits": 0,
+        "completed": {
+          "kalshi": 80,
+          "polymarket_us": 80
+        },
+        "dimensions": 4096,
+        "elapsed_seconds": 486.41583151798113,
+        "identity": "8f1b745674ea82993cc5211498d606a86627ecedb6776637daeaf66e42611204",
+        "model": "qwen3-embedding-8b",
+        "reason": "SERVICE_UNREACHABLE",
+        "requests": 17,
+        "status": "FALLBACK",
+        "stop_reason": "PER_VENUE_BUDGET_OR_EMPTY",
+        "texts_per_second": 0.32893666207508165
+      }
+    ],
+    "identity_counts": {
+      "8f1b745674ea82993cc5211498d606a86627ecedb6776637daeaf66e42611204": 34
+    },
+    "scope": "Completed background reports only. Includes probe/local work, excludes 32-definition startup batch; not isolated GPU throughput."
+  },
+  "retrieval": {
+    "reports": 33,
+    "query_executions": 8250,
+    "completed_generic_windows": 0,
+    "last_at": "2026-10-30T10:56:38.146227+00:00",
+    "last_diagnostics": {
+      "approximate": true,
+      "bucket_saturations": 125,
+      "candidate_cap": 256,
+      "deterministic_enabled": true,
+      "identity": "8f1b745674ea82993cc5211498d606a86627ecedb6776637daeaf66e42611204",
+      "model": "qwen3-embedding-8b",
+      "queries": 250,
+      "vector_failures": 0,
+      "window_complete": false
+    },
+    "queue_count": 100,
+    "match_basis": {
+      "SPORTS_EVENT_IDENTITY": 64,
+      "TEXT_HEURISTIC": 36
+    },
+    "vector_supported_candidates": 0,
+    "quality_claim": "No new independently adjudicated quality/recall estimate or incremental semantic discovery yield established."
+  },
+  "command_seconds": {
+    "catalogue-walk": 4627.967962872819,
+    "index-sync": 5027.805748459796,
+    "index-coverage": 1496.5264550230058,
+    "index-work": 20823.68295490599,
+    "index-retrieve": 12970.349715131015
+  },
+  "command_counts": {
+    "catalogue-walk": 124,
+    "index-sync": 140,
+    "index-coverage": 35,
+    "index-work": 34,
+    "index-retrieve": 33
+  },
+  "supervisor_issues": [
+    {
+      "at": "2026-10-30T11:20:40.244318+00:00",
+      "mode": "semantic",
+      "state": "RETRY",
+      "ends_at": "2026-10-30T11:20:39.979643+00:00",
+      "reason": "Command '['/home/chris/code/arbitrage/.venv/bin/python', '-m', 'predarb.cli', 'discovery', 'index-retrieve', '--db', '/home/chris/code/arbitrage/data/research.sqlite3', '--min-free-mb', '5120', '--index-db', '/home/chris/code/arbitrage/data/m5i/qwen-8f1b.semantic.sqlite3', '--query-budget', '250', '--limit', '100']' timed out after 47.90735173225403 seconds",
+      "failures": 1
+    }
+  ],
+  "status_files": {
+    "collection": {
+      "at": "2026-10-30T11:20:39.979938+00:00",
+      "mode": "collection",
+      "state": "STOPPED",
+      "ends_at": "2026-10-30T11:20:39.979643+00:00",
+      "reason": "deadline reached"
+    },
+    "semantic": {
+      "at": "2026-10-30T11:20:40.245442+00:00",
+      "mode": "semantic",
+      "state": "STOPPED",
+      "ends_at": "2026-10-30T11:20:39.979643+00:00",
+      "reason": "deadline reached"
+    }
+  },
+  "units_after_audit": "Result=success\nExecMainStatus=0\nId=predarb-m5i-collection-20261029-newnamespace.service\nActiveState=inactive\nUnitFileState=disabled\n\nResult=success\nExecMainStatus=0\nId=predarb-m5i-semantic-20261029-newnamespace.service\nActiveState=inactive\nUnitFileState=disabled\n",
+  "tests": {
+    "command": ".venv/bin/python -m unittest discover -s tests -v",
+    "count": 387,
+    "seconds": 17.204,
+    "result": "PASS"
+  },
+  "review_concerns": {
+    "labels": "Assistant observations only; not operator adjudication or legal equivalence decisions",
+    "cases": [
+      {
+        "candidate": {
+          "algorithm": "semantic-discovery/m5i-v1",
+          "definition_links": {
+            "kalshi": "https://external-api.kalshi.com/trade-api/v2/markets/KXFEDDECISION-26DEC-H26",
+            "polymarket_us": "https://gateway.polymarket.us/v1/market/slug/rdc-usfed-fomc-2026-12-09-nochng"
+          },
+          "equivalence_score_bps": 2555,
+          "equivalence_verified": false,
+          "event_key": "KXFEDDECISION-26DEC",
+          "hypothetical": false,
+          "kalshi_id": "KXFEDDECISION-26DEC-H26",
+          "kalshi_title": "Will the Federal Reserve Hike rates by >25bps at their December 2026 meeting?",
+          "known_contradictions": [],
+          "liquidity": {
+            "kalshi": {
+              "quality": "MISSING",
+              "depth_proxy": null
+            },
+            "polymarket_us": {
+              "quality": "MISSING",
+              "depth_proxy": null
+            }
+          },
+          "match_basis": "TEXT_HEURISTIC",
+          "mechanics": {
+            "account_applicability": "UNVERIFIED",
+            "polymarket_us_no": "UNSUPPORTED_SYNTHETIC_SHORT",
+            "research_path": "CASH_FUNDED_LONG_ONLY"
+          },
+          "polymarket_event_key": "[\"federal reserve decision in december\",[]]",
+          "polymarket_us_id": "rdc-usfed-fomc-2026-12-09-nochng",
+          "polymarket_us_title": "Fed Decision in December",
+          "prior_reviews": [],
+          "retrieval_reasons": [
+            "KEYWORD_BM25"
+          ],
+          "review_reason": "TEXT_SIMILARITY_REQUIRES_PROPOSITION_REVIEW",
+          "review_snapshot_expires_at": "2026-10-31T06:08:57.712287+00:00",
+          "settlement_deadlines": [
+            "2027-03-10T19:01:00+00:00",
+            "2026-12-24T04:00:00+00:00"
+          ],
+          "signals": {
+            "dates": "MATCH",
+            "description_bps": 1525,
+            "metric": "UNKNOWN",
+            "period": "UNKNOWN",
+            "proposition_guard": {
+              "left": {
+                "version": "proposition-guards/m5i-v1",
+                "thresholds": [
+                  [
+                    ">",
+                    "25",
+                    "bps"
+                  ]
+                ],
+                "observation_window": null,
+                "proposition_type": null,
+                "rounding": null
+              },
+              "right": {
+                "version": "proposition-guards/m5i-v1",
+                "thresholds": [],
+                "observation_window": null,
+                "proposition_type": null,
+                "rounding": "DISPLAYED_BUCKETS"
+              }
+            },
+            "subject_bps": 2500,
+            "thresholds": "UNKNOWN"
+          },
+          "source_observations": [
+            10291,
+            9234
+          ],
+          "source_received_at": [
+            "2026-10-30T06:37:47.885822+00:00",
+            "2026-10-30T06:08:57.712287+00:00"
+          ],
+          "status": "UNVERIFIED",
+          "trading_authorized": false,
+          "versions": [
+            161693,
+            177922
+          ],
+          "warnings": [
+            "CUTOFFS_DIFFER",
+            "PROPOSITION_THRESHOLD_UNKNOWN",
+            "ROUNDING_UNKNOWN",
+            "SETTLEMENT_DEADLINE_HORIZONS_DIFFER",
+            "THRESHOLDS_UNKNOWN"
+          ]
+        },
+        "definitions": [
+          {
+            "venue": "kalshi",
+            "source_id": "KXFEDDECISION-26DEC-H26",
+            "version_id": 161693,
+            "observation_id": 10291,
+            "observed_at": "2026-10-30T06:37:47.885822+00:00",
+            "public_fields": {
+              "title": "Will the Federal Reserve Hike rates by >25bps at their December 2026 meeting?",
+              "yes_sub_title": "Hike >25bps",
+              "rules_primary": "If the Federal Reserve does a Hike of   25bps on December 09, 2026, then the market resolves to Yes.",
+              "rules_secondary": "The outcomes are mutually exclusive: at most one can resolve to Yes. For example, a 50-basis-point hike resolves \u201cHike   25 bps\u201d to Yes and \u201cHike 25 bps\u201d to No.\n\nIf the scheduled FOMC meeting is canceled and does not occur on its scheduled date, \u201cFed maintains rate\u201d resolves to Yes and all other outcomes resolve to No."
+            }
+          },
+          {
+            "venue": "polymarket_us",
+            "source_id": "rdc-usfed-fomc-2026-12-09-nochng",
+            "version_id": 177922,
+            "observation_id": 9234,
+            "observed_at": "2026-10-30T06:08:57.712287+00:00",
+            "public_fields": {
+              "title": "No Change",
+              "question": "Fed Decision in December",
+              "description": "This market will settle to Yes if the Federal Reserve does not change the upper bound of the target federal funds rate at the December 2026 Federal Open Market Committee (FOMC) meeting, currently scheduled for December 8-9. Outcome sourced from the Federal Reserve.\n\nIf the change in the specified rate does not precisely match the displayed options, changes smaller than the smallest option of the same direction (increase/decrease) will be rounded to that smallest option, and changes greater than the smallest option of the same direction will be rounded to the nearest displayed option, with values exactly halfway between options being rounded away from zero."
+            }
+          }
+        ]
+      },
+      {
+        "candidate": {
+          "algorithm": "semantic-discovery/m5i-v1",
+          "definition_links": {
+            "kalshi": "https://external-api.kalshi.com/trade-api/v2/markets/KXSTATELEG-NCSEN26-D",
+            "polymarket_us": "https://gateway.polymarket.us/v1/market/slug/ewc-usse-nc-2026-11-03-dem"
+          },
+          "equivalence_score_bps": 1727,
+          "equivalence_verified": false,
+          "event_key": "KXSTATELEG-NCSEN26",
+          "hypothetical": false,
+          "kalshi_id": "KXSTATELEG-NCSEN26-D",
+          "kalshi_title": "Who will win the North Carolina State Senate?",
+          "known_contradictions": [],
+          "liquidity": {
+            "kalshi": {
+              "quality": "MISSING",
+              "depth_proxy": null
+            },
+            "polymarket_us": {
+              "quality": "MISSING",
+              "depth_proxy": null
+            }
+          },
+          "match_basis": "TEXT_HEURISTIC",
+          "mechanics": {
+            "account_applicability": "UNVERIFIED",
+            "polymarket_us_no": "UNSUPPORTED_SYNTHETIC_SHORT",
+            "research_path": "CASH_FUNDED_LONG_ONLY"
+          },
+          "polymarket_event_key": "[\"north carolina senate election winner\",[]]",
+          "polymarket_us_id": "ewc-usse-nc-2026-11-03-dem",
+          "polymarket_us_title": "North Carolina Senate Election Winner",
+          "prior_reviews": [],
+          "retrieval_reasons": [
+            "KEYWORD_BM25"
+          ],
+          "review_reason": "TEXT_SIMILARITY_REQUIRES_PROPOSITION_REVIEW",
+          "review_snapshot_expires_at": "2026-10-31T06:04:21.339436+00:00",
+          "settlement_deadlines": [
+            "2027-01-27T15:00:00+00:00",
+            "2027-01-15T00:00:00+00:00"
+          ],
+          "signals": {
+            "dates": "UNKNOWN",
+            "description_bps": 1764,
+            "metric": "UNKNOWN",
+            "period": "UNKNOWN",
+            "proposition_guard": {
+              "left": {
+                "version": "proposition-guards/m5i-v1",
+                "thresholds": [],
+                "observation_window": null,
+                "proposition_type": null,
+                "rounding": null
+              },
+              "right": {
+                "version": "proposition-guards/m5i-v1",
+                "thresholds": [],
+                "observation_window": null,
+                "proposition_type": null,
+                "rounding": null
+              }
+            },
+            "subject_bps": 3750,
+            "thresholds": "UNKNOWN"
+          },
+          "source_observations": [
+            10254,
+            9104
+          ],
+          "source_received_at": [
+            "2026-10-30T06:36:54.993146+00:00",
+            "2026-10-30T06:04:21.339436+00:00"
+          ],
+          "status": "UNVERIFIED",
+          "trading_authorized": false,
+          "versions": [
+            154253,
+            257269
+          ],
+          "warnings": [
+            "CUTOFFS_DIFFER",
+            "DATES_UNKNOWN",
+            "SETTLEMENT_DEADLINE_HORIZONS_DIFFER",
+            "THRESHOLDS_UNKNOWN"
+          ]
+        },
+        "definitions": [
+          {
+            "venue": "kalshi",
+            "source_id": "KXSTATELEG-NCSEN26-D",
+            "version_id": 154253,
+            "observation_id": 10254,
+            "observed_at": "2026-10-30T06:36:54.993146+00:00",
+            "public_fields": {
+              "title": "Who will win the North Carolina State Senate?",
+              "yes_sub_title": "Democratic party",
+              "rules_primary": "If the Democratic party wins the North Carolina State Senate in 2026, then the market resolves to Yes.",
+              "rules_secondary": "Winning is defined as holding more seats than any other party two weeks after the State Senate is sat for the session following the election. If both parties are tied, then the market resolves to No. This market is also eligible for accelerated determination after a consensus of media organizations project the winner. See full rules for details."
+            }
+          },
+          {
+            "venue": "polymarket_us",
+            "source_id": "ewc-usse-nc-2026-11-03-dem",
+            "version_id": 257269,
+            "observation_id": 9104,
+            "observed_at": "2026-10-30T06:04:21.339436+00:00",
+            "public_fields": {
+              "title": "Roy Cooper (D)",
+              "question": "North Carolina Senate Election Winner",
+              "description": "This market will settle to Yes if the Democratic Party nominee wins the 2026 midterm election for US Senator from North Carolina. Outcome sourced from relevant government authorities.\n\nThe determination of the winner includes any runoff, tiebreak, or other relevant procedure under the applicable rules of the relevant jurisdiction.\n"
+            }
+          }
+        ]
+      },
+      {
+        "candidate": {
+          "algorithm": "semantic-discovery/m5i-v1",
+          "definition_links": {
+            "kalshi": "https://external-api.kalshi.com/trade-api/v2/markets/KXNEWROLEX-27JAN-ELON",
+            "polymarket_us": "https://gateway.polymarket.us/v1/market/slug/apdc-elonmusk-tsla-ceo-2026-12-31"
+          },
+          "equivalence_score_bps": 1256,
+          "equivalence_verified": false,
+          "event_key": "KXNEWROLEX-27JAN",
+          "hypothetical": false,
+          "kalshi_id": "KXNEWROLEX-27JAN-ELON",
+          "kalshi_title": "Who will be the next CEO of X?",
+          "known_contradictions": [],
+          "liquidity": {
+            "kalshi": {
+              "quality": "MISSING",
+              "depth_proxy": null
+            },
+            "polymarket_us": {
+              "quality": "MISSING",
+              "depth_proxy": null
+            }
+          },
+          "match_basis": "TEXT_HEURISTIC",
+          "mechanics": {
+            "account_applicability": "UNVERIFIED",
+            "polymarket_us_no": "UNSUPPORTED_SYNTHETIC_SHORT",
+            "research_path": "CASH_FUNDED_LONG_ONLY"
+          },
+          "polymarket_event_key": "[\"elon musk announced out as tesla ceo?\",[\"2026-12-31\"]]",
+          "polymarket_us_id": "apdc-elonmusk-tsla-ceo-2026-12-31",
+          "polymarket_us_title": "Elon Musk Announced Out As Tesla CEO?",
+          "prior_reviews": [],
+          "retrieval_reasons": [
+            "KEYWORD_BM25"
+          ],
+          "review_reason": "TEXT_SIMILARITY_REQUIRES_PROPOSITION_REVIEW",
+          "review_snapshot_expires_at": "2026-10-31T06:04:34.915127+00:00",
+          "settlement_deadlines": [
+            "2027-01-01T15:00:00+00:00",
+            "2027-01-15T04:00:00+00:00"
+          ],
+          "signals": {
+            "dates": "UNKNOWN",
+            "description_bps": 454,
+            "metric": "UNKNOWN",
+            "period": "UNKNOWN",
+            "proposition_guard": {
+              "left": {
+                "version": "proposition-guards/m5i-v1",
+                "thresholds": [],
+                "observation_window": null,
+                "proposition_type": null,
+                "rounding": null
+              },
+              "right": {
+                "version": "proposition-guards/m5i-v1",
+                "thresholds": [],
+                "observation_window": null,
+                "proposition_type": null,
+                "rounding": null
+              }
+            },
+            "subject_bps": 3333,
+            "thresholds": "UNKNOWN"
+          },
+          "source_observations": [
+            10281,
+            9110
+          ],
+          "source_received_at": [
+            "2026-10-30T06:37:33.705521+00:00",
+            "2026-10-30T06:04:34.915127+00:00"
+          ],
+          "status": "UNVERIFIED",
+          "trading_authorized": false,
+          "versions": [
+            159553,
+            164996
+          ],
+          "warnings": [
+            "CUTOFFS_DIFFER",
+            "DATES_UNKNOWN",
+            "SETTLEMENT_DEADLINE_HORIZONS_DIFFER",
+            "THRESHOLDS_UNKNOWN"
+          ]
+        },
+        "definitions": [
+          {
+            "venue": "kalshi",
+            "source_id": "KXNEWROLEX-27JAN-ELON",
+            "version_id": 159553,
+            "observation_id": 10281,
+            "observed_at": "2026-10-30T06:37:33.705521+00:00",
+            "public_fields": {
+              "title": "Who will be the next CEO of X?",
+              "yes_sub_title": "Elon Musk",
+              "rules_primary": "If Elon Musk is confirmed as CEO for X before Jan 1, 2027, then the market resolves to Yes.",
+              "rules_secondary": "Important information: An acting or interim CEO role, including from Elon Musk, would not satisfy the payout criterion. It must be a full-time CEO position."
+            }
+          },
+          {
+            "venue": "polymarket_us",
+            "source_id": "apdc-elonmusk-tsla-ceo-2026-12-31",
+            "version_id": 164996,
+            "observation_id": 9110,
+            "observed_at": "2026-10-30T06:04:34.915127+00:00",
+            "public_fields": {
+              "title": "By December 31, 2026",
+              "question": "Elon Musk Announced Out As Tesla CEO?",
+              "description": "This market will settle to Yes if Elon Musks departure as CEO of Tesla is officially announced by December 31, 2026, 11:59 PM ET. Outcome sourced from Elon Musk and Tesla.\n\nThe departure will be considered to be announced when Elon Musk, Tesla, or their authorized representatives publicly and definitively announce that Elon Musk has ceased or will cease to hold the position of CEO of Tesla. Such an announcement will qualify regardless of when the specified person formally leaves the position. Announcements of the specified persons resignation, removal, or departure through other means all qualify.\n\nThe following do not qualify as public and definitive announcements: statements that the specified person is considering or open to departing; conditional statements that the specified person will depart only if specified conditions are met; the announcement of an offer of resignation that requires acceptance and remains pending or has been refused; media reports that the specified person plans to depart; statements made in sarcasm or jest; and statements by persons other than the specified person, the relevant authority governing the specified position, or their respective authorized representatives.\n\nOnly announcements which are framed as announcing a departure intended to be effective within 18 months of the date of the announcement will qualify (e.g., neither I will leave office in 2 years, nor I will not be in office forever, would qualify).\n\nAnnouncements of temporary leaves of absence, dated suspensions, indefinite suspensions, administrative leaves, or other temporary changes to the specified persons duties in the specified position do not qualify.\n\nIf the specified person holds the specified position on a predefined term with a scheduled end date, only announcements that they will depart the position prior to the scheduled end of their term qualify.\n\nIf the specified person formally ceases to hold the specified position before the end of their scheduled term without a qualifying announcement, the market will settle to Yes if major news agencies of record confirm the departure by December 31, 2026, 11:59 PM ET."
+            }
+          }
+        ]
+      },
+      {
+        "candidate": {
+          "algorithm": "semantic-discovery/m5i-v1",
+          "definition_links": {
+            "kalshi": "https://external-api.kalshi.com/trade-api/v2/markets/KXTOPSONGRUNNERUPUSA-26-DIE",
+            "polymarket_us": "https://gateway.polymarket.us/v1/market/slug/ccrc-sptfy-n1-song-us-yr-2026-diewit"
+          },
+          "equivalence_score_bps": 844,
+          "equivalence_verified": false,
+          "event_key": "KXTOPSONGRUNNERUPUSA-26",
+          "hypothetical": false,
+          "kalshi_id": "KXTOPSONGRUNNERUPUSA-26-DIE",
+          "kalshi_title": "Will Die With A Smile be the #2 most streamed Song on the  2026 Spotify Wrapped Top 10 Songs USA chart on the date that the chart is released for 2026?",
+          "known_contradictions": [],
+          "liquidity": {
+            "kalshi": {
+              "quality": "MISSING",
+              "depth_proxy": null
+            },
+            "polymarket_us": {
+              "quality": "MISSING",
+              "depth_proxy": null
+            }
+          },
+          "match_basis": "TEXT_HEURISTIC",
+          "mechanics": {
+            "account_applicability": "UNVERIFIED",
+            "polymarket_us_no": "UNSUPPORTED_SYNTHETIC_SHORT",
+            "research_path": "CASH_FUNDED_LONG_ONLY"
+          },
+          "polymarket_event_key": "[\"top song in the us 2026?\",[\"2025-12-03\"]]",
+          "polymarket_us_id": "ccrc-sptfy-n1-song-us-yr-2026-diewit",
+          "polymarket_us_title": "Top Song in the US 2026?",
+          "prior_reviews": [],
+          "retrieval_reasons": [
+            "KEYWORD_BM25"
+          ],
+          "review_reason": "TEXT_SIMILARITY_REQUIRES_PROPOSITION_REVIEW",
+          "review_snapshot_expires_at": "2026-10-31T06:04:34.915127+00:00",
+          "settlement_deadlines": [
+            "2027-01-07T15:00:00+00:00",
+            "2026-12-17T04:00:00+00:00"
+          ],
+          "signals": {
+            "dates": "UNKNOWN",
+            "description_bps": 3783,
+            "metric": "UNKNOWN",
+            "period": "UNKNOWN",
+            "proposition_guard": {
+              "left": {
+                "version": "proposition-guards/m5i-v1",
+                "thresholds": [],
+                "observation_window": null,
+                "proposition_type": null,
+                "rounding": null
+              },
+              "right": {
+                "version": "proposition-guards/m5i-v1",
+                "thresholds": [],
+                "observation_window": null,
+                "proposition_type": null,
+                "rounding": null
+              }
+            },
+            "subject_bps": 1176,
+            "thresholds": "UNKNOWN"
+          },
+          "source_observations": [
+            10287,
+            9110
+          ],
+          "source_received_at": [
+            "2026-10-30T06:37:42.203912+00:00",
+            "2026-10-30T06:04:34.915127+00:00"
+          ],
+          "status": "UNVERIFIED",
+          "trading_authorized": false,
+          "versions": [
+            160809,
+            165019
+          ],
+          "warnings": [
+            "CUTOFFS_DIFFER",
+            "DATES_UNKNOWN",
+            "SETTLEMENT_DEADLINE_HORIZONS_DIFFER",
+            "THRESHOLDS_UNKNOWN"
+          ]
+        },
+        "definitions": [
+          {
+            "venue": "kalshi",
+            "source_id": "KXTOPSONGRUNNERUPUSA-26-DIE",
+            "version_id": 160809,
+            "observation_id": 10287,
+            "observed_at": "2026-10-30T06:37:42.203912+00:00",
+            "public_fields": {
+              "title": "Will Die With A Smile be the #2 most streamed Song on the  2026 Spotify Wrapped Top 10 Songs USA chart on the date that the chart is released for 2026?",
+              "yes_sub_title": "Die With A Smile",
+              "rules_primary": "If Die With A Smile is the #2  most streamed Song on Spotify's 2026 Spotify Wrapped Top 10 Songs USA chart on the date that the chart is released for 2026, then the market resolves to Yes.",
+              "rules_secondary": "This market and these products have not been endorsed by Spotify. Any references to Spotify, Spotify charts, streaming data, or any associated marks are descriptive only and do not indicate an endorsement of this product or any affiliation between Spotify and Kalshi."
+            }
+          },
+          {
+            "venue": "polymarket_us",
+            "source_id": "ccrc-sptfy-n1-song-us-yr-2026-diewit",
+            "version_id": 165019,
+            "observation_id": 9110,
+            "observed_at": "2026-10-30T06:04:34.915127+00:00",
+            "public_fields": {
+              "title": "Die With A Smile - Lady Gaga & Bruno Mars",
+              "question": "Top Song in the US 2026?",
+              "description": "This market will settle to Yes if Die With A Smile - Lady Gaga & Bruno Mars is ranked the top song in the US on Spotify in 2026. Outcome verified by Spotify.\n\nThe relevant ranking is the 2026 edition of the Spotify Top Songs in the US ranking released as part of the annual Spotify Wrapped campaign (see past edition: https://newsroom.spotify.com/2025-12-03/wrapped-top-artists-songs-albums-podcasts-audiobooks/). This ranking will be used for resolution even if it is released before the end of calendar year 2026.\n\nNote: This market and these products have not been endorsed by Spotify. Any references to Spotify, Spotify charts, streaming data, or any associated marks are descriptive only and do not indicate an endorsement of this product or any affiliation between Spotify and Polymarket. Spotify and related marks are the property of Spotify AB and its group companies."
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "revalidated_queue_count": 89,
+  "live_review": {
+    "evidence": "docs/evidence/M5I_RUN_20261029_LIVE_REVIEW.json",
+    "archive": "data/m5i/run-20261029-newnamespace/final/live-review.sqlite3",
+    "events": 20,
+    "ordinary_identities_confirmed": 20,
+    "raw_responses": 60,
+    "equivalence_approved": false,
+    "first_capture": "2026-10-30T12:35:25.546278+00:00",
+    "last_capture": "2026-10-30T12:36:03.543008+00:00"
+  }
+}

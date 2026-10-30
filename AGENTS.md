@@ -63,5 +63,8 @@ Every added path has tests (success, missing fields, stale data, invalid prices,
   and `data/m5i/run-20261029-newnamespace/config.json`; its fixed deadline is
   October 30 11:20:39 UTC (07:20:39 EDT). The original sidecar, namespace and
   expired run configuration remain preserved. Do not mix or relabel vectors.
-  Inspect `docs/M5I_RUN_20261029.md` and both status files before operational work;
-  startup validation is not completion of backfill or acceptance.
+  The new run stopped successfully at that deadline and its units are disabled.
+  Inspect `docs/M5I_RUN_20261029_RESULTS.md` before operational work: 114,413
+  eligible definitions remained unindexed at shutdown; additional keyword
+  proposition mismatches and retrieval overhead remain open. The 20 freshly
+  checked sports candidates are UNVERIFIED; no restart or M6 is implied.

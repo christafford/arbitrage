@@ -1,0 +1,3429 @@
+{
+  "qualification": "Fresh public metadata confirms ordinary sports event identity and both instruments available; no books, fees, legal equivalence or trading approval. Selected from final queue by identity score then upcoming rule date, not vector novelty.",
+  "source_queue": "docs/evidence/M5I_RUN_20261029_FINAL_QUEUE.json",
+  "api_checks": [
+    {
+      "url": "https://docs.kalshi.com/api-reference/market/get-market.md",
+      "at": "2026-10-30T12:34:50.293487+00:00",
+      "status": 200,
+      "sha256": "3134644faca99509f47b569c60d323a2c2d4b3a6e7beeee9243fd142353b62f5"
+    },
+    {
+      "url": "https://docs.polymarket.us/api-reference/markets/get-market-by-slug.md",
+      "at": "2026-10-30T12:34:50.567281+00:00",
+      "status": 200,
+      "sha256": "16f599df2f2606ae8e661b557793274d61d50e33862a10d033e52c09e783f7cf"
+    }
+  ],
+  "capture": {
+    "schema": "m5i-live-review-capture/v1",
+    "hypothetical": false,
+    "archive": "data/m5i/run-20261029-newnamespace/final/live-review.sqlite3",
+    "captures": [
+      {
+        "kalshi_id": "KXNBAGAME-26OCT30DETBKN-DET",
+        "polymarket_us_id": "aec-nba-det-bkn-2026-10-30",
+        "runs": [
+          {
+            "run_id": 1,
+            "venue": "kalshi",
+            "status": "COMPLETE",
+            "pages": 1,
+            "records": 2,
+            "unique_records": 2,
+            "duplicates": 0,
+            "next_page": null,
+            "books": 0
+          },
+          {
+            "run_id": 2,
+            "venue": "polymarket_us",
+            "status": "COMPLETE",
+            "pages": 2,
+            "records": 1,
+            "unique_records": 1,
+            "duplicates": 0,
+            "next_page": null,
+            "books": 0
+          }
+        ],
+        "errors": [],
+        "available": [
+          true,
+          true
+        ],
+        "sports_identities": [
+          [
+            "NBA",
+            "FULL_GAME_WINNER",
+            [
+              "BKN",
+              "DET"
+            ],
+            "2026-10-30",
+            "DET"
+          ],
+          [
+            "NBA",
+            "FULL_GAME_WINNER",
+            [
+              "BKN",
+              "DET"
+            ],
+            "2026-10-30",
+            "DET"
+          ]
+        ],
+        "live_identity_confirmed": true,
+        "captured_at": "2026-10-30T12:35:25.546278+00:00",
+        "versions": [
+          1,
+          3
+        ],
+        "status": "UNVERIFIED",
+        "equivalence_verified": false,
+        "trading_authorized": false
+      },
+      {
+        "kalshi_id": "KXNBAGAME-26OCT30CHIBOS-CHI",
+        "polymarket_us_id": "aec-nba-chi-bos-2026-10-30",
+        "runs": [
+          {
+            "run_id": 3,
+            "venue": "kalshi",
+            "status": "COMPLETE",
+            "pages": 1,
+            "records": 2,
+            "unique_records": 2,
+            "duplicates": 0,
+            "next_page": null,
+            "books": 0
+          },
+          {
+            "run_id": 4,
+            "venue": "polymarket_us",
+            "status": "COMPLETE",
+            "pages": 2,
+            "records": 1,
+            "unique_records": 1,
+            "duplicates": 0,
+            "next_page": null,
+            "books": 0
+          }
+        ],
+        "errors": [],
+        "available": [
+          true,
+          true
+        ],
+        "sports_identities": [
+          [
+            "NBA",
+            "FULL_GAME_WINNER",
+            [
+              "BOS",
+              "CHI"
+            ],
+            "2026-10-30",
+            "CHI"
+          ],
+          [
+            "NBA",
+            "FULL_GAME_WINNER",
+            [
+              "BOS",
+              "CHI"
+            ],
+            "2026-10-30",
+            "CHI"
+          ]
+        ],
+        "live_identity_confirmed": true,
+        "captured_at": "2026-10-30T12:35:27.587662+00:00",
+        "versions": [
+          4,
+          6
+        ],
+        "status": "UNVERIFIED",
+        "equivalence_verified": false,
+        "trading_authorized": false
+      },
+      {
+        "kalshi_id": "KXNBAGAME-26OCT30CHAWAS-CHA",
+        "polymarket_us_id": "aec-nba-cha-was-2026-10-30",
+        "runs": [
+          {
+            "run_id": 5,
+            "venue": "kalshi",
+            "status": "COMPLETE",
+            "pages": 1,
+            "records": 2,
+            "unique_records": 2,
+            "duplicates": 0,
+            "next_page": null,
+            "books": 0
+          },
+          {
+            "run_id": 6,
+            "venue": "polymarket_us",
+            "status": "COMPLETE",
+            "pages": 2,
+            "records": 1,
+            "unique_records": 1,
+            "duplicates": 0,
+            "next_page": null,
+            "books": 0
+          }
+        ],
+        "errors": [],
+        "available": [
+          true,
+          true
+        ],
+        "sports_identities": [
+          [
+            "NBA",
+            "FULL_GAME_WINNER",
+            [
+              "CHA",
+              "WAS"
+            ],
+            "2026-10-30",
+            "CHA"
+          ],
+          [
+            "NBA",
+            "FULL_GAME_WINNER",
+            [
+              "CHA",
+              "WAS"
+            ],
+            "2026-10-30",
+            "CHA"
+          ]
+        ],
+        "live_identity_confirmed": true,
+        "captured_at": "2026-10-30T12:35:29.581694+00:00",
+        "versions": [
+          8,
+          9
+        ],
+        "status": "UNVERIFIED",
+        "equivalence_verified": false,
+        "trading_authorized": false
+      },
+      {
+        "kalshi_id": "KXNBAGAME-26OCT30HOUDAL-HOU",
+        "polymarket_us_id": "aec-nba-hou-dal-2026-10-30",
+        "runs": [
+          {
+            "run_id": 7,
+            "venue": "kalshi",
+            "status": "COMPLETE",
+            "pages": 1,
+            "records": 2,
+            "unique_records": 2,
+            "duplicates": 0,
+            "next_page": null,
+            "books": 0
+          },
+          {
+            "run_id": 8,
+            "venue": "polymarket_us",
+            "status": "COMPLETE",
+            "pages": 2,
+            "records": 1,
+            "unique_records": 1,
+            "duplicates": 0,
+            "next_page": null,
+            "books": 0
+          }
+        ],
+        "errors": [],
+        "available": [
+          true,
+          true
+        ],
+        "sports_identities": [
+          [
+            "NBA",
+            "FULL_GAME_WINNER",
+            [
+              "DAL",
+              "HOU"
+            ],
+            "2026-10-30",
+            "HOU"
+          ],
+          [
+            "NBA",
+            "FULL_GAME_WINNER",
+            [
+              "DAL",
+              "HOU"
+            ],
+            "2026-10-30",
+            "HOU"
+          ]
+        ],
+        "live_identity_confirmed": true,
+        "captured_at": "2026-10-30T12:35:31.580870+00:00",
+        "versions": [
+          10,
+          12
+        ],
+        "status": "UNVERIFIED",
+        "equivalence_verified": false,
+        "trading_authorized": false
+      },
+      {
+        "kalshi_id": "KXNBAGAME-26OCT30DENPHX-DEN",
+        "polymarket_us_id": "aec-nba-den-pho-2026-10-30",
+        "runs": [
+          {
+            "run_id": 9,
+            "venue": "kalshi",
+            "status": "COMPLETE",
+            "pages": 1,
+            "records": 2,
+            "unique_records": 2,
+            "duplicates": 0,
+            "next_page": null,
+            "books": 0
+          },
+          {
+            "run_id": 10,
+            "venue": "polymarket_us",
+            "status": "COMPLETE",
+            "pages": 2,
+            "records": 1,
+            "unique_records": 1,
+            "duplicates": 0,
+            "next_page": null,
+            "books": 0
+          }
+        ],
+        "errors": [],
+        "available": [
+          true,
+          true
+        ],
+        "sports_identities": [
+          [
+            "NBA",
+            "FULL_GAME_WINNER",
+            [
+              "DEN",
+              "PHX"
+            ],
+            "2026-10-30",
+            "DEN"
+          ],
+          [
+            "NBA",
+            "FULL_GAME_WINNER",
+            [
+              "DEN",
+              "PHX"
+            ],
+            "2026-10-30",
+            "DEN"
+          ]
+        ],
+        "live_identity_confirmed": true,
+        "captured_at": "2026-10-30T12:35:33.578886+00:00",
+        "versions": [
+          14,
+          15
+        ],
+        "status": "UNVERIFIED",
+        "equivalence_verified": false,
+        "trading_authorized": false
+      },
+      {
+        "kalshi_id": "KXNBAGAME-26OCT30LALGSW-LAL",
+        "polymarket_us_id": "aec-nba-lal-gs-2026-10-30",
+        "runs": [
+          {
+            "run_id": 11,
+            "venue": "kalshi",
+            "status": "COMPLETE",
+            "pages": 1,
+            "records": 2,
+            "unique_records": 2,
+            "duplicates": 0,
+            "next_page": null,
+            "books": 0
+          },
+          {
+            "run_id": 12,
+            "venue": "polymarket_us",
+            "status": "COMPLETE",
+            "pages": 2,
+            "records": 1,
+            "unique_records": 1,
+            "duplicates": 0,
+            "next_page": null,
+            "books": 0
+          }
+        ],
+        "errors": [],
+        "available": [
+          true,
+          true
+        ],
+        "sports_identities": [
+          [
+            "NBA",
+            "FULL_GAME_WINNER",
+            [
+              "GSW",
+              "LAL"
+            ],
+            "2026-10-30",
+            "LAL"
+          ],
+          [
+            "NBA",
+            "FULL_GAME_WINNER",
+            [
+              "GSW",
+              "LAL"
+            ],
+            "2026-10-30",
+            "LAL"
+          ]
+        ],
+        "live_identity_confirmed": true,
+        "captured_at": "2026-10-30T12:35:35.542717+00:00",
+        "versions": [
+          16,
+          18
+        ],
+        "status": "UNVERIFIED",
+        "equivalence_verified": false,
+        "trading_authorized": false
+      },
+      {
+        "kalshi_id": "KXNBAGAME-26OCT30INDMIA-IND",
+        "polymarket_us_id": "aec-nba-ind-mia-2026-10-30",
+        "runs": [
+          {
+            "run_id": 13,
+            "venue": "kalshi",
+            "status": "COMPLETE",
+            "pages": 1,
+            "records": 2,
+            "unique_records": 2,
+            "duplicates": 0,
+            "next_page": null,
+            "books": 0
+          },
+          {
+            "run_id": 14,
+            "venue": "polymarket_us",
+            "status": "COMPLETE",
+            "pages": 2,
+            "records": 1,
+            "unique_records": 1,
+            "duplicates": 0,
+            "next_page": null,
+            "books": 0
+          }
+        ],
+        "errors": [],
+        "available": [
+          true,
+          true
+        ],
+        "sports_identities": [
+          [
+            "NBA",
+            "FULL_GAME_WINNER",
+            [
+              "IND",
+              "MIA"
+            ],
+            "2026-10-30",
+            "IND"
+          ],
+          [
+            "NBA",
+            "FULL_GAME_WINNER",
+            [
+              "IND",
+              "MIA"
+            ],
+            "2026-10-30",
+            "IND"
+          ]
+        ],
+        "live_identity_confirmed": true,
+        "captured_at": "2026-10-30T12:35:37.553643+00:00",
+        "versions": [
+          20,
+          21
+        ],
+        "status": "UNVERIFIED",
+        "equivalence_verified": false,
+        "trading_authorized": false
+      },
+      {
+        "kalshi_id": "KXNBAGAME-26OCT30LACMIN-LAC",
+        "polymarket_us_id": "aec-nba-lac-min-2026-10-30",
+        "runs": [
+          {
+            "run_id": 15,
+            "venue": "kalshi",
+            "status": "COMPLETE",
+            "pages": 1,
+            "records": 2,
+            "unique_records": 2,
+            "duplicates": 0,
+            "next_page": null,
+            "books": 0
+          },
+          {
+            "run_id": 16,
+            "venue": "polymarket_us",
+            "status": "COMPLETE",
+            "pages": 2,
+            "records": 1,
+            "unique_records": 1,
+            "duplicates": 0,
+            "next_page": null,
+            "books": 0
+          }
+        ],
+        "errors": [],
+        "available": [
+          true,
+          true
+        ],
+        "sports_identities": [
+          [
+            "NBA",
+            "FULL_GAME_WINNER",
+            [
+              "LAC",
+              "MIN"
+            ],
+            "2026-10-30",
+            "LAC"
+          ],
+          [
+            "NBA",
+            "FULL_GAME_WINNER",
+            [
+              "LAC",
+              "MIN"
+            ],
+            "2026-10-30",
+            "LAC"
+          ]
+        ],
+        "live_identity_confirmed": true,
+        "captured_at": "2026-10-30T12:35:39.584960+00:00",
+        "versions": [
+          23,
+          24
+        ],
+        "status": "UNVERIFIED",
+        "equivalence_verified": false,
+        "trading_authorized": false
+      },
+      {
+        "kalshi_id": "KXNBAGAME-26OCT30NYKPHI-NYK",
+        "polymarket_us_id": "aec-nba-ny-phi-2026-10-30",
+        "runs": [
+          {
+            "run_id": 17,
+            "venue": "kalshi",
+            "status": "COMPLETE",
+            "pages": 1,
+            "records": 2,
+            "unique_records": 2,
+            "duplicates": 0,
+            "next_page": null,
+            "books": 0
+          },
+          {
+            "run_id": 18,
+            "venue": "polymarket_us",
+            "status": "COMPLETE",
+            "pages": 2,
+            "records": 1,
+            "unique_records": 1,
+            "duplicates": 0,
+            "next_page": null,
+            "books": 0
+          }
+        ],
+        "errors": [],
+        "available": [
+          true,
+          true
+        ],
+        "sports_identities": [
+          [
+            "NBA",
+            "FULL_GAME_WINNER",
+            [
+              "NYK",
+              "PHI"
+            ],
+            "2026-10-30",
+            "NYK"
+          ],
+          [
+            "NBA",
+            "FULL_GAME_WINNER",
+            [
+              "NYK",
+              "PHI"
+            ],
+            "2026-10-30",
+            "NYK"
+          ]
+        ],
+        "live_identity_confirmed": true,
+        "captured_at": "2026-10-30T12:35:41.556159+00:00",
+        "versions": [
+          26,
+          27
+        ],
+        "status": "UNVERIFIED",
+        "equivalence_verified": false,
+        "trading_authorized": false
+      },
+      {
+        "kalshi_id": "KXNBAGAME-26OCT30ORLTOR-ORL",
+        "polymarket_us_id": "aec-nba-orl-tor-2026-10-30",
+        "runs": [
+          {
+            "run_id": 19,
+            "venue": "kalshi",
+            "status": "COMPLETE",
+            "pages": 1,
+            "records": 2,
+            "unique_records": 2,
+            "duplicates": 0,
+            "next_page": null,
+            "books": 0
+          },
+          {
+            "run_id": 20,
+            "venue": "polymarket_us",
+            "status": "COMPLETE",
+            "pages": 2,
+            "records": 1,
+            "unique_records": 1,
+            "duplicates": 0,
+            "next_page": null,
+            "books": 0
+          }
+        ],
+        "errors": [],
+        "available": [
+          true,
+          true
+        ],
+        "sports_identities": [
+          [
+            "NBA",
+            "FULL_GAME_WINNER",
+            [
+              "ORL",
+              "TOR"
+            ],
+            "2026-10-30",
+            "ORL"
+          ],
+          [
+            "NBA",
+            "FULL_GAME_WINNER",
+            [
+              "ORL",
+              "TOR"
+            ],
+            "2026-10-30",
+            "ORL"
+          ]
+        ],
+        "live_identity_confirmed": true,
+        "captured_at": "2026-10-30T12:35:43.558419+00:00",
+        "versions": [
+          29,
+          30
+        ],
+        "status": "UNVERIFIED",
+        "equivalence_verified": false,
+        "trading_authorized": false
+      },
+      {
+        "kalshi_id": "KXNBAGAME-26OCT31ATLNOP-ATL",
+        "polymarket_us_id": "aec-nba-atl-no-2026-10-31",
+        "runs": [
+          {
+            "run_id": 21,
+            "venue": "kalshi",
+            "status": "COMPLETE",
+            "pages": 1,
+            "records": 2,
+            "unique_records": 2,
+            "duplicates": 0,
+            "next_page": null,
+            "books": 0
+          },
+          {
+            "run_id": 22,
+            "venue": "polymarket_us",
+            "status": "COMPLETE",
+            "pages": 2,
+            "records": 1,
+            "unique_records": 1,
+            "duplicates": 0,
+            "next_page": null,
+            "books": 0
+          }
+        ],
+        "errors": [],
+        "available": [
+          true,
+          true
+        ],
+        "sports_identities": [
+          [
+            "NBA",
+            "FULL_GAME_WINNER",
+            [
+              "ATL",
+              "NOP"
+            ],
+            "2026-10-31",
+            "ATL"
+          ],
+          [
+            "NBA",
+            "FULL_GAME_WINNER",
+            [
+              "ATL",
+              "NOP"
+            ],
+            "2026-10-31",
+            "ATL"
+          ]
+        ],
+        "live_identity_confirmed": true,
+        "captured_at": "2026-10-30T12:35:45.562369+00:00",
+        "versions": [
+          32,
+          33
+        ],
+        "status": "UNVERIFIED",
+        "equivalence_verified": false,
+        "trading_authorized": false
+      },
+      {
+        "kalshi_id": "KXNBAGAME-26OCT31PHICHA-PHI",
+        "polymarket_us_id": "aec-nba-phi-cha-2026-10-31",
+        "runs": [
+          {
+            "run_id": 23,
+            "venue": "kalshi",
+            "status": "COMPLETE",
+            "pages": 1,
+            "records": 2,
+            "unique_records": 2,
+            "duplicates": 0,
+            "next_page": null,
+            "books": 0
+          },
+          {
+            "run_id": 24,
+            "venue": "polymarket_us",
+            "status": "COMPLETE",
+            "pages": 2,
+            "records": 1,
+            "unique_records": 1,
+            "duplicates": 0,
+            "next_page": null,
+            "books": 0
+          }
+        ],
+        "errors": [],
+        "available": [
+          true,
+          true
+        ],
+        "sports_identities": [
+          [
+            "NBA",
+            "FULL_GAME_WINNER",
+            [
+              "CHA",
+              "PHI"
+            ],
+            "2026-10-31",
+            "PHI"
+          ],
+          [
+            "NBA",
+            "FULL_GAME_WINNER",
+            [
+              "CHA",
+              "PHI"
+            ],
+            "2026-10-31",
+            "PHI"
+          ]
+        ],
+        "live_identity_confirmed": true,
+        "captured_at": "2026-10-30T12:35:47.593172+00:00",
+        "versions": [
+          34,
+          36
+        ],
+        "status": "UNVERIFIED",
+        "equivalence_verified": false,
+        "trading_authorized": false
+      },
+      {
+        "kalshi_id": "KXNBAGAME-26OCT31CLEMIL-CLE",
+        "polymarket_us_id": "aec-nba-cle-mil-2026-10-31",
+        "runs": [
+          {
+            "run_id": 25,
+            "venue": "kalshi",
+            "status": "COMPLETE",
+            "pages": 1,
+            "records": 2,
+            "unique_records": 2,
+            "duplicates": 0,
+            "next_page": null,
+            "books": 0
+          },
+          {
+            "run_id": 26,
+            "venue": "polymarket_us",
+            "status": "COMPLETE",
+            "pages": 2,
+            "records": 1,
+            "unique_records": 1,
+            "duplicates": 0,
+            "next_page": null,
+            "books": 0
+          }
+        ],
+        "errors": [],
+        "available": [
+          true,
+          true
+        ],
+        "sports_identities": [
+          [
+            "NBA",
+            "FULL_GAME_WINNER",
+            [
+              "CLE",
+              "MIL"
+            ],
+            "2026-10-31",
+            "CLE"
+          ],
+          [
+            "NBA",
+            "FULL_GAME_WINNER",
+            [
+              "CLE",
+              "MIL"
+            ],
+            "2026-10-31",
+            "CLE"
+          ]
+        ],
+        "live_identity_confirmed": true,
+        "captured_at": "2026-10-30T12:35:49.588853+00:00",
+        "versions": [
+          38,
+          39
+        ],
+        "status": "UNVERIFIED",
+        "equivalence_verified": false,
+        "trading_authorized": false
+      },
+      {
+        "kalshi_id": "KXNBAGAME-26OCT31OKCHOU-OKC",
+        "polymarket_us_id": "aec-nba-okc-hou-2026-10-31",
+        "runs": [
+          {
+            "run_id": 27,
+            "venue": "kalshi",
+            "status": "COMPLETE",
+            "pages": 1,
+            "records": 2,
+            "unique_records": 2,
+            "duplicates": 0,
+            "next_page": null,
+            "books": 0
+          },
+          {
+            "run_id": 28,
+            "venue": "polymarket_us",
+            "status": "COMPLETE",
+            "pages": 2,
+            "records": 1,
+            "unique_records": 1,
+            "duplicates": 0,
+            "next_page": null,
+            "books": 0
+          }
+        ],
+        "errors": [],
+        "available": [
+          true,
+          true
+        ],
+        "sports_identities": [
+          [
+            "NBA",
+            "FULL_GAME_WINNER",
+            [
+              "HOU",
+              "OKC"
+            ],
+            "2026-10-31",
+            "OKC"
+          ],
+          [
+            "NBA",
+            "FULL_GAME_WINNER",
+            [
+              "HOU",
+              "OKC"
+            ],
+            "2026-10-31",
+            "OKC"
+          ]
+        ],
+        "live_identity_confirmed": true,
+        "captured_at": "2026-10-30T12:35:51.539428+00:00",
+        "versions": [
+          40,
+          42
+        ],
+        "status": "UNVERIFIED",
+        "equivalence_verified": false,
+        "trading_authorized": false
+      },
+      {
+        "kalshi_id": "KXNBAGAME-26OCT31SACMEM-SAC",
+        "polymarket_us_id": "aec-nba-sac-mem-2026-10-31",
+        "runs": [
+          {
+            "run_id": 29,
+            "venue": "kalshi",
+            "status": "COMPLETE",
+            "pages": 1,
+            "records": 2,
+            "unique_records": 2,
+            "duplicates": 0,
+            "next_page": null,
+            "books": 0
+          },
+          {
+            "run_id": 30,
+            "venue": "polymarket_us",
+            "status": "COMPLETE",
+            "pages": 2,
+            "records": 1,
+            "unique_records": 1,
+            "duplicates": 0,
+            "next_page": null,
+            "books": 0
+          }
+        ],
+        "errors": [],
+        "available": [
+          true,
+          true
+        ],
+        "sports_identities": [
+          [
+            "NBA",
+            "FULL_GAME_WINNER",
+            [
+              "MEM",
+              "SAC"
+            ],
+            "2026-10-31",
+            "SAC"
+          ],
+          [
+            "NBA",
+            "FULL_GAME_WINNER",
+            [
+              "MEM",
+              "SAC"
+            ],
+            "2026-10-31",
+            "SAC"
+          ]
+        ],
+        "live_identity_confirmed": true,
+        "captured_at": "2026-10-30T12:35:53.579258+00:00",
+        "versions": [
+          43,
+          45
+        ],
+        "status": "UNVERIFIED",
+        "equivalence_verified": false,
+        "trading_authorized": false
+      },
+      {
+        "kalshi_id": "KXNBAGAME-26OCT31MINSAS-MIN",
+        "polymarket_us_id": "aec-nba-min-sa-2026-10-31",
+        "runs": [
+          {
+            "run_id": 31,
+            "venue": "kalshi",
+            "status": "COMPLETE",
+            "pages": 1,
+            "records": 2,
+            "unique_records": 2,
+            "duplicates": 0,
+            "next_page": null,
+            "books": 0
+          },
+          {
+            "run_id": 32,
+            "venue": "polymarket_us",
+            "status": "COMPLETE",
+            "pages": 2,
+            "records": 1,
+            "unique_records": 1,
+            "duplicates": 0,
+            "next_page": null,
+            "books": 0
+          }
+        ],
+        "errors": [],
+        "available": [
+          true,
+          true
+        ],
+        "sports_identities": [
+          [
+            "NBA",
+            "FULL_GAME_WINNER",
+            [
+              "MIN",
+              "SAS"
+            ],
+            "2026-10-31",
+            "MIN"
+          ],
+          [
+            "NBA",
+            "FULL_GAME_WINNER",
+            [
+              "MIN",
+              "SAS"
+            ],
+            "2026-10-31",
+            "MIN"
+          ]
+        ],
+        "live_identity_confirmed": true,
+        "captured_at": "2026-10-30T12:35:55.546856+00:00",
+        "versions": [
+          47,
+          48
+        ],
+        "status": "UNVERIFIED",
+        "equivalence_verified": false,
+        "trading_authorized": false
+      },
+      {
+        "kalshi_id": "KXNBAGAME-26OCT31PORUTA-POR",
+        "polymarket_us_id": "aec-nba-por-uta-2026-10-31",
+        "runs": [
+          {
+            "run_id": 33,
+            "venue": "kalshi",
+            "status": "COMPLETE",
+            "pages": 1,
+            "records": 2,
+            "unique_records": 2,
+            "duplicates": 0,
+            "next_page": null,
+            "books": 0
+          },
+          {
+            "run_id": 34,
+            "venue": "polymarket_us",
+            "status": "COMPLETE",
+            "pages": 2,
+            "records": 1,
+            "unique_records": 1,
+            "duplicates": 0,
+            "next_page": null,
+            "books": 0
+          }
+        ],
+        "errors": [],
+        "available": [
+          true,
+          true
+        ],
+        "sports_identities": [
+          [
+            "NBA",
+            "FULL_GAME_WINNER",
+            [
+              "POR",
+              "UTA"
+            ],
+            "2026-10-31",
+            "POR"
+          ],
+          [
+            "NBA",
+            "FULL_GAME_WINNER",
+            [
+              "POR",
+              "UTA"
+            ],
+            "2026-10-31",
+            "POR"
+          ]
+        ],
+        "live_identity_confirmed": true,
+        "captured_at": "2026-10-30T12:35:57.540577+00:00",
+        "versions": [
+          50,
+          51
+        ],
+        "status": "UNVERIFIED",
+        "equivalence_verified": false,
+        "trading_authorized": false
+      },
+      {
+        "kalshi_id": "KXNBAGAME-26NOV01BKNIND-BKN",
+        "polymarket_us_id": "aec-nba-bkn-ind-2026-11-01",
+        "runs": [
+          {
+            "run_id": 35,
+            "venue": "kalshi",
+            "status": "COMPLETE",
+            "pages": 1,
+            "records": 2,
+            "unique_records": 2,
+            "duplicates": 0,
+            "next_page": null,
+            "books": 0
+          },
+          {
+            "run_id": 36,
+            "venue": "polymarket_us",
+            "status": "COMPLETE",
+            "pages": 2,
+            "records": 1,
+            "unique_records": 1,
+            "duplicates": 0,
+            "next_page": null,
+            "books": 0
+          }
+        ],
+        "errors": [],
+        "available": [
+          true,
+          true
+        ],
+        "sports_identities": [
+          [
+            "NBA",
+            "FULL_GAME_WINNER",
+            [
+              "BKN",
+              "IND"
+            ],
+            "2026-11-01",
+            "BKN"
+          ],
+          [
+            "NBA",
+            "FULL_GAME_WINNER",
+            [
+              "BKN",
+              "IND"
+            ],
+            "2026-11-01",
+            "BKN"
+          ]
+        ],
+        "live_identity_confirmed": true,
+        "captured_at": "2026-10-30T12:35:59.544553+00:00",
+        "versions": [
+          53,
+          54
+        ],
+        "status": "UNVERIFIED",
+        "equivalence_verified": false,
+        "trading_authorized": false
+      },
+      {
+        "kalshi_id": "KXNBAGAME-26NOV01BOSORL-BOS",
+        "polymarket_us_id": "aec-nba-bos-orl-2026-11-01",
+        "runs": [
+          {
+            "run_id": 37,
+            "venue": "kalshi",
+            "status": "COMPLETE",
+            "pages": 1,
+            "records": 2,
+            "unique_records": 2,
+            "duplicates": 0,
+            "next_page": null,
+            "books": 0
+          },
+          {
+            "run_id": 38,
+            "venue": "polymarket_us",
+            "status": "COMPLETE",
+            "pages": 2,
+            "records": 1,
+            "unique_records": 1,
+            "duplicates": 0,
+            "next_page": null,
+            "books": 0
+          }
+        ],
+        "errors": [],
+        "available": [
+          true,
+          true
+        ],
+        "sports_identities": [
+          [
+            "NBA",
+            "FULL_GAME_WINNER",
+            [
+              "BOS",
+              "ORL"
+            ],
+            "2026-11-01",
+            "BOS"
+          ],
+          [
+            "NBA",
+            "FULL_GAME_WINNER",
+            [
+              "BOS",
+              "ORL"
+            ],
+            "2026-11-01",
+            "BOS"
+          ]
+        ],
+        "live_identity_confirmed": true,
+        "captured_at": "2026-10-30T12:36:01.536098+00:00",
+        "versions": [
+          56,
+          57
+        ],
+        "status": "UNVERIFIED",
+        "equivalence_verified": false,
+        "trading_authorized": false
+      },
+      {
+        "kalshi_id": "KXNBAGAME-26NOV01LACGSW-LAC",
+        "polymarket_us_id": "aec-nba-lac-gs-2026-11-01",
+        "runs": [
+          {
+            "run_id": 39,
+            "venue": "kalshi",
+            "status": "COMPLETE",
+            "pages": 1,
+            "records": 2,
+            "unique_records": 2,
+            "duplicates": 0,
+            "next_page": null,
+            "books": 0
+          },
+          {
+            "run_id": 40,
+            "venue": "polymarket_us",
+            "status": "COMPLETE",
+            "pages": 2,
+            "records": 1,
+            "unique_records": 1,
+            "duplicates": 0,
+            "next_page": null,
+            "books": 0
+          }
+        ],
+        "errors": [],
+        "available": [
+          true,
+          true
+        ],
+        "sports_identities": [
+          [
+            "NBA",
+            "FULL_GAME_WINNER",
+            [
+              "GSW",
+              "LAC"
+            ],
+            "2026-11-01",
+            "LAC"
+          ],
+          [
+            "NBA",
+            "FULL_GAME_WINNER",
+            [
+              "GSW",
+              "LAC"
+            ],
+            "2026-11-01",
+            "LAC"
+          ]
+        ],
+        "live_identity_confirmed": true,
+        "captured_at": "2026-10-30T12:36:03.543008+00:00",
+        "versions": [
+          58,
+          60
+        ],
+        "status": "UNVERIFIED",
+        "equivalence_verified": false,
+        "trading_authorized": false
+      }
+    ],
+    "raw_evidence": [
+      {
+        "id": 1,
+        "venue": "kalshi",
+        "endpoint": "https://external-api.kalshi.com/trade-api/v2/markets?status=open&mve_filter=exclude&limit=20&event_ticker=KXNBAGAME-26OCT30DETBKN",
+        "received_at": "2026-10-30T12:35:24.400486+00:00",
+        "sha256": "c45af32ab30c24057a06443d8b55e34463db3d85501aaf10351d94023582e2ee",
+        "schema_version": "kalshi-3.34.0/m1-v1",
+        "validation_status": "VALID"
+      },
+      {
+        "id": 2,
+        "venue": "polymarket_us",
+        "endpoint": "https://gateway.polymarket.us/v1/markets?active=true&closed=false&limit=20&offset=0&orderBy=id&orderDirection=asc&slug=aec-nba-det-bkn-2026-10-30",
+        "received_at": "2026-10-30T12:35:24.576245+00:00",
+        "sha256": "89aa29da806b36d2b3db8f5e0a9fcc1fbe0ce3924ee06620c05ea8d1194997df",
+        "schema_version": "polymarket-us-marketservice-1.0.0/m1-v1",
+        "validation_status": "VALID"
+      },
+      {
+        "id": 3,
+        "venue": "polymarket_us",
+        "endpoint": "https://gateway.polymarket.us/v1/markets?active=true&closed=false&limit=20&offset=1&orderBy=id&orderDirection=asc&slug=aec-nba-det-bkn-2026-10-30",
+        "received_at": "2026-10-30T12:35:25.523167+00:00",
+        "sha256": "f36daaa1fcd896f9fdfd2a991f06ef808c56d5acaceca4e6f89329e7794608d1",
+        "schema_version": "polymarket-us-marketservice-1.0.0/m1-v1",
+        "validation_status": "VALID"
+      },
+      {
+        "id": 4,
+        "venue": "kalshi",
+        "endpoint": "https://external-api.kalshi.com/trade-api/v2/markets?status=open&mve_filter=exclude&limit=20&event_ticker=KXNBAGAME-26OCT30CHIBOS",
+        "received_at": "2026-10-30T12:35:25.688133+00:00",
+        "sha256": "ebbeb24c6ce77a758c13292320677aa0b97002774c898b12fbaab366b9006cdc",
+        "schema_version": "kalshi-3.34.0/m1-v1",
+        "validation_status": "VALID"
+      },
+      {
+        "id": 5,
+        "venue": "polymarket_us",
+        "endpoint": "https://gateway.polymarket.us/v1/markets?active=true&closed=false&limit=20&offset=0&orderBy=id&orderDirection=asc&slug=aec-nba-chi-bos-2026-10-30",
+        "received_at": "2026-10-30T12:35:26.533715+00:00",
+        "sha256": "38be5c73345b6a7c55330c4cc69b0f4ff96df8174fef9aca5353fbfd12df970a",
+        "schema_version": "polymarket-us-marketservice-1.0.0/m1-v1",
+        "validation_status": "VALID"
+      },
+      {
+        "id": 6,
+        "venue": "polymarket_us",
+        "endpoint": "https://gateway.polymarket.us/v1/markets?active=true&closed=false&limit=20&offset=1&orderBy=id&orderDirection=asc&slug=aec-nba-chi-bos-2026-10-30",
+        "received_at": "2026-10-30T12:35:27.566988+00:00",
+        "sha256": "f36daaa1fcd896f9fdfd2a991f06ef808c56d5acaceca4e6f89329e7794608d1",
+        "schema_version": "polymarket-us-marketservice-1.0.0/m1-v1",
+        "validation_status": "VALID"
+      },
+      {
+        "id": 7,
+        "venue": "kalshi",
+        "endpoint": "https://external-api.kalshi.com/trade-api/v2/markets?status=open&mve_filter=exclude&limit=20&event_ticker=KXNBAGAME-26OCT30CHAWAS",
+        "received_at": "2026-10-30T12:35:27.729279+00:00",
+        "sha256": "85ba9d2435a85cfb07df353e8361f5587e30ccf19b7f83b8380158e467f36133",
+        "schema_version": "kalshi-3.34.0/m1-v1",
+        "validation_status": "VALID"
+      },
+      {
+        "id": 8,
+        "venue": "polymarket_us",
+        "endpoint": "https://gateway.polymarket.us/v1/markets?active=true&closed=false&limit=20&offset=0&orderBy=id&orderDirection=asc&slug=aec-nba-cha-was-2026-10-30",
+        "received_at": "2026-10-30T12:35:28.528541+00:00",
+        "sha256": "0a3937c8bcd514ec5cae4ace48e5a49a4da97bfd7453d135d447ff781c87bc13",
+        "schema_version": "polymarket-us-marketservice-1.0.0/m1-v1",
+        "validation_status": "VALID"
+      },
+      {
+        "id": 9,
+        "venue": "polymarket_us",
+        "endpoint": "https://gateway.polymarket.us/v1/markets?active=true&closed=false&limit=20&offset=1&orderBy=id&orderDirection=asc&slug=aec-nba-cha-was-2026-10-30",
+        "received_at": "2026-10-30T12:35:29.555733+00:00",
+        "sha256": "f36daaa1fcd896f9fdfd2a991f06ef808c56d5acaceca4e6f89329e7794608d1",
+        "schema_version": "polymarket-us-marketservice-1.0.0/m1-v1",
+        "validation_status": "VALID"
+      },
+      {
+        "id": 10,
+        "venue": "kalshi",
+        "endpoint": "https://external-api.kalshi.com/trade-api/v2/markets?status=open&mve_filter=exclude&limit=20&event_ticker=KXNBAGAME-26OCT30HOUDAL",
+        "received_at": "2026-10-30T12:35:29.724776+00:00",
+        "sha256": "1fa926ff204f5a176bf611c3a2124326c2b5febbbd8b54cdcb269e9308295287",
+        "schema_version": "kalshi-3.34.0/m1-v1",
+        "validation_status": "VALID"
+      },
+      {
+        "id": 11,
+        "venue": "polymarket_us",
+        "endpoint": "https://gateway.polymarket.us/v1/markets?active=true&closed=false&limit=20&offset=0&orderBy=id&orderDirection=asc&slug=aec-nba-hou-dal-2026-10-30",
+        "received_at": "2026-10-30T12:35:30.548971+00:00",
+        "sha256": "c7a70e739de11cad495139be46003c7772d34c790c8fc1a34dcd0784f6754724",
+        "schema_version": "polymarket-us-marketservice-1.0.0/m1-v1",
+        "validation_status": "VALID"
+      },
+      {
+        "id": 12,
+        "venue": "polymarket_us",
+        "endpoint": "https://gateway.polymarket.us/v1/markets?active=true&closed=false&limit=20&offset=1&orderBy=id&orderDirection=asc&slug=aec-nba-hou-dal-2026-10-30",
+        "received_at": "2026-10-30T12:35:31.561774+00:00",
+        "sha256": "f36daaa1fcd896f9fdfd2a991f06ef808c56d5acaceca4e6f89329e7794608d1",
+        "schema_version": "polymarket-us-marketservice-1.0.0/m1-v1",
+        "validation_status": "VALID"
+      },
+      {
+        "id": 13,
+        "venue": "kalshi",
+        "endpoint": "https://external-api.kalshi.com/trade-api/v2/markets?status=open&mve_filter=exclude&limit=20&event_ticker=KXNBAGAME-26OCT30DENPHX",
+        "received_at": "2026-10-30T12:35:31.716716+00:00",
+        "sha256": "8f6e9517edde567d910b9317e2146f2e84a5589f1bf8237d867230a26f4a9363",
+        "schema_version": "kalshi-3.34.0/m1-v1",
+        "validation_status": "VALID"
+      },
+      {
+        "id": 14,
+        "venue": "polymarket_us",
+        "endpoint": "https://gateway.polymarket.us/v1/markets?active=true&closed=false&limit=20&offset=0&orderBy=id&orderDirection=asc&slug=aec-nba-den-pho-2026-10-30",
+        "received_at": "2026-10-30T12:35:32.533857+00:00",
+        "sha256": "df0ae36f6e9308827f923390e43a27ee52edf759116b7236d85b67c019b62d1c",
+        "schema_version": "polymarket-us-marketservice-1.0.0/m1-v1",
+        "validation_status": "VALID"
+      },
+      {
+        "id": 15,
+        "venue": "polymarket_us",
+        "endpoint": "https://gateway.polymarket.us/v1/markets?active=true&closed=false&limit=20&offset=1&orderBy=id&orderDirection=asc&slug=aec-nba-den-pho-2026-10-30",
+        "received_at": "2026-10-30T12:35:33.554108+00:00",
+        "sha256": "f36daaa1fcd896f9fdfd2a991f06ef808c56d5acaceca4e6f89329e7794608d1",
+        "schema_version": "polymarket-us-marketservice-1.0.0/m1-v1",
+        "validation_status": "VALID"
+      },
+      {
+        "id": 16,
+        "venue": "kalshi",
+        "endpoint": "https://external-api.kalshi.com/trade-api/v2/markets?status=open&mve_filter=exclude&limit=20&event_ticker=KXNBAGAME-26OCT30LALGSW",
+        "received_at": "2026-10-30T12:35:33.721669+00:00",
+        "sha256": "87d2dbadc9c3f487d470b263487a54caaeb0f6796639974039b201b09cfe468b",
+        "schema_version": "kalshi-3.34.0/m1-v1",
+        "validation_status": "VALID"
+      },
+      {
+        "id": 17,
+        "venue": "polymarket_us",
+        "endpoint": "https://gateway.polymarket.us/v1/markets?active=true&closed=false&limit=20&offset=0&orderBy=id&orderDirection=asc&slug=aec-nba-lal-gs-2026-10-30",
+        "received_at": "2026-10-30T12:35:34.571775+00:00",
+        "sha256": "e0a0136ee16f1d506171ea3db45a4d9d81422c244c2b039917796434c181badd",
+        "schema_version": "polymarket-us-marketservice-1.0.0/m1-v1",
+        "validation_status": "VALID"
+      },
+      {
+        "id": 18,
+        "venue": "polymarket_us",
+        "endpoint": "https://gateway.polymarket.us/v1/markets?active=true&closed=false&limit=20&offset=1&orderBy=id&orderDirection=asc&slug=aec-nba-lal-gs-2026-10-30",
+        "received_at": "2026-10-30T12:35:35.517159+00:00",
+        "sha256": "f36daaa1fcd896f9fdfd2a991f06ef808c56d5acaceca4e6f89329e7794608d1",
+        "schema_version": "polymarket-us-marketservice-1.0.0/m1-v1",
+        "validation_status": "VALID"
+      },
+      {
+        "id": 19,
+        "venue": "kalshi",
+        "endpoint": "https://external-api.kalshi.com/trade-api/v2/markets?status=open&mve_filter=exclude&limit=20&event_ticker=KXNBAGAME-26OCT30INDMIA",
+        "received_at": "2026-10-30T12:35:35.699105+00:00",
+        "sha256": "3d2e12ebf7cd42413c66c0724287e3194a378defc8e9882357586eccb081cc62",
+        "schema_version": "kalshi-3.34.0/m1-v1",
+        "validation_status": "VALID"
+      },
+      {
+        "id": 20,
+        "venue": "polymarket_us",
+        "endpoint": "https://gateway.polymarket.us/v1/markets?active=true&closed=false&limit=20&offset=0&orderBy=id&orderDirection=asc&slug=aec-nba-ind-mia-2026-10-30",
+        "received_at": "2026-10-30T12:35:36.574277+00:00",
+        "sha256": "f75b2cbcced8903f1236b6234945f3f18e3e1b73017a82b401938e4bd32bb905",
+        "schema_version": "polymarket-us-marketservice-1.0.0/m1-v1",
+        "validation_status": "VALID"
+      },
+      {
+        "id": 21,
+        "venue": "polymarket_us",
+        "endpoint": "https://gateway.polymarket.us/v1/markets?active=true&closed=false&limit=20&offset=1&orderBy=id&orderDirection=asc&slug=aec-nba-ind-mia-2026-10-30",
+        "received_at": "2026-10-30T12:35:37.530336+00:00",
+        "sha256": "f36daaa1fcd896f9fdfd2a991f06ef808c56d5acaceca4e6f89329e7794608d1",
+        "schema_version": "polymarket-us-marketservice-1.0.0/m1-v1",
+        "validation_status": "VALID"
+      },
+      {
+        "id": 22,
+        "venue": "kalshi",
+        "endpoint": "https://external-api.kalshi.com/trade-api/v2/markets?status=open&mve_filter=exclude&limit=20&event_ticker=KXNBAGAME-26OCT30LACMIN",
+        "received_at": "2026-10-30T12:35:37.692368+00:00",
+        "sha256": "44b78fb98dce6901ae6d499b0d55a25f596c618518476b987377fae9a9895b04",
+        "schema_version": "kalshi-3.34.0/m1-v1",
+        "validation_status": "VALID"
+      },
+      {
+        "id": 23,
+        "venue": "polymarket_us",
+        "endpoint": "https://gateway.polymarket.us/v1/markets?active=true&closed=false&limit=20&offset=0&orderBy=id&orderDirection=asc&slug=aec-nba-lac-min-2026-10-30",
+        "received_at": "2026-10-30T12:35:38.573385+00:00",
+        "sha256": "0ce422d1923467a9b2d6d73e342dc2f5dcdf7192bc7301731a8ba33aea1b5463",
+        "schema_version": "polymarket-us-marketservice-1.0.0/m1-v1",
+        "validation_status": "VALID"
+      },
+      {
+        "id": 24,
+        "venue": "polymarket_us",
+        "endpoint": "https://gateway.polymarket.us/v1/markets?active=true&closed=false&limit=20&offset=1&orderBy=id&orderDirection=asc&slug=aec-nba-lac-min-2026-10-30",
+        "received_at": "2026-10-30T12:35:39.559242+00:00",
+        "sha256": "f36daaa1fcd896f9fdfd2a991f06ef808c56d5acaceca4e6f89329e7794608d1",
+        "schema_version": "polymarket-us-marketservice-1.0.0/m1-v1",
+        "validation_status": "VALID"
+      },
+      {
+        "id": 25,
+        "venue": "kalshi",
+        "endpoint": "https://external-api.kalshi.com/trade-api/v2/markets?status=open&mve_filter=exclude&limit=20&event_ticker=KXNBAGAME-26OCT30NYKPHI",
+        "received_at": "2026-10-30T12:35:39.712339+00:00",
+        "sha256": "d959af4a18295c61714a390da4bb7dc1f8519c702b1c1b157926d7fce04364ae",
+        "schema_version": "kalshi-3.34.0/m1-v1",
+        "validation_status": "VALID"
+      },
+      {
+        "id": 26,
+        "venue": "polymarket_us",
+        "endpoint": "https://gateway.polymarket.us/v1/markets?active=true&closed=false&limit=20&offset=0&orderBy=id&orderDirection=asc&slug=aec-nba-ny-phi-2026-10-30",
+        "received_at": "2026-10-30T12:35:40.572345+00:00",
+        "sha256": "abc54045824bb98621e1f2ee72a107c58f22e07a0f0dd044c7c804a9fbe8b5c7",
+        "schema_version": "polymarket-us-marketservice-1.0.0/m1-v1",
+        "validation_status": "VALID"
+      },
+      {
+        "id": 27,
+        "venue": "polymarket_us",
+        "endpoint": "https://gateway.polymarket.us/v1/markets?active=true&closed=false&limit=20&offset=1&orderBy=id&orderDirection=asc&slug=aec-nba-ny-phi-2026-10-30",
+        "received_at": "2026-10-30T12:35:41.529836+00:00",
+        "sha256": "f36daaa1fcd896f9fdfd2a991f06ef808c56d5acaceca4e6f89329e7794608d1",
+        "schema_version": "polymarket-us-marketservice-1.0.0/m1-v1",
+        "validation_status": "VALID"
+      },
+      {
+        "id": 28,
+        "venue": "kalshi",
+        "endpoint": "https://external-api.kalshi.com/trade-api/v2/markets?status=open&mve_filter=exclude&limit=20&event_ticker=KXNBAGAME-26OCT30ORLTOR",
+        "received_at": "2026-10-30T12:35:41.683891+00:00",
+        "sha256": "d9de6c6dfd059bb2a2df7c8a109414ebc0be5b0e2ce83536f4c771b84c4aa079",
+        "schema_version": "kalshi-3.34.0/m1-v1",
+        "validation_status": "VALID"
+      },
+      {
+        "id": 29,
+        "venue": "polymarket_us",
+        "endpoint": "https://gateway.polymarket.us/v1/markets?active=true&closed=false&limit=20&offset=0&orderBy=id&orderDirection=asc&slug=aec-nba-orl-tor-2026-10-30",
+        "received_at": "2026-10-30T12:35:42.574487+00:00",
+        "sha256": "2e2668990e6a0b95982fd4db0ee69352d82f4b7649ceadd5e991c48031ff6db8",
+        "schema_version": "polymarket-us-marketservice-1.0.0/m1-v1",
+        "validation_status": "VALID"
+      },
+      {
+        "id": 30,
+        "venue": "polymarket_us",
+        "endpoint": "https://gateway.polymarket.us/v1/markets?active=true&closed=false&limit=20&offset=1&orderBy=id&orderDirection=asc&slug=aec-nba-orl-tor-2026-10-30",
+        "received_at": "2026-10-30T12:35:43.528800+00:00",
+        "sha256": "f36daaa1fcd896f9fdfd2a991f06ef808c56d5acaceca4e6f89329e7794608d1",
+        "schema_version": "polymarket-us-marketservice-1.0.0/m1-v1",
+        "validation_status": "VALID"
+      },
+      {
+        "id": 31,
+        "venue": "kalshi",
+        "endpoint": "https://external-api.kalshi.com/trade-api/v2/markets?status=open&mve_filter=exclude&limit=20&event_ticker=KXNBAGAME-26OCT31ATLNOP",
+        "received_at": "2026-10-30T12:35:43.706217+00:00",
+        "sha256": "7e1bbd51513f03ff1cf8b601804f1ce85945c7d9f50d768e7134d0a7ef026d50",
+        "schema_version": "kalshi-3.34.0/m1-v1",
+        "validation_status": "VALID"
+      },
+      {
+        "id": 32,
+        "venue": "polymarket_us",
+        "endpoint": "https://gateway.polymarket.us/v1/markets?active=true&closed=false&limit=20&offset=0&orderBy=id&orderDirection=asc&slug=aec-nba-atl-no-2026-10-31",
+        "received_at": "2026-10-30T12:35:44.574475+00:00",
+        "sha256": "8165358ff01478dca838da553d509bee2fc63ee7e70988bd60a9c5b51b89c7a2",
+        "schema_version": "polymarket-us-marketservice-1.0.0/m1-v1",
+        "validation_status": "VALID"
+      },
+      {
+        "id": 33,
+        "venue": "polymarket_us",
+        "endpoint": "https://gateway.polymarket.us/v1/markets?active=true&closed=false&limit=20&offset=1&orderBy=id&orderDirection=asc&slug=aec-nba-atl-no-2026-10-31",
+        "received_at": "2026-10-30T12:35:45.530760+00:00",
+        "sha256": "f36daaa1fcd896f9fdfd2a991f06ef808c56d5acaceca4e6f89329e7794608d1",
+        "schema_version": "polymarket-us-marketservice-1.0.0/m1-v1",
+        "validation_status": "VALID"
+      },
+      {
+        "id": 34,
+        "venue": "kalshi",
+        "endpoint": "https://external-api.kalshi.com/trade-api/v2/markets?status=open&mve_filter=exclude&limit=20&event_ticker=KXNBAGAME-26OCT31PHICHA",
+        "received_at": "2026-10-30T12:35:45.694271+00:00",
+        "sha256": "52449485a1609a033ade953a3d9de4b241e9d21c6c1e241376dab1f74a5f54c6",
+        "schema_version": "kalshi-3.34.0/m1-v1",
+        "validation_status": "VALID"
+      },
+      {
+        "id": 35,
+        "venue": "polymarket_us",
+        "endpoint": "https://gateway.polymarket.us/v1/markets?active=true&closed=false&limit=20&offset=0&orderBy=id&orderDirection=asc&slug=aec-nba-phi-cha-2026-10-31",
+        "received_at": "2026-10-30T12:35:46.574384+00:00",
+        "sha256": "d16a4a90fa34c00c04e17f5b71d4439054c3e17443495ed5fdee089386c6c7e9",
+        "schema_version": "polymarket-us-marketservice-1.0.0/m1-v1",
+        "validation_status": "VALID"
+      },
+      {
+        "id": 36,
+        "venue": "polymarket_us",
+        "endpoint": "https://gateway.polymarket.us/v1/markets?active=true&closed=false&limit=20&offset=1&orderBy=id&orderDirection=asc&slug=aec-nba-phi-cha-2026-10-31",
+        "received_at": "2026-10-30T12:35:47.567783+00:00",
+        "sha256": "f36daaa1fcd896f9fdfd2a991f06ef808c56d5acaceca4e6f89329e7794608d1",
+        "schema_version": "polymarket-us-marketservice-1.0.0/m1-v1",
+        "validation_status": "VALID"
+      },
+      {
+        "id": 37,
+        "venue": "kalshi",
+        "endpoint": "https://external-api.kalshi.com/trade-api/v2/markets?status=open&mve_filter=exclude&limit=20&event_ticker=KXNBAGAME-26OCT31CLEMIL",
+        "received_at": "2026-10-30T12:35:47.751176+00:00",
+        "sha256": "2305ea5d99d302db051a9abeee42c2b2fb2923e384643383eb86a18999aa435c",
+        "schema_version": "kalshi-3.34.0/m1-v1",
+        "validation_status": "VALID"
+      },
+      {
+        "id": 38,
+        "venue": "polymarket_us",
+        "endpoint": "https://gateway.polymarket.us/v1/markets?active=true&closed=false&limit=20&offset=0&orderBy=id&orderDirection=asc&slug=aec-nba-cle-mil-2026-10-31",
+        "received_at": "2026-10-30T12:35:48.537707+00:00",
+        "sha256": "c8783601e5492caff2e7a9ec5d0af05e584ce7f6d73a3fa5c57e032015d733ee",
+        "schema_version": "polymarket-us-marketservice-1.0.0/m1-v1",
+        "validation_status": "VALID"
+      },
+      {
+        "id": 39,
+        "venue": "polymarket_us",
+        "endpoint": "https://gateway.polymarket.us/v1/markets?active=true&closed=false&limit=20&offset=1&orderBy=id&orderDirection=asc&slug=aec-nba-cle-mil-2026-10-31",
+        "received_at": "2026-10-30T12:35:49.563681+00:00",
+        "sha256": "f36daaa1fcd896f9fdfd2a991f06ef808c56d5acaceca4e6f89329e7794608d1",
+        "schema_version": "polymarket-us-marketservice-1.0.0/m1-v1",
+        "validation_status": "VALID"
+      },
+      {
+        "id": 40,
+        "venue": "kalshi",
+        "endpoint": "https://external-api.kalshi.com/trade-api/v2/markets?status=open&mve_filter=exclude&limit=20&event_ticker=KXNBAGAME-26OCT31OKCHOU",
+        "received_at": "2026-10-30T12:35:49.729223+00:00",
+        "sha256": "1b803337a2b0d1701ca3c97ce202ca079eb871a3008f4a55d0435277c4d042a8",
+        "schema_version": "kalshi-3.34.0/m1-v1",
+        "validation_status": "VALID"
+      },
+      {
+        "id": 41,
+        "venue": "polymarket_us",
+        "endpoint": "https://gateway.polymarket.us/v1/markets?active=true&closed=false&limit=20&offset=0&orderBy=id&orderDirection=asc&slug=aec-nba-okc-hou-2026-10-31",
+        "received_at": "2026-10-30T12:35:50.558465+00:00",
+        "sha256": "c1d477799d1c743779d1735dc3013540546566738b449afbabc53b62dba37b90",
+        "schema_version": "polymarket-us-marketservice-1.0.0/m1-v1",
+        "validation_status": "VALID"
+      },
+      {
+        "id": 42,
+        "venue": "polymarket_us",
+        "endpoint": "https://gateway.polymarket.us/v1/markets?active=true&closed=false&limit=20&offset=1&orderBy=id&orderDirection=asc&slug=aec-nba-okc-hou-2026-10-31",
+        "received_at": "2026-10-30T12:35:51.527677+00:00",
+        "sha256": "f36daaa1fcd896f9fdfd2a991f06ef808c56d5acaceca4e6f89329e7794608d1",
+        "schema_version": "polymarket-us-marketservice-1.0.0/m1-v1",
+        "validation_status": "VALID"
+      },
+      {
+        "id": 43,
+        "venue": "kalshi",
+        "endpoint": "https://external-api.kalshi.com/trade-api/v2/markets?status=open&mve_filter=exclude&limit=20&event_ticker=KXNBAGAME-26OCT31SACMEM",
+        "received_at": "2026-10-30T12:35:51.665261+00:00",
+        "sha256": "111111ec325edbfd17f6b5d8ad531a6cfd446a1fece1fe864b65553b6b0cbbc5",
+        "schema_version": "kalshi-3.34.0/m1-v1",
+        "validation_status": "VALID"
+      },
+      {
+        "id": 44,
+        "venue": "polymarket_us",
+        "endpoint": "https://gateway.polymarket.us/v1/markets?active=true&closed=false&limit=20&offset=0&orderBy=id&orderDirection=asc&slug=aec-nba-sac-mem-2026-10-31",
+        "received_at": "2026-10-30T12:35:52.535458+00:00",
+        "sha256": "71a2a391b7a2c1235faf5f2e7fcba08ec07f35dead8c86c1b029695e53bcc405",
+        "schema_version": "polymarket-us-marketservice-1.0.0/m1-v1",
+        "validation_status": "VALID"
+      },
+      {
+        "id": 45,
+        "venue": "polymarket_us",
+        "endpoint": "https://gateway.polymarket.us/v1/markets?active=true&closed=false&limit=20&offset=1&orderBy=id&orderDirection=asc&slug=aec-nba-sac-mem-2026-10-31",
+        "received_at": "2026-10-30T12:35:53.567248+00:00",
+        "sha256": "f36daaa1fcd896f9fdfd2a991f06ef808c56d5acaceca4e6f89329e7794608d1",
+        "schema_version": "polymarket-us-marketservice-1.0.0/m1-v1",
+        "validation_status": "VALID"
+      },
+      {
+        "id": 46,
+        "venue": "kalshi",
+        "endpoint": "https://external-api.kalshi.com/trade-api/v2/markets?status=open&mve_filter=exclude&limit=20&event_ticker=KXNBAGAME-26OCT31MINSAS",
+        "received_at": "2026-10-30T12:35:53.718726+00:00",
+        "sha256": "58e07d96a01861438aec997cbb294421aa05fe7aa62b74df4b05e138775110f3",
+        "schema_version": "kalshi-3.34.0/m1-v1",
+        "validation_status": "VALID"
+      },
+      {
+        "id": 47,
+        "venue": "polymarket_us",
+        "endpoint": "https://gateway.polymarket.us/v1/markets?active=true&closed=false&limit=20&offset=0&orderBy=id&orderDirection=asc&slug=aec-nba-min-sa-2026-10-31",
+        "received_at": "2026-10-30T12:35:54.575566+00:00",
+        "sha256": "35563d7563a2a7809ac246f1ed583d079f4559c39b15abdbfd86cdabbb1a283e",
+        "schema_version": "polymarket-us-marketservice-1.0.0/m1-v1",
+        "validation_status": "VALID"
+      },
+      {
+        "id": 48,
+        "venue": "polymarket_us",
+        "endpoint": "https://gateway.polymarket.us/v1/markets?active=true&closed=false&limit=20&offset=1&orderBy=id&orderDirection=asc&slug=aec-nba-min-sa-2026-10-31",
+        "received_at": "2026-10-30T12:35:55.534799+00:00",
+        "sha256": "f36daaa1fcd896f9fdfd2a991f06ef808c56d5acaceca4e6f89329e7794608d1",
+        "schema_version": "polymarket-us-marketservice-1.0.0/m1-v1",
+        "validation_status": "VALID"
+      },
+      {
+        "id": 49,
+        "venue": "kalshi",
+        "endpoint": "https://external-api.kalshi.com/trade-api/v2/markets?status=open&mve_filter=exclude&limit=20&event_ticker=KXNBAGAME-26OCT31PORUTA",
+        "received_at": "2026-10-30T12:35:55.674407+00:00",
+        "sha256": "3b4323eea24cc9ba399721d4c5129bead428893c95c8a23e8b74af28acfd77af",
+        "schema_version": "kalshi-3.34.0/m1-v1",
+        "validation_status": "VALID"
+      },
+      {
+        "id": 50,
+        "venue": "polymarket_us",
+        "endpoint": "https://gateway.polymarket.us/v1/markets?active=true&closed=false&limit=20&offset=0&orderBy=id&orderDirection=asc&slug=aec-nba-por-uta-2026-10-31",
+        "received_at": "2026-10-30T12:35:56.535965+00:00",
+        "sha256": "deecf8b37ddd8f83704ac4aa9f63e16eb06155733b0381a28f37f95a9c5cfaa5",
+        "schema_version": "polymarket-us-marketservice-1.0.0/m1-v1",
+        "validation_status": "VALID"
+      },
+      {
+        "id": 51,
+        "venue": "polymarket_us",
+        "endpoint": "https://gateway.polymarket.us/v1/markets?active=true&closed=false&limit=20&offset=1&orderBy=id&orderDirection=asc&slug=aec-nba-por-uta-2026-10-31",
+        "received_at": "2026-10-30T12:35:57.528301+00:00",
+        "sha256": "f36daaa1fcd896f9fdfd2a991f06ef808c56d5acaceca4e6f89329e7794608d1",
+        "schema_version": "polymarket-us-marketservice-1.0.0/m1-v1",
+        "validation_status": "VALID"
+      },
+      {
+        "id": 52,
+        "venue": "kalshi",
+        "endpoint": "https://external-api.kalshi.com/trade-api/v2/markets?status=open&mve_filter=exclude&limit=20&event_ticker=KXNBAGAME-26NOV01BKNIND",
+        "received_at": "2026-10-30T12:35:57.684655+00:00",
+        "sha256": "7b9da127d4d1da2dc2801268ee93faafa3c272422b4906bf2c063de0e778e6ef",
+        "schema_version": "kalshi-3.34.0/m1-v1",
+        "validation_status": "VALID"
+      },
+      {
+        "id": 53,
+        "venue": "polymarket_us",
+        "endpoint": "https://gateway.polymarket.us/v1/markets?active=true&closed=false&limit=20&offset=0&orderBy=id&orderDirection=asc&slug=aec-nba-bkn-ind-2026-11-01",
+        "received_at": "2026-10-30T12:35:58.535841+00:00",
+        "sha256": "58151d6aa388bd737cd071dffcafbac1cdf03b7b9618077eac3200d3a1dd2f16",
+        "schema_version": "polymarket-us-marketservice-1.0.0/m1-v1",
+        "validation_status": "VALID"
+      },
+      {
+        "id": 54,
+        "venue": "polymarket_us",
+        "endpoint": "https://gateway.polymarket.us/v1/markets?active=true&closed=false&limit=20&offset=1&orderBy=id&orderDirection=asc&slug=aec-nba-bkn-ind-2026-11-01",
+        "received_at": "2026-10-30T12:35:59.530693+00:00",
+        "sha256": "f36daaa1fcd896f9fdfd2a991f06ef808c56d5acaceca4e6f89329e7794608d1",
+        "schema_version": "polymarket-us-marketservice-1.0.0/m1-v1",
+        "validation_status": "VALID"
+      },
+      {
+        "id": 55,
+        "venue": "kalshi",
+        "endpoint": "https://external-api.kalshi.com/trade-api/v2/markets?status=open&mve_filter=exclude&limit=20&event_ticker=KXNBAGAME-26NOV01BOSORL",
+        "received_at": "2026-10-30T12:35:59.680748+00:00",
+        "sha256": "23bb74a95a6f819c18534a1793f0c9ae47464796e417a420bc8546e66cd35143",
+        "schema_version": "kalshi-3.34.0/m1-v1",
+        "validation_status": "VALID"
+      },
+      {
+        "id": 56,
+        "venue": "polymarket_us",
+        "endpoint": "https://gateway.polymarket.us/v1/markets?active=true&closed=false&limit=20&offset=0&orderBy=id&orderDirection=asc&slug=aec-nba-bos-orl-2026-11-01",
+        "received_at": "2026-10-30T12:36:00.541879+00:00",
+        "sha256": "3e45799d9e59492bdabf7102ee325cd958816dbb6785330521896a242a8e58ad",
+        "schema_version": "polymarket-us-marketservice-1.0.0/m1-v1",
+        "validation_status": "VALID"
+      },
+      {
+        "id": 57,
+        "venue": "polymarket_us",
+        "endpoint": "https://gateway.polymarket.us/v1/markets?active=true&closed=false&limit=20&offset=1&orderBy=id&orderDirection=asc&slug=aec-nba-bos-orl-2026-11-01",
+        "received_at": "2026-10-30T12:36:01.524442+00:00",
+        "sha256": "f36daaa1fcd896f9fdfd2a991f06ef808c56d5acaceca4e6f89329e7794608d1",
+        "schema_version": "polymarket-us-marketservice-1.0.0/m1-v1",
+        "validation_status": "VALID"
+      },
+      {
+        "id": 58,
+        "venue": "kalshi",
+        "endpoint": "https://external-api.kalshi.com/trade-api/v2/markets?status=open&mve_filter=exclude&limit=20&event_ticker=KXNBAGAME-26NOV01LACGSW",
+        "received_at": "2026-10-30T12:36:01.667215+00:00",
+        "sha256": "12fa0efc2fde0b643b55db20dcd69ecd3ab4e27d5e3e712b053b52d714df2e60",
+        "schema_version": "kalshi-3.34.0/m1-v1",
+        "validation_status": "VALID"
+      },
+      {
+        "id": 59,
+        "venue": "polymarket_us",
+        "endpoint": "https://gateway.polymarket.us/v1/markets?active=true&closed=false&limit=20&offset=0&orderBy=id&orderDirection=asc&slug=aec-nba-lac-gs-2026-11-01",
+        "received_at": "2026-10-30T12:36:02.546890+00:00",
+        "sha256": "37ccde6eb703337d1a3b72c49b26ea08be1b0662446f18e875776f42d02c8639",
+        "schema_version": "polymarket-us-marketservice-1.0.0/m1-v1",
+        "validation_status": "VALID"
+      },
+      {
+        "id": 60,
+        "venue": "polymarket_us",
+        "endpoint": "https://gateway.polymarket.us/v1/markets?active=true&closed=false&limit=20&offset=1&orderBy=id&orderDirection=asc&slug=aec-nba-lac-gs-2026-11-01",
+        "received_at": "2026-10-30T12:36:03.531187+00:00",
+        "sha256": "f36daaa1fcd896f9fdfd2a991f06ef808c56d5acaceca4e6f89329e7794608d1",
+        "schema_version": "polymarket-us-marketservice-1.0.0/m1-v1",
+        "validation_status": "VALID"
+      }
+    ]
+  },
+  "candidates": [
+    {
+      "algorithm": "semantic-discovery/m5i-v1",
+      "definition_links": {
+        "kalshi": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT30DETBKN-DET",
+        "polymarket_us": "https://gateway.polymarket.us/v1/market/slug/aec-nba-det-bkn-2026-10-30"
+      },
+      "equivalence_score_bps": 8500,
+      "equivalence_verified": false,
+      "event_key": "[\"NBA\",\"FULL_GAME_WINNER\",[\"BKN\",\"DET\"],\"2026-10-30\"]",
+      "hypothetical": false,
+      "kalshi_id": "KXNBAGAME-26OCT30DETBKN-DET",
+      "kalshi_title": "Detroit wins",
+      "known_contradictions": [],
+      "liquidity": {
+        "kalshi": {
+          "quality": "MISSING",
+          "depth_proxy": null
+        },
+        "polymarket_us": {
+          "quality": "MISSING",
+          "depth_proxy": null
+        }
+      },
+      "match_basis": "SPORTS_EVENT_IDENTITY",
+      "mechanics": {
+        "account_applicability": "UNVERIFIED",
+        "polymarket_us_no": "UNSUPPORTED_SYNTHETIC_SHORT",
+        "research_path": "CASH_FUNDED_LONG_ONLY"
+      },
+      "polymarket_event_key": "[\"NBA\",\"FULL_GAME_WINNER\",[\"BKN\",\"DET\"],\"2026-10-30\"]",
+      "polymarket_us_id": "aec-nba-det-bkn-2026-10-30",
+      "polymarket_us_title": "Who will win in the upcoming basketball event DET Pistons vs BKN Nets scheduled for October 30, 2026 at 11:30 PM UTC?",
+      "prior_reviews": [],
+      "retrieval_reasons": [
+        "EXACT_LEAGUE_PARTICIPANTS_RULE_DATE_AND_SELECTION"
+      ],
+      "review_reason": "EVENT_IDENTITY_ONLY",
+      "review_snapshot_expires_at": "2026-10-31T06:10:26.663489+00:00",
+      "settlement_deadlines": [
+        "2026-11-01T23:30:00+00:00",
+        "2026-11-13T23:30:00+00:00"
+      ],
+      "signals": {
+        "dates": "SCHEDULED_RULE_DATE_MATCH",
+        "league": "NBA",
+        "market_type": "FULL_GAME_WINNER",
+        "participants": [
+          "BKN",
+          "DET"
+        ],
+        "selection": "DET",
+        "settlement_equivalence": "UNVERIFIED",
+        "sports_identity": "MATCH",
+        "subject_bps": 10000
+      },
+      "source_observations": [
+        9541,
+        9274
+      ],
+      "source_received_at": [
+        "2026-10-30T06:18:30.103262+00:00",
+        "2026-10-30T06:10:26.663489+00:00"
+      ],
+      "status": "UNVERIFIED",
+      "trading_authorized": false,
+      "versions": [
+        278512,
+        476575
+      ],
+      "warnings": [
+        "ADMINISTRATIVE_CUTOFFS_DIFFER",
+        "EXCEPTIONAL_FAIR_PRICE_PAYOUTS_NOT_ESTABLISHED_COMPLEMENTARY",
+        "FORFEIT_AND_SOURCE_REVISION_RULES_REQUIRE_REVIEW",
+        "OCCURRENCE_AND_START_TIMES_NOT_COMPARABLE",
+        "POSTPONEMENT_WINDOW_UNKNOWN",
+        "SPORTS_IDENTITY_ONLY_NOT_EQUIVALENCE",
+        "SPORTS_SETTLEMENT_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "algorithm": "semantic-discovery/m5i-v1",
+      "definition_links": {
+        "kalshi": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT30CHIBOS-CHI",
+        "polymarket_us": "https://gateway.polymarket.us/v1/market/slug/aec-nba-chi-bos-2026-10-30"
+      },
+      "equivalence_score_bps": 8500,
+      "equivalence_verified": false,
+      "event_key": "[\"NBA\",\"FULL_GAME_WINNER\",[\"BOS\",\"CHI\"],\"2026-10-30\"]",
+      "hypothetical": false,
+      "kalshi_id": "KXNBAGAME-26OCT30CHIBOS-CHI",
+      "kalshi_title": "Chicago wins",
+      "known_contradictions": [],
+      "liquidity": {
+        "kalshi": {
+          "quality": "MISSING",
+          "depth_proxy": null
+        },
+        "polymarket_us": {
+          "quality": "MISSING",
+          "depth_proxy": null
+        }
+      },
+      "match_basis": "SPORTS_EVENT_IDENTITY",
+      "mechanics": {
+        "account_applicability": "UNVERIFIED",
+        "polymarket_us_no": "UNSUPPORTED_SYNTHETIC_SHORT",
+        "research_path": "CASH_FUNDED_LONG_ONLY"
+      },
+      "polymarket_event_key": "[\"NBA\",\"FULL_GAME_WINNER\",[\"BOS\",\"CHI\"],\"2026-10-30\"]",
+      "polymarket_us_id": "aec-nba-chi-bos-2026-10-30",
+      "polymarket_us_title": "Who will win in the upcoming basketball event CHI Bulls vs BOS Celtics scheduled for October 30, 2026 at 11:30 PM UTC?",
+      "prior_reviews": [],
+      "retrieval_reasons": [
+        "EXACT_LEAGUE_PARTICIPANTS_RULE_DATE_AND_SELECTION"
+      ],
+      "review_reason": "EVENT_IDENTITY_ONLY",
+      "review_snapshot_expires_at": "2026-10-31T06:10:26.663489+00:00",
+      "settlement_deadlines": [
+        "2026-11-01T23:30:00+00:00",
+        "2026-11-13T23:30:00+00:00"
+      ],
+      "signals": {
+        "dates": "SCHEDULED_RULE_DATE_MATCH",
+        "league": "NBA",
+        "market_type": "FULL_GAME_WINNER",
+        "participants": [
+          "BOS",
+          "CHI"
+        ],
+        "selection": "CHI",
+        "settlement_equivalence": "UNVERIFIED",
+        "sports_identity": "MATCH",
+        "subject_bps": 10000
+      },
+      "source_observations": [
+        9541,
+        9274
+      ],
+      "source_received_at": [
+        "2026-10-30T06:18:30.103262+00:00",
+        "2026-10-30T06:10:26.663489+00:00"
+      ],
+      "status": "UNVERIFIED",
+      "trading_authorized": false,
+      "versions": [
+        278514,
+        476573
+      ],
+      "warnings": [
+        "ADMINISTRATIVE_CUTOFFS_DIFFER",
+        "EXCEPTIONAL_FAIR_PRICE_PAYOUTS_NOT_ESTABLISHED_COMPLEMENTARY",
+        "FORFEIT_AND_SOURCE_REVISION_RULES_REQUIRE_REVIEW",
+        "OCCURRENCE_AND_START_TIMES_NOT_COMPARABLE",
+        "POSTPONEMENT_WINDOW_UNKNOWN",
+        "SPORTS_IDENTITY_ONLY_NOT_EQUIVALENCE",
+        "SPORTS_SETTLEMENT_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "algorithm": "semantic-discovery/m5i-v1",
+      "definition_links": {
+        "kalshi": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT30CHAWAS-CHA",
+        "polymarket_us": "https://gateway.polymarket.us/v1/market/slug/aec-nba-cha-was-2026-10-30"
+      },
+      "equivalence_score_bps": 8500,
+      "equivalence_verified": false,
+      "event_key": "[\"NBA\",\"FULL_GAME_WINNER\",[\"CHA\",\"WAS\"],\"2026-10-30\"]",
+      "hypothetical": false,
+      "kalshi_id": "KXNBAGAME-26OCT30CHAWAS-CHA",
+      "kalshi_title": "Charlotte wins",
+      "known_contradictions": [],
+      "liquidity": {
+        "kalshi": {
+          "quality": "MISSING",
+          "depth_proxy": null
+        },
+        "polymarket_us": {
+          "quality": "MISSING",
+          "depth_proxy": null
+        }
+      },
+      "match_basis": "SPORTS_EVENT_IDENTITY",
+      "mechanics": {
+        "account_applicability": "UNVERIFIED",
+        "polymarket_us_no": "UNSUPPORTED_SYNTHETIC_SHORT",
+        "research_path": "CASH_FUNDED_LONG_ONLY"
+      },
+      "polymarket_event_key": "[\"NBA\",\"FULL_GAME_WINNER\",[\"CHA\",\"WAS\"],\"2026-10-30\"]",
+      "polymarket_us_id": "aec-nba-cha-was-2026-10-30",
+      "polymarket_us_title": "Who will win in the upcoming basketball event CHA Hornets vs WAS Wizards scheduled for October 30, 2026 at 11:00 PM UTC?",
+      "prior_reviews": [],
+      "retrieval_reasons": [
+        "EXACT_LEAGUE_PARTICIPANTS_RULE_DATE_AND_SELECTION"
+      ],
+      "review_reason": "EVENT_IDENTITY_ONLY",
+      "review_snapshot_expires_at": "2026-10-31T06:10:26.663489+00:00",
+      "settlement_deadlines": [
+        "2026-11-01T23:00:00+00:00",
+        "2026-11-13T23:00:00+00:00"
+      ],
+      "signals": {
+        "dates": "SCHEDULED_RULE_DATE_MATCH",
+        "league": "NBA",
+        "market_type": "FULL_GAME_WINNER",
+        "participants": [
+          "CHA",
+          "WAS"
+        ],
+        "selection": "CHA",
+        "settlement_equivalence": "UNVERIFIED",
+        "sports_identity": "MATCH",
+        "subject_bps": 10000
+      },
+      "source_observations": [
+        9541,
+        9274
+      ],
+      "source_received_at": [
+        "2026-10-30T06:18:30.103262+00:00",
+        "2026-10-30T06:10:26.663489+00:00"
+      ],
+      "status": "UNVERIFIED",
+      "trading_authorized": false,
+      "versions": [
+        278935,
+        476571
+      ],
+      "warnings": [
+        "ADMINISTRATIVE_CUTOFFS_DIFFER",
+        "EXCEPTIONAL_FAIR_PRICE_PAYOUTS_NOT_ESTABLISHED_COMPLEMENTARY",
+        "FORFEIT_AND_SOURCE_REVISION_RULES_REQUIRE_REVIEW",
+        "OCCURRENCE_AND_START_TIMES_NOT_COMPARABLE",
+        "POSTPONEMENT_WINDOW_UNKNOWN",
+        "SPORTS_IDENTITY_ONLY_NOT_EQUIVALENCE",
+        "SPORTS_SETTLEMENT_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "algorithm": "semantic-discovery/m5i-v1",
+      "definition_links": {
+        "kalshi": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT30HOUDAL-HOU",
+        "polymarket_us": "https://gateway.polymarket.us/v1/market/slug/aec-nba-hou-dal-2026-10-30"
+      },
+      "equivalence_score_bps": 8500,
+      "equivalence_verified": false,
+      "event_key": "[\"NBA\",\"FULL_GAME_WINNER\",[\"DAL\",\"HOU\"],\"2026-10-30\"]",
+      "hypothetical": false,
+      "kalshi_id": "KXNBAGAME-26OCT30HOUDAL-HOU",
+      "kalshi_title": "Houston wins",
+      "known_contradictions": [],
+      "liquidity": {
+        "kalshi": {
+          "quality": "MISSING",
+          "depth_proxy": null
+        },
+        "polymarket_us": {
+          "quality": "MISSING",
+          "depth_proxy": null
+        }
+      },
+      "match_basis": "SPORTS_EVENT_IDENTITY",
+      "mechanics": {
+        "account_applicability": "UNVERIFIED",
+        "polymarket_us_no": "UNSUPPORTED_SYNTHETIC_SHORT",
+        "research_path": "CASH_FUNDED_LONG_ONLY"
+      },
+      "polymarket_event_key": "[\"NBA\",\"FULL_GAME_WINNER\",[\"DAL\",\"HOU\"],\"2026-10-30\"]",
+      "polymarket_us_id": "aec-nba-hou-dal-2026-10-30",
+      "polymarket_us_title": "Who will win in the upcoming basketball event HOU Rockets vs DAL Mavericks scheduled for October 31, 2026 at 12:00 AM UTC?",
+      "prior_reviews": [],
+      "retrieval_reasons": [
+        "EXACT_LEAGUE_PARTICIPANTS_RULE_DATE_AND_SELECTION"
+      ],
+      "review_reason": "EVENT_IDENTITY_ONLY",
+      "review_snapshot_expires_at": "2026-10-31T06:10:26.663489+00:00",
+      "settlement_deadlines": [
+        "2026-11-02T00:00:00+00:00",
+        "2026-11-14T00:00:00+00:00"
+      ],
+      "signals": {
+        "dates": "SCHEDULED_RULE_DATE_MATCH",
+        "league": "NBA",
+        "market_type": "FULL_GAME_WINNER",
+        "participants": [
+          "DAL",
+          "HOU"
+        ],
+        "selection": "HOU",
+        "settlement_equivalence": "UNVERIFIED",
+        "sports_identity": "MATCH",
+        "subject_bps": 10000
+      },
+      "source_observations": [
+        9540,
+        9274
+      ],
+      "source_received_at": [
+        "2026-10-30T06:18:28.585711+00:00",
+        "2026-10-30T06:10:26.663489+00:00"
+      ],
+      "status": "UNVERIFIED",
+      "trading_authorized": false,
+      "versions": [
+        278142,
+        476576
+      ],
+      "warnings": [
+        "ADMINISTRATIVE_CUTOFFS_DIFFER",
+        "EXCEPTIONAL_FAIR_PRICE_PAYOUTS_NOT_ESTABLISHED_COMPLEMENTARY",
+        "FORFEIT_AND_SOURCE_REVISION_RULES_REQUIRE_REVIEW",
+        "OCCURRENCE_AND_START_TIMES_NOT_COMPARABLE",
+        "POSTPONEMENT_WINDOW_UNKNOWN",
+        "SPORTS_IDENTITY_ONLY_NOT_EQUIVALENCE",
+        "SPORTS_SETTLEMENT_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "algorithm": "semantic-discovery/m5i-v1",
+      "definition_links": {
+        "kalshi": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT30DENPHX-DEN",
+        "polymarket_us": "https://gateway.polymarket.us/v1/market/slug/aec-nba-den-pho-2026-10-30"
+      },
+      "equivalence_score_bps": 8500,
+      "equivalence_verified": false,
+      "event_key": "[\"NBA\",\"FULL_GAME_WINNER\",[\"DEN\",\"PHX\"],\"2026-10-30\"]",
+      "hypothetical": false,
+      "kalshi_id": "KXNBAGAME-26OCT30DENPHX-DEN",
+      "kalshi_title": "Denver wins",
+      "known_contradictions": [],
+      "liquidity": {
+        "kalshi": {
+          "quality": "MISSING",
+          "depth_proxy": null
+        },
+        "polymarket_us": {
+          "quality": "MISSING",
+          "depth_proxy": null
+        }
+      },
+      "match_basis": "SPORTS_EVENT_IDENTITY",
+      "mechanics": {
+        "account_applicability": "UNVERIFIED",
+        "polymarket_us_no": "UNSUPPORTED_SYNTHETIC_SHORT",
+        "research_path": "CASH_FUNDED_LONG_ONLY"
+      },
+      "polymarket_event_key": "[\"NBA\",\"FULL_GAME_WINNER\",[\"DEN\",\"PHX\"],\"2026-10-30\"]",
+      "polymarket_us_id": "aec-nba-den-pho-2026-10-30",
+      "polymarket_us_title": "Who will win in the upcoming basketball event DEN Nuggets vs PHO Suns scheduled for October 31, 2026 at 2:00 AM UTC?",
+      "prior_reviews": [],
+      "retrieval_reasons": [
+        "EXACT_LEAGUE_PARTICIPANTS_RULE_DATE_AND_SELECTION"
+      ],
+      "review_reason": "EVENT_IDENTITY_ONLY",
+      "review_snapshot_expires_at": "2026-10-31T06:10:26.663489+00:00",
+      "settlement_deadlines": [
+        "2026-11-02T02:00:00+00:00",
+        "2026-11-14T02:00:00+00:00"
+      ],
+      "signals": {
+        "dates": "SCHEDULED_RULE_DATE_MATCH",
+        "league": "NBA",
+        "market_type": "FULL_GAME_WINNER",
+        "participants": [
+          "DEN",
+          "PHX"
+        ],
+        "selection": "DEN",
+        "settlement_equivalence": "UNVERIFIED",
+        "sports_identity": "MATCH",
+        "subject_bps": 10000
+      },
+      "source_observations": [
+        9530,
+        9274
+      ],
+      "source_received_at": [
+        "2026-10-30T06:18:13.076250+00:00",
+        "2026-10-30T06:10:26.663489+00:00"
+      ],
+      "status": "UNVERIFIED",
+      "trading_authorized": false,
+      "versions": [
+        274273,
+        476580
+      ],
+      "warnings": [
+        "ADMINISTRATIVE_CUTOFFS_DIFFER",
+        "EXCEPTIONAL_FAIR_PRICE_PAYOUTS_NOT_ESTABLISHED_COMPLEMENTARY",
+        "FORFEIT_AND_SOURCE_REVISION_RULES_REQUIRE_REVIEW",
+        "OCCURRENCE_AND_START_TIMES_NOT_COMPARABLE",
+        "POSTPONEMENT_WINDOW_UNKNOWN",
+        "SPORTS_IDENTITY_ONLY_NOT_EQUIVALENCE",
+        "SPORTS_SETTLEMENT_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "algorithm": "semantic-discovery/m5i-v1",
+      "definition_links": {
+        "kalshi": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT30LALGSW-LAL",
+        "polymarket_us": "https://gateway.polymarket.us/v1/market/slug/aec-nba-lal-gs-2026-10-30"
+      },
+      "equivalence_score_bps": 8500,
+      "equivalence_verified": false,
+      "event_key": "[\"NBA\",\"FULL_GAME_WINNER\",[\"GSW\",\"LAL\"],\"2026-10-30\"]",
+      "hypothetical": false,
+      "kalshi_id": "KXNBAGAME-26OCT30LALGSW-LAL",
+      "kalshi_title": "Los Angeles L wins",
+      "known_contradictions": [],
+      "liquidity": {
+        "kalshi": {
+          "quality": "MISSING",
+          "depth_proxy": null
+        },
+        "polymarket_us": {
+          "quality": "MISSING",
+          "depth_proxy": null
+        }
+      },
+      "match_basis": "SPORTS_EVENT_IDENTITY",
+      "mechanics": {
+        "account_applicability": "UNVERIFIED",
+        "polymarket_us_no": "UNSUPPORTED_SYNTHETIC_SHORT",
+        "research_path": "CASH_FUNDED_LONG_ONLY"
+      },
+      "polymarket_event_key": "[\"NBA\",\"FULL_GAME_WINNER\",[\"GSW\",\"LAL\"],\"2026-10-30\"]",
+      "polymarket_us_id": "aec-nba-lal-gs-2026-10-30",
+      "polymarket_us_title": "Who will win in the upcoming basketball event LA Lakers vs GS Warriors scheduled for October 31, 2026 at 2:00 AM UTC?",
+      "prior_reviews": [],
+      "retrieval_reasons": [
+        "EXACT_LEAGUE_PARTICIPANTS_RULE_DATE_AND_SELECTION"
+      ],
+      "review_reason": "EVENT_IDENTITY_ONLY",
+      "review_snapshot_expires_at": "2026-10-31T06:10:26.663489+00:00",
+      "settlement_deadlines": [
+        "2026-11-02T02:00:00+00:00",
+        "2026-11-14T02:00:00+00:00"
+      ],
+      "signals": {
+        "dates": "SCHEDULED_RULE_DATE_MATCH",
+        "league": "NBA",
+        "market_type": "FULL_GAME_WINNER",
+        "participants": [
+          "GSW",
+          "LAL"
+        ],
+        "selection": "LAL",
+        "settlement_equivalence": "UNVERIFIED",
+        "sports_identity": "MATCH",
+        "subject_bps": 10000
+      },
+      "source_observations": [
+        9530,
+        9274
+      ],
+      "source_received_at": [
+        "2026-10-30T06:18:13.076250+00:00",
+        "2026-10-30T06:10:26.663489+00:00"
+      ],
+      "status": "UNVERIFIED",
+      "trading_authorized": false,
+      "versions": [
+        274274,
+        476579
+      ],
+      "warnings": [
+        "ADMINISTRATIVE_CUTOFFS_DIFFER",
+        "EXCEPTIONAL_FAIR_PRICE_PAYOUTS_NOT_ESTABLISHED_COMPLEMENTARY",
+        "FORFEIT_AND_SOURCE_REVISION_RULES_REQUIRE_REVIEW",
+        "OCCURRENCE_AND_START_TIMES_NOT_COMPARABLE",
+        "POSTPONEMENT_WINDOW_UNKNOWN",
+        "SPORTS_IDENTITY_ONLY_NOT_EQUIVALENCE",
+        "SPORTS_SETTLEMENT_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "algorithm": "semantic-discovery/m5i-v1",
+      "definition_links": {
+        "kalshi": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT30INDMIA-IND",
+        "polymarket_us": "https://gateway.polymarket.us/v1/market/slug/aec-nba-ind-mia-2026-10-30"
+      },
+      "equivalence_score_bps": 8500,
+      "equivalence_verified": false,
+      "event_key": "[\"NBA\",\"FULL_GAME_WINNER\",[\"IND\",\"MIA\"],\"2026-10-30\"]",
+      "hypothetical": false,
+      "kalshi_id": "KXNBAGAME-26OCT30INDMIA-IND",
+      "kalshi_title": "Indiana wins",
+      "known_contradictions": [],
+      "liquidity": {
+        "kalshi": {
+          "quality": "MISSING",
+          "depth_proxy": null
+        },
+        "polymarket_us": {
+          "quality": "MISSING",
+          "depth_proxy": null
+        }
+      },
+      "match_basis": "SPORTS_EVENT_IDENTITY",
+      "mechanics": {
+        "account_applicability": "UNVERIFIED",
+        "polymarket_us_no": "UNSUPPORTED_SYNTHETIC_SHORT",
+        "research_path": "CASH_FUNDED_LONG_ONLY"
+      },
+      "polymarket_event_key": "[\"NBA\",\"FULL_GAME_WINNER\",[\"IND\",\"MIA\"],\"2026-10-30\"]",
+      "polymarket_us_id": "aec-nba-ind-mia-2026-10-30",
+      "polymarket_us_title": "Who will win in the upcoming basketball event IND Pacers vs MIA Heat scheduled for October 31, 2026 at 12:00 AM UTC?",
+      "prior_reviews": [],
+      "retrieval_reasons": [
+        "EXACT_LEAGUE_PARTICIPANTS_RULE_DATE_AND_SELECTION"
+      ],
+      "review_reason": "EVENT_IDENTITY_ONLY",
+      "review_snapshot_expires_at": "2026-10-31T06:10:26.663489+00:00",
+      "settlement_deadlines": [
+        "2026-11-02T00:00:00+00:00",
+        "2026-11-14T00:00:00+00:00"
+      ],
+      "signals": {
+        "dates": "SCHEDULED_RULE_DATE_MATCH",
+        "league": "NBA",
+        "market_type": "FULL_GAME_WINNER",
+        "participants": [
+          "IND",
+          "MIA"
+        ],
+        "selection": "IND",
+        "settlement_equivalence": "UNVERIFIED",
+        "sports_identity": "MATCH",
+        "subject_bps": 10000
+      },
+      "source_observations": [
+        9540,
+        9274
+      ],
+      "source_received_at": [
+        "2026-10-30T06:18:28.585711+00:00",
+        "2026-10-30T06:10:26.663489+00:00"
+      ],
+      "status": "UNVERIFIED",
+      "trading_authorized": false,
+      "versions": [
+        278149,
+        476577
+      ],
+      "warnings": [
+        "ADMINISTRATIVE_CUTOFFS_DIFFER",
+        "EXCEPTIONAL_FAIR_PRICE_PAYOUTS_NOT_ESTABLISHED_COMPLEMENTARY",
+        "FORFEIT_AND_SOURCE_REVISION_RULES_REQUIRE_REVIEW",
+        "OCCURRENCE_AND_START_TIMES_NOT_COMPARABLE",
+        "POSTPONEMENT_WINDOW_UNKNOWN",
+        "SPORTS_IDENTITY_ONLY_NOT_EQUIVALENCE",
+        "SPORTS_SETTLEMENT_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "algorithm": "semantic-discovery/m5i-v1",
+      "definition_links": {
+        "kalshi": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT30LACMIN-LAC",
+        "polymarket_us": "https://gateway.polymarket.us/v1/market/slug/aec-nba-lac-min-2026-10-30"
+      },
+      "equivalence_score_bps": 8500,
+      "equivalence_verified": false,
+      "event_key": "[\"NBA\",\"FULL_GAME_WINNER\",[\"LAC\",\"MIN\"],\"2026-10-30\"]",
+      "hypothetical": false,
+      "kalshi_id": "KXNBAGAME-26OCT30LACMIN-LAC",
+      "kalshi_title": "Los Angeles C wins",
+      "known_contradictions": [],
+      "liquidity": {
+        "kalshi": {
+          "quality": "MISSING",
+          "depth_proxy": null
+        },
+        "polymarket_us": {
+          "quality": "MISSING",
+          "depth_proxy": null
+        }
+      },
+      "match_basis": "SPORTS_EVENT_IDENTITY",
+      "mechanics": {
+        "account_applicability": "UNVERIFIED",
+        "polymarket_us_no": "UNSUPPORTED_SYNTHETIC_SHORT",
+        "research_path": "CASH_FUNDED_LONG_ONLY"
+      },
+      "polymarket_event_key": "[\"NBA\",\"FULL_GAME_WINNER\",[\"LAC\",\"MIN\"],\"2026-10-30\"]",
+      "polymarket_us_id": "aec-nba-lac-min-2026-10-30",
+      "polymarket_us_title": "Who will win in the upcoming basketball event LA Clippers vs MIN Timberwolves scheduled for October 31, 2026 at 12:00 AM UTC?",
+      "prior_reviews": [],
+      "retrieval_reasons": [
+        "EXACT_LEAGUE_PARTICIPANTS_RULE_DATE_AND_SELECTION"
+      ],
+      "review_reason": "EVENT_IDENTITY_ONLY",
+      "review_snapshot_expires_at": "2026-10-31T06:10:26.663489+00:00",
+      "settlement_deadlines": [
+        "2026-11-02T00:00:00+00:00",
+        "2026-11-14T00:00:00+00:00"
+      ],
+      "signals": {
+        "dates": "SCHEDULED_RULE_DATE_MATCH",
+        "league": "NBA",
+        "market_type": "FULL_GAME_WINNER",
+        "participants": [
+          "LAC",
+          "MIN"
+        ],
+        "selection": "LAC",
+        "settlement_equivalence": "UNVERIFIED",
+        "sports_identity": "MATCH",
+        "subject_bps": 10000
+      },
+      "source_observations": [
+        9540,
+        9274
+      ],
+      "source_received_at": [
+        "2026-10-30T06:18:28.585711+00:00",
+        "2026-10-30T06:10:26.663489+00:00"
+      ],
+      "status": "UNVERIFIED",
+      "trading_authorized": false,
+      "versions": [
+        278147,
+        476578
+      ],
+      "warnings": [
+        "ADMINISTRATIVE_CUTOFFS_DIFFER",
+        "EXCEPTIONAL_FAIR_PRICE_PAYOUTS_NOT_ESTABLISHED_COMPLEMENTARY",
+        "FORFEIT_AND_SOURCE_REVISION_RULES_REQUIRE_REVIEW",
+        "OCCURRENCE_AND_START_TIMES_NOT_COMPARABLE",
+        "POSTPONEMENT_WINDOW_UNKNOWN",
+        "SPORTS_IDENTITY_ONLY_NOT_EQUIVALENCE",
+        "SPORTS_SETTLEMENT_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "algorithm": "semantic-discovery/m5i-v1",
+      "definition_links": {
+        "kalshi": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT30NYKPHI-NYK",
+        "polymarket_us": "https://gateway.polymarket.us/v1/market/slug/aec-nba-ny-phi-2026-10-30"
+      },
+      "equivalence_score_bps": 8500,
+      "equivalence_verified": false,
+      "event_key": "[\"NBA\",\"FULL_GAME_WINNER\",[\"NYK\",\"PHI\"],\"2026-10-30\"]",
+      "hypothetical": false,
+      "kalshi_id": "KXNBAGAME-26OCT30NYKPHI-NYK",
+      "kalshi_title": "New York wins",
+      "known_contradictions": [],
+      "liquidity": {
+        "kalshi": {
+          "quality": "MISSING",
+          "depth_proxy": null
+        },
+        "polymarket_us": {
+          "quality": "MISSING",
+          "depth_proxy": null
+        }
+      },
+      "match_basis": "SPORTS_EVENT_IDENTITY",
+      "mechanics": {
+        "account_applicability": "UNVERIFIED",
+        "polymarket_us_no": "UNSUPPORTED_SYNTHETIC_SHORT",
+        "research_path": "CASH_FUNDED_LONG_ONLY"
+      },
+      "polymarket_event_key": "[\"NBA\",\"FULL_GAME_WINNER\",[\"NYK\",\"PHI\"],\"2026-10-30\"]",
+      "polymarket_us_id": "aec-nba-ny-phi-2026-10-30",
+      "polymarket_us_title": "Who will win in the upcoming basketball event NY Knicks vs PHI 76ers scheduled for October 30, 2026 at 11:30 PM UTC?",
+      "prior_reviews": [],
+      "retrieval_reasons": [
+        "EXACT_LEAGUE_PARTICIPANTS_RULE_DATE_AND_SELECTION"
+      ],
+      "review_reason": "EVENT_IDENTITY_ONLY",
+      "review_snapshot_expires_at": "2026-10-31T06:10:26.663489+00:00",
+      "settlement_deadlines": [
+        "2026-11-01T23:30:00+00:00",
+        "2026-11-13T23:30:00+00:00"
+      ],
+      "signals": {
+        "dates": "SCHEDULED_RULE_DATE_MATCH",
+        "league": "NBA",
+        "market_type": "FULL_GAME_WINNER",
+        "participants": [
+          "NYK",
+          "PHI"
+        ],
+        "selection": "NYK",
+        "settlement_equivalence": "UNVERIFIED",
+        "sports_identity": "MATCH",
+        "subject_bps": 10000
+      },
+      "source_observations": [
+        9541,
+        9274
+      ],
+      "source_received_at": [
+        "2026-10-30T06:18:30.103262+00:00",
+        "2026-10-30T06:10:26.663489+00:00"
+      ],
+      "status": "UNVERIFIED",
+      "trading_authorized": false,
+      "versions": [
+        278517,
+        476572
+      ],
+      "warnings": [
+        "ADMINISTRATIVE_CUTOFFS_DIFFER",
+        "EXCEPTIONAL_FAIR_PRICE_PAYOUTS_NOT_ESTABLISHED_COMPLEMENTARY",
+        "FORFEIT_AND_SOURCE_REVISION_RULES_REQUIRE_REVIEW",
+        "OCCURRENCE_AND_START_TIMES_NOT_COMPARABLE",
+        "POSTPONEMENT_WINDOW_UNKNOWN",
+        "SPORTS_IDENTITY_ONLY_NOT_EQUIVALENCE",
+        "SPORTS_SETTLEMENT_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "algorithm": "semantic-discovery/m5i-v1",
+      "definition_links": {
+        "kalshi": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT30ORLTOR-ORL",
+        "polymarket_us": "https://gateway.polymarket.us/v1/market/slug/aec-nba-orl-tor-2026-10-30"
+      },
+      "equivalence_score_bps": 8500,
+      "equivalence_verified": false,
+      "event_key": "[\"NBA\",\"FULL_GAME_WINNER\",[\"ORL\",\"TOR\"],\"2026-10-30\"]",
+      "hypothetical": false,
+      "kalshi_id": "KXNBAGAME-26OCT30ORLTOR-ORL",
+      "kalshi_title": "Orlando wins",
+      "known_contradictions": [],
+      "liquidity": {
+        "kalshi": {
+          "quality": "MISSING",
+          "depth_proxy": null
+        },
+        "polymarket_us": {
+          "quality": "MISSING",
+          "depth_proxy": null
+        }
+      },
+      "match_basis": "SPORTS_EVENT_IDENTITY",
+      "mechanics": {
+        "account_applicability": "UNVERIFIED",
+        "polymarket_us_no": "UNSUPPORTED_SYNTHETIC_SHORT",
+        "research_path": "CASH_FUNDED_LONG_ONLY"
+      },
+      "polymarket_event_key": "[\"NBA\",\"FULL_GAME_WINNER\",[\"ORL\",\"TOR\"],\"2026-10-30\"]",
+      "polymarket_us_id": "aec-nba-orl-tor-2026-10-30",
+      "polymarket_us_title": "Who will win in the upcoming basketball event ORL Magic vs TOR Raptors scheduled for October 30, 2026 at 11:30 PM UTC?",
+      "prior_reviews": [],
+      "retrieval_reasons": [
+        "EXACT_LEAGUE_PARTICIPANTS_RULE_DATE_AND_SELECTION"
+      ],
+      "review_reason": "EVENT_IDENTITY_ONLY",
+      "review_snapshot_expires_at": "2026-10-31T06:10:26.663489+00:00",
+      "settlement_deadlines": [
+        "2026-11-01T23:30:00+00:00",
+        "2026-11-13T23:30:00+00:00"
+      ],
+      "signals": {
+        "dates": "SCHEDULED_RULE_DATE_MATCH",
+        "league": "NBA",
+        "market_type": "FULL_GAME_WINNER",
+        "participants": [
+          "ORL",
+          "TOR"
+        ],
+        "selection": "ORL",
+        "settlement_equivalence": "UNVERIFIED",
+        "sports_identity": "MATCH",
+        "subject_bps": 10000
+      },
+      "source_observations": [
+        9541,
+        9274
+      ],
+      "source_received_at": [
+        "2026-10-30T06:18:30.103262+00:00",
+        "2026-10-30T06:10:26.663489+00:00"
+      ],
+      "status": "UNVERIFIED",
+      "trading_authorized": false,
+      "versions": [
+        278511,
+        476574
+      ],
+      "warnings": [
+        "ADMINISTRATIVE_CUTOFFS_DIFFER",
+        "EXCEPTIONAL_FAIR_PRICE_PAYOUTS_NOT_ESTABLISHED_COMPLEMENTARY",
+        "FORFEIT_AND_SOURCE_REVISION_RULES_REQUIRE_REVIEW",
+        "OCCURRENCE_AND_START_TIMES_NOT_COMPARABLE",
+        "POSTPONEMENT_WINDOW_UNKNOWN",
+        "SPORTS_IDENTITY_ONLY_NOT_EQUIVALENCE",
+        "SPORTS_SETTLEMENT_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "algorithm": "semantic-discovery/m5i-v1",
+      "definition_links": {
+        "kalshi": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT31ATLNOP-ATL",
+        "polymarket_us": "https://gateway.polymarket.us/v1/market/slug/aec-nba-atl-no-2026-10-31"
+      },
+      "equivalence_score_bps": 8500,
+      "equivalence_verified": false,
+      "event_key": "[\"NBA\",\"FULL_GAME_WINNER\",[\"ATL\",\"NOP\"],\"2026-10-31\"]",
+      "hypothetical": false,
+      "kalshi_id": "KXNBAGAME-26OCT31ATLNOP-ATL",
+      "kalshi_title": "Atlanta wins",
+      "known_contradictions": [],
+      "liquidity": {
+        "kalshi": {
+          "quality": "MISSING",
+          "depth_proxy": null
+        },
+        "polymarket_us": {
+          "quality": "MISSING",
+          "depth_proxy": null
+        }
+      },
+      "match_basis": "SPORTS_EVENT_IDENTITY",
+      "mechanics": {
+        "account_applicability": "UNVERIFIED",
+        "polymarket_us_no": "UNSUPPORTED_SYNTHETIC_SHORT",
+        "research_path": "CASH_FUNDED_LONG_ONLY"
+      },
+      "polymarket_event_key": "[\"NBA\",\"FULL_GAME_WINNER\",[\"ATL\",\"NOP\"],\"2026-10-31\"]",
+      "polymarket_us_id": "aec-nba-atl-no-2026-10-31",
+      "polymarket_us_title": "Who will win in the upcoming basketball event ATL Hawks vs NO Pelicans scheduled for October 31, 2026 at 11:00 PM UTC?",
+      "prior_reviews": [],
+      "retrieval_reasons": [
+        "EXACT_LEAGUE_PARTICIPANTS_RULE_DATE_AND_SELECTION"
+      ],
+      "review_reason": "EVENT_IDENTITY_ONLY",
+      "review_snapshot_expires_at": "2026-10-31T06:10:28.834032+00:00",
+      "settlement_deadlines": [
+        "2026-11-02T23:00:00+00:00",
+        "2026-11-14T23:00:00+00:00"
+      ],
+      "signals": {
+        "dates": "SCHEDULED_RULE_DATE_MATCH",
+        "league": "NBA",
+        "market_type": "FULL_GAME_WINNER",
+        "participants": [
+          "ATL",
+          "NOP"
+        ],
+        "selection": "ATL",
+        "settlement_equivalence": "UNVERIFIED",
+        "sports_identity": "MATCH",
+        "subject_bps": 10000
+      },
+      "source_observations": [
+        9487,
+        9275
+      ],
+      "source_received_at": [
+        "2026-10-30T06:17:06.275738+00:00",
+        "2026-10-30T06:10:28.834032+00:00"
+      ],
+      "status": "UNVERIFIED",
+      "trading_authorized": false,
+      "versions": [
+        258636,
+        476583
+      ],
+      "warnings": [
+        "ADMINISTRATIVE_CUTOFFS_DIFFER",
+        "EXCEPTIONAL_FAIR_PRICE_PAYOUTS_NOT_ESTABLISHED_COMPLEMENTARY",
+        "FORFEIT_AND_SOURCE_REVISION_RULES_REQUIRE_REVIEW",
+        "OCCURRENCE_AND_START_TIMES_NOT_COMPARABLE",
+        "POSTPONEMENT_WINDOW_UNKNOWN",
+        "SPORTS_IDENTITY_ONLY_NOT_EQUIVALENCE",
+        "SPORTS_SETTLEMENT_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "algorithm": "semantic-discovery/m5i-v1",
+      "definition_links": {
+        "kalshi": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT31PHICHA-PHI",
+        "polymarket_us": "https://gateway.polymarket.us/v1/market/slug/aec-nba-phi-cha-2026-10-31"
+      },
+      "equivalence_score_bps": 8500,
+      "equivalence_verified": false,
+      "event_key": "[\"NBA\",\"FULL_GAME_WINNER\",[\"CHA\",\"PHI\"],\"2026-10-31\"]",
+      "hypothetical": false,
+      "kalshi_id": "KXNBAGAME-26OCT31PHICHA-PHI",
+      "kalshi_title": "Philadelphia wins",
+      "known_contradictions": [],
+      "liquidity": {
+        "kalshi": {
+          "quality": "MISSING",
+          "depth_proxy": null
+        },
+        "polymarket_us": {
+          "quality": "MISSING",
+          "depth_proxy": null
+        }
+      },
+      "match_basis": "SPORTS_EVENT_IDENTITY",
+      "mechanics": {
+        "account_applicability": "UNVERIFIED",
+        "polymarket_us_no": "UNSUPPORTED_SYNTHETIC_SHORT",
+        "research_path": "CASH_FUNDED_LONG_ONLY"
+      },
+      "polymarket_event_key": "[\"NBA\",\"FULL_GAME_WINNER\",[\"CHA\",\"PHI\"],\"2026-10-31\"]",
+      "polymarket_us_id": "aec-nba-phi-cha-2026-10-31",
+      "polymarket_us_title": "Who will win in the upcoming basketball event PHI 76ers vs CHA Hornets scheduled for October 31, 2026 at 10:00 PM UTC?",
+      "prior_reviews": [],
+      "retrieval_reasons": [
+        "EXACT_LEAGUE_PARTICIPANTS_RULE_DATE_AND_SELECTION"
+      ],
+      "review_reason": "EVENT_IDENTITY_ONLY",
+      "review_snapshot_expires_at": "2026-10-31T06:10:28.834032+00:00",
+      "settlement_deadlines": [
+        "2026-11-02T22:00:00+00:00",
+        "2026-11-14T22:00:00+00:00"
+      ],
+      "signals": {
+        "dates": "SCHEDULED_RULE_DATE_MATCH",
+        "league": "NBA",
+        "market_type": "FULL_GAME_WINNER",
+        "participants": [
+          "CHA",
+          "PHI"
+        ],
+        "selection": "PHI",
+        "settlement_equivalence": "UNVERIFIED",
+        "sports_identity": "MATCH",
+        "subject_bps": 10000
+      },
+      "source_observations": [
+        9490,
+        9275
+      ],
+      "source_received_at": [
+        "2026-10-30T06:17:10.633515+00:00",
+        "2026-10-30T06:10:28.834032+00:00"
+      ],
+      "status": "UNVERIFIED",
+      "trading_authorized": false,
+      "versions": [
+        259937,
+        476582
+      ],
+      "warnings": [
+        "ADMINISTRATIVE_CUTOFFS_DIFFER",
+        "EXCEPTIONAL_FAIR_PRICE_PAYOUTS_NOT_ESTABLISHED_COMPLEMENTARY",
+        "FORFEIT_AND_SOURCE_REVISION_RULES_REQUIRE_REVIEW",
+        "OCCURRENCE_AND_START_TIMES_NOT_COMPARABLE",
+        "POSTPONEMENT_WINDOW_UNKNOWN",
+        "SPORTS_IDENTITY_ONLY_NOT_EQUIVALENCE",
+        "SPORTS_SETTLEMENT_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "algorithm": "semantic-discovery/m5i-v1",
+      "definition_links": {
+        "kalshi": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT31CLEMIL-CLE",
+        "polymarket_us": "https://gateway.polymarket.us/v1/market/slug/aec-nba-cle-mil-2026-10-31"
+      },
+      "equivalence_score_bps": 8500,
+      "equivalence_verified": false,
+      "event_key": "[\"NBA\",\"FULL_GAME_WINNER\",[\"CLE\",\"MIL\"],\"2026-10-31\"]",
+      "hypothetical": false,
+      "kalshi_id": "KXNBAGAME-26OCT31CLEMIL-CLE",
+      "kalshi_title": "Cleveland wins",
+      "known_contradictions": [],
+      "liquidity": {
+        "kalshi": {
+          "quality": "MISSING",
+          "depth_proxy": null
+        },
+        "polymarket_us": {
+          "quality": "MISSING",
+          "depth_proxy": null
+        }
+      },
+      "match_basis": "SPORTS_EVENT_IDENTITY",
+      "mechanics": {
+        "account_applicability": "UNVERIFIED",
+        "polymarket_us_no": "UNSUPPORTED_SYNTHETIC_SHORT",
+        "research_path": "CASH_FUNDED_LONG_ONLY"
+      },
+      "polymarket_event_key": "[\"NBA\",\"FULL_GAME_WINNER\",[\"CLE\",\"MIL\"],\"2026-10-31\"]",
+      "polymarket_us_id": "aec-nba-cle-mil-2026-10-31",
+      "polymarket_us_title": "Who will win in the upcoming basketball event CLE Cavaliers vs MIL Bucks scheduled for November 1, 2026 at 12:00 AM UTC?",
+      "prior_reviews": [],
+      "retrieval_reasons": [
+        "EXACT_LEAGUE_PARTICIPANTS_RULE_DATE_AND_SELECTION"
+      ],
+      "review_reason": "EVENT_IDENTITY_ONLY",
+      "review_snapshot_expires_at": "2026-10-31T06:10:28.834032+00:00",
+      "settlement_deadlines": [
+        "2026-11-03T00:00:00+00:00",
+        "2026-11-15T00:00:00+00:00"
+      ],
+      "signals": {
+        "dates": "SCHEDULED_RULE_DATE_MATCH",
+        "league": "NBA",
+        "market_type": "FULL_GAME_WINNER",
+        "participants": [
+          "CLE",
+          "MIL"
+        ],
+        "selection": "CLE",
+        "settlement_equivalence": "UNVERIFIED",
+        "sports_identity": "MATCH",
+        "subject_bps": 10000
+      },
+      "source_observations": [
+        9486,
+        9275
+      ],
+      "source_received_at": [
+        "2026-10-30T06:17:04.757544+00:00",
+        "2026-10-30T06:10:28.834032+00:00"
+      ],
+      "status": "UNVERIFIED",
+      "trading_authorized": false,
+      "versions": [
+        360483,
+        476586
+      ],
+      "warnings": [
+        "ADMINISTRATIVE_CUTOFFS_DIFFER",
+        "EXCEPTIONAL_FAIR_PRICE_PAYOUTS_NOT_ESTABLISHED_COMPLEMENTARY",
+        "FORFEIT_AND_SOURCE_REVISION_RULES_REQUIRE_REVIEW",
+        "OCCURRENCE_AND_START_TIMES_NOT_COMPARABLE",
+        "POSTPONEMENT_WINDOW_UNKNOWN",
+        "SPORTS_IDENTITY_ONLY_NOT_EQUIVALENCE",
+        "SPORTS_SETTLEMENT_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "algorithm": "semantic-discovery/m5i-v1",
+      "definition_links": {
+        "kalshi": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT31OKCHOU-OKC",
+        "polymarket_us": "https://gateway.polymarket.us/v1/market/slug/aec-nba-okc-hou-2026-10-31"
+      },
+      "equivalence_score_bps": 8500,
+      "equivalence_verified": false,
+      "event_key": "[\"NBA\",\"FULL_GAME_WINNER\",[\"HOU\",\"OKC\"],\"2026-10-31\"]",
+      "hypothetical": false,
+      "kalshi_id": "KXNBAGAME-26OCT31OKCHOU-OKC",
+      "kalshi_title": "Oklahoma City wins",
+      "known_contradictions": [],
+      "liquidity": {
+        "kalshi": {
+          "quality": "MISSING",
+          "depth_proxy": null
+        },
+        "polymarket_us": {
+          "quality": "MISSING",
+          "depth_proxy": null
+        }
+      },
+      "match_basis": "SPORTS_EVENT_IDENTITY",
+      "mechanics": {
+        "account_applicability": "UNVERIFIED",
+        "polymarket_us_no": "UNSUPPORTED_SYNTHETIC_SHORT",
+        "research_path": "CASH_FUNDED_LONG_ONLY"
+      },
+      "polymarket_event_key": "[\"NBA\",\"FULL_GAME_WINNER\",[\"HOU\",\"OKC\"],\"2026-10-31\"]",
+      "polymarket_us_id": "aec-nba-okc-hou-2026-10-31",
+      "polymarket_us_title": "Who will win in the upcoming basketball event OKC Thunder vs HOU Rockets scheduled for November 1, 2026 at 12:30 AM UTC?",
+      "prior_reviews": [],
+      "retrieval_reasons": [
+        "EXACT_LEAGUE_PARTICIPANTS_RULE_DATE_AND_SELECTION"
+      ],
+      "review_reason": "EVENT_IDENTITY_ONLY",
+      "review_snapshot_expires_at": "2026-10-31T06:10:28.834032+00:00",
+      "settlement_deadlines": [
+        "2026-11-03T00:30:00+00:00",
+        "2026-11-15T00:30:00+00:00"
+      ],
+      "signals": {
+        "dates": "SCHEDULED_RULE_DATE_MATCH",
+        "league": "NBA",
+        "market_type": "FULL_GAME_WINNER",
+        "participants": [
+          "HOU",
+          "OKC"
+        ],
+        "selection": "OKC",
+        "settlement_equivalence": "UNVERIFIED",
+        "sports_identity": "MATCH",
+        "subject_bps": 10000
+      },
+      "source_observations": [
+        9461,
+        9275
+      ],
+      "source_received_at": [
+        "2026-10-30T06:16:23.162792+00:00",
+        "2026-10-30T06:10:28.834032+00:00"
+      ],
+      "status": "UNVERIFIED",
+      "trading_authorized": false,
+      "versions": [
+        359320,
+        476587
+      ],
+      "warnings": [
+        "ADMINISTRATIVE_CUTOFFS_DIFFER",
+        "EXCEPTIONAL_FAIR_PRICE_PAYOUTS_NOT_ESTABLISHED_COMPLEMENTARY",
+        "FORFEIT_AND_SOURCE_REVISION_RULES_REQUIRE_REVIEW",
+        "OCCURRENCE_AND_START_TIMES_NOT_COMPARABLE",
+        "POSTPONEMENT_WINDOW_UNKNOWN",
+        "SPORTS_IDENTITY_ONLY_NOT_EQUIVALENCE",
+        "SPORTS_SETTLEMENT_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "algorithm": "semantic-discovery/m5i-v1",
+      "definition_links": {
+        "kalshi": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT31SACMEM-SAC",
+        "polymarket_us": "https://gateway.polymarket.us/v1/market/slug/aec-nba-sac-mem-2026-10-31"
+      },
+      "equivalence_score_bps": 8500,
+      "equivalence_verified": false,
+      "event_key": "[\"NBA\",\"FULL_GAME_WINNER\",[\"MEM\",\"SAC\"],\"2026-10-31\"]",
+      "hypothetical": false,
+      "kalshi_id": "KXNBAGAME-26OCT31SACMEM-SAC",
+      "kalshi_title": "Sacramento wins",
+      "known_contradictions": [],
+      "liquidity": {
+        "kalshi": {
+          "quality": "MISSING",
+          "depth_proxy": null
+        },
+        "polymarket_us": {
+          "quality": "MISSING",
+          "depth_proxy": null
+        }
+      },
+      "match_basis": "SPORTS_EVENT_IDENTITY",
+      "mechanics": {
+        "account_applicability": "UNVERIFIED",
+        "polymarket_us_no": "UNSUPPORTED_SYNTHETIC_SHORT",
+        "research_path": "CASH_FUNDED_LONG_ONLY"
+      },
+      "polymarket_event_key": "[\"NBA\",\"FULL_GAME_WINNER\",[\"MEM\",\"SAC\"],\"2026-10-31\"]",
+      "polymarket_us_id": "aec-nba-sac-mem-2026-10-31",
+      "polymarket_us_title": "Who will win in the upcoming basketball event SAC Kings vs MEM Grizzlies scheduled for November 1, 2026 at 12:00 AM UTC?",
+      "prior_reviews": [],
+      "retrieval_reasons": [
+        "EXACT_LEAGUE_PARTICIPANTS_RULE_DATE_AND_SELECTION"
+      ],
+      "review_reason": "EVENT_IDENTITY_ONLY",
+      "review_snapshot_expires_at": "2026-10-31T06:10:28.834032+00:00",
+      "settlement_deadlines": [
+        "2026-11-03T00:00:00+00:00",
+        "2026-11-15T00:00:00+00:00"
+      ],
+      "signals": {
+        "dates": "SCHEDULED_RULE_DATE_MATCH",
+        "league": "NBA",
+        "market_type": "FULL_GAME_WINNER",
+        "participants": [
+          "MEM",
+          "SAC"
+        ],
+        "selection": "SAC",
+        "settlement_equivalence": "UNVERIFIED",
+        "sports_identity": "MATCH",
+        "subject_bps": 10000
+      },
+      "source_observations": [
+        9486,
+        9275
+      ],
+      "source_received_at": [
+        "2026-10-30T06:17:04.757544+00:00",
+        "2026-10-30T06:10:28.834032+00:00"
+      ],
+      "status": "UNVERIFIED",
+      "trading_authorized": false,
+      "versions": [
+        360484,
+        476585
+      ],
+      "warnings": [
+        "ADMINISTRATIVE_CUTOFFS_DIFFER",
+        "EXCEPTIONAL_FAIR_PRICE_PAYOUTS_NOT_ESTABLISHED_COMPLEMENTARY",
+        "FORFEIT_AND_SOURCE_REVISION_RULES_REQUIRE_REVIEW",
+        "OCCURRENCE_AND_START_TIMES_NOT_COMPARABLE",
+        "POSTPONEMENT_WINDOW_UNKNOWN",
+        "SPORTS_IDENTITY_ONLY_NOT_EQUIVALENCE",
+        "SPORTS_SETTLEMENT_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "algorithm": "semantic-discovery/m5i-v1",
+      "definition_links": {
+        "kalshi": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT31MINSAS-MIN",
+        "polymarket_us": "https://gateway.polymarket.us/v1/market/slug/aec-nba-min-sa-2026-10-31"
+      },
+      "equivalence_score_bps": 8500,
+      "equivalence_verified": false,
+      "event_key": "[\"NBA\",\"FULL_GAME_WINNER\",[\"MIN\",\"SAS\"],\"2026-10-31\"]",
+      "hypothetical": false,
+      "kalshi_id": "KXNBAGAME-26OCT31MINSAS-MIN",
+      "kalshi_title": "Minnesota wins",
+      "known_contradictions": [],
+      "liquidity": {
+        "kalshi": {
+          "quality": "MISSING",
+          "depth_proxy": null
+        },
+        "polymarket_us": {
+          "quality": "MISSING",
+          "depth_proxy": null
+        }
+      },
+      "match_basis": "SPORTS_EVENT_IDENTITY",
+      "mechanics": {
+        "account_applicability": "UNVERIFIED",
+        "polymarket_us_no": "UNSUPPORTED_SYNTHETIC_SHORT",
+        "research_path": "CASH_FUNDED_LONG_ONLY"
+      },
+      "polymarket_event_key": "[\"NBA\",\"FULL_GAME_WINNER\",[\"MIN\",\"SAS\"],\"2026-10-31\"]",
+      "polymarket_us_id": "aec-nba-min-sa-2026-10-31",
+      "polymarket_us_title": "Who will win in the upcoming basketball event MIN Timberwolves vs SA Spurs scheduled for November 1, 2026 at 12:00 AM UTC?",
+      "prior_reviews": [],
+      "retrieval_reasons": [
+        "EXACT_LEAGUE_PARTICIPANTS_RULE_DATE_AND_SELECTION"
+      ],
+      "review_reason": "EVENT_IDENTITY_ONLY",
+      "review_snapshot_expires_at": "2026-10-31T06:10:28.834032+00:00",
+      "settlement_deadlines": [
+        "2026-11-03T00:00:00+00:00",
+        "2026-11-15T00:00:00+00:00"
+      ],
+      "signals": {
+        "dates": "SCHEDULED_RULE_DATE_MATCH",
+        "league": "NBA",
+        "market_type": "FULL_GAME_WINNER",
+        "participants": [
+          "MIN",
+          "SAS"
+        ],
+        "selection": "MIN",
+        "settlement_equivalence": "UNVERIFIED",
+        "sports_identity": "MATCH",
+        "subject_bps": 10000
+      },
+      "source_observations": [
+        9486,
+        9275
+      ],
+      "source_received_at": [
+        "2026-10-30T06:17:04.757544+00:00",
+        "2026-10-30T06:10:28.834032+00:00"
+      ],
+      "status": "UNVERIFIED",
+      "trading_authorized": false,
+      "versions": [
+        360481,
+        476584
+      ],
+      "warnings": [
+        "ADMINISTRATIVE_CUTOFFS_DIFFER",
+        "EXCEPTIONAL_FAIR_PRICE_PAYOUTS_NOT_ESTABLISHED_COMPLEMENTARY",
+        "FORFEIT_AND_SOURCE_REVISION_RULES_REQUIRE_REVIEW",
+        "OCCURRENCE_AND_START_TIMES_NOT_COMPARABLE",
+        "POSTPONEMENT_WINDOW_UNKNOWN",
+        "SPORTS_IDENTITY_ONLY_NOT_EQUIVALENCE",
+        "SPORTS_SETTLEMENT_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "algorithm": "semantic-discovery/m5i-v1",
+      "definition_links": {
+        "kalshi": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT31PORUTA-POR",
+        "polymarket_us": "https://gateway.polymarket.us/v1/market/slug/aec-nba-por-uta-2026-10-31"
+      },
+      "equivalence_score_bps": 8500,
+      "equivalence_verified": false,
+      "event_key": "[\"NBA\",\"FULL_GAME_WINNER\",[\"POR\",\"UTA\"],\"2026-10-31\"]",
+      "hypothetical": false,
+      "kalshi_id": "KXNBAGAME-26OCT31PORUTA-POR",
+      "kalshi_title": "Portland wins",
+      "known_contradictions": [],
+      "liquidity": {
+        "kalshi": {
+          "quality": "MISSING",
+          "depth_proxy": null
+        },
+        "polymarket_us": {
+          "quality": "MISSING",
+          "depth_proxy": null
+        }
+      },
+      "match_basis": "SPORTS_EVENT_IDENTITY",
+      "mechanics": {
+        "account_applicability": "UNVERIFIED",
+        "polymarket_us_no": "UNSUPPORTED_SYNTHETIC_SHORT",
+        "research_path": "CASH_FUNDED_LONG_ONLY"
+      },
+      "polymarket_event_key": "[\"NBA\",\"FULL_GAME_WINNER\",[\"POR\",\"UTA\"],\"2026-10-31\"]",
+      "polymarket_us_id": "aec-nba-por-uta-2026-10-31",
+      "polymarket_us_title": "Who will win in the upcoming basketball event POR Trail Blazers vs UTA Jazz scheduled for October 31, 2026 at 7:00 PM UTC?",
+      "prior_reviews": [],
+      "retrieval_reasons": [
+        "EXACT_LEAGUE_PARTICIPANTS_RULE_DATE_AND_SELECTION"
+      ],
+      "review_reason": "EVENT_IDENTITY_ONLY",
+      "review_snapshot_expires_at": "2026-10-31T06:10:28.834032+00:00",
+      "settlement_deadlines": [
+        "2026-11-02T19:00:00+00:00",
+        "2026-11-14T19:00:00+00:00"
+      ],
+      "signals": {
+        "dates": "SCHEDULED_RULE_DATE_MATCH",
+        "league": "NBA",
+        "market_type": "FULL_GAME_WINNER",
+        "participants": [
+          "POR",
+          "UTA"
+        ],
+        "selection": "POR",
+        "settlement_equivalence": "UNVERIFIED",
+        "sports_identity": "MATCH",
+        "subject_bps": 10000
+      },
+      "source_observations": [
+        9494,
+        9275
+      ],
+      "source_received_at": [
+        "2026-10-30T06:17:16.515672+00:00",
+        "2026-10-30T06:10:28.834032+00:00"
+      ],
+      "status": "UNVERIFIED",
+      "trading_authorized": false,
+      "versions": [
+        254876,
+        476581
+      ],
+      "warnings": [
+        "ADMINISTRATIVE_CUTOFFS_DIFFER",
+        "EXCEPTIONAL_FAIR_PRICE_PAYOUTS_NOT_ESTABLISHED_COMPLEMENTARY",
+        "FORFEIT_AND_SOURCE_REVISION_RULES_REQUIRE_REVIEW",
+        "OCCURRENCE_AND_START_TIMES_NOT_COMPARABLE",
+        "POSTPONEMENT_WINDOW_UNKNOWN",
+        "SPORTS_IDENTITY_ONLY_NOT_EQUIVALENCE",
+        "SPORTS_SETTLEMENT_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "algorithm": "semantic-discovery/m5i-v1",
+      "definition_links": {
+        "kalshi": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26NOV01BKNIND-BKN",
+        "polymarket_us": "https://gateway.polymarket.us/v1/market/slug/aec-nba-bkn-ind-2026-11-01"
+      },
+      "equivalence_score_bps": 8500,
+      "equivalence_verified": false,
+      "event_key": "[\"NBA\",\"FULL_GAME_WINNER\",[\"BKN\",\"IND\"],\"2026-11-01\"]",
+      "hypothetical": false,
+      "kalshi_id": "KXNBAGAME-26NOV01BKNIND-BKN",
+      "kalshi_title": "Brooklyn wins",
+      "known_contradictions": [],
+      "liquidity": {
+        "kalshi": {
+          "quality": "MISSING",
+          "depth_proxy": null
+        },
+        "polymarket_us": {
+          "quality": "MISSING",
+          "depth_proxy": null
+        }
+      },
+      "match_basis": "SPORTS_EVENT_IDENTITY",
+      "mechanics": {
+        "account_applicability": "UNVERIFIED",
+        "polymarket_us_no": "UNSUPPORTED_SYNTHETIC_SHORT",
+        "research_path": "CASH_FUNDED_LONG_ONLY"
+      },
+      "polymarket_event_key": "[\"NBA\",\"FULL_GAME_WINNER\",[\"BKN\",\"IND\"],\"2026-11-01\"]",
+      "polymarket_us_id": "aec-nba-bkn-ind-2026-11-01",
+      "polymarket_us_title": "Who will win in the upcoming basketball event BKN Nets vs IND Pacers scheduled for November 1, 2026 at 10:00 PM UTC?",
+      "prior_reviews": [],
+      "retrieval_reasons": [
+        "EXACT_LEAGUE_PARTICIPANTS_RULE_DATE_AND_SELECTION"
+      ],
+      "review_reason": "EVENT_IDENTITY_ONLY",
+      "review_snapshot_expires_at": "2026-10-31T06:10:40.302591+00:00",
+      "settlement_deadlines": [
+        "2026-11-03T22:00:00+00:00",
+        "2026-11-15T22:00:00+00:00"
+      ],
+      "signals": {
+        "dates": "SCHEDULED_RULE_DATE_MATCH",
+        "league": "NBA",
+        "market_type": "FULL_GAME_WINNER",
+        "participants": [
+          "BKN",
+          "IND"
+        ],
+        "selection": "BKN",
+        "settlement_equivalence": "UNVERIFIED",
+        "sports_identity": "MATCH",
+        "subject_bps": 10000
+      },
+      "source_observations": [
+        9376,
+        9280
+      ],
+      "source_received_at": [
+        "2026-10-30T06:14:06.858580+00:00",
+        "2026-10-30T06:10:40.302591+00:00"
+      ],
+      "status": "UNVERIFIED",
+      "trading_authorized": false,
+      "versions": [
+        401651,
+        476592
+      ],
+      "warnings": [
+        "ADMINISTRATIVE_CUTOFFS_DIFFER",
+        "EXCEPTIONAL_FAIR_PRICE_PAYOUTS_NOT_ESTABLISHED_COMPLEMENTARY",
+        "FORFEIT_AND_SOURCE_REVISION_RULES_REQUIRE_REVIEW",
+        "OCCURRENCE_AND_START_TIMES_NOT_COMPARABLE",
+        "POSTPONEMENT_WINDOW_UNKNOWN",
+        "SPORTS_IDENTITY_ONLY_NOT_EQUIVALENCE",
+        "SPORTS_SETTLEMENT_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "algorithm": "semantic-discovery/m5i-v1",
+      "definition_links": {
+        "kalshi": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26NOV01BOSORL-BOS",
+        "polymarket_us": "https://gateway.polymarket.us/v1/market/slug/aec-nba-bos-orl-2026-11-01"
+      },
+      "equivalence_score_bps": 8500,
+      "equivalence_verified": false,
+      "event_key": "[\"NBA\",\"FULL_GAME_WINNER\",[\"BOS\",\"ORL\"],\"2026-11-01\"]",
+      "hypothetical": false,
+      "kalshi_id": "KXNBAGAME-26NOV01BOSORL-BOS",
+      "kalshi_title": "Boston wins",
+      "known_contradictions": [],
+      "liquidity": {
+        "kalshi": {
+          "quality": "MISSING",
+          "depth_proxy": null
+        },
+        "polymarket_us": {
+          "quality": "MISSING",
+          "depth_proxy": null
+        }
+      },
+      "match_basis": "SPORTS_EVENT_IDENTITY",
+      "mechanics": {
+        "account_applicability": "UNVERIFIED",
+        "polymarket_us_no": "UNSUPPORTED_SYNTHETIC_SHORT",
+        "research_path": "CASH_FUNDED_LONG_ONLY"
+      },
+      "polymarket_event_key": "[\"NBA\",\"FULL_GAME_WINNER\",[\"BOS\",\"ORL\"],\"2026-11-01\"]",
+      "polymarket_us_id": "aec-nba-bos-orl-2026-11-01",
+      "polymarket_us_title": "Who will win in the upcoming basketball event BOS Celtics vs ORL Magic scheduled for November 1, 2026 at 8:30 PM UTC?",
+      "prior_reviews": [],
+      "retrieval_reasons": [
+        "EXACT_LEAGUE_PARTICIPANTS_RULE_DATE_AND_SELECTION"
+      ],
+      "review_reason": "EVENT_IDENTITY_ONLY",
+      "review_snapshot_expires_at": "2026-10-31T06:10:40.302591+00:00",
+      "settlement_deadlines": [
+        "2026-11-03T20:30:00+00:00",
+        "2026-11-15T20:30:00+00:00"
+      ],
+      "signals": {
+        "dates": "SCHEDULED_RULE_DATE_MATCH",
+        "league": "NBA",
+        "market_type": "FULL_GAME_WINNER",
+        "participants": [
+          "BOS",
+          "ORL"
+        ],
+        "selection": "BOS",
+        "settlement_equivalence": "UNVERIFIED",
+        "sports_identity": "MATCH",
+        "subject_bps": 10000
+      },
+      "source_observations": [
+        9404,
+        9280
+      ],
+      "source_received_at": [
+        "2026-10-30T06:14:53.004593+00:00",
+        "2026-10-30T06:10:40.302591+00:00"
+      ],
+      "status": "UNVERIFIED",
+      "trading_authorized": false,
+      "versions": [
+        403748,
+        476591
+      ],
+      "warnings": [
+        "ADMINISTRATIVE_CUTOFFS_DIFFER",
+        "EXCEPTIONAL_FAIR_PRICE_PAYOUTS_NOT_ESTABLISHED_COMPLEMENTARY",
+        "FORFEIT_AND_SOURCE_REVISION_RULES_REQUIRE_REVIEW",
+        "OCCURRENCE_AND_START_TIMES_NOT_COMPARABLE",
+        "POSTPONEMENT_WINDOW_UNKNOWN",
+        "SPORTS_IDENTITY_ONLY_NOT_EQUIVALENCE",
+        "SPORTS_SETTLEMENT_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "algorithm": "semantic-discovery/m5i-v1",
+      "definition_links": {
+        "kalshi": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26NOV01LACGSW-LAC",
+        "polymarket_us": "https://gateway.polymarket.us/v1/market/slug/aec-nba-lac-gs-2026-11-01"
+      },
+      "equivalence_score_bps": 8500,
+      "equivalence_verified": false,
+      "event_key": "[\"NBA\",\"FULL_GAME_WINNER\",[\"GSW\",\"LAC\"],\"2026-11-01\"]",
+      "hypothetical": false,
+      "kalshi_id": "KXNBAGAME-26NOV01LACGSW-LAC",
+      "kalshi_title": "Los Angeles C wins",
+      "known_contradictions": [],
+      "liquidity": {
+        "kalshi": {
+          "quality": "MISSING",
+          "depth_proxy": null
+        },
+        "polymarket_us": {
+          "quality": "MISSING",
+          "depth_proxy": null
+        }
+      },
+      "match_basis": "SPORTS_EVENT_IDENTITY",
+      "mechanics": {
+        "account_applicability": "UNVERIFIED",
+        "polymarket_us_no": "UNSUPPORTED_SYNTHETIC_SHORT",
+        "research_path": "CASH_FUNDED_LONG_ONLY"
+      },
+      "polymarket_event_key": "[\"NBA\",\"FULL_GAME_WINNER\",[\"GSW\",\"LAC\"],\"2026-11-01\"]",
+      "polymarket_us_id": "aec-nba-lac-gs-2026-11-01",
+      "polymarket_us_title": "Who will win in the upcoming basketball event LA Clippers vs GS Warriors scheduled for November 2, 2026 at 1:30 AM UTC?",
+      "prior_reviews": [],
+      "retrieval_reasons": [
+        "EXACT_LEAGUE_PARTICIPANTS_RULE_DATE_AND_SELECTION"
+      ],
+      "review_reason": "EVENT_IDENTITY_ONLY",
+      "review_snapshot_expires_at": "2026-10-31T06:10:40.302591+00:00",
+      "settlement_deadlines": [
+        "2026-11-04T01:30:00+00:00",
+        "2026-11-16T01:30:00+00:00"
+      ],
+      "signals": {
+        "dates": "SCHEDULED_RULE_DATE_MATCH",
+        "league": "NBA",
+        "market_type": "FULL_GAME_WINNER",
+        "participants": [
+          "GSW",
+          "LAC"
+        ],
+        "selection": "LAC",
+        "settlement_equivalence": "UNVERIFIED",
+        "sports_identity": "MATCH",
+        "subject_bps": 10000
+      },
+      "source_observations": [
+        9328,
+        9280
+      ],
+      "source_received_at": [
+        "2026-10-30T06:12:34.180366+00:00",
+        "2026-10-30T06:10:40.302591+00:00"
+      ],
+      "status": "UNVERIFIED",
+      "trading_authorized": false,
+      "versions": [
+        395366,
+        476593
+      ],
+      "warnings": [
+        "ADMINISTRATIVE_CUTOFFS_DIFFER",
+        "EXCEPTIONAL_FAIR_PRICE_PAYOUTS_NOT_ESTABLISHED_COMPLEMENTARY",
+        "FORFEIT_AND_SOURCE_REVISION_RULES_REQUIRE_REVIEW",
+        "OCCURRENCE_AND_START_TIMES_NOT_COMPARABLE",
+        "POSTPONEMENT_WINDOW_UNKNOWN",
+        "SPORTS_IDENTITY_ONLY_NOT_EQUIVALENCE",
+        "SPORTS_SETTLEMENT_REVIEW_REQUIRED"
+      ]
+    }
+  ]
+}

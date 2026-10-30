@@ -195,3 +195,9 @@ lists services, bounds, exact pin, partial startup measurements and stop command
 Its fixed deadline is October 30 11:20:39 UTC (07:20:39 EDT). Inspect status files
 and existing writer services before issuing manual work. The old October 28
 configuration and deadline remain unchanged; its units remain disabled.
+
+
+The October 29–30 separate-namespace run has now stopped and its units are disabled.
+Use the [final audit](M5I_RUN_20261029_RESULTS.md), rather than startup counts,
+for measured results and remaining backlog/quality issues. Its fixed deadline and
+checkpoints remain intact; do not extend the expired configuration implicitly.
