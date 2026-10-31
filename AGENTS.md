@@ -65,6 +65,8 @@ Every added path has tests (success, missing fields, stale data, invalid prices,
   expired run configuration remain preserved. Do not mix or relabel vectors.
   The new run stopped successfully at that deadline and its units are disabled.
   Inspect `docs/M5I_RUN_20261029_RESULTS.md` before operational work: 114,413
-  eligible definitions remained unindexed at shutdown; additional keyword
-  proposition mismatches and retrieval overhead remain open. The 20 freshly
+  eligible definitions remained unindexed at shutdown. The four subsequent keyword
+  mismatch patterns now have v2 guards; bounded retrieval profiling measured a
+  16% improvement with unchanged output. See `docs/M5I_CORRECTIONS_20261030.md`.
+  Broader recognition, vector/query coverage and quality remain open. The 20 freshly
   checked sports candidates are UNVERIFIED; no restart or M6 is implied.

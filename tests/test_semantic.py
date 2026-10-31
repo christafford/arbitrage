@@ -423,3 +423,60 @@ class ScaleAndEvidenceTests(unittest.TestCase):
                 yield row
         with patch('predarb.semantic.rows',side_effect=checked):self.sync(budget=10)
         self.assertEqual(self.index.execute("SELECT count(*) FROM semantic_documents WHERE source_id LIKE 'HYPOTHETICAL-new-%'").fetchone()[0],3)
+
+
+class VectorValidationTests(unittest.TestCase):
+    def test_unit_norm_validation_rejects_all_nonfinite_and_invalid_vectors(self):
+        import hashlib
+        import math
+        # HYPOTHETICAL malicious/corrupt vectors with valid body checksums.
+        for values in ((float('nan'),0),(float('inf'),0),(float('-inf'),float('nan')),
+                       (1e308,1e308),(0,0),(1.001,0)):
+            body=s.pack(values)
+            with self.subTest(values=values),self.assertRaises(e.EmbeddingError):
+                s.unpack({'vector':body,'dimensions':len(values),'sha256':hashlib.sha256(body).hexdigest()})
+        for dimensions in (3,4096,8192):
+            values=(1.0,)+(0.0,)*(dimensions-1);body=s.pack(values)
+            row={'vector':body,'dimensions':dimensions,'sha256':hashlib.sha256(body).hexdigest()}
+            self.assertEqual(s.unpack(row),values)
+            with self.assertRaises(e.EmbeddingError):s.unpack(dict(row,sha256='incorrect'))
+            with self.assertRaises(e.EmbeddingError):s.unpack(dict(row,dimensions=dimensions+1))
+
+
+class ProfileCommandTests(unittest.TestCase):
+    setUp=SemanticTests.setUp
+    client=SemanticTests.client
+    sync=SemanticTests.sync
+    work=SemanticTests.work
+    retrieve=SemanticTests.retrieve
+    def test_readonly_profile_matches_retrieval_and_preserves_checkpoints(self):
+        import subprocess
+        import sys
+        self.sync();self.work()
+        state=self.index.execute('SELECT * FROM semantic_state ORDER BY key').fetchall()
+        expected=self.retrieve(persist=False,query_budget=2)
+        self.source.commit();self.index.commit()
+        out=Path(self.temp.name)/'profile.json'
+        result=subprocess.run([sys.executable,str(Path(__file__).parents[1]/'scripts/m5i_profile.py'),
+            '--db',self.path,'--index-db',self.ipath,'--at',NOW.isoformat(),'--output',str(out),
+            '--query-budget','2','--cprofile'],capture_output=True,text=True,timeout=30)
+        self.assertEqual(result.returncode,0,result.stderr)
+        actual=json.loads(out.read_text())
+        self.assertEqual(actual['result'],json.loads(json.dumps(expected)))
+        self.assertEqual(actual['network_requests'],0)
+        self.assertEqual(state,self.index.execute('SELECT * FROM semantic_state ORDER BY key').fetchall())
+        self.assertTrue(out.with_suffix('.prof').exists())
+
+    def test_profile_refuses_unbounded_requests_and_wrong_sidecar_binding(self):
+        import subprocess
+        import sys
+        self.sync()
+        command=[sys.executable,str(Path(__file__).parents[1]/'scripts/m5i_profile.py'),
+            '--db',self.path,'--index-db',self.ipath,'--at',NOW.isoformat(),
+            '--output',str(Path(self.temp.name)/'profile.json')]
+        result=subprocess.run(command+['--query-budget','251'],capture_output=True,text=True,timeout=30)
+        self.assertNotEqual(result.returncode,0)
+        s.set_state(self.index,'source_path','HYPOTHETICAL-WRONG-SOURCE');self.index.commit()
+        result=subprocess.run(command,capture_output=True,text=True,timeout=30)
+        self.assertNotEqual(result.returncode,0)
+        self.assertIn('different source',result.stderr)

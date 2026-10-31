@@ -201,3 +201,22 @@ The October 29–30 separate-namespace run has now stopped and its units are dis
 Use the [final audit](M5I_RUN_20261029_RESULTS.md), rather than startup counts,
 for measured results and remaining backlog/quality issues. Its fixed deadline and
 checkpoints remain intact; do not extend the expired configuration implicitly.
+
+
+## Read-only retrieval profiling and v2 guards — October 30
+
+`scripts/m5i_profile.py` profiles a bounded historical query window against the
+source and sidecar opened read-only. It requires an explicit assessment clock,
+checks sidecar/source binding, never advances checkpoints and makes no inference
+or venue calls. Apply production resource limits; see the exact command and
+[measured results](M5I_CORRECTIONS_20261030.md). An expired assessment clock is
+only for replay; its candidates must not be represented as live.
+
+The runner now reuses the coverage already returned by `index-retrieve`, avoiding
+a second full catalogue scan after each worker batch. `BATCH_COMPLETE.coverage_at`
+is the retrieval coverage assessment time; the status receipt can be later.
+Initial post-sync coverage and explicit `index-coverage` remain available.
+Versioned v2 proposition guards revalidate old metadata and saved candidates on
+read, without reembedding. Unknown fields remain unknown, and material conflicts
+cannot be overridden by semantic similarity. These changes do not restart either
+expired run or change its deadline/model pin.

@@ -60,10 +60,12 @@ class RunTests(unittest.TestCase):
         run.saved['synced_generation'] = [1,2]
         worker = dict(status='FALLBACK', completed={'kalshi':0,'polymarket_us':0})
         with patch.object(runner, 'complete_generation', return_value=[1,2]), \
-             patch.object(run, 'invoke', side_effect=[worker, {}, {'venues':{}}]) as call, \
+             patch.object(run, 'invoke', side_effect=[worker, {'coverage':{'venues':{},'at':'2030-01-01T00:00:00+00:00'}}]) as call, \
              patch.object(run, 'pause') as pause:
             run.semantic_step()
-        self.assertEqual([c.args[0] for c in call.call_args_list], ['index-work','index-retrieve','index-coverage'])
+        self.assertEqual([c.args[0] for c in call.call_args_list], ['index-work','index-retrieve'])
+        status=json.loads((self.root/'semantic-status.json').read_text())
+        self.assertEqual(status['coverage_at'],'2030-01-01T00:00:00+00:00')
         pause.assert_called_once_with(300)
 
     def test_changed_generation_requires_completed_sync(self):

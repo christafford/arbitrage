@@ -7,6 +7,10 @@ semantic service finished stopping 0.266 seconds after the deadline. No new
 background run was started. Original namespaces and the original run configuration
 remain preserved; no vectors were merged or relabeled.
 
+**Follow-up:** the [October 30 corrections and profile](M5I_CORRECTIONS_20261030.md)
+fix the four keyword mismatch patterns identified below and measure retrieval
+performance. The original run measurements and saved queue remain unchanged.
+
 ## Coverage at shutdown
 
 | Venue | Eligible definitions | Indexed | Coverage | Unindexed backlog |

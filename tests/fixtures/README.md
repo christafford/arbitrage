@@ -197,3 +197,12 @@ the purposive corpus is not representative or independently adjudicated.
 the first final review candidate, with the same provenance fields. Neither fixture
 is hypothetical. Mutations and generated inputs in `test_semantic.py` are explicitly
 hypothetical and cannot become evidence of live equivalence.
+
+
+`m5i-keyword-mismatches-genuine.json` contains 11 genuine archived definitions:
+four assistant-labeled negative pairs (office, CEO company/action, Spotify rank,
+Fed direction) and two same-ranking positive controls. Parent raw hashes, excerpt
+hashes, source URLs, receipt clocks and adapter schemas preserve provenance. Tests
+exercise v2 guards against legacy feature rows and queues; labels describe ordinary
+propositions and confer no equivalence approval. All generated vectors/test
+mutations are hypothetical. See `docs/M5I_CORRECTIONS_20261030.md`.

@@ -8,6 +8,13 @@ collection/backfill run on October 28. It stopped on October 29; see the separat
 and newly identified contradiction-detection gaps. The
 measurements below remain the original M5I implementation snapshot.
 
+**October 30 follow-up:** the [separate-namespace run audit](M5I_RUN_20261029_RESULTS.md)
+records 114,413 eligible definitions still unindexed at shutdown. Subsequent
+[keyword mismatch repairs and profiling](M5I_CORRECTIONS_20261030.md) demote five
+known false pairs and reduce a bounded 250-query replay from 54.2 to 45.5 seconds
+with identical retrieval output. This is a performance/regression result, not a
+new semantic-quality claim. Both run services remain disabled.
+
 ## Measured coverage and performance
 
 The source archive already contained terminal catalogue walks: Kalshi run 22 captured **151,380 unique instruments across 757 pages**, finishing 2026-10-28 00:04 UTC; US run 23 captured **80,066 unique instruments across 402 pages**, finishing 00:18 UTC (three duplicates). M5I reused that evidence instead of treating the earlier 20-page prefix as representative. The source archive stayed at schema 8 and was opened read-only by workers. Schema 9 is used for new archives and adds resumable page checkpoints.

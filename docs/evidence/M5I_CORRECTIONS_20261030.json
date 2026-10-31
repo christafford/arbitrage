@@ -1,0 +1,1071 @@
+{
+  "at": "2026-10-30T13:06:18.952839+00:00",
+  "scope": "M5I keyword proposition regression repair and bounded read-only retrieval profiling; no backfill restart",
+  "baseline_commit": "3f73682",
+  "guard_version": "proposition-guards/m5i-v2",
+  "fixture_sha256": "17eb9300d88cc1d07fa36082edd82b0e76d5a8061610361dfcf844ba8b3d778b",
+  "profile_initial": {
+    "elapsed_seconds": 38.12875304798945,
+    "max_rss_kib": 440992,
+    "sqlite_version": "3.46.1",
+    "queries": 50,
+    "at": "2026-10-30T10:56:38.146227+00:00",
+    "persist": false,
+    "network_requests": 0,
+    "diagnostics": {
+      "queries": 50,
+      "window_complete": false,
+      "bucket_saturations": 25,
+      "vector_failures": 0,
+      "candidate_cap": 256,
+      "approximate": true,
+      "identity": "8f1b745674ea82993cc5211498d606a86627ecedb6776637daeaf66e42611204",
+      "model": "qwen3-embedding-8b",
+      "deterministic_enabled": true
+    }
+  },
+  "comparisons": [
+    {
+      "query_budget": 50,
+      "before_seconds": 15.640978459006874,
+      "after_seconds": 12.905142487987177,
+      "reduction_percent": 17.49146307048497,
+      "identical_full_output": true,
+      "candidates": 20,
+      "before_max_rss_kib": 34784,
+      "after_max_rss_kib": 34800,
+      "before_implementation_sha256": "c3127ea3a2912788e44071a47349e49ee69c815d1426cc39f7badd8506942a9d",
+      "measured_after_implementation_sha256": "c1372c41b81b8355dd294800bcee89f52a72eacf30ced2a3663f65e2a6e006ae",
+      "clock": "2026-10-30T10:56:38.146227+00:00",
+      "diagnostics": {
+        "queries": 50,
+        "window_complete": false,
+        "bucket_saturations": 25,
+        "vector_failures": 0,
+        "candidate_cap": 256,
+        "approximate": true,
+        "identity": "8f1b745674ea82993cc5211498d606a86627ecedb6776637daeaf66e42611204",
+        "model": "qwen3-embedding-8b",
+        "deterministic_enabled": true
+      },
+      "coverage": {
+        "at": "2026-10-30T10:56:38.146227+00:00",
+        "identity": "8f1b745674ea82993cc5211498d606a86627ecedb6776637daeaf66e42611204",
+        "venues": {
+          "kalshi": {
+            "catalogued": 292199,
+            "excluded": 174886,
+            "eligible": 117313,
+            "backlog": 111736,
+            "indexed": 5577,
+            "source_total": 292199,
+            "unsynced": 0
+          },
+          "polymarket_us": {
+            "catalogued": 165462,
+            "excluded": 156390,
+            "eligible": 9072,
+            "indexed": 6165,
+            "backlog": 2907,
+            "source_total": 165462,
+            "unsynced": 0
+          }
+        },
+        "groups": [
+          {
+            "venue": "kalshi",
+            "category": "UNKNOWN",
+            "settlement_deadline_horizon": "0_7_DAYS",
+            "catalogued": 50423,
+            "excluded": 47073,
+            "eligible": 3350,
+            "backlog": 2981,
+            "indexed": 369
+          },
+          {
+            "venue": "kalshi",
+            "category": "UNKNOWN",
+            "settlement_deadline_horizon": "31_90_DAYS",
+            "catalogued": 26069,
+            "excluded": 904,
+            "eligible": 25165,
+            "backlog": 25081,
+            "indexed": 84
+          },
+          {
+            "venue": "kalshi",
+            "category": "UNKNOWN",
+            "settlement_deadline_horizon": "8_30_DAYS",
+            "catalogued": 23842,
+            "excluded": 6926,
+            "eligible": 16916,
+            "backlog": 15296,
+            "indexed": 1620
+          },
+          {
+            "venue": "kalshi",
+            "category": "UNKNOWN",
+            "settlement_deadline_horizon": "OVER_90_DAYS",
+            "catalogued": 72886,
+            "excluded": 1132,
+            "eligible": 71754,
+            "backlog": 68261,
+            "indexed": 3493
+          },
+          {
+            "venue": "kalshi",
+            "category": "UNKNOWN",
+            "settlement_deadline_horizon": "PAST",
+            "catalogued": 6254,
+            "excluded": 6254
+          },
+          {
+            "venue": "kalshi",
+            "category": "sports",
+            "settlement_deadline_horizon": "0_7_DAYS",
+            "catalogued": 62533,
+            "excluded": 62435,
+            "eligible": 98,
+            "backlog": 87,
+            "indexed": 11
+          },
+          {
+            "venue": "kalshi",
+            "category": "sports",
+            "settlement_deadline_horizon": "31_90_DAYS",
+            "catalogued": 122,
+            "excluded": 122
+          },
+          {
+            "venue": "kalshi",
+            "category": "sports",
+            "settlement_deadline_horizon": "8_30_DAYS",
+            "catalogued": 5781,
+            "excluded": 5751,
+            "eligible": 30,
+            "backlog": 30
+          },
+          {
+            "venue": "kalshi",
+            "category": "sports",
+            "settlement_deadline_horizon": "OVER_90_DAYS",
+            "catalogued": 1,
+            "excluded": 1
+          },
+          {
+            "venue": "kalshi",
+            "category": "sports",
+            "settlement_deadline_horizon": "PAST",
+            "catalogued": 44288,
+            "excluded": 44288
+          },
+          {
+            "venue": "polymarket_us",
+            "category": "climate",
+            "settlement_deadline_horizon": "0_7_DAYS",
+            "catalogued": 123,
+            "excluded": 123
+          },
+          {
+            "venue": "polymarket_us",
+            "category": "climate",
+            "settlement_deadline_horizon": "31_90_DAYS",
+            "catalogued": 1,
+            "excluded": 1
+          },
+          {
+            "venue": "polymarket_us",
+            "category": "climate",
+            "settlement_deadline_horizon": "8_30_DAYS",
+            "catalogued": 31,
+            "excluded": 31
+          },
+          {
+            "venue": "polymarket_us",
+            "category": "climate",
+            "settlement_deadline_horizon": "OVER_90_DAYS",
+            "catalogued": 10,
+            "excluded": 10
+          },
+          {
+            "venue": "polymarket_us",
+            "category": "climate",
+            "settlement_deadline_horizon": "PAST",
+            "catalogued": 252,
+            "excluded": 252
+          },
+          {
+            "venue": "polymarket_us",
+            "category": "crypto",
+            "settlement_deadline_horizon": "0_7_DAYS",
+            "catalogued": 620,
+            "excluded": 620
+          },
+          {
+            "venue": "polymarket_us",
+            "category": "crypto",
+            "settlement_deadline_horizon": "31_90_DAYS",
+            "catalogued": 59,
+            "eligible": 59,
+            "indexed": 38,
+            "backlog": 21
+          },
+          {
+            "venue": "polymarket_us",
+            "category": "crypto",
+            "settlement_deadline_horizon": "PAST",
+            "catalogued": 5537,
+            "excluded": 5537
+          },
+          {
+            "venue": "polymarket_us",
+            "category": "culture",
+            "settlement_deadline_horizon": "31_90_DAYS",
+            "catalogued": 490,
+            "eligible": 455,
+            "indexed": 311,
+            "backlog": 144,
+            "excluded": 35
+          },
+          {
+            "venue": "polymarket_us",
+            "category": "culture",
+            "settlement_deadline_horizon": "8_30_DAYS",
+            "catalogued": 245,
+            "excluded": 121,
+            "eligible": 124,
+            "indexed": 87,
+            "backlog": 37
+          },
+          {
+            "venue": "polymarket_us",
+            "category": "culture",
+            "settlement_deadline_horizon": "OVER_90_DAYS",
+            "catalogued": 1060,
+            "eligible": 1030,
+            "backlog": 362,
+            "indexed": 668,
+            "excluded": 30
+          },
+          {
+            "venue": "polymarket_us",
+            "category": "finance",
+            "settlement_deadline_horizon": "0_7_DAYS",
+            "catalogued": 2,
+            "excluded": 2
+          },
+          {
+            "venue": "polymarket_us",
+            "category": "finance",
+            "settlement_deadline_horizon": "31_90_DAYS",
+            "catalogued": 40,
+            "eligible": 40,
+            "backlog": 16,
+            "indexed": 24
+          },
+          {
+            "venue": "polymarket_us",
+            "category": "finance",
+            "settlement_deadline_horizon": "8_30_DAYS",
+            "catalogued": 17,
+            "eligible": 17,
+            "indexed": 12,
+            "backlog": 5
+          },
+          {
+            "venue": "polymarket_us",
+            "category": "finance",
+            "settlement_deadline_horizon": "OVER_90_DAYS",
+            "catalogued": 9,
+            "eligible": 9,
+            "indexed": 8,
+            "backlog": 1
+          },
+          {
+            "venue": "polymarket_us",
+            "category": "finance",
+            "settlement_deadline_horizon": "PAST",
+            "catalogued": 32,
+            "excluded": 32
+          },
+          {
+            "venue": "polymarket_us",
+            "category": "geopolitics",
+            "settlement_deadline_horizon": "31_90_DAYS",
+            "catalogued": 8,
+            "eligible": 8,
+            "indexed": 7,
+            "backlog": 1
+          },
+          {
+            "venue": "polymarket_us",
+            "category": "geopolitics",
+            "settlement_deadline_horizon": "OVER_90_DAYS",
+            "catalogued": 2,
+            "eligible": 2,
+            "indexed": 1,
+            "backlog": 1
+          },
+          {
+            "venue": "polymarket_us",
+            "category": "macro",
+            "settlement_deadline_horizon": "0_7_DAYS",
+            "catalogued": 51,
+            "excluded": 51
+          },
+          {
+            "venue": "polymarket_us",
+            "category": "macro",
+            "settlement_deadline_horizon": "31_90_DAYS",
+            "catalogued": 91,
+            "eligible": 91,
+            "indexed": 66,
+            "backlog": 25
+          },
+          {
+            "venue": "polymarket_us",
+            "category": "macro",
+            "settlement_deadline_horizon": "8_30_DAYS",
+            "catalogued": 132,
+            "excluded": 44,
+            "eligible": 88,
+            "indexed": 67,
+            "backlog": 21
+          },
+          {
+            "venue": "polymarket_us",
+            "category": "macro",
+            "settlement_deadline_horizon": "OVER_90_DAYS",
+            "catalogued": 34,
+            "eligible": 34,
+            "backlog": 9,
+            "indexed": 25
+          },
+          {
+            "venue": "polymarket_us",
+            "category": "politics",
+            "settlement_deadline_horizon": "0_7_DAYS",
+            "catalogued": 5,
+            "eligible": 5,
+            "backlog": 3,
+            "indexed": 2
+          },
+          {
+            "venue": "polymarket_us",
+            "category": "politics",
+            "settlement_deadline_horizon": "31_90_DAYS",
+            "catalogued": 6327,
+            "eligible": 6319,
+            "backlog": 2032,
+            "indexed": 4287,
+            "excluded": 8
+          },
+          {
+            "venue": "polymarket_us",
+            "category": "politics",
+            "settlement_deadline_horizon": "8_30_DAYS",
+            "catalogued": 289,
+            "eligible": 278,
+            "backlog": 88,
+            "indexed": 190,
+            "excluded": 11
+          },
+          {
+            "venue": "polymarket_us",
+            "category": "politics",
+            "settlement_deadline_horizon": "OVER_90_DAYS",
+            "catalogued": 291,
+            "excluded": 4,
+            "eligible": 287,
+            "indexed": 188,
+            "backlog": 99
+          },
+          {
+            "venue": "polymarket_us",
+            "category": "science",
+            "settlement_deadline_horizon": "31_90_DAYS",
+            "catalogued": 3,
+            "eligible": 3,
+            "backlog": 2,
+            "indexed": 1
+          },
+          {
+            "venue": "polymarket_us",
+            "category": "science",
+            "settlement_deadline_horizon": "OVER_90_DAYS",
+            "catalogued": 7,
+            "eligible": 7,
+            "indexed": 6,
+            "backlog": 1
+          },
+          {
+            "venue": "polymarket_us",
+            "category": "sports",
+            "settlement_deadline_horizon": "0_7_DAYS",
+            "catalogued": 6880,
+            "excluded": 6880
+          },
+          {
+            "venue": "polymarket_us",
+            "category": "sports",
+            "settlement_deadline_horizon": "31_90_DAYS",
+            "catalogued": 5667,
+            "excluded": 5667
+          },
+          {
+            "venue": "polymarket_us",
+            "category": "sports",
+            "settlement_deadline_horizon": "8_30_DAYS",
+            "catalogued": 129808,
+            "excluded": 129668,
+            "eligible": 140,
+            "indexed": 131,
+            "backlog": 9
+          },
+          {
+            "venue": "polymarket_us",
+            "category": "sports",
+            "settlement_deadline_horizon": "OVER_90_DAYS",
+            "catalogued": 4417,
+            "excluded": 4417
+          },
+          {
+            "venue": "polymarket_us",
+            "category": "sports",
+            "settlement_deadline_horizon": "PAST",
+            "catalogued": 2846,
+            "excluded": 2846
+          },
+          {
+            "venue": "polymarket_us",
+            "category": "technology",
+            "settlement_deadline_horizon": "31_90_DAYS",
+            "catalogued": 38,
+            "eligible": 38,
+            "backlog": 14,
+            "indexed": 24
+          },
+          {
+            "venue": "polymarket_us",
+            "category": "technology",
+            "settlement_deadline_horizon": "8_30_DAYS",
+            "catalogued": 33,
+            "eligible": 33,
+            "indexed": 18,
+            "backlog": 15
+          },
+          {
+            "venue": "polymarket_us",
+            "category": "technology",
+            "settlement_deadline_horizon": "OVER_90_DAYS",
+            "catalogued": 5,
+            "eligible": 5,
+            "indexed": 4,
+            "backlog": 1
+          }
+        ],
+        "horizon_note": "Administrative deadline proxy; cash availability and settlement timing remain unverified",
+        "last_full_scan": "2026-10-30T07:07:54.262316+00:00",
+        "collection": {
+          "kalshi": [
+            [
+              34,
+              "COMPLETE"
+            ],
+            [
+              34,
+              "COMPLETE"
+            ]
+          ],
+          "polymarket_us": [
+            [
+              35,
+              "COMPLETE"
+            ],
+            [
+              35,
+              "COMPLETE"
+            ]
+          ]
+        }
+      },
+      "output_sha256": "5e2ac4a914e2cf25de172cec44896c32a77bced3e1e8712ca0cdda4b3298c0cb"
+    },
+    {
+      "query_budget": 250,
+      "before_seconds": 54.223225925001316,
+      "after_seconds": 45.49540547298966,
+      "reduction_percent": 16.09609222454509,
+      "identical_full_output": true,
+      "candidates": 83,
+      "before_max_rss_kib": 36848,
+      "after_max_rss_kib": 36848,
+      "before_implementation_sha256": "c3127ea3a2912788e44071a47349e49ee69c815d1426cc39f7badd8506942a9d",
+      "measured_after_implementation_sha256": "c1372c41b81b8355dd294800bcee89f52a72eacf30ced2a3663f65e2a6e006ae",
+      "clock": "2026-10-30T10:56:38.146227+00:00",
+      "diagnostics": {
+        "queries": 250,
+        "window_complete": false,
+        "bucket_saturations": 125,
+        "vector_failures": 0,
+        "candidate_cap": 256,
+        "approximate": true,
+        "identity": "8f1b745674ea82993cc5211498d606a86627ecedb6776637daeaf66e42611204",
+        "model": "qwen3-embedding-8b",
+        "deterministic_enabled": true
+      },
+      "coverage": {
+        "at": "2026-10-30T10:56:38.146227+00:00",
+        "identity": "8f1b745674ea82993cc5211498d606a86627ecedb6776637daeaf66e42611204",
+        "venues": {
+          "kalshi": {
+            "catalogued": 292199,
+            "excluded": 174886,
+            "eligible": 117313,
+            "backlog": 111736,
+            "indexed": 5577,
+            "source_total": 292199,
+            "unsynced": 0
+          },
+          "polymarket_us": {
+            "catalogued": 165462,
+            "excluded": 156390,
+            "eligible": 9072,
+            "indexed": 6165,
+            "backlog": 2907,
+            "source_total": 165462,
+            "unsynced": 0
+          }
+        },
+        "groups": [
+          {
+            "venue": "kalshi",
+            "category": "UNKNOWN",
+            "settlement_deadline_horizon": "0_7_DAYS",
+            "catalogued": 50423,
+            "excluded": 47073,
+            "eligible": 3350,
+            "backlog": 2981,
+            "indexed": 369
+          },
+          {
+            "venue": "kalshi",
+            "category": "UNKNOWN",
+            "settlement_deadline_horizon": "31_90_DAYS",
+            "catalogued": 26069,
+            "excluded": 904,
+            "eligible": 25165,
+            "backlog": 25081,
+            "indexed": 84
+          },
+          {
+            "venue": "kalshi",
+            "category": "UNKNOWN",
+            "settlement_deadline_horizon": "8_30_DAYS",
+            "catalogued": 23842,
+            "excluded": 6926,
+            "eligible": 16916,
+            "backlog": 15296,
+            "indexed": 1620
+          },
+          {
+            "venue": "kalshi",
+            "category": "UNKNOWN",
+            "settlement_deadline_horizon": "OVER_90_DAYS",
+            "catalogued": 72886,
+            "excluded": 1132,
+            "eligible": 71754,
+            "backlog": 68261,
+            "indexed": 3493
+          },
+          {
+            "venue": "kalshi",
+            "category": "UNKNOWN",
+            "settlement_deadline_horizon": "PAST",
+            "catalogued": 6254,
+            "excluded": 6254
+          },
+          {
+            "venue": "kalshi",
+            "category": "sports",
+            "settlement_deadline_horizon": "0_7_DAYS",
+            "catalogued": 62533,
+            "excluded": 62435,
+            "eligible": 98,
+            "backlog": 87,
+            "indexed": 11
+          },
+          {
+            "venue": "kalshi",
+            "category": "sports",
+            "settlement_deadline_horizon": "31_90_DAYS",
+            "catalogued": 122,
+            "excluded": 122
+          },
+          {
+            "venue": "kalshi",
+            "category": "sports",
+            "settlement_deadline_horizon": "8_30_DAYS",
+            "catalogued": 5781,
+            "excluded": 5751,
+            "eligible": 30,
+            "backlog": 30
+          },
+          {
+            "venue": "kalshi",
+            "category": "sports",
+            "settlement_deadline_horizon": "OVER_90_DAYS",
+            "catalogued": 1,
+            "excluded": 1
+          },
+          {
+            "venue": "kalshi",
+            "category": "sports",
+            "settlement_deadline_horizon": "PAST",
+            "catalogued": 44288,
+            "excluded": 44288
+          },
+          {
+            "venue": "polymarket_us",
+            "category": "climate",
+            "settlement_deadline_horizon": "0_7_DAYS",
+            "catalogued": 123,
+            "excluded": 123
+          },
+          {
+            "venue": "polymarket_us",
+            "category": "climate",
+            "settlement_deadline_horizon": "31_90_DAYS",
+            "catalogued": 1,
+            "excluded": 1
+          },
+          {
+            "venue": "polymarket_us",
+            "category": "climate",
+            "settlement_deadline_horizon": "8_30_DAYS",
+            "catalogued": 31,
+            "excluded": 31
+          },
+          {
+            "venue": "polymarket_us",
+            "category": "climate",
+            "settlement_deadline_horizon": "OVER_90_DAYS",
+            "catalogued": 10,
+            "excluded": 10
+          },
+          {
+            "venue": "polymarket_us",
+            "category": "climate",
+            "settlement_deadline_horizon": "PAST",
+            "catalogued": 252,
+            "excluded": 252
+          },
+          {
+            "venue": "polymarket_us",
+            "category": "crypto",
+            "settlement_deadline_horizon": "0_7_DAYS",
+            "catalogued": 620,
+            "excluded": 620
+          },
+          {
+            "venue": "polymarket_us",
+            "category": "crypto",
+            "settlement_deadline_horizon": "31_90_DAYS",
+            "catalogued": 59,
+            "eligible": 59,
+            "indexed": 38,
+            "backlog": 21
+          },
+          {
+            "venue": "polymarket_us",
+            "category": "crypto",
+            "settlement_deadline_horizon": "PAST",
+            "catalogued": 5537,
+            "excluded": 5537
+          },
+          {
+            "venue": "polymarket_us",
+            "category": "culture",
+            "settlement_deadline_horizon": "31_90_DAYS",
+            "catalogued": 490,
+            "eligible": 455,
+            "indexed": 311,
+            "backlog": 144,
+            "excluded": 35
+          },
+          {
+            "venue": "polymarket_us",
+            "category": "culture",
+            "settlement_deadline_horizon": "8_30_DAYS",
+            "catalogued": 245,
+            "excluded": 121,
+            "eligible": 124,
+            "indexed": 87,
+            "backlog": 37
+          },
+          {
+            "venue": "polymarket_us",
+            "category": "culture",
+            "settlement_deadline_horizon": "OVER_90_DAYS",
+            "catalogued": 1060,
+            "eligible": 1030,
+            "backlog": 362,
+            "indexed": 668,
+            "excluded": 30
+          },
+          {
+            "venue": "polymarket_us",
+            "category": "finance",
+            "settlement_deadline_horizon": "0_7_DAYS",
+            "catalogued": 2,
+            "excluded": 2
+          },
+          {
+            "venue": "polymarket_us",
+            "category": "finance",
+            "settlement_deadline_horizon": "31_90_DAYS",
+            "catalogued": 40,
+            "eligible": 40,
+            "backlog": 16,
+            "indexed": 24
+          },
+          {
+            "venue": "polymarket_us",
+            "category": "finance",
+            "settlement_deadline_horizon": "8_30_DAYS",
+            "catalogued": 17,
+            "eligible": 17,
+            "indexed": 12,
+            "backlog": 5
+          },
+          {
+            "venue": "polymarket_us",
+            "category": "finance",
+            "settlement_deadline_horizon": "OVER_90_DAYS",
+            "catalogued": 9,
+            "eligible": 9,
+            "indexed": 8,
+            "backlog": 1
+          },
+          {
+            "venue": "polymarket_us",
+            "category": "finance",
+            "settlement_deadline_horizon": "PAST",
+            "catalogued": 32,
+            "excluded": 32
+          },
+          {
+            "venue": "polymarket_us",
+            "category": "geopolitics",
+            "settlement_deadline_horizon": "31_90_DAYS",
+            "catalogued": 8,
+            "eligible": 8,
+            "indexed": 7,
+            "backlog": 1
+          },
+          {
+            "venue": "polymarket_us",
+            "category": "geopolitics",
+            "settlement_deadline_horizon": "OVER_90_DAYS",
+            "catalogued": 2,
+            "eligible": 2,
+            "indexed": 1,
+            "backlog": 1
+          },
+          {
+            "venue": "polymarket_us",
+            "category": "macro",
+            "settlement_deadline_horizon": "0_7_DAYS",
+            "catalogued": 51,
+            "excluded": 51
+          },
+          {
+            "venue": "polymarket_us",
+            "category": "macro",
+            "settlement_deadline_horizon": "31_90_DAYS",
+            "catalogued": 91,
+            "eligible": 91,
+            "indexed": 66,
+            "backlog": 25
+          },
+          {
+            "venue": "polymarket_us",
+            "category": "macro",
+            "settlement_deadline_horizon": "8_30_DAYS",
+            "catalogued": 132,
+            "excluded": 44,
+            "eligible": 88,
+            "indexed": 67,
+            "backlog": 21
+          },
+          {
+            "venue": "polymarket_us",
+            "category": "macro",
+            "settlement_deadline_horizon": "OVER_90_DAYS",
+            "catalogued": 34,
+            "eligible": 34,
+            "backlog": 9,
+            "indexed": 25
+          },
+          {
+            "venue": "polymarket_us",
+            "category": "politics",
+            "settlement_deadline_horizon": "0_7_DAYS",
+            "catalogued": 5,
+            "eligible": 5,
+            "backlog": 3,
+            "indexed": 2
+          },
+          {
+            "venue": "polymarket_us",
+            "category": "politics",
+            "settlement_deadline_horizon": "31_90_DAYS",
+            "catalogued": 6327,
+            "eligible": 6319,
+            "backlog": 2032,
+            "indexed": 4287,
+            "excluded": 8
+          },
+          {
+            "venue": "polymarket_us",
+            "category": "politics",
+            "settlement_deadline_horizon": "8_30_DAYS",
+            "catalogued": 289,
+            "eligible": 278,
+            "backlog": 88,
+            "indexed": 190,
+            "excluded": 11
+          },
+          {
+            "venue": "polymarket_us",
+            "category": "politics",
+            "settlement_deadline_horizon": "OVER_90_DAYS",
+            "catalogued": 291,
+            "excluded": 4,
+            "eligible": 287,
+            "indexed": 188,
+            "backlog": 99
+          },
+          {
+            "venue": "polymarket_us",
+            "category": "science",
+            "settlement_deadline_horizon": "31_90_DAYS",
+            "catalogued": 3,
+            "eligible": 3,
+            "backlog": 2,
+            "indexed": 1
+          },
+          {
+            "venue": "polymarket_us",
+            "category": "science",
+            "settlement_deadline_horizon": "OVER_90_DAYS",
+            "catalogued": 7,
+            "eligible": 7,
+            "indexed": 6,
+            "backlog": 1
+          },
+          {
+            "venue": "polymarket_us",
+            "category": "sports",
+            "settlement_deadline_horizon": "0_7_DAYS",
+            "catalogued": 6880,
+            "excluded": 6880
+          },
+          {
+            "venue": "polymarket_us",
+            "category": "sports",
+            "settlement_deadline_horizon": "31_90_DAYS",
+            "catalogued": 5667,
+            "excluded": 5667
+          },
+          {
+            "venue": "polymarket_us",
+            "category": "sports",
+            "settlement_deadline_horizon": "8_30_DAYS",
+            "catalogued": 129808,
+            "excluded": 129668,
+            "eligible": 140,
+            "indexed": 131,
+            "backlog": 9
+          },
+          {
+            "venue": "polymarket_us",
+            "category": "sports",
+            "settlement_deadline_horizon": "OVER_90_DAYS",
+            "catalogued": 4417,
+            "excluded": 4417
+          },
+          {
+            "venue": "polymarket_us",
+            "category": "sports",
+            "settlement_deadline_horizon": "PAST",
+            "catalogued": 2846,
+            "excluded": 2846
+          },
+          {
+            "venue": "polymarket_us",
+            "category": "technology",
+            "settlement_deadline_horizon": "31_90_DAYS",
+            "catalogued": 38,
+            "eligible": 38,
+            "backlog": 14,
+            "indexed": 24
+          },
+          {
+            "venue": "polymarket_us",
+            "category": "technology",
+            "settlement_deadline_horizon": "8_30_DAYS",
+            "catalogued": 33,
+            "eligible": 33,
+            "indexed": 18,
+            "backlog": 15
+          },
+          {
+            "venue": "polymarket_us",
+            "category": "technology",
+            "settlement_deadline_horizon": "OVER_90_DAYS",
+            "catalogued": 5,
+            "eligible": 5,
+            "indexed": 4,
+            "backlog": 1
+          }
+        ],
+        "horizon_note": "Administrative deadline proxy; cash availability and settlement timing remain unverified",
+        "last_full_scan": "2026-10-30T07:07:54.262316+00:00",
+        "collection": {
+          "kalshi": [
+            [
+              34,
+              "COMPLETE"
+            ],
+            [
+              34,
+              "COMPLETE"
+            ]
+          ],
+          "polymarket_us": [
+            [
+              35,
+              "COMPLETE"
+            ],
+            [
+              35,
+              "COMPLETE"
+            ]
+          ]
+        }
+      },
+      "output_sha256": "68785fd6ee01476c105f836db54aa60510e77827d771767d8a1ddfa894546d34"
+    }
+  ],
+  "profile_service_telemetry": "Result=success\nExecMainStatus=0\nMemoryPeak=[not set]\nCPUUsageNSec=[not set]\nMemoryMax=infinity\nMemorySwapMax=infinity\nTasksMax=19413\nId=predarb-m5i-profile-before-20261030.service\n\nResult=success\nExecMainStatus=0\nMemoryPeak=[not set]\nCPUUsageNSec=[not set]\nMemoryMax=infinity\nMemorySwapMax=infinity\nTasksMax=19413\nId=predarb-m5i-profile-after-20261030.service\n\nResult=success\nExecMainStatus=0\nMemoryPeak=[not set]\nCPUUsageNSec=[not set]\nMemoryMax=infinity\nMemorySwapMax=infinity\nTasksMax=19413\nId=predarb-m5i-profile-250-before-final-20261030.service\n\nResult=success\nExecMainStatus=0\nMemoryPeak=[not set]\nCPUUsageNSec=[not set]\nMemoryMax=infinity\nMemorySwapMax=infinity\nTasksMax=19413\nId=predarb-m5i-profile-250-after-20261030.service\n",
+  "comparison_limits": "Historical clock, fixed hash-order windows and candidate cap, persist=False excludes saved reservoir, no concurrent collection or inference, uncontrolled filesystem caches. Both timed comparison implementations use v2 guards; initial 250-query run preceded final abbreviation handling and is excluded. Measured optimized source later received a comment-only clarification. No 12-hour speedup guarantee.",
+  "replay_new_conflicts": [
+    {
+      "kalshi_id": "KXTOPSONGRUNNERUPUSA-26-DIE",
+      "polymarket_us_id": "ccrc-sptfy-n1-song-us-yr-2026-diewit",
+      "before": [],
+      "after": [
+        "RANKING_POSITION_CONFLICT"
+      ],
+      "score_before": 2608,
+      "score_after": 0
+    },
+    {
+      "kalshi_id": "KXFEDDECISION-26DEC-H26",
+      "polymarket_us_id": "rdc-usfed-fomc-2026-12-09-nochng",
+      "before": [],
+      "after": [
+        "RATE_DIRECTION_CONFLICT"
+      ],
+      "score_before": 2416,
+      "score_after": 0
+    },
+    {
+      "kalshi_id": "KXSTATELEG-NCSEN26-D",
+      "polymarket_us_id": "ewc-usse-nc-2026-11-03-dem",
+      "before": [],
+      "after": [
+        "POLITICAL_OFFICE_CONFLICT"
+      ],
+      "score_before": 1215,
+      "score_after": 0
+    },
+    {
+      "kalshi_id": "KXSTATELEG-NHSEN26-D",
+      "polymarket_us_id": "ewc-usse-nh-2026-11-03-dem",
+      "before": [],
+      "after": [
+        "POLITICAL_OFFICE_CONFLICT"
+      ],
+      "score_before": 1215,
+      "score_after": 0
+    },
+    {
+      "kalshi_id": "KXNEWROLEX-27JAN-ELON",
+      "polymarket_us_id": "apdc-elonmusk-tsla-ceo-2026-12-31",
+      "before": [],
+      "after": [
+        "CEO_COMPANY_CONFLICT",
+        "CEO_ACTION_CONFLICT"
+      ],
+      "score_before": 1090,
+      "score_after": 0
+    }
+  ],
+  "corpus_regression": {
+    "20": {
+      "relevant_found": 18,
+      "relevant_total": 18,
+      "recall": 1.0,
+      "returned": 18,
+      "precision_among_returned": 1.0,
+      "false_negative_categories": {}
+    },
+    "100": {
+      "relevant_found": 18,
+      "relevant_total": 18,
+      "recall": 1.0,
+      "returned": 18,
+      "precision_among_returned": 1.0,
+      "false_negative_categories": {}
+    },
+    "new_reviewable_events": [],
+    "inference": {
+      "status": "NOT_REQUESTED"
+    },
+    "qualification": "Existing small assistant-labeled corpus replay only; no new quality or semantic gain claim."
+  },
+  "tests": {
+    "command": ".venv/bin/python -m unittest discover -s tests -v",
+    "count": 397,
+    "seconds": 21.157,
+    "result": "PASS"
+  },
+  "dependencies": "pip check passed; no new runtime dependencies",
+  "production_services": "inactive and disabled",
+  "production_databases": "opened read-only; no re-embedding, model pin or namespace changes",
+  "profile_after": {
+    "mode": "READ_ONLY_HISTORICAL_RETRIEVAL_PROFILE",
+    "clock": "2026-10-30T10:56:38.146227+00:00",
+    "query_budget": 50,
+    "candidate_cap": 256,
+    "persist": false,
+    "includes_saved_reservoir": false,
+    "seconds_limit": 300,
+    "elapsed_seconds": 15.856811745004961,
+    "max_rss_kib": 34800,
+    "python": "3.13.5 (main, Aug 10 2026, 12:06:59) [GCC 14.2.0]",
+    "sqlite": "3.46.1",
+    "profiler_enabled": true,
+    "implementation_sha256": "ee94b628cd94aa57d03ff80b8bd6b3ebe2027943bd10860f45b7744a8039d566",
+    "network_requests": 0,
+    "qualification": "cProfile overhead included; overlapping cumulative times. Capped service exited successfully. Not the uninstrumented speed comparison.",
+    "hotspots_seconds": {
+      "retrieve": 15.852,
+      "coverage": 7.643,
+      "vector_candidates": 5.468,
+      "unpack": 0.762
+    }
+  }
+}

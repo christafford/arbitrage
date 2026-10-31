@@ -1,0 +1,211 @@
+{
+  "schema": "m5i-genuine-evaluation/v1",
+  "hypothetical": false,
+  "created_at": "2026-10-30T10:56:38.146227+00:00",
+  "annotation_author": "codex-research-assistant",
+  "operator_approved": false,
+  "sampling": "Purposive genuine keyword-mismatch regressions and positive ordinary-proposition controls; not representative or independently adjudicated.",
+  "instruments": [
+    {
+      "venue": "kalshi",
+      "source_id": "KXSTATELEG-NCSEN26-D",
+      "observed_at": "2026-10-30T06:36:54.993146+00:00",
+      "original_version_id": 154253,
+      "source_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXSTATELEG-NCSEN26-D",
+      "parent_endpoint": "https://external-api.kalshi.com/trade-api/v2/markets?status=open&mve_filter=exclude&limit=200&cursor=CgwIzdiazwYQ2Lfu7gISEUtYTkZMV0lOUy0yN0RFTi03",
+      "parent_observation_id": 10254,
+      "parent_sha256": "49480d61ff0aed8c1e6f885d3ea8e38b135f5edcff0f4404f0ed45c5e320454e",
+      "schema_version": "kalshi-3.34.0/m1-v1",
+      "representation": "RESERIALIZED_GENUINE_MARKET_EXCERPT",
+      "body": "{\"market\":{\"can_close_early\":true,\"close_time\":\"2027-01-27T15:00:00Z\",\"created_time\":\"2026-04-15T20:54:12.781796Z\",\"custom_strike\":{\"political_party\":\"57fa2293-3102-463b-9087-68cd9f6da0a6\"},\"early_close_condition\":\"This market will close early following a winner being announced.\",\"event_ticker\":\"KXSTATELEG-NCSEN26\",\"exchange_index\":0,\"expected_expiration_time\":\"2026-11-03T15:00:00Z\",\"expiration_time\":\"2027-01-27T15:00:00Z\",\"expiration_value\":\"\",\"last_price_dollars\":\"0.2600\",\"latest_expiration_time\":\"2027-01-27T15:00:00Z\",\"market_type\":\"binary\",\"no_ask_dollars\":\"0.7500\",\"no_bid_dollars\":\"0.7400\",\"no_sub_title\":\"Democratic party\",\"notional_value_dollars\":\"1.0000\",\"open_interest_fp\":\"9006.63\",\"open_time\":\"2026-04-16T14:00:00Z\",\"previous_price_dollars\":\"0.2500\",\"previous_yes_ask_dollars\":\"0.2600\",\"previous_yes_bid_dollars\":\"0.2500\",\"price_level_structure\":\"linear_cent\",\"price_ranges\":[{\"end\":\"1.0000\",\"start\":\"0.0000\",\"step\":\"0.0100\"}],\"result\":\"\",\"rules_primary\":\"If the Democratic party wins the North Carolina State Senate in 2026, then the market resolves to Yes.\",\"rules_secondary\":\"Winning is defined as holding more seats than any other party two weeks after the State Senate is sat for the session following the election. If both parties are tied, then the market resolves to No. This market is also eligible for accelerated determination after a consensus of media organizations project the winner. See full rules for details.\",\"settlement_bounds_type\":\"default\",\"settlement_timer_seconds\":1800,\"status\":\"active\",\"strike_type\":\"structured\",\"ticker\":\"KXSTATELEG-NCSEN26-D\",\"title\":\"Who will win the North Carolina State Senate?\",\"updated_time\":\"2026-10-23T17:09:26.483827Z\",\"volume_24h_fp\":\"450.69\",\"volume_fp\":\"21923.68\",\"yes_ask_dollars\":\"0.2600\",\"yes_ask_size_fp\":\"4922.10\",\"yes_bid_dollars\":\"0.2500\",\"yes_bid_size_fp\":\"7276.00\",\"yes_sub_title\":\"Democratic party\"}}",
+      "body_sha256": "fad1e7bf0bbb1c88b7bca9c4cbeb7632f85b1e199cabe21d2d069a05d805b939"
+    },
+    {
+      "venue": "polymarket_us",
+      "source_id": "ewc-usse-nc-2026-11-03-dem",
+      "observed_at": "2026-10-30T06:04:21.339436+00:00",
+      "original_version_id": 257269,
+      "source_url": "https://gateway.polymarket.us/v1/market/slug/ewc-usse-nc-2026-11-03-dem",
+      "parent_endpoint": "https://gateway.polymarket.us/v1/markets?active=true&closed=false&limit=200&offset=200&orderBy=id&orderDirection=asc",
+      "parent_observation_id": 9104,
+      "parent_sha256": "d05050daba2200a20bed39857ed8ee046a36247819fa7d5191f64c800fb21843",
+      "schema_version": "polymarket-us-marketservice-1.0.0/m1-v1",
+      "representation": "RESERIALIZED_GENUINE_MARKET_EXCERPT",
+      "body": "{\"market\":{\"active\":true,\"archived\":false,\"assetPriceTerms\":null,\"bestAskQuote\":{\"currency\":\"USD\",\"value\":\"0.9700\"},\"bestBidQuote\":{\"currency\":\"USD\",\"value\":\"0.9600\"},\"category\":\"politics\",\"closed\":false,\"color\":\"#2258F8\",\"comboEnabled\":true,\"createdAt\":\"2026-06-02T03:18:51Z\",\"darkColor\":\"#0073FF\",\"description\":\"This market will settle to Yes if the Democratic Party nominee wins the 2026 midterm election for US Senator from North Carolina. Outcome sourced from relevant government authorities.\\n\\nThe determination of the winner includes any runoff, tiebreak, or other relevant procedure under the applicable rules of the relevant jurisdiction.\\n\",\"endDate\":\"2027-01-15T00:00:00Z\",\"ep3Status\":\"OPEN\",\"ep3SyncedAt\":\"2026-10-29T12:04:57Z\",\"feeCoefficient\":\"0.0695\",\"gameStartTime\":\"2026-11-03T17:00:00Z\",\"hidden\":false,\"id\":\"44008\",\"image\":\"https://static.polymarket.us/images/politics/elections/canidates/north-carolina-senate_roy-cooper.png\",\"manualActivation\":false,\"marketSides\":[{\"createdAt\":\"2026-06-02T03:18:51Z\",\"description\":\"Yes\",\"id\":\"87980\",\"identifier\":\"ewc-usse-nc-2026-11-03-dem\",\"long\":true,\"marketId\":44008,\"marketSideType\":\"MARKET_SIDE_TYPE_INSTRUMENT\",\"price\":\"0.9700\",\"quote\":{\"currency\":\"USD\",\"value\":\"0.9700\"},\"tradable\":true,\"updatedAt\":\"2026-06-02T03:18:51Z\"},{\"createdAt\":\"2026-06-02T03:18:51Z\",\"description\":\"No\",\"id\":\"87981\",\"identifier\":\"ewc-usse-nc-2026-11-03-dem\",\"long\":false,\"marketId\":44008,\"marketSideType\":\"MARKET_SIDE_TYPE_INSTRUMENT\",\"price\":\"0.04\",\"quote\":{\"currency\":\"USD\",\"value\":\"0.04\"},\"tradable\":true,\"updatedAt\":\"2026-06-02T03:18:51Z\"}],\"marketType\":\"futures\",\"minimumTradeQty\":1,\"orderPriceMinTickSize\":\"0.01\",\"outcomePrices\":\"[\\\"0.9700\\\",\\\"0.04\\\"]\",\"outcomes\":\"[\\\"No\\\",\\\"Yes\\\"]\",\"politics\":null,\"question\":\"North Carolina Senate Election Winner\",\"slug\":\"ewc-usse-nc-2026-11-03-dem\",\"sportsMarketType\":\"futures\",\"sportsMarketTypeV2\":\"SPORTS_MARKET_TYPE_FUTURE\",\"startDate\":\"2026-06-02T03:07:28Z\",\"status\":\"MARKET_STATUS_OPEN\",\"tags\":[],\"title\":\"Roy Cooper (D)\",\"titleShort\":\"Roy Cooper (D)\",\"updatedAt\":\"2026-10-30T05:47:05Z\"}}",
+      "body_sha256": "b7b9ca057beffb6a20d5635eca35097190e4f524e56551f5cdd14ff827f1c709"
+    },
+    {
+      "venue": "kalshi",
+      "source_id": "KXNEWROLEX-27JAN-ELON",
+      "observed_at": "2026-10-30T06:37:33.705521+00:00",
+      "original_version_id": 159553,
+      "source_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNEWROLEX-27JAN-ELON",
+      "parent_endpoint": "https://external-api.kalshi.com/trade-api/v2/markets?status=open&mve_filter=exclude&limit=200&cursor=CgwImYDhygYQ2J_soQESG0tYRkVBVFVSRVRSQVZJU1NDT1RULTI3LUJBQg",
+      "parent_observation_id": 10281,
+      "parent_sha256": "0183bf95d74fc13b728f6ba8e1edd04769d7c07c8f9d3ab9de3afea96788ef18",
+      "schema_version": "kalshi-3.34.0/m1-v1",
+      "representation": "RESERIALIZED_GENUINE_MARKET_EXCERPT",
+      "body": "{\"market\":{\"can_close_early\":true,\"close_time\":\"2027-01-01T15:00:00Z\",\"created_time\":\"2026-01-01T00:28:09.131056Z\",\"early_close_condition\":\"This market will close and expire early if the event occurs.\",\"event_ticker\":\"KXNEWROLEX-27JAN\",\"exchange_index\":0,\"expected_expiration_time\":\"2027-01-01T15:00:00Z\",\"expiration_time\":\"2027-01-01T15:00:00Z\",\"expiration_value\":\"\",\"last_price_dollars\":\"0.0500\",\"latest_expiration_time\":\"2027-01-01T15:00:00Z\",\"market_type\":\"binary\",\"no_ask_dollars\":\"0.9500\",\"no_bid_dollars\":\"0.9200\",\"no_sub_title\":\"Elon Musk\",\"notional_value_dollars\":\"1.0000\",\"open_interest_fp\":\"13926.82\",\"open_time\":\"2026-01-02T15:00:00Z\",\"previous_price_dollars\":\"0.0500\",\"previous_yes_ask_dollars\":\"0.0800\",\"previous_yes_bid_dollars\":\"0.0500\",\"price_level_structure\":\"linear_cent\",\"price_ranges\":[{\"end\":\"1.0000\",\"start\":\"0.0000\",\"step\":\"0.0100\"}],\"result\":\"\",\"rules_primary\":\"If Elon Musk is confirmed as CEO for X before Jan 1, 2027, then the market resolves to Yes.\",\"rules_secondary\":\"Important information: An acting or interim CEO role, including from Elon Musk, would not satisfy the payout criterion. It must be a full-time CEO position.\",\"settlement_bounds_type\":\"default\",\"settlement_timer_seconds\":1800,\"status\":\"active\",\"ticker\":\"KXNEWROLEX-27JAN-ELON\",\"title\":\"Who will be the next CEO of X?\",\"updated_time\":\"2026-04-09T09:42:22.91678Z\",\"volume_24h_fp\":\"0.00\",\"volume_fp\":\"48788.18\",\"yes_ask_dollars\":\"0.0800\",\"yes_ask_size_fp\":\"26.52\",\"yes_bid_dollars\":\"0.0500\",\"yes_bid_size_fp\":\"823.58\",\"yes_sub_title\":\"Elon Musk\"}}",
+      "body_sha256": "13d801b9aec9517f01dd8510c892dfd1822ad9179b7bf720f0ec55b383c6a430"
+    },
+    {
+      "venue": "polymarket_us",
+      "source_id": "apdc-elonmusk-tsla-ceo-2026-12-31",
+      "observed_at": "2026-10-30T06:04:34.915127+00:00",
+      "original_version_id": 164996,
+      "source_url": "https://gateway.polymarket.us/v1/market/slug/apdc-elonmusk-tsla-ceo-2026-12-31",
+      "parent_endpoint": "https://gateway.polymarket.us/v1/markets?active=true&closed=false&limit=200&offset=1400&orderBy=id&orderDirection=asc",
+      "parent_observation_id": 9110,
+      "parent_sha256": "63bd040ef841cd368290d3da31befb3bd56e560cdae8c49cd3aeaf9365b96f7d",
+      "schema_version": "polymarket-us-marketservice-1.0.0/m1-v1",
+      "representation": "RESERIALIZED_GENUINE_MARKET_EXCERPT",
+      "body": "{\"market\":{\"active\":true,\"archived\":false,\"assetPriceTerms\":null,\"bestAskQuote\":{\"currency\":\"USD\",\"value\":\"0.0500\"},\"bestBidQuote\":{\"currency\":\"USD\",\"value\":\"0.0400\"},\"category\":\"finance\",\"closed\":false,\"comboEnabled\":false,\"createdAt\":\"2026-07-16T20:39:21Z\",\"description\":\"This market will settle to Yes if Elon Musks departure as CEO of Tesla is officially announced by December 31, 2026, 11:59 PM ET. Outcome sourced from Elon Musk and Tesla.\\n\\nThe departure will be considered to be announced when Elon Musk, Tesla, or their authorized representatives publicly and definitively announce that Elon Musk has ceased or will cease to hold the position of CEO of Tesla. Such an announcement will qualify regardless of when the specified person formally leaves the position. Announcements of the specified persons resignation, removal, or departure through other means all qualify.\\n\\nThe following do not qualify as public and definitive announcements: statements that the specified person is considering or open to departing; conditional statements that the specified person will depart only if specified conditions are met; the announcement of an offer of resignation that requires acceptance and remains pending or has been refused; media reports that the specified person plans to depart; statements made in sarcasm or jest; and statements by persons other than the specified person, the relevant authority governing the specified position, or their respective authorized representatives.\\n\\nOnly announcements which are framed as announcing a departure intended to be effective within 18 months of the date of the announcement will qualify (e.g., neither I will leave office in 2 years, nor I will not be in office forever, would qualify).\\n\\nAnnouncements of temporary leaves of absence, dated suspensions, indefinite suspensions, administrative leaves, or other temporary changes to the specified persons duties in the specified position do not qualify.\\n\\nIf the specified person holds the specified position on a predefined term with a scheduled end date, only announcements that they will depart the position prior to the scheduled end of their term qualify.\\n\\nIf the specified person formally ceases to hold the specified position before the end of their scheduled term without a qualifying announcement, the market will settle to Yes if major news agencies of record confirm the departure by December 31, 2026, 11:59 PM ET.\",\"endDate\":\"2027-01-15T04:00:00Z\",\"ep3Status\":\"OPEN\",\"ep3SyncedAt\":\"2026-10-29T12:04:56Z\",\"feeCoefficient\":\"0.0695\",\"gameStartTime\":\"2027-01-01T04:59:00Z\",\"hidden\":false,\"id\":\"234521\",\"manualActivation\":false,\"marketSides\":[{\"createdAt\":\"2026-07-16T20:39:21Z\",\"description\":\"Yes\",\"id\":\"468606\",\"identifier\":\"apdc-elonmusk-tsla-ceo-2026-12-31\",\"long\":true,\"marketId\":234521,\"marketSideType\":\"MARKET_SIDE_TYPE_INSTRUMENT\",\"price\":\"0.0500\",\"quote\":{\"currency\":\"USD\",\"value\":\"0.0500\"},\"tradable\":true,\"updatedAt\":\"2026-07-16T20:39:21Z\"},{\"createdAt\":\"2026-07-16T20:39:21Z\",\"description\":\"No\",\"id\":\"468607\",\"identifier\":\"apdc-elonmusk-tsla-ceo-2026-12-31\",\"long\":false,\"marketId\":234521,\"marketSideType\":\"MARKET_SIDE_TYPE_INSTRUMENT\",\"price\":\"0.96\",\"quote\":{\"currency\":\"USD\",\"value\":\"0.96\"},\"tradable\":true,\"updatedAt\":\"2026-07-16T20:39:21Z\"}],\"marketType\":\"futures\",\"minimumTradeQty\":\"0.01\",\"orderPriceMinTickSize\":\"0.01\",\"outcomePrices\":\"[\\\"0.0500\\\",\\\"0.96\\\"]\",\"outcomes\":\"[\\\"No\\\",\\\"Yes\\\"]\",\"politics\":null,\"question\":\"Elon Musk Announced Out As Tesla CEO?\",\"slug\":\"apdc-elonmusk-tsla-ceo-2026-12-31\",\"sortOrder\":1,\"sportsMarketType\":\"futures\",\"sportsMarketTypeV2\":\"SPORTS_MARKET_TYPE_FUTURE\",\"startDate\":\"2026-07-16T20:39:21Z\",\"status\":\"MARKET_STATUS_OPEN\",\"tags\":[],\"title\":\"By December 31, 2026\",\"titleShort\":\"By December 31, 2026\",\"updatedAt\":\"2026-10-30T02:57:57Z\"}}",
+      "body_sha256": "5468041e22cf909f090e719ab5693737783de21a469e3726f0532e6bff781e82"
+    },
+    {
+      "venue": "kalshi",
+      "source_id": "KXTOPSONGRUNNERUPUSA-26-DIE",
+      "observed_at": "2026-10-30T06:37:42.203912+00:00",
+      "original_version_id": 160809,
+      "source_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXTOPSONGRUNNERUPUSA-26-DIE",
+      "parent_endpoint": "https://external-api.kalshi.com/trade-api/v2/markets?status=open&mve_filter=exclude&limit=200&cursor=CgsIod3HyQYQuL-iDBITS1gxU09ORy1ERUMyNjI2LUFMRQ",
+      "parent_observation_id": 10287,
+      "parent_sha256": "b43d2c44eedaee64b8f1972e5803b877e6b8409f830c415d06c55aa5c37a8c70",
+      "schema_version": "kalshi-3.34.0/m1-v1",
+      "representation": "RESERIALIZED_GENUINE_MARKET_EXCERPT",
+      "body": "{\"market\":{\"can_close_early\":true,\"close_time\":\"2026-12-31T04:59:00Z\",\"created_time\":\"2025-12-03T23:36:07.889522Z\",\"early_close_condition\":\"This market will close and expire early if the event occurs.\",\"event_ticker\":\"KXTOPSONGRUNNERUPUSA-26\",\"exchange_index\":0,\"expected_expiration_time\":\"2026-12-31T15:00:00Z\",\"expiration_time\":\"2027-01-07T15:00:00Z\",\"expiration_value\":\"\",\"last_price_dollars\":\"0.0100\",\"latest_expiration_time\":\"2027-01-07T15:00:00Z\",\"market_type\":\"binary\",\"no_ask_dollars\":\"1.0000\",\"no_bid_dollars\":\"0.9900\",\"no_sub_title\":\"Die With A Smile\",\"notional_value_dollars\":\"1.0000\",\"open_interest_fp\":\"392.00\",\"open_time\":\"2025-12-04T15:00:00Z\",\"previous_price_dollars\":\"0.0100\",\"previous_yes_ask_dollars\":\"0.0100\",\"previous_yes_bid_dollars\":\"0.0000\",\"price_level_structure\":\"linear_cent\",\"price_ranges\":[{\"end\":\"1.0000\",\"start\":\"0.0000\",\"step\":\"0.0100\"}],\"result\":\"\",\"rules_primary\":\"If Die With A Smile is the #2  most streamed Song on Spotify's 2026 Spotify Wrapped Top 10 Songs USA chart on the date that the chart is released for 2026, then the market resolves to Yes.\",\"rules_secondary\":\"This market and these products have not been endorsed by Spotify. Any references to Spotify, Spotify charts, streaming data, or any associated marks are descriptive only and do not indicate an endorsement of this product or any affiliation between Spotify and Kalshi.\",\"settlement_bounds_type\":\"default\",\"settlement_timer_seconds\":1800,\"status\":\"active\",\"subtitle\":\":: Lady Gaga, Bruno Mars\",\"ticker\":\"KXTOPSONGRUNNERUPUSA-26-DIE\",\"title\":\"Will Die With A Smile be the #2 most streamed Song on the  2026 Spotify Wrapped Top 10 Songs USA chart on the date that the chart is released for 2026?\",\"updated_time\":\"2026-07-01T20:56:10.278004Z\",\"volume_24h_fp\":\"0.00\",\"volume_fp\":\"582.24\",\"yes_ask_dollars\":\"0.0100\",\"yes_ask_size_fp\":\"2072.00\",\"yes_bid_dollars\":\"0.0000\",\"yes_bid_size_fp\":\"0.00\",\"yes_sub_title\":\"Die With A Smile\"}}",
+      "body_sha256": "2c9db26336ee6ee0d8667660dd342d8015fe629e399c7b625fbefa304095f8a4"
+    },
+    {
+      "venue": "polymarket_us",
+      "source_id": "ccrc-sptfy-n1-song-us-yr-2026-diewit",
+      "observed_at": "2026-10-30T06:04:34.915127+00:00",
+      "original_version_id": 165019,
+      "source_url": "https://gateway.polymarket.us/v1/market/slug/ccrc-sptfy-n1-song-us-yr-2026-diewit",
+      "parent_endpoint": "https://gateway.polymarket.us/v1/markets?active=true&closed=false&limit=200&offset=1400&orderBy=id&orderDirection=asc",
+      "parent_observation_id": 9110,
+      "parent_sha256": "63bd040ef841cd368290d3da31befb3bd56e560cdae8c49cd3aeaf9365b96f7d",
+      "schema_version": "polymarket-us-marketservice-1.0.0/m1-v1",
+      "representation": "RESERIALIZED_GENUINE_MARKET_EXCERPT",
+      "body": "{\"market\":{\"active\":true,\"archived\":false,\"assetPriceTerms\":null,\"bestAskQuote\":{\"currency\":\"USD\",\"value\":\"0.0100\"},\"category\":\"culture\",\"closed\":false,\"comboEnabled\":false,\"createdAt\":\"2026-07-16T20:39:36Z\",\"description\":\"This market will settle to Yes if Die With A Smile - Lady Gaga & Bruno Mars is ranked the top song in the US on Spotify in 2026. Outcome verified by Spotify.\\n\\nThe relevant ranking is the 2026 edition of the Spotify Top Songs in the US ranking released as part of the annual Spotify Wrapped campaign (see past edition: https://newsroom.spotify.com/2025-12-03/wrapped-top-artists-songs-albums-podcasts-audiobooks/). This ranking will be used for resolution even if it is released before the end of calendar year 2026.\\n\\nNote: This market and these products have not been endorsed by Spotify. Any references to Spotify, Spotify charts, streaming data, or any associated marks are descriptive only and do not indicate an endorsement of this product or any affiliation between Spotify and Polymarket. Spotify and related marks are the property of Spotify AB and its group companies.\",\"endDate\":\"2026-12-17T04:00:00Z\",\"ep3Status\":\"OPEN\",\"ep3SyncedAt\":\"2026-10-29T12:04:56Z\",\"feeCoefficient\":\"0.0695\",\"gameStartTime\":\"2026-12-02T17:00:00Z\",\"hidden\":false,\"id\":\"234563\",\"manualActivation\":false,\"marketSides\":[{\"createdAt\":\"2026-07-16T20:39:36Z\",\"description\":\"Yes\",\"id\":\"468690\",\"identifier\":\"ccrc-sptfy-n1-song-us-yr-2026-diewit\",\"long\":true,\"marketId\":234563,\"marketSideType\":\"MARKET_SIDE_TYPE_INSTRUMENT\",\"price\":\"0.0100\",\"quote\":{\"currency\":\"USD\",\"value\":\"0.0100\"},\"tradable\":true,\"updatedAt\":\"2026-07-16T20:39:36Z\"},{\"createdAt\":\"2026-07-16T20:39:36Z\",\"description\":\"No\",\"id\":\"468691\",\"identifier\":\"ccrc-sptfy-n1-song-us-yr-2026-diewit\",\"long\":false,\"marketId\":234563,\"marketSideType\":\"MARKET_SIDE_TYPE_INSTRUMENT\",\"tradable\":true,\"updatedAt\":\"2026-07-16T20:39:36Z\"}],\"marketType\":\"futures\",\"minimumTradeQty\":\"0.01\",\"orderPriceMinTickSize\":\"0.01\",\"outcomePrices\":\"[\\\"0.0100\\\"]\",\"outcomes\":\"[\\\"No\\\",\\\"Yes\\\"]\",\"politics\":null,\"question\":\"Top Song in the US 2026?\",\"slug\":\"ccrc-sptfy-n1-song-us-yr-2026-diewit\",\"sportsMarketType\":\"futures\",\"sportsMarketTypeV2\":\"SPORTS_MARKET_TYPE_FUTURE\",\"startDate\":\"2026-07-16T20:39:36Z\",\"status\":\"MARKET_STATUS_OPEN\",\"tags\":[],\"title\":\"Die With A Smile - Lady Gaga & Bruno Mars\",\"titleShort\":\"Die With A Smile - Lady Gaga & Bruno Mars\",\"updatedAt\":\"2026-10-29T22:16:27Z\"}}",
+      "body_sha256": "9841a865aafba9d660b29f0d72884df28283a0663536bcac97804b2decdfd4f9"
+    },
+    {
+      "venue": "kalshi",
+      "source_id": "KXFEDDECISION-26DEC-H26",
+      "observed_at": "2026-10-30T06:37:47.885822+00:00",
+      "original_version_id": 161693,
+      "source_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXFEDDECISION-26DEC-H26",
+      "parent_endpoint": "https://external-api.kalshi.com/trade-api/v2/markets?status=open&mve_filter=exclude&limit=200&cursor=CgsIw62QxwYQ6P-mYxIRS1hGRUQtMjdNQVItVDEuNTA",
+      "parent_observation_id": 10291,
+      "parent_sha256": "fa372d197724287637959c331bcf4710f9ef2f392df77b4230d5bdef52ea83b7",
+      "schema_version": "kalshi-3.34.0/m1-v1",
+      "representation": "RESERIALIZED_GENUINE_MARKET_EXCERPT",
+      "body": "{\"market\":{\"can_close_early\":true,\"close_time\":\"2026-12-09T18:59:00Z\",\"created_time\":\"2025-09-26T15:31:07.682989Z\",\"custom_strike\":{\"Hike\":\">25\"},\"event_ticker\":\"KXFEDDECISION-26DEC\",\"exchange_index\":0,\"expected_expiration_time\":\"2026-12-09T19:05:00Z\",\"expiration_time\":\"2027-03-10T19:01:00Z\",\"expiration_value\":\"\",\"last_price_dollars\":\"0.0200\",\"latest_expiration_time\":\"2027-03-10T19:01:00Z\",\"market_type\":\"binary\",\"no_ask_dollars\":\"0.9800\",\"no_bid_dollars\":\"0.9700\",\"no_sub_title\":\"Hike >25bps\",\"notional_value_dollars\":\"1.0000\",\"open_interest_fp\":\"401182.87\",\"open_time\":\"2025-09-29T14:00:00Z\",\"previous_price_dollars\":\"0.0400\",\"previous_yes_ask_dollars\":\"0.0400\",\"previous_yes_bid_dollars\":\"0.0300\",\"price_level_structure\":\"linear_cent\",\"price_ranges\":[{\"end\":\"1.0000\",\"start\":\"0.0000\",\"step\":\"0.0100\"}],\"result\":\"\",\"rules_primary\":\"If the Federal Reserve does a Hike of   25bps on December 09, 2026, then the market resolves to Yes.\",\"rules_secondary\":\"The outcomes are mutually exclusive: at most one can resolve to Yes. For example, a 50-basis-point hike resolves \\u201cHike   25 bps\\u201d to Yes and \\u201cHike 25 bps\\u201d to No.\\n\\nIf the scheduled FOMC meeting is canceled and does not occur on its scheduled date, \\u201cFed maintains rate\\u201d resolves to Yes and all other outcomes resolve to No.\",\"settlement_bounds_type\":\"default\",\"settlement_timer_seconds\":297,\"status\":\"active\",\"strike_type\":\"custom\",\"subtitle\":\"Hike >25bps\",\"ticker\":\"KXFEDDECISION-26DEC-H26\",\"title\":\"Will the Federal Reserve Hike rates by >25bps at their December 2026 meeting?\",\"updated_time\":\"2026-10-27T18:37:20.014572Z\",\"volume_24h_fp\":\"43563.02\",\"volume_fp\":\"488161.92\",\"yes_ask_dollars\":\"0.0300\",\"yes_ask_size_fp\":\"195188.00\",\"yes_bid_dollars\":\"0.0200\",\"yes_bid_size_fp\":\"9313.76\",\"yes_sub_title\":\"Hike >25bps\"}}",
+      "body_sha256": "81fcd61e2c3c75cc1bfc26cde9a577f4713f443bb7a56d49864b3ba2b7f500b7"
+    },
+    {
+      "venue": "polymarket_us",
+      "source_id": "rdc-usfed-fomc-2026-12-09-nochng",
+      "observed_at": "2026-10-30T06:08:57.712287+00:00",
+      "original_version_id": 177922,
+      "source_url": "https://gateway.polymarket.us/v1/market/slug/rdc-usfed-fomc-2026-12-09-nochng",
+      "parent_endpoint": "https://gateway.polymarket.us/v1/markets?active=true&closed=false&limit=200&offset=14200&orderBy=id&orderDirection=asc",
+      "parent_observation_id": 9234,
+      "parent_sha256": "6f80568df2b79e74268e74e0e27df6cccc0c4328971440d5d19747a6e3f81947",
+      "schema_version": "polymarket-us-marketservice-1.0.0/m1-v1",
+      "representation": "RESERIALIZED_GENUINE_MARKET_EXCERPT",
+      "body": "{\"market\":{\"active\":true,\"archived\":false,\"assetPriceTerms\":null,\"bestAskQuote\":{\"currency\":\"USD\",\"value\":\"0.2800\"},\"bestBidQuote\":{\"currency\":\"USD\",\"value\":\"0.2700\"},\"category\":\"macro\",\"closed\":false,\"comboEnabled\":false,\"createdAt\":\"2026-09-22T18:10:55Z\",\"description\":\"This market will settle to Yes if the Federal Reserve does not change the upper bound of the target federal funds rate at the December 2026 Federal Open Market Committee (FOMC) meeting, currently scheduled for December 8-9. Outcome sourced from the Federal Reserve.\\n\\nIf the change in the specified rate does not precisely match the displayed options, changes smaller than the smallest option of the same direction (increase/decrease) will be rounded to that smallest option, and changes greater than the smallest option of the same direction will be rounded to the nearest displayed option, with values exactly halfway between options being rounded away from zero.\",\"endDate\":\"2026-12-24T04:00:00Z\",\"ep3Status\":\"OPEN\",\"ep3SyncedAt\":\"2026-10-29T12:04:36Z\",\"feeCoefficient\":\"0.0695\",\"gameStartTime\":\"2026-12-09T19:00:00Z\",\"hidden\":false,\"id\":\"1003017\",\"manualActivation\":false,\"marketSides\":[{\"createdAt\":\"2026-09-22T18:10:55Z\",\"description\":\"Yes\",\"id\":\"2005518\",\"identifier\":\"rdc-usfed-fomc-2026-12-09-nochng\",\"long\":true,\"marketId\":1003017,\"marketSideType\":\"MARKET_SIDE_TYPE_INSTRUMENT\",\"price\":\"0.2800\",\"quote\":{\"currency\":\"USD\",\"value\":\"0.2800\"},\"tradable\":true,\"updatedAt\":\"2026-09-22T18:10:55Z\"},{\"createdAt\":\"2026-09-22T18:10:55Z\",\"description\":\"No\",\"id\":\"2005519\",\"identifier\":\"rdc-usfed-fomc-2026-12-09-nochng\",\"long\":false,\"marketId\":1003017,\"marketSideType\":\"MARKET_SIDE_TYPE_INSTRUMENT\",\"price\":\"0.73\",\"quote\":{\"currency\":\"USD\",\"value\":\"0.73\"},\"tradable\":true,\"updatedAt\":\"2026-09-22T18:10:55Z\"}],\"marketType\":\"futures\",\"minimumTradeQty\":\"0.01\",\"orderPriceMinTickSize\":\"0.01\",\"outcomePrices\":\"[\\\"0.2800\\\",\\\"0.73\\\"]\",\"outcomes\":\"[\\\"Yes\\\",\\\"No\\\"]\",\"politics\":null,\"question\":\"Fed Decision in December\",\"slug\":\"rdc-usfed-fomc-2026-12-09-nochng\",\"sortOrder\":3,\"sportsMarketType\":\"futures\",\"sportsMarketTypeV2\":\"SPORTS_MARKET_TYPE_FUTURE\",\"startDate\":\"2026-09-22T18:10:55Z\",\"status\":\"MARKET_STATUS_OPEN\",\"tags\":[],\"title\":\"No Change\",\"titleShort\":\"No Change\",\"updatedAt\":\"2026-10-30T05:47:08Z\"}}",
+      "body_sha256": "8c8d8a8c460a62087361f014fc1da77fddd3847fdefa5684b02bdff2389a6e2b"
+    },
+    {
+      "venue": "kalshi",
+      "source_id": "KXTOPSONGSPOTIFYUSA-26-DIE",
+      "observed_at": "2026-10-30T06:37:42.203912+00:00",
+      "original_version_id": 160893,
+      "source_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXTOPSONGSPOTIFYUSA-26-DIE",
+      "parent_endpoint": "https://external-api.kalshi.com/trade-api/v2/markets?status=open&mve_filter=exclude&limit=200&cursor=CgsIod3HyQYQuL-iDBITS1gxU09ORy1ERUMyNjI2LUFMRQ",
+      "parent_observation_id": 10287,
+      "parent_sha256": "b43d2c44eedaee64b8f1972e5803b877e6b8409f830c415d06c55aa5c37a8c70",
+      "schema_version": "kalshi-3.34.0/m1-v1",
+      "representation": "RESERIALIZED_GENUINE_MARKET_EXCERPT",
+      "body": "{\"market\":{\"can_close_early\":true,\"close_time\":\"2026-12-31T04:59:00Z\",\"created_time\":\"2025-12-03T22:30:51.105904Z\",\"early_close_condition\":\"This market will close and expire early if the event occurs.\",\"event_ticker\":\"KXTOPSONGSPOTIFYUSA-26\",\"exchange_index\":0,\"expected_expiration_time\":\"2026-12-31T15:00:00Z\",\"expiration_time\":\"2027-01-07T15:00:00Z\",\"expiration_value\":\"\",\"last_price_dollars\":\"0.0100\",\"latest_expiration_time\":\"2027-01-07T15:00:00Z\",\"market_type\":\"binary\",\"no_ask_dollars\":\"1.0000\",\"no_bid_dollars\":\"0.9900\",\"no_sub_title\":\"Die With A Smile\",\"notional_value_dollars\":\"1.0000\",\"open_interest_fp\":\"3046.83\",\"open_time\":\"2025-12-04T15:00:00Z\",\"previous_price_dollars\":\"0.0100\",\"previous_yes_ask_dollars\":\"0.0100\",\"previous_yes_bid_dollars\":\"0.0000\",\"price_level_structure\":\"linear_cent\",\"price_ranges\":[{\"end\":\"1.0000\",\"start\":\"0.0000\",\"step\":\"0.0100\"}],\"result\":\"\",\"rules_primary\":\"If Die With A Smile is the #1  most streamed Song on Spotify's 2026 Spotify Wrapped Top 10 Songs USA chart on the date that the chart is released for 2026, then the market resolves to Yes.\",\"rules_secondary\":\"This market and these products have not been endorsed by Spotify. Any references to Spotify, Spotify charts, streaming data, or any associated marks are descriptive only and do not indicate an endorsement of this product or any affiliation between Spotify and Kalshi.\",\"settlement_bounds_type\":\"default\",\"settlement_timer_seconds\":1800,\"status\":\"active\",\"subtitle\":\":: Lady Gaga, Bruno Mars\",\"ticker\":\"KXTOPSONGSPOTIFYUSA-26-DIE\",\"title\":\"Will Die With A Smile be the #1 most streamed Song on the  2026 Spotify Wrapped Top 10 Songs USA chart on the date that the chart is released for 2026?\",\"updated_time\":\"2026-07-01T20:55:15.080696Z\",\"volume_24h_fp\":\"0.00\",\"volume_fp\":\"4953.83\",\"yes_ask_dollars\":\"0.0100\",\"yes_ask_size_fp\":\"3327.17\",\"yes_bid_dollars\":\"0.0000\",\"yes_bid_size_fp\":\"0.00\",\"yes_sub_title\":\"Die With A Smile\"}}",
+      "body_sha256": "5c3750ff1325e8ee5958141159a3a101778a5c6dfc635521aa7d4d433b9880eb"
+    },
+    {
+      "venue": "kalshi",
+      "source_id": "KXTOPSONGSPOTIFY-26-DIE",
+      "observed_at": "2026-10-30T06:37:42.203912+00:00",
+      "original_version_id": 160984,
+      "source_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXTOPSONGSPOTIFY-26-DIE",
+      "parent_endpoint": "https://external-api.kalshi.com/trade-api/v2/markets?status=open&mve_filter=exclude&limit=200&cursor=CgsIod3HyQYQuL-iDBITS1gxU09ORy1ERUMyNjI2LUFMRQ",
+      "parent_observation_id": 10287,
+      "parent_sha256": "b43d2c44eedaee64b8f1972e5803b877e6b8409f830c415d06c55aa5c37a8c70",
+      "schema_version": "kalshi-3.34.0/m1-v1",
+      "representation": "RESERIALIZED_GENUINE_MARKET_EXCERPT",
+      "body": "{\"market\":{\"can_close_early\":true,\"close_time\":\"2026-12-31T04:59:00Z\",\"created_time\":\"2025-12-03T20:46:27.225566Z\",\"early_close_condition\":\"This market will close and expire early if the event occurs.\",\"event_ticker\":\"KXTOPSONGSPOTIFY-26\",\"exchange_index\":0,\"expected_expiration_time\":\"2026-12-31T15:00:00Z\",\"expiration_time\":\"2027-01-07T15:00:00Z\",\"expiration_value\":\"\",\"last_price_dollars\":\"0.0200\",\"latest_expiration_time\":\"2027-01-07T15:00:00Z\",\"market_type\":\"binary\",\"no_ask_dollars\":\"1.0000\",\"no_bid_dollars\":\"0.9800\",\"no_sub_title\":\"Die With A Smile\",\"notional_value_dollars\":\"1.0000\",\"open_interest_fp\":\"7099.61\",\"open_time\":\"2025-12-04T15:00:00Z\",\"previous_price_dollars\":\"0.0200\",\"previous_yes_ask_dollars\":\"0.0200\",\"previous_yes_bid_dollars\":\"0.0000\",\"price_level_structure\":\"linear_cent\",\"price_ranges\":[{\"end\":\"1.0000\",\"start\":\"0.0000\",\"step\":\"0.0100\"}],\"result\":\"\",\"rules_primary\":\"If Die With A Smile is the #1  most streamed Song on Spotify's 2026 Spotify Wrapped Top 10 Songs Globally chart on the date that the chart is released for 2026, then the market resolves to Yes.\",\"rules_secondary\":\"This market and these products have not been endorsed by Spotify. Any references to Spotify, Spotify charts, streaming data, or any associated marks are descriptive only and do not indicate an endorsement of this product or any affiliation between Spotify and Kalshi.\",\"settlement_bounds_type\":\"default\",\"settlement_timer_seconds\":1800,\"status\":\"active\",\"subtitle\":\":: Lady Gaga, Bruno Mars\",\"ticker\":\"KXTOPSONGSPOTIFY-26-DIE\",\"title\":\"Will Die With A Smile be the #1 most streamed Song on the  2026 Spotify Wrapped Top 10 Songs Globally chart on the date that the chart is released for 2026?\",\"updated_time\":\"2026-07-01T20:53:57.709907Z\",\"volume_24h_fp\":\"0.00\",\"volume_fp\":\"9493.37\",\"yes_ask_dollars\":\"0.0200\",\"yes_ask_size_fp\":\"8062.43\",\"yes_bid_dollars\":\"0.0000\",\"yes_bid_size_fp\":\"0.00\",\"yes_sub_title\":\"Die With A Smile\"}}",
+      "body_sha256": "b91fd450843e33764ef7040ae525cc82ad37a48d5944311fabbcba786652d25c"
+    },
+    {
+      "venue": "polymarket_us",
+      "source_id": "ccrc-sptfy-n1-song-glbl-yr-2026-diewit",
+      "observed_at": "2026-10-30T06:04:34.915127+00:00",
+      "original_version_id": 165012,
+      "source_url": "https://gateway.polymarket.us/v1/market/slug/ccrc-sptfy-n1-song-glbl-yr-2026-diewit",
+      "parent_endpoint": "https://gateway.polymarket.us/v1/markets?active=true&closed=false&limit=200&offset=1400&orderBy=id&orderDirection=asc",
+      "parent_observation_id": 9110,
+      "parent_sha256": "63bd040ef841cd368290d3da31befb3bd56e560cdae8c49cd3aeaf9365b96f7d",
+      "schema_version": "polymarket-us-marketservice-1.0.0/m1-v1",
+      "representation": "RESERIALIZED_GENUINE_MARKET_EXCERPT",
+      "body": "{\"market\":{\"active\":true,\"archived\":false,\"assetPriceTerms\":null,\"bestAskQuote\":{\"currency\":\"USD\",\"value\":\"0.0200\"},\"bestBidQuote\":{\"currency\":\"USD\",\"value\":\"0.0100\"},\"category\":\"culture\",\"closed\":false,\"comboEnabled\":false,\"createdAt\":\"2026-07-16T20:39:33Z\",\"description\":\"This market will settle to Yes if Die With A Smile - Lady Gaga & Bruno Mars is ranked the top song globally on Spotify in 2026. Outcome verified by Spotify.\\n\\nThe relevant ranking is the 2026 edition of the Spotify Top Songs Globally ranking released as part of the annual Spotify Wrapped campaign (see past edition: https://newsroom.spotify.com/2025-12-03/wrapped-top-artists-songs-albums-podcasts-audiobooks/). This ranking will be used for resolution even if it is released before the end of calendar year 2026.\\n\\nNote: This market and these products have not been endorsed by Spotify. Any references to Spotify, Spotify charts, streaming data, or any associated marks are descriptive only and do not indicate an endorsement of this product or any affiliation between Spotify and Polymarket. Spotify and related marks are the property of Spotify AB and its group companies.\",\"endDate\":\"2026-12-17T04:00:00Z\",\"ep3Status\":\"OPEN\",\"ep3SyncedAt\":\"2026-10-29T12:04:56Z\",\"feeCoefficient\":\"0.0695\",\"gameStartTime\":\"2026-12-02T17:00:00Z\",\"hidden\":false,\"id\":\"234552\",\"manualActivation\":false,\"marketSides\":[{\"createdAt\":\"2026-07-16T20:39:33Z\",\"description\":\"Yes\",\"id\":\"468668\",\"identifier\":\"ccrc-sptfy-n1-song-glbl-yr-2026-diewit\",\"long\":true,\"marketId\":234552,\"marketSideType\":\"MARKET_SIDE_TYPE_INSTRUMENT\",\"price\":\"0.0200\",\"quote\":{\"currency\":\"USD\",\"value\":\"0.0200\"},\"tradable\":true,\"updatedAt\":\"2026-07-16T20:39:33Z\"},{\"createdAt\":\"2026-07-16T20:39:33Z\",\"description\":\"No\",\"id\":\"468669\",\"identifier\":\"ccrc-sptfy-n1-song-glbl-yr-2026-diewit\",\"long\":false,\"marketId\":234552,\"marketSideType\":\"MARKET_SIDE_TYPE_INSTRUMENT\",\"price\":\"0.99\",\"quote\":{\"currency\":\"USD\",\"value\":\"0.99\"},\"tradable\":true,\"updatedAt\":\"2026-07-16T20:39:33Z\"}],\"marketType\":\"futures\",\"minimumTradeQty\":\"0.01\",\"orderPriceMinTickSize\":\"0.01\",\"outcomePrices\":\"[\\\"0.0200\\\",\\\"0.99\\\"]\",\"outcomes\":\"[\\\"No\\\",\\\"Yes\\\"]\",\"politics\":null,\"question\":\"Top Song 2026?\",\"slug\":\"ccrc-sptfy-n1-song-glbl-yr-2026-diewit\",\"sportsMarketType\":\"futures\",\"sportsMarketTypeV2\":\"SPORTS_MARKET_TYPE_FUTURE\",\"startDate\":\"2026-07-16T20:39:32Z\",\"status\":\"MARKET_STATUS_OPEN\",\"tags\":[],\"title\":\"Die With A Smile - Lady Gaga & Bruno Mars\",\"titleShort\":\"Die With A Smile - Lady Gaga & Bruno Mars\",\"updatedAt\":\"2026-10-29T23:46:19Z\"}}",
+      "body_sha256": "4b87dc7aac5e4e731da90674a582adde4099f93bb94a282831f65b9a940622e6"
+    }
+  ],
+  "cases": [
+    {
+      "kalshi_id": "KXSTATELEG-NCSEN26-D",
+      "polymarket_us_id": "ewc-usse-nc-2026-11-03-dem",
+      "expected_conflicts": [
+        "POLITICAL_OFFICE_CONFLICT"
+      ],
+      "reason": "State chamber control versus US Senator election"
+    },
+    {
+      "kalshi_id": "KXNEWROLEX-27JAN-ELON",
+      "polymarket_us_id": "apdc-elonmusk-tsla-ceo-2026-12-31",
+      "expected_conflicts": [
+        "CEO_COMPANY_CONFLICT",
+        "CEO_ACTION_CONFLICT"
+      ],
+      "reason": "CEO appointment at X versus departure from Tesla"
+    },
+    {
+      "kalshi_id": "KXTOPSONGRUNNERUPUSA-26-DIE",
+      "polymarket_us_id": "ccrc-sptfy-n1-song-us-yr-2026-diewit",
+      "expected_conflicts": [
+        "RANKING_POSITION_CONFLICT"
+      ],
+      "reason": "Spotify USA number two versus number one"
+    },
+    {
+      "kalshi_id": "KXFEDDECISION-26DEC-H26",
+      "polymarket_us_id": "rdc-usfed-fomc-2026-12-09-nochng",
+      "expected_conflicts": [
+        "RATE_DIRECTION_CONFLICT"
+      ],
+      "reason": "Fed hike versus no change; primary numeric operator is missing"
+    },
+    {
+      "kalshi_id": "KXTOPSONGSPOTIFYUSA-26-DIE",
+      "polymarket_us_id": "ccrc-sptfy-n1-song-us-yr-2026-diewit",
+      "expected_conflicts": [],
+      "reason": "Same ordinary Spotify USA top-song proposition, not legal equivalence"
+    },
+    {
+      "kalshi_id": "KXTOPSONGSPOTIFY-26-DIE",
+      "polymarket_us_id": "ccrc-sptfy-n1-song-glbl-yr-2026-diewit",
+      "expected_conflicts": [],
+      "reason": "Same ordinary Spotify global top-song proposition, not legal equivalence"
+    }
+  ]
+}

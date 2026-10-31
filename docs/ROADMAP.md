@@ -261,9 +261,14 @@ and incremental semantic yield remain open. No M6 or trading work is authorized.
 - [x] Finish and inspect the 12-hour run: two complete collection rounds per
   venue, 457,661 synchronized heads, 12,880 stored vectors, and 20 freshly
   checked sports event identities; both expired services are disabled.
+- [x] Fix the four additional keyword mismatch patterns with genuine regression
+  fixtures and on-read v2 guards; replay demotes five affected pairs. Profile
+  production-size retrieval: 250 queries take 54.2 seconds before, 45.5 after
+  (16% reduction), with identical output; remove duplicate batch coverage scans.
+  All 397 tests pass. See [corrections and profile](M5I_CORRECTIONS_20261030.md).
 - [ ] Complete remaining vector/query coverage (114,413 eligible vectors pending
-  at shutdown); fix further keyword proposition mismatches, profile retrieval
-  overhead, and independently adjudicate production discovery quality.
+  at shutdown), broaden contradiction recognition and independently adjudicate
+  production discovery quality.
 
 See [the final audit and 20-event shortlist](M5I_RUN_20261029_RESULTS.md).
 The original October 28 run was not

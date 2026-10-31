@@ -10,6 +10,7 @@ from decimal import Decimal
 import hashlib
 import json
 import math
+from operator import mul
 import struct
 import time
 
@@ -270,7 +271,9 @@ def unpack(row):
     if len(body)!=row['dimensions']*8 or hashlib.sha256(body).hexdigest()!=row['sha256']:
         raise e.EmbeddingError('CORRUPT_PERSISTENT_VECTOR')
     values=struct.unpack('<'+'d'*row['dimensions'],body)
-    if not all(math.isfinite(x) for x in values) or not .999999 <= math.hypot(*values) <= 1.000001:
+    # A hypot in the unit range guarantees every coordinate is finite. NaN/inf
+    # fail the chained comparison too; avoid a second Python coordinate walk.
+    if not .999999 <= math.hypot(*values) <= 1.000001:
         raise e.EmbeddingError('INVALID_PERSISTENT_VECTOR')
     return values
 
@@ -384,7 +387,7 @@ def vector_candidates(index, query, identity, now, *, cap=256):
     for content,_ in hits.most_common(cap):
         v=next(rows(index,'SELECT * FROM semantic_vectors WHERE identity=? AND content_hash=?',(identity,content)),None)
         if not v or v['dimensions']!=len(values) or not 0<=(now-utc_time(v['created_at'])).total_seconds()<=30*86400:continue
-        score=sum(a*b for a,b in zip(values,unpack(v)))
+        score=sum(map(mul,values,unpack(v)))
         if score>=.70:result[content]=max(-1,min(1,score))
     return result,saturated
 

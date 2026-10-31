@@ -133,3 +133,94 @@ class GenuineRegressionTests(unittest.TestCase):
         self.assertIsNone(s.rank_pair(self.source,self.index,a,b,set(),None,NOW,s.venue_context(self.source)))
         a,b=self.docs(CORPUS['cases'][0])
         self.assertIsNone(s.rank_pair(self.source,self.index,a,b,set(),None,NOW+timedelta(days=2),s.venue_context(self.source)))
+
+
+class KeywordFacetTests(unittest.TestCase):
+    """Explicitly hypothetical language variations; no legal equivalence labels."""
+    def pair(self,a,b):return p.compare(p.extract({'description':a}),p.extract({'description':b}))
+
+    def test_political_offices_require_explicit_scope(self):
+        self.assertIn('POLITICAL_OFFICE_CONFLICT',self.pair('Democrats win the State Senate.','Democrats win the US Senator election.'))
+        self.assertNotIn('POLITICAL_OFFICE_CONFLICT',self.pair('Democrats win the U.S. Senate.','Democrats win the United States Senate.'))
+        self.assertEqual(p.extract({'description':'Democrats win the U.S. Senate.'})['political_office'],'US_SENATE')
+        self.assertIsNone(p.extract({'description':'Democrats win the State Senate or the US Senate.'})['political_office'])
+        self.assertIn('POLITICAL_OFFICE_UNKNOWN',self.pair('Democrats win the Senate.','Democrats win the State Senate.'))
+        self.assertIsNone(p.extract({'description':'Democrats win the Senate. Examples include the State Senate.'})['political_office'])
+
+    def test_ceo_company_action_and_ambiguity(self):
+        warnings=self.pair('Elon Musk is confirmed as CEO for X.','Elon Musk departure as CEO of Tesla is announced.')
+        self.assertIn('CEO_COMPANY_CONFLICT',warnings);self.assertIn('CEO_ACTION_CONFLICT',warnings)
+        self.assertNotIn('CEO_COMPANY_CONFLICT',self.pair('Musk becomes CEO of Twitter.','Musk is appointed CEO at X.'))
+        self.assertIsNone(p.extract({'description':'Musk is not appointed CEO of X.'})['ceo_action'])
+        self.assertIsNone(p.extract({'description':'Musk becomes CEO of an unspecified company.'})['ceo_company'])
+        self.assertIsNone(p.extract({'description':'Musk becomes CEO of X or CEO of Tesla.'})['ceo_company'])
+        self.assertIsNone(p.extract({'description':'Musk is appointed then departs as CEO of X.'})['ceo_action'])
+
+    def test_rank_is_not_chart_size_or_an_example(self):
+        self.assertIn('RANKING_POSITION_CONFLICT',self.pair('Song A is #2 on Spotify.','Song A is the top song on Spotify.'))
+        for wording in ('#1 most streamed song','number 1 song','first-ranked song'):
+            self.assertEqual(p.extract({'description':f'Spotify: {wording}.'})['ranking_position'],'1')
+        self.assertIsNone(p.extract({'description':'Song A appears in Spotify Top 10 Songs.'})['ranking_position'])
+        self.assertIsNone(p.extract({'description':'Spotify song is #1 or #2.'})['ranking_position'])
+        self.assertEqual(p.extract({'description':'Song A is #2 on Spotify. An example is the #1 song.'})['ranking_position'],'2')
+
+    def test_fed_direction_is_independent_of_missing_numeric_operator(self):
+        self.assertIn('RATE_DIRECTION_CONFLICT',self.pair('The Federal Reserve does a Hike of 25bps.','The Federal Reserve does not change rates.'))
+        self.assertIn('RATE_DIRECTION_CONFLICT',self.pair('The Fed cuts rates.','The Fed hikes rates.'))
+        for text in ('Fed does not hike rates.','Fed cuts or hikes rates.','Fed rate decision.'):
+            self.assertIsNone(p.extract({'description':text})['rate_direction'])
+        self.assertEqual(p.extract({'rules_primary':'The Fed hikes rates.','rules_secondary':'If canceled, no change resolves Yes.'})['rate_direction'],'HIKE')
+
+
+class GenuineKeywordRegressionTests(unittest.TestCase):
+    def setUp(self):
+        self.corpus=json.loads((ROOT/'tests/fixtures/m5i-keyword-mismatches-genuine.json').read_text())
+        self.now=utc_time(self.corpus['created_at'])
+        self.tmp=tempfile.TemporaryDirectory();self.addCleanup(self.tmp.cleanup)
+        self.source=connect(str(Path(self.tmp.name)/'source.sqlite3'));self.index=connect(str(Path(self.tmp.name)/'index.sqlite3'))
+        self.addCleanup(self.source.close);self.addCleanup(self.index.close)
+        evaluation.seed(self.source,self.corpus);s.sync(self.source,self.index,now=self.now)
+
+    def rank(self,case,cosine=True):
+        docs=[next(s.rows(self.index,'SELECT * FROM semantic_documents WHERE venue=? AND source_id=?',(v,case[v+'_id']))) for v in ('kalshi','polymarket_us')]
+        return s.rank_pair(self.source,self.index,*docs,{'HYPOTHETICAL_TEST'},
+                          {'cosine':1,'identity':'HYPOTHETICAL'} if cosine else None,self.now,s.venue_context(self.source))
+
+    def test_genuine_misses_at_perfect_similarity_and_positive_controls(self):
+        for cosine in (True,False):
+            for case in self.corpus['cases']:
+                with self.subTest(case=case['kalshi_id'],cosine=cosine):
+                    rank,row=self.rank(case,cosine)
+                    self.assertTrue(set(case['expected_conflicts'])<=set(row['known_contradictions']))
+                    self.assertEqual(bool(rank[0]),bool(case['expected_conflicts']))
+                    self.assertFalse(row['equivalence_verified']);self.assertFalse(row['trading_authorized'])
+        self.assertEqual(self.source.execute('SELECT count(*) FROM pairs').fetchone()[0],0)
+
+    def test_old_features_main_queue_and_reservoir_recompute_without_reembedding(self):
+        before=self.index.execute('SELECT content_hash FROM semantic_documents ORDER BY id').fetchall()
+        candidates=[]
+        for case in self.corpus['cases']:
+            _,row=self.rank(case);row['known_contradictions']=[];row['warnings']=[]
+            candidates.append(row)
+            self.index.execute('INSERT INTO semantic_candidates VALUES(?,?,?)',(row['kalshi_id'],row['polymarket_us_id'],dumps(row)))
+        for doc in list(s.rows(self.index,'SELECT * FROM semantic_documents')):
+            f=json.loads(doc['features_json']);f['proposition']={'version':'proposition-guards/m5i-v1'}
+            self.index.execute('UPDATE semantic_documents SET features_json=? WHERE id=?',(dumps(f),doc['id']))
+        self.index.commit()
+        result=s.retrieve(self.source,self.index,now=self.now,query_ids=[],semantic=False,limit=100)
+        self.assertFalse(result['candidates'][0]['known_contradictions'])
+        from predarb.semantic_cli import revalidate_candidates
+        main=revalidate_candidates(self.source,candidates,now=self.now)
+        for row in main:
+            case=next(c for c in self.corpus['cases'] if c['kalshi_id']==row['kalshi_id'])
+            self.assertTrue(set(case['expected_conflicts'])<=set(row['known_contradictions']))
+        self.assertEqual(revalidate_candidates(self.source,candidates,now=self.now+timedelta(days=2)),[])
+        self.assertEqual(before,self.index.execute('SELECT content_hash FROM semantic_documents ORDER BY id').fetchall())
+
+    def test_deterministic_production_path_demotes_all_four_pairs(self):
+        pairs=[(c['kalshi_id'],c['polymarket_us_id']) for c in self.corpus['cases']]
+        report=d.discover(self.source,now=self.now,limit=100,_pair_keys=pairs)
+        for row in report['candidates']:
+            case=next(c for c in self.corpus['cases'] if c['kalshi_id']==row['kalshi_id'])
+            self.assertTrue(set(case['expected_conflicts'])<=set(row['known_contradictions']))
+        self.assertFalse(report['candidates'][0]['known_contradictions'])

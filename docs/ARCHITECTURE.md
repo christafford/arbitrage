@@ -336,3 +336,13 @@ Source IDs/version IDs/raw references remain provenance pointers to the read-onl
 source archive. Final retrieval rechecks source eligibility and current versions.
 `semantic_cli.py` provides sync/work/retrieve/coverage commands; ordinary discovery
 refresh never calls inference. See [bounds and failure modes](M5I_OPERATIONS.md).
+
+
+The October 30 v2 proposition guards add explicit office, CEO company/action,
+Spotify ranking and Fed rate-direction checks. They reuse public text and preserve
+content hashes. Retrieval validates vector byte length, SHA and finite unit norm;
+a finite unit norm also excludes every NaN/infinite coordinate, so a redundant
+Python coordinate pass was removed. Dot products preserve multiplication and sum
+order. No new dependency, cache or schema is introduced. The read-only bounded
+`scripts/m5i_profile.py` harness measures historical retrieval without advancing
+checkpoints. [Regression and profiling evidence](M5I_CORRECTIONS_20261030.md).

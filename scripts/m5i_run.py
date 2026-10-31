@@ -161,9 +161,12 @@ class Run:
         pin = ['--expected-identity', self.config['expected_identity']] if self.config.get('expected_identity') else []
         worker = self.invoke('index-work', '--kalshi-budget', '1536', '--us-budget', '1536',
                              '--seconds', '600', '--texts-per-second', '8', *pin, allowed=(0, 2))
-        self.invoke('index-retrieve', '--query-budget', '250', '--limit', '100')
-        coverage = self.invoke('index-coverage')
-        self.status('BATCH_COMPLETE', worker=worker, venues=coverage['venues'])
+        retrieved = self.invoke('index-retrieve', '--query-budget', '250', '--limit', '100')
+        # Retrieval already includes a full coverage report. Keep its explicit
+        # assessment clock instead of scanning the catalogue a second time.
+        coverage = retrieved['coverage']
+        self.status('BATCH_COMPLETE', worker=worker, venues=coverage['venues'],
+                    coverage_at=coverage['at'])
         # An AI outage does not stop retrieval or the independent collector.
         if worker['status'] == 'FALLBACK' or not sum(worker['completed'].values()):
             self.pause(300)
