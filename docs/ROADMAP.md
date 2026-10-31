@@ -273,3 +273,14 @@ and incremental semantic yield remain open. No M6 or trading work is authorized.
 See [the final audit and 20-event shortlist](M5I_RUN_20261029_RESULTS.md).
 The original October 28 run was not
 extended. No vector mixing, equivalence approval, trading or M6 work is authorized.
+
+
+### M5I resumed run — October 30–31
+
+- [x] Verify exact existing namespace pin and retain 12,880 vectors; successful
+  32-definition validation, 397 tests, dependency/unit checks, and bounded
+  retrieval smoke. Start independent services with a new fixed 12-hour deadline.
+- [ ] Audit the completed run, refreshed coverage, retrieval progress and distinct
+  live review candidates; independently adjudicated quality remains open.
+
+See [run record and limits](M5I_RUN_20261030.md). No M6 or trading authorization.

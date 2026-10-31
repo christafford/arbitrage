@@ -70,3 +70,10 @@ Every added path has tests (success, missing fields, stale data, invalid prices,
   16% improvement with unchanged output. See `docs/M5I_CORRECTIONS_20261030.md`.
   Broader recognition, vector/query coverage and quality remain open. The 20 freshly
   checked sports candidates are UNVERIFIED; no restart or M6 is implied.
+
+- On October 30 the operator authorized continuation after the v2 mismatch repairs.
+  A new 12-hour run resumes the same `qwen-8f1b.semantic.sqlite3` index and exact pin;
+  inspect `docs/M5I_RUN_20261030.md` and `data/m5i/run-20261030-resume/`.
+  Its fixed deadline is October 31 12:06:39 UTC (08:06:39 EDT). Both new services
+  are enabled; old units/configurations remain disabled/unchanged. Preserve cached
+  vectors and checkpoints; startup is not acceptance or completed backfill.

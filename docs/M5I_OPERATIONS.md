@@ -220,3 +220,10 @@ Versioned v2 proposition guards revalidate old metadata and saved candidates on
 read, without reembedding. Unknown fields remain unknown, and material conflicts
 cannot be overridden by semantic similarity. These changes do not restart either
 expired run or change its deadline/model pin.
+
+
+The operator authorized another 12-hour continuation on October 30 using the same
+sidecar and exact pin. See [October 30–31 run](M5I_RUN_20261030.md) for the new
+configuration/service names and fixed October 31 12:06:39 UTC deadline. The prior
+expired configurations are preserved. Cached vectors and query progress resume;
+collection refreshes before sustained semantic work.

@@ -117,3 +117,9 @@ overhead remain; incremental semantic yield is unproven. The
 [final audit includes 20 freshly checked distinct candidate events](M5I_RUN_20261029_RESULTS.md),
 source links, retrieval reasons and settlement-review warnings. All remain
 UNVERIFIED. Expired services are disabled; no further run is active.
+
+
+The [October 30–31 continuation](M5I_RUN_20261030.md) is now running on the same
+separate namespace with v2 guards and profiled retrieval. Its 32-definition
+validation and service startup are not completion of backfill or broad quality
+acceptance. Sustained results remain pending.
