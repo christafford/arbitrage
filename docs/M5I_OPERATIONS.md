@@ -227,3 +227,10 @@ sidecar and exact pin. See [October 30–31 run](M5I_RUN_20261030.md) for the ne
 configuration/service names and fixed October 31 12:06:39 UTC deadline. The prior
 expired configurations are preserved. Cached vectors and query progress resume;
 collection refreshes before sustained semantic work.
+
+
+The October 30–31 run has now stopped; both units are disabled. Read the
+[final audit](M5I_RUN_20261030_RESULTS.md) before further operations. Its final
+worker was interrupted at the deadline, retaining 80 committed vectors without a
+completed report. Preserve the expired configuration/checkpoints. No new run is
+authorized by this audit; broader matching quality remains unresolved.

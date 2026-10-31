@@ -1,0 +1,754 @@
+[
+  {
+    "kalshi_id": "KXGDPYEAR-26-B0.3",
+    "polymarket_us_id": "gdpc-us-ann-2026-gt2pt2",
+    "warnings": [
+      "PROPOSITION_THRESHOLD_UNKNOWN",
+      "DATES_UNKNOWN",
+      "THRESHOLDS_UNKNOWN",
+      "CUTOFFS_DIFFER",
+      "SETTLEMENT_DEADLINE_HORIZONS_DIFFER"
+    ],
+    "definitions": [
+      {
+        "venue": "kalshi",
+        "public_text": "{\"public_contract\":{\"close_time\":\"2027-02-28T13:29:00Z\",\"rules_primary\":\"If the United States real GDP growth in 2026 is between 0.1% to 0.5%, then the market resolves to Yes.\",\"rules_secondary\":\"This market is based on the Bureau of Economic Analysis\\u2019s advance estimate of real gross domestic product (GDP) growth in the United States for calendar year 2026. The Expiration Value will be the first-published annual percent change in real GDP for 2026 from BEA\\u2019s GDP release, expected with the advance estimate of Q4 2026 GDP in early 2027. Revisions published after expiration will not be considered.\\n\\nAll stated bounds are inclusive. For example, \\u201c5.6% to 6.0%\\u201d includes both 5.6% and 6.0%, \\u201c6.1% or above\\u201d includes 6.1%, and \\u201c0.0% or below\\u201d includes 0.0%.\",\"subtitle\":\"0.1 to 0.5\",\"title\":\"GDP growth in 2026?\",\"yes_sub_title\":\"0.1% to 0.5%\"},\"schema\":\"public-market-text/v1\"}",
+        "features": {
+          "cutoff": "2027-02-28T13:29:00+00:00",
+          "dates": [],
+          "description": [
+            "advance",
+            "all",
+            "analysiss",
+            "annual",
+            "based",
+            "beas",
+            "both",
+            "bounds",
+            "bureau",
+            "calendar",
+            "change",
+            "considered",
+            "domestic",
+            "early",
+            "economic",
+            "estimate",
+            "example",
+            "expected",
+            "expiration",
+            "first",
+            "from",
+            "gdp",
+            "gross",
+            "growth",
+            "includes",
+            "inclusive",
+            "not",
+            "percent",
+            "product",
+            "published",
+            "q",
+            "real",
+            "release",
+            "revisions",
+            "stated",
+            "states",
+            "then",
+            "united",
+            "value",
+            "year"
+          ],
+          "event_time": null,
+          "measure": {
+            "metric": null,
+            "period": null
+          },
+          "policy": [
+            "first",
+            "not"
+          ],
+          "proposition": {
+            "ceo_action": null,
+            "ceo_company": null,
+            "observation_window": null,
+            "political_office": null,
+            "proposition_type": null,
+            "ranking_position": null,
+            "rate_direction": null,
+            "rounding": null,
+            "thresholds": [],
+            "version": "proposition-guards/m5i-v2"
+          },
+          "sports": null,
+          "subject": [
+            "gdp",
+            "growth"
+          ],
+          "subject_text": "GDP growth in 2026? 0.1 to 0.5 0.1% to 0.5%",
+          "text_dates": [],
+          "thresholds": [],
+          "title": "GDP growth in 2026?"
+        }
+      },
+      {
+        "venue": "polymarket_us",
+        "public_text": "{\"public_contract\":{\"description\":\"This market will settle to Yes if the rate of real U.S. GDP growth for 2026 is above 2.2%. Outcome sourced from the Bureau of Economic Analysis. \\n\\nThe rate of real U.S. GDP growth for 2026 refers to the comparison between the annual level of GDP for 2025 and the annual level of GDP for 2026. Settlement is based on the Q4 Advance Estimate GDP release published by the BEA, currently scheduled for early 2027. Any subsequent revisions to this figure will not be considered for settlement purposes.\\n\\nIf the figure is not published on the scheduled date, the first officially published figure for the rate of real U.S. GDP growth in 2026 will be used. If no qualifying GDP figure is released within three months of the Advance Estimate GDP scheduled release date, this market will resolve based on data from the most recent previous release with available data.\",\"endDate\":\"2027-02-13T04:00:00Z\",\"question\":\"US GDP Growth in 2026?\",\"title\":\"Above 2.2%\"},\"schema\":\"public-market-text/v1\"}",
+        "features": {
+          "cutoff": "2027-02-13T04:00:00+00:00",
+          "dates": [
+            "2026-09-08"
+          ],
+          "description": [
+            "advance",
+            "analysis",
+            "annual",
+            "any",
+            "available",
+            "based",
+            "bea",
+            "bureau",
+            "comparison",
+            "considered",
+            "currently",
+            "data",
+            "date",
+            "early",
+            "economic",
+            "estimate",
+            "figure",
+            "first",
+            "from",
+            "gdp",
+            "growth",
+            "level",
+            "months",
+            "not",
+            "officially",
+            "outcome",
+            "previous",
+            "published",
+            "purposes",
+            "q",
+            "qualifying",
+            "rate",
+            "real",
+            "recent",
+            "refers",
+            "release",
+            "released",
+            "revisions",
+            "s",
+            "scheduled",
+            "settle",
+            "settlement",
+            "sourced",
+            "subsequent",
+            "three",
+            "u",
+            "used",
+            "within"
+          ],
+          "event_time": "2026-09-08T16:00:00+00:00",
+          "measure": {
+            "metric": null,
+            "period": null
+          },
+          "policy": [
+            "first",
+            "not"
+          ],
+          "proposition": {
+            "ceo_action": null,
+            "ceo_company": null,
+            "observation_window": null,
+            "political_office": null,
+            "proposition_type": null,
+            "ranking_position": null,
+            "rate_direction": null,
+            "rounding": null,
+            "thresholds": [
+              [
+                ">",
+                "2.2",
+                "%"
+              ]
+            ],
+            "version": "proposition-guards/m5i-v2"
+          },
+          "sports": null,
+          "subject": [
+            "gdp",
+            "growth",
+            "us"
+          ],
+          "subject_text": "US GDP Growth in 2026? Yes Above 2.2%",
+          "text_dates": [],
+          "thresholds": [
+            [
+              ">",
+              "2.2",
+              "%"
+            ]
+          ],
+          "title": "US GDP Growth in 2026?"
+        }
+      }
+    ]
+  },
+  {
+    "kalshi_id": "KXAAAGASMINCA-26DEC31-4.00",
+    "polymarket_us_id": "aaagaspc-usgas-low-2026-12-31-lt4pt00",
+    "warnings": [
+      "DATES_UNKNOWN",
+      "CUTOFFS_DIFFER",
+      "SETTLEMENT_DEADLINE_HORIZONS_DIFFER"
+    ],
+    "definitions": [
+      {
+        "venue": "kalshi",
+        "public_text": "{\"public_contract\":{\"close_time\":\"2026-12-31T14:55:00Z\",\"rules_primary\":\"If average regular gas prices for California are strictly lower than $4.00 by Dec 31, 2026 according to AAA,  the market resolves to Yes.\",\"rules_secondary\":\"\",\"subtitle\":\"$4.00\",\"title\":\"Will average **gas prices** be above or below $4.00 by Dec 31, 2026?\",\"yes_sub_title\":\"Below $4.00\"},\"schema\":\"public-market-text/v1\"}",
+        "features": {
+          "cutoff": "2026-12-31T14:55:00+00:00",
+          "dates": [],
+          "description": [
+            "aaa",
+            "according",
+            "average",
+            "california",
+            "dec",
+            "gas",
+            "lower",
+            "prices",
+            "regular",
+            "strictly"
+          ],
+          "event_time": null,
+          "measure": {
+            "metric": null,
+            "period": null
+          },
+          "policy": [],
+          "proposition": {
+            "ceo_action": null,
+            "ceo_company": null,
+            "observation_window": null,
+            "political_office": null,
+            "proposition_type": null,
+            "ranking_position": null,
+            "rate_direction": null,
+            "rounding": null,
+            "thresholds": [
+              [
+                "<",
+                "4",
+                "USD"
+              ]
+            ],
+            "version": "proposition-guards/m5i-v2"
+          },
+          "sports": null,
+          "subject": [
+            "average",
+            "dec",
+            "gas",
+            "prices"
+          ],
+          "subject_text": "Will average **gas prices** be above or below $4.00 by Dec 31, 2026? $4.00 Below $4.00",
+          "text_dates": [],
+          "thresholds": [
+            [
+              "<",
+              "4",
+              "USD"
+            ]
+          ],
+          "title": "Will average **gas prices** be above or below $4.00 by Dec 31, 2026?"
+        }
+      },
+      {
+        "venue": "polymarket_us",
+        "public_text": "{\"public_contract\":{\"description\":\"This market will settle to Yes if the US national average price of Regular gas is less than $4.00 for any date from September 9, 2026 through December 31, 2026, inclusive. Outcome sourced from AAA.\\n\\nThis market settles based on the US national average gas prices published by AAA at https://gasprices.aaa.com/.\",\"endDate\":\"2027-01-15T04:00:00Z\",\"question\":\"How Low Will US Gas Prices Get in 2026?\",\"title\":\"Below $4.00\"},\"schema\":\"public-market-text/v1\"}",
+        "features": {
+          "cutoff": "2027-01-15T04:00:00+00:00",
+          "dates": [
+            "2027-01-01"
+          ],
+          "description": [
+            "aaa",
+            "any",
+            "average",
+            "based",
+            "com",
+            "date",
+            "december",
+            "from",
+            "gas",
+            "gasprices",
+            "https",
+            "inclusive",
+            "national",
+            "outcome",
+            "prices",
+            "published",
+            "regular",
+            "september",
+            "settle",
+            "settles",
+            "sourced",
+            "through",
+            "us"
+          ],
+          "event_time": "2027-01-01T04:59:00+00:00",
+          "measure": {
+            "metric": null,
+            "period": null
+          },
+          "policy": [],
+          "proposition": {
+            "ceo_action": null,
+            "ceo_company": null,
+            "observation_window": null,
+            "political_office": null,
+            "proposition_type": null,
+            "ranking_position": null,
+            "rate_direction": null,
+            "rounding": null,
+            "thresholds": [
+              [
+                "<",
+                "4",
+                "USD"
+              ]
+            ],
+            "version": "proposition-guards/m5i-v2"
+          },
+          "sports": null,
+          "subject": [
+            "gas",
+            "get",
+            "how",
+            "low",
+            "prices",
+            "us"
+          ],
+          "subject_text": "How Low Will US Gas Prices Get in 2026? Yes Below $4.00",
+          "text_dates": [
+            "2026-09-09",
+            "2026-12-31"
+          ],
+          "thresholds": [
+            [
+              "<",
+              "4",
+              "USD"
+            ]
+          ],
+          "title": "How Low Will US Gas Prices Get in 2026?"
+        }
+      }
+    ]
+  },
+  {
+    "kalshi_id": "KXTOPALBUMSPOTIFY-26-YOU",
+    "polymarket_us_id": "tac-grammys-aoty-2027-02-07-youlov",
+    "warnings": [
+      "RANKING_POSITION_UNKNOWN",
+      "DATES_UNKNOWN",
+      "THRESHOLDS_UNKNOWN",
+      "CUTOFFS_DIFFER",
+      "SETTLEMENT_DEADLINE_HORIZONS_DIFFER"
+    ],
+    "definitions": [
+      {
+        "venue": "kalshi",
+        "public_text": "{\"public_contract\":{\"close_time\":\"2026-12-31T04:59:00Z\",\"rules_primary\":\"If you seem pretty sad for a girl so in love is the #1  most streamed Album on Spotify's 2026 Spotify Wrapped Top 10 Albums Globally chart on the date that the chart is released for 2026, then the market resolves to Yes.\",\"rules_secondary\":\"\",\"subtitle\":\":: Olivia Rodrigo\",\"title\":\"Will you seem pretty sad for a girl so in love be the #1 most streamed Album on the  2026 Spotify Wrapped Top 10 Albums Globally chart on the date that the chart is released for 2026?\",\"yes_sub_title\":\"you seem pretty sad for a girl so in love\"},\"schema\":\"public-market-text/v1\"}",
+        "features": {
+          "cutoff": "2026-12-31T04:59:00+00:00",
+          "dates": [],
+          "description": [
+            "album",
+            "albums",
+            "chart",
+            "date",
+            "girl",
+            "globally",
+            "love",
+            "pretty",
+            "released",
+            "s",
+            "sad",
+            "seem",
+            "so",
+            "spotify",
+            "streamed",
+            "then",
+            "top",
+            "wrapped",
+            "you"
+          ],
+          "event_time": null,
+          "measure": {
+            "metric": null,
+            "period": null
+          },
+          "policy": [],
+          "proposition": {
+            "ceo_action": null,
+            "ceo_company": null,
+            "observation_window": null,
+            "political_office": null,
+            "proposition_type": null,
+            "ranking_position": "1",
+            "rate_direction": null,
+            "rounding": null,
+            "thresholds": [],
+            "version": "proposition-guards/m5i-v2"
+          },
+          "sports": null,
+          "subject": [
+            "album",
+            "albums",
+            "chart",
+            "date",
+            "girl",
+            "globally",
+            "love",
+            "olivia",
+            "pretty",
+            "released",
+            "rodrigo",
+            "sad",
+            "seem",
+            "so",
+            "spotify",
+            "streamed",
+            "top",
+            "wrapped",
+            "you"
+          ],
+          "subject_text": "Will you seem pretty sad for a girl so in love be the #1 most streamed Album on the  2026 Spotify Wrapped Top 10 Albums Globally chart on the date that the chart is released for 2026? :: Olivia Rodrigo you seem pretty sad for a girl so in love",
+          "text_dates": [],
+          "thresholds": [],
+          "title": "Will you seem pretty sad for a girl so in love be the #1 most streamed Album on the  2026 Spotify Wrapped Top 10 Albums Globally chart on the date that the chart is released for 2026?"
+        }
+      },
+      {
+        "venue": "polymarket_us",
+        "public_text": "{\"public_contract\":{\"description\":\"This market will settle to Yes if you seem pretty sad for a girl so in love - Olivia Rodrigo wins Album of the Year at the 69th Annual Grammy Awards. Outcome sourced from the Recording Academy.\",\"endDate\":\"2027-02-22T04:00:00Z\",\"question\":\"Grammy Winner: Album of the Year\",\"title\":\"you seem pretty sad for a girl so in love - Olivia Rodrigo\"},\"schema\":\"public-market-text/v1\"}",
+        "features": {
+          "cutoff": "2027-02-22T04:00:00+00:00",
+          "dates": [
+            "2026-09-21"
+          ],
+          "description": [
+            "academy",
+            "album",
+            "annual",
+            "awards",
+            "from",
+            "girl",
+            "grammy",
+            "love",
+            "olivia",
+            "outcome",
+            "pretty",
+            "recording",
+            "rodrigo",
+            "sad",
+            "seem",
+            "settle",
+            "so",
+            "sourced",
+            "th",
+            "year",
+            "you"
+          ],
+          "event_time": "2026-09-21T17:00:00+00:00",
+          "measure": {
+            "metric": null,
+            "period": null
+          },
+          "policy": [],
+          "proposition": {
+            "ceo_action": null,
+            "ceo_company": null,
+            "observation_window": null,
+            "political_office": null,
+            "proposition_type": null,
+            "ranking_position": null,
+            "rate_direction": null,
+            "rounding": null,
+            "thresholds": [],
+            "version": "proposition-guards/m5i-v2"
+          },
+          "sports": null,
+          "subject": [
+            "album",
+            "girl",
+            "grammy",
+            "love",
+            "olivia",
+            "pretty",
+            "rodrigo",
+            "sad",
+            "seem",
+            "so",
+            "year",
+            "you"
+          ],
+          "subject_text": "Grammy Winner: Album of the Year Yes you seem pretty sad for a girl so in love - Olivia Rodrigo",
+          "text_dates": [],
+          "thresholds": [],
+          "title": "Grammy Winner: Album of the Year"
+        }
+      }
+    ]
+  },
+  {
+    "kalshi_id": "KXFUJIMORIOUT-26JUL-27JUL01",
+    "polymarket_us_id": "opdc-zelenskyy-presuk-2026-12-31",
+    "warnings": [
+      "THRESHOLDS_UNKNOWN",
+      "CUTOFFS_DIFFER"
+    ],
+    "definitions": [
+      {
+        "venue": "kalshi",
+        "public_text": "{\"public_contract\":{\"close_time\":\"2027-07-01T03:59:00Z\",\"rules_primary\":\"If Keiko Fujimori leaves as President of Peru before Jul 1, 2027, then the market resolves to Yes.\",\"rules_secondary\":\"This market will resolve based on the announcement date, regardless of effective date. An acknowledgement that they will leave office due solely to the scheduled expiration of a constitutionally or legally mandated term limit does not satisfy the Payout Criterion.\\n\\nIf the person leaves the role due to death (i.e., if the person dies while holding the role), all contracts on the person may resolve to the last fair price as determined in the sole discretion of the Exchange. Temporary leaves of absence, suspensions, or recusals do not constitute leaving, resigning from, or retiring from the role unless the individual formally and permanently ceases to hold the position. If the person vacates the role and then re-occupies the role, the contract may settle on the initial vacation of the role.\\n\\nFor \\\"leave,\\\" cessation of holding the role qualifies, including resignation, retirement, removal, expulsion, expiration of term without renewal, recall, or other means by which the individual no longer occupies the role\\u2014this includes both voluntary and involuntary early departure AND the natural expiration of a term.\",\"subtitle\":\"Before Jul 1, 2027\",\"title\":\"Will Keiko Fujimori be out as President of Peru before Jul 1, 2027?\",\"yes_sub_title\":\"Before Jul 1, 2027\"},\"schema\":\"public-market-text/v1\"}",
+        "features": {
+          "cutoff": "2027-07-01T03:59:00+00:00",
+          "dates": [
+            "2027-07-01"
+          ],
+          "description": [
+            "absence",
+            "acknowledgement",
+            "all",
+            "announcement",
+            "based",
+            "both",
+            "ceases",
+            "cessation",
+            "constitute",
+            "constitutionally",
+            "contracts",
+            "criterion",
+            "date",
+            "death",
+            "departure",
+            "determined",
+            "dies",
+            "discretion",
+            "do",
+            "does",
+            "due",
+            "e",
+            "early",
+            "effective",
+            "exchange",
+            "expiration",
+            "expulsion",
+            "fair",
+            "formally",
+            "from",
+            "fujimori",
+            "hold",
+            "holding",
+            "i",
+            "includes",
+            "including",
+            "individual",
+            "initial",
+            "involuntary",
+            "jul",
+            "keiko",
+            "last",
+            "leave",
+            "leaves",
+            "leaving",
+            "legally",
+            "limit",
+            "longer",
+            "mandated",
+            "may",
+            "means",
+            "natural",
+            "not",
+            "occupies",
+            "office",
+            "other",
+            "payout",
+            "permanently",
+            "person",
+            "peru",
+            "position",
+            "president",
+            "qualifies",
+            "re",
+            "recall",
+            "recusals",
+            "regardless",
+            "removal",
+            "renewal",
+            "resignation",
+            "resigning",
+            "retirement",
+            "retiring",
+            "role",
+            "rolethis",
+            "satisfy",
+            "scheduled",
+            "settle",
+            "sole",
+            "solely",
+            "suspensions",
+            "temporary",
+            "term",
+            "then",
+            "they",
+            "unless",
+            "vacates",
+            "vacation",
+            "voluntary",
+            "which",
+            "while",
+            "without"
+          ],
+          "event_time": "2027-07-01T03:59:00+00:00",
+          "measure": {
+            "metric": null,
+            "period": null
+          },
+          "policy": [
+            "not"
+          ],
+          "proposition": {
+            "ceo_action": null,
+            "ceo_company": null,
+            "observation_window": null,
+            "political_office": null,
+            "proposition_type": null,
+            "ranking_position": null,
+            "rate_direction": null,
+            "rounding": null,
+            "thresholds": [],
+            "version": "proposition-guards/m5i-v2"
+          },
+          "sports": null,
+          "subject": [
+            "fujimori",
+            "jul",
+            "keiko",
+            "out",
+            "peru",
+            "president"
+          ],
+          "subject_text": "Will Keiko Fujimori be out as President of Peru before Jul 1, 2027? Before Jul 1, 2027 Before Jul 1, 2027",
+          "text_dates": [],
+          "thresholds": [],
+          "title": "Will Keiko Fujimori be out as President of Peru before Jul 1, 2027?"
+        }
+      },
+      {
+        "venue": "polymarket_us",
+        "public_text": "{\"public_contract\":{\"description\":\"This market will settle to Yes if Volodymyr Zelenskyy formally ceases to hold the position of President of Ukraine by December 31, 2026, 11:59 PM ET. Outcome sourced from Volodymyr Zelenskyy and the government of Ukraine.\\n\\nZelenskyy must formally cease to hold the specified position in accordance with the laws, rules, or procedures applicable to that position. Announcements of a future departure do not qualify. The means of departure do not impact settlement; resignation, removal, dismissal, replacement by a successor who formally assumes the position, or other means all qualify.\\n\\nTemporary leaves of absence, dated suspensions, indefinite suspensions, administrative leaves, or other temporary changes to the specified person's duties in the specified position do not qualify.\",\"endDate\":\"2027-07-15T03:00:00Z\",\"question\":\"Zelenskyy Officially Out as Ukraine President?\",\"title\":\"By December 31, 2026\"},\"schema\":\"public-market-text/v1\"}",
+        "features": {
+          "cutoff": "2027-07-15T03:00:00+00:00",
+          "dates": [
+            "2027-07-01"
+          ],
+          "description": [
+            "absence",
+            "accordance",
+            "administrative",
+            "all",
+            "announcements",
+            "applicable",
+            "assumes",
+            "cease",
+            "ceases",
+            "changes",
+            "dated",
+            "december",
+            "departure",
+            "dismissal",
+            "do",
+            "duties",
+            "et",
+            "formally",
+            "from",
+            "future",
+            "government",
+            "hold",
+            "impact",
+            "indefinite",
+            "laws",
+            "leaves",
+            "means",
+            "must",
+            "not",
+            "other",
+            "outcome",
+            "person",
+            "pm",
+            "position",
+            "president",
+            "procedures",
+            "qualify",
+            "removal",
+            "replacement",
+            "resignation",
+            "rules",
+            "s",
+            "settle",
+            "settlement",
+            "sourced",
+            "specified",
+            "successor",
+            "suspensions",
+            "temporary",
+            "ukraine",
+            "volodymyr",
+            "who",
+            "zelenskyy"
+          ],
+          "event_time": "2027-07-01T03:59:00+00:00",
+          "measure": {
+            "metric": null,
+            "period": null
+          },
+          "policy": [
+            "not"
+          ],
+          "proposition": {
+            "ceo_action": null,
+            "ceo_company": null,
+            "observation_window": null,
+            "political_office": null,
+            "proposition_type": null,
+            "ranking_position": null,
+            "rate_direction": null,
+            "rounding": null,
+            "thresholds": [],
+            "version": "proposition-guards/m5i-v2"
+          },
+          "sports": null,
+          "subject": [
+            "december",
+            "officially",
+            "out",
+            "president",
+            "ukraine",
+            "zelenskyy"
+          ],
+          "subject_text": "Zelenskyy Officially Out as Ukraine President? Yes By December 31, 2026",
+          "text_dates": [
+            "2026-12-31"
+          ],
+          "thresholds": [],
+          "title": "Zelenskyy Officially Out as Ukraine President?"
+        }
+      }
+    ]
+  }
+]

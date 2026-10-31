@@ -74,6 +74,9 @@ Every added path has tests (success, missing fields, stale data, invalid prices,
 - On October 30 the operator authorized continuation after the v2 mismatch repairs.
   A new 12-hour run resumes the same `qwen-8f1b.semantic.sqlite3` index and exact pin;
   inspect `docs/M5I_RUN_20261030.md` and `data/m5i/run-20261030-resume/`.
-  Its fixed deadline is October 31 12:06:39 UTC (08:06:39 EDT). Both new services
-  are enabled; old units/configurations remain disabled/unchanged. Preserve cached
-  vectors and checkpoints; startup is not acceptance or completed backfill.
+  Its fixed deadline was October 31 12:06:39 UTC (08:06:39 EDT). Both services
+  stopped and are now disabled. See `docs/M5I_RUN_20261030_RESULTS.md`: US eligible
+  coverage reached 100%, Kalshi 8.61%, with 117,488 definitions still unindexed.
+  Broader entity/geography/range/event-type keyword mismatches remain; empty
+  conflict lists never imply approval. Preserve namespaces, deadlines and progress;
+  no new run or milestone completion is implied.

@@ -1,0 +1,2760 @@
+[
+  {
+    "clock": "2026-10-31T01:34:29.517473+00:00",
+    "candidate": {
+      "algorithm": "semantic-discovery/m5i-v1",
+      "definition_links": {
+        "kalshi": "https://external-api.kalshi.com/trade-api/v2/markets/KXAAAGASM-26OCT31-4.16",
+        "polymarket_us": "https://gateway.polymarket.us/v1/market/slug/aaagaspc-usgas-highw-2026-11-01-gt4pt3400"
+      },
+      "equivalence_score_bps": 0,
+      "equivalence_verified": false,
+      "event_key": "KXAAAGASM-26OCT31",
+      "hypothetical": false,
+      "kalshi_id": "KXAAAGASM-26OCT31-4.16",
+      "kalshi_title": "Will average **gas prices** be above $4.16?",
+      "known_contradictions": [
+        "PROPOSITION_THRESHOLD_CONFLICT",
+        "DATES_CONFLICT",
+        "THRESHOLDS_CONFLICT"
+      ],
+      "liquidity": {
+        "kalshi": {
+          "depth_proxy": null,
+          "quality": "MISSING"
+        },
+        "polymarket_us": {
+          "depth_proxy": null,
+          "quality": "MISSING"
+        }
+      },
+      "match_basis": "EMBEDDING_ASSISTED",
+      "mechanics": {
+        "account_applicability": "UNVERIFIED",
+        "polymarket_us_no": "UNSUPPORTED_SYNTHETIC_SHORT",
+        "research_path": "CASH_FUNDED_LONG_ONLY"
+      },
+      "polymarket_event_key": "[\"how high will us gas prices get this week?\",[\"2026-10-26\",\"2026-11-01\"]]",
+      "polymarket_us_id": "aaagaspc-usgas-highw-2026-11-01-gt4pt3400",
+      "polymarket_us_title": "How High Will US Gas Prices Get This Week?",
+      "prior_reviews": [],
+      "retrieval_reasons": [
+        "PERSISTENT_VECTOR_COSINE"
+      ],
+      "review_reason": "TEXT_SIMILARITY_REQUIRES_PROPOSITION_REVIEW",
+      "review_snapshot_expires_at": "2026-11-01T00:15:31.356822+00:00",
+      "settlement_deadlines": [
+        "2026-11-30T14:00:00+00:00",
+        "2026-11-09T04:59:00+00:00"
+      ],
+      "signals": {
+        "dates": "CONFLICT",
+        "description_bps": 1351,
+        "embedding": {
+          "cosine": 0.8862231902814264,
+          "dimensions": 4096,
+          "identity": "8f1b745674ea82993cc5211498d606a86627ecedb6776637daeaf66e42611204",
+          "model": "qwen3-embedding-8b",
+          "versions": [
+            435230,
+            566182
+          ]
+        },
+        "metric": "UNKNOWN",
+        "period": "UNKNOWN",
+        "proposition_guard": {
+          "left": {
+            "ceo_action": null,
+            "ceo_company": null,
+            "observation_window": null,
+            "political_office": null,
+            "proposition_type": null,
+            "ranking_position": null,
+            "rate_direction": null,
+            "rounding": null,
+            "thresholds": [
+              [
+                ">",
+                "4.16",
+                "USD"
+              ]
+            ],
+            "version": "proposition-guards/m5i-v2"
+          },
+          "right": {
+            "ceo_action": null,
+            "ceo_company": null,
+            "observation_window": null,
+            "political_office": null,
+            "proposition_type": null,
+            "ranking_position": null,
+            "rate_direction": null,
+            "rounding": null,
+            "thresholds": [
+              [
+                ">",
+                "4.34",
+                "USD"
+              ]
+            ],
+            "version": "proposition-guards/m5i-v2"
+          }
+        },
+        "subject_bps": 2500,
+        "thresholds": "CONFLICT"
+      },
+      "source_observations": [
+        10593,
+        10936
+      ],
+      "source_received_at": [
+        "2026-10-31T00:15:31.356822+00:00",
+        "2026-10-31T00:25:41.390560+00:00"
+      ],
+      "status": "UNVERIFIED",
+      "trading_authorized": false,
+      "versions": [
+        435230,
+        566182
+      ],
+      "warnings": [
+        "PROPOSITION_THRESHOLD_CONFLICT",
+        "DATES_CONFLICT",
+        "THRESHOLDS_CONFLICT",
+        "EVENT_TIMES_DIFFER",
+        "CUTOFFS_DIFFER",
+        "SETTLEMENT_DEADLINE_HORIZONS_DIFFER",
+        "EMBEDDING_RETRIEVAL_ONLY_HUMAN_REVIEW_REQUIRED"
+      ]
+    }
+  },
+  {
+    "clock": "2026-10-31T01:34:29.517473+00:00",
+    "candidate": {
+      "algorithm": "semantic-discovery/m5i-v1",
+      "definition_links": {
+        "kalshi": "https://external-api.kalshi.com/trade-api/v2/markets/KX30YMORTW-26NOV05-T7.23",
+        "polymarket_us": "https://gateway.polymarket.us/v1/market/slug/pmmsc-usmort30-lw-yr-2026-12-31-lte7pt20"
+      },
+      "equivalence_score_bps": 0,
+      "equivalence_verified": false,
+      "event_key": "KX30YMORTW-26NOV05",
+      "hypothetical": false,
+      "kalshi_id": "KX30YMORTW-26NOV05-T7.23",
+      "kalshi_title": "Will the average U.S. 30-year fixed-rate mortgage rate for Nov 5, 2026 be above 7.23%?",
+      "known_contradictions": [
+        "PROPOSITION_THRESHOLD_CONFLICT",
+        "PROPOSITION_DIRECTION_CONFLICT",
+        "DATES_CONFLICT",
+        "THRESHOLDS_CONFLICT"
+      ],
+      "liquidity": {
+        "kalshi": {
+          "depth_proxy": null,
+          "quality": "MISSING"
+        },
+        "polymarket_us": {
+          "depth_proxy": null,
+          "quality": "MISSING"
+        }
+      },
+      "match_basis": "EMBEDDING_ASSISTED",
+      "mechanics": {
+        "account_applicability": "UNVERIFIED",
+        "polymarket_us_no": "UNSUPPORTED_SYNTHETIC_SHORT",
+        "research_path": "CASH_FUNDED_LONG_ONLY"
+      },
+      "polymarket_event_key": "[\"how low will 30-year mortgage get by dec. 31?\",[\"2026-12-31\",\"2027-01-14\"]]",
+      "polymarket_us_id": "pmmsc-usmort30-lw-yr-2026-12-31-lte7pt20",
+      "polymarket_us_title": "How Low Will 30-Year Mortgage Get by Dec. 31?",
+      "prior_reviews": [],
+      "retrieval_reasons": [
+        "KEYWORD_BM25",
+        "PERSISTENT_VECTOR_COSINE"
+      ],
+      "review_reason": "TEXT_SIMILARITY_REQUIRES_PROPOSITION_REVIEW",
+      "review_snapshot_expires_at": "2026-11-01T00:12:15.769293+00:00",
+      "settlement_deadlines": [
+        "2026-11-12T17:00:00+00:00",
+        "2027-01-15T04:00:00+00:00"
+      ],
+      "signals": {
+        "dates": "CONFLICT",
+        "description_bps": 2500,
+        "embedding": {
+          "cosine": 0.8747904531907884,
+          "dimensions": 4096,
+          "identity": "8f1b745674ea82993cc5211498d606a86627ecedb6776637daeaf66e42611204",
+          "model": "qwen3-embedding-8b",
+          "versions": [
+            435330,
+            516144
+          ]
+        },
+        "metric": "UNKNOWN",
+        "period": "UNKNOWN",
+        "proposition_guard": {
+          "left": {
+            "ceo_action": null,
+            "ceo_company": null,
+            "observation_window": null,
+            "political_office": null,
+            "proposition_type": null,
+            "ranking_position": null,
+            "rate_direction": null,
+            "rounding": null,
+            "thresholds": [
+              [
+                ">",
+                "7.23",
+                "%"
+              ]
+            ],
+            "version": "proposition-guards/m5i-v2"
+          },
+          "right": {
+            "ceo_action": null,
+            "ceo_company": null,
+            "observation_window": null,
+            "political_office": null,
+            "proposition_type": null,
+            "ranking_position": null,
+            "rate_direction": null,
+            "rounding": null,
+            "thresholds": [
+              [
+                "<=",
+                "7.2",
+                "%"
+              ]
+            ],
+            "version": "proposition-guards/m5i-v2"
+          }
+        },
+        "subject_bps": 1666,
+        "thresholds": "CONFLICT"
+      },
+      "source_observations": [
+        10593,
+        10481
+      ],
+      "source_received_at": [
+        "2026-10-31T00:15:31.356822+00:00",
+        "2026-10-31T00:12:15.769293+00:00"
+      ],
+      "status": "UNVERIFIED",
+      "trading_authorized": false,
+      "versions": [
+        435330,
+        516144
+      ],
+      "warnings": [
+        "PROPOSITION_THRESHOLD_CONFLICT",
+        "PROPOSITION_DIRECTION_CONFLICT",
+        "DATES_CONFLICT",
+        "THRESHOLDS_CONFLICT",
+        "EVENT_TIMES_DIFFER",
+        "CUTOFFS_DIFFER",
+        "SETTLEMENT_DEADLINE_HORIZONS_DIFFER",
+        "EMBEDDING_RETRIEVAL_ONLY_HUMAN_REVIEW_REQUIRED"
+      ]
+    }
+  },
+  {
+    "clock": "2026-10-31T01:34:29.517473+00:00",
+    "candidate": {
+      "algorithm": "semantic-discovery/m5i-v1",
+      "definition_links": {
+        "kalshi": "https://external-api.kalshi.com/trade-api/v2/markets/KXPCEHEAD-26NOV25-T0.2",
+        "polymarket_us": "https://gateway.polymarket.us/v1/market/slug/cpic-uscpicore-october-yoy-2026-11-10-gt3pt1pct"
+      },
+      "equivalence_score_bps": 0,
+      "equivalence_verified": false,
+      "event_key": "KXPCEHEAD-26NOV25",
+      "hypothetical": false,
+      "kalshi_id": "KXPCEHEAD-26NOV25-T0.2",
+      "kalshi_title": "Will headline PCE inflation for October 2026 be above 0.2%?",
+      "known_contradictions": [
+        "PROPOSITION_THRESHOLD_CONFLICT",
+        "SUBJECT_PERIOD_CONFLICT",
+        "DATES_CONFLICT",
+        "THRESHOLDS_CONFLICT"
+      ],
+      "liquidity": {
+        "kalshi": {
+          "depth_proxy": null,
+          "quality": "MISSING"
+        },
+        "polymarket_us": {
+          "depth_proxy": null,
+          "quality": "MISSING"
+        }
+      },
+      "match_basis": "EMBEDDING_ASSISTED",
+      "mechanics": {
+        "account_applicability": "UNVERIFIED",
+        "polymarket_us_no": "UNSUPPORTED_SYNTHETIC_SHORT",
+        "research_path": "CASH_FUNDED_LONG_ONLY"
+      },
+      "polymarket_event_key": "[\"core consumer price index yoy in october\",[\"2026-11-10\"]]",
+      "polymarket_us_id": "cpic-uscpicore-october-yoy-2026-11-10-gt3pt1pct",
+      "polymarket_us_title": "Core CPI YoY in October",
+      "prior_reviews": [],
+      "retrieval_reasons": [
+        "PERSISTENT_VECTOR_COSINE"
+      ],
+      "review_reason": "TEXT_SIMILARITY_REQUIRES_PROPOSITION_REVIEW",
+      "review_snapshot_expires_at": "2026-11-01T00:12:36.157206+00:00",
+      "settlement_deadlines": [
+        "2026-12-02T15:00:00+00:00",
+        "2026-11-25T04:00:00+00:00"
+      ],
+      "signals": {
+        "dates": "CONFLICT",
+        "description_bps": 1951,
+        "embedding": {
+          "cosine": 0.7614375308617023,
+          "dimensions": 4096,
+          "identity": "8f1b745674ea82993cc5211498d606a86627ecedb6776637daeaf66e42611204",
+          "model": "qwen3-embedding-8b",
+          "versions": [
+            436696,
+            518508
+          ]
+        },
+        "metric": "UNKNOWN",
+        "period": "CONFLICT",
+        "proposition_guard": {
+          "left": {
+            "ceo_action": null,
+            "ceo_company": null,
+            "observation_window": null,
+            "political_office": null,
+            "proposition_type": null,
+            "ranking_position": null,
+            "rate_direction": null,
+            "rounding": null,
+            "thresholds": [
+              [
+                ">",
+                "0.2",
+                "%"
+              ]
+            ],
+            "version": "proposition-guards/m5i-v2"
+          },
+          "right": {
+            "ceo_action": null,
+            "ceo_company": null,
+            "observation_window": null,
+            "political_office": null,
+            "proposition_type": null,
+            "ranking_position": null,
+            "rate_direction": null,
+            "rounding": null,
+            "thresholds": [
+              [
+                ">",
+                "3.1",
+                "%"
+              ]
+            ],
+            "version": "proposition-guards/m5i-v2"
+          }
+        },
+        "subject_bps": 0,
+        "thresholds": "CONFLICT"
+      },
+      "source_observations": [
+        10599,
+        10492
+      ],
+      "source_received_at": [
+        "2026-10-31T00:15:40.205373+00:00",
+        "2026-10-31T00:12:36.157206+00:00"
+      ],
+      "status": "UNVERIFIED",
+      "trading_authorized": false,
+      "versions": [
+        436696,
+        518508
+      ],
+      "warnings": [
+        "PROPOSITION_THRESHOLD_CONFLICT",
+        "SUBJECT_METRIC_UNKNOWN",
+        "SUBJECT_PERIOD_CONFLICT",
+        "DATES_CONFLICT",
+        "THRESHOLDS_CONFLICT",
+        "EVENT_TIMES_DIFFER",
+        "CUTOFFS_DIFFER",
+        "SETTLEMENT_DEADLINE_HORIZONS_DIFFER",
+        "EMBEDDING_RETRIEVAL_ONLY_HUMAN_REVIEW_REQUIRED"
+      ]
+    }
+  },
+  {
+    "clock": "2026-10-31T08:32:27.606290+00:00",
+    "candidate": {
+      "algorithm": "semantic-discovery/m5i-v1",
+      "definition_links": {
+        "kalshi": "https://external-api.kalshi.com/trade-api/v2/markets/KXUST2A-26NOV06-T4.69",
+        "polymarket_us": "https://gateway.polymarket.us/v1/market/slug/twoyc-2yr-day-11-06-2026-gte4pt60"
+      },
+      "equivalence_score_bps": 0,
+      "equivalence_verified": false,
+      "event_key": "KXUST2A-26NOV06",
+      "hypothetical": false,
+      "kalshi_id": "KXUST2A-26NOV06-T4.69",
+      "kalshi_title": "Will the 2Y U.S. Treasury yield be above 4.69% on Nov 6, 2026?",
+      "known_contradictions": [
+        "PROPOSITION_THRESHOLD_CONFLICT",
+        "DATES_CONFLICT",
+        "THRESHOLDS_CONFLICT",
+        "RESOLUTION_LANGUAGE_DIFFERS"
+      ],
+      "liquidity": {
+        "kalshi": {
+          "depth_proxy": null,
+          "quality": "MISSING"
+        },
+        "polymarket_us": {
+          "depth_proxy": null,
+          "quality": "MISSING"
+        }
+      },
+      "match_basis": "EMBEDDING_ASSISTED",
+      "mechanics": {
+        "account_applicability": "UNVERIFIED",
+        "polymarket_us_no": "UNSUPPORTED_SYNTHETIC_SHORT",
+        "research_path": "CASH_FUNDED_LONG_ONLY"
+      },
+      "polymarket_event_key": "[\"2-yr treasury yield on november 6?\",[\"2026-11-06\"]]",
+      "polymarket_us_id": "twoyc-2yr-day-11-06-2026-gte4pt60",
+      "polymarket_us_title": "2-YR Treasury Yield on November 6?",
+      "prior_reviews": [],
+      "retrieval_reasons": [
+        "KEYWORD_BM25",
+        "PERSISTENT_VECTOR_COSINE"
+      ],
+      "review_reason": "TEXT_SIMILARITY_REQUIRES_PROPOSITION_REVIEW",
+      "review_snapshot_expires_at": "2026-11-01T06:52:38.892208+00:00",
+      "settlement_deadlines": [
+        "2026-11-08T06:05:00+00:00",
+        "2026-11-17T04:59:00+00:00"
+      ],
+      "signals": {
+        "dates": "CONFLICT",
+        "description_bps": 1395,
+        "embedding": {
+          "cosine": 0.9262045003804907,
+          "dimensions": 4096,
+          "identity": "8f1b745674ea82993cc5211498d606a86627ecedb6776637daeaf66e42611204",
+          "model": "qwen3-embedding-8b",
+          "versions": [
+            501702,
+            616497
+          ]
+        },
+        "metric": "UNKNOWN",
+        "period": "UNKNOWN",
+        "proposition_guard": {
+          "left": {
+            "ceo_action": null,
+            "ceo_company": null,
+            "observation_window": null,
+            "political_office": null,
+            "proposition_type": null,
+            "ranking_position": null,
+            "rate_direction": null,
+            "rounding": null,
+            "thresholds": [
+              [
+                ">",
+                "4.69",
+                "%"
+              ]
+            ],
+            "version": "proposition-guards/m5i-v2"
+          },
+          "right": {
+            "ceo_action": null,
+            "ceo_company": null,
+            "observation_window": null,
+            "political_office": null,
+            "proposition_type": null,
+            "ranking_position": null,
+            "rate_direction": null,
+            "rounding": null,
+            "thresholds": [
+              [
+                ">=",
+                "4.6",
+                "%"
+              ]
+            ],
+            "version": "proposition-guards/m5i-v2"
+          }
+        },
+        "subject_bps": 2500,
+        "thresholds": "CONFLICT"
+      },
+      "source_observations": [
+        11894,
+        12368
+      ],
+      "source_received_at": [
+        "2026-10-31T06:52:38.892208+00:00",
+        "2026-10-31T07:05:39.539174+00:00"
+      ],
+      "status": "UNVERIFIED",
+      "trading_authorized": false,
+      "versions": [
+        501702,
+        616497
+      ],
+      "warnings": [
+        "PROPOSITION_THRESHOLD_CONFLICT",
+        "DATES_CONFLICT",
+        "THRESHOLDS_CONFLICT",
+        "EVENT_TIMES_DIFFER",
+        "RESOLUTION_LANGUAGE_DIFFERS",
+        "CUTOFFS_DIFFER",
+        "SETTLEMENT_DEADLINE_HORIZONS_DIFFER",
+        "EMBEDDING_RETRIEVAL_ONLY_HUMAN_REVIEW_REQUIRED"
+      ]
+    }
+  },
+  {
+    "clock": "2026-10-31T08:19:42.279939+00:00",
+    "candidate": {
+      "algorithm": "semantic-discovery/m5i-v1",
+      "definition_links": {
+        "kalshi": "https://external-api.kalshi.com/trade-api/v2/markets/KX30YMORTW-26NOV05-T7.28",
+        "polymarket_us": "https://gateway.polymarket.us/v1/market/slug/pmmsc-usmort30-lw-yr-2026-12-31-lte6pt80"
+      },
+      "equivalence_score_bps": 0,
+      "equivalence_verified": false,
+      "event_key": "KX30YMORTW-26NOV05",
+      "hypothetical": false,
+      "kalshi_id": "KX30YMORTW-26NOV05-T7.28",
+      "kalshi_title": "Will the average U.S. 30-year fixed-rate mortgage rate for Nov 5, 2026 be above 7.28%?",
+      "known_contradictions": [
+        "PROPOSITION_THRESHOLD_CONFLICT",
+        "PROPOSITION_DIRECTION_CONFLICT",
+        "DATES_CONFLICT",
+        "THRESHOLDS_CONFLICT"
+      ],
+      "liquidity": {
+        "kalshi": {
+          "depth_proxy": null,
+          "quality": "MISSING"
+        },
+        "polymarket_us": {
+          "depth_proxy": null,
+          "quality": "MISSING"
+        }
+      },
+      "match_basis": "EMBEDDING_ASSISTED",
+      "mechanics": {
+        "account_applicability": "UNVERIFIED",
+        "polymarket_us_no": "UNSUPPORTED_SYNTHETIC_SHORT",
+        "research_path": "CASH_FUNDED_LONG_ONLY"
+      },
+      "polymarket_event_key": "[\"how low will 30-year mortgage get by dec. 31?\",[\"2026-12-31\",\"2027-01-14\"]]",
+      "polymarket_us_id": "pmmsc-usmort30-lw-yr-2026-12-31-lte6pt80",
+      "polymarket_us_title": "How Low Will 30-Year Mortgage Get by Dec. 31?",
+      "prior_reviews": [],
+      "retrieval_reasons": [
+        "KEYWORD_BM25",
+        "PERSISTENT_VECTOR_COSINE"
+      ],
+      "review_reason": "TEXT_SIMILARITY_REQUIRES_PROPOSITION_REVIEW",
+      "review_snapshot_expires_at": "2026-11-01T06:49:38.366511+00:00",
+      "settlement_deadlines": [
+        "2026-11-12T17:00:00+00:00",
+        "2027-01-15T04:00:00+00:00"
+      ],
+      "signals": {
+        "dates": "CONFLICT",
+        "description_bps": 2500,
+        "embedding": {
+          "cosine": 0.874451362394126,
+          "dimensions": 4096,
+          "identity": "8f1b745674ea82993cc5211498d606a86627ecedb6776637daeaf66e42611204",
+          "model": "qwen3-embedding-8b",
+          "versions": [
+            435325,
+            516140
+          ]
+        },
+        "metric": "UNKNOWN",
+        "period": "UNKNOWN",
+        "proposition_guard": {
+          "left": {
+            "ceo_action": null,
+            "ceo_company": null,
+            "observation_window": null,
+            "political_office": null,
+            "proposition_type": null,
+            "ranking_position": null,
+            "rate_direction": null,
+            "rounding": null,
+            "thresholds": [
+              [
+                ">",
+                "7.28",
+                "%"
+              ]
+            ],
+            "version": "proposition-guards/m5i-v2"
+          },
+          "right": {
+            "ceo_action": null,
+            "ceo_company": null,
+            "observation_window": null,
+            "political_office": null,
+            "proposition_type": null,
+            "ranking_position": null,
+            "rate_direction": null,
+            "rounding": null,
+            "thresholds": [
+              [
+                "<=",
+                "6.8",
+                "%"
+              ]
+            ],
+            "version": "proposition-guards/m5i-v2"
+          }
+        },
+        "subject_bps": 1666,
+        "thresholds": "CONFLICT"
+      },
+      "source_observations": [
+        12049,
+        11789
+      ],
+      "source_received_at": [
+        "2026-10-31T06:56:47.310231+00:00",
+        "2026-10-31T06:49:38.366511+00:00"
+      ],
+      "status": "UNVERIFIED",
+      "trading_authorized": false,
+      "versions": [
+        435325,
+        516140
+      ],
+      "warnings": [
+        "PROPOSITION_THRESHOLD_CONFLICT",
+        "PROPOSITION_DIRECTION_CONFLICT",
+        "DATES_CONFLICT",
+        "THRESHOLDS_CONFLICT",
+        "EVENT_TIMES_DIFFER",
+        "CUTOFFS_DIFFER",
+        "SETTLEMENT_DEADLINE_HORIZONS_DIFFER",
+        "EMBEDDING_RETRIEVAL_ONLY_HUMAN_REVIEW_REQUIRED"
+      ]
+    }
+  },
+  {
+    "clock": "2026-10-31T07:55:16.164124+00:00",
+    "candidate": {
+      "algorithm": "semantic-discovery/m5i-v1",
+      "definition_links": {
+        "kalshi": "https://external-api.kalshi.com/trade-api/v2/markets/KXTOPALBUM-26NOV07-VIS",
+        "polymarket_us": "https://gateway.polymarket.us/v1/market/slug/ccpc-bilbrd-1song-any-11-24-2026-bbywow"
+      },
+      "equivalence_score_bps": 0,
+      "equivalence_verified": false,
+      "event_key": "KXTOPALBUM-26NOV07",
+      "hypothetical": false,
+      "kalshi_id": "KXTOPALBUM-26NOV07-VIS",
+      "kalshi_title": "Will Visitor be #1 on the Billboard 200 during the week of Nov 7, 2026",
+      "known_contradictions": [
+        "DATES_CONFLICT",
+        "RESOLUTION_LANGUAGE_DIFFERS"
+      ],
+      "liquidity": {
+        "kalshi": {
+          "depth_proxy": null,
+          "quality": "MISSING"
+        },
+        "polymarket_us": {
+          "depth_proxy": null,
+          "quality": "MISSING"
+        }
+      },
+      "match_basis": "EMBEDDING_ASSISTED",
+      "mechanics": {
+        "account_applicability": "UNVERIFIED",
+        "polymarket_us_no": "UNSUPPORTED_SYNTHETIC_SHORT",
+        "research_path": "CASH_FUNDED_LONG_ONLY"
+      },
+      "polymarket_event_key": "[\"which songs will be billboard #1 in november?\",[]]",
+      "polymarket_us_id": "ccpc-bilbrd-1song-any-11-24-2026-bbywow",
+      "polymarket_us_title": "Which Songs Will Be Billboard #1 in November?",
+      "prior_reviews": [],
+      "retrieval_reasons": [
+        "PERSISTENT_VECTOR_COSINE"
+      ],
+      "review_reason": "TEXT_SIMILARITY_REQUIRES_PROPOSITION_REVIEW",
+      "review_snapshot_expires_at": "2026-11-01T06:55:44.307951+00:00",
+      "settlement_deadlines": [
+        "2026-11-21T15:00:00+00:00",
+        "2026-12-09T04:00:00+00:00"
+      ],
+      "signals": {
+        "dates": "CONFLICT",
+        "description_bps": 1000,
+        "embedding": {
+          "cosine": 0.8138689439961369,
+          "dimensions": 4096,
+          "identity": "8f1b745674ea82993cc5211498d606a86627ecedb6776637daeaf66e42611204",
+          "model": "qwen3-embedding-8b",
+          "versions": [
+            429454,
+            558677
+          ]
+        },
+        "metric": "UNKNOWN",
+        "period": "UNKNOWN",
+        "proposition_guard": {
+          "left": {
+            "ceo_action": null,
+            "ceo_company": null,
+            "observation_window": null,
+            "political_office": null,
+            "proposition_type": null,
+            "ranking_position": null,
+            "rate_direction": null,
+            "rounding": null,
+            "thresholds": [],
+            "version": "proposition-guards/m5i-v2"
+          },
+          "right": {
+            "ceo_action": null,
+            "ceo_company": null,
+            "observation_window": null,
+            "political_office": null,
+            "proposition_type": null,
+            "ranking_position": null,
+            "rate_direction": null,
+            "rounding": null,
+            "thresholds": [],
+            "version": "proposition-guards/m5i-v2"
+          }
+        },
+        "subject_bps": 666,
+        "thresholds": "UNKNOWN"
+      },
+      "source_observations": [
+        12011,
+        12160
+      ],
+      "source_received_at": [
+        "2026-10-31T06:55:44.307951+00:00",
+        "2026-10-31T06:59:56.788541+00:00"
+      ],
+      "status": "UNVERIFIED",
+      "trading_authorized": false,
+      "versions": [
+        429454,
+        558677
+      ],
+      "warnings": [
+        "DATES_CONFLICT",
+        "THRESHOLDS_UNKNOWN",
+        "EVENT_TIMES_DIFFER",
+        "RESOLUTION_LANGUAGE_DIFFERS",
+        "CUTOFFS_DIFFER",
+        "SETTLEMENT_DEADLINE_HORIZONS_DIFFER",
+        "EMBEDDING_RETRIEVAL_ONLY_HUMAN_REVIEW_REQUIRED"
+      ]
+    }
+  },
+  {
+    "clock": "2026-10-31T07:55:16.164124+00:00",
+    "candidate": {
+      "algorithm": "semantic-discovery/m5i-v1",
+      "definition_links": {
+        "kalshi": "https://external-api.kalshi.com/trade-api/v2/markets/KXVHGCB-26OCT31-E8.7",
+        "polymarket_us": "https://gateway.polymarket.us/v1/market/slug/vmc-ushrmov-co-08-2026-11-03-dgte21"
+      },
+      "equivalence_score_bps": 0,
+      "equivalence_verified": false,
+      "event_key": "KXVHGCB-26OCT31",
+      "hypothetical": false,
+      "kalshi_id": "KXVHGCB-26OCT31-E8.7",
+      "kalshi_title": "Will the VoteHub 2026 generic ballot margin (D \u2212 R, time-weighted) be exactly 8.7 on Oct 31, 2026?",
+      "known_contradictions": [
+        "PROPOSITION_THRESHOLD_CONFLICT",
+        "DATES_CONFLICT",
+        "RESOLUTION_LANGUAGE_DIFFERS"
+      ],
+      "liquidity": {
+        "kalshi": {
+          "depth_proxy": null,
+          "quality": "MISSING"
+        },
+        "polymarket_us": {
+          "depth_proxy": null,
+          "quality": "MISSING"
+        }
+      },
+      "match_basis": "EMBEDDING_ASSISTED",
+      "mechanics": {
+        "account_applicability": "UNVERIFIED",
+        "polymarket_us_no": "UNSUPPORTED_SYNTHETIC_SHORT",
+        "research_path": "CASH_FUNDED_LONG_ONLY"
+      },
+      "polymarket_event_key": "[\"co-08 house election margin of victory\",[]]",
+      "polymarket_us_id": "vmc-ushrmov-co-08-2026-11-03-dgte21",
+      "polymarket_us_title": "CO-08 House Election Margin of Victory",
+      "prior_reviews": [],
+      "retrieval_reasons": [
+        "PERSISTENT_VECTOR_COSINE"
+      ],
+      "review_reason": "TEXT_SIMILARITY_REQUIRES_PROPOSITION_REVIEW",
+      "review_snapshot_expires_at": "2026-11-01T06:47:11.222785+00:00",
+      "settlement_deadlines": [
+        "2026-10-31T21:04:00+00:00",
+        "2027-01-15T00:00:00+00:00"
+      ],
+      "signals": {
+        "dates": "CONFLICT",
+        "description_bps": 273,
+        "embedding": {
+          "cosine": 0.7716080739570687,
+          "dimensions": 4096,
+          "identity": "8f1b745674ea82993cc5211498d606a86627ecedb6776637daeaf66e42611204",
+          "model": "qwen3-embedding-8b",
+          "versions": [
+            493896,
+            503523
+          ]
+        },
+        "metric": "UNKNOWN",
+        "period": "UNKNOWN",
+        "proposition_guard": {
+          "left": {
+            "ceo_action": null,
+            "ceo_company": null,
+            "observation_window": null,
+            "political_office": null,
+            "proposition_type": null,
+            "ranking_position": null,
+            "rate_direction": null,
+            "rounding": null,
+            "thresholds": [
+              [
+                "=",
+                "5",
+                "unspecified"
+              ],
+              [
+                "=",
+                "8.7",
+                "%"
+              ]
+            ],
+            "version": "proposition-guards/m5i-v2"
+          },
+          "right": {
+            "ceo_action": null,
+            "ceo_company": null,
+            "observation_window": null,
+            "political_office": null,
+            "proposition_type": null,
+            "ranking_position": null,
+            "rate_direction": null,
+            "rounding": "DISPLAYED_BUCKETS",
+            "thresholds": [
+              [
+                ">=",
+                "21",
+                "%"
+              ]
+            ],
+            "version": "proposition-guards/m5i-v2"
+          }
+        },
+        "subject_bps": 666,
+        "thresholds": "UNKNOWN"
+      },
+      "source_observations": [
+        11857,
+        11712
+      ],
+      "source_received_at": [
+        "2026-10-31T06:51:25.444079+00:00",
+        "2026-10-31T06:47:11.222785+00:00"
+      ],
+      "status": "UNVERIFIED",
+      "trading_authorized": false,
+      "versions": [
+        493896,
+        503523
+      ],
+      "warnings": [
+        "PROPOSITION_THRESHOLD_CONFLICT",
+        "ROUNDING_UNKNOWN",
+        "DATES_CONFLICT",
+        "THRESHOLDS_UNKNOWN",
+        "EVENT_TIMES_DIFFER",
+        "RESOLUTION_LANGUAGE_DIFFERS",
+        "CUTOFFS_DIFFER",
+        "SETTLEMENT_DEADLINE_HORIZONS_DIFFER",
+        "EMBEDDING_RETRIEVAL_ONLY_HUMAN_REVIEW_REQUIRED"
+      ]
+    }
+  },
+  {
+    "clock": "2026-10-31T08:07:56.909048+00:00",
+    "candidate": {
+      "algorithm": "semantic-discovery/m5i-v1",
+      "definition_links": {
+        "kalshi": "https://external-api.kalshi.com/trade-api/v2/markets/KXGENERICBALLOTVOTEHUB-26NOV06-T8.5",
+        "polymarket_us": "https://gateway.polymarket.us/v1/market/slug/vmc-ushrmov-va-02-2026-11-03-rgte6"
+      },
+      "equivalence_score_bps": 0,
+      "equivalence_verified": false,
+      "event_key": "KXGENERICBALLOTVOTEHUB-26NOV06",
+      "hypothetical": false,
+      "kalshi_id": "KXGENERICBALLOTVOTEHUB-26NOV06-T8.5",
+      "kalshi_title": "Above 8.5%",
+      "known_contradictions": [
+        "PROPOSITION_THRESHOLD_CONFLICT",
+        "DATES_CONFLICT",
+        "THRESHOLDS_CONFLICT",
+        "RESOLUTION_LANGUAGE_DIFFERS"
+      ],
+      "liquidity": {
+        "kalshi": {
+          "depth_proxy": null,
+          "quality": "MISSING"
+        },
+        "polymarket_us": {
+          "depth_proxy": null,
+          "quality": "MISSING"
+        }
+      },
+      "match_basis": "EMBEDDING_ASSISTED",
+      "mechanics": {
+        "account_applicability": "UNVERIFIED",
+        "polymarket_us_no": "UNSUPPORTED_SYNTHETIC_SHORT",
+        "research_path": "CASH_FUNDED_LONG_ONLY"
+      },
+      "polymarket_event_key": "[\"va-02 house election margin of victory\",[]]",
+      "polymarket_us_id": "vmc-ushrmov-va-02-2026-11-03-rgte6",
+      "polymarket_us_title": "VA-02 House Election Margin of Victory",
+      "prior_reviews": [],
+      "retrieval_reasons": [
+        "PERSISTENT_VECTOR_COSINE"
+      ],
+      "review_reason": "TEXT_SIMILARITY_REQUIRES_PROPOSITION_REVIEW",
+      "review_snapshot_expires_at": "2026-11-01T06:47:41.066687+00:00",
+      "settlement_deadlines": [
+        "2026-11-06T15:00:00+00:00",
+        "2027-01-15T00:00:00+00:00"
+      ],
+      "signals": {
+        "dates": "CONFLICT",
+        "description_bps": 136,
+        "embedding": {
+          "cosine": 0.7702653883553412,
+          "dimensions": 4096,
+          "identity": "8f1b745674ea82993cc5211498d606a86627ecedb6776637daeaf66e42611204",
+          "model": "qwen3-embedding-8b",
+          "versions": [
+            492975,
+            506592
+          ]
+        },
+        "metric": "UNKNOWN",
+        "period": "UNKNOWN",
+        "proposition_guard": {
+          "left": {
+            "ceo_action": null,
+            "ceo_company": null,
+            "observation_window": "POINT_IN_TIME",
+            "political_office": null,
+            "proposition_type": null,
+            "ranking_position": null,
+            "rate_direction": null,
+            "rounding": null,
+            "thresholds": [
+              [
+                ">",
+                "8.5",
+                "%"
+              ]
+            ],
+            "version": "proposition-guards/m5i-v2"
+          },
+          "right": {
+            "ceo_action": null,
+            "ceo_company": null,
+            "observation_window": null,
+            "political_office": null,
+            "proposition_type": null,
+            "ranking_position": null,
+            "rate_direction": null,
+            "rounding": "DISPLAYED_BUCKETS",
+            "thresholds": [
+              [
+                ">=",
+                "6",
+                "%"
+              ]
+            ],
+            "version": "proposition-guards/m5i-v2"
+          }
+        },
+        "subject_bps": 0,
+        "thresholds": "CONFLICT"
+      },
+      "source_observations": [
+        11854,
+        11727
+      ],
+      "source_received_at": [
+        "2026-10-31T06:51:21.147084+00:00",
+        "2026-10-31T06:47:41.066687+00:00"
+      ],
+      "status": "UNVERIFIED",
+      "trading_authorized": false,
+      "versions": [
+        492975,
+        506592
+      ],
+      "warnings": [
+        "PROPOSITION_THRESHOLD_CONFLICT",
+        "OBSERVATION_WINDOW_UNKNOWN",
+        "ROUNDING_UNKNOWN",
+        "DATES_CONFLICT",
+        "THRESHOLDS_CONFLICT",
+        "EVENT_TIMES_DIFFER",
+        "RESOLUTION_LANGUAGE_DIFFERS",
+        "CUTOFFS_DIFFER",
+        "SETTLEMENT_DEADLINE_HORIZONS_DIFFER",
+        "EMBEDDING_RETRIEVAL_ONLY_HUMAN_REVIEW_REQUIRED"
+      ]
+    }
+  },
+  {
+    "clock": "2026-10-31T07:55:16.164124+00:00",
+    "candidate": {
+      "algorithm": "semantic-discovery/m5i-v1",
+      "definition_links": {
+        "kalshi": "https://external-api.kalshi.com/trade-api/v2/markets/KXPRESNOMD-28-GW",
+        "polymarket_us": "https://gateway.polymarket.us/v1/market/slug/pvwc-usp-nc-2028-11-07-dem"
+      },
+      "equivalence_score_bps": 0,
+      "equivalence_verified": false,
+      "event_key": "KXPRESNOMD-28",
+      "hypothetical": false,
+      "kalshi_id": "KXPRESNOMD-28-GW",
+      "kalshi_title": "Will Gretchen Whitmer be the Democratic Presidential nominee in 2028?",
+      "known_contradictions": [
+        "RESOLUTION_LANGUAGE_DIFFERS"
+      ],
+      "liquidity": {
+        "kalshi": {
+          "depth_proxy": null,
+          "quality": "MISSING"
+        },
+        "polymarket_us": {
+          "depth_proxy": null,
+          "quality": "MISSING"
+        }
+      },
+      "match_basis": "EMBEDDING_ASSISTED",
+      "mechanics": {
+        "account_applicability": "UNVERIFIED",
+        "polymarket_us_no": "UNSUPPORTED_SYNTHETIC_SHORT",
+        "research_path": "CASH_FUNDED_LONG_ONLY"
+      },
+      "polymarket_event_key": "[\"2028 presidential election: north carolina winner\",[\"2028-11-07\"]]",
+      "polymarket_us_id": "pvwc-usp-nc-2028-11-07-dem",
+      "polymarket_us_title": "2028 Presidential Election: North Carolina Winner",
+      "prior_reviews": [],
+      "retrieval_reasons": [
+        "PERSISTENT_VECTOR_COSINE"
+      ],
+      "review_reason": "TEXT_SIMILARITY_REQUIRES_PROPOSITION_REVIEW",
+      "review_snapshot_expires_at": "2026-11-01T07:01:47.007556+00:00",
+      "settlement_deadlines": [
+        "2028-11-07T15:00:00+00:00",
+        "2028-11-22T04:00:00+00:00"
+      ],
+      "signals": {
+        "dates": "UNKNOWN",
+        "description_bps": 298,
+        "embedding": {
+          "cosine": 0.7384603399620295,
+          "dimensions": 4096,
+          "identity": "8f1b745674ea82993cc5211498d606a86627ecedb6776637daeaf66e42611204",
+          "model": "qwen3-embedding-8b",
+          "versions": [
+            593699,
+            564459
+          ]
+        },
+        "metric": "UNKNOWN",
+        "period": "UNKNOWN",
+        "proposition_guard": {
+          "left": {
+            "ceo_action": null,
+            "ceo_company": null,
+            "observation_window": null,
+            "political_office": null,
+            "proposition_type": null,
+            "ranking_position": null,
+            "rate_direction": null,
+            "rounding": null,
+            "thresholds": [],
+            "version": "proposition-guards/m5i-v2"
+          },
+          "right": {
+            "ceo_action": null,
+            "ceo_company": null,
+            "observation_window": null,
+            "political_office": null,
+            "proposition_type": null,
+            "ranking_position": null,
+            "rate_direction": null,
+            "rounding": "DISPLAYED_BUCKETS",
+            "thresholds": [],
+            "version": "proposition-guards/m5i-v2"
+          }
+        },
+        "subject_bps": 2222,
+        "thresholds": "UNKNOWN"
+      },
+      "source_observations": [
+        12927,
+        12229
+      ],
+      "source_received_at": [
+        "2026-10-31T07:19:34.924219+00:00",
+        "2026-10-31T07:01:47.007556+00:00"
+      ],
+      "status": "UNVERIFIED",
+      "trading_authorized": false,
+      "versions": [
+        593699,
+        564459
+      ],
+      "warnings": [
+        "ROUNDING_UNKNOWN",
+        "DATES_UNKNOWN",
+        "THRESHOLDS_UNKNOWN",
+        "RESOLUTION_LANGUAGE_DIFFERS",
+        "CUTOFFS_DIFFER",
+        "SETTLEMENT_DEADLINE_HORIZONS_DIFFER",
+        "EMBEDDING_RETRIEVAL_ONLY_HUMAN_REVIEW_REQUIRED"
+      ]
+    }
+  },
+  {
+    "clock": "2026-10-31T09:45:28.443735+00:00",
+    "candidate": {
+      "algorithm": "semantic-discovery/m5i-v1",
+      "definition_links": {
+        "kalshi": "https://external-api.kalshi.com/trade-api/v2/markets/KXPRESNOMR-28-SHS",
+        "polymarket_us": "https://gateway.polymarket.us/v1/market/slug/enwc-uspres-vp-nom-rep-2028-sarhuc"
+      },
+      "equivalence_score_bps": 1663,
+      "equivalence_verified": false,
+      "event_key": "KXPRESNOMR-28",
+      "hypothetical": false,
+      "kalshi_id": "KXPRESNOMR-28-SHS",
+      "kalshi_title": "Will Sarah Huckabee Sanders be the nominee for the Presidency for the Republican party?",
+      "known_contradictions": [
+        "RESOLUTION_LANGUAGE_DIFFERS"
+      ],
+      "liquidity": {
+        "kalshi": {
+          "depth_proxy": null,
+          "quality": "MISSING"
+        },
+        "polymarket_us": {
+          "depth_proxy": null,
+          "quality": "MISSING"
+        }
+      },
+      "match_basis": "EMBEDDING_ASSISTED",
+      "mechanics": {
+        "account_applicability": "UNVERIFIED",
+        "polymarket_us_no": "UNSUPPORTED_SYNTHETIC_SHORT",
+        "research_path": "CASH_FUNDED_LONG_ONLY"
+      },
+      "polymarket_event_key": "[\"2028 republican vp nominee\",[]]",
+      "polymarket_us_id": "enwc-uspres-vp-nom-rep-2028-sarhuc",
+      "polymarket_us_title": "2028 Republican VP Nominee",
+      "prior_reviews": [],
+      "retrieval_reasons": [
+        "KEYWORD_BM25",
+        "PERSISTENT_VECTOR_COSINE"
+      ],
+      "review_reason": "TEXT_SIMILARITY_REQUIRES_PROPOSITION_REVIEW",
+      "review_snapshot_expires_at": "2026-11-01T07:02:17.214545+00:00",
+      "settlement_deadlines": [
+        "2028-11-07T15:00:00+00:00",
+        "2028-08-25T03:00:00+00:00"
+      ],
+      "signals": {
+        "dates": "UNKNOWN",
+        "description_bps": 2692,
+        "embedding": {
+          "cosine": 0.8913940452518115,
+          "dimensions": 4096,
+          "identity": "8f1b745674ea82993cc5211498d606a86627ecedb6776637daeaf66e42611204",
+          "model": "qwen3-embedding-8b",
+          "versions": [
+            593687,
+            567713
+          ]
+        },
+        "metric": "UNKNOWN",
+        "period": "UNKNOWN",
+        "proposition_guard": {
+          "left": {
+            "ceo_action": null,
+            "ceo_company": null,
+            "observation_window": null,
+            "political_office": null,
+            "proposition_type": null,
+            "ranking_position": null,
+            "rate_direction": null,
+            "rounding": null,
+            "thresholds": [],
+            "version": "proposition-guards/m5i-v2"
+          },
+          "right": {
+            "ceo_action": null,
+            "ceo_company": null,
+            "observation_window": null,
+            "political_office": null,
+            "proposition_type": null,
+            "ranking_position": null,
+            "rate_direction": null,
+            "rounding": null,
+            "thresholds": [],
+            "version": "proposition-guards/m5i-v2"
+          }
+        },
+        "subject_bps": 6250,
+        "thresholds": "UNKNOWN"
+      },
+      "source_observations": [
+        12927,
+        12245
+      ],
+      "source_received_at": [
+        "2026-10-31T07:19:34.924219+00:00",
+        "2026-10-31T07:02:17.214545+00:00"
+      ],
+      "status": "UNVERIFIED",
+      "trading_authorized": false,
+      "versions": [
+        593687,
+        567713
+      ],
+      "warnings": [
+        "DATES_UNKNOWN",
+        "THRESHOLDS_UNKNOWN",
+        "RESOLUTION_LANGUAGE_DIFFERS",
+        "CUTOFFS_DIFFER",
+        "SETTLEMENT_DEADLINE_HORIZONS_DIFFER",
+        "EMBEDDING_RETRIEVAL_ONLY_HUMAN_REVIEW_REQUIRED"
+      ]
+    }
+  },
+  {
+    "clock": "2026-10-31T08:32:27.606290+00:00",
+    "candidate": {
+      "algorithm": "semantic-discovery/m5i-v1",
+      "definition_links": {
+        "kalshi": "https://external-api.kalshi.com/trade-api/v2/markets/KXUST10AD-26NOV02-T5.03",
+        "polymarket_us": "https://gateway.polymarket.us/v1/market/slug/tenyc-10yr-hi-mth-11-2026-gte5pt35"
+      },
+      "equivalence_score_bps": 0,
+      "equivalence_verified": false,
+      "event_key": "KXUST10AD-26NOV02",
+      "hypothetical": false,
+      "kalshi_id": "KXUST10AD-26NOV02-T5.03",
+      "kalshi_title": "Will the 10Y U.S. Treasury yield be above 5.03% on Nov 2, 2026?",
+      "known_contradictions": [
+        "PROPOSITION_THRESHOLD_CONFLICT",
+        "DATES_CONFLICT",
+        "THRESHOLDS_CONFLICT",
+        "RESOLUTION_LANGUAGE_DIFFERS"
+      ],
+      "liquidity": {
+        "kalshi": {
+          "depth_proxy": null,
+          "quality": "MISSING"
+        },
+        "polymarket_us": {
+          "depth_proxy": null,
+          "quality": "MISSING"
+        }
+      },
+      "match_basis": "EMBEDDING_ASSISTED",
+      "mechanics": {
+        "account_applicability": "UNVERIFIED",
+        "polymarket_us_no": "UNSUPPORTED_SYNTHETIC_SHORT",
+        "research_path": "CASH_FUNDED_LONG_ONLY"
+      },
+      "polymarket_event_key": "[\"how high will 10-yr treasury yield go in november?\",[]]",
+      "polymarket_us_id": "tenyc-10yr-hi-mth-11-2026-gte5pt35",
+      "polymarket_us_title": "How High Will 10-YR Treasury Yield Go in November?",
+      "prior_reviews": [],
+      "retrieval_reasons": [
+        "KEYWORD_BM25",
+        "PERSISTENT_VECTOR_COSINE"
+      ],
+      "review_reason": "TEXT_SIMILARITY_REQUIRES_PROPOSITION_REVIEW",
+      "review_snapshot_expires_at": "2026-11-01T06:52:38.892208+00:00",
+      "settlement_deadlines": [
+        "2026-11-04T06:05:00+00:00",
+        "2026-12-11T04:59:00+00:00"
+      ],
+      "signals": {
+        "dates": "CONFLICT",
+        "description_bps": 1333,
+        "embedding": {
+          "cosine": 0.9090462291123955,
+          "dimensions": 4096,
+          "identity": "8f1b745674ea82993cc5211498d606a86627ecedb6776637daeaf66e42611204",
+          "model": "qwen3-embedding-8b",
+          "versions": [
+            501630,
+            587739
+          ]
+        },
+        "metric": "UNKNOWN",
+        "period": "UNKNOWN",
+        "proposition_guard": {
+          "left": {
+            "ceo_action": null,
+            "ceo_company": null,
+            "observation_window": null,
+            "political_office": null,
+            "proposition_type": null,
+            "ranking_position": null,
+            "rate_direction": null,
+            "rounding": null,
+            "thresholds": [
+              [
+                ">",
+                "5.03",
+                "%"
+              ]
+            ],
+            "version": "proposition-guards/m5i-v2"
+          },
+          "right": {
+            "ceo_action": null,
+            "ceo_company": null,
+            "observation_window": null,
+            "political_office": null,
+            "proposition_type": null,
+            "ranking_position": null,
+            "rate_direction": null,
+            "rounding": null,
+            "thresholds": [
+              [
+                ">=",
+                "5.35",
+                "%"
+              ]
+            ],
+            "version": "proposition-guards/m5i-v2"
+          }
+        },
+        "subject_bps": 1818,
+        "thresholds": "CONFLICT"
+      },
+      "source_observations": [
+        11894,
+        12368
+      ],
+      "source_received_at": [
+        "2026-10-31T06:52:38.892208+00:00",
+        "2026-10-31T07:05:39.539174+00:00"
+      ],
+      "status": "UNVERIFIED",
+      "trading_authorized": false,
+      "versions": [
+        501630,
+        587739
+      ],
+      "warnings": [
+        "PROPOSITION_THRESHOLD_CONFLICT",
+        "DATES_CONFLICT",
+        "THRESHOLDS_CONFLICT",
+        "EVENT_TIMES_DIFFER",
+        "RESOLUTION_LANGUAGE_DIFFERS",
+        "CUTOFFS_DIFFER",
+        "SETTLEMENT_DEADLINE_HORIZONS_DIFFER",
+        "EMBEDDING_RETRIEVAL_ONLY_HUMAN_REVIEW_REQUIRED"
+      ]
+    }
+  },
+  {
+    "clock": "2026-10-31T08:19:42.279939+00:00",
+    "candidate": {
+      "algorithm": "semantic-discovery/m5i-v1",
+      "definition_links": {
+        "kalshi": "https://external-api.kalshi.com/trade-api/v2/markets/KXIMAGEAI-26NOV06-SPAC",
+        "polymarket_us": "https://gateway.polymarket.us/v1/market/slug/aimrc-company1-2026-12-31-amazon"
+      },
+      "equivalence_score_bps": 0,
+      "equivalence_verified": false,
+      "event_key": "KXIMAGEAI-26NOV06",
+      "hypothetical": false,
+      "kalshi_id": "KXIMAGEAI-26NOV06-SPAC",
+      "kalshi_title": "Top Text to Image AI this week?",
+      "known_contradictions": [
+        "DATES_CONFLICT",
+        "RESOLUTION_LANGUAGE_DIFFERS"
+      ],
+      "liquidity": {
+        "kalshi": {
+          "depth_proxy": null,
+          "quality": "MISSING"
+        },
+        "polymarket_us": {
+          "depth_proxy": null,
+          "quality": "MISSING"
+        }
+      },
+      "match_basis": "EMBEDDING_ASSISTED",
+      "mechanics": {
+        "account_applicability": "UNVERIFIED",
+        "polymarket_us_no": "UNSUPPORTED_SYNTHETIC_SHORT",
+        "research_path": "CASH_FUNDED_LONG_ONLY"
+      },
+      "polymarket_event_key": "[\"which company has #1 ai model end of 2026?\",[\"2026-12-31\"]]",
+      "polymarket_us_id": "aimrc-company1-2026-12-31-amazon",
+      "polymarket_us_title": "Which Company Has #1 AI Model end of 2026?",
+      "prior_reviews": [],
+      "retrieval_reasons": [
+        "PERSISTENT_VECTOR_COSINE"
+      ],
+      "review_reason": "TEXT_SIMILARITY_REQUIRES_PROPOSITION_REVIEW",
+      "review_snapshot_expires_at": "2026-11-01T06:44:28.028663+00:00",
+      "settlement_deadlines": [
+        "2026-11-06T15:00:00+00:00",
+        "2027-01-15T04:00:00+00:00"
+      ],
+      "signals": {
+        "dates": "CONFLICT",
+        "description_bps": 1020,
+        "embedding": {
+          "cosine": 0.8167782987389594,
+          "dimensions": 4096,
+          "identity": "8f1b745674ea82993cc5211498d606a86627ecedb6776637daeaf66e42611204",
+          "model": "qwen3-embedding-8b",
+          "versions": [
+            493507,
+            487954
+          ]
+        },
+        "metric": "UNKNOWN",
+        "period": "UNKNOWN",
+        "proposition_guard": {
+          "left": {
+            "ceo_action": null,
+            "ceo_company": null,
+            "observation_window": "POINT_IN_TIME",
+            "political_office": null,
+            "proposition_type": null,
+            "ranking_position": null,
+            "rate_direction": null,
+            "rounding": null,
+            "thresholds": [],
+            "version": "proposition-guards/m5i-v2"
+          },
+          "right": {
+            "ceo_action": null,
+            "ceo_company": null,
+            "observation_window": "POINT_IN_TIME",
+            "political_office": null,
+            "proposition_type": null,
+            "ranking_position": null,
+            "rate_direction": null,
+            "rounding": null,
+            "thresholds": [],
+            "version": "proposition-guards/m5i-v2"
+          }
+        },
+        "subject_bps": 833,
+        "thresholds": "UNKNOWN"
+      },
+      "source_observations": [
+        11855,
+        11634
+      ],
+      "source_received_at": [
+        "2026-10-31T06:51:22.557151+00:00",
+        "2026-10-31T06:44:28.028663+00:00"
+      ],
+      "status": "UNVERIFIED",
+      "trading_authorized": false,
+      "versions": [
+        493507,
+        487954
+      ],
+      "warnings": [
+        "DATES_CONFLICT",
+        "THRESHOLDS_UNKNOWN",
+        "EVENT_TIMES_DIFFER",
+        "RESOLUTION_LANGUAGE_DIFFERS",
+        "CUTOFFS_DIFFER",
+        "SETTLEMENT_DEADLINE_HORIZONS_DIFFER",
+        "EMBEDDING_RETRIEVAL_ONLY_HUMAN_REVIEW_REQUIRED"
+      ]
+    }
+  },
+  {
+    "clock": "2026-10-31T08:19:42.279939+00:00",
+    "candidate": {
+      "algorithm": "semantic-discovery/m5i-v1",
+      "definition_links": {
+        "kalshi": "https://external-api.kalshi.com/trade-api/v2/markets/KXTOPALBUM-26NOV07-VIS",
+        "polymarket_us": "https://gateway.polymarket.us/v1/market/slug/ccpc-bilbrd-1song-any-11-24-2026-boston"
+      },
+      "equivalence_score_bps": 0,
+      "equivalence_verified": false,
+      "event_key": "KXTOPALBUM-26NOV07",
+      "hypothetical": false,
+      "kalshi_id": "KXTOPALBUM-26NOV07-VIS",
+      "kalshi_title": "Will Visitor be #1 on the Billboard 200 during the week of Nov 7, 2026",
+      "known_contradictions": [
+        "DATES_CONFLICT",
+        "RESOLUTION_LANGUAGE_DIFFERS"
+      ],
+      "liquidity": {
+        "kalshi": {
+          "depth_proxy": null,
+          "quality": "MISSING"
+        },
+        "polymarket_us": {
+          "depth_proxy": null,
+          "quality": "MISSING"
+        }
+      },
+      "match_basis": "EMBEDDING_ASSISTED",
+      "mechanics": {
+        "account_applicability": "UNVERIFIED",
+        "polymarket_us_no": "UNSUPPORTED_SYNTHETIC_SHORT",
+        "research_path": "CASH_FUNDED_LONG_ONLY"
+      },
+      "polymarket_event_key": "[\"which songs will be billboard #1 in november?\",[]]",
+      "polymarket_us_id": "ccpc-bilbrd-1song-any-11-24-2026-boston",
+      "polymarket_us_title": "Which Songs Will Be Billboard #1 in November?",
+      "prior_reviews": [],
+      "retrieval_reasons": [
+        "PERSISTENT_VECTOR_COSINE"
+      ],
+      "review_reason": "TEXT_SIMILARITY_REQUIRES_PROPOSITION_REVIEW",
+      "review_snapshot_expires_at": "2026-11-01T06:55:44.307951+00:00",
+      "settlement_deadlines": [
+        "2026-11-21T15:00:00+00:00",
+        "2026-12-09T04:00:00+00:00"
+      ],
+      "signals": {
+        "dates": "CONFLICT",
+        "description_bps": 1052,
+        "embedding": {
+          "cosine": 0.8145539394691136,
+          "dimensions": 4096,
+          "identity": "8f1b745674ea82993cc5211498d606a86627ecedb6776637daeaf66e42611204",
+          "model": "qwen3-embedding-8b",
+          "versions": [
+            429454,
+            558671
+          ]
+        },
+        "metric": "UNKNOWN",
+        "period": "UNKNOWN",
+        "proposition_guard": {
+          "left": {
+            "ceo_action": null,
+            "ceo_company": null,
+            "observation_window": null,
+            "political_office": null,
+            "proposition_type": null,
+            "ranking_position": null,
+            "rate_direction": null,
+            "rounding": null,
+            "thresholds": [],
+            "version": "proposition-guards/m5i-v2"
+          },
+          "right": {
+            "ceo_action": null,
+            "ceo_company": null,
+            "observation_window": null,
+            "political_office": null,
+            "proposition_type": null,
+            "ranking_position": null,
+            "rate_direction": null,
+            "rounding": null,
+            "thresholds": [],
+            "version": "proposition-guards/m5i-v2"
+          }
+        },
+        "subject_bps": 833,
+        "thresholds": "UNKNOWN"
+      },
+      "source_observations": [
+        12011,
+        12160
+      ],
+      "source_received_at": [
+        "2026-10-31T06:55:44.307951+00:00",
+        "2026-10-31T06:59:56.788541+00:00"
+      ],
+      "status": "UNVERIFIED",
+      "trading_authorized": false,
+      "versions": [
+        429454,
+        558671
+      ],
+      "warnings": [
+        "DATES_CONFLICT",
+        "THRESHOLDS_UNKNOWN",
+        "EVENT_TIMES_DIFFER",
+        "RESOLUTION_LANGUAGE_DIFFERS",
+        "CUTOFFS_DIFFER",
+        "SETTLEMENT_DEADLINE_HORIZONS_DIFFER",
+        "EMBEDDING_RETRIEVAL_ONLY_HUMAN_REVIEW_REQUIRED"
+      ]
+    }
+  },
+  {
+    "clock": "2026-10-31T08:19:42.279939+00:00",
+    "candidate": {
+      "algorithm": "semantic-discovery/m5i-v1",
+      "definition_links": {
+        "kalshi": "https://external-api.kalshi.com/trade-api/v2/markets/KXVHGCB-26OCT31-E8.5",
+        "polymarket_us": "https://gateway.polymarket.us/v1/market/slug/vmc-ushrmov-va-08-2026-11-03-d45-50"
+      },
+      "equivalence_score_bps": 0,
+      "equivalence_verified": false,
+      "event_key": "KXVHGCB-26OCT31",
+      "hypothetical": false,
+      "kalshi_id": "KXVHGCB-26OCT31-E8.5",
+      "kalshi_title": "Will the VoteHub 2026 generic ballot margin (D \u2212 R, time-weighted) be exactly 8.5 on Oct 31, 2026?",
+      "known_contradictions": [
+        "DATES_CONFLICT",
+        "RESOLUTION_LANGUAGE_DIFFERS"
+      ],
+      "liquidity": {
+        "kalshi": {
+          "depth_proxy": null,
+          "quality": "MISSING"
+        },
+        "polymarket_us": {
+          "depth_proxy": null,
+          "quality": "MISSING"
+        }
+      },
+      "match_basis": "EMBEDDING_ASSISTED",
+      "mechanics": {
+        "account_applicability": "UNVERIFIED",
+        "polymarket_us_no": "UNSUPPORTED_SYNTHETIC_SHORT",
+        "research_path": "CASH_FUNDED_LONG_ONLY"
+      },
+      "polymarket_event_key": "[\"va-08 house election margin of victory\",[]]",
+      "polymarket_us_id": "vmc-ushrmov-va-08-2026-11-03-d45-50",
+      "polymarket_us_title": "VA-08 House Election Margin of Victory",
+      "prior_reviews": [],
+      "retrieval_reasons": [
+        "PERSISTENT_VECTOR_COSINE"
+      ],
+      "review_reason": "TEXT_SIMILARITY_REQUIRES_PROPOSITION_REVIEW",
+      "review_snapshot_expires_at": "2026-11-01T06:48:37.406807+00:00",
+      "settlement_deadlines": [
+        "2026-10-31T21:04:00+00:00",
+        "2027-01-15T00:00:00+00:00"
+      ],
+      "signals": {
+        "dates": "CONFLICT",
+        "description_bps": 273,
+        "embedding": {
+          "cosine": 0.8065316902127587,
+          "dimensions": 4096,
+          "identity": "8f1b745674ea82993cc5211498d606a86627ecedb6776637daeaf66e42611204",
+          "model": "qwen3-embedding-8b",
+          "versions": [
+            493898,
+            511265
+          ]
+        },
+        "metric": "UNKNOWN",
+        "period": "UNKNOWN",
+        "proposition_guard": {
+          "left": {
+            "ceo_action": null,
+            "ceo_company": null,
+            "observation_window": null,
+            "political_office": null,
+            "proposition_type": null,
+            "ranking_position": null,
+            "rate_direction": null,
+            "rounding": null,
+            "thresholds": [
+              [
+                "=",
+                "5",
+                "unspecified"
+              ],
+              [
+                "=",
+                "8.5",
+                "%"
+              ]
+            ],
+            "version": "proposition-guards/m5i-v2"
+          },
+          "right": {
+            "ceo_action": null,
+            "ceo_company": null,
+            "observation_window": null,
+            "political_office": null,
+            "proposition_type": null,
+            "ranking_position": null,
+            "rate_direction": null,
+            "rounding": "DISPLAYED_BUCKETS",
+            "thresholds": [],
+            "version": "proposition-guards/m5i-v2"
+          }
+        },
+        "subject_bps": 666,
+        "thresholds": "UNKNOWN"
+      },
+      "source_observations": [
+        11857,
+        11756
+      ],
+      "source_received_at": [
+        "2026-10-31T06:51:25.444079+00:00",
+        "2026-10-31T06:48:37.406807+00:00"
+      ],
+      "status": "UNVERIFIED",
+      "trading_authorized": false,
+      "versions": [
+        493898,
+        511265
+      ],
+      "warnings": [
+        "PROPOSITION_THRESHOLD_UNKNOWN",
+        "ROUNDING_UNKNOWN",
+        "DATES_CONFLICT",
+        "THRESHOLDS_UNKNOWN",
+        "EVENT_TIMES_DIFFER",
+        "RESOLUTION_LANGUAGE_DIFFERS",
+        "CUTOFFS_DIFFER",
+        "SETTLEMENT_DEADLINE_HORIZONS_DIFFER",
+        "EMBEDDING_RETRIEVAL_ONLY_HUMAN_REVIEW_REQUIRED"
+      ]
+    }
+  },
+  {
+    "clock": "2026-10-31T08:07:56.909048+00:00",
+    "candidate": {
+      "algorithm": "semantic-discovery/m5i-v1",
+      "definition_links": {
+        "kalshi": "https://external-api.kalshi.com/trade-api/v2/markets/KXBTCD-26OCT3117-T74999.99",
+        "polymarket_us": "https://gateway.polymarket.us/v1/market/slug/cpc-btc-hitprice-low-yr-12-31-2026-75k"
+      },
+      "equivalence_score_bps": 0,
+      "equivalence_verified": false,
+      "event_key": "KXBTCD-26OCT3117",
+      "hypothetical": false,
+      "kalshi_id": "KXBTCD-26OCT3117-T74999.99",
+      "kalshi_title": "Bitcoin price on Oct 31, 2026?",
+      "known_contradictions": [
+        "PROPOSITION_DIRECTION_CONFLICT",
+        "DATES_CONFLICT",
+        "THRESHOLDS_CONFLICT",
+        "RESOLUTION_LANGUAGE_DIFFERS"
+      ],
+      "liquidity": {
+        "kalshi": {
+          "depth_proxy": null,
+          "quality": "MISSING"
+        },
+        "polymarket_us": {
+          "depth_proxy": null,
+          "quality": "MISSING"
+        }
+      },
+      "match_basis": "EMBEDDING_ASSISTED",
+      "mechanics": {
+        "account_applicability": "UNVERIFIED",
+        "polymarket_us_no": "UNSUPPORTED_SYNTHETIC_SHORT",
+        "research_path": "CASH_FUNDED_LONG_ONLY"
+      },
+      "polymarket_event_key": "[\"how low will bitcoin get this year?\",[\"2027-01-01\"]]",
+      "polymarket_us_id": "cpc-btc-hitprice-low-yr-12-31-2026-75k",
+      "polymarket_us_title": "How low will Bitcoin get this year?",
+      "prior_reviews": [],
+      "retrieval_reasons": [
+        "PERSISTENT_VECTOR_COSINE"
+      ],
+      "review_reason": "TEXT_SIMILARITY_REQUIRES_PROPOSITION_REVIEW",
+      "review_snapshot_expires_at": "2026-11-01T06:48:27.390787+00:00",
+      "settlement_deadlines": [
+        "2026-11-07T21:00:00+00:00",
+        "2027-01-15T04:00:00+00:00"
+      ],
+      "signals": {
+        "dates": "CONFLICT",
+        "description_bps": 1285,
+        "embedding": {
+          "cosine": 0.7882729606775603,
+          "dimensions": 4096,
+          "identity": "8f1b745674ea82993cc5211498d606a86627ecedb6776637daeaf66e42611204",
+          "model": "qwen3-embedding-8b",
+          "versions": [
+            506927,
+            510435
+          ]
+        },
+        "metric": "UNKNOWN",
+        "period": "UNKNOWN",
+        "proposition_guard": {
+          "left": {
+            "ceo_action": null,
+            "ceo_company": null,
+            "observation_window": null,
+            "political_office": null,
+            "proposition_type": null,
+            "ranking_position": null,
+            "rate_direction": null,
+            "rounding": null,
+            "thresholds": [
+              [
+                ">",
+                "74999.99",
+                "unspecified"
+              ]
+            ],
+            "version": "proposition-guards/m5i-v2"
+          },
+          "right": {
+            "ceo_action": null,
+            "ceo_company": null,
+            "observation_window": "ANY_TIME",
+            "political_office": null,
+            "proposition_type": null,
+            "ranking_position": null,
+            "rate_direction": null,
+            "rounding": null,
+            "thresholds": [
+              [
+                "<",
+                "75000",
+                "USD"
+              ]
+            ],
+            "version": "proposition-guards/m5i-v2"
+          }
+        },
+        "subject_bps": 1666,
+        "thresholds": "CONFLICT"
+      },
+      "source_observations": [
+        11905,
+        11751
+      ],
+      "source_received_at": [
+        "2026-10-31T06:52:54.993570+00:00",
+        "2026-10-31T06:48:27.390787+00:00"
+      ],
+      "status": "UNVERIFIED",
+      "trading_authorized": false,
+      "versions": [
+        506927,
+        510435
+      ],
+      "warnings": [
+        "PROPOSITION_THRESHOLD_UNKNOWN",
+        "PROPOSITION_DIRECTION_CONFLICT",
+        "OBSERVATION_WINDOW_UNKNOWN",
+        "DATES_CONFLICT",
+        "THRESHOLDS_CONFLICT",
+        "EVENT_TIMES_DIFFER",
+        "RESOLUTION_LANGUAGE_DIFFERS",
+        "CUTOFFS_DIFFER",
+        "SETTLEMENT_DEADLINE_HORIZONS_DIFFER",
+        "EMBEDDING_RETRIEVAL_ONLY_HUMAN_REVIEW_REQUIRED"
+      ]
+    }
+  },
+  {
+    "clock": "2026-10-31T08:07:56.909048+00:00",
+    "candidate": {
+      "algorithm": "semantic-discovery/m5i-v1",
+      "definition_links": {
+        "kalshi": "https://external-api.kalshi.com/trade-api/v2/markets/KXTOPALBUM-26NOV14-PRI",
+        "polymarket_us": "https://gateway.polymarket.us/v1/market/slug/ccpc-bilbrd-1album-any2026-tatmcr"
+      },
+      "equivalence_score_bps": 0,
+      "equivalence_verified": false,
+      "event_key": "KXTOPALBUM-26NOV14",
+      "hypothetical": false,
+      "kalshi_id": "KXTOPALBUM-26NOV14-PRI",
+      "kalshi_title": "Will PRIMA be #1 on the Billboard 200 during the week of Nov 14, 2026",
+      "known_contradictions": [
+        "DATES_CONFLICT",
+        "RESOLUTION_LANGUAGE_DIFFERS"
+      ],
+      "liquidity": {
+        "kalshi": {
+          "depth_proxy": null,
+          "quality": "MISSING"
+        },
+        "polymarket_us": {
+          "depth_proxy": null,
+          "quality": "MISSING"
+        }
+      },
+      "match_basis": "EMBEDDING_ASSISTED",
+      "mechanics": {
+        "account_applicability": "UNVERIFIED",
+        "polymarket_us_no": "UNSUPPORTED_SYNTHETIC_SHORT",
+        "research_path": "CASH_FUNDED_LONG_ONLY"
+      },
+      "polymarket_event_key": "[\"who will have a #1 album in 2026?\",[\"2026-12-26\"]]",
+      "polymarket_us_id": "ccpc-bilbrd-1album-any2026-tatmcr",
+      "polymarket_us_title": "Who Will Have a #1 Album in 2026?",
+      "prior_reviews": [],
+      "retrieval_reasons": [
+        "PERSISTENT_VECTOR_COSINE"
+      ],
+      "review_reason": "TEXT_SIMILARITY_REQUIRES_PROPOSITION_REVIEW",
+      "review_snapshot_expires_at": "2026-11-01T06:44:49.525897+00:00",
+      "settlement_deadlines": [
+        "2026-11-28T15:00:00+00:00",
+        "2027-01-10T04:00:00+00:00"
+      ],
+      "signals": {
+        "dates": "CONFLICT",
+        "description_bps": 823,
+        "embedding": {
+          "cosine": 0.7505929109857502,
+          "dimensions": 4096,
+          "identity": "8f1b745674ea82993cc5211498d606a86627ecedb6776637daeaf66e42611204",
+          "model": "qwen3-embedding-8b",
+          "versions": [
+            428641,
+            490054
+          ]
+        },
+        "metric": "UNKNOWN",
+        "period": "UNKNOWN",
+        "proposition_guard": {
+          "left": {
+            "ceo_action": null,
+            "ceo_company": null,
+            "observation_window": null,
+            "political_office": null,
+            "proposition_type": null,
+            "ranking_position": null,
+            "rate_direction": null,
+            "rounding": null,
+            "thresholds": [],
+            "version": "proposition-guards/m5i-v2"
+          },
+          "right": {
+            "ceo_action": null,
+            "ceo_company": null,
+            "observation_window": null,
+            "political_office": null,
+            "proposition_type": null,
+            "ranking_position": null,
+            "rate_direction": null,
+            "rounding": null,
+            "thresholds": [],
+            "version": "proposition-guards/m5i-v2"
+          }
+        },
+        "subject_bps": 0,
+        "thresholds": "UNKNOWN"
+      },
+      "source_observations": [
+        11988,
+        11644
+      ],
+      "source_received_at": [
+        "2026-10-31T06:55:06.758297+00:00",
+        "2026-10-31T06:44:49.525897+00:00"
+      ],
+      "status": "UNVERIFIED",
+      "trading_authorized": false,
+      "versions": [
+        428641,
+        490054
+      ],
+      "warnings": [
+        "DATES_CONFLICT",
+        "THRESHOLDS_UNKNOWN",
+        "EVENT_TIMES_DIFFER",
+        "RESOLUTION_LANGUAGE_DIFFERS",
+        "CUTOFFS_DIFFER",
+        "SETTLEMENT_DEADLINE_HORIZONS_DIFFER",
+        "EMBEDDING_RETRIEVAL_ONLY_HUMAN_REVIEW_REQUIRED"
+      ]
+    }
+  },
+  {
+    "clock": "2026-10-31T08:32:27.606290+00:00",
+    "candidate": {
+      "algorithm": "semantic-discovery/m5i-v1",
+      "definition_links": {
+        "kalshi": "https://external-api.kalshi.com/trade-api/v2/markets/KXUST10A-26NOV06-T4.95",
+        "polymarket_us": "https://gateway.polymarket.us/v1/market/slug/tenyc-10yr-day-11-06-2026-gte4pt95"
+      },
+      "equivalence_score_bps": 0,
+      "equivalence_verified": false,
+      "event_key": "KXUST10A-26NOV06",
+      "hypothetical": false,
+      "kalshi_id": "KXUST10A-26NOV06-T4.95",
+      "kalshi_title": "Will the 10Y U.S. Treasury yield be above 4.95% on Nov 6, 2026?",
+      "known_contradictions": [
+        "PROPOSITION_THRESHOLD_CONFLICT",
+        "DATES_CONFLICT",
+        "THRESHOLDS_CONFLICT",
+        "RESOLUTION_LANGUAGE_DIFFERS"
+      ],
+      "liquidity": {
+        "kalshi": {
+          "depth_proxy": null,
+          "quality": "MISSING"
+        },
+        "polymarket_us": {
+          "depth_proxy": null,
+          "quality": "MISSING"
+        }
+      },
+      "match_basis": "EMBEDDING_ASSISTED",
+      "mechanics": {
+        "account_applicability": "UNVERIFIED",
+        "polymarket_us_no": "UNSUPPORTED_SYNTHETIC_SHORT",
+        "research_path": "CASH_FUNDED_LONG_ONLY"
+      },
+      "polymarket_event_key": "[\"10-yr treasury yield on november 6?\",[\"2026-11-06\"]]",
+      "polymarket_us_id": "tenyc-10yr-day-11-06-2026-gte4pt95",
+      "polymarket_us_title": "10-YR Treasury Yield on November 6?",
+      "prior_reviews": [],
+      "retrieval_reasons": [
+        "KEYWORD_BM25",
+        "PERSISTENT_VECTOR_COSINE"
+      ],
+      "review_reason": "TEXT_SIMILARITY_REQUIRES_PROPOSITION_REVIEW",
+      "review_snapshot_expires_at": "2026-11-01T06:52:38.892208+00:00",
+      "settlement_deadlines": [
+        "2026-11-08T06:05:00+00:00",
+        "2026-11-17T04:59:00+00:00"
+      ],
+      "signals": {
+        "dates": "CONFLICT",
+        "description_bps": 1395,
+        "embedding": {
+          "cosine": 0.9202084470811549,
+          "dimensions": 4096,
+          "identity": "8f1b745674ea82993cc5211498d606a86627ecedb6776637daeaf66e42611204",
+          "model": "qwen3-embedding-8b",
+          "versions": [
+            501619,
+            587703
+          ]
+        },
+        "metric": "UNKNOWN",
+        "period": "UNKNOWN",
+        "proposition_guard": {
+          "left": {
+            "ceo_action": null,
+            "ceo_company": null,
+            "observation_window": null,
+            "political_office": null,
+            "proposition_type": null,
+            "ranking_position": null,
+            "rate_direction": null,
+            "rounding": null,
+            "thresholds": [
+              [
+                ">",
+                "4.95",
+                "%"
+              ]
+            ],
+            "version": "proposition-guards/m5i-v2"
+          },
+          "right": {
+            "ceo_action": null,
+            "ceo_company": null,
+            "observation_window": null,
+            "political_office": null,
+            "proposition_type": null,
+            "ranking_position": null,
+            "rate_direction": null,
+            "rounding": null,
+            "thresholds": [
+              [
+                ">=",
+                "4.95",
+                "%"
+              ]
+            ],
+            "version": "proposition-guards/m5i-v2"
+          }
+        },
+        "subject_bps": 2500,
+        "thresholds": "CONFLICT"
+      },
+      "source_observations": [
+        11894,
+        12368
+      ],
+      "source_received_at": [
+        "2026-10-31T06:52:38.892208+00:00",
+        "2026-10-31T07:05:39.539174+00:00"
+      ],
+      "status": "UNVERIFIED",
+      "trading_authorized": false,
+      "versions": [
+        501619,
+        587703
+      ],
+      "warnings": [
+        "PROPOSITION_THRESHOLD_CONFLICT",
+        "DATES_CONFLICT",
+        "THRESHOLDS_CONFLICT",
+        "EVENT_TIMES_DIFFER",
+        "RESOLUTION_LANGUAGE_DIFFERS",
+        "CUTOFFS_DIFFER",
+        "SETTLEMENT_DEADLINE_HORIZONS_DIFFER",
+        "EMBEDDING_RETRIEVAL_ONLY_HUMAN_REVIEW_REQUIRED"
+      ]
+    }
+  },
+  {
+    "clock": "2026-10-31T08:32:27.606290+00:00",
+    "candidate": {
+      "algorithm": "semantic-discovery/m5i-v1",
+      "definition_links": {
+        "kalshi": "https://external-api.kalshi.com/trade-api/v2/markets/KXUST5AD-26NOV02-T4.89",
+        "polymarket_us": "https://gateway.polymarket.us/v1/market/slug/fivyc-5yr-hi-mth-11-2026-gte4pt90"
+      },
+      "equivalence_score_bps": 0,
+      "equivalence_verified": false,
+      "event_key": "KXUST5AD-26NOV02",
+      "hypothetical": false,
+      "kalshi_id": "KXUST5AD-26NOV02-T4.89",
+      "kalshi_title": "Will the 5Y U.S. Treasury yield be above 4.89% on Nov 2, 2026?",
+      "known_contradictions": [
+        "PROPOSITION_THRESHOLD_CONFLICT",
+        "DATES_CONFLICT",
+        "THRESHOLDS_CONFLICT",
+        "RESOLUTION_LANGUAGE_DIFFERS"
+      ],
+      "liquidity": {
+        "kalshi": {
+          "depth_proxy": null,
+          "quality": "MISSING"
+        },
+        "polymarket_us": {
+          "depth_proxy": null,
+          "quality": "MISSING"
+        }
+      },
+      "match_basis": "EMBEDDING_ASSISTED",
+      "mechanics": {
+        "account_applicability": "UNVERIFIED",
+        "polymarket_us_no": "UNSUPPORTED_SYNTHETIC_SHORT",
+        "research_path": "CASH_FUNDED_LONG_ONLY"
+      },
+      "polymarket_event_key": "[\"how high will 5-yr treasury yield go in november?\",[]]",
+      "polymarket_us_id": "fivyc-5yr-hi-mth-11-2026-gte4pt90",
+      "polymarket_us_title": "How High Will 5-YR Treasury Yield Go in November?",
+      "prior_reviews": [],
+      "retrieval_reasons": [
+        "KEYWORD_BM25",
+        "PERSISTENT_VECTOR_COSINE"
+      ],
+      "review_reason": "TEXT_SIMILARITY_REQUIRES_PROPOSITION_REVIEW",
+      "review_snapshot_expires_at": "2026-11-01T06:52:38.892208+00:00",
+      "settlement_deadlines": [
+        "2026-11-04T06:05:00+00:00",
+        "2026-12-11T04:59:00+00:00"
+      ],
+      "signals": {
+        "dates": "CONFLICT",
+        "description_bps": 1333,
+        "embedding": {
+          "cosine": 0.9076933068810908,
+          "dimensions": 4096,
+          "identity": "8f1b745674ea82993cc5211498d606a86627ecedb6776637daeaf66e42611204",
+          "model": "qwen3-embedding-8b",
+          "versions": [
+            501687,
+            587720
+          ]
+        },
+        "metric": "UNKNOWN",
+        "period": "UNKNOWN",
+        "proposition_guard": {
+          "left": {
+            "ceo_action": null,
+            "ceo_company": null,
+            "observation_window": null,
+            "political_office": null,
+            "proposition_type": null,
+            "ranking_position": null,
+            "rate_direction": null,
+            "rounding": null,
+            "thresholds": [
+              [
+                ">",
+                "4.89",
+                "%"
+              ]
+            ],
+            "version": "proposition-guards/m5i-v2"
+          },
+          "right": {
+            "ceo_action": null,
+            "ceo_company": null,
+            "observation_window": null,
+            "political_office": null,
+            "proposition_type": null,
+            "ranking_position": null,
+            "rate_direction": null,
+            "rounding": null,
+            "thresholds": [
+              [
+                ">=",
+                "4.9",
+                "%"
+              ]
+            ],
+            "version": "proposition-guards/m5i-v2"
+          }
+        },
+        "subject_bps": 1818,
+        "thresholds": "CONFLICT"
+      },
+      "source_observations": [
+        11894,
+        12368
+      ],
+      "source_received_at": [
+        "2026-10-31T06:52:38.892208+00:00",
+        "2026-10-31T07:05:39.539174+00:00"
+      ],
+      "status": "UNVERIFIED",
+      "trading_authorized": false,
+      "versions": [
+        501687,
+        587720
+      ],
+      "warnings": [
+        "PROPOSITION_THRESHOLD_CONFLICT",
+        "DATES_CONFLICT",
+        "THRESHOLDS_CONFLICT",
+        "EVENT_TIMES_DIFFER",
+        "RESOLUTION_LANGUAGE_DIFFERS",
+        "CUTOFFS_DIFFER",
+        "SETTLEMENT_DEADLINE_HORIZONS_DIFFER",
+        "EMBEDDING_RETRIEVAL_ONLY_HUMAN_REVIEW_REQUIRED"
+      ]
+    }
+  },
+  {
+    "clock": "2026-10-31T08:19:42.279939+00:00",
+    "candidate": {
+      "algorithm": "semantic-discovery/m5i-v1",
+      "definition_links": {
+        "kalshi": "https://external-api.kalshi.com/trade-api/v2/markets/KXBTC-26NOV0617-T65500",
+        "polymarket_us": "https://gateway.polymarket.us/v1/market/slug/cpc-btc-hitprice-low-yr-12-31-2026-65k"
+      },
+      "equivalence_score_bps": 0,
+      "equivalence_verified": false,
+      "event_key": "KXBTC-26NOV0617",
+      "hypothetical": false,
+      "kalshi_id": "KXBTC-26NOV0617-T65500",
+      "kalshi_title": "Bitcoin price range on Nov 6, 2026?",
+      "known_contradictions": [
+        "DATES_CONFLICT",
+        "THRESHOLDS_CONFLICT",
+        "RESOLUTION_LANGUAGE_DIFFERS"
+      ],
+      "liquidity": {
+        "kalshi": {
+          "depth_proxy": null,
+          "quality": "MISSING"
+        },
+        "polymarket_us": {
+          "depth_proxy": null,
+          "quality": "MISSING"
+        }
+      },
+      "match_basis": "EMBEDDING_ASSISTED",
+      "mechanics": {
+        "account_applicability": "UNVERIFIED",
+        "polymarket_us_no": "UNSUPPORTED_SYNTHETIC_SHORT",
+        "research_path": "CASH_FUNDED_LONG_ONLY"
+      },
+      "polymarket_event_key": "[\"how low will bitcoin get this year?\",[\"2027-01-01\"]]",
+      "polymarket_us_id": "cpc-btc-hitprice-low-yr-12-31-2026-65k",
+      "polymarket_us_title": "How low will Bitcoin get this year?",
+      "prior_reviews": [],
+      "retrieval_reasons": [
+        "PERSISTENT_VECTOR_COSINE"
+      ],
+      "review_reason": "TEXT_SIMILARITY_REQUIRES_PROPOSITION_REVIEW",
+      "review_snapshot_expires_at": "2026-11-01T06:48:27.390787+00:00",
+      "settlement_deadlines": [
+        "2026-11-13T22:00:00+00:00",
+        "2027-01-15T04:00:00+00:00"
+      ],
+      "signals": {
+        "dates": "CONFLICT",
+        "description_bps": 1285,
+        "embedding": {
+          "cosine": 0.8330991573302636,
+          "dimensions": 4096,
+          "identity": "8f1b745674ea82993cc5211498d606a86627ecedb6776637daeaf66e42611204",
+          "model": "qwen3-embedding-8b",
+          "versions": [
+            502576,
+            510437
+          ]
+        },
+        "metric": "UNKNOWN",
+        "period": "UNKNOWN",
+        "proposition_guard": {
+          "left": {
+            "ceo_action": null,
+            "ceo_company": null,
+            "observation_window": null,
+            "political_office": null,
+            "proposition_type": null,
+            "ranking_position": null,
+            "rate_direction": null,
+            "rounding": null,
+            "thresholds": [
+              [
+                "<",
+                "65500",
+                "unspecified"
+              ]
+            ],
+            "version": "proposition-guards/m5i-v2"
+          },
+          "right": {
+            "ceo_action": null,
+            "ceo_company": null,
+            "observation_window": "ANY_TIME",
+            "political_office": null,
+            "proposition_type": null,
+            "ranking_position": null,
+            "rate_direction": null,
+            "rounding": null,
+            "thresholds": [
+              [
+                "<",
+                "65000",
+                "USD"
+              ]
+            ],
+            "version": "proposition-guards/m5i-v2"
+          }
+        },
+        "subject_bps": 1428,
+        "thresholds": "CONFLICT"
+      },
+      "source_observations": [
+        11903,
+        11751
+      ],
+      "source_received_at": [
+        "2026-10-31T06:52:52.284561+00:00",
+        "2026-10-31T06:48:27.390787+00:00"
+      ],
+      "status": "UNVERIFIED",
+      "trading_authorized": false,
+      "versions": [
+        502576,
+        510437
+      ],
+      "warnings": [
+        "PROPOSITION_THRESHOLD_UNKNOWN",
+        "OBSERVATION_WINDOW_UNKNOWN",
+        "DATES_CONFLICT",
+        "THRESHOLDS_CONFLICT",
+        "EVENT_TIMES_DIFFER",
+        "RESOLUTION_LANGUAGE_DIFFERS",
+        "CUTOFFS_DIFFER",
+        "SETTLEMENT_DEADLINE_HORIZONS_DIFFER",
+        "EMBEDDING_RETRIEVAL_ONLY_HUMAN_REVIEW_REQUIRED"
+      ]
+    }
+  },
+  {
+    "clock": "2026-10-31T08:19:42.279939+00:00",
+    "candidate": {
+      "algorithm": "semantic-discovery/m5i-v1",
+      "definition_links": {
+        "kalshi": "https://external-api.kalshi.com/trade-api/v2/markets/KXOPENINTAI-26NOV06-ALIB",
+        "polymarket_us": "https://gateway.polymarket.us/v1/market/slug/aimrc-company1-wk-2026-11-02-alibab"
+      },
+      "equivalence_score_bps": 0,
+      "equivalence_verified": false,
+      "event_key": "KXOPENINTAI-26NOV06",
+      "hypothetical": false,
+      "kalshi_id": "KXOPENINTAI-26NOV06-ALIB",
+      "kalshi_title": "Top Open Source AI this week?",
+      "known_contradictions": [
+        "DATES_CONFLICT",
+        "RESOLUTION_LANGUAGE_DIFFERS"
+      ],
+      "liquidity": {
+        "kalshi": {
+          "depth_proxy": null,
+          "quality": "MISSING"
+        },
+        "polymarket_us": {
+          "depth_proxy": null,
+          "quality": "MISSING"
+        }
+      },
+      "match_basis": "EMBEDDING_ASSISTED",
+      "mechanics": {
+        "account_applicability": "UNVERIFIED",
+        "polymarket_us_no": "UNSUPPORTED_SYNTHETIC_SHORT",
+        "research_path": "CASH_FUNDED_LONG_ONLY"
+      },
+      "polymarket_event_key": "[\"top ai company this week\",[\"2026-11-02\"]]",
+      "polymarket_us_id": "aimrc-company1-wk-2026-11-02-alibab",
+      "polymarket_us_title": "Top AI Company this week",
+      "prior_reviews": [],
+      "retrieval_reasons": [
+        "KEYWORD_BM25",
+        "PERSISTENT_VECTOR_COSINE"
+      ],
+      "review_reason": "TEXT_SIMILARITY_REQUIRES_PROPOSITION_REVIEW",
+      "review_snapshot_expires_at": "2026-11-01T06:51:22.557151+00:00",
+      "settlement_deadlines": [
+        "2026-11-06T15:00:00+00:00",
+        "2026-11-16T17:00:00+00:00"
+      ],
+      "signals": {
+        "dates": "CONFLICT",
+        "description_bps": 869,
+        "embedding": {
+          "cosine": 0.8330138002158443,
+          "dimensions": 4096,
+          "identity": "8f1b745674ea82993cc5211498d606a86627ecedb6776637daeaf66e42611204",
+          "model": "qwen3-embedding-8b",
+          "versions": [
+            493530,
+            565998
+          ]
+        },
+        "metric": "UNKNOWN",
+        "period": "UNKNOWN",
+        "proposition_guard": {
+          "left": {
+            "ceo_action": null,
+            "ceo_company": null,
+            "observation_window": "POINT_IN_TIME",
+            "political_office": null,
+            "proposition_type": null,
+            "ranking_position": null,
+            "rate_direction": null,
+            "rounding": null,
+            "thresholds": [],
+            "version": "proposition-guards/m5i-v2"
+          },
+          "right": {
+            "ceo_action": null,
+            "ceo_company": null,
+            "observation_window": "POINT_IN_TIME",
+            "political_office": null,
+            "proposition_type": null,
+            "ranking_position": null,
+            "rate_direction": null,
+            "rounding": null,
+            "thresholds": [],
+            "version": "proposition-guards/m5i-v2"
+          }
+        },
+        "subject_bps": 5714,
+        "thresholds": "UNKNOWN"
+      },
+      "source_observations": [
+        11855,
+        12236
+      ],
+      "source_received_at": [
+        "2026-10-31T06:51:22.557151+00:00",
+        "2026-10-31T07:01:59.609578+00:00"
+      ],
+      "status": "UNVERIFIED",
+      "trading_authorized": false,
+      "versions": [
+        493530,
+        565998
+      ],
+      "warnings": [
+        "DATES_CONFLICT",
+        "THRESHOLDS_UNKNOWN",
+        "EVENT_TIMES_DIFFER",
+        "RESOLUTION_LANGUAGE_DIFFERS",
+        "CUTOFFS_DIFFER",
+        "SETTLEMENT_DEADLINE_HORIZONS_DIFFER",
+        "EMBEDDING_RETRIEVAL_ONLY_HUMAN_REVIEW_REQUIRED"
+      ]
+    }
+  },
+  {
+    "clock": "2026-10-31T10:58:59.747496+00:00",
+    "candidate": {
+      "algorithm": "semantic-discovery/m5i-v1",
+      "definition_links": {
+        "kalshi": "https://external-api.kalshi.com/trade-api/v2/markets/KXGOVSENDIFF-27FEB012-AL8",
+        "polymarket_us": "https://gateway.polymarket.us/v1/market/slug/cpoc-ussegubc-tx-2026-11-03-dgov-rsen"
+      },
+      "equivalence_score_bps": 0,
+      "equivalence_verified": false,
+      "event_key": "KXGOVSENDIFF-27FEB012",
+      "hypothetical": false,
+      "kalshi_id": "KXGOVSENDIFF-27FEB012-AL8",
+      "kalshi_title": "Will the number of states in which the winner of the 2026 gubernatorial general election and the winner of a 2026 U.S. Senate general election (including special elections) are nominees of different political parties be at least 8 2026 midterms?",
+      "known_contradictions": [],
+      "liquidity": {
+        "kalshi": {
+          "depth_proxy": null,
+          "quality": "MISSING"
+        },
+        "polymarket_us": {
+          "depth_proxy": null,
+          "quality": "MISSING"
+        }
+      },
+      "match_basis": "EMBEDDING_ASSISTED",
+      "mechanics": {
+        "account_applicability": "UNVERIFIED",
+        "polymarket_us_no": "UNSUPPORTED_SYNTHETIC_SHORT",
+        "research_path": "CASH_FUNDED_LONG_ONLY"
+      },
+      "polymarket_event_key": "[\"texas senate and governor combo\",[]]",
+      "polymarket_us_id": "cpoc-ussegubc-tx-2026-11-03-dgov-rsen",
+      "polymarket_us_title": "Texas Senate and Governor Combo",
+      "prior_reviews": [],
+      "retrieval_reasons": [
+        "PERSISTENT_VECTOR_COSINE"
+      ],
+      "review_reason": "TEXT_SIMILARITY_REQUIRES_PROPOSITION_REVIEW",
+      "review_snapshot_expires_at": "2026-11-01T06:48:43.611901+00:00",
+      "settlement_deadlines": [
+        "2027-02-01T15:00:00+00:00",
+        "2027-01-15T00:00:00+00:00"
+      ],
+      "signals": {
+        "dates": "MATCH",
+        "description_bps": 1265,
+        "embedding": {
+          "cosine": 0.7591134038642773,
+          "dimensions": 4096,
+          "identity": "8f1b745674ea82993cc5211498d606a86627ecedb6776637daeaf66e42611204",
+          "model": "qwen3-embedding-8b",
+          "versions": [
+            300255,
+            511997
+          ]
+        },
+        "metric": "UNKNOWN",
+        "period": "UNKNOWN",
+        "proposition_guard": {
+          "left": {
+            "ceo_action": null,
+            "ceo_company": null,
+            "observation_window": null,
+            "political_office": "US_SENATE",
+            "proposition_type": null,
+            "ranking_position": null,
+            "rate_direction": null,
+            "rounding": null,
+            "thresholds": [
+              [
+                ">=",
+                "8",
+                "unspecified"
+              ]
+            ],
+            "version": "proposition-guards/m5i-v2"
+          },
+          "right": {
+            "ceo_action": null,
+            "ceo_company": null,
+            "observation_window": null,
+            "political_office": "US_SENATE",
+            "proposition_type": null,
+            "ranking_position": null,
+            "rate_direction": null,
+            "rounding": null,
+            "thresholds": [],
+            "version": "proposition-guards/m5i-v2"
+          }
+        },
+        "subject_bps": 434,
+        "thresholds": "UNKNOWN"
+      },
+      "source_observations": [
+        12798,
+        11759
+      ],
+      "source_received_at": [
+        "2026-10-31T07:16:26.744865+00:00",
+        "2026-10-31T06:48:43.611901+00:00"
+      ],
+      "status": "UNVERIFIED",
+      "trading_authorized": false,
+      "versions": [
+        300255,
+        511997
+      ],
+      "warnings": [
+        "THRESHOLDS_UNKNOWN",
+        "EVENT_TIMES_DIFFER",
+        "CUTOFFS_DIFFER",
+        "SETTLEMENT_DEADLINE_HORIZONS_DIFFER",
+        "EMBEDDING_RETRIEVAL_ONLY_HUMAN_REVIEW_REQUIRED"
+      ]
+    }
+  },
+  {
+    "clock": "2026-10-31T10:46:12.406317+00:00",
+    "candidate": {
+      "algorithm": "semantic-discovery/m5i-v1",
+      "definition_links": {
+        "kalshi": "https://external-api.kalshi.com/trade-api/v2/markets/KXPRESNOMD-28-AOC",
+        "polymarket_us": "https://gateway.polymarket.us/v1/market/slug/enwc-uspres-nom-dem-2028-aleocc"
+      },
+      "equivalence_score_bps": 3560,
+      "equivalence_verified": false,
+      "event_key": "KXPRESNOMD-28",
+      "hypothetical": false,
+      "kalshi_id": "KXPRESNOMD-28-AOC",
+      "kalshi_title": "Will Alexandria Ocasio-Cortez be the Democratic Presidential nominee in 2028?",
+      "known_contradictions": [
+        "RESOLUTION_LANGUAGE_DIFFERS"
+      ],
+      "liquidity": {
+        "kalshi": {
+          "depth_proxy": null,
+          "quality": "MISSING"
+        },
+        "polymarket_us": {
+          "depth_proxy": null,
+          "quality": "MISSING"
+        }
+      },
+      "match_basis": "EMBEDDING_ASSISTED",
+      "mechanics": {
+        "account_applicability": "UNVERIFIED",
+        "polymarket_us_no": "UNSUPPORTED_SYNTHETIC_SHORT",
+        "research_path": "CASH_FUNDED_LONG_ONLY"
+      },
+      "polymarket_event_key": "[\"2028 democratic presidential nominee\",[]]",
+      "polymarket_us_id": "enwc-uspres-nom-dem-2028-aleocc",
+      "polymarket_us_title": "2028 Democratic Presidential Nominee",
+      "prior_reviews": [],
+      "retrieval_reasons": [
+        "KEYWORD_BM25",
+        "PERSISTENT_VECTOR_COSINE"
+      ],
+      "review_reason": "TEXT_SIMILARITY_REQUIRES_PROPOSITION_REVIEW",
+      "review_snapshot_expires_at": "2026-11-01T06:46:04.432791+00:00",
+      "settlement_deadlines": [
+        "2028-11-07T15:00:00+00:00",
+        "2028-08-25T03:00:00+00:00"
+      ],
+      "signals": {
+        "dates": "UNKNOWN",
+        "description_bps": 2800,
+        "embedding": {
+          "cosine": 0.9603505048889454,
+          "dimensions": 4096,
+          "identity": "8f1b745674ea82993cc5211498d606a86627ecedb6776637daeaf66e42611204",
+          "model": "qwen3-embedding-8b",
+          "versions": [
+            593701,
+            497082
+          ]
+        },
+        "metric": "UNKNOWN",
+        "period": "UNKNOWN",
+        "proposition_guard": {
+          "left": {
+            "ceo_action": null,
+            "ceo_company": null,
+            "observation_window": null,
+            "political_office": null,
+            "proposition_type": null,
+            "ranking_position": null,
+            "rate_direction": null,
+            "rounding": null,
+            "thresholds": [],
+            "version": "proposition-guards/m5i-v2"
+          },
+          "right": {
+            "ceo_action": null,
+            "ceo_company": null,
+            "observation_window": null,
+            "political_office": null,
+            "proposition_type": null,
+            "ranking_position": null,
+            "rate_direction": null,
+            "rounding": null,
+            "thresholds": [],
+            "version": "proposition-guards/m5i-v2"
+          }
+        },
+        "subject_bps": 10000,
+        "thresholds": "UNKNOWN"
+      },
+      "source_observations": [
+        12927,
+        11680
+      ],
+      "source_received_at": [
+        "2026-10-31T07:19:34.924219+00:00",
+        "2026-10-31T06:46:04.432791+00:00"
+      ],
+      "status": "UNVERIFIED",
+      "trading_authorized": false,
+      "versions": [
+        593701,
+        497082
+      ],
+      "warnings": [
+        "DATES_UNKNOWN",
+        "THRESHOLDS_UNKNOWN",
+        "RESOLUTION_LANGUAGE_DIFFERS",
+        "CUTOFFS_DIFFER",
+        "SETTLEMENT_DEADLINE_HORIZONS_DIFFER",
+        "EMBEDDING_RETRIEVAL_ONLY_HUMAN_REVIEW_REQUIRED"
+      ]
+    }
+  }
+]

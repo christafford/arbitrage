@@ -280,7 +280,13 @@ extended. No vector mixing, equivalence approval, trading or M6 work is authoriz
 - [x] Verify exact existing namespace pin and retain 12,880 vectors; successful
   32-definition validation, 397 tests, dependency/unit checks, and bounded
   retrieval smoke. Start independent services with a new fixed 12-hour deadline.
-- [ ] Audit the completed run, refreshed coverage, retrieval progress and distinct
-  live review candidates; independently adjudicated quality remains open.
+- [x] Audit the completed run: two rounds per venue, 23,978 stored vectors,
+  100% US / 8.61% Kalshi eligible coverage, 51 completed retrieval reports and
+  20 freshly checked sports identities. Both services are disabled.
+- [ ] Complete the 117,488-definition Kalshi backlog/final catalogue traversal,
+  broaden entity/geography/range/event-type guards, and independently evaluate
+  false positives/negatives and incremental semantic yield.
+
+See [the final audit](M5I_RUN_20261030_RESULTS.md).
 
 See [run record and limits](M5I_RUN_20261030.md). No M6 or trading authorization.

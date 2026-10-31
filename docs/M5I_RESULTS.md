@@ -119,7 +119,8 @@ source links, retrieval reasons and settlement-review warnings. All remain
 UNVERIFIED. Expired services are disabled; no further run is active.
 
 
-The [October 30–31 continuation](M5I_RUN_20261030.md) is now running on the same
-separate namespace with v2 guards and profiled retrieval. Its 32-definition
-validation and service startup are not completion of backfill or broad quality
-acceptance. Sustained results remain pending.
+The [October 30–31 continuation audit](M5I_RUN_20261030_RESULTS.md) records
+23,978 stored vectors, 100% US / 8.61% Kalshi eligible coverage, and 117,488
+definitions still unindexed. Both services are stopped/disabled. The final queue
+has 54 sports identities and 46 keyword leads with no vector-supported finalist;
+broader proposition mismatches and independently adjudicated quality remain open.
