@@ -355,3 +355,19 @@ before liquidity/cosine while retaining all material warnings and event diversit
 `scripts/m5i_compatibility_evaluate.py` uses isolated archives, frozen v2 baselines
 and independent relevance/conflict label axes; unlisted pairs are unlabeled.
 [Measurements and scope](M5I_COMPATIBILITY_RESULTS.md).
+
+## M5L economic research diagnostics
+
+`backfill.py` owns a separate `economic-backfill/m5l-v1` SQLite plan bound to source,
+index and model identity. Three priority slots plus one rotating hash-order slot
+select current eligible definitions; vector commit/checksum validation gates cursor
+advancement. `semantic.index_batch` optionally accepts this scheduler without
+changing its default path or the production schema. Source reads remain read-only;
+the CLI worker locks the separate scheduler alongside the semantic sidecar.
+Activity, executable depth, event date, cutoff, administrative deadline and cash
+release retain separate meanings. Missing data cannot confer eligibility.
+
+The `scripts/m5l_*` harnesses use new archives for inference/evaluation and read-only
+production comparisons. Raw inference precedes decoding; method namespaces include
+the task instruction. Economic replay retains existing quote/approval gates and
+returns unknown net results on blocked commitments. See [M5L results](M5L_RESULTS.md).

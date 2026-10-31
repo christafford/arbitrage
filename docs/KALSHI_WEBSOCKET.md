@@ -178,3 +178,14 @@ Clock and source-time checks still discard derived depth and require recovery;
 rejected frames cannot be replayed as usable books. Other invalid frames retain
 `INVALID_STREAM_FRAME`. A schema mismatch cannot be repaired by substituting
 receipt time, `seq` or zero for a missing clock.
+
+### October 31 clocked observations
+
+M5L's two bounded sports captures observed the required market clock and validated
+snapshots/deltas under default `clocked`, including recovery after message timeouts.
+The [genuine public fixture](../tests/fixtures/m5l-public-live.json) and
+[capture evidence](evidence/M5L_ECONOMICS.json) preserve clocks, sequences, generations
+and failures. No compatibility deadline was extended. Neither case produced fresh
+cross-venue observations within both two-second skew gates, and stopped streams
+are not currently usable. [M5L findings](M5L_RESULTS.md) distinguish this bounded
+protocol validation from economic or sustained-run acceptance.

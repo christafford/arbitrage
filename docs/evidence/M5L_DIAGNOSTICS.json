@@ -1,0 +1,117 @@
+{
+  "host_telemetry": "INFERENCE_HOST_UNAVAILABLE_SSH_HOST_KEY_UNVERIFIED",
+  "http": [
+    {
+      "route": "health",
+      "status": 200,
+      "headers_seconds": 0.47324651503004134,
+      "http_seconds": 0.47346862498670816,
+      "bytes": 15,
+      "raw": 1,
+      "received_at": "2026-10-31T19:43:05.886299+00:00"
+    },
+    {
+      "route": "health",
+      "status": 200,
+      "headers_seconds": 0.3918939380091615,
+      "http_seconds": 0.39210523304063827,
+      "bytes": 15,
+      "raw": 2,
+      "received_at": "2026-10-31T19:43:06.538153+00:00"
+    },
+    {
+      "route": "health",
+      "status": 200,
+      "headers_seconds": 0.379992741975002,
+      "http_seconds": 0.3802101289620623,
+      "bytes": 15,
+      "raw": 3,
+      "received_at": "2026-10-31T19:43:07.179134+00:00"
+    },
+    {
+      "route": "health",
+      "status": 200,
+      "headers_seconds": 0.38482824101811275,
+      "http_seconds": 0.38502672099275514,
+      "bytes": 15,
+      "raw": 4,
+      "received_at": "2026-10-31T19:43:07.830188+00:00"
+    },
+    {
+      "route": "health",
+      "status": 200,
+      "headers_seconds": 0.38773683103499934,
+      "http_seconds": 0.38797271804651245,
+      "bytes": 15,
+      "raw": 5,
+      "received_at": "2026-10-31T19:43:08.477828+00:00"
+    },
+    {
+      "route": "health",
+      "status": 200,
+      "headers_seconds": 0.3520459429710172,
+      "http_seconds": 0.35225321899633855,
+      "bytes": 15,
+      "raw": 6,
+      "received_at": "2026-10-31T19:43:09.089734+00:00"
+    },
+    {
+      "route": "health",
+      "status": 200,
+      "headers_seconds": 0.324288324045483,
+      "http_seconds": 0.32450271100969985,
+      "bytes": 15,
+      "raw": 7,
+      "received_at": "2026-10-31T19:43:09.673878+00:00"
+    },
+    {
+      "route": "health",
+      "status": 200,
+      "headers_seconds": 0.3559086940367706,
+      "http_seconds": 0.3561793210101314,
+      "bytes": 15,
+      "raw": 8,
+      "received_at": "2026-10-31T19:43:10.290099+00:00"
+    },
+    {
+      "route": "health",
+      "status": 200,
+      "headers_seconds": 0.3483501459704712,
+      "http_seconds": 0.3486096619744785,
+      "bytes": 15,
+      "raw": 9,
+      "received_at": "2026-10-31T19:43:10.904729+00:00"
+    },
+    {
+      "route": "health",
+      "status": 200,
+      "headers_seconds": 0.3609452479868196,
+      "http_seconds": 0.3611753199947998,
+      "bytes": 15,
+      "raw": 10,
+      "received_at": "2026-10-31T19:43:11.519277+00:00"
+    },
+    {
+      "route": "props",
+      "status": 200,
+      "headers_seconds": 0.44348230597097427,
+      "http_seconds": 0.45730320998700336,
+      "bytes": 4411,
+      "raw": 11,
+      "received_at": "2026-10-31T19:43:12.236736+00:00"
+    },
+    {
+      "route": "metrics",
+      "status": 501,
+      "headers_seconds": 0.38601639500120655,
+      "http_seconds": 0.38626531895715743,
+      "bytes": 136,
+      "raw": 12,
+      "received_at": "2026-10-31T19:43:12.897345+00:00"
+    }
+  ],
+  "local_memory_before": "MemTotal:       16607536 kB\nMemFree:          239520 kB\nMemAvailable:   14257504 kB\nBuffers:          279776 kB\nCached:         13554864 kB\nSwapCached:         1280 kB\nActive:          1458016 kB\nInactive:       14022496 kB\nActive(anon):     774688 kB\nInactive(anon):  1079408 kB\nActive(file):     683328 kB\nInactive(file): 12943088 kB\nUnevictable:       12864 kB\nMlocked:              48 kB\nSwapTotal:       2097136 kB\nSwapFree:        1921392 kB\nZswap:                 0 kB\nZswapped:              0 kB\nDirty:              1456 kB\nWriteback:             0 kB\nAnonPages:       1658288 kB\nMapped:          1056864 kB\nShmem:            209136 kB\nKReclaimable:     514784 kB\nSlab:             680960 kB\nSReclaimable:     514784 kB\nSUnreclaim:       166176 kB\nKernelStack:       12976 kB\nPageTables:        38960 kB\nSecPageTables:       128 kB\nNFS_Unstable:          0 kB\nBounce:                0 kB\nWritebackTmp:          0 kB\nCommitLimit:    10400896 kB\nCommitted_AS:    9881920 kB\nVmallocTotal:   68447887360 kB\nVmallocUsed:       85824 kB\nVmallocChunk:          0 kB\nPercpu:             6016 kB\nCmaTotal:          65536 kB\nCmaFree:              16 kB\nBalloon:               0 kB\n",
+  "local_pressure": "UNAVAILABLE: /proc/pressure/memory absent",
+  "local_memory_after": "MemTotal:       16607536 kB\nMemFree:          237024 kB\nMemAvailable:   14255920 kB\nBuffers:          279776 kB\nCached:         13556384 kB\nSwapCached:         1280 kB\nActive:          1462944 kB\nInactive:       14023296 kB\nActive(anon):     779616 kB\nInactive(anon):  1079296 kB\nActive(file):     683328 kB\nInactive(file): 12944000 kB\nUnevictable:       12864 kB\nMlocked:              48 kB\nSwapTotal:       2097136 kB\nSwapFree:        1921392 kB\nZswap:                 0 kB\nZswapped:              0 kB\nDirty:              2112 kB\nWriteback:             0 kB\nAnonPages:       1661680 kB\nMapped:          1058624 kB\nShmem:            209792 kB\nKReclaimable:     514784 kB\nSlab:             680960 kB\nSReclaimable:     514784 kB\nSUnreclaim:       166176 kB\nKernelStack:       12976 kB\nPageTables:        38912 kB\nSecPageTables:       128 kB\nNFS_Unstable:          0 kB\nBounce:                0 kB\nWritebackTmp:          0 kB\nCommitLimit:    10400896 kB\nCommitted_AS:    9898048 kB\nVmallocTotal:   68447887360 kB\nVmallocUsed:       85888 kB\nVmallocChunk:          0 kB\nPercpu:             6016 kB\nCmaTotal:          65536 kB\nCmaFree:              16 kB\nBalloon:               0 kB\n",
+  "health_median_seconds": 0.37069272447843105
+}

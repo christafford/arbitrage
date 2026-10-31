@@ -1,0 +1,330 @@
+{
+  "nba-fees-kalshi": {
+    "analysis": {
+      "next_change": null,
+      "parameters": {
+        "kind": "quadratic_with_maker_fees",
+        "multiplier": "1"
+      },
+      "scope": {
+        "event_override": false,
+        "event_ticker": "KXNBAGAME-26OCT31ATLNOP",
+        "series_ticker": "KXNBAGAME"
+      }
+    },
+    "capture_id": 1,
+    "capture_sha256": "405a4c53f86324e3e96057f0e32ee7301b0359a4d13cfb58d4b90caf09570a68",
+    "draft": {
+      "account_fee_extras_checked": "",
+      "applicability_reviewed": false,
+      "balance_precision": "",
+      "capture_id": 1,
+      "capture_sha256": "405a4c53f86324e3e96057f0e32ee7301b0359a4d13cfb58d4b90caf09570a68",
+      "category_reviewed": "",
+      "documents": [
+        {
+          "path": "",
+          "retrieved_at": "",
+          "url": "https://kalshi.com/docs/kalshi-fee-schedule.pdf"
+        }
+      ],
+      "effective_from": "",
+      "effective_until": "2026-11-01T19:36:56.501610+00:00",
+      "expires_at": "2026-11-01T19:36:56.501610+00:00",
+      "hypothetical": false,
+      "instrument_scope": "",
+      "kind": "quadratic_with_maker_fees",
+      "multiplier": "1",
+      "operator": "",
+      "schedule_reviewed": "",
+      "scheduled_changes_checked": "",
+      "schema": "taker-fees/m4-v1",
+      "settlement_fee_per_contract": "",
+      "side": "NO",
+      "source_id": "KXNBAGAME-26OCT31ATLNOP-ATL",
+      "venue": "kalshi",
+      "version": ""
+    },
+    "expires_no_later_than": "2026-11-01T19:36:56.501610+00:00",
+    "schema": "live-fee-evidence/m5a-c-v1",
+    "sources": [
+      {
+        "local_path": "source-01.txt",
+        "retrieved_at": "2026-10-31T19:36:56.661332+00:00",
+        "sha256": "8ccde25f6a177f4cb3266d4515a3df963ea0793c5fdd301af7bf8b8913c90971",
+        "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT31ATLNOP-ATL"
+      },
+      {
+        "local_path": "source-02.txt",
+        "retrieved_at": "2026-10-31T19:36:56.906163+00:00",
+        "sha256": "18870e2067a04f537c45f6a695751e2684e467ade297a0fd2512ef1830c4b7ac",
+        "url": "https://external-api.kalshi.com/trade-api/v2/events/KXNBAGAME-26OCT31ATLNOP"
+      },
+      {
+        "local_path": "source-03.txt",
+        "retrieved_at": "2026-10-31T19:36:57.155821+00:00",
+        "sha256": "66683922d0bb6201d4ba6c9e1ee90e6f007ab65b6c6158c4fff3683a80824849",
+        "url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAGAME"
+      },
+      {
+        "local_path": "source-04.txt",
+        "retrieved_at": "2026-10-31T19:36:57.415339+00:00",
+        "sha256": "6780c8eb7edbb5e1ca3b15166f17cef054befacb2cc8f4bc479c54074a9a2c18",
+        "url": "https://external-api.kalshi.com/trade-api/v2/series/fee_changes?series_ticker=KXNBAGAME&show_historical=false"
+      },
+      {
+        "local_path": "source-05.txt",
+        "retrieved_at": "2026-10-31T19:36:57.654370+00:00",
+        "sha256": "4d755a11d76cd85bec7a4758a2d226815fd2a935a5563dbafae35ee9d373da45",
+        "url": "https://external-api.kalshi.com/trade-api/v2/events/fee_changes?event_ticker=KXNBAGAME-26OCT31ATLNOP&limit=1000"
+      },
+      {
+        "local_path": "source-06.txt",
+        "retrieved_at": "2026-10-31T19:36:58.012667+00:00",
+        "sha256": "1166e0fb430a488f18f7718c09d965606fd5b2937d1bfbfcdb96b86a7a2a262e",
+        "url": "https://docs.kalshi.com/api-reference/market/get-series.md"
+      },
+      {
+        "local_path": "source-07.txt",
+        "retrieved_at": "2026-10-31T19:36:58.183033+00:00",
+        "sha256": "706043bcb60bd26be7f989dcbff69bce5d41830980ec86e54eded91fede1d328",
+        "url": "https://docs.kalshi.com/getting_started/fee_rounding.md"
+      }
+    ],
+    "status": "NEEDS_OPERATOR_REVIEW",
+    "trading_authorized": false,
+    "unresolved": [
+      "schedule applicability/effective date and exceptions",
+      "exact category, single contract and instrument scope",
+      "account/FCM extras and balance precision",
+      "settlement fees"
+    ]
+  },
+  "nba-fees-us": {
+    "analysis": {
+      "next_change": null,
+      "parameters": {
+        "kind": "standard"
+      },
+      "scope": {
+        "category_review_required": true,
+        "fee_coefficient": "0.0695",
+        "market_id": "1509443",
+        "single_contract_only": true
+      }
+    },
+    "capture_id": 2,
+    "capture_sha256": "ffcbbed5f1904f8836739ca2ddb0b2598c457845a5be763dabd008089a1322b6",
+    "draft": {
+      "account_fee_extras_checked": "",
+      "applicability_reviewed": false,
+      "capture_id": 2,
+      "capture_sha256": "ffcbbed5f1904f8836739ca2ddb0b2598c457845a5be763dabd008089a1322b6",
+      "category_reviewed": "",
+      "documents": [],
+      "effective_from": "",
+      "effective_until": "2026-11-01T19:37:05.223993+00:00",
+      "expires_at": "2026-11-01T19:37:05.223993+00:00",
+      "hypothetical": false,
+      "instrument_scope": "",
+      "kind": "standard",
+      "operator": "",
+      "schedule_reviewed": "",
+      "scheduled_changes_checked": "",
+      "schema": "taker-fees/m4-v1",
+      "settlement_fee_per_contract": "",
+      "side": "YES",
+      "source_id": "aec-nba-atl-no-2026-10-31",
+      "venue": "polymarket_us",
+      "version": ""
+    },
+    "expires_no_later_than": "2026-11-01T19:37:05.223993+00:00",
+    "schema": "live-fee-evidence/m5a-c-v1",
+    "sources": [
+      {
+        "local_path": "source-01.txt",
+        "retrieved_at": "2026-10-31T19:37:05.374396+00:00",
+        "sha256": "80596578496a77667d657921ae0110734c0de4862443ae7f618a29c37738506a",
+        "url": "https://gateway.polymarket.us/v1/market/slug/aec-nba-atl-no-2026-10-31"
+      },
+      {
+        "local_path": "source-02.txt",
+        "retrieved_at": "2026-10-31T19:37:05.700520+00:00",
+        "sha256": "56a8a61b7a757795c5bd5cbf69f4a3595234e648451d304805bbfdb74be4b1df",
+        "url": "https://docs.polymarket.us/fees.md"
+      }
+    ],
+    "status": "NEEDS_OPERATOR_REVIEW",
+    "trading_authorized": false,
+    "unresolved": [
+      "schedule applicability/effective date and exceptions",
+      "exact category, single contract and instrument scope",
+      "account/FCM extras and balance precision",
+      "settlement fees"
+    ]
+  },
+  "nfl-fees-kalshi": {
+    "analysis": {
+      "next_change": null,
+      "parameters": {
+        "kind": "quadratic_with_maker_fees",
+        "multiplier": "1"
+      },
+      "scope": {
+        "event_override": false,
+        "event_ticker": "KXNFLGAME-26NOV01ARIDAL",
+        "series_ticker": "KXNFLGAME"
+      }
+    },
+    "capture_id": 1,
+    "capture_sha256": "f5589402c024ebdd8b2b39f348fabfdaf7f9f328f82f3424674ca5300beabf56",
+    "draft": {
+      "account_fee_extras_checked": "",
+      "applicability_reviewed": false,
+      "balance_precision": "",
+      "capture_id": 1,
+      "capture_sha256": "f5589402c024ebdd8b2b39f348fabfdaf7f9f328f82f3424674ca5300beabf56",
+      "category_reviewed": "",
+      "documents": [
+        {
+          "path": "",
+          "retrieved_at": "",
+          "url": "https://kalshi.com/docs/kalshi-fee-schedule.pdf"
+        }
+      ],
+      "effective_from": "",
+      "effective_until": "2026-11-01T19:37:05.993685+00:00",
+      "expires_at": "2026-11-01T19:37:05.993685+00:00",
+      "hypothetical": false,
+      "instrument_scope": "",
+      "kind": "quadratic_with_maker_fees",
+      "multiplier": "1",
+      "operator": "",
+      "schedule_reviewed": "",
+      "scheduled_changes_checked": "",
+      "schema": "taker-fees/m4-v1",
+      "settlement_fee_per_contract": "",
+      "side": "NO",
+      "source_id": "KXNFLGAME-26NOV01ARIDAL-ARI",
+      "venue": "kalshi",
+      "version": ""
+    },
+    "expires_no_later_than": "2026-11-01T19:37:05.993685+00:00",
+    "schema": "live-fee-evidence/m5a-c-v1",
+    "sources": [
+      {
+        "local_path": "source-01.txt",
+        "retrieved_at": "2026-10-31T19:37:06.138718+00:00",
+        "sha256": "5b5f8cd9edafcf8e982e44f3975571edbe16f8e85e8ac54016d0c64b488deef3",
+        "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26NOV01ARIDAL-ARI"
+      },
+      {
+        "local_path": "source-02.txt",
+        "retrieved_at": "2026-10-31T19:37:06.390957+00:00",
+        "sha256": "ce35afb32fb2d87fb5dd46165babd4b4fc9f45df07006a371f06da258835f33e",
+        "url": "https://external-api.kalshi.com/trade-api/v2/events/KXNFLGAME-26NOV01ARIDAL"
+      },
+      {
+        "local_path": "source-03.txt",
+        "retrieved_at": "2026-10-31T19:37:06.640188+00:00",
+        "sha256": "7b9cd0e6333dc37b9e5b6539c3f8f6fd40dd65bd5195adb94506fe36cee8c366",
+        "url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLGAME"
+      },
+      {
+        "local_path": "source-04.txt",
+        "retrieved_at": "2026-10-31T19:37:06.886082+00:00",
+        "sha256": "6780c8eb7edbb5e1ca3b15166f17cef054befacb2cc8f4bc479c54074a9a2c18",
+        "url": "https://external-api.kalshi.com/trade-api/v2/series/fee_changes?series_ticker=KXNFLGAME&show_historical=false"
+      },
+      {
+        "local_path": "source-05.txt",
+        "retrieved_at": "2026-10-31T19:37:07.157225+00:00",
+        "sha256": "4d755a11d76cd85bec7a4758a2d226815fd2a935a5563dbafae35ee9d373da45",
+        "url": "https://external-api.kalshi.com/trade-api/v2/events/fee_changes?event_ticker=KXNFLGAME-26NOV01ARIDAL&limit=1000"
+      },
+      {
+        "local_path": "source-06.txt",
+        "retrieved_at": "2026-10-31T19:37:07.398374+00:00",
+        "sha256": "1166e0fb430a488f18f7718c09d965606fd5b2937d1bfbfcdb96b86a7a2a262e",
+        "url": "https://docs.kalshi.com/api-reference/market/get-series.md"
+      },
+      {
+        "local_path": "source-07.txt",
+        "retrieved_at": "2026-10-31T19:37:07.659938+00:00",
+        "sha256": "706043bcb60bd26be7f989dcbff69bce5d41830980ec86e54eded91fede1d328",
+        "url": "https://docs.kalshi.com/getting_started/fee_rounding.md"
+      }
+    ],
+    "status": "NEEDS_OPERATOR_REVIEW",
+    "trading_authorized": false,
+    "unresolved": [
+      "schedule applicability/effective date and exceptions",
+      "exact category, single contract and instrument scope",
+      "account/FCM extras and balance precision",
+      "settlement fees"
+    ]
+  },
+  "nfl-fees-us": {
+    "analysis": {
+      "next_change": null,
+      "parameters": {
+        "kind": "standard"
+      },
+      "scope": {
+        "category_review_required": true,
+        "fee_coefficient": "0.0695",
+        "market_id": "1545099",
+        "single_contract_only": true
+      }
+    },
+    "capture_id": 2,
+    "capture_sha256": "7a3acd583a662cd0cf537e7e0c305ac7511b8eed9cb9ce798e16d67b86339b22",
+    "draft": {
+      "account_fee_extras_checked": "",
+      "applicability_reviewed": false,
+      "capture_id": 2,
+      "capture_sha256": "7a3acd583a662cd0cf537e7e0c305ac7511b8eed9cb9ce798e16d67b86339b22",
+      "category_reviewed": "",
+      "documents": [],
+      "effective_from": "",
+      "effective_until": "2026-11-01T19:37:32.163233+00:00",
+      "expires_at": "2026-11-01T19:37:32.163233+00:00",
+      "hypothetical": false,
+      "instrument_scope": "",
+      "kind": "standard",
+      "operator": "",
+      "schedule_reviewed": "",
+      "scheduled_changes_checked": "",
+      "schema": "taker-fees/m4-v1",
+      "settlement_fee_per_contract": "",
+      "side": "YES",
+      "source_id": "aec-nfl-ari-dal-2026-11-01",
+      "venue": "polymarket_us",
+      "version": ""
+    },
+    "expires_no_later_than": "2026-11-01T19:37:32.163233+00:00",
+    "schema": "live-fee-evidence/m5a-c-v1",
+    "sources": [
+      {
+        "local_path": "source-01.txt",
+        "retrieved_at": "2026-10-31T19:37:32.333079+00:00",
+        "sha256": "6eb05f099ab2b482c38648f808c3cad0e15f78c98dfa6fc73053937670299db9",
+        "url": "https://gateway.polymarket.us/v1/market/slug/aec-nfl-ari-dal-2026-11-01"
+      },
+      {
+        "local_path": "source-02.txt",
+        "retrieved_at": "2026-10-31T19:37:32.591440+00:00",
+        "sha256": "56a8a61b7a757795c5bd5cbf69f4a3595234e648451d304805bbfdb74be4b1df",
+        "url": "https://docs.polymarket.us/fees.md"
+      }
+    ],
+    "status": "NEEDS_OPERATOR_REVIEW",
+    "trading_authorized": false,
+    "unresolved": [
+      "schedule applicability/effective date and exceptions",
+      "exact category, single contract and instrument scope",
+      "account/FCM extras and balance precision",
+      "settlement fees"
+    ]
+  }
+}

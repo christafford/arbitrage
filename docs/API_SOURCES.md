@@ -540,3 +540,29 @@ existing consumed fields and upstream versions (3.35.0 / 1.0.0) remain unchanged
 uses existing public assertion/title/rules strings; no new venue field is inferred.
 The 60-definition genuine fixture preserves original parent response and excerpt
 hashes, adapters and source receipts. [Evaluation limits](M5I_COMPATIBILITY_RESULTS.md).
+
+## M5L current checks — October 31, 2026 UTC
+
+[Document receipts/hashes](evidence/M5L_API_CHECKS.json) recapture official Kalshi
+market/book/clocked-stream schemas and US market/book/fees/collateral documents,
+plus upstream llama.cpp server and Qwen model-card documentation. Existing venue
+adapter contracts remain unchanged (Kalshi upstream 3.35.0, US 1.0.0).
+New scheduler activity consumption uses documented Kalshi `volume_24h_fp` (string,
+contracts) and US `volume24hr` (nullable number, shares); missing stays UNKNOWN,
+invalid/nonfinite/negative shapes are INVALID, never defaulted to activity.
+Reported volume does not establish executable liquidity. No new trading API exists.
+
+The [genuine fixture](../tests/fixtures/m5l-public-live.json) retains exact selected
+NBA/NFL public detail/book responses and privacy-screened clocked WS snapshot/delta
+frames, schema, retrieval time and body/wire hashes. WS clocks were observed live;
+no expired compatibility mode was renewed. [Settlement-source receipts](evidence/M5L_SETTLEMENT_SOURCES.json)
+cover the downloaded contract terms, US sports FAQ and Rulebook. The current
+Kalshi fee PDF was read via the web tool after a direct HTTP 429; no new full-PDF
+file hash is claimed. Four [fee capture packets](evidence/M5L_FEE_REVIEWS.json)
+remain unapproved. Raw source data remain local research evidence.
+
+Benchmark namespaces bind actual probe identity and text instruction. HTTP timing
+is local instrumentation, not a claimed llama.cpp GPU field. `/props` and failed
+`/metrics` responses remain archived under `llama-runtime-diagnostic/m5l-v1`.
+The 16 MiB batch-64 diagnostic is isolated; production's 4 MiB guard is unchanged.
+[M5L limitations and measurements](M5L_RESULTS.md).

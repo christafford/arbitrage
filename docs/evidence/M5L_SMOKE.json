@@ -1,0 +1,160 @@
+[
+  {
+    "command": [
+      "/home/chris/code/arbitrage/.venv/bin/python",
+      "scripts/m5l_benchmark.py",
+      "--help"
+    ],
+    "at": "2026-10-31T19:49:22.797662+00:00",
+    "exit_code": 0,
+    "stdout": "usage: m5l_benchmark.py [-h] --directory DIRECTORY --url URL\n                        [--repeats REPEATS]\n\nBounded genuine-text HTTP and persistent-index benchmark in NEW archives only.\n\noptions:\n  -h, --help            show this help message and exit\n  --directory DIRECTORY\n  --url URL\n  --repeats REPEATS\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "/home/chris/code/arbitrage/.venv/bin/python",
+      "scripts/m5l_backfill.py",
+      "--help"
+    ],
+    "at": "2026-10-31T19:49:22.952551+00:00",
+    "exit_code": 0,
+    "stdout": "usage: m5l_backfill.py [-h] --db DB --index-db INDEX_DB\n                       --scheduler-db SCHEDULER_DB --output OUTPUT [--at AT]\n\nBuild/inspect an isolated economic-priority backfill plan; no inference or\norders.\n\noptions:\n  -h, --help            show this help message and exit\n  --db DB\n  --index-db INDEX_DB\n  --scheduler-db SCHEDULER_DB\n  --output OUTPUT\n  --at AT               explicit historical replay only\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "/home/chris/code/arbitrage/.venv/bin/python",
+      "scripts/m5l_evaluate.py",
+      "--help"
+    ],
+    "at": "2026-10-31T19:49:23.088283+00:00",
+    "exit_code": 0,
+    "stdout": "usage: m5l_evaluate.py [-h] --benchmark BENCHMARK --directory DIRECTORY\n                       [--at AT]\n\nSame-corpus deterministic/actual-vector ablation; independent labels stay\npending.\n\noptions:\n  -h, --help            show this help message and exit\n  --benchmark BENCHMARK\n  --directory DIRECTORY\n  --at AT               explicit historical replay clock; never renews\n                        receipts\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "/home/chris/code/arbitrage/.venv/bin/python",
+      "scripts/m5l_economics.py",
+      "--help"
+    ],
+    "at": "2026-10-31T19:49:23.173492+00:00",
+    "exit_code": 0,
+    "stdout": "usage: m5l_economics.py [-h] --output OUTPUT --fixture FIXTURE\n                        directories [directories ...]\n\nSource-backed economic case file; failed gates yield unknown returns, never\nzero.\n\npositional arguments:\n  directories\n\noptions:\n  -h, --help         show this help message and exit\n  --output OUTPUT\n  --fixture FIXTURE\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "/home/chris/code/arbitrage/.venv/bin/python",
+      "scripts/m5l_production_compare.py",
+      "--help"
+    ],
+    "at": "2026-10-31T19:49:23.313437+00:00",
+    "exit_code": 0,
+    "stdout": "usage: m5l_production_compare.py [-h] --db DB --index-db INDEX_DB\n                                 --output OUTPUT [--at AT]\n\nRead-only identical-window production retrieval ablation and review sample.\n\noptions:\n  -h, --help           show this help message and exit\n  --db DB\n  --index-db INDEX_DB\n  --output OUTPUT\n  --at AT              explicit historical replay clock\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "/home/chris/code/arbitrage/.venv/bin/predarb",
+      "discovery",
+      "index-work",
+      "--help"
+    ],
+    "at": "2026-10-31T19:49:23.477495+00:00",
+    "exit_code": 0,
+    "stdout": "usage: predarb discovery index-work [-h] [--db DB] [--index-db INDEX_DB]\n                                    [--min-free-mb MIN_FREE_MB]\n                                    [--scheduler-db SCHEDULER_DB]\n                                    [--kalshi-budget KALSHI_BUDGET]\n                                    [--us-budget US_BUDGET]\n                                    [--seconds SECONDS]\n                                    [--texts-per-second TEXTS_PER_SECOND]\n                                    [--expected-identity EXPECTED_IDENTITY]\n\noptions:\n  -h, --help            show this help message and exit\n  --db DB\n  --index-db INDEX_DB   default: source path plus .semantic.sqlite3\n  --min-free-mb MIN_FREE_MB\n  --scheduler-db SCHEDULER_DB\n                        optional M5L economic-priority plan, prepared\n                        separately\n  --kalshi-budget KALSHI_BUDGET\n  --us-budget US_BUDGET\n  --seconds SECONDS\n  --texts-per-second TEXTS_PER_SECOND\n  --expected-identity EXPECTED_IDENTITY\n                        require this exact previously validated model\n                        fingerprint\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "/home/chris/code/arbitrage/.venv/bin/predarb",
+      "demo",
+      "--db",
+      "/home/chris/code/arbitrage/data/m5l/smoke/demo.sqlite3"
+    ],
+    "at": "2026-10-31T19:49:23.727888+00:00",
+    "exit_code": 0,
+    "stdout": "HYPOTHETICAL EXAMPLE ONLY \u2014 not a trade signal or verified exchange quotes\npairs=400 required_capital=$391.000 modeled_profit=$9.000 ROI=2.302%\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "/home/chris/code/arbitrage/.venv/bin/predarb",
+      "report",
+      "--db",
+      "/home/chris/code/arbitrage/data/m5l/smoke/demo.sqlite3"
+    ],
+    "at": "2026-10-31T19:49:23.891387+00:00",
+    "exit_code": 0,
+    "stdout": "Read-only archive counts: {}\nCollection runs (id, venue, status, pages, records, unique, duplicates): []\nBook captures (freshness AT CAPTURE, liquidity, count): []\nAll live catalogue entries and books are UNVERIFIED; no actionable signals\nNormalized book assessments (data usable AT ASSESSMENT, count): []\nPair decisions (hypothetical, status, count; no trading authority): []\nHypothetical evaluations: 1 (sum of *example modeled* profits, NOT realized P&L: $9.00)\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "/home/chris/code/arbitrage/.venv/bin/python",
+      "scripts/m5l_backfill.py",
+      "--db",
+      "data/m5l/evaluation-validated/source.sqlite3",
+      "--index-db",
+      "data/m5l/evaluation-validated/deterministic.sqlite3",
+      "--scheduler-db",
+      "/home/chris/code/arbitrage/data/m5l/smoke/scheduler.sqlite3",
+      "--output",
+      "/home/chris/code/arbitrage/data/m5l/smoke/plan.json",
+      "--at",
+      "2026-10-31T19:41:22.542350+00:00"
+    ],
+    "at": "2026-10-31T19:49:24.095013+00:00",
+    "exit_code": 0,
+    "stdout": "{\"backlog\":60,\"current_eligible\":60,\"sidecar_eligible\":60}\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "/home/chris/code/arbitrage/.venv/bin/python",
+      "scripts/m5l_evaluate.py",
+      "--benchmark",
+      "data/m5l/benchmark",
+      "--directory",
+      "/home/chris/code/arbitrage/data/m5l/smoke/quality-replay",
+      "--at",
+      "2026-10-31T19:41:22.542350+00:00"
+    ],
+    "at": "2026-10-31T19:49:36.251741+00:00",
+    "exit_code": 0,
+    "stdout": "{\"deterministic\":{\"new_events\":null,\"raw\":{\"false_positive\":7,\"labeled\":25,\"precision_labeled\":0.72,\"returned\":27,\"true_positive\":18,\"unlabeled\":2},\"recall\":0.9473684210526315},\"existing\":{\"new_events\":[],\"raw\":{\"false_positive\":8,\"labeled\":26,\"precision_labeled\":0.6923076923076923,\"returned\":27,\"true_positive\":18,\"unlabeled\":1},\"recall\":0.9473684210526315},\"instruction\":{\"new_events\":[],\"raw\":{\"false_positive\":7,\"labeled\":25,\"precision_labeled\":0.72,\"returned\":27,\"true_positive\":18,\"unlabeled\":2},\"recall\":0.9473684210526315}}\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "/home/chris/code/arbitrage/.venv/bin/python",
+      "scripts/m5l_economics.py",
+      "data/m5l/nba-capture",
+      "data/m5l/nfl-capture",
+      "--output",
+      "/home/chris/code/arbitrage/data/m5l/smoke/economics.json",
+      "--fixture",
+      "/home/chris/code/arbitrage/data/m5l/smoke/fixture.json"
+    ],
+    "at": "2026-10-31T19:49:37.072223+00:00",
+    "exit_code": 0,
+    "stdout": "[{\"case\":{\"backup_seconds\":21600,\"kalshi_ticker\":\"KXNBAGAME-26OCT31ATLNOP-ATL\",\"max_storage_mb\":4096,\"min_free_mb\":1024,\"poll_seconds\":5,\"protocol\":\"clocked\",\"seconds\":45,\"segment_seconds\":45,\"us_slug\":\"aec-nba-atl-no-2026-10-31\"},\"closest\":{\"at\":\"2026-10-31T19:35:27.933756+00:00\",\"both_usable\":true,\"fresh_comparable\":false,\"observations\":{\"kalshi\":41,\"polymarket_us\":43},\"receipt_skew_seconds\":2.166873,\"rejections\":{\"kalshi\":[],\"polymarket_us\":[]},\"source_skew_seconds\":4.530251},\"comparable\":0},{\"case\":{\"backup_seconds\":21600,\"kalshi_ticker\":\"KXNFLGAME-26NOV01ARIDAL-ARI\",\"max_storage_mb\":4096,\"min_free_mb\":1024,\"poll_seconds\":5,\"protocol\":\"clocked\",\"seconds\":45,\"segment_seconds\":45,\"us_slug\":\"aec-nfl-ari-dal-2026-11-01\"},\"closest\":{\"at\":\"2026-10-31T19:36:18.586545+00:00\",\"both_usable\":true,\"fresh_comparable\":false,\"observations\":{\"kalshi\":8,\"polymarket_us\":5},\"receipt_skew_seconds\":1.342027,\"rejections\":{\"kalshi\":[],\"polymarket_us\":[]},\"source_skew_seconds\":37.344561},\"comparable\":0}]\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "/home/chris/code/arbitrage/.venv/bin/predarb",
+      "research",
+      "readiness",
+      "--db",
+      "data/research.sqlite3",
+      "--format",
+      "json"
+    ],
+    "at": "2026-10-31T19:49:37.234351+00:00",
+    "exit_code": 2,
+    "stdout": "{\"checks\":[{\"code\":\"DATABASE_SCHEMA\",\"detail\":{\"actual\":9,\"supported\":[7,8,9]},\"expires_at\":null,\"next_action\":\"\",\"status\":\"PASS\"},{\"code\":\"REGISTRY_SCOPE\",\"detail\":{\"hypothetical_pairs\":0,\"pair_limit\":50,\"total_pairs\":1,\"truncated\":false},\"expires_at\":null,\"next_action\":\"\",\"status\":\"PASS\"},{\"code\":\"LIVE_ARCHIVE\",\"detail\":{\"hypothetical_pairs\":0,\"hypothetical_sessions\":0},\"expires_at\":null,\"next_action\":\"\",\"status\":\"PASS\"},{\"code\":\"CURRENT_PAIR_DATA\",\"detail\":{\"ready_pairs\":0},\"expires_at\":null,\"next_action\":\"Resolve the per-pair approval, mechanics, fee and book blockers.\",\"status\":\"BLOCKED\"},{\"code\":\"SESSION\",\"detail\":\"No session selected.\",\"expires_at\":null,\"next_action\":\"Create or select a LIVE_READ_ONLY session and pass --session-id.\",\"status\":\"BLOCKED\"},{\"code\":\"REQUESTED_PROTOCOL_HORIZON\",\"detail\":{\"compatible_ready_pairs\":0},\"expires_at\":null,\"next_action\":\"Resolve current data blockers and any protocol cutoff within the requested horizon.\",\"status\":\"BLOCKED\"}],\"database_schema\":9,\"deployment_verified\":false,\"discovery\":{\"latest_ranked_at\":\"2026-10-28T00:31:09.311027+00:00\",\"queue_size\":50,\"required_for_approved_pair_readiness\":false,\"status\":\"STALE_OR_FUTURE\"},\"evaluated_at\":\"2026-10-31T19:49:37.197097+00:00\",\"fees_or_profit_evaluated\":false,\"latest_collections\":[{\"finished_at\":\"2026-10-31T07:19:35.598628+00:00\",\"status\":\"COMPLETE\",\"venue\":\"kalshi\"},{\"finished_at\":\"2026-10-31T07:08:32.627683+00:00\",\"status\":\"COMPLETE\",\"venue\":\"polymarket_us\"}],\"multiweek_acceptance\":false,\"next_actions\":[\"Resolve the per-pair approval, mechanics, fee and book blockers.\",\"Create or select a LIVE_READ_ONLY session and pass --session-id.\",\"Resolve current data blockers and any protocol cutoff within the requested horizon.\",\"Refresh rule evidence and complete a new human pair review.\",\"Complete source-bound mechanics and cash-availability review.\",\"Select supported, reviewed cash-funded long legs.\",\"Capture current fee sources and obtain explicit operator applicability approval.\",\"Capture fresh timestamped books and metadata; keep the Kalshi stream connected.\",\"Resolve both venue book checks.\"],\"pairs\":[{\"books\":[],\"checks\":[{\"code\":\"REAL_PAIR\",\"detail\":\"Real registry identities.\",\"expires_at\":null,\"next_action\":\"\",\"status\":\"PASS\"},{\"code\":\"PAIR_APPROVAL\",\"detail\":\"Kalshi event and series rule evidence required; collect selected market details\",\"expires_at\":null,\"next_action\":\"Refresh rule evidence and complete a new human pair review.\",\"status\":\"BLOCKED\"},{\"code\":\"MECHANICS_REVIEW\",\"detail\":{\"reasons\":[\"MECHANICS_REVIEW_REQUIRED\"],\"status\":\"UNVERIFIED\",\"trading_authorized\":false},\"expires_at\":null,\"next_action\":\"Complete source-bound mechanics and cash-availability review.\",\"status\":\"BLOCKED\"},{\"code\":\"kalshi.POSITION_ROUTE\",\"detail\":\"selected side is missing; a human pair review is required\",\"expires_at\":null,\"next_action\":\"Select supported, reviewed cash-funded long legs.\",\"status\":\"BLOCKED\"},{\"code\":\"kalshi.FEES\",\"detail\":\"fee side cannot be inferred before pair review\",\"expires_at\":null,\"next_action\":\"Capture current fee sources and obtain explicit operator applicability approval.\",\"status\":\"BLOCKED\"},{\"code\":\"kalshi.BOOK\",\"detail\":\"MISSING_BOOK\",\"expires_at\":null,\"next_action\":\"Capture fresh timestamped books and metadata; keep the Kalshi stream connected.\",\"status\":\"BLOCKED\"},{\"code\":\"polymarket_us.POSITION_ROUTE\",\"detail\":\"selected side is missing; a human pair review is required\",\"expires_at\":null,\"next_action\":\"Select supported, reviewed cash-funded long legs.\",\"status\":\"BLOCKED\"},{\"code\":\"polymarket_us.FEES\",\"detail\":\"fee side cannot be inferred before pair review\",\"expires_at\":null,\"next_action\":\"Capture current fee sources and obtain explicit operator applicability approval.\",\"status\":\"BLOCKED\"},{\"code\":\"polymarket_us.BOOK\",\"detail\":\"MISSING_BOOK\",\"expires_at\":null,\"next_action\":\"Capture fresh timestamped books and metadata; keep the Kalshi stream connected.\",\"status\":\"BLOCKED\"},{\"code\":\"BOOK_COMPARABILITY\",\"detail\":\"Both usable books are required.\",\"expires_at\":null,\"next_action\":\"Resolve both venue book checks.\",\"status\":\"BLOCKED\"}],\"effective_status\":\"REJECTED\",\"fees\":[],\"horizon_supported\":false,\"hypothetical\":false,\"kalshi_id\":\"KXFEDCUT-31DEC28-31DEC26\",\"pair_id\":1,\"polymarket_us_id\":\"cbpac-usfed-2026-cut\",\"ready_now\":false,\"stored_status\":\"REJECTED\",\"valid_until\":null}],\"prerequisites_pass\":false,\"protocol_constraints\":{\"action\":\"Revalidate clocked mode live before the sequence-v1 cutoff; never extend compatibility automatically.\",\"sequence_v1_valid_until\":\"2026-10-29T00:00:00+00:00\"},\"protocol_supports_requested_horizon\":false,\"ready_now\":false,\"ready_pair_count\":0,\"registry\":{\"hypothetical_pairs\":0,\"pair_limit\":50,\"total_pairs\":1,\"truncated\":false},\"renewal_required\":\"Books need continuous refresh; pair, fee and mechanics evidence expire within 24 hours. Readiness is a snapshot, not a run guarantee.\",\"requested_horizon_days\":21,\"requested_until\":\"2026-11-21T19:49:37.197097+00:00\",\"schema\":\"research-readiness/m5a-e-v1\",\"status\":\"BLOCKED\",\"thirty_day_acceptance\":false,\"trading_authorized\":false,\"valid_until\":null,\"verification\":\"UNVERIFIED\"}\n",
+    "stderr": ""
+  }
+]

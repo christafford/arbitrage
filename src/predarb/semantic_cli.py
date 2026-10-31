@@ -18,6 +18,7 @@ def add_parsers(actions):
         p.add_argument('--min-free-mb',type=int,default=1024)
         if name=='index-sync':p.add_argument('--budget',type=int,default=10000)
         if name=='index-work':
+            p.add_argument('--scheduler-db',help='optional M5L economic-priority plan, prepared separately')
             p.add_argument('--kalshi-budget',type=int,default=256)
             p.add_argument('--us-budget',type=int,default=256)
             p.add_argument('--seconds',type=int,default=120)
@@ -61,9 +62,20 @@ def run(args):
             if client is None:raise ValueError('PREDARB_EMBEDDING_URL is required for index-work')
             if not client.base.split('/')[2].endswith('.ts.net'):
                 raise ValueError('M5I worker requires the private Tailscale HTTPS endpoint')
-            report=semantic.index_batch(index,client,budgets={'kalshi':args.kalshi_budget,'polymarket_us':args.us_budget},
-                                        seconds=args.seconds,texts_per_second=args.texts_per_second,
-                                        expected_identity=args.expected_identity)
+            with ExitStack() as scheduled:
+                scheduler=None
+                if args.scheduler_db:
+                    import sqlite3
+                    from .backfill import Scheduler
+                    schedule_path=Path(args.scheduler_db).resolve()
+                    if schedule_path in (Path(path).resolve(),Path(args.db).resolve()) or not schedule_path.is_file():
+                        raise ValueError('existing separate M5L scheduler required')
+                    scheduled.enter_context(writer_lock(str(schedule_path)))
+                    schedule=scheduled.enter_context(closing(sqlite3.connect(schedule_path)))
+                    scheduler=Scheduler(source,index,schedule)
+                report=semantic.index_batch(index,client,budgets={'kalshi':args.kalshi_budget,'polymarket_us':args.us_budget},
+                                            seconds=args.seconds,texts_per_second=args.texts_per_second,
+                                            expected_identity=args.expected_identity,scheduler=scheduler)
         elif args.discovery_cmd=='index-retrieve':
             report=semantic.retrieve(source,index,limit=args.limit,query_budget=args.query_budget,
                                      candidate_cap=args.candidate_cap,semantic=not args.deterministic_only,persist=writable)

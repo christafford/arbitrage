@@ -1,0 +1,252 @@
+{
+  "at": "2026-10-31T19:44:27.366611+00:00",
+  "preservation": {
+    "data/research.sqlite3": {
+      "before": {
+        "size": 26256674816,
+        "mtime_ns": 1793431175523168394
+      },
+      "after": {
+        "size": 26256674816,
+        "mtime_ns": 1793431175523168394
+      },
+      "unchanged": true
+    },
+    "data/m5i/index.sqlite3": {
+      "before": {
+        "size": 10613997568,
+        "mtime_ns": 1793315697547570113
+      },
+      "after": {
+        "size": 10613997568,
+        "mtime_ns": 1793315697547570113
+      },
+      "unchanged": true
+    },
+    "data/m5i/qwen-8f1b.semantic.sqlite3": {
+      "before": {
+        "size": 9470234624,
+        "mtime_ns": 1793448397584204096
+      },
+      "after": {
+        "size": 9470234624,
+        "mtime_ns": 1793448397584204096
+      },
+      "unchanged": true
+    },
+    "data/m5i/run-20261030-resume/config.json": {
+      "before": {
+        "size": 899,
+        "mtime_ns": 1793405199210097786,
+        "sha256": "b3b52631232bb2ea644369768bac9c5f382c2020de90190b1cd76bd809939c06"
+      },
+      "after": {
+        "size": 899,
+        "mtime_ns": 1793405199210097786,
+        "sha256": "b3b52631232bb2ea644369768bac9c5f382c2020de90190b1cd76bd809939c06"
+      },
+      "unchanged": true
+    },
+    "data/m5i/run-20261028/config.json": {
+      "before": {
+        "size": 473,
+        "mtime_ns": 1793202217207118775,
+        "sha256": "1b6190ade6e125d52f4a56576df54fb762bf297e057e04ccfd91cb2787c8d716"
+      },
+      "after": {
+        "size": 473,
+        "mtime_ns": 1793202217207118775,
+        "sha256": "1b6190ade6e125d52f4a56576df54fb762bf297e057e04ccfd91cb2787c8d716"
+      },
+      "unchanged": true
+    },
+    "data/m5i/run-20261029-newnamespace/config.json": {
+      "before": {
+        "size": 773,
+        "mtime_ns": 1793316039979883127,
+        "sha256": "0c42a493e4dfd75f81dc1ed7786bdcce631bc61577fe3f64f24270567c4f9687"
+      },
+      "after": {
+        "size": 773,
+        "mtime_ns": 1793316039979883127,
+        "sha256": "0c42a493e4dfd75f81dc1ed7786bdcce631bc61577fe3f64f24270567c4f9687"
+      },
+      "unchanged": true
+    },
+    "data/m5i/run-20261030-resume/collection-status.json": {
+      "before": {
+        "size": 174,
+        "mtime_ns": 1793448399210418832,
+        "sha256": "4c85463ef487a4ee03a8c0df29ed24107b2e5ecfd10c3492e7a20391d83f4b29"
+      },
+      "after": {
+        "size": 174,
+        "mtime_ns": 1793448399210418832,
+        "sha256": "4c85463ef487a4ee03a8c0df29ed24107b2e5ecfd10c3492e7a20391d83f4b29"
+      },
+      "unchanged": true
+    },
+    "data/m5i/run-20261030-resume/semantic-status.json": {
+      "before": {
+        "size": 172,
+        "mtime_ns": 1793448429213873771,
+        "sha256": "164c88ae59cffabe54b9ed8c711f4c2032cb4a888b47eebc807cb8b649712101"
+      },
+      "after": {
+        "size": 172,
+        "mtime_ns": 1793448429213873771,
+        "sha256": "164c88ae59cffabe54b9ed8c711f4c2032cb4a888b47eebc807cb8b649712101"
+      },
+      "unchanged": true
+    },
+    "data/m5i/run-20261028/collection-status.json": {
+      "before": {
+        "size": 174,
+        "mtime_ns": 1793280704780145885,
+        "sha256": "b75b304237b7a49885b34af537ba41b89c4878e4c932d9f3bcc1ddf146fd4553"
+      },
+      "after": {
+        "size": 174,
+        "mtime_ns": 1793280704780145885,
+        "sha256": "b75b304237b7a49885b34af537ba41b89c4878e4c932d9f3bcc1ddf146fd4553"
+      },
+      "unchanged": true
+    },
+    "data/m5i/run-20261028/semantic-status.json": {
+      "before": {
+        "size": 172,
+        "mtime_ns": 1793280704782067747,
+        "sha256": "fff183f89b22866e85888b46683a071550e78bff7ba7d728c43b190d939b20d3"
+      },
+      "after": {
+        "size": 172,
+        "mtime_ns": 1793280704782067747,
+        "sha256": "fff183f89b22866e85888b46683a071550e78bff7ba7d728c43b190d939b20d3"
+      },
+      "unchanged": true
+    },
+    "data/m5i/run-20261029-newnamespace/collection-status.json": {
+      "before": {
+        "size": 174,
+        "mtime_ns": 1793359239980202509,
+        "sha256": "90a2e2e476c188d021360444a3ad80080ffc87970cc1095933bf6b1d8c26222a"
+      },
+      "after": {
+        "size": 174,
+        "mtime_ns": 1793359239980202509,
+        "sha256": "90a2e2e476c188d021360444a3ad80080ffc87970cc1095933bf6b1d8c26222a"
+      },
+      "unchanged": true
+    },
+    "data/m5i/run-20261029-newnamespace/semantic-status.json": {
+      "before": {
+        "size": 172,
+        "mtime_ns": 1793359240245560679,
+        "sha256": "ae07fe7ccfc74e1f2314b8c559c32fccf49816345aa22a78e7f4da37ec971e7f"
+      },
+      "after": {
+        "size": 172,
+        "mtime_ns": 1793359240245560679,
+        "sha256": "ae07fe7ccfc74e1f2314b8c559c32fccf49816345aa22a78e7f4da37ec971e7f"
+      },
+      "unchanged": true
+    }
+  },
+  "all_preserved": true,
+  "service_units": "UNIT FILE                                            STATE    PRESET\npredarb-m5i-collection-20261028.service              disabled enabled\npredarb-m5i-collection-20261029-newnamespace.service disabled enabled\npredarb-m5i-collection-20261030-resume.service       disabled enabled\npredarb-m5i-semantic-20261028.service                disabled enabled\npredarb-m5i-semantic-20261029-newnamespace.service   disabled enabled\npredarb-m5i-semantic-20261030-resume.service         disabled enabled\n\n6 unit files listed.\n",
+  "artifacts": {
+    "docs/evidence/M5L_API_CHECKS.json": "159f48632081abb2ce505b14360c6fe3cbea208b6767598b2735b31a0774065b",
+    "docs/evidence/M5L_SETTLEMENT_SOURCES.json": "369e0671f7951dc42f47f0db56cf0d1978b49234f477728ecfc91aac5aaed2a8",
+    "docs/evidence/M5L_BENCHMARK.json": "4e9156eddd70025c0786c027db7bfc58eba445850458e60a9ed4d1c2d7023a1a",
+    "docs/evidence/M5L_LARGE_BATCH_DIAGNOSTIC.json": "985be0524f5017426e1aca5a16b161d671d130c03c1f602f4fab4cbdd72b4774",
+    "docs/evidence/M5L_DIAGNOSTICS.json": "8d039b134fc2a388e6e4b80aab796e2dcf29a10a95f48c4feb2675e4a6e58427",
+    "docs/evidence/M5L_BACKFILL.json": "e2ffa0658d749defcdf894a914ce6e77dc4a66dbc4f18d2b4c09193f55c24510",
+    "docs/evidence/M5L_ECONOMICS.json": "b5139f1c67d65d1d4ff1d679b1612e0c408ae515e1b1999cc3492c2a6e173a4c",
+    "docs/evidence/M5L_EVALUATION.json": "29ec70e74b4d239f5c824dbb79a5deb8304c1cc359fb1068363c57063c268403",
+    "docs/evidence/M5L_REVIEW_PACKET.json": "776d6b511f9b559d697c3c8d5e6b6cf95202604dda9c41c525a984a91f6a7159",
+    "docs/evidence/M5L_PRODUCTION_COMPARE.json": "69c3d851105c2a06f995001fdec5b6d6972e3b90fa487105d74a3b4b2456dcb9",
+    "docs/evidence/M5L_READINESS.json": "2c919755f2e210fa3889da5e58cc29be69a0405d9cca6eb28f865adbd3b6d0b9"
+  },
+  "production_index_write": false,
+  "approvals_renewed": false,
+  "trading_authorized": false,
+  "final_at": "2026-10-31T19:50:53.309746+00:00",
+  "index_counts": {
+    "source_heads": 521322,
+    "index_metadata": 521322,
+    "stored_vectors": 23978,
+    "identity": "8f1b745674ea82993cc5211498d606a86627ecedb6776637daeaf66e42611204"
+  },
+  "scheduler_selection_smoke": {
+    "historical_replay_at": "2026-10-31T19:35:47.073722+00:00",
+    "seconds": 1.3969872099696659,
+    "count": 16,
+    "source_ids": [
+      "KXNBAGAME-26NOV01BKNIND-IND",
+      "KXNBAGAME-26OCT31OKCHOU-OKC",
+      "KXNBAGAME-26OCT31CLEMIL-CLE",
+      "KXBALLONDOR-27-JBEL",
+      "KXNFLGAME-26NOV01CLEPIT-PIT",
+      "KXNBAGAME-26OCT31SACMEM-SAC",
+      "KXNFLGAME-26NOV01PHIWAS-WAS",
+      "KXNBAONE3PT-27-RGOBERT27",
+      "KXNFLGAME-26NOV01NEMIA-NE",
+      "KXNBAGAME-26OCT31PHICHA-CHA",
+      "KXNFLGAME-26NOV01KCDEN-DEN",
+      "KXNHLLINDSAY-27-CCAUFIELD13",
+      "KXNBAGAME-26NOV01TORLAL-TOR",
+      "KXNFLGAME-26NOV01NEMIA-MIA",
+      "KXNFLGAME-26NOV01ATLTB-ATL",
+      "KXNBANEXTTEAM-27KPORTER7-DET"
+    ],
+    "fair_slots": [
+      false,
+      false,
+      false,
+      true,
+      false,
+      false,
+      false,
+      true,
+      false,
+      false,
+      false,
+      true,
+      false,
+      false,
+      false,
+      true
+    ],
+    "inference_requests": 0,
+    "acknowledged": false
+  },
+  "full_test_command": "python -m unittest discover -s tests -v (repository .venv)",
+  "test_tail": [
+    "",
+    "----------------------------------------------------------------------",
+    "Ran 426 tests in 19.880s",
+    "",
+    "OK"
+  ],
+  "dependency_check": "No broken requirements found.",
+  "smoke_commands": "docs/evidence/M5L_SMOKE.json (11 exit 0, readiness exit 2/BLOCKED)",
+  "code_sha256": {
+    "scripts/m5l_production_compare.py": "4efe47a0b7ae78747f3d0ab61306d7ab9eed542a3e82e64ad272d324dd83bdb7",
+    "scripts/m5l_benchmark.py": "50f6884483aafdd8da04ed8800c3b578d3c266b33b4eb301a1621dc14f9e0606",
+    "scripts/m5l_economics.py": "fa829a15275d455c0a920cf39fab8d1dafcb145700535e5f3c8bc3bb2d3b5ea2",
+    "scripts/m5l_evaluate.py": "a15d70c6d6da51811be80ae856302861b46c5ae4262167981b2f581b664378ce",
+    "scripts/m5l_backfill.py": "071225aa37dcdc1042b650f776722c7b80bb698ae2ddf1bc54b38fa2f027d846",
+    "src/predarb/backfill.py": "128af53eff9800a1a06c879ca67fa12b830c7799f85e0661fb263c7582b4e54e",
+    "src/predarb/semantic.py": "09d7c685807199533d09147c88045aaf7a826322ee65a3fdf60302ab8ac9b17e",
+    "src/predarb/semantic_cli.py": "58ebcc326361ea048d43c38124a7305e5d6cefa9613d19b7ca0eb9454a48839c",
+    "tests/test_m5l.py": "a5fcb3c1afe583f480f3440f60f2640d70a234004430e1df6c1193766107a707"
+  },
+  "final_service_activity": {
+    "predarb-m5i-collection-20261028.service": "inactive",
+    "predarb-m5i-collection-20261029-newnamespace.service": "inactive",
+    "predarb-m5i-collection-20261030-resume.service": "inactive",
+    "predarb-m5i-semantic-20261028.service": "inactive",
+    "predarb-m5i-semantic-20261029-newnamespace.service": "inactive",
+    "predarb-m5i-semantic-20261030-resume.service": "inactive"
+  }
+}

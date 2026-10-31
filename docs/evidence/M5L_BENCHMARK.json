@@ -1,0 +1,3555 @@
+{
+  "schema": "m5l-benchmark/v1",
+  "started_at": "2026-10-31T14:51:10.427955+00:00",
+  "corpus_sha256": "b3159159bb52f3985b7f6de40a264c0dcfaaff63ac9f993b4750411d15b6ffc8",
+  "definitions": 64,
+  "repeats": 3,
+  "production_index_modified": false,
+  "trading_authorized": false,
+  "sampling": "Purposive genuine development definitions, mixed sports/macroeconomics/politics; not catalogue-representative. Four older definitions throughput-only.",
+  "gpu_inference_seconds": null,
+  "gpu_offload": null,
+  "gpu_vram": null,
+  "server_cpu": null,
+  "host_measurement_blocker": "No verified inference-host SSH/log access. HTTP time includes inference; do not subtract health RTT to invent GPU time.",
+  "direct": [
+    {
+      "method": "existing",
+      "batch_size": 8,
+      "samples": [
+        {
+          "repeat": 0,
+          "seconds": 53.49240297602955,
+          "definitions_per_second": 1.1964315760628477,
+          "client_cpu_seconds": 0.6265585060000001,
+          "http": [
+            {
+              "route": "embeddings",
+              "status": 200,
+              "headers_seconds": 1.2379684710176662,
+              "http_seconds": 14.9054205819848,
+              "bytes": 704187
+            },
+            {
+              "route": "embeddings",
+              "status": 200,
+              "headers_seconds": 1.3656923189992085,
+              "http_seconds": 4.028135196946096,
+              "bytes": 704356
+            },
+            {
+              "route": "embeddings",
+              "status": 200,
+              "headers_seconds": 1.4974581510177813,
+              "http_seconds": 10.671057861007284,
+              "bytes": 704157
+            },
+            {
+              "route": "embeddings",
+              "status": 200,
+              "headers_seconds": 1.2549179529887624,
+              "http_seconds": 7.31862784398254,
+              "bytes": 704179
+            },
+            {
+              "route": "embeddings",
+              "status": 200,
+              "headers_seconds": 1.3253724899841473,
+              "http_seconds": 2.809224929951597,
+              "bytes": 704124
+            },
+            {
+              "route": "embeddings",
+              "status": 200,
+              "headers_seconds": 1.2887513870373368,
+              "http_seconds": 4.848220556043088,
+              "bytes": 704312
+            },
+            {
+              "route": "embeddings",
+              "status": 200,
+              "headers_seconds": 1.2728171410271898,
+              "http_seconds": 2.628588674997445,
+              "bytes": 704212
+            },
+            {
+              "route": "embeddings",
+              "status": 200,
+              "headers_seconds": 1.2758284939918667,
+              "http_seconds": 4.883545877004508,
+              "bytes": 704335
+            }
+          ],
+          "raw_observations": [
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+          ]
+        },
+        {
+          "repeat": 1,
+          "seconds": 39.90784865204478,
+          "definitions_per_second": 1.6036945653977468,
+          "client_cpu_seconds": 0.670724316,
+          "http": [
+            {
+              "route": "embeddings",
+              "status": 200,
+              "headers_seconds": 1.5852081140037626,
+              "http_seconds": 4.973287769011222,
+              "bytes": 704187
+            },
+            {
+              "route": "embeddings",
+              "status": 200,
+              "headers_seconds": 1.3766104640089907,
+              "http_seconds": 2.028749657969456,
+              "bytes": 704356
+            },
+            {
+              "route": "embeddings",
+              "status": 200,
+              "headers_seconds": 1.321482985978946,
+              "http_seconds": 4.337561224005185,
+              "bytes": 704157
+            },
+            {
+              "route": "embeddings",
+              "status": 200,
+              "headers_seconds": 1.5435433230013587,
+              "http_seconds": 9.179857076960616,
+              "bytes": 704179
+            },
+            {
+              "route": "embeddings",
+              "status": 200,
+              "headers_seconds": 1.4361468480201438,
+              "http_seconds": 2.4559847689815797,
+              "bytes": 704124
+            },
+            {
+              "route": "embeddings",
+              "status": 200,
+              "headers_seconds": 1.477914804010652,
+              "http_seconds": 8.965836381015833,
+              "bytes": 704312
+            },
+            {
+              "route": "embeddings",
+              "status": 200,
+              "headers_seconds": 1.223797474987805,
+              "http_seconds": 3.7264715320197865,
+              "bytes": 704212
+            },
+            {
+              "route": "embeddings",
+              "status": 200,
+              "headers_seconds": 1.247036166023463,
+              "http_seconds": 2.76266701502027,
+              "bytes": 704335
+            }
+          ],
+          "raw_observations": [
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20
+          ]
+        },
+        {
+          "repeat": 2,
+          "seconds": 27.976512185006868,
+          "definitions_per_second": 2.2876332681061933,
+          "client_cpu_seconds": 0.620078621,
+          "http": [
+            {
+              "route": "embeddings",
+              "status": 200,
+              "headers_seconds": 1.4012569100013934,
+              "http_seconds": 3.9969504339969717,
+              "bytes": 704187
+            },
+            {
+              "route": "embeddings",
+              "status": 200,
+              "headers_seconds": 1.1078213319997303,
+              "http_seconds": 3.439372248016298,
+              "bytes": 704356
+            },
+            {
+              "route": "embeddings",
+              "status": 200,
+              "headers_seconds": 1.3732706060400233,
+              "http_seconds": 3.543215282028541,
+              "bytes": 704157
+            },
+            {
+              "route": "embeddings",
+              "status": 200,
+              "headers_seconds": 1.1780495540006086,
+              "http_seconds": 1.9379394089919515,
+              "bytes": 704179
+            },
+            {
+              "route": "embeddings",
+              "status": 200,
+              "headers_seconds": 1.1231300650397316,
+              "http_seconds": 3.1546148670022376,
+              "bytes": 704124
+            },
+            {
+              "route": "embeddings",
+              "status": 200,
+              "headers_seconds": 1.6233656869735569,
+              "http_seconds": 5.607900371949654,
+              "bytes": 704312
+            },
+            {
+              "route": "embeddings",
+              "status": 200,
+              "headers_seconds": 1.1752027049660683,
+              "http_seconds": 2.8590443569701165,
+              "bytes": 704212
+            },
+            {
+              "route": "embeddings",
+              "status": 200,
+              "headers_seconds": 1.158478274999652,
+              "http_seconds": 2.0260832000058144,
+              "bytes": 704335
+            }
+          ],
+          "raw_observations": [
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28
+          ]
+        }
+      ],
+      "namespace": "956ce5b98173433da772a02222ca56ba96b593e6d0af5623cb3d7c0be09a6db8",
+      "probes": [
+        {
+          "model": "qwen3-embedding-8b",
+          "identity": "1bdbff0b104f3d5ebe7be8b3e5e052542bb18f2f1a950d465cc21196ca2a53ba",
+          "dimensions": 4096
+        },
+        {
+          "model": "qwen3-embedding-8b",
+          "identity": "8f1b745674ea82993cc5211498d606a86627ecedb6776637daeaf66e42611204",
+          "dimensions": 4096
+        }
+      ],
+      "probe_seconds": 2.194579439004883,
+      "median_definitions_per_second": 1.6036945653977468,
+      "status": "MEASURED",
+      "http": [
+        {
+          "route": "models",
+          "status": 200,
+          "headers_seconds": 0.3560548759996891,
+          "http_seconds": 0.3562522470019758,
+          "bytes": 620
+        },
+        {
+          "route": "embeddings",
+          "status": 200,
+          "headers_seconds": 0.5083136960165575,
+          "http_seconds": 0.7403476120089181,
+          "bytes": 88149
+        },
+        {
+          "route": "models",
+          "status": 200,
+          "headers_seconds": 0.38623231096426025,
+          "http_seconds": 0.38643640297232196,
+          "bytes": 620
+        },
+        {
+          "route": "embeddings",
+          "status": 200,
+          "headers_seconds": 0.3683002680190839,
+          "http_seconds": 0.600848831993062,
+          "bytes": 88144
+        },
+        {
+          "route": "embeddings",
+          "status": 200,
+          "headers_seconds": 1.2379684710176662,
+          "http_seconds": 14.9054205819848,
+          "bytes": 704187
+        },
+        {
+          "route": "embeddings",
+          "status": 200,
+          "headers_seconds": 1.3656923189992085,
+          "http_seconds": 4.028135196946096,
+          "bytes": 704356
+        },
+        {
+          "route": "embeddings",
+          "status": 200,
+          "headers_seconds": 1.4974581510177813,
+          "http_seconds": 10.671057861007284,
+          "bytes": 704157
+        },
+        {
+          "route": "embeddings",
+          "status": 200,
+          "headers_seconds": 1.2549179529887624,
+          "http_seconds": 7.31862784398254,
+          "bytes": 704179
+        },
+        {
+          "route": "embeddings",
+          "status": 200,
+          "headers_seconds": 1.3253724899841473,
+          "http_seconds": 2.809224929951597,
+          "bytes": 704124
+        },
+        {
+          "route": "embeddings",
+          "status": 200,
+          "headers_seconds": 1.2887513870373368,
+          "http_seconds": 4.848220556043088,
+          "bytes": 704312
+        },
+        {
+          "route": "embeddings",
+          "status": 200,
+          "headers_seconds": 1.2728171410271898,
+          "http_seconds": 2.628588674997445,
+          "bytes": 704212
+        },
+        {
+          "route": "embeddings",
+          "status": 200,
+          "headers_seconds": 1.2758284939918667,
+          "http_seconds": 4.883545877004508,
+          "bytes": 704335
+        },
+        {
+          "route": "embeddings",
+          "status": 200,
+          "headers_seconds": 1.5852081140037626,
+          "http_seconds": 4.973287769011222,
+          "bytes": 704187
+        },
+        {
+          "route": "embeddings",
+          "status": 200,
+          "headers_seconds": 1.3766104640089907,
+          "http_seconds": 2.028749657969456,
+          "bytes": 704356
+        },
+        {
+          "route": "embeddings",
+          "status": 200,
+          "headers_seconds": 1.321482985978946,
+          "http_seconds": 4.337561224005185,
+          "bytes": 704157
+        },
+        {
+          "route": "embeddings",
+          "status": 200,
+          "headers_seconds": 1.5435433230013587,
+          "http_seconds": 9.179857076960616,
+          "bytes": 704179
+        },
+        {
+          "route": "embeddings",
+          "status": 200,
+          "headers_seconds": 1.4361468480201438,
+          "http_seconds": 2.4559847689815797,
+          "bytes": 704124
+        },
+        {
+          "route": "embeddings",
+          "status": 200,
+          "headers_seconds": 1.477914804010652,
+          "http_seconds": 8.965836381015833,
+          "bytes": 704312
+        },
+        {
+          "route": "embeddings",
+          "status": 200,
+          "headers_seconds": 1.223797474987805,
+          "http_seconds": 3.7264715320197865,
+          "bytes": 704212
+        },
+        {
+          "route": "embeddings",
+          "status": 200,
+          "headers_seconds": 1.247036166023463,
+          "http_seconds": 2.76266701502027,
+          "bytes": 704335
+        },
+        {
+          "route": "embeddings",
+          "status": 200,
+          "headers_seconds": 1.4012569100013934,
+          "http_seconds": 3.9969504339969717,
+          "bytes": 704187
+        },
+        {
+          "route": "embeddings",
+          "status": 200,
+          "headers_seconds": 1.1078213319997303,
+          "http_seconds": 3.439372248016298,
+          "bytes": 704356
+        },
+        {
+          "route": "embeddings",
+          "status": 200,
+          "headers_seconds": 1.3732706060400233,
+          "http_seconds": 3.543215282028541,
+          "bytes": 704157
+        },
+        {
+          "route": "embeddings",
+          "status": 200,
+          "headers_seconds": 1.1780495540006086,
+          "http_seconds": 1.9379394089919515,
+          "bytes": 704179
+        },
+        {
+          "route": "embeddings",
+          "status": 200,
+          "headers_seconds": 1.1231300650397316,
+          "http_seconds": 3.1546148670022376,
+          "bytes": 704124
+        },
+        {
+          "route": "embeddings",
+          "status": 200,
+          "headers_seconds": 1.6233656869735569,
+          "http_seconds": 5.607900371949654,
+          "bytes": 704312
+        },
+        {
+          "route": "embeddings",
+          "status": 200,
+          "headers_seconds": 1.1752027049660683,
+          "http_seconds": 2.8590443569701165,
+          "bytes": 704212
+        },
+        {
+          "route": "embeddings",
+          "status": 200,
+          "headers_seconds": 1.158478274999652,
+          "http_seconds": 2.0260832000058144,
+          "bytes": 704335
+        }
+      ],
+      "client_calls": [
+        {
+          "route": "/models",
+          "seconds": 0.36664174898760393,
+          "archive_parse_and_client_seconds": 0.010389501985628158
+        },
+        {
+          "route": "/embeddings",
+          "seconds": 0.7664072299958207,
+          "archive_parse_and_client_seconds": 0.026059617986902595
+        },
+        {
+          "route": "/models",
+          "seconds": 0.39721916598500684,
+          "archive_parse_and_client_seconds": 0.010782763012684882
+        },
+        {
+          "route": "/embeddings",
+          "seconds": 0.6167203549994156,
+          "archive_parse_and_client_seconds": 0.015871523006353527
+        },
+        {
+          "route": "/embeddings",
+          "seconds": 14.96779502404388,
+          "archive_parse_and_client_seconds": 0.06237444205908105
+        },
+        {
+          "route": "/embeddings",
+          "seconds": 4.081059082003776,
+          "archive_parse_and_client_seconds": 0.05292388505768031
+        },
+        {
+          "route": "/embeddings",
+          "seconds": 10.729578746948391,
+          "archive_parse_and_client_seconds": 0.058520885941106826
+        },
+        {
+          "route": "/embeddings",
+          "seconds": 7.379501935036387,
+          "archive_parse_and_client_seconds": 0.060874091053847224
+        },
+        {
+          "route": "/embeddings",
+          "seconds": 2.8637641480308957,
+          "archive_parse_and_client_seconds": 0.054539218079298735
+        },
+        {
+          "route": "/embeddings",
+          "seconds": 4.915916425990872,
+          "archive_parse_and_client_seconds": 0.06769586994778365
+        },
+        {
+          "route": "/embeddings",
+          "seconds": 2.688599321001675,
+          "archive_parse_and_client_seconds": 0.060010646004229784
+        },
+        {
+          "route": "/embeddings",
+          "seconds": 4.936343150038738,
+          "archive_parse_and_client_seconds": 0.052797273034229875
+        },
+        {
+          "route": "/embeddings",
+          "seconds": 5.0432520839967765,
+          "archive_parse_and_client_seconds": 0.06996431498555467
+        },
+        {
+          "route": "/embeddings",
+          "seconds": 2.088171322015114,
+          "archive_parse_and_client_seconds": 0.05942166404565796
+        },
+        {
+          "route": "/embeddings",
+          "seconds": 4.39134259003913,
+          "archive_parse_and_client_seconds": 0.05378136603394523
+        },
+        {
+          "route": "/embeddings",
+          "seconds": 9.238744999980554,
+          "archive_parse_and_client_seconds": 0.05888792301993817
+        },
+        {
+          "route": "/embeddings",
+          "seconds": 2.5257976219872944,
+          "archive_parse_and_client_seconds": 0.06981285300571471
+        },
+        {
+          "route": "/embeddings",
+          "seconds": 9.019499210000504,
+          "archive_parse_and_client_seconds": 0.05366282898467034
+        },
+        {
+          "route": "/embeddings",
+          "seconds": 3.8012141070212238,
+          "archive_parse_and_client_seconds": 0.07474257500143722
+        },
+        {
+          "route": "/embeddings",
+          "seconds": 2.8321451990050264,
+          "archive_parse_and_client_seconds": 0.06947818398475647
+        },
+        {
+          "route": "/embeddings",
+          "seconds": 4.048611781967338,
+          "archive_parse_and_client_seconds": 0.05166134797036648
+        },
+        {
+          "route": "/embeddings",
+          "seconds": 3.4979699670220725,
+          "archive_parse_and_client_seconds": 0.05859771900577471
+        },
+        {
+          "route": "/embeddings",
+          "seconds": 3.603392985998653,
+          "archive_parse_and_client_seconds": 0.060177703970111907
+        },
+        {
+          "route": "/embeddings",
+          "seconds": 1.99858428403968,
+          "archive_parse_and_client_seconds": 0.06064487504772842
+        },
+        {
+          "route": "/embeddings",
+          "seconds": 3.213881299016066,
+          "archive_parse_and_client_seconds": 0.05926643201382831
+        },
+        {
+          "route": "/embeddings",
+          "seconds": 5.69031958602136,
+          "archive_parse_and_client_seconds": 0.08241921407170594
+        },
+        {
+          "route": "/embeddings",
+          "seconds": 2.912482390005607,
+          "archive_parse_and_client_seconds": 0.05343803303549066
+        },
+        {
+          "route": "/embeddings",
+          "seconds": 2.084998711012304,
+          "archive_parse_and_client_seconds": 0.058915511006489396
+        }
+      ]
+    },
+    {
+      "method": "existing",
+      "batch_size": 16,
+      "samples": [
+        {
+          "repeat": 0,
+          "seconds": 23.203832092985976,
+          "definitions_per_second": 2.758165105812235,
+          "client_cpu_seconds": 0.6217089520000001,
+          "http": [
+            {
+              "route": "embeddings",
+              "status": 200,
+              "headers_seconds": 2.173374790989328,
+              "http_seconds": 5.00379016197985,
+              "bytes": 1408443
+            },
+            {
+              "route": "embeddings",
+              "status": 200,
+              "headers_seconds": 2.258260461036116,
+              "http_seconds": 4.815498684009071,
+              "bytes": 1408236
+            },
+            {
+              "route": "embeddings",
+              "status": 200,
+              "headers_seconds": 2.4990961130242795,
+              "http_seconds": 7.047494507976808,
+              "bytes": 1408336
+            },
+            {
+              "route": "embeddings",
+              "status": 200,
+              "headers_seconds": 2.0442444939981215,
+              "http_seconds": 4.932386611006223,
+              "bytes": 1408447
+            }
+          ],
+          "raw_observations": [
+            5,
+            6,
+            7,
+            8
+          ]
+        },
+        {
+          "repeat": 1,
+          "seconds": 28.772151819022838,
+          "definitions_per_second": 2.2243730813934506,
+          "client_cpu_seconds": 0.6346450089999998,
+          "http": [
+            {
+              "route": "embeddings",
+              "status": 200,
+              "headers_seconds": 2.2734387129894458,
+              "http_seconds": 3.3762166349915788,
+              "bytes": 1408443
+            },
+            {
+              "route": "embeddings",
+              "status": 200,
+              "headers_seconds": 2.294830334954895,
+              "http_seconds": 4.5306962769827805,
+              "bytes": 1408236
+            },
+            {
+              "route": "embeddings",
+              "status": 200,
+              "headers_seconds": 2.4532016530283727,
+              "http_seconds": 11.372403668006882,
+              "bytes": 1408336
+            },
+            {
+              "route": "embeddings",
+              "status": 200,
+              "headers_seconds": 1.8274554660310969,
+              "http_seconds": 8.103526440041605,
+              "bytes": 1408447
+            }
+          ],
+          "raw_observations": [
+            9,
+            10,
+            11,
+            12
+          ]
+        },
+        {
+          "repeat": 2,
+          "seconds": 28.255705495015718,
+          "definitions_per_second": 2.2650292703287676,
+          "client_cpu_seconds": 0.5734423450000001,
+          "http": [
+            {
+              "route": "embeddings",
+              "status": 200,
+              "headers_seconds": 2.2674377919756807,
+              "http_seconds": 8.131644784996752,
+              "bytes": 1408443
+            },
+            {
+              "route": "embeddings",
+              "status": 200,
+              "headers_seconds": 2.3969037309871055,
+              "http_seconds": 10.09663027600618,
+              "bytes": 1408236
+            },
+            {
+              "route": "embeddings",
+              "status": 200,
+              "headers_seconds": 2.4052773249568418,
+              "http_seconds": 4.017338123987429,
+              "bytes": 1408336
+            },
+            {
+              "route": "embeddings",
+              "status": 200,
+              "headers_seconds": 2.004062934021931,
+              "http_seconds": 4.6194181679748,
+              "bytes": 1408447
+            }
+          ],
+          "raw_observations": [
+            13,
+            14,
+            15,
+            16
+          ]
+        }
+      ],
+      "namespace": "956ce5b98173433da772a02222ca56ba96b593e6d0af5623cb3d7c0be09a6db8",
+      "probes": [
+        {
+          "model": "qwen3-embedding-8b",
+          "identity": "1bdbff0b104f3d5ebe7be8b3e5e052542bb18f2f1a950d465cc21196ca2a53ba",
+          "dimensions": 4096
+        },
+        {
+          "model": "qwen3-embedding-8b",
+          "identity": "8f1b745674ea82993cc5211498d606a86627ecedb6776637daeaf66e42611204",
+          "dimensions": 4096
+        }
+      ],
+      "probe_seconds": 2.0620333409751765,
+      "median_definitions_per_second": 2.2650292703287676,
+      "status": "MEASURED",
+      "http": [
+        {
+          "route": "models",
+          "status": 200,
+          "headers_seconds": 0.34232179896207526,
+          "http_seconds": 0.3425184679799713,
+          "bytes": 620
+        },
+        {
+          "route": "embeddings",
+          "status": 200,
+          "headers_seconds": 0.4366692299954593,
+          "http_seconds": 0.6844145139912143,
+          "bytes": 88149
+        },
+        {
+          "route": "models",
+          "status": 200,
+          "headers_seconds": 0.3424502949928865,
+          "http_seconds": 0.3426614819909446,
+          "bytes": 620
+        },
+        {
+          "route": "embeddings",
+          "status": 200,
+          "headers_seconds": 0.3582637060317211,
+          "http_seconds": 0.5896453610039316,
+          "bytes": 88144
+        },
+        {
+          "route": "embeddings",
+          "status": 200,
+          "headers_seconds": 2.173374790989328,
+          "http_seconds": 5.00379016197985,
+          "bytes": 1408443
+        },
+        {
+          "route": "embeddings",
+          "status": 200,
+          "headers_seconds": 2.258260461036116,
+          "http_seconds": 4.815498684009071,
+          "bytes": 1408236
+        },
+        {
+          "route": "embeddings",
+          "status": 200,
+          "headers_seconds": 2.4990961130242795,
+          "http_seconds": 7.047494507976808,
+          "bytes": 1408336
+        },
+        {
+          "route": "embeddings",
+          "status": 200,
+          "headers_seconds": 2.0442444939981215,
+          "http_seconds": 4.932386611006223,
+          "bytes": 1408447
+        },
+        {
+          "route": "embeddings",
+          "status": 200,
+          "headers_seconds": 2.2734387129894458,
+          "http_seconds": 3.3762166349915788,
+          "bytes": 1408443
+        },
+        {
+          "route": "embeddings",
+          "status": 200,
+          "headers_seconds": 2.294830334954895,
+          "http_seconds": 4.5306962769827805,
+          "bytes": 1408236
+        },
+        {
+          "route": "embeddings",
+          "status": 200,
+          "headers_seconds": 2.4532016530283727,
+          "http_seconds": 11.372403668006882,
+          "bytes": 1408336
+        },
+        {
+          "route": "embeddings",
+          "status": 200,
+          "headers_seconds": 1.8274554660310969,
+          "http_seconds": 8.103526440041605,
+          "bytes": 1408447
+        },
+        {
+          "route": "embeddings",
+          "status": 200,
+          "headers_seconds": 2.2674377919756807,
+          "http_seconds": 8.131644784996752,
+          "bytes": 1408443
+        },
+        {
+          "route": "embeddings",
+          "status": 200,
+          "headers_seconds": 2.3969037309871055,
+          "http_seconds": 10.09663027600618,
+          "bytes": 1408236
+        },
+        {
+          "route": "embeddings",
+          "status": 200,
+          "headers_seconds": 2.4052773249568418,
+          "http_seconds": 4.017338123987429,
+          "bytes": 1408336
+        },
+        {
+          "route": "embeddings",
+          "status": 200,
+          "headers_seconds": 2.004062934021931,
+          "http_seconds": 4.6194181679748,
+          "bytes": 1408447
+        }
+      ],
+      "client_calls": [
+        {
+          "route": "/models",
+          "seconds": 0.3522724710055627,
+          "archive_parse_and_client_seconds": 0.009754003025591373
+        },
+        {
+          "route": "/embeddings",
+          "seconds": 0.7031454400275834,
+          "archive_parse_and_client_seconds": 0.018730926036369056
+        },
+        {
+          "route": "/models",
+          "seconds": 0.35284682299243286,
+          "archive_parse_and_client_seconds": 0.010185341001488268
+        },
+        {
+          "route": "/embeddings",
+          "seconds": 0.6074924080166966,
+          "archive_parse_and_client_seconds": 0.01784704701276496
+        },
+        {
+          "route": "/embeddings",
+          "seconds": 5.17174519499531,
+          "archive_parse_and_client_seconds": 0.16795503301545978
+        },
+        {
+          "route": "/embeddings",
+          "seconds": 4.931790663977154,
+          "archive_parse_and_client_seconds": 0.11629197996808216
+        },
+        {
+          "route": "/embeddings",
+          "seconds": 7.143431759031955,
+          "archive_parse_and_client_seconds": 0.0959372510551475
+        },
+        {
+          "route": "/embeddings",
+          "seconds": 5.051288351009134,
+          "archive_parse_and_client_seconds": 0.11890174000291154
+        },
+        {
+          "route": "/embeddings",
+          "seconds": 3.4792420330340974,
+          "archive_parse_and_client_seconds": 0.10302539804251865
+        },
+        {
+          "route": "/embeddings",
+          "seconds": 4.643050626036711,
+          "archive_parse_and_client_seconds": 0.11235434905393049
+        },
+        {
+          "route": "/embeddings",
+          "seconds": 11.487861617002636,
+          "archive_parse_and_client_seconds": 0.11545794899575412
+        },
+        {
+          "route": "/embeddings",
+          "seconds": 8.226571128005162,
+          "archive_parse_and_client_seconds": 0.1230446879635565
+        },
+        {
+          "route": "/embeddings",
+          "seconds": 8.227709328988567,
+          "archive_parse_and_client_seconds": 0.0960645439918153
+        },
+        {
+          "route": "/embeddings",
+          "seconds": 10.212665275030304,
+          "archive_parse_and_client_seconds": 0.11603499902412295
+        },
+        {
+          "route": "/embeddings",
+          "seconds": 4.1204888739739545,
+          "archive_parse_and_client_seconds": 0.10315074998652562
+        },
+        {
+          "route": "/embeddings",
+          "seconds": 4.740385695011355,
+          "archive_parse_and_client_seconds": 0.12096752703655511
+        }
+      ]
+    },
+    {
+      "method": "existing",
+      "batch_size": 32,
+      "samples": [
+        {
+          "repeat": 0,
+          "seconds": 18.219254225026816,
+          "definitions_per_second": 3.512767274089991,
+          "client_cpu_seconds": 0.5695056210000002,
+          "http": [
+            {
+              "route": "embeddings",
+              "status": 200,
+              "headers_seconds": 3.8517137200105935,
+              "http_seconds": 7.135353904042859,
+              "bytes": 2816583
+            },
+            {
+              "route": "embeddings",
+              "status": 200,
+              "headers_seconds": 3.6034996259841137,
+              "http_seconds": 9.655738367990125,
+              "bytes": 2816687
+            }
+          ],
+          "raw_observations": [
+            5,
+            6
+          ]
+        },
+        {
+          "repeat": 1,
+          "seconds": 43.29540401004488,
+          "definitions_per_second": 1.4782169485045455,
+          "client_cpu_seconds": 0.6514569379999999,
+          "http": [
+            {
+              "route": "embeddings",
+              "status": 200,
+              "headers_seconds": 3.93635540897958,
+              "http_seconds": 12.856758181005716,
+              "bytes": 2816583
+            },
+            {
+              "route": "embeddings",
+              "status": 200,
+              "headers_seconds": 3.721563687955495,
+              "http_seconds": 28.971812076983042,
+              "bytes": 2816687
+            }
+          ],
+          "raw_observations": [
+            7,
+            8
+          ]
+        },
+        {
+          "repeat": 2,
+          "seconds": 21.864694887015503,
+          "definitions_per_second": 2.927093212629591,
+          "client_cpu_seconds": 0.5942049769999995,
+          "http": [
+            {
+              "route": "embeddings",
+              "status": 200,
+              "headers_seconds": 3.8138368210056797,
+              "http_seconds": 12.157683476048987,
+              "bytes": 2816583
+            },
+            {
+              "route": "embeddings",
+              "status": 200,
+              "headers_seconds": 3.6927311109611765,
+              "http_seconds": 8.292541042959783,
+              "bytes": 2816687
+            }
+          ],
+          "raw_observations": [
+            9,
+            10
+          ]
+        }
+      ],
+      "namespace": "956ce5b98173433da772a02222ca56ba96b593e6d0af5623cb3d7c0be09a6db8",
+      "probes": [
+        {
+          "model": "qwen3-embedding-8b",
+          "identity": "1bdbff0b104f3d5ebe7be8b3e5e052542bb18f2f1a950d465cc21196ca2a53ba",
+          "dimensions": 4096
+        },
+        {
+          "model": "qwen3-embedding-8b",
+          "identity": "8f1b745674ea82993cc5211498d606a86627ecedb6776637daeaf66e42611204",
+          "dimensions": 4096
+        }
+      ],
+      "probe_seconds": 2.1407231260091066,
+      "median_definitions_per_second": 2.927093212629591,
+      "status": "MEASURED",
+      "http": [
+        {
+          "route": "models",
+          "status": 200,
+          "headers_seconds": 0.3888857059646398,
+          "http_seconds": 0.38911981898127124,
+          "bytes": 620
+        },
+        {
+          "route": "embeddings",
+          "status": 200,
+          "headers_seconds": 0.43653144902782515,
+          "http_seconds": 0.672595780051779,
+          "bytes": 88149
+        },
+        {
+          "route": "models",
+          "status": 200,
+          "headers_seconds": 0.34994647500570863,
+          "http_seconds": 0.3501515880343504,
+          "bytes": 620
+        },
+        {
+          "route": "embeddings",
+          "status": 200,
+          "headers_seconds": 0.3838781570084393,
+          "http_seconds": 0.6148813109612092,
+          "bytes": 88144
+        },
+        {
+          "route": "embeddings",
+          "status": 200,
+          "headers_seconds": 3.8517137200105935,
+          "http_seconds": 7.135353904042859,
+          "bytes": 2816583
+        },
+        {
+          "route": "embeddings",
+          "status": 200,
+          "headers_seconds": 3.6034996259841137,
+          "http_seconds": 9.655738367990125,
+          "bytes": 2816687
+        },
+        {
+          "route": "embeddings",
+          "status": 200,
+          "headers_seconds": 3.93635540897958,
+          "http_seconds": 12.856758181005716,
+          "bytes": 2816583
+        },
+        {
+          "route": "embeddings",
+          "status": 200,
+          "headers_seconds": 3.721563687955495,
+          "http_seconds": 28.971812076983042,
+          "bytes": 2816687
+        },
+        {
+          "route": "embeddings",
+          "status": 200,
+          "headers_seconds": 3.8138368210056797,
+          "http_seconds": 12.157683476048987,
+          "bytes": 2816583
+        },
+        {
+          "route": "embeddings",
+          "status": 200,
+          "headers_seconds": 3.6927311109611765,
+          "http_seconds": 8.292541042959783,
+          "bytes": 2816687
+        }
+      ],
+      "client_calls": [
+        {
+          "route": "/models",
+          "seconds": 0.39894249598728493,
+          "archive_parse_and_client_seconds": 0.009822677006013691
+        },
+        {
+          "route": "/embeddings",
+          "seconds": 0.6926956750103272,
+          "archive_parse_and_client_seconds": 0.020099894958548248
+        },
+        {
+          "route": "/models",
+          "seconds": 0.36027421202743426,
+          "archive_parse_and_client_seconds": 0.010122623993083835
+        },
+        {
+          "route": "/embeddings",
+          "seconds": 0.6376908399979584,
+          "archive_parse_and_client_seconds": 0.022809529036749154
+        },
+        {
+          "route": "/embeddings",
+          "seconds": 7.406227353028953,
+          "archive_parse_and_client_seconds": 0.27087344898609444
+        },
+        {
+          "route": "/embeddings",
+          "seconds": 9.950268422951922,
+          "archive_parse_and_client_seconds": 0.29453005496179685
+        },
+        {
+          "route": "/embeddings",
+          "seconds": 13.120626076008193,
+          "archive_parse_and_client_seconds": 0.26386789500247687
+        },
+        {
+          "route": "/embeddings",
+          "seconds": 29.31893157499144,
+          "archive_parse_and_client_seconds": 0.3471194980083965
+        },
+        {
+          "route": "/embeddings",
+          "seconds": 12.451422716025263,
+          "archive_parse_and_client_seconds": 0.2937392399762757
+        },
+        {
+          "route": "/embeddings",
+          "seconds": 8.557181884010788,
+          "archive_parse_and_client_seconds": 0.2646408410510048
+        }
+      ]
+    },
+    {
+      "method": "existing",
+      "batch_size": 64,
+      "samples": [],
+      "namespace": "956ce5b98173433da772a02222ca56ba96b593e6d0af5623cb3d7c0be09a6db8",
+      "probes": [
+        {
+          "model": "qwen3-embedding-8b",
+          "identity": "1bdbff0b104f3d5ebe7be8b3e5e052542bb18f2f1a950d465cc21196ca2a53ba",
+          "dimensions": 4096
+        },
+        {
+          "model": "qwen3-embedding-8b",
+          "identity": "8f1b745674ea82993cc5211498d606a86627ecedb6776637daeaf66e42611204",
+          "dimensions": 4096
+        }
+      ],
+      "probe_seconds": 3.743627871037461,
+      "status": "FAILED",
+      "error": "HTTP_OR_SIZE_ERROR",
+      "http": [
+        {
+          "route": "models",
+          "status": 200,
+          "headers_seconds": 0.427278111979831,
+          "http_seconds": 0.42746090999571607,
+          "bytes": 620
+        },
+        {
+          "route": "embeddings",
+          "status": 200,
+          "headers_seconds": 0.6954377670190297,
+          "http_seconds": 1.586917512002401,
+          "bytes": 88149
+        },
+        {
+          "route": "models",
+          "status": 200,
+          "headers_seconds": 0.3977255289792083,
+          "http_seconds": 0.3979790859739296,
+          "bytes": 620
+        },
+        {
+          "route": "embeddings",
+          "status": 200,
+          "headers_seconds": 0.6510246410034597,
+          "http_seconds": 1.2152420899947174,
+          "bytes": 88144
+        },
+        {
+          "route": "embeddings",
+          "status": 200,
+          "headers_seconds": 6.684330266027246,
+          "http_seconds": 45.088650370016694,
+          "bytes": 4194305
+        }
+      ],
+      "client_calls": [
+        {
+          "route": "/models",
+          "seconds": 0.4373070939909667,
+          "archive_parse_and_client_seconds": 0.009846183995250612
+        },
+        {
+          "route": "/embeddings",
+          "seconds": 1.6154947430477478,
+          "archive_parse_and_client_seconds": 0.028577231045346707
+        },
+        {
+          "route": "/models",
+          "seconds": 0.40774401096859947,
+          "archive_parse_and_client_seconds": 0.009764924994669855
+        },
+        {
+          "route": "/embeddings",
+          "seconds": 1.2308061309740879,
+          "archive_parse_and_client_seconds": 0.015564040979370475
+        },
+        {
+          "route": "/embeddings",
+          "seconds": 45.835064029030036,
+          "archive_parse_and_client_seconds": 0.7464136590133421
+        }
+      ]
+    },
+    {
+      "method": "instruction",
+      "batch_size": 8,
+      "samples": [
+        {
+          "repeat": 0,
+          "seconds": 48.09614485298516,
+          "definitions_per_second": 1.330667981719282,
+          "client_cpu_seconds": 0.7015703479999997,
+          "http": [
+            {
+              "route": "embeddings",
+              "status": 200,
+              "headers_seconds": 1.421893060032744,
+              "http_seconds": 2.836575272027403,
+              "bytes": 704003
+            },
+            {
+              "route": "embeddings",
+              "status": 200,
+              "headers_seconds": 1.390846838010475,
+              "http_seconds": 5.695061660022475,
+              "bytes": 704218
+            },
+            {
+              "route": "embeddings",
+              "status": 200,
+              "headers_seconds": 1.584426581976004,
+              "http_seconds": 2.8150343709858134,
+              "bytes": 704373
+            },
+            {
+              "route": "embeddings",
+              "status": 200,
+              "headers_seconds": 1.3603497949661687,
+              "http_seconds": 4.036123322963249,
+              "bytes": 704054
+            },
+            {
+              "route": "embeddings",
+              "status": 200,
+              "headers_seconds": 1.5975107530248351,
+              "http_seconds": 10.40109661302995,
+              "bytes": 703837
+            },
+            {
+              "route": "embeddings",
+              "status": 200,
+              "headers_seconds": 1.5488022550125606,
+              "http_seconds": 10.387831667030696,
+              "bytes": 703886
+            },
+            {
+              "route": "embeddings",
+              "status": 200,
+              "headers_seconds": 1.2965085789910518,
+              "http_seconds": 3.9243014290113933,
+              "bytes": 704002
+            },
+            {
+              "route": "embeddings",
+              "status": 200,
+              "headers_seconds": 1.3723394040134735,
+              "http_seconds": 6.5321498879930004,
+              "bytes": 704132
+            }
+          ],
+          "raw_observations": [
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+          ]
+        },
+        {
+          "repeat": 1,
+          "seconds": 95.66317503998289,
+          "definitions_per_second": 0.6690139646028985,
+          "client_cpu_seconds": 0.6644425370000002,
+          "http": [
+            {
+              "route": "embeddings",
+              "status": 200,
+              "headers_seconds": 1.3934482060139999,
+              "http_seconds": 15.757935570960399,
+              "bytes": 704003
+            },
+            {
+              "route": "embeddings",
+              "status": 200,
+              "headers_seconds": 1.48260654497426,
+              "http_seconds": 18.019632681971416,
+              "bytes": 704218
+            },
+            {
+              "route": "embeddings",
+              "status": 200,
+              "headers_seconds": 1.6653648240026087,
+              "http_seconds": 13.535025361983571,
+              "bytes": 704373
+            },
+            {
+              "route": "embeddings",
+              "status": 200,
+              "headers_seconds": 1.431236392003484,
+              "http_seconds": 4.931349424994551,
+              "bytes": 704054
+            },
+            {
+              "route": "embeddings",
+              "status": 200,
+              "headers_seconds": 1.5111971120350063,
+              "http_seconds": 21.663999092008453,
+              "bytes": 703837
+            },
+            {
+              "route": "embeddings",
+              "status": 200,
+              "headers_seconds": 1.556408211006783,
+              "http_seconds": 9.252334975986741,
+              "bytes": 703886
+            },
+            {
+              "route": "embeddings",
+              "status": 200,
+              "headers_seconds": 1.2711649109842256,
+              "http_seconds": 4.89603215502575,
+              "bytes": 704002
+            },
+            {
+              "route": "embeddings",
+              "status": 200,
+              "headers_seconds": 1.1746347630396485,
+              "http_seconds": 6.229456580011174,
+              "bytes": 704132
+            }
+          ],
+          "raw_observations": [
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20
+          ]
+        },
+        {
+          "repeat": 2,
+          "seconds": 53.76484240399441,
+          "definitions_per_second": 1.1903689686114505,
+          "client_cpu_seconds": 0.6780886319999997,
+          "http": [
+            {
+              "route": "embeddings",
+              "status": 200,
+              "headers_seconds": 1.4913806529948488,
+              "http_seconds": 3.4191792679484934,
+              "bytes": 704003
+            },
+            {
+              "route": "embeddings",
+              "status": 200,
+              "headers_seconds": 1.4452842089813203,
+              "http_seconds": 6.848263534950092,
+              "bytes": 704218
+            },
+            {
+              "route": "embeddings",
+              "status": 200,
+              "headers_seconds": 1.629127755004447,
+              "http_seconds": 4.076773091976065,
+              "bytes": 704373
+            },
+            {
+              "route": "embeddings",
+              "status": 200,
+              "headers_seconds": 1.2787819179939106,
+              "http_seconds": 6.550508318003267,
+              "bytes": 704054
+            },
+            {
+              "route": "embeddings",
+              "status": 200,
+              "headers_seconds": 1.5419504250166938,
+              "http_seconds": 2.306595086993184,
+              "bytes": 703837
+            },
+            {
+              "route": "embeddings",
+              "status": 200,
+              "headers_seconds": 1.4018904250115156,
+              "http_seconds": 14.250442080025095,
+              "bytes": 703886
+            },
+            {
+              "route": "embeddings",
+              "status": 200,
+              "headers_seconds": 2.8612483980250545,
+              "http_seconds": 10.35745788103668,
+              "bytes": 704002
+            },
+            {
+              "route": "embeddings",
+              "status": 200,
+              "headers_seconds": 2.104572879965417,
+              "http_seconds": 4.536095510004088,
+              "bytes": 704132
+            }
+          ],
+          "raw_observations": [
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28
+          ]
+        }
+      ],
+      "namespace": "f908f0c78b6ec6752cdec798a55761767964c70a96da0704eba9ba04482e09b6",
+      "probes": [
+        {
+          "model": "qwen3-embedding-8b",
+          "identity": "1bdbff0b104f3d5ebe7be8b3e5e052542bb18f2f1a950d465cc21196ca2a53ba",
+          "dimensions": 4096
+        },
+        {
+          "model": "qwen3-embedding-8b",
+          "identity": "8f1b745674ea82993cc5211498d606a86627ecedb6776637daeaf66e42611204",
+          "dimensions": 4096
+        }
+      ],
+      "probe_seconds": 2.7638095590518788,
+      "median_definitions_per_second": 1.1903689686114505,
+      "status": "MEASURED",
+      "http": [
+        {
+          "route": "models",
+          "status": 200,
+          "headers_seconds": 0.43844250205438584,
+          "http_seconds": 0.43863328103907406,
+          "bytes": 620
+        },
+        {
+          "route": "embeddings",
+          "status": 200,
+          "headers_seconds": 0.7014020949718542,
+          "http_seconds": 0.9974360509659164,
+          "bytes": 88149
+        },
+        {
+          "route": "models",
+          "status": 200,
+          "headers_seconds": 0.3635629019699991,
+          "http_seconds": 0.36380477400962263,
+          "bytes": 620
+        },
+        {
+          "route": "embeddings",
+          "status": 200,
+          "headers_seconds": 0.5166919389739633,
+          "http_seconds": 0.848940584983211,
+          "bytes": 88144
+        },
+        {
+          "route": "embeddings",
+          "status": 200,
+          "headers_seconds": 1.421893060032744,
+          "http_seconds": 2.836575272027403,
+          "bytes": 704003
+        },
+        {
+          "route": "embeddings",
+          "status": 200,
+          "headers_seconds": 1.390846838010475,
+          "http_seconds": 5.695061660022475,
+          "bytes": 704218
+        },
+        {
+          "route": "embeddings",
+          "status": 200,
+          "headers_seconds": 1.584426581976004,
+          "http_seconds": 2.8150343709858134,
+          "bytes": 704373
+        },
+        {
+          "route": "embeddings",
+          "status": 200,
+          "headers_seconds": 1.3603497949661687,
+          "http_seconds": 4.036123322963249,
+          "bytes": 704054
+        },
+        {
+          "route": "embeddings",
+          "status": 200,
+          "headers_seconds": 1.5975107530248351,
+          "http_seconds": 10.40109661302995,
+          "bytes": 703837
+        },
+        {
+          "route": "embeddings",
+          "status": 200,
+          "headers_seconds": 1.5488022550125606,
+          "http_seconds": 10.387831667030696,
+          "bytes": 703886
+        },
+        {
+          "route": "embeddings",
+          "status": 200,
+          "headers_seconds": 1.2965085789910518,
+          "http_seconds": 3.9243014290113933,
+          "bytes": 704002
+        },
+        {
+          "route": "embeddings",
+          "status": 200,
+          "headers_seconds": 1.3723394040134735,
+          "http_seconds": 6.5321498879930004,
+          "bytes": 704132
+        },
+        {
+          "route": "embeddings",
+          "status": 200,
+          "headers_seconds": 1.3934482060139999,
+          "http_seconds": 15.757935570960399,
+          "bytes": 704003
+        },
+        {
+          "route": "embeddings",
+          "status": 200,
+          "headers_seconds": 1.48260654497426,
+          "http_seconds": 18.019632681971416,
+          "bytes": 704218
+        },
+        {
+          "route": "embeddings",
+          "status": 200,
+          "headers_seconds": 1.6653648240026087,
+          "http_seconds": 13.535025361983571,
+          "bytes": 704373
+        },
+        {
+          "route": "embeddings",
+          "status": 200,
+          "headers_seconds": 1.431236392003484,
+          "http_seconds": 4.931349424994551,
+          "bytes": 704054
+        },
+        {
+          "route": "embeddings",
+          "status": 200,
+          "headers_seconds": 1.5111971120350063,
+          "http_seconds": 21.663999092008453,
+          "bytes": 703837
+        },
+        {
+          "route": "embeddings",
+          "status": 200,
+          "headers_seconds": 1.556408211006783,
+          "http_seconds": 9.252334975986741,
+          "bytes": 703886
+        },
+        {
+          "route": "embeddings",
+          "status": 200,
+          "headers_seconds": 1.2711649109842256,
+          "http_seconds": 4.89603215502575,
+          "bytes": 704002
+        },
+        {
+          "route": "embeddings",
+          "status": 200,
+          "headers_seconds": 1.1746347630396485,
+          "http_seconds": 6.229456580011174,
+          "bytes": 704132
+        },
+        {
+          "route": "embeddings",
+          "status": 200,
+          "headers_seconds": 1.4913806529948488,
+          "http_seconds": 3.4191792679484934,
+          "bytes": 704003
+        },
+        {
+          "route": "embeddings",
+          "status": 200,
+          "headers_seconds": 1.4452842089813203,
+          "http_seconds": 6.848263534950092,
+          "bytes": 704218
+        },
+        {
+          "route": "embeddings",
+          "status": 200,
+          "headers_seconds": 1.629127755004447,
+          "http_seconds": 4.076773091976065,
+          "bytes": 704373
+        },
+        {
+          "route": "embeddings",
+          "status": 200,
+          "headers_seconds": 1.2787819179939106,
+          "http_seconds": 6.550508318003267,
+          "bytes": 704054
+        },
+        {
+          "route": "embeddings",
+          "status": 200,
+          "headers_seconds": 1.5419504250166938,
+          "http_seconds": 2.306595086993184,
+          "bytes": 703837
+        },
+        {
+          "route": "embeddings",
+          "status": 200,
+          "headers_seconds": 1.4018904250115156,
+          "http_seconds": 14.250442080025095,
+          "bytes": 703886
+        },
+        {
+          "route": "embeddings",
+          "status": 200,
+          "headers_seconds": 2.8612483980250545,
+          "http_seconds": 10.35745788103668,
+          "bytes": 704002
+        },
+        {
+          "route": "embeddings",
+          "status": 200,
+          "headers_seconds": 2.104572879965417,
+          "http_seconds": 4.536095510004088,
+          "bytes": 704132
+        }
+      ],
+      "client_calls": [
+        {
+          "route": "/models",
+          "seconds": 0.4483937000040896,
+          "archive_parse_and_client_seconds": 0.00976041896501556
+        },
+        {
+          "route": "/embeddings",
+          "seconds": 1.018384621012956,
+          "archive_parse_and_client_seconds": 0.02094857004703954
+        },
+        {
+          "route": "/models",
+          "seconds": 0.3734630619874224,
+          "archive_parse_and_client_seconds": 0.009658287977799773
+        },
+        {
+          "route": "/embeddings",
+          "seconds": 0.8717611680040136,
+          "archive_parse_and_client_seconds": 0.022820583020802587
+        },
+        {
+          "route": "/embeddings",
+          "seconds": 2.908592970983591,
+          "archive_parse_and_client_seconds": 0.07201769895618781
+        },
+        {
+          "route": "/embeddings",
+          "seconds": 5.755534960015211,
+          "archive_parse_and_client_seconds": 0.06047329999273643
+        },
+        {
+          "route": "/embeddings",
+          "seconds": 2.8630589010426775,
+          "archive_parse_and_client_seconds": 0.04802453005686402
+        },
+        {
+          "route": "/embeddings",
+          "seconds": 4.096589265973307,
+          "archive_parse_and_client_seconds": 0.060465943010058254
+        },
+        {
+          "route": "/embeddings",
+          "seconds": 10.45681635197252,
+          "archive_parse_and_client_seconds": 0.055719738942570984
+        },
+        {
+          "route": "/embeddings",
+          "seconds": 10.446991941018496,
+          "archive_parse_and_client_seconds": 0.05916027398779988
+        },
+        {
+          "route": "/embeddings",
+          "seconds": 3.978581817005761,
+          "archive_parse_and_client_seconds": 0.05428038799436763
+        },
+        {
+          "route": "/embeddings",
+          "seconds": 6.600999902992044,
+          "archive_parse_and_client_seconds": 0.0688500149990432
+        },
+        {
+          "route": "/embeddings",
+          "seconds": 15.807797197019681,
+          "archive_parse_and_client_seconds": 0.04986162605928257
+        },
+        {
+          "route": "/embeddings",
+          "seconds": 18.084509834996425,
+          "archive_parse_and_client_seconds": 0.06487715302500874
+        },
+        {
+          "route": "/embeddings",
+          "seconds": 13.598951095016673,
+          "archive_parse_and_client_seconds": 0.063925733033102
+        },
+        {
+          "route": "/embeddings",
+          "seconds": 4.972599520988297,
+          "archive_parse_and_client_seconds": 0.04125009599374607
+        },
+        {
+          "route": "/embeddings",
+          "seconds": 21.71843795897439,
+          "archive_parse_and_client_seconds": 0.05443886696593836
+        },
+        {
+          "route": "/embeddings",
+          "seconds": 9.306808746012393,
+          "archive_parse_and_client_seconds": 0.0544737700256519
+        },
+        {
+          "route": "/embeddings",
+          "seconds": 4.954336796014104,
+          "archive_parse_and_client_seconds": 0.05830464098835364
+        },
+        {
+          "route": "/embeddings",
+          "seconds": 6.28550505702151,
+          "archive_parse_and_client_seconds": 0.05604847701033577
+        },
+        {
+          "route": "/embeddings",
+          "seconds": 3.485339834995102,
+          "archive_parse_and_client_seconds": 0.06616056704660878
+        },
+        {
+          "route": "/embeddings",
+          "seconds": 6.903944190999027,
+          "archive_parse_and_client_seconds": 0.05568065604893491
+        },
+        {
+          "route": "/embeddings",
+          "seconds": 4.136734732019249,
+          "archive_parse_and_client_seconds": 0.05996164004318416
+        },
+        {
+          "route": "/embeddings",
+          "seconds": 6.6052830559783615,
+          "archive_parse_and_client_seconds": 0.05477473797509447
+        },
+        {
+          "route": "/embeddings",
+          "seconds": 2.3534703569603153,
+          "archive_parse_and_client_seconds": 0.04687526996713132
+        },
+        {
+          "route": "/embeddings",
+          "seconds": 14.316376368980855,
+          "archive_parse_and_client_seconds": 0.06593428895575926
+        },
+        {
+          "route": "/embeddings",
+          "seconds": 10.41882140096277,
+          "archive_parse_and_client_seconds": 0.06136351992608979
+        },
+        {
+          "route": "/embeddings",
+          "seconds": 4.583146158023737,
+          "archive_parse_and_client_seconds": 0.04705064801964909
+        }
+      ]
+    },
+    {
+      "method": "instruction",
+      "batch_size": 16,
+      "samples": [
+        {
+          "repeat": 0,
+          "seconds": 62.38343588402495,
+          "definitions_per_second": 1.0259133549325554,
+          "client_cpu_seconds": 0.6230966359999996,
+          "http": [
+            {
+              "route": "embeddings",
+              "status": 200,
+              "headers_seconds": 2.2581967329606414,
+              "http_seconds": 13.982720055966638,
+              "bytes": 1408121
+            },
+            {
+              "route": "embeddings",
+              "status": 200,
+              "headers_seconds": 2.822365610045381,
+              "http_seconds": 20.07451480301097,
+              "bytes": 1408327
+            },
+            {
+              "route": "embeddings",
+              "status": 200,
+              "headers_seconds": 2.5324784429976717,
+              "http_seconds": 16.80714408797212,
+              "bytes": 1407623
+            },
+            {
+              "route": "embeddings",
+              "status": 200,
+              "headers_seconds": 1.9301067990018055,
+              "http_seconds": 10.139404711022507,
+              "bytes": 1408034
+            }
+          ],
+          "raw_observations": [
+            5,
+            6,
+            7,
+            8
+          ]
+        },
+        {
+          "repeat": 1,
+          "seconds": 34.81577775598271,
+          "definitions_per_second": 1.8382470283606491,
+          "client_cpu_seconds": 0.5699884510000004,
+          "http": [
+            {
+              "route": "embeddings",
+              "status": 200,
+              "headers_seconds": 4.101722445979249,
+              "http_seconds": 9.145341627998278,
+              "bytes": 1408121
+            },
+            {
+              "route": "embeddings",
+              "status": 200,
+              "headers_seconds": 2.5343870560172945,
+              "http_seconds": 7.725881787016988,
+              "bytes": 1408327
+            },
+            {
+              "route": "embeddings",
+              "status": 200,
+              "headers_seconds": 2.424028815992642,
+              "http_seconds": 6.322022770997137,
+              "bytes": 1407623
+            },
+            {
+              "route": "embeddings",
+              "status": 200,
+              "headers_seconds": 1.8843626119778492,
+              "http_seconds": 10.204163956979755,
+              "bytes": 1408034
+            }
+          ],
+          "raw_observations": [
+            9,
+            10,
+            11,
+            12
+          ]
+        },
+        {
+          "repeat": 2,
+          "seconds": 74.58727357600583,
+          "definitions_per_second": 0.8580552275420391,
+          "client_cpu_seconds": 0.6443197170000001,
+          "http": [
+            {
+              "route": "embeddings",
+              "status": 200,
+              "headers_seconds": 2.476659216976259,
+              "http_seconds": 36.819149247021414,
+              "bytes": 1408121
+            },
+            {
+              "route": "embeddings",
+              "status": 200,
+              "headers_seconds": 2.3614863980328664,
+              "http_seconds": 13.941458854998928,
+              "bytes": 1408327
+            },
+            {
+              "route": "embeddings",
+              "status": 200,
+              "headers_seconds": 2.5925178669858724,
+              "http_seconds": 6.436230311985128,
+              "bytes": 1407623
+            },
+            {
+              "route": "embeddings",
+              "status": 200,
+              "headers_seconds": 1.9321785190259106,
+              "http_seconds": 16.029929073003586,
+              "bytes": 1408034
+            }
+          ],
+          "raw_observations": [
+            13,
+            14,
+            15,
+            16
+          ]
+        }
+      ],
+      "namespace": "f908f0c78b6ec6752cdec798a55761767964c70a96da0704eba9ba04482e09b6",
+      "probes": [
+        {
+          "model": "qwen3-embedding-8b",
+          "identity": "1bdbff0b104f3d5ebe7be8b3e5e052542bb18f2f1a950d465cc21196ca2a53ba",
+          "dimensions": 4096
+        },
+        {
+          "model": "qwen3-embedding-8b",
+          "identity": "8f1b745674ea82993cc5211498d606a86627ecedb6776637daeaf66e42611204",
+          "dimensions": 4096
+        }
+      ],
+      "probe_seconds": 4.48039737396175,
+      "median_definitions_per_second": 1.0259133549325554,
+      "status": "MEASURED",
+      "http": [
+        {
+          "route": "models",
+          "status": 200,
+          "headers_seconds": 0.5454619909869507,
+          "http_seconds": 0.5457131399889477,
+          "bytes": 620
+        },
+        {
+          "route": "embeddings",
+          "status": 200,
+          "headers_seconds": 0.6455964460037649,
+          "http_seconds": 1.4173645499977283,
+          "bytes": 88149
+        },
+        {
+          "route": "models",
+          "status": 200,
+          "headers_seconds": 0.5822122259996831,
+          "http_seconds": 0.582417560974136,
+          "bytes": 620
+        },
+        {
+          "route": "embeddings",
+          "status": 200,
+          "headers_seconds": 0.6429919590009376,
+          "http_seconds": 1.827354760025628,
+          "bytes": 88144
+        },
+        {
+          "route": "embeddings",
+          "status": 200,
+          "headers_seconds": 2.2581967329606414,
+          "http_seconds": 13.982720055966638,
+          "bytes": 1408121
+        },
+        {
+          "route": "embeddings",
+          "status": 200,
+          "headers_seconds": 2.822365610045381,
+          "http_seconds": 20.07451480301097,
+          "bytes": 1408327
+        },
+        {
+          "route": "embeddings",
+          "status": 200,
+          "headers_seconds": 2.5324784429976717,
+          "http_seconds": 16.80714408797212,
+          "bytes": 1407623
+        },
+        {
+          "route": "embeddings",
+          "status": 200,
+          "headers_seconds": 1.9301067990018055,
+          "http_seconds": 10.139404711022507,
+          "bytes": 1408034
+        },
+        {
+          "route": "embeddings",
+          "status": 200,
+          "headers_seconds": 4.101722445979249,
+          "http_seconds": 9.145341627998278,
+          "bytes": 1408121
+        },
+        {
+          "route": "embeddings",
+          "status": 200,
+          "headers_seconds": 2.5343870560172945,
+          "http_seconds": 7.725881787016988,
+          "bytes": 1408327
+        },
+        {
+          "route": "embeddings",
+          "status": 200,
+          "headers_seconds": 2.424028815992642,
+          "http_seconds": 6.322022770997137,
+          "bytes": 1407623
+        },
+        {
+          "route": "embeddings",
+          "status": 200,
+          "headers_seconds": 1.8843626119778492,
+          "http_seconds": 10.204163956979755,
+          "bytes": 1408034
+        },
+        {
+          "route": "embeddings",
+          "status": 200,
+          "headers_seconds": 2.476659216976259,
+          "http_seconds": 36.819149247021414,
+          "bytes": 1408121
+        },
+        {
+          "route": "embeddings",
+          "status": 200,
+          "headers_seconds": 2.3614863980328664,
+          "http_seconds": 13.941458854998928,
+          "bytes": 1408327
+        },
+        {
+          "route": "embeddings",
+          "status": 200,
+          "headers_seconds": 2.5925178669858724,
+          "http_seconds": 6.436230311985128,
+          "bytes": 1407623
+        },
+        {
+          "route": "embeddings",
+          "status": 200,
+          "headers_seconds": 1.9321785190259106,
+          "http_seconds": 16.029929073003586,
+          "bytes": 1408034
+        }
+      ],
+      "client_calls": [
+        {
+          "route": "/models",
+          "seconds": 0.5611658120178618,
+          "archive_parse_and_client_seconds": 0.015452672028914094
+        },
+        {
+          "route": "/embeddings",
+          "seconds": 1.4366707780282013,
+          "archive_parse_and_client_seconds": 0.019306228030472994
+        },
+        {
+          "route": "/models",
+          "seconds": 0.592556222982239,
+          "archive_parse_and_client_seconds": 0.010138662008102983
+        },
+        {
+          "route": "/embeddings",
+          "seconds": 1.8524456290178932,
+          "archive_parse_and_client_seconds": 0.025090868992265314
+        },
+        {
+          "route": "/embeddings",
+          "seconds": 14.1600461609778,
+          "archive_parse_and_client_seconds": 0.17732610501116142
+        },
+        {
+          "route": "/embeddings",
+          "seconds": 20.16986933798762,
+          "archive_parse_and_client_seconds": 0.09535453497665003
+        },
+        {
+          "route": "/embeddings",
+          "seconds": 16.90417041699402,
+          "archive_parse_and_client_seconds": 0.09702632902190089
+        },
+        {
+          "route": "/embeddings",
+          "seconds": 10.242035725037567,
+          "archive_parse_and_client_seconds": 0.10263101401505992
+        },
+        {
+          "route": "/embeddings",
+          "seconds": 9.240683251002338,
+          "archive_parse_and_client_seconds": 0.09534162300406024
+        },
+        {
+          "route": "/embeddings",
+          "seconds": 7.822337984049227,
+          "archive_parse_and_client_seconds": 0.09645619703223929
+        },
+        {
+          "route": "/embeddings",
+          "seconds": 6.427822747034952,
+          "archive_parse_and_client_seconds": 0.10579997603781521
+        },
+        {
+          "route": "/embeddings",
+          "seconds": 10.364616592996754,
+          "archive_parse_and_client_seconds": 0.16045263601699844
+        },
+        {
+          "route": "/embeddings",
+          "seconds": 36.962629796995316,
+          "archive_parse_and_client_seconds": 0.14348054997390136
+        },
+        {
+          "route": "/embeddings",
+          "seconds": 14.062464004033245,
+          "archive_parse_and_client_seconds": 0.12100514903431758
+        },
+        {
+          "route": "/embeddings",
+          "seconds": 6.5358386659645475,
+          "archive_parse_and_client_seconds": 0.09960835397941992
+        },
+        {
+          "route": "/embeddings",
+          "seconds": 16.122746907989495,
+          "archive_parse_and_client_seconds": 0.09281783498590812
+        }
+      ]
+    },
+    {
+      "method": "instruction",
+      "batch_size": 32,
+      "samples": [
+        {
+          "repeat": 0,
+          "seconds": 49.76426419895142,
+          "definitions_per_second": 1.2860634238283088,
+          "client_cpu_seconds": 0.5732466469999995,
+          "http": [
+            {
+              "route": "embeddings",
+              "status": 200,
+              "headers_seconds": 3.854788746975828,
+              "http_seconds": 29.64568303700071,
+              "bytes": 2816352
+            },
+            {
+              "route": "embeddings",
+              "status": 200,
+              "headers_seconds": 3.9322818989749067,
+              "http_seconds": 18.640216985018924,
+              "bytes": 2815561
+            }
+          ],
+          "raw_observations": [
+            5,
+            6
+          ]
+        },
+        {
+          "repeat": 1,
+          "seconds": 33.77389330096776,
+          "definitions_per_second": 1.8949547637188202,
+          "client_cpu_seconds": 0.6615575099999997,
+          "http": [
+            {
+              "route": "embeddings",
+              "status": 200,
+              "headers_seconds": 4.095921568979975,
+              "http_seconds": 20.284069226996507,
+              "bytes": 2816352
+            },
+            {
+              "route": "embeddings",
+              "status": 200,
+              "headers_seconds": 3.939826385991182,
+              "http_seconds": 12.015554412035272,
+              "bytes": 2815561
+            }
+          ],
+          "raw_observations": [
+            7,
+            8
+          ]
+        },
+        {
+          "repeat": 2,
+          "seconds": 48.49152749998029,
+          "definitions_per_second": 1.3198181888583735,
+          "client_cpu_seconds": 0.5610695119999995,
+          "http": [
+            {
+              "route": "embeddings",
+              "status": 200,
+              "headers_seconds": 3.909299776016269,
+              "http_seconds": 11.192426863999572,
+              "bytes": 2816352
+            },
+            {
+              "route": "embeddings",
+              "status": 200,
+              "headers_seconds": 3.900200746022165,
+              "http_seconds": 35.92644751898479,
+              "bytes": 2815561
+            }
+          ],
+          "raw_observations": [
+            9,
+            10
+          ]
+        }
+      ],
+      "namespace": "f908f0c78b6ec6752cdec798a55761767964c70a96da0704eba9ba04482e09b6",
+      "probes": [
+        {
+          "model": "qwen3-embedding-8b",
+          "identity": "1bdbff0b104f3d5ebe7be8b3e5e052542bb18f2f1a950d465cc21196ca2a53ba",
+          "dimensions": 4096
+        },
+        {
+          "model": "qwen3-embedding-8b",
+          "identity": "8f1b745674ea82993cc5211498d606a86627ecedb6776637daeaf66e42611204",
+          "dimensions": 4096
+        }
+      ],
+      "probe_seconds": 4.7203591269790195,
+      "median_definitions_per_second": 1.3198181888583735,
+      "status": "MEASURED",
+      "http": [
+        {
+          "route": "models",
+          "status": 200,
+          "headers_seconds": 0.3385808569728397,
+          "http_seconds": 0.33878589497180656,
+          "bytes": 620
+        },
+        {
+          "route": "embeddings",
+          "status": 200,
+          "headers_seconds": 0.5550138160469942,
+          "http_seconds": 0.7986638470320031,
+          "bytes": 88149
+        },
+        {
+          "route": "models",
+          "status": 200,
+          "headers_seconds": 0.36740495200501755,
+          "http_seconds": 0.3676813230267726,
+          "bytes": 620
+        },
+        {
+          "route": "embeddings",
+          "status": 200,
+          "headers_seconds": 1.4615400639595464,
+          "http_seconds": 3.1092813219875097,
+          "bytes": 88144
+        },
+        {
+          "route": "embeddings",
+          "status": 200,
+          "headers_seconds": 3.854788746975828,
+          "http_seconds": 29.64568303700071,
+          "bytes": 2816352
+        },
+        {
+          "route": "embeddings",
+          "status": 200,
+          "headers_seconds": 3.9322818989749067,
+          "http_seconds": 18.640216985018924,
+          "bytes": 2815561
+        },
+        {
+          "route": "embeddings",
+          "status": 200,
+          "headers_seconds": 4.095921568979975,
+          "http_seconds": 20.284069226996507,
+          "bytes": 2816352
+        },
+        {
+          "route": "embeddings",
+          "status": 200,
+          "headers_seconds": 3.939826385991182,
+          "http_seconds": 12.015554412035272,
+          "bytes": 2815561
+        },
+        {
+          "route": "embeddings",
+          "status": 200,
+          "headers_seconds": 3.909299776016269,
+          "http_seconds": 11.192426863999572,
+          "bytes": 2816352
+        },
+        {
+          "route": "embeddings",
+          "status": 200,
+          "headers_seconds": 3.900200746022165,
+          "http_seconds": 35.92644751898479,
+          "bytes": 2815561
+        }
+      ],
+      "client_calls": [
+        {
+          "route": "/models",
+          "seconds": 0.34887676895596087,
+          "archive_parse_and_client_seconds": 0.010090873984154314
+        },
+        {
+          "route": "/embeddings",
+          "seconds": 0.8246070249588229,
+          "archive_parse_and_client_seconds": 0.02594317792681977
+        },
+        {
+          "route": "/models",
+          "seconds": 0.3776504190173,
+          "archive_parse_and_client_seconds": 0.009969095990527421
+        },
+        {
+          "route": "/embeddings",
+          "seconds": 3.126777318015229,
+          "archive_parse_and_client_seconds": 0.01749599602771923
+        },
+        {
+          "route": "/embeddings",
+          "seconds": 29.918628620973323,
+          "archive_parse_and_client_seconds": 0.27294558397261426
+        },
+        {
+          "route": "/embeddings",
+          "seconds": 18.90596814599121,
+          "archive_parse_and_client_seconds": 0.265751160972286
+        },
+        {
+          "route": "/embeddings",
+          "seconds": 20.607435572019313,
+          "archive_parse_and_client_seconds": 0.32336634502280504
+        },
+        {
+          "route": "/embeddings",
+          "seconds": 12.30538559902925,
+          "archive_parse_and_client_seconds": 0.2898311869939789
+        },
+        {
+          "route": "/embeddings",
+          "seconds": 11.454885551007465,
+          "archive_parse_and_client_seconds": 0.2624586870078929
+        },
+        {
+          "route": "/embeddings",
+          "seconds": 36.18121228797827,
+          "archive_parse_and_client_seconds": 0.254764768993482
+        }
+      ]
+    },
+    {
+      "method": "instruction",
+      "batch_size": 64,
+      "samples": [],
+      "namespace": "f908f0c78b6ec6752cdec798a55761767964c70a96da0704eba9ba04482e09b6",
+      "probes": [
+        {
+          "model": "qwen3-embedding-8b",
+          "identity": "1bdbff0b104f3d5ebe7be8b3e5e052542bb18f2f1a950d465cc21196ca2a53ba",
+          "dimensions": 4096
+        },
+        {
+          "model": "qwen3-embedding-8b",
+          "identity": "8f1b745674ea82993cc5211498d606a86627ecedb6776637daeaf66e42611204",
+          "dimensions": 4096
+        }
+      ],
+      "probe_seconds": 5.123786763986573,
+      "status": "FAILED",
+      "error": "HTTP_OR_SIZE_ERROR",
+      "http": [
+        {
+          "route": "models",
+          "status": 200,
+          "headers_seconds": 0.5125137499999255,
+          "http_seconds": 0.5127106209984049,
+          "bytes": 620
+        },
+        {
+          "route": "embeddings",
+          "status": 200,
+          "headers_seconds": 0.6960598499863409,
+          "http_seconds": 1.6312191699980758,
+          "bytes": 88149
+        },
+        {
+          "route": "models",
+          "status": 200,
+          "headers_seconds": 1.7009603750193492,
+          "http_seconds": 1.701210098050069,
+          "bytes": 620
+        },
+        {
+          "route": "embeddings",
+          "status": 200,
+          "headers_seconds": 0.9470451839733869,
+          "http_seconds": 1.1792186679667793,
+          "bytes": 88144
+        },
+        {
+          "route": "embeddings",
+          "status": 200,
+          "headers_seconds": 7.551824530994054,
+          "http_seconds": 19.779374208999798,
+          "bytes": 4194305
+        }
+      ],
+      "client_calls": [
+        {
+          "route": "/models",
+          "seconds": 0.5222892090096138,
+          "archive_parse_and_client_seconds": 0.009578588011208922
+        },
+        {
+          "route": "/embeddings",
+          "seconds": 1.6479390970198438,
+          "archive_parse_and_client_seconds": 0.016719927021767944
+        },
+        {
+          "route": "/models",
+          "seconds": 1.7109863540390506,
+          "archive_parse_and_client_seconds": 0.009776255988981575
+        },
+        {
+          "route": "/embeddings",
+          "seconds": 1.1966150410007685,
+          "archive_parse_and_client_seconds": 0.01739637303398922
+        },
+        {
+          "route": "/embeddings",
+          "seconds": 20.512948560004588,
+          "archive_parse_and_client_seconds": 0.7335743510047905
+        }
+      ]
+    }
+  ],
+  "persistent": [
+    {
+      "status": "READY",
+      "completed": {
+        "kalshi": 33,
+        "polymarket_us": 27
+      },
+      "requests": 13,
+      "cache_hits": 0,
+      "stop_reason": "PER_VENUE_BUDGET_OR_EMPTY",
+      "model": "qwen3-embedding-8b",
+      "identity": "8f1b745674ea82993cc5211498d606a86627ecedb6776637daeaf66e42611204",
+      "dimensions": 4096,
+      "elapsed_seconds": 60.73250211798586,
+      "texts_per_second": 0.9879388779905228,
+      "batch_size": 8,
+      "client_cpu_seconds": 1.0334869629999996,
+      "http": [
+        {
+          "route": "models",
+          "status": 200,
+          "headers_seconds": 0.3800507810083218,
+          "http_seconds": 0.3802581710042432,
+          "bytes": 620
+        },
+        {
+          "route": "embeddings",
+          "status": 200,
+          "headers_seconds": 0.7431791899725795,
+          "http_seconds": 1.590896311972756,
+          "bytes": 88149
+        },
+        {
+          "route": "models",
+          "status": 200,
+          "headers_seconds": 0.3803495760075748,
+          "http_seconds": 0.38057722500525415,
+          "bytes": 620
+        },
+        {
+          "route": "embeddings",
+          "status": 200,
+          "headers_seconds": 0.4839194309897721,
+          "http_seconds": 0.7113414320047013,
+          "bytes": 88144
+        },
+        {
+          "route": "embeddings",
+          "status": 200,
+          "headers_seconds": 1.2797185600502416,
+          "http_seconds": 2.1345231950399466,
+          "bytes": 704319
+        },
+        {
+          "route": "embeddings",
+          "status": 200,
+          "headers_seconds": 1.4550338399712928,
+          "http_seconds": 14.58609430596698,
+          "bytes": 704329
+        },
+        {
+          "route": "embeddings",
+          "status": 200,
+          "headers_seconds": 1.5355373320053332,
+          "http_seconds": 3.7673726129578426,
+          "bytes": 704247
+        },
+        {
+          "route": "embeddings",
+          "status": 200,
+          "headers_seconds": 1.432890631025657,
+          "http_seconds": 7.124578289047349,
+          "bytes": 703886
+        },
+        {
+          "route": "embeddings",
+          "status": 200,
+          "headers_seconds": 1.3376655150204897,
+          "http_seconds": 2.8144729250343516,
+          "bytes": 703976
+        },
+        {
+          "route": "embeddings",
+          "status": 200,
+          "headers_seconds": 1.259480366948992,
+          "http_seconds": 3.199216044973582,
+          "bytes": 704336
+        },
+        {
+          "route": "embeddings",
+          "status": 200,
+          "headers_seconds": 2.052931535989046,
+          "http_seconds": 18.759657185000833,
+          "bytes": 704158
+        },
+        {
+          "route": "embeddings",
+          "status": 200,
+          "headers_seconds": 0.9824539569672197,
+          "http_seconds": 1.794001774978824,
+          "bytes": 264227
+        },
+        {
+          "route": "embeddings",
+          "status": 200,
+          "headers_seconds": 0.6776226470246911,
+          "http_seconds": 1.3571310580009595,
+          "bytes": 88141
+        }
+      ],
+      "client_calls": [
+        {
+          "route": "/models",
+          "seconds": 0.3900858880369924,
+          "archive_parse_and_client_seconds": 0.009827717032749206
+        },
+        {
+          "route": "/embeddings",
+          "seconds": 1.6245073290192522,
+          "archive_parse_and_client_seconds": 0.03361101704649627
+        },
+        {
+          "route": "/models",
+          "seconds": 0.39024762599729,
+          "archive_parse_and_client_seconds": 0.009670400992035866
+        },
+        {
+          "route": "/embeddings",
+          "seconds": 0.7298661039676517,
+          "archive_parse_and_client_seconds": 0.01852467196295038
+        },
+        {
+          "route": "/embeddings",
+          "seconds": 2.192628124030307,
+          "archive_parse_and_client_seconds": 0.05810492899036035
+        },
+        {
+          "route": "/embeddings",
+          "seconds": 14.669262423994951,
+          "archive_parse_and_client_seconds": 0.0831681180279702
+        },
+        {
+          "route": "/embeddings",
+          "seconds": 3.8254481869516894,
+          "archive_parse_and_client_seconds": 0.058075573993846774
+        },
+        {
+          "route": "/embeddings",
+          "seconds": 7.1730659050517716,
+          "archive_parse_and_client_seconds": 0.04848761600442231
+        },
+        {
+          "route": "/embeddings",
+          "seconds": 2.8645734709571116,
+          "archive_parse_and_client_seconds": 0.05010054592275992
+        },
+        {
+          "route": "/embeddings",
+          "seconds": 3.2502116310060956,
+          "archive_parse_and_client_seconds": 0.05099558603251353
+        },
+        {
+          "route": "/embeddings",
+          "seconds": 18.814482204965316,
+          "archive_parse_and_client_seconds": 0.054825019964482635
+        },
+        {
+          "route": "/embeddings",
+          "seconds": 1.8212327100336552,
+          "archive_parse_and_client_seconds": 0.027230935054831207
+        },
+        {
+          "route": "/embeddings",
+          "seconds": 1.3738774980301969,
+          "archive_parse_and_client_seconds": 0.01674644002923742
+        }
+      ],
+      "persistent_vectors": 60,
+      "source_coverage": {
+        "at": "2026-10-31T15:06:54.421361+00:00",
+        "identity": "8f1b745674ea82993cc5211498d606a86627ecedb6776637daeaf66e42611204",
+        "venues": {
+          "kalshi": {
+            "catalogued": 33,
+            "eligible": 33,
+            "indexed": 33,
+            "source_total": 33,
+            "unsynced": 0
+          },
+          "polymarket_us": {
+            "catalogued": 27,
+            "eligible": 27,
+            "indexed": 27,
+            "source_total": 27,
+            "unsynced": 0
+          }
+        },
+        "groups": [
+          {
+            "venue": "kalshi",
+            "category": "UNKNOWN",
+            "settlement_deadline_horizon": "31_90_DAYS",
+            "catalogued": 11,
+            "eligible": 11,
+            "indexed": 11
+          },
+          {
+            "venue": "kalshi",
+            "category": "UNKNOWN",
+            "settlement_deadline_horizon": "OVER_90_DAYS",
+            "catalogued": 14,
+            "eligible": 14,
+            "indexed": 14
+          },
+          {
+            "venue": "kalshi",
+            "category": "sports",
+            "settlement_deadline_horizon": "0_7_DAYS",
+            "catalogued": 8,
+            "eligible": 8,
+            "indexed": 8
+          },
+          {
+            "venue": "polymarket_us",
+            "category": "culture",
+            "settlement_deadline_horizon": "31_90_DAYS",
+            "catalogued": 3,
+            "eligible": 3,
+            "indexed": 3
+          },
+          {
+            "venue": "polymarket_us",
+            "category": "culture",
+            "settlement_deadline_horizon": "OVER_90_DAYS",
+            "catalogued": 1,
+            "eligible": 1,
+            "indexed": 1
+          },
+          {
+            "venue": "polymarket_us",
+            "category": "finance",
+            "settlement_deadline_horizon": "31_90_DAYS",
+            "catalogued": 1,
+            "eligible": 1,
+            "indexed": 1
+          },
+          {
+            "venue": "polymarket_us",
+            "category": "macro",
+            "settlement_deadline_horizon": "31_90_DAYS",
+            "catalogued": 4,
+            "eligible": 4,
+            "indexed": 4
+          },
+          {
+            "venue": "polymarket_us",
+            "category": "macro",
+            "settlement_deadline_horizon": "8_30_DAYS",
+            "catalogued": 8,
+            "eligible": 8,
+            "indexed": 8
+          },
+          {
+            "venue": "polymarket_us",
+            "category": "macro",
+            "settlement_deadline_horizon": "OVER_90_DAYS",
+            "catalogued": 2,
+            "eligible": 2,
+            "indexed": 2
+          },
+          {
+            "venue": "polymarket_us",
+            "category": "politics",
+            "settlement_deadline_horizon": "31_90_DAYS",
+            "catalogued": 1,
+            "eligible": 1,
+            "indexed": 1
+          },
+          {
+            "venue": "polymarket_us",
+            "category": "politics",
+            "settlement_deadline_horizon": "OVER_90_DAYS",
+            "catalogued": 3,
+            "eligible": 3,
+            "indexed": 3
+          },
+          {
+            "venue": "polymarket_us",
+            "category": "sports",
+            "settlement_deadline_horizon": "8_30_DAYS",
+            "catalogued": 4,
+            "eligible": 4,
+            "indexed": 4
+          }
+        ],
+        "horizon_note": "Administrative deadline proxy; cash availability and settlement timing remain unverified",
+        "last_full_scan": "2026-10-31T15:05:53.441254+00:00",
+        "collection": {
+          "kalshi": [
+            [
+              1,
+              "COMPLETE"
+            ],
+            null
+          ],
+          "polymarket_us": [
+            [
+              2,
+              "COMPLETE"
+            ],
+            null
+          ]
+        }
+      },
+      "http_seconds": 58.600120530987624,
+      "non_http_seconds": 2.1323815869982354
+    },
+    {
+      "status": "READY",
+      "completed": {
+        "kalshi": 33,
+        "polymarket_us": 27
+      },
+      "requests": 9,
+      "cache_hits": 0,
+      "stop_reason": "PER_VENUE_BUDGET_OR_EMPTY",
+      "model": "qwen3-embedding-8b",
+      "identity": "8f1b745674ea82993cc5211498d606a86627ecedb6776637daeaf66e42611204",
+      "dimensions": 4096,
+      "elapsed_seconds": 34.665010780037846,
+      "texts_per_second": 1.7308519065729393,
+      "batch_size": 16,
+      "client_cpu_seconds": 0.8930603050000006,
+      "http": [
+        {
+          "route": "models",
+          "status": 200,
+          "headers_seconds": 0.33400101895676926,
+          "http_seconds": 0.33420296397525817,
+          "bytes": 620
+        },
+        {
+          "route": "embeddings",
+          "status": 200,
+          "headers_seconds": 0.5202611970016733,
+          "http_seconds": 1.0694194629904814,
+          "bytes": 88149
+        },
+        {
+          "route": "models",
+          "status": 200,
+          "headers_seconds": 0.3861907499958761,
+          "http_seconds": 0.38639991701347753,
+          "bytes": 620
+        },
+        {
+          "route": "embeddings",
+          "status": 200,
+          "headers_seconds": 0.6409748580190353,
+          "http_seconds": 1.5848952290252782,
+          "bytes": 88144
+        },
+        {
+          "route": "embeddings",
+          "status": 200,
+          "headers_seconds": 2.168476065970026,
+          "http_seconds": 5.420230445975903,
+          "bytes": 1408466
+        },
+        {
+          "route": "embeddings",
+          "status": 200,
+          "headers_seconds": 2.4665032729972154,
+          "http_seconds": 7.935668955964502,
+          "bytes": 1408106
+        },
+        {
+          "route": "embeddings",
+          "status": 200,
+          "headers_seconds": 2.1422633469919674,
+          "http_seconds": 11.633993095951155,
+          "bytes": 1408059
+        },
+        {
+          "route": "embeddings",
+          "status": 200,
+          "headers_seconds": 1.8271307799732313,
+          "http_seconds": 2.879033397999592,
+          "bytes": 968460
+        },
+        {
+          "route": "embeddings",
+          "status": 200,
+          "headers_seconds": 0.7514225809718482,
+          "http_seconds": 1.3950507689733058,
+          "bytes": 88141
+        }
+      ],
+      "client_calls": [
+        {
+          "route": "/models",
+          "seconds": 0.3439772719866596,
+          "archive_parse_and_client_seconds": 0.009774308011401445
+        },
+        {
+          "route": "/embeddings",
+          "seconds": 1.089339227997698,
+          "archive_parse_and_client_seconds": 0.019919765007216483
+        },
+        {
+          "route": "/models",
+          "seconds": 0.39682226500008255,
+          "archive_parse_and_client_seconds": 0.010422347986605018
+        },
+        {
+          "route": "/embeddings",
+          "seconds": 1.6032959889853373,
+          "archive_parse_and_client_seconds": 0.018400759960059077
+        },
+        {
+          "route": "/embeddings",
+          "seconds": 5.560989223013166,
+          "archive_parse_and_client_seconds": 0.14075877703726292
+        },
+        {
+          "route": "/embeddings",
+          "seconds": 8.091187236015685,
+          "archive_parse_and_client_seconds": 0.15551828005118296
+        },
+        {
+          "route": "/embeddings",
+          "seconds": 11.799394177971408,
+          "archive_parse_and_client_seconds": 0.16540108202025294
+        },
+        {
+          "route": "/embeddings",
+          "seconds": 3.023373414995149,
+          "archive_parse_and_client_seconds": 0.14434001699555665
+        },
+        {
+          "route": "/embeddings",
+          "seconds": 1.411984560021665,
+          "archive_parse_and_client_seconds": 0.016933791048359126
+        }
+      ],
+      "persistent_vectors": 60,
+      "source_coverage": {
+        "at": "2026-10-31T15:07:30.473834+00:00",
+        "identity": "8f1b745674ea82993cc5211498d606a86627ecedb6776637daeaf66e42611204",
+        "venues": {
+          "kalshi": {
+            "catalogued": 33,
+            "eligible": 33,
+            "indexed": 33,
+            "source_total": 33,
+            "unsynced": 0
+          },
+          "polymarket_us": {
+            "catalogued": 27,
+            "eligible": 27,
+            "indexed": 27,
+            "source_total": 27,
+            "unsynced": 0
+          }
+        },
+        "groups": [
+          {
+            "venue": "kalshi",
+            "category": "UNKNOWN",
+            "settlement_deadline_horizon": "31_90_DAYS",
+            "catalogued": 11,
+            "eligible": 11,
+            "indexed": 11
+          },
+          {
+            "venue": "kalshi",
+            "category": "UNKNOWN",
+            "settlement_deadline_horizon": "OVER_90_DAYS",
+            "catalogued": 14,
+            "eligible": 14,
+            "indexed": 14
+          },
+          {
+            "venue": "kalshi",
+            "category": "sports",
+            "settlement_deadline_horizon": "0_7_DAYS",
+            "catalogued": 8,
+            "eligible": 8,
+            "indexed": 8
+          },
+          {
+            "venue": "polymarket_us",
+            "category": "culture",
+            "settlement_deadline_horizon": "31_90_DAYS",
+            "catalogued": 3,
+            "eligible": 3,
+            "indexed": 3
+          },
+          {
+            "venue": "polymarket_us",
+            "category": "culture",
+            "settlement_deadline_horizon": "OVER_90_DAYS",
+            "catalogued": 1,
+            "eligible": 1,
+            "indexed": 1
+          },
+          {
+            "venue": "polymarket_us",
+            "category": "finance",
+            "settlement_deadline_horizon": "31_90_DAYS",
+            "catalogued": 1,
+            "eligible": 1,
+            "indexed": 1
+          },
+          {
+            "venue": "polymarket_us",
+            "category": "macro",
+            "settlement_deadline_horizon": "31_90_DAYS",
+            "catalogued": 4,
+            "eligible": 4,
+            "indexed": 4
+          },
+          {
+            "venue": "polymarket_us",
+            "category": "macro",
+            "settlement_deadline_horizon": "8_30_DAYS",
+            "catalogued": 8,
+            "eligible": 8,
+            "indexed": 8
+          },
+          {
+            "venue": "polymarket_us",
+            "category": "macro",
+            "settlement_deadline_horizon": "OVER_90_DAYS",
+            "catalogued": 2,
+            "eligible": 2,
+            "indexed": 2
+          },
+          {
+            "venue": "polymarket_us",
+            "category": "politics",
+            "settlement_deadline_horizon": "31_90_DAYS",
+            "catalogued": 1,
+            "eligible": 1,
+            "indexed": 1
+          },
+          {
+            "venue": "polymarket_us",
+            "category": "politics",
+            "settlement_deadline_horizon": "OVER_90_DAYS",
+            "catalogued": 3,
+            "eligible": 3,
+            "indexed": 3
+          },
+          {
+            "venue": "polymarket_us",
+            "category": "sports",
+            "settlement_deadline_horizon": "8_30_DAYS",
+            "catalogued": 4,
+            "eligible": 4,
+            "indexed": 4
+          }
+        ],
+        "horizon_note": "Administrative deadline proxy; cash availability and settlement timing remain unverified",
+        "last_full_scan": "2026-10-31T15:06:55.611048+00:00",
+        "collection": {
+          "kalshi": [
+            [
+              1,
+              "COMPLETE"
+            ],
+            null
+          ],
+          "polymarket_us": [
+            [
+              2,
+              "COMPLETE"
+            ],
+            null
+          ]
+        }
+      },
+      "http_seconds": 32.63889423786895,
+      "non_http_seconds": 2.026116542168893
+    },
+    {
+      "status": "READY",
+      "completed": {
+        "kalshi": 33,
+        "polymarket_us": 27
+      },
+      "requests": 7,
+      "cache_hits": 0,
+      "stop_reason": "PER_VENUE_BUDGET_OR_EMPTY",
+      "model": "qwen3-embedding-8b",
+      "identity": "8f1b745674ea82993cc5211498d606a86627ecedb6776637daeaf66e42611204",
+      "dimensions": 4096,
+      "elapsed_seconds": 43.53779021004448,
+      "texts_per_second": 1.378113122198783,
+      "batch_size": 32,
+      "client_cpu_seconds": 0.9482275280000003,
+      "http": [
+        {
+          "route": "models",
+          "status": 200,
+          "headers_seconds": 0.33213028899626806,
+          "http_seconds": 0.332325437979307,
+          "bytes": 620
+        },
+        {
+          "route": "embeddings",
+          "status": 200,
+          "headers_seconds": 0.5596480480162427,
+          "http_seconds": 1.1992617369978689,
+          "bytes": 88149
+        },
+        {
+          "route": "models",
+          "status": 200,
+          "headers_seconds": 0.33176021196413785,
+          "http_seconds": 0.3319702679873444,
+          "bytes": 620
+        },
+        {
+          "route": "embeddings",
+          "status": 200,
+          "headers_seconds": 0.3399654959794134,
+          "http_seconds": 0.8359066319535486,
+          "bytes": 88144
+        },
+        {
+          "route": "embeddings",
+          "status": 200,
+          "headers_seconds": 3.7797525720088743,
+          "http_seconds": 20.54064586601453,
+          "bytes": 2816429
+        },
+        {
+          "route": "embeddings",
+          "status": 200,
+          "headers_seconds": 3.358196253015194,
+          "http_seconds": 16.888974167988636,
+          "bytes": 2376412
+        },
+        {
+          "route": "embeddings",
+          "status": 200,
+          "headers_seconds": 0.9798392489901744,
+          "http_seconds": 1.2358528929762542,
+          "bytes": 88141
+        }
+      ],
+      "client_calls": [
+        {
+          "route": "/models",
+          "seconds": 0.34201709600165486,
+          "archive_parse_and_client_seconds": 0.009691658022347838
+        },
+        {
+          "route": "/embeddings",
+          "seconds": 1.2148910239920951,
+          "archive_parse_and_client_seconds": 0.015629286994226277
+        },
+        {
+          "route": "/models",
+          "seconds": 0.34155875898431987,
+          "archive_parse_and_client_seconds": 0.009588490996975452
+        },
+        {
+          "route": "/embeddings",
+          "seconds": 0.8563381920102984,
+          "archive_parse_and_client_seconds": 0.02043156005674973
+        },
+        {
+          "route": "/embeddings",
+          "seconds": 20.880699320987333,
+          "archive_parse_and_client_seconds": 0.3400534549728036
+        },
+        {
+          "route": "/embeddings",
+          "seconds": 17.121351226989646,
+          "archive_parse_and_client_seconds": 0.2323770590010099
+        },
+        {
+          "route": "/embeddings",
+          "seconds": 1.2542869810131378,
+          "archive_parse_and_client_seconds": 0.018434088036883622
+        }
+      ],
+      "persistent_vectors": 60,
+      "source_coverage": {
+        "at": "2026-10-31T15:08:15.394023+00:00",
+        "identity": "8f1b745674ea82993cc5211498d606a86627ecedb6776637daeaf66e42611204",
+        "venues": {
+          "kalshi": {
+            "catalogued": 33,
+            "eligible": 33,
+            "indexed": 33,
+            "source_total": 33,
+            "unsynced": 0
+          },
+          "polymarket_us": {
+            "catalogued": 27,
+            "eligible": 27,
+            "indexed": 27,
+            "source_total": 27,
+            "unsynced": 0
+          }
+        },
+        "groups": [
+          {
+            "venue": "kalshi",
+            "category": "UNKNOWN",
+            "settlement_deadline_horizon": "31_90_DAYS",
+            "catalogued": 11,
+            "eligible": 11,
+            "indexed": 11
+          },
+          {
+            "venue": "kalshi",
+            "category": "UNKNOWN",
+            "settlement_deadline_horizon": "OVER_90_DAYS",
+            "catalogued": 14,
+            "eligible": 14,
+            "indexed": 14
+          },
+          {
+            "venue": "kalshi",
+            "category": "sports",
+            "settlement_deadline_horizon": "0_7_DAYS",
+            "catalogued": 8,
+            "eligible": 8,
+            "indexed": 8
+          },
+          {
+            "venue": "polymarket_us",
+            "category": "culture",
+            "settlement_deadline_horizon": "31_90_DAYS",
+            "catalogued": 3,
+            "eligible": 3,
+            "indexed": 3
+          },
+          {
+            "venue": "polymarket_us",
+            "category": "culture",
+            "settlement_deadline_horizon": "OVER_90_DAYS",
+            "catalogued": 1,
+            "eligible": 1,
+            "indexed": 1
+          },
+          {
+            "venue": "polymarket_us",
+            "category": "finance",
+            "settlement_deadline_horizon": "31_90_DAYS",
+            "catalogued": 1,
+            "eligible": 1,
+            "indexed": 1
+          },
+          {
+            "venue": "polymarket_us",
+            "category": "macro",
+            "settlement_deadline_horizon": "31_90_DAYS",
+            "catalogued": 4,
+            "eligible": 4,
+            "indexed": 4
+          },
+          {
+            "venue": "polymarket_us",
+            "category": "macro",
+            "settlement_deadline_horizon": "8_30_DAYS",
+            "catalogued": 8,
+            "eligible": 8,
+            "indexed": 8
+          },
+          {
+            "venue": "polymarket_us",
+            "category": "macro",
+            "settlement_deadline_horizon": "OVER_90_DAYS",
+            "catalogued": 2,
+            "eligible": 2,
+            "indexed": 2
+          },
+          {
+            "venue": "polymarket_us",
+            "category": "politics",
+            "settlement_deadline_horizon": "31_90_DAYS",
+            "catalogued": 1,
+            "eligible": 1,
+            "indexed": 1
+          },
+          {
+            "venue": "polymarket_us",
+            "category": "politics",
+            "settlement_deadline_horizon": "OVER_90_DAYS",
+            "catalogued": 3,
+            "eligible": 3,
+            "indexed": 3
+          },
+          {
+            "venue": "polymarket_us",
+            "category": "sports",
+            "settlement_deadline_horizon": "8_30_DAYS",
+            "catalogued": 4,
+            "eligible": 4,
+            "indexed": 4
+          }
+        ],
+        "horizon_note": "Administrative deadline proxy; cash availability and settlement timing remain unverified",
+        "last_full_scan": "2026-10-31T15:07:31.662398+00:00",
+        "collection": {
+          "kalshi": [
+            [
+              1,
+              "COMPLETE"
+            ],
+            null
+          ],
+          "polymarket_us": [
+            [
+              2,
+              "COMPLETE"
+            ],
+            null
+          ]
+        }
+      },
+      "http_seconds": 41.36493700189749,
+      "non_http_seconds": 2.1728532081469893
+    },
+    {
+      "status": "READY",
+      "completed": {
+        "kalshi": 33,
+        "polymarket_us": 27
+      },
+      "requests": 6,
+      "cache_hits": 0,
+      "stop_reason": "PER_VENUE_BUDGET_OR_EMPTY",
+      "model": "qwen3-embedding-8b",
+      "identity": "8f1b745674ea82993cc5211498d606a86627ecedb6776637daeaf66e42611204",
+      "dimensions": 4096,
+      "elapsed_seconds": 40.16134668502491,
+      "texts_per_second": 1.4939738069682906,
+      "batch_size": 64,
+      "client_cpu_seconds": 0.9168705149999994,
+      "http": [
+        {
+          "route": "models",
+          "status": 200,
+          "headers_seconds": 0.4347660499624908,
+          "http_seconds": 0.434964976971969,
+          "bytes": 620
+        },
+        {
+          "route": "embeddings",
+          "status": 200,
+          "headers_seconds": 0.6587627499829978,
+          "http_seconds": 0.8972475280170329,
+          "bytes": 88149
+        },
+        {
+          "route": "models",
+          "status": 200,
+          "headers_seconds": 0.34934890299336985,
+          "http_seconds": 0.34960731101455167,
+          "bytes": 620
+        },
+        {
+          "route": "embeddings",
+          "status": 200,
+          "headers_seconds": 0.47469771502073854,
+          "http_seconds": 0.8597729750326835,
+          "bytes": 88144
+        },
+        {
+          "route": "embeddings",
+          "status": 200,
+          "headers_seconds": 3.6930031980155036,
+          "http_seconds": 10.276683243049774,
+          "bytes": 2904467
+        },
+        {
+          "route": "embeddings",
+          "status": 200,
+          "headers_seconds": 3.2747850230080076,
+          "http_seconds": 25.372426543035544,
+          "bytes": 2376412
+        }
+      ],
+      "client_calls": [
+        {
+          "route": "/models",
+          "seconds": 0.446776250959374,
+          "archive_parse_and_client_seconds": 0.011811273987405002
+        },
+        {
+          "route": "/embeddings",
+          "seconds": 0.9139940930181183,
+          "archive_parse_and_client_seconds": 0.0167465650010854
+        },
+        {
+          "route": "/models",
+          "seconds": 0.3599355059559457,
+          "archive_parse_and_client_seconds": 0.010328194941394031
+        },
+        {
+          "route": "/embeddings",
+          "seconds": 0.88519326900132,
+          "archive_parse_and_client_seconds": 0.025420293968636543
+        },
+        {
+          "route": "/embeddings",
+          "seconds": 10.586609655001666,
+          "archive_parse_and_client_seconds": 0.3099264119518921
+        },
+        {
+          "route": "/embeddings",
+          "seconds": 25.633414522977546,
+          "archive_parse_and_client_seconds": 0.2609879799420014
+        }
+      ],
+      "persistent_vectors": 60,
+      "source_coverage": {
+        "at": "2026-10-31T15:08:56.937918+00:00",
+        "identity": "8f1b745674ea82993cc5211498d606a86627ecedb6776637daeaf66e42611204",
+        "venues": {
+          "kalshi": {
+            "catalogued": 33,
+            "eligible": 33,
+            "indexed": 33,
+            "source_total": 33,
+            "unsynced": 0
+          },
+          "polymarket_us": {
+            "catalogued": 27,
+            "eligible": 27,
+            "indexed": 27,
+            "source_total": 27,
+            "unsynced": 0
+          }
+        },
+        "groups": [
+          {
+            "venue": "kalshi",
+            "category": "UNKNOWN",
+            "settlement_deadline_horizon": "31_90_DAYS",
+            "catalogued": 11,
+            "eligible": 11,
+            "indexed": 11
+          },
+          {
+            "venue": "kalshi",
+            "category": "UNKNOWN",
+            "settlement_deadline_horizon": "OVER_90_DAYS",
+            "catalogued": 14,
+            "eligible": 14,
+            "indexed": 14
+          },
+          {
+            "venue": "kalshi",
+            "category": "sports",
+            "settlement_deadline_horizon": "0_7_DAYS",
+            "catalogued": 8,
+            "eligible": 8,
+            "indexed": 8
+          },
+          {
+            "venue": "polymarket_us",
+            "category": "culture",
+            "settlement_deadline_horizon": "31_90_DAYS",
+            "catalogued": 3,
+            "eligible": 3,
+            "indexed": 3
+          },
+          {
+            "venue": "polymarket_us",
+            "category": "culture",
+            "settlement_deadline_horizon": "OVER_90_DAYS",
+            "catalogued": 1,
+            "eligible": 1,
+            "indexed": 1
+          },
+          {
+            "venue": "polymarket_us",
+            "category": "finance",
+            "settlement_deadline_horizon": "31_90_DAYS",
+            "catalogued": 1,
+            "eligible": 1,
+            "indexed": 1
+          },
+          {
+            "venue": "polymarket_us",
+            "category": "macro",
+            "settlement_deadline_horizon": "31_90_DAYS",
+            "catalogued": 4,
+            "eligible": 4,
+            "indexed": 4
+          },
+          {
+            "venue": "polymarket_us",
+            "category": "macro",
+            "settlement_deadline_horizon": "8_30_DAYS",
+            "catalogued": 8,
+            "eligible": 8,
+            "indexed": 8
+          },
+          {
+            "venue": "polymarket_us",
+            "category": "macro",
+            "settlement_deadline_horizon": "OVER_90_DAYS",
+            "catalogued": 2,
+            "eligible": 2,
+            "indexed": 2
+          },
+          {
+            "venue": "polymarket_us",
+            "category": "politics",
+            "settlement_deadline_horizon": "31_90_DAYS",
+            "catalogued": 1,
+            "eligible": 1,
+            "indexed": 1
+          },
+          {
+            "venue": "polymarket_us",
+            "category": "politics",
+            "settlement_deadline_horizon": "OVER_90_DAYS",
+            "catalogued": 3,
+            "eligible": 3,
+            "indexed": 3
+          },
+          {
+            "venue": "polymarket_us",
+            "category": "sports",
+            "settlement_deadline_horizon": "8_30_DAYS",
+            "catalogued": 4,
+            "eligible": 4,
+            "indexed": 4
+          }
+        ],
+        "horizon_note": "Administrative deadline proxy; cash availability and settlement timing remain unverified",
+        "last_full_scan": "2026-10-31T15:08:16.589862+00:00",
+        "collection": {
+          "kalshi": [
+            [
+              1,
+              "COMPLETE"
+            ],
+            null
+          ],
+          "polymarket_us": [
+            [
+              2,
+              "COMPLETE"
+            ],
+            null
+          ]
+        }
+      },
+      "http_seconds": 38.190702577121556,
+      "non_http_seconds": 1.9706441079033539
+    }
+  ],
+  "finished_at": "2026-10-31T15:08:57.011624+00:00",
+  "client_peak_rss_kib": 578032
+}

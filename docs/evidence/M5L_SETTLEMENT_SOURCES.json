@@ -1,0 +1,34 @@
+[
+  {
+    "url": "https://assets.kalshi.com/contract_terms/BASKETBALLGAMEWIN.pdf",
+    "path": "data/m5l/sources/nba-terms.pdf",
+    "status": 200,
+    "sha256": "7db0904a1d578a2bca0f6a1f55d0d7962d32b76ce5fafb0e23823e5444381556",
+    "retrieved_at": "2026-10-31T19:37:32.886600+00:00"
+  },
+  {
+    "url": "https://assets.kalshi.com/contract_terms/FOOTBALLGAMEWIN.pdf",
+    "path": "data/m5l/sources/nfl-terms.pdf",
+    "status": 200,
+    "sha256": "57b57e1ad96466e413e9274c0d2598225997e35d71262eb63c4ae13858b81d38",
+    "retrieved_at": "2026-10-31T19:37:33.029524+00:00"
+  },
+  {
+    "url": "https://docs.polymarket.us/faqs/sports-faqs.md",
+    "path": "data/m5l/sources/us-sports.md",
+    "status": 200,
+    "sha256": "9aae0cfe089256db6efc5f501d20ee4b7ea2ef24556e1d0e2131b79eb0ddb77d",
+    "retrieved_at": "2026-10-31T19:37:33.177570+00:00"
+  },
+  {
+    "url": "https://kalshi.com/docs/kalshi-fee-schedule.pdf",
+    "error": "HTTP Error 429: Too Many Requests"
+  },
+  {
+    "url": "https://polymarketexchange.com/files/legal/Polymarket%20US%20Rulebook%20(2026.09.30).pdf",
+    "path": "data/m5l/sources/us-rulebook.pdf",
+    "status": 200,
+    "sha256": "1635f93f6ee65f0daea036f816ec52ff2d85381692e4415c81efa3695c3d43bc",
+    "retrieved_at": "2026-10-31T19:37:33.972949+00:00"
+  }
+]

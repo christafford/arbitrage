@@ -279,13 +279,15 @@ def unpack(row):
 
 
 def index_batch(index, client, *, budgets=None, now=None, seconds=120, texts_per_second=8,
-                expected_identity=None):
+                expected_identity=None, scheduler=None):
     budgets=budgets or dict.fromkeys(registry.VENUES,256)
     if set(budgets)!=set(registry.VENUES) or any(type(n)is not int or not 0<=n<=10000 for n in budgets.values()):
         raise ValueError('per-venue budgets must be 0..10000')
     if not 1<=seconds<=3600 or not 0<texts_per_second<=100: raise ValueError('invalid worker throughput/time budget')
     if expected_identity is not None and (len(expected_identity)!=64 or any(c not in '0123456789abcdef' for c in expected_identity)):
         raise ValueError('expected identity must be a SHA-256 hex digest')
+    if scheduler is not None and (expected_identity is None or expected_identity!=state(index,'active_identity')):
+        raise ValueError('scheduled work requires the existing exact namespace pin')
     start=time.monotonic(); now=now or registry.now_utc()
     report={'status':'READY','completed':dict.fromkeys(registry.VENUES,0),'requests':0,'cache_hits':0}
     try:
@@ -316,7 +318,11 @@ def index_batch(index, client, *, budgets=None, now=None, seconds=120, texts_per
             # catalogues are never treated as a representative provider prefix.
             order='d.shuffle' if (sum(report['completed'].values())//client.config.batch_size)%4==3 else 'd.priority DESC,d.shuffle'
             work_now=datetime.fromtimestamp(client.clock(),timezone.utc)
-            selected=list(rows(index,f'''SELECT d.* FROM semantic_documents d
+            schedule_token=None
+            if scheduler is not None:
+                selected,schedule_token=scheduler.select(venue,count,now=work_now)
+            else:
+                selected=list(rows(index,f'''SELECT d.* FROM semantic_documents d
                 WHERE d.venue=? AND {clause} AND d.content_hash IS NOT NULL AND NOT EXISTS
                 (SELECT 1 FROM semantic_vectors v WHERE v.identity=? AND v.content_hash=d.content_hash
                  AND v.created_at>=? AND v.created_at<=?) ORDER BY {order} LIMIT ?''',
@@ -348,6 +354,8 @@ def index_batch(index, client, *, budgets=None, now=None, seconds=120, texts_per
                 index.execute('DELETE FROM semantic_vectors WHERE rowid IN (SELECT rowid FROM semantic_vectors ORDER BY identity=?,created_at LIMIT ?)',(client.identity,excess))
                 index.execute('DELETE FROM semantic_buckets WHERE NOT EXISTS (SELECT 1 FROM semantic_vectors v WHERE v.identity=semantic_buckets.identity AND v.content_hash=semantic_buckets.content_hash)')
             index.commit()
+            if scheduler is not None:
+                scheduler.acknowledge(schedule_token,now=datetime.fromtimestamp(client.clock(),timezone.utc))
             report['completed'][venue]+=len(selected)
             delay=len(selected)/texts_per_second-(time.monotonic()-tick)
             if delay>0:client.sleep(min(delay,max(0,seconds-(time.monotonic()-start))))

@@ -1,0 +1,118 @@
+[
+  {
+    "method": "existing",
+    "batch_size": 64,
+    "response_limit_bytes": 16777216,
+    "production_compatible": false,
+    "samples": [
+      {
+        "seconds": 19.707712502975482,
+        "definitions_per_second": 3.2474595917886075,
+        "raw": 5,
+        "http": {
+          "route": "embeddings",
+          "status": 200,
+          "headers_seconds": 7.061278689012397,
+          "http_seconds": 18.303782030008733,
+          "bytes": 5633176
+        }
+      },
+      {
+        "seconds": 17.137348578020465,
+        "definitions_per_second": 3.734533361950944,
+        "raw": 6,
+        "http": {
+          "route": "embeddings",
+          "status": 200,
+          "headers_seconds": 7.395949004043359,
+          "http_seconds": 15.678409658023156,
+          "bytes": 5633176
+        }
+      },
+      {
+        "seconds": 26.603149226051755,
+        "definitions_per_second": 2.4057302184858065,
+        "raw": 7,
+        "http": {
+          "route": "embeddings",
+          "status": 200,
+          "headers_seconds": 7.367973448999692,
+          "http_seconds": 25.209197759977542,
+          "bytes": 5633176
+        }
+      }
+    ],
+    "probes": [
+      {
+        "model": "qwen3-embedding-8b",
+        "identity": "1bdbff0b104f3d5ebe7be8b3e5e052542bb18f2f1a950d465cc21196ca2a53ba",
+        "dimensions": 4096
+      },
+      {
+        "model": "qwen3-embedding-8b",
+        "identity": "8f1b745674ea82993cc5211498d606a86627ecedb6776637daeaf66e42611204",
+        "dimensions": 4096
+      }
+    ],
+    "status": "MEASURED",
+    "median_definitions_per_second": 3.2474595917886075
+  },
+  {
+    "method": "instruction",
+    "batch_size": 64,
+    "response_limit_bytes": 16777216,
+    "production_compatible": false,
+    "samples": [
+      {
+        "seconds": 26.511109553975984,
+        "definitions_per_second": 2.414082287642376,
+        "raw": 5,
+        "http": {
+          "route": "embeddings",
+          "status": 200,
+          "headers_seconds": 7.49515994702233,
+          "http_seconds": 24.946669447992463,
+          "bytes": 5631819
+        }
+      },
+      {
+        "seconds": 20.516558817005716,
+        "definitions_per_second": 3.119431507536821,
+        "raw": 6,
+        "http": {
+          "route": "embeddings",
+          "status": 200,
+          "headers_seconds": 8.07163150201086,
+          "http_seconds": 18.961891453014687,
+          "bytes": 5631819
+        }
+      },
+      {
+        "seconds": 18.270346987992525,
+        "definitions_per_second": 3.5029438708559564,
+        "raw": 7,
+        "http": {
+          "route": "embeddings",
+          "status": 200,
+          "headers_seconds": 7.715443385008257,
+          "http_seconds": 16.859242906037252,
+          "bytes": 5631819
+        }
+      }
+    ],
+    "probes": [
+      {
+        "model": "qwen3-embedding-8b",
+        "identity": "1bdbff0b104f3d5ebe7be8b3e5e052542bb18f2f1a950d465cc21196ca2a53ba",
+        "dimensions": 4096
+      },
+      {
+        "model": "qwen3-embedding-8b",
+        "identity": "8f1b745674ea82993cc5211498d606a86627ecedb6776637daeaf66e42611204",
+        "dimensions": 4096
+      }
+    ],
+    "status": "MEASURED",
+    "median_definitions_per_second": 3.119431507536821
+  }
+]

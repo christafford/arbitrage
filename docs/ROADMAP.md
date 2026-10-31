@@ -294,3 +294,27 @@ extended. No vector mixing, equivalence approval, trading or M6 work is authoriz
 See [the final audit](M5I_RUN_20261030_RESULTS.md).
 
 See [run record and limits](M5I_RUN_20261030.md). No M6 or trading authorization.
+
+## M5L — Economic research and AI throughput — AUTHORIZED; ACCEPTANCE PARTIAL (2026-10-31)
+
+The operator explicitly authorized M5L after M5I while preserving all trading,
+approval, settlement, clock, fee and collateral safeguards. Historical M5I stop
+instructions/acceptance reports remain records of those earlier runs.
+
+- [x] Isolated same-data 8/16/32/64 description benchmarks, actual raw inference,
+  HTTP/client/persistence timing and task-query instruction comparison.
+- [x] Separate economic-priority planner, 25% fair slots, resumable committed-work
+  acknowledgments, current source/model checks and coverage denominators.
+- [x] Fresh NBA/NFL clocked captures, public fee packets, exceptional settlement
+  comparisons and explicit blocked results for $5/$25/$100/$500 commitments.
+- [x] Genuine corpus and same-window production ablations, source-backed review
+  packets, tests and operator report. No incremental labeled event yield measured.
+- [ ] Verified inference-host GPU/offload/VRAM/CPU telemetry and isolated GPU timing;
+  sustained interleaved parameter trials under production resource caps.
+- [ ] Independent representative adjudication; full Kalshi vector/query coverage.
+- [ ] Settlement/fee/account acceptance, fresh comparable quotes and numerical
+  fee-adjusted executable opportunity evidence. No real-money authority.
+
+See [M5L results](M5L_RESULTS.md) and [operations/replay](M5L_OPERATIONS.md).
+Production indices and expired run configurations remain unchanged; all M5I units
+stay disabled. M5M is a report recommendation only. M6 remains unauthorized.

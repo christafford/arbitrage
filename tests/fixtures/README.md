@@ -217,3 +217,11 @@ set, not held-out/operator adjudication or settlement approvals.
 source from commit `ced3d33`, used only for reproducible offline comparison, never
 production imports. Generated test strings and stress cosine values are hypothetical.
 See `docs/M5I_COMPATIBILITY_RESULTS.md`.
+
+`m5l-public-live.json` is genuine October 31 NBA/NFL public metadata/book and
+clocked Kalshi snapshot/delta evidence (`m5l-public-evidence/v1`). Exact REST bytes
+are unchanged; WS frames retain the existing privacy-screened archive kind and
+wire hash. Per-response UTC receipts, schemas and SHA-256 values are included.
+It is not hypothetical and proves no contract equivalence. Test mutations of these
+responses are explicitly hypothetical faults. M5L scheduler mock inputs reuse the
+existing visibly hypothetical embedding corpus; no synthetic data are called live.

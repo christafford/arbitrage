@@ -88,3 +88,14 @@ multiweek/30-day run. These limitations are explicit JSON fields; all live
 observations remain `UNVERIFIED` and `trading_authorized` is always false. The
 existing scanner/evaluator and run audit remain necessary. No funding, order,
 margin or service activation is implied by exit 0.
+
+## October 31 M5L snapshot
+
+Two bounded NBA/NFL captures validated the current clocked Kalshi schema and
+recovery after timeouts. This supersedes the old unknown rollout status only for
+those observed captures; it does not promise sustained availability. No source/
+receipt comparison satisfied both two-second skew limits. Fees were captured but
+not approved; exceptional payout mapping, account mechanics and cash release
+remain unresolved. The current source readiness command returned BLOCKED. See
+[M5L results](M5L_RESULTS.md) and [readiness evidence](evidence/M5L_READINESS.json).
+No expired review or pre-rollout protocol was renewed.

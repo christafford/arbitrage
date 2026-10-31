@@ -8,7 +8,8 @@ A **read-only, Codex-ready** starter for researching fully hedged binary predict
 **validated live in explicit `sequence-v1` mode**, including recovery after a
 message timeout. Kalshi's changelog dates market-clock rollout to October 29;
 the pre-rollout mode expires **2026-10-29 00:00 UTC**. Default `clocked` mode
-still requires the clock and needs live revalidation after rollout.
+was validated in two bounded October 31 captures; source-skew and approval gates
+still blocked economic comparisons. See [M5L evidence](docs/M5L_RESULTS.md).
 **C fee capture/review tooling is implemented**; live captures passed, but real
 fee applicability still requires operator review. **D mechanics checks are
 implemented**, with real account/instrument reviews pending and US synthetic NO
@@ -188,3 +189,10 @@ inference workers. `discovery refresh` no longer performs inference inline.
 See [M5I operations](docs/M5I_OPERATIONS.md) and [measured results](docs/M5I_RESULTS.md)
 for incremental backfill, coverage, genuine-definition evaluation and the review
 shortlist. All candidates remain unapproved; no trading functionality is added.
+
+[M5L economic research and throughput results](docs/M5L_RESULTS.md) now include
+isolated Qwen batch benchmarks, an optional priority backfill planner, actual
+clocked NBA/NFL captures and independent-review packets. No additional labeled
+semantic events or eligible executable arbitrage were established. GPU telemetry,
+independent adjudication and economic acceptance remain open; production indices,
+expired approvals and disabled M5I services remain preserved.

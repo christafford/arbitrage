@@ -87,3 +87,15 @@ Every added path has tests (success, missing fields, stale data, invalid prices,
   187.5-day horizon exclusion retained. Unlisted pairs are UNLABELED. Ordinary
   event labels never authorize removing resolution-language/settlement warnings.
   Broader recognition and independent adjudication remain open; services stay off.
+
+## M5L explicit research authorization — October 31
+
+The operator subsequently authorized M5L economic research and AI throughput
+benchmarking. This supersedes the earlier development stop at M5I only for that
+research scope. Preserve production model/index identity, expired run configuration,
+all approval/settlement/fee/clock/collateral gates and historical evidence. M5L
+uses isolated benchmark/evaluation/scheduler archives; no live-money execution,
+new trading credentials, automatic approvals or renewal of expired runs is allowed.
+See docs/M5L_RESULTS.md and docs/M5L_OPERATIONS.md. Independent adjudication was
+explicitly left pending by the operator. The proposed M5M is not an authorized run;
+M6 remains unauthorized.
