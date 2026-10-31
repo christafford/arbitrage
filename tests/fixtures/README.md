@@ -206,3 +206,14 @@ hashes, source URLs, receipt clocks and adapter schemas preserve provenance. Tes
 exercise v2 guards against legacy feature rows and queues; labels describe ordinary
 propositions and confer no equivalence approval. All generated vectors/test
 mutations are hypothetical. See `docs/M5I_CORRECTIONS_20261030.md`.
+
+
+`m5i-compatibility-genuine.json` contains 60 genuine archived definitions and 42
+explicit pair labels on separate retrieval-relevance/proposition-conflict axes.
+Unlisted cross-pairs are UNLABELED. Parent and excerpt hashes, source receipts and
+adapter schemas are retained. The assistant labels are a purposive development
+set, not held-out/operator adjudication or settlement approvals.
+`m5i-propositions-v2.py` and `m5i-semantic-before-v3.py` are frozen production
+source from commit `ced3d33`, used only for reproducible offline comparison, never
+production imports. Generated test strings and stress cosine values are hypothetical.
+See `docs/M5I_COMPATIBILITY_RESULTS.md`.

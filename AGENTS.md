@@ -80,3 +80,10 @@ Every added path has tests (success, missing fields, stale data, invalid prices,
   Broader entity/geography/range/event-type keyword mismatches remain; empty
   conflict lists never imply approval. Preserve namespaces, deadlines and progress;
   no new run or milestone completion is implied.
+
+- October 31 v3 guards and a conflict-count retrieval tie-break repair the four
+  latest observed patterns. See `docs/M5I_COMPATIBILITY_RESULTS.md`: a 42-pair
+  genuine development corpus measures indexed recall 16/19 → 18/19, with one
+  187.5-day horizon exclusion retained. Unlisted pairs are UNLABELED. Ordinary
+  event labels never authorize removing resolution-language/settlement warnings.
+  Broader recognition and independent adjudication remain open; services stay off.

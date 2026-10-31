@@ -6,6 +6,10 @@ deadline. The semantic supervisor finished at 08:07:09 EDT after its 30-second
 child-cleanup allowance. Both exited 0 and are now inactive and disabled.
 No new run was started. [Exact audit evidence](evidence/M5I_RUN_20261030_FINAL.json).
 
+**Follow-up:** [v3 proposition compatibility and error evaluation](M5I_COMPATIBILITY_RESULTS.md)
+repair the four observed patterns below. Original run/queue measurements remain
+historical; broader recognition and quality acceptance remain incomplete.
+
 ## Coverage at the deadline
 
 | Venue | Eligible definitions | Indexed | Coverage | Unindexed backlog |

@@ -9,7 +9,7 @@ import json
 import re
 import unicodedata
 
-VERSION = 'proposition-guards/m5i-v2'
+VERSION = 'proposition-guards/m5i-v3'
 FIELDS = ('rules_primary', 'description', 'rules_secondary', 'title', 'question', 'subtitle', 'yes_sub_title')
 NUMBER = r'-?\d+(?:,\d{3})*(?:\.\d+)?'
 SCALE = r'(?:trillion|billion|million|thousand|bn|tn|[kmbt])\b'
@@ -18,7 +18,7 @@ AMOUNT = rf'(?P<currency>\$)?\s*(?P<number>{NUMBER})\s*(?P<scale>{SCALE})?\s*(?P
 OPS = {'greater than or equal to': '>=', 'less than or equal to': '<=',
        'more than or equal to': '>=', 'at least': '>=', 'at most': '<=',
        'no more than': '<=', 'no less than': '>=', 'not above': '<=', 'not below': '>=',
-       'greater than': '>', 'more than': '>', 'less than': '<', 'fewer than': '<',
+       'greater than': '>', 'more than': '>', 'less than': '<', 'lower than': '<', 'fewer than': '<',
        'above': '>', 'below': '<', 'over': '>', 'under': '<', 'exceeds': '>',
        'exceed': '>', '>=': '>=', '<=': '<=', '>': '>', '<': '<', 'exactly': '='}
 PREFIX = re.compile(r'(?<!\w)(?P<operator>' + '|'.join(re.escape(x) for x in OPS) + r')\s*' + AMOUNT)
@@ -46,6 +46,59 @@ def thresholds(text):
                         if pattern is POSTFIX else OPS[parts['operator']])
             result.add((operator, format(value.normalize(), 'f'), unit))
     return sorted(result)
+
+
+def interval(text, all_text):
+    """Explicit bounded range; never infer endpoint inclusion from 'between'."""
+    def amount(suffix):
+        return re.sub(r'\(\?P<(\w+)>', lambda m: '(?P<'+m[1]+suffix+'>', AMOUNT)
+    matches = list(re.finditer(r'\bbetween\s+'+amount('a')+r'\s+(?:and|to)\s+'+amount('b'), text))
+    if len(matches)!=1 or re.search(r'\bor\b', text):return None
+    parts=matches[0].groupdict();ends=[]
+    for suffix in ('a','b'):
+        unit='USD' if parts['currency'+suffix] else UNITS.get(parts['unit'+suffix])
+        value=Decimal(parts['number'+suffix].replace(',',''))*SCALES.get(parts['scale'+suffix],1)
+        ends.append((value,unit))
+    # Share an explicit unit, but not a magnitude: '1 to 2 million' is ambiguous.
+    if parts['scalea']!=parts['scaleb']:return None
+    unit=ends[0][1] or ends[1][1]
+    if not unit or (ends[0][1] and ends[1][1] and ends[0][1]!=ends[1][1]) or ends[0][0]>ends[1][0]:return None
+    inclusive=True if (re.search(r'\ball stated bounds are inclusive\b',all_text) or
+                              re.search(r'\binclusive\b',text[matches[0].end():])) else None
+    return {'lower':format(ends[0][0].normalize(),'f'),'upper':format(ends[1][0].normalize(),'f'),
+            'unit':unit,'inclusive':inclusive}
+
+
+def context_facets(text, all_text):
+    """Narrow assertion grammars; unrecognized/compound subjects stay unknown."""
+    kinds=set();geographies=set();person=country=departure=None
+    if re.search(r'\b(?:gdp|gross domestic product)\b',text) and 'growth' in text:kinds.add('GDP_GROWTH')
+    gas=bool(re.search(r'\b(?:gas prices?|price.{0,50}\bgas)\b',text))
+    if gas:
+        kinds.add('GAS_PRICE')
+        if re.search(r'\b(?:us national|national average.{0,40}\b(?:us|united states))\b',text):geographies.add('US')
+        if re.search(r'\b(?:for|in) california\b',text):geographies.add('US_CA')
+    music=bool(re.search(r'\b(?:song|album|artist)s?\b',text))
+    if music and 'spotify' in text and re.search(r'\b(?:streamed|ranked|ranking|top)\b',text):
+        kinds.add('MUSIC_STREAM_RANK')
+        if re.search(r'\b(?:globally|global)\b',text):geographies.add('GLOBAL')
+        if re.search(r'\b(?:in the us|usa|united states)\b',text):geographies.add('US')
+    if music and re.search(r'\bgrammy\b',text) and re.search(r'\bwins?\b',text):kinds.add('MUSIC_AWARD_WIN')
+    match=re.search(r'^(?:if|this market will settle to yes if)\s+(.{1,90}?)\s+(?:leaves as|formally ceases to hold|has either officially announced)',text)
+    if match and re.search(r'\bpresident of\b',text):
+        kinds.add('OFFICE_DEPARTURE')
+        name=match[1]
+        if (2<=len(name.split())<=5 and re.fullmatch(r"[^\W\d_]+(?:[-' ][^\W\d_]+)+",name)
+                and not re.search(r'\b(?:and|or|not|if|the|someone|anyone|either)\b',name)):
+            person=name
+        place=re.search(r'\bpresident of ([a-z ]{2,50}?)\s+(?:before|by|or|then|on)\b',text)
+        if place and not re.search(r'\b(?:and|or|not)\b',place[1]):country=place[1].strip()
+        if 'has either officially announced' in text:departure='ANNOUNCEMENT_OR_ACTUAL'
+        elif 'formally ceases to hold' in text:departure='ACTUAL_DEPARTURE'
+        elif 'based on the announcement date, regardless of effective date' in all_text:departure='ANNOUNCEMENT_DATE'
+    return {'event_kind':next(iter(kinds)) if len(kinds)==1 else None,
+            'geography':next(iter(geographies)) if len(geographies)==1 else None,
+            'named_subject':person,'office_country':country,'departure_basis':departure}
 
 
 def extract(contract):
@@ -117,7 +170,8 @@ def extract(contract):
         negated = bool(re.search(r"\b(?:not|never|won't|doesn't)\s+(?:hike|increase|raise|cut|decrease|reduce|lower)\b", text))
         if sum((unchanged,hike,cut))==1 and not negated:
             rate_direction = 'UNCHANGED' if unchanged else 'HIKE' if hike else 'CUT'
-    return {'version':VERSION,'thresholds':values,'observation_window':window,
+    return {'version':VERSION,'thresholds':values,'interval':interval(text,all_text),
+            **context_facets(text,all_text),'observation_window':window,
             'proposition_type':scope,'rounding':rounding,'political_office':office,
             'ceo_company':company,'ceo_action':action,'ranking_position':position,
             'rate_direction':rate_direction}
@@ -146,6 +200,22 @@ def compare(left, right):
         warnings.append('PROPOSITION_THRESHOLD_CONFLICT')
     elif bool(typed_a)!=bool(typed_b):
         warnings.append('PROPOSITION_THRESHOLD_UNKNOWN')
+    # A bounded interval versus a one-sided threshold differs even when they
+    # overlap. Unknown inclusivity alone is never a conflict.
+    def bounds(item):
+        bounded=item.get('interval')
+        if bounded:return (bounded['lower'],bounded['upper'],bounded['unit'],bounded['inclusive'],bounded['inclusive'])
+        values=item['thresholds']
+        if len(values)!=1 or values[0][2]=='unspecified':return None
+        op,value,unit=values[0]
+        return (value if op in ('>','>=','=') else None,value if op in ('<','<=','=') else None,
+                unit,op in ('>=','='),op in ('<=','='))
+    if left.get('interval') or right.get('interval'):
+        a_range,b_range=bounds(left),bounds(right)
+        if a_range and b_range and a_range[2]==b_range[2]:
+            if a_range[:2]!=b_range[:2] or any(a is not None and b is not None and a!=b for a,b in zip(a_range[3:],b_range[3:])):
+                warnings.append('PROPOSITION_RANGE_CONFLICT')
+        else:warnings.append('PROPOSITION_RANGE_UNKNOWN')
     def directions(values):
         return {'LOWER_BOUND' if x[0].startswith('>') else 'UPPER_BOUND' if x[0].startswith('<') else 'EXACT' for x in values}
     left_direction, right_direction = directions(a), directions(b)
@@ -153,7 +223,8 @@ def compare(left, right):
             (left_direction == {'UPPER_BOUND'} and right_direction == {'LOWER_BOUND'})):
         warnings.append('PROPOSITION_DIRECTION_CONFLICT')
     for facet in ('observation_window','proposition_type','rounding','political_office',
-                  'ceo_company','ceo_action','ranking_position','rate_direction'):
+                  'ceo_company','ceo_action','ranking_position','rate_direction',
+                  'event_kind','geography','named_subject','office_country','departure_basis'):
         a,b=left[facet],right[facet]
         if a and b and a!=b:warnings.append(facet.upper()+'_CONFLICT')
         elif bool(a)!=bool(b):warnings.append(facet.upper()+'_UNKNOWN')

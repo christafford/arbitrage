@@ -432,7 +432,10 @@ def rank_pair(source, index, left, right, reasons, semantic, now, context, *, re
     # Scores never compensate for explicit contradictions. This is a review
     # ordering, not a probability of equivalence or an executable opportunity.
     similarity=semantic['cosine'] if semantic else 0
-    rank=(bool(material),-score,-similarity,k['source_id'],p['source_id'])
+    # Zero-score ties otherwise discard the relevant event in favor of a
+    # lexicographically earlier, more contradictory pair during diversity.
+    # This orders review only; every material warning remains attached.
+    rank=(bool(material),-score,sum('CONFLICT' in w for w in material),-similarity,k['source_id'],p['source_id'])
     return rank, {'kalshi_id':k['source_id'],'polymarket_us_id':p['source_id'],
         'kalshi_title':kr['features']['title'],'polymarket_us_title':pr['features']['title'],
         'versions':[k['version_id'],p['version_id']], 'event_key':k['event_key'], 'polymarket_event_key':p['event_key'],
@@ -461,8 +464,8 @@ def retrieve(source,index,*,limit=20,query_budget=500,candidate_cap=256,now=None
     def keep(item):
         if item is None:return
         rank,row=item
-        if len(result)>=limit and rank[:2]>max(x[0][:2] for x in result.values()):return
-        if row['event_key'] in result and rank[:2]>result[row['event_key']][0][:2]:return
+        if len(result)>=limit and rank[:3]>max(x[0][:3] for x in result.values()):return
+        if row['event_key'] in result and rank[:3]>result[row['event_key']][0][:3]:return
         for venue,version in zip(registry.VENUES,row['versions']):
             instrument=registry._instrument(source,venue,row[venue+'_id'])
             if instrument['version_id']!=version or eligible(source,instrument,now,context)!='ELIGIBLE':return
@@ -470,7 +473,7 @@ def retrieve(source,index,*,limit=20,query_budget=500,candidate_cap=256,now=None
         verified=all(x['quality']=='FRESH' and x['depth_proxy'] is not None and Decimal(x['depth_proxy'])>0 for x in liquidity.values())
         depth=min(Decimal(x['depth_proxy']) for x in liquidity.values()) if verified else Decimal(0)
         row['liquidity']=liquidity
-        rank=(*rank[:2],-int(verified),-depth,*rank[2:])
+        rank=(*rank[:3],-int(verified),-depth,*rank[3:])
         key=row['event_key']
         for existing,(prior_rank,prior_row) in list(result.items()):
             if existing!=key and prior_row['polymarket_event_key']==row['polymarket_event_key']:
@@ -573,6 +576,7 @@ def retrieve(source,index,*,limit=20,query_budget=500,candidate_cap=256,now=None
         row['prior_reviews']=registry._rows(source,'SELECT id,status,reason FROM pairs WHERE kalshi_id=? AND polymarket_us_id=? ORDER BY id',
                                             (row['kalshi_id'],row['polymarket_us_id']))
     candidates.sort(key=lambda r:(bool(r['known_contradictions']),-r['equivalence_score_bps'],
+        sum('CONFLICT' in w for w in r['known_contradictions']),
         -int(all(x['quality']=='FRESH' and x['depth_proxy'] is not None and Decimal(x['depth_proxy'])>0 for x in r['liquidity'].values())),
         -min((Decimal(x['depth_proxy']) for x in r['liquidity'].values()),default=Decimal(0)) if all(x['quality']=='FRESH' and x['depth_proxy'] is not None for x in r['liquidity'].values()) else Decimal(0),
         -r['signals'].get('embedding',{}).get('cosine',0),r['kalshi_id'],r['polymarket_us_id']))

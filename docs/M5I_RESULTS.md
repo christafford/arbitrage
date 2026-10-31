@@ -124,3 +124,10 @@ The [October 30–31 continuation audit](M5I_RUN_20261030_RESULTS.md) records
 definitions still unindexed. Both services are stopped/disabled. The final queue
 has 54 sports identities and 46 keyword leads with no vector-supported finalist;
 broader proposition mismatches and independently adjudicated quality remain open.
+
+
+The [October 31 compatibility evaluation](M5I_COMPATIBILITY_RESULTS.md) repairs
+four newly observed mismatch patterns and a zero-score diversity tie. On 42
+assistant-labeled development pairs, indexed recall improves 16/19 → 18/19 and
+labeled unflagged false positives fall 5 → 0. This is deterministic historical
+regression evidence, not independent production precision or embedding gain.

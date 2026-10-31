@@ -283,9 +283,13 @@ extended. No vector mixing, equivalence approval, trading or M6 work is authoriz
 - [x] Audit the completed run: two rounds per venue, 23,978 stored vectors,
   100% US / 8.61% Kalshi eligible coverage, 51 completed retrieval reports and
   20 freshly checked sports identities. Both services are disabled.
+- [x] Add v3 range/geography/event-kind/presidential-departure guards and a
+  conflict-count tie-break; evaluate 42 genuine labeled pairs/60 definitions.
+  Indexed Recall@20/@100 improves 16/19 → 18/19; one horizon exclusion remains.
+  [Measured errors and limits](M5I_COMPATIBILITY_RESULTS.md).
 - [ ] Complete the 117,488-definition Kalshi backlog/final catalogue traversal,
-  broaden entity/geography/range/event-type guards, and independently evaluate
-  false positives/negatives and incremental semantic yield.
+  broaden parsing beyond recognized grammars, independently adjudicate held-out
+  false positives/negatives and establish incremental semantic yield.
 
 See [the final audit](M5I_RUN_20261030_RESULTS.md).
 

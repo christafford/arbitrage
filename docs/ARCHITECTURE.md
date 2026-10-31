@@ -346,3 +346,12 @@ Python coordinate pass was removed. Dot products preserve multiplication and sum
 order. No new dependency, cache or schema is introduced. The read-only bounded
 `scripts/m5i_profile.py` harness measures historical retrieval without advancing
 checkpoints. [Regression and profiling evidence](M5I_CORRECTIONS_20261030.md).
+
+
+The v3 guards add explicit bounded intervals, limited assertion geography/event
+kinds and presidential-departure subjects/rules. Missing or ambiguous facets stay
+unknown. Persistent retrieval breaks equal-score ties by explicit conflict count
+before liquidity/cosine while retaining all material warnings and event diversity.
+`scripts/m5i_compatibility_evaluate.py` uses isolated archives, frozen v2 baselines
+and independent relevance/conflict label axes; unlisted pairs are unlabeled.
+[Measurements and scope](M5I_COMPATIBILITY_RESULTS.md).

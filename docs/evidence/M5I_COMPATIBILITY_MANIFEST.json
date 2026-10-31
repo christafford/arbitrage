@@ -1,0 +1,368 @@
+{
+  "at": "2026-10-31T14:36:16.031238+00:00",
+  "guard_version": "proposition-guards/m5i-v3",
+  "baseline_commit": "ced3d33",
+  "fixtures": {
+    "tests/fixtures/m5i-compatibility-genuine.json": "8a62c2384fa3b02480ad699116baa7ef668a8ab5c8fcc789247e9b59c0efa615",
+    "tests/fixtures/m5i-propositions-v2.py": "18189506e141bdb4625cbe4406b9aa14301a5a6af49d33f64aa26faf680e74da",
+    "tests/fixtures/m5i-semantic-before-v3.py": "ee94b628cd94aa57d03ff80b8bd6b3ebe2027943bd10860f45b7744a8039d566"
+  },
+  "tests": {
+    "command": ".venv/bin/python -m unittest discover -s tests -v",
+    "count": 409,
+    "seconds": 18.948,
+    "result": "OK"
+  },
+  "dependencies": "pip check: No broken requirements found.",
+  "original_corpus_regression": {
+    "schema": "m5i-evaluation-results/v1",
+    "hypothetical": false,
+    "mode": "GENUINE_ARCHIVED_DEFINITIONS_EVENT_RETRIEVAL_ONLY",
+    "dataset_sha256": "4881cf2ec5bd58e8a59f62a86d1d9e3e4b807d8682fc5c4b7076bd8bc640e84a",
+    "evaluated_at": "2026-10-28T01:37:07.400883+00:00",
+    "sampling_limits": "Purposive NBA/NFL and CPI contrast set, not representative, not independently human-adjudicated or held out.",
+    "settlement_equivalence_approved": false,
+    "baseline": {
+      "20": {
+        "relevant_found": 18,
+        "relevant_total": 18,
+        "recall": 1.0,
+        "returned": 74,
+        "precision_among_returned": 0.24324324324324326,
+        "false_negative_categories": {}
+      },
+      "100": {
+        "relevant_found": 18,
+        "relevant_total": 18,
+        "recall": 1.0,
+        "returned": 74,
+        "precision_among_returned": 0.24324324324324326,
+        "false_negative_categories": {}
+      },
+      "hard_negative_retrievals": [
+        {
+          "kalshi_id": "KXNBAGAME-26OCT29CLEATL-ATL",
+          "polymarket_us_id": "aec-nba-cle-atl-2026-10-29",
+          "category": "inverse_outcome",
+          "reason": "Opposite selected winner for the same game; no complementary payoff approval.",
+          "retrieved": false
+        },
+        {
+          "kalshi_id": "KXNBAGAME-26OCT28MIAATL-ATL",
+          "polymarket_us_id": "aec-nba-mia-atl-2026-10-28",
+          "category": "inverse_outcome",
+          "reason": "Opposite selected winner for the same game; no complementary payoff approval.",
+          "retrieved": false
+        },
+        {
+          "kalshi_id": "KXNBAGAME-26OCT31ATLNOP-NOP",
+          "polymarket_us_id": "aec-nba-atl-no-2026-10-31",
+          "category": "inverse_outcome",
+          "reason": "Opposite selected winner for the same game; no complementary payoff approval.",
+          "retrieved": false
+        },
+        {
+          "kalshi_id": "KXNBAGAME-26OCT30DETBKN-BKN",
+          "polymarket_us_id": "aec-nba-det-bkn-2026-10-30",
+          "category": "inverse_outcome",
+          "reason": "Opposite selected winner for the same game; no complementary payoff approval.",
+          "retrieved": false
+        },
+        {
+          "kalshi_id": "KXNBAGAME-26OCT30CHIBOS-BOS",
+          "polymarket_us_id": "aec-nba-chi-bos-2026-10-30",
+          "category": "inverse_outcome",
+          "reason": "Opposite selected winner for the same game; no complementary payoff approval.",
+          "retrieved": false
+        },
+        {
+          "kalshi_id": "KXNBAGAME-26OCT28CHADET-DET",
+          "polymarket_us_id": "aec-nba-cha-det-2026-10-28",
+          "category": "inverse_outcome",
+          "reason": "Opposite selected winner for the same game; no complementary payoff approval.",
+          "retrieved": false
+        },
+        {
+          "kalshi_id": "KXNBAGAME-26OCT31PHICHA-CHA",
+          "polymarket_us_id": "aec-nba-phi-cha-2026-10-31",
+          "category": "inverse_outcome",
+          "reason": "Opposite selected winner for the same game; no complementary payoff approval.",
+          "retrieved": false
+        },
+        {
+          "kalshi_id": "KXNBAGAME-26OCT30CHAWAS-WAS",
+          "polymarket_us_id": "aec-nba-cha-was-2026-10-30",
+          "category": "inverse_outcome",
+          "reason": "Opposite selected winner for the same game; no complementary payoff approval.",
+          "retrieved": false
+        },
+        {
+          "kalshi_id": "KXNFLGAME-26NOV01ARIDAL-DAL",
+          "polymarket_us_id": "aec-nfl-ari-dal-2026-11-01",
+          "category": "inverse_outcome",
+          "reason": "Opposite selected winner for the same game; no complementary payoff approval.",
+          "retrieved": false
+        },
+        {
+          "kalshi_id": "KXNFLGAME-26NOV08ARISEA-SEA",
+          "polymarket_us_id": "aec-nfl-ari-sea-2026-11-08",
+          "category": "inverse_outcome",
+          "reason": "Opposite selected winner for the same game; no complementary payoff approval.",
+          "retrieved": false
+        },
+        {
+          "kalshi_id": "KXCPI-26OCT-T-0.1",
+          "polymarket_us_id": "cpic-uscpi-october-mom-2026-11-10-gt0pt0pct",
+          "category": "different_threshold",
+          "reason": "Different explicit percentage threshold.",
+          "retrieved": true
+        },
+        {
+          "kalshi_id": "KXCPI-26OCT-T0.0",
+          "polymarket_us_id": "cpic-uscpi-october-mom-2026-11-10-gt0pt1pct",
+          "category": "different_threshold",
+          "reason": "Different explicit percentage threshold.",
+          "retrieved": true
+        },
+        {
+          "kalshi_id": "KXCPI-26OCT-T0.1",
+          "polymarket_us_id": "cpic-uscpi-october-mom-2026-11-10-gt0pt2pct",
+          "category": "different_threshold",
+          "reason": "Different explicit percentage threshold.",
+          "retrieved": true
+        },
+        {
+          "kalshi_id": "KXCPI-26OCT-T0.2",
+          "polymarket_us_id": "cpic-uscpi-october-mom-2026-11-10-gt0pt3pct",
+          "category": "different_threshold",
+          "reason": "Different explicit percentage threshold.",
+          "retrieved": true
+        },
+        {
+          "kalshi_id": "KXCPI-26OCT-T0.3",
+          "polymarket_us_id": "cpic-uscpi-october-mom-2026-11-10-gt0pt4pct",
+          "category": "different_threshold",
+          "reason": "Different explicit percentage threshold.",
+          "retrieved": true
+        },
+        {
+          "kalshi_id": "KXCPI-26OCT-T0.4",
+          "polymarket_us_id": "cpic-uscpi-october-mom-2026-11-10-gt0pt5pct",
+          "category": "different_threshold",
+          "reason": "Different explicit percentage threshold.",
+          "retrieved": true
+        },
+        {
+          "kalshi_id": "KXCPI-26OCT-T0.5",
+          "polymarket_us_id": "cpic-uscpi-october-mom-2026-11-10-gt0pt6pct",
+          "category": "different_threshold",
+          "reason": "Different explicit percentage threshold.",
+          "retrieved": true
+        },
+        {
+          "kalshi_id": "KXCPI-26OCT-T0.2",
+          "polymarket_us_id": "cpic-uscpi-october-yoy-2026-11-10-gt3pt2pct",
+          "category": "different_measure_or_settlement_rule",
+          "reason": "Monthly versus annual CPI; or absolute rate threshold versus rounded change bucket. Thematic similarity is insufficient.",
+          "retrieved": true
+        },
+        {
+          "kalshi_id": "KXFED-26OCT-T4.25",
+          "polymarket_us_id": "rdc-usfed-fomc-2026-10-28-cut25",
+          "category": "different_measure_or_settlement_rule",
+          "reason": "Monthly versus annual CPI; or absolute rate threshold versus rounded change bucket. Thematic similarity is insufficient.",
+          "retrieved": false
+        },
+        {
+          "kalshi_id": "KXNBAGAME-26OCT29CLEATL-CLE",
+          "polymarket_us_id": "cpic-uscpi-october-mom-2026-11-10-gt0pt6pct",
+          "category": "obvious_false_positive",
+          "reason": "Basketball game winner versus consumer price index change.",
+          "retrieved": false
+        }
+      ],
+      "elapsed_seconds": 0.06764404900604859,
+      "algorithm": "discovery-v3-category"
+    },
+    "improved": {
+      "20": {
+        "relevant_found": 18,
+        "relevant_total": 18,
+        "recall": 1.0,
+        "returned": 18,
+        "precision_among_returned": 1.0,
+        "false_negative_categories": {}
+      },
+      "100": {
+        "relevant_found": 18,
+        "relevant_total": 18,
+        "recall": 1.0,
+        "returned": 18,
+        "precision_among_returned": 1.0,
+        "false_negative_categories": {}
+      },
+      "hard_negative_retrievals": [
+        {
+          "kalshi_id": "KXNBAGAME-26OCT29CLEATL-ATL",
+          "polymarket_us_id": "aec-nba-cle-atl-2026-10-29",
+          "category": "inverse_outcome",
+          "reason": "Opposite selected winner for the same game; no complementary payoff approval.",
+          "retrieved": false
+        },
+        {
+          "kalshi_id": "KXNBAGAME-26OCT28MIAATL-ATL",
+          "polymarket_us_id": "aec-nba-mia-atl-2026-10-28",
+          "category": "inverse_outcome",
+          "reason": "Opposite selected winner for the same game; no complementary payoff approval.",
+          "retrieved": false
+        },
+        {
+          "kalshi_id": "KXNBAGAME-26OCT31ATLNOP-NOP",
+          "polymarket_us_id": "aec-nba-atl-no-2026-10-31",
+          "category": "inverse_outcome",
+          "reason": "Opposite selected winner for the same game; no complementary payoff approval.",
+          "retrieved": false
+        },
+        {
+          "kalshi_id": "KXNBAGAME-26OCT30DETBKN-BKN",
+          "polymarket_us_id": "aec-nba-det-bkn-2026-10-30",
+          "category": "inverse_outcome",
+          "reason": "Opposite selected winner for the same game; no complementary payoff approval.",
+          "retrieved": false
+        },
+        {
+          "kalshi_id": "KXNBAGAME-26OCT30CHIBOS-BOS",
+          "polymarket_us_id": "aec-nba-chi-bos-2026-10-30",
+          "category": "inverse_outcome",
+          "reason": "Opposite selected winner for the same game; no complementary payoff approval.",
+          "retrieved": false
+        },
+        {
+          "kalshi_id": "KXNBAGAME-26OCT28CHADET-DET",
+          "polymarket_us_id": "aec-nba-cha-det-2026-10-28",
+          "category": "inverse_outcome",
+          "reason": "Opposite selected winner for the same game; no complementary payoff approval.",
+          "retrieved": false
+        },
+        {
+          "kalshi_id": "KXNBAGAME-26OCT31PHICHA-CHA",
+          "polymarket_us_id": "aec-nba-phi-cha-2026-10-31",
+          "category": "inverse_outcome",
+          "reason": "Opposite selected winner for the same game; no complementary payoff approval.",
+          "retrieved": false
+        },
+        {
+          "kalshi_id": "KXNBAGAME-26OCT30CHAWAS-WAS",
+          "polymarket_us_id": "aec-nba-cha-was-2026-10-30",
+          "category": "inverse_outcome",
+          "reason": "Opposite selected winner for the same game; no complementary payoff approval.",
+          "retrieved": false
+        },
+        {
+          "kalshi_id": "KXNFLGAME-26NOV01ARIDAL-DAL",
+          "polymarket_us_id": "aec-nfl-ari-dal-2026-11-01",
+          "category": "inverse_outcome",
+          "reason": "Opposite selected winner for the same game; no complementary payoff approval.",
+          "retrieved": false
+        },
+        {
+          "kalshi_id": "KXNFLGAME-26NOV08ARISEA-SEA",
+          "polymarket_us_id": "aec-nfl-ari-sea-2026-11-08",
+          "category": "inverse_outcome",
+          "reason": "Opposite selected winner for the same game; no complementary payoff approval.",
+          "retrieved": false
+        },
+        {
+          "kalshi_id": "KXCPI-26OCT-T-0.1",
+          "polymarket_us_id": "cpic-uscpi-october-mom-2026-11-10-gt0pt0pct",
+          "category": "different_threshold",
+          "reason": "Different explicit percentage threshold.",
+          "retrieved": false
+        },
+        {
+          "kalshi_id": "KXCPI-26OCT-T0.0",
+          "polymarket_us_id": "cpic-uscpi-october-mom-2026-11-10-gt0pt1pct",
+          "category": "different_threshold",
+          "reason": "Different explicit percentage threshold.",
+          "retrieved": false
+        },
+        {
+          "kalshi_id": "KXCPI-26OCT-T0.1",
+          "polymarket_us_id": "cpic-uscpi-october-mom-2026-11-10-gt0pt2pct",
+          "category": "different_threshold",
+          "reason": "Different explicit percentage threshold.",
+          "retrieved": false
+        },
+        {
+          "kalshi_id": "KXCPI-26OCT-T0.2",
+          "polymarket_us_id": "cpic-uscpi-october-mom-2026-11-10-gt0pt3pct",
+          "category": "different_threshold",
+          "reason": "Different explicit percentage threshold.",
+          "retrieved": false
+        },
+        {
+          "kalshi_id": "KXCPI-26OCT-T0.3",
+          "polymarket_us_id": "cpic-uscpi-october-mom-2026-11-10-gt0pt4pct",
+          "category": "different_threshold",
+          "reason": "Different explicit percentage threshold.",
+          "retrieved": false
+        },
+        {
+          "kalshi_id": "KXCPI-26OCT-T0.4",
+          "polymarket_us_id": "cpic-uscpi-october-mom-2026-11-10-gt0pt5pct",
+          "category": "different_threshold",
+          "reason": "Different explicit percentage threshold.",
+          "retrieved": false
+        },
+        {
+          "kalshi_id": "KXCPI-26OCT-T0.5",
+          "polymarket_us_id": "cpic-uscpi-october-mom-2026-11-10-gt0pt6pct",
+          "category": "different_threshold",
+          "reason": "Different explicit percentage threshold.",
+          "retrieved": false
+        },
+        {
+          "kalshi_id": "KXCPI-26OCT-T0.2",
+          "polymarket_us_id": "cpic-uscpi-october-yoy-2026-11-10-gt3pt2pct",
+          "category": "different_measure_or_settlement_rule",
+          "reason": "Monthly versus annual CPI; or absolute rate threshold versus rounded change bucket. Thematic similarity is insufficient.",
+          "retrieved": false
+        },
+        {
+          "kalshi_id": "KXFED-26OCT-T4.25",
+          "polymarket_us_id": "rdc-usfed-fomc-2026-10-28-cut25",
+          "category": "different_measure_or_settlement_rule",
+          "reason": "Monthly versus annual CPI; or absolute rate threshold versus rounded change bucket. Thematic similarity is insufficient.",
+          "retrieved": false
+        },
+        {
+          "kalshi_id": "KXNBAGAME-26OCT29CLEATL-CLE",
+          "polymarket_us_id": "cpic-uscpi-october-mom-2026-11-10-gt0pt6pct",
+          "category": "obvious_false_positive",
+          "reason": "Basketball game winner versus consumer price index change.",
+          "retrieved": false
+        }
+      ],
+      "elapsed_seconds": 0.03802993503632024,
+      "algorithm": "semantic-discovery/m5i-v1"
+    },
+    "inference": {
+      "status": "NOT_REQUESTED"
+    },
+    "new_reviewable_events": [],
+    "baseline_reviewable_events": 11,
+    "improved_reviewable_events": 11,
+    "model_claim": "Deterministic retrieval only; no model-quality measurement"
+  },
+  "production_replay": {
+    "candidates": 100,
+    "newly_flagged": 4,
+    "mode": "READ_ONLY_HISTORICAL_QUEUE_REPLAY"
+  },
+  "production_writes": false,
+  "new_inference_requests": 0,
+  "services": {
+    "collection": "ActiveState=inactive\nUnitFileState=disabled\n",
+    "semantic": "ActiveState=inactive\nUnitFileState=disabled\n"
+  }
+}

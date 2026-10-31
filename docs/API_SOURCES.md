@@ -530,3 +530,13 @@ unrecognized wording stay unknown. The ten genuine regression excerpts retain
 their source/schema/receipt/parent-hash provenance.
 [Document hashes and receipts](evidence/M5I_CORRECTION_API_CHECKS.json) and
 [correction results](M5I_CORRECTIONS.md) identify scope and remaining limitations.
+
+
+### M5I v3 compatibility evaluation — October 31 UTC
+
+The official Kalshi Get Market and US Get Market By Slug documents were recaptured;
+existing consumed fields and upstream versions (3.35.0 / 1.0.0) remain unchanged.
+[Hashes and receipt clocks](evidence/M5I_COMPATIBILITY_API_CHECKS.json). The parser
+uses existing public assertion/title/rules strings; no new venue field is inferred.
+The 60-definition genuine fixture preserves original parent response and excerpt
+hashes, adapters and source receipts. [Evaluation limits](M5I_COMPATIBILITY_RESULTS.md).
