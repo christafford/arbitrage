@@ -1,5 +1,10 @@
 # M5N — US stream access and exceptional-payout screening
 
+**Later continuation:** the operator supplied an existing local key after this
+report. [Authenticated stream results](M5N_STREAM_RESULTS.md) supersede the access
+blocker below: 64 books were captured in a new two-minute run. This original
+unauthenticated access record and all settlement-review gaps remain preserved.
+
 November 1, 2026 UTC. **Access diagnosis and candidate screening completed;
 stream timeliness and strict settlement compatibility remain unverified.**
 This is the operator-requested read-only follow-up to M5M. No production code,

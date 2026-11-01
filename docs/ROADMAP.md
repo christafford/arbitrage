@@ -348,9 +348,16 @@ Operator-requested read-only follow-up; no live-money authority.
 - [x] Five freshly open Fed/labor pairs screened with explicit exceptional-payout
   matches, conflicts and unresolved branches; ten unapproved fee packets.
 - [x] Source/hash replay, isolated archive smoke and 454 passing tests.
-- [ ] Authenticated US streaming measurement and continuity verification.
+- [x] Authenticated US short-window measurement: 64 books in 120 seconds,
+  62/63 NFL timestamp/depth passes, one stale Fed snapshot; protected read-only
+  probe, genuine fixtures, offline replay and failure tests.
+- [ ] US sequence/quiet-stream continuity, sustained representative freshness
+  and validated synchronous cross-venue comparison. Independent Kalshi capture
+  exhausted its connection budget early and is explicitly INCOMPLETE.
 - [ ] Human-reviewed complete settlement map, fees and mechanics for a strict pair.
 
 See [M5N results and review packets](M5N_RESULTS.md). Shared cancellation or
 previous-month fallback behavior does not establish full strict compatibility.
-Production code, indices, gates, expired runs and human approvals remain unchanged.
+The [authenticated continuation](M5N_STREAM_RESULTS.md) adds an isolated diagnostic
+reader; production indices, economic gates, expired runs and human approvals
+remain unchanged. [US stream operation and replay](US_WEBSOCKET.md).

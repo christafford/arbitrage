@@ -112,3 +112,16 @@ response-only freshness metrics must never replace the existing economic gates.
 Sports independent discretionary settlement remains residual-risk research,
 excluded from strict arbitrage. All human review remains pending unless an actual
 explicit, source-bound decision is provided.
+
+## M5N authenticated market-data continuation
+
+The operator requested US streaming verification and supplied an existing local
+credential file for read-only use. See `docs/M5N_STREAM_RESULTS.md` and
+`docs/US_WEBSOCKET.md`: the original 401 blocker is resolved, a 120-second US
+capture contains 64 books, and offline replay verifies them. NFL updates were
+timely in that short window; the quiet Fed snapshot remained stale. US sequence
+continuity and quiet-book validity remain UNKNOWN. The separate concurrent Kalshi
+capture exhausted its connection budget and is INCOMPLETE. Do not relabel these
+diagnostics as economic eligibility or restart expired services. Existing keys
+may sign only the fixed market-data handshake; no account/order requests,
+automatic approvals, funds or M6 are authorized.

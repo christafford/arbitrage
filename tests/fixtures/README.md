@@ -239,3 +239,13 @@ No trading credential/account field was added. The genuine fixture demonstrates
 that a successful cached HTTP response can retain stale transaction time; it does
 not establish continuous liquidity. Modified/fault-injected test paths are labeled
 hypothetical. Full raw archives remain under `data/m5m/` for operator-local research.
+
+## M5N authenticated US stream fixture
+
+`us-stream-live.json` contains four genuine, complete public market-data frames
+from the November 1 authenticated v1 smoke. Each retains endpoint, retrieval UTC,
+schema, exact wire SHA-256, raw body and historical assessment. Frames were selected
+to show initial NFL/Fed snapshots, unchanged depth with advancing source time, and
+a depth change; this is not a contiguous or representative market sample. Privacy
+screening excludes headers, credentials and unknown/private-enriched frames.
+Mutated failure cases in `test_us_stream_probe.py` are explicitly hypothetical.

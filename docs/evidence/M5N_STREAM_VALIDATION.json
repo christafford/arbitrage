@@ -1,0 +1,233 @@
+{
+  "schema": "m5n-stream-validation/v1",
+  "us_capture": {
+    "archived_frame_bytes": 444870,
+    "books": 64,
+    "capture_complete": true,
+    "connection_generation": 1,
+    "continuity": "UNKNOWN",
+    "economic_eligibility": false,
+    "elapsed_seconds": 120.03644950001035,
+    "endpoint": "wss://api.polymarket.us/v1/ws/markets",
+    "finished_at": "2026-11-01T16:40:03.385466+00:00",
+    "frames": 64,
+    "handshake_seconds": 0.17870490398490801,
+    "heartbeats": 0,
+    "last_pong_rtt_seconds": 0.03386116196634248,
+    "markets": {
+      "aec-nfl-ari-dal-2026-11-01": {
+        "books": 63,
+        "depth_changes": 20,
+        "economic_eligibility": false,
+        "last_receive_at": "2026-11-01T16:40:03.171373+00:00",
+        "last_source_age_at_finish_seconds": 0.317824,
+        "max_interarrival_seconds": 7.873106569983065,
+        "rejections": {
+          "SOURCE_AGE_GT_2S": 1
+        },
+        "sequence_continuity": "UNKNOWN",
+        "source_age_seconds": {
+          "max": 7.318484,
+          "median": 0.092227,
+          "min": 0.028805
+        },
+        "timestamp_depth_passes": 62,
+        "unchanged_depth": 42
+      },
+      "rdc-usfed-fomc-2026-12-09-nochng": {
+        "books": 1,
+        "depth_changes": 0,
+        "economic_eligibility": false,
+        "last_receive_at": "2026-11-01T16:38:03.607034+00:00",
+        "last_source_age_at_finish_seconds": 228.406318,
+        "max_interarrival_seconds": null,
+        "rejections": {
+          "SOURCE_AGE_GT_2S": 1
+        },
+        "sequence_continuity": "UNKNOWN",
+        "source_age_seconds": {
+          "max": 108.627886,
+          "median": 108.627886,
+          "min": 108.627886
+        },
+        "timestamp_depth_passes": 0,
+        "unchanged_depth": 0
+      }
+    },
+    "missing_markets": [],
+    "reason": "BUDGET_COMPLETE",
+    "requested_seconds": 120,
+    "schema": "polymarket-us-markets-ws/m5n-probe-v2",
+    "slugs": [
+      "aec-nfl-ari-dal-2026-11-01",
+      "rdc-usfed-fomc-2026-12-09-nochng"
+    ],
+    "start_monotonic": 418549.943460227,
+    "started_at": "2026-11-01T16:38:03.349029+00:00"
+  },
+  "offline_replay": {
+    "schema": "polymarket-us-markets-ws/m5n-probe-v2",
+    "verified_frames": 64,
+    "replayed_assessments": 64,
+    "capture_complete": true,
+    "economic_eligibility": false,
+    "markets": {
+      "aec-nfl-ari-dal-2026-11-01": {
+        "books": 63,
+        "timestamp_depth_passes": 62,
+        "rejections": {
+          "SOURCE_AGE_GT_2S": 1
+        },
+        "depth_changes": 20,
+        "unchanged_depth": 42,
+        "source_age_seconds": {
+          "min": 0.028805,
+          "median": 0.092227,
+          "max": 7.318484
+        },
+        "max_interarrival_seconds": 7.873106569983065,
+        "last_receive_at": "2026-11-01T16:40:03.171373+00:00",
+        "last_source_age_at_finish_seconds": 0.317824,
+        "sequence_continuity": "UNKNOWN",
+        "economic_eligibility": false
+      },
+      "rdc-usfed-fomc-2026-12-09-nochng": {
+        "books": 1,
+        "timestamp_depth_passes": 0,
+        "rejections": {
+          "SOURCE_AGE_GT_2S": 1
+        },
+        "depth_changes": 0,
+        "unchanged_depth": 0,
+        "source_age_seconds": {
+          "min": 108.627886,
+          "median": 108.627886,
+          "max": 108.627886
+        },
+        "max_interarrival_seconds": null,
+        "last_receive_at": "2026-11-01T16:38:03.607034+00:00",
+        "last_source_age_at_finish_seconds": 228.406318,
+        "sequence_continuity": "UNKNOWN",
+        "economic_eligibility": false
+      }
+    },
+    "missing_markets": []
+  },
+  "local_clock_after": {
+    "checked_at": "2026-11-01T16:41:05.523424+00:00",
+    "timedatectl show -p NTPSynchronized -p TimeUSec": "NTPSynchronized=yes\nTimeUSec=Sun 2026-11-01 11:41:05 EST\n",
+    "timedatectl timesync-status": "       Server: 72.14.182.49 (3.debian.pool.ntp.org)\nPoll interval: 34min 8s (min: 32s; max 34min 8s)\n         Leap: normal\n      Version: 4\n      Stratum: 2\n    Reference: 8B4E6180\n    Precision: 1us (-24)\nRoot distance: 38.733ms (max: 5s)\n       Offset: +3.951ms\n        Delay: 80.555ms\n       Jitter: 13.411ms\n Packet count: 210\n    Frequency: -0.131ppm\n"
+  },
+  "kalshi_capture": {
+    "connection_ids": [
+      1,
+      2,
+      3
+    ],
+    "connections": 3,
+    "deltas": 32,
+    "failures": [
+      "MESSAGE_TIMEOUT"
+    ],
+    "live_continuity_demonstrated": true,
+    "messages": 38,
+    "protocol": "clocked",
+    "protocol_valid_until": null,
+    "reconnected_continuity_demonstrated": true,
+    "recoveries": 1,
+    "sequenced_connection_ids": [
+      2,
+      3
+    ],
+    "snapshots": 3,
+    "status": "INCOMPLETE",
+    "trading_authorized": false,
+    "usable_books": 35,
+    "verification": "UNVERIFIED"
+  },
+  "remote_clock_accuracy": "UNKNOWN",
+  "strict_cross_venue_eligibility": false,
+  "limitations": [
+    "Short selected-market diagnostic, not sustained feed acceptance",
+    "US sequence continuity and quiet-book validity unknown",
+    "Concurrent Kalshi run exhausted three-connection budget early; no complete 90-second coverage",
+    "No settlement, fee or mechanics approval; no economics calculated"
+  ],
+  "artifacts": {
+    "data/m5n/authenticated/resumed-120s/results.json": "e287779a41bd3e95fcf787fc70d8d836b71cff0cd60b012960a71dc206efd130",
+    "data/m5n/authenticated/resumed-120s/timing.jsonl": "2ce745394e93c3fb2cd07879470ea4148e6d7a11777afe02dfc9a0423ee530fe",
+    "data/m5n/authenticated/concurrent-kalshi-result.json": "411054369db963bc55c19886eec1081f36995de60124e4cd30d7069a313bf281",
+    "tests/fixtures/us-stream-live.json": "a4e11df374aafcfae63cda86c2315fa8508461ab66a977ecf3deaa4aaf4244ef",
+    "docs/evidence/M5N_STREAM_API_CHECKS.json": "01ec518054a1d241c084995929633d75d439e19b35e5f3cc029442684c7fc127",
+    "docs/evidence/M5N_STREAM_TESTS.txt": "eb668356b3edd89d7e4ffed495bdfbbb2a0daa2e972839353e1ec48c6c57e760"
+  },
+  "kalshi_connections": [
+    {
+      "generation": 1,
+      "started_at": "2026-11-01T16:38:14.655002+00:00",
+      "ended_at": "2026-11-01T16:38:19.980468+00:00",
+      "end_reason": "MESSAGE_TIMEOUT"
+    },
+    {
+      "generation": 2,
+      "started_at": "2026-11-01T16:38:22.181394+00:00",
+      "ended_at": "2026-11-01T16:38:52.186447+00:00",
+      "end_reason": "PERIODIC_RESNAPSHOT"
+    },
+    {
+      "generation": 3,
+      "started_at": "2026-11-01T16:38:53.395019+00:00",
+      "ended_at": "2026-11-01T16:39:23.560272+00:00",
+      "end_reason": "PERIODIC_RESNAPSHOT"
+    }
+  ],
+  "kalshi_raw_hashes_verified": 41,
+  "kalshi_approval_economics_counts": {
+    "pairs": 0,
+    "fee_profiles": 0,
+    "research_sessions": 0,
+    "paper_intents": 0
+  },
+  "verification": {
+    "test_command": ".venv/bin/python -m unittest discover -s tests -v",
+    "tests_run": 472,
+    "us_probe_tests": 18,
+    "test_seconds": "20.063",
+    "test_result": "OK",
+    "smoke_commands": [
+      {
+        "command": ".venv/bin/python scripts/m5n_us_stream.py --help",
+        "exit_code": 0
+      },
+      {
+        "command": ".venv/bin/python scripts/m5n_us_stream.py --replay data/m5n/authenticated/resumed-120s",
+        "exit_code": 0,
+        "verified_frames": 64
+      },
+      {
+        "command": ".venv/bin/python -m pip check",
+        "exit_code": 0,
+        "output": "No broken requirements found."
+      },
+      {
+        "command": ".venv/bin/predarb demo --db data/m5n/authenticated/offline-demo.sqlite3",
+        "exit_code": 0,
+        "kind": "HYPOTHETICAL"
+      },
+      {
+        "command": ".venv/bin/predarb report --db data/m5n/authenticated/offline-demo.sqlite3",
+        "exit_code": 0
+      },
+      {
+        "command": ".venv/bin/predarb pairs list --db data/m5n/authenticated/concurrent-kalshi.sqlite3",
+        "exit_code": 0,
+        "output": []
+      }
+    ]
+  },
+  "final_verified_code_sha256": {
+    "src/predarb/us_stream_probe.py": "a5c18b9dcfd2107b7242e3e8a18463b8b24c08e04095a3a4acc033689606dcac",
+    "scripts/m5n_us_stream.py": "f041dbc93f639b5a7b9f072a5565ad1926e674c1fde09bbbd81a8beff3aab964",
+    "tests/test_us_stream_probe.py": "b41425edcbfd297cf033cf8d4cdb66bf499ac4129f1b1f029964152d51562d4b"
+  }
+}

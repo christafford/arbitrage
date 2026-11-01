@@ -614,3 +614,28 @@ protocol check.
 58-response archive preserve existing adapter schemas and original receipt times.
 Five ordinary-event pairs have matching payouts in some exceptional scenarios;
 none has a fully verified exception map. [Results and limits](M5N_RESULTS.md).
+
+### M5N authenticated continuation — November 1, 2026 UTC
+
+The operator subsequently supplied an existing local key for read-only use.
+[Fresh source receipts](evidence/M5N_STREAM_API_CHECKS.json) archive the official
+US Markets WebSocket, overview, authentication and book Markdown before parsing,
+with hashes and exact UTC times. MarketService remains 1.0.0; the WebSocket prose
+has no upstream semantic version. Local capture contract is
+`polymarket-us-markets-ws/m5n-probe-v2`.
+
+The fixed path is `/v1/ws/markets`; Ed25519 signs timestamp + GET + path. Only
+`SUBSCRIPTION_TYPE_MARKET_DATA` is emitted. The camelCase/string-enum subscription
+from the Markets page was accepted live. The overview's alternative snake_case
+format remains untested; no fallback to it or to international Polymarket exists.
+The market-book schema documents the optional statistics encountered live,
+including `lastPriceSample`; these are privacy-screened, not used for economics.
+The displayed ladders are documented as best-to-worst top levels, not a guarantee
+of all exchange liquidity. No sequence or send-time field is invented.
+
+[The genuine fixture](../tests/fixtures/us-stream-live.json) contains four whole
+public-shaped frames from the original authenticated smoke, exact wire hashes,
+receipt clocks and original v1 assessments. Remaining frames stay in the local
+archive. Recovered historical evidence and new v2 capture measurements are
+distinguished in [stream results](M5N_STREAM_RESULTS.md). No key material,
+handshake headers or account responses are included.

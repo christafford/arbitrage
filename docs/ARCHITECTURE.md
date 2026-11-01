@@ -382,6 +382,14 @@ and monotonic receive clocks after privacy screening/archival; default behavior
 is unchanged. A separate JSONL journal holds versioned samples and depth hashes.
 No production schema, economic freshness gate or model namespace changes.
 
+M5N's opt-in `us_stream_probe.py` signs only the fixed Polymarket US market-data
+handshake and archives one bounded connection to a new directory. Numbered public
+wire frames precede semantic assessment; unsafe shapes retain only redaction
+markers and wire hashes. A separate JSONL journal records UTC/monotonic receipt,
+source/depth changes and explicit UNKNOWN continuity. Offline replay rehashes and
+reassesses source bytes. This diagnostic has no economic or production database
+integration. See [US WebSocket operations](US_WEBSOCKET.md).
+
 `m5m_analyze.py` opens the completed archive read-only, verifies raw hashes and
 sequence/clock boundaries, and replays sampled comparisons. Response-only
 sensitivity metrics cannot become economic eligibility. Separate scoped
