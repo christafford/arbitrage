@@ -1,0 +1,47 @@
+{
+  "schema": "m5o-source-check/v1",
+  "documents": [
+    {
+      "url": "https://docs.polymarket.us/api-reference/markets/get-market-book.md",
+      "path": "data/m5o/sources/00.md",
+      "retrieved_at": "2026-11-01T19:25:59.276000+00:00",
+      "sha256": "a7067ab36d8372f67f9eae96b8ef177e120b94f33355f85ff7bf49f66d795e29"
+    },
+    {
+      "url": "https://docs.polymarket.us/api-reference/markets/get-market-by-slug.md",
+      "path": "data/m5o/sources/01.md",
+      "retrieved_at": "2026-11-01T19:25:59.435371+00:00",
+      "sha256": "16f599df2f2606ae8e661b557793274d61d50e33862a10d033e52c09e783f7cf"
+    },
+    {
+      "url": "https://docs.polymarket.us/api-reference/rate-limits.md",
+      "path": "data/m5o/sources/02.md",
+      "retrieved_at": "2026-11-01T19:25:59.577637+00:00",
+      "sha256": "9c5041d1c976b376a8980b2250b2b6377dc9af832d733919b12434c97a8b20b7"
+    },
+    {
+      "url": "https://docs.polymarket.us/api-reference/websocket/markets.md",
+      "path": "data/m5o/sources/03.md",
+      "retrieved_at": "2026-11-01T19:25:59.724609+00:00",
+      "sha256": "e320f5338459a8508ed33c90c035d65eb8c9c22b258e9a96090b9473dbc231a0"
+    },
+    {
+      "url": "https://docs.kalshi.com/websockets/orderbook-updates.md",
+      "path": "data/m5o/sources/04.md",
+      "retrieved_at": "2026-11-01T19:25:59.903224+00:00",
+      "sha256": "f71cd6a72c3f0bcff889da18c2b18e0603cf63566f482a7391de4b0c2cc11228"
+    },
+    {
+      "url": "https://docs.kalshi.com/getting_started/rate_limits.md",
+      "path": "data/m5o/sources/05.md",
+      "retrieved_at": "2026-11-01T19:26:00.069334+00:00",
+      "sha256": "8f151d199400d4398f733196f56201948c63802bdaad89f30972e74db9f1c619"
+    },
+    {
+      "url": "https://docs.kalshi.com/api-reference/market/get-market.md",
+      "path": "data/m5o/sources/06.md",
+      "retrieved_at": "2026-11-01T19:26:00.283262+00:00",
+      "sha256": "3134644faca99509f47b569c60d323a2c2d4b3a6e7beeee9243fd142353b62f5"
+    }
+  ]
+}

@@ -370,3 +370,21 @@ remain unchanged. [US stream operation and replay](US_WEBSOCKET.md).
 [15-minute results and remaining blockers](M5N_COMPARISON_RESULTS.md),
 [comparison operations](M5N_COMPARISON_OPERATIONS.md),
 [Fed-hold review worksheet](M5N_FED_HOLD_REVIEW.md).
+
+## M5O — Continuous cross-market economic research — AUTHORIZED; IN PROGRESS
+
+- [x] Isolated conditional gross-price evaluator, separate STRICT/CONDITIONAL/
+  DISCOVERY reporting, exact depth and $5/$25/$100/$500 quote-budget cases.
+- [x] Eleven diverse currently open index-derived pairs, refreshed source-bound
+  definitions and ordinary-proposition checks; no threshold duplication.
+- [x] Independent receivers, fixed deadlines, source/receipt/commit provenance,
+  fail-closed quality checks, offline replay, fixtures and lifecycle tests.
+- [x] Bounded historical AI ablation; additional ranked pairs conflict and are
+  excluded. No AI-only selected pair; incremental economic value remains unknown.
+- [ ] Finish the newly authorized actual 24-hour window and audit all segments.
+- [ ] Determine positive discrepancy/depth/duration evidence from valid samples;
+  state coverage limitations if observations cannot answer the profitability question.
+- [ ] Independently reviewed fees, mechanics, exceptional payouts and cash release;
+  representative AI-only economic contribution. No M6 or live-money authority.
+
+See [operations](M5O_OPERATIONS.md) and [evolving results](M5O_RESULTS.md).

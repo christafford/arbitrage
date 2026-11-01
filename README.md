@@ -12,6 +12,12 @@ unverified. [Capture/replay](docs/M5N_COMPARISON_OPERATIONS.md) and the
 [Fed-hold operator worksheet](docs/M5N_FED_HOLD_REVIEW.md) are available.
 Production inference and eligibility gates are unchanged.
 
+The operator authorized [M5O continuous conditional research](docs/M5O_OPERATIONS.md):
+11 diverse pairs, a fixed 24-hour read-only window and explicitly conditional
+gross-depth calculations. [Live research results](docs/M5O_RESULTS.md) distinguish
+sample coverage, unresolved fees and exceptional settlement risks. No strict pair,
+funds or trading authorization is implied.
+
 **M5A A–E:** discovery is implemented. The read-only Kalshi WebSocket adapter is
 **validated live in explicit `sequence-v1` mode**, including recovery after a
 message timeout. Kalshi's changelog dates market-clock rollout to October 29;

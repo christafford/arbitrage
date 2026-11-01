@@ -134,3 +134,17 @@ and 1,363 Kalshi raw responses were verified. This is not continuous coverage or
 economic eligibility. US continuity/quiet-book validity and metadata-grid
 integration remain open. `docs/M5N_FED_HOLD_REVIEW.md` and its source-bound blank
 worksheet leave all human decisions pending. No new run or M6 is implied.
+
+## M5O authorized continuous conditional research
+
+The operator explicitly requested execution of `docs/M5O.md`: one new bounded
+24-hour public-data observation of 10–20 diverse pairs, including conditional
+gross economics for unresolved ordinary-outcome matches. See `docs/M5O_OPERATIONS.md`
+and the evolving `docs/M5O_RESULTS.md`. This supersedes prior stops only for this
+research scope. CONDITIONAL results disclose exceptional-payout risks; DISCOVERY
+signals are not arbitrage; STRICT still requires all source-bound approvals.
+Fees/collateral/cash release remain UNKNOWN without review. All existing production
+gates, model namespaces and expired runs stay preserved. No funds, orders, automatic
+approvals or M6. The new run has its own fixed deadline in
+`data/m5o/run-20261101/config.json`; never renew it automatically. Completion of its
+budget is not completion of research acceptance or proof of profitability.

@@ -1,5 +1,13 @@
 # Architecture
 
+M5O adds isolated `conditional_research.py` and `continuous_research.py`: Decimal
+cash-long gross-price research and independent per-pair Kalshi/US receivers with
+separate single-writer archives. Production approved economics remains unchanged.
+Assessment provenance includes the committed SQLite frontier, distinct from
+receive time; temporary views on read-only archives reproduce that knowledge in
+offline replay. No production schema migration or index mutation is required.
+See [M5O operations](M5O_OPERATIONS.md) for boundaries and failure handling.
+
 ```text
 Kalshi REST/WS          Polymarket US REST/gRPC
       |                           |

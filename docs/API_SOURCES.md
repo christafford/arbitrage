@@ -660,3 +660,21 @@ public definitions and both product PDFs, with separate extracted-text hashes.
 The source-bound [review worksheet](M5N_FED_HOLD_REVIEW.md) leaves applicability,
 exceptional payouts, fees and mechanics pending. No source document or language
 model output becomes a registry decision.
+
+## M5O continuous conditional research — November 1, 2026 UTC
+
+[Current document receipts](evidence/M5O_API_CHECKS.json) archive official US
+detail/book/stream/rate-limit and Kalshi detail/clocked-stream/rate-limit Markdown
+before interpretation. Upstream consumed schemas remain US 1.0.0 and Kalshi
+3.35.0; local adapters remain unchanged. The observed US retail limit is 25/s
+per shared source IP; the selected polling load is approximately 4.4/s. No
+account endpoint is called to discover a tier or fee applicability.
+
+The 22-definition [genuine fixture](../tests/fixtures/m5o-definitions-live.json)
+retains exact public bytes, hashes, adapter schemas and UTC receipts. The
+[genuine replay fixture](../tests/fixtures/m5o-live-replay.json) preserves public
+REST and privacy-screened Kalshi frames plus committed-reader provenance.
+Commit frontiers and sample clocks are local instrumentation, not new venue fields.
+US REST caching is not reinterpreted as freshness; its WebSocket continuity stays
+unknown. No fee coefficient is automatically approved. See
+[M5O operations](M5O_OPERATIONS.md) for isolated hypothetical sensitivity bounds.
