@@ -566,3 +566,35 @@ is local instrumentation, not a claimed llama.cpp GPU field. `/props` and failed
 `/metrics` responses remain archived under `llama-runtime-diagnostic/m5l-v1`.
 The 16 MiB batch-64 diagnostic is isolated; production's 4 MiB guard is unchanged.
 [M5L limitations and measurements](M5L_RESULTS.md).
+
+## M5M synchronization and settlement evidence — November 1, 2026 UTC
+
+[Current official-document captures](evidence/M5M_API_CHECKS.json) recheck Kalshi
+clocked order-book updates/keep-alive and US detail/book, WebSocket, collateral,
+settlement and fee schemas. Kalshi envelope `sending_ts_ms`, delta `ts`/`ts_ms`,
+subscription `seq` and market `clock` stay distinct. The US book schema describes
+`transactTime` as a date-time string; it does not establish a send-time watermark
+or a no-missing-updates sequence guarantee. The authenticated US Markets WebSocket
+was documented, not connected; no US credential or assumed sequence was added.
+
+Standard response `Cache-Control` and `Age` headers are preserved in the isolated
+local timing journal, along with HTTP Date. They are not substituted for source
+time. [RFC 9111](https://www.rfc-editor.org/rfc/rfc9111.html#section-5.2.1.4)
+describes the advisory no-cache request used in the bounded sensitivity probe.
+Neither a response Date nor an HTTP 200 establishes matching-engine clock sync.
+Local monotonic timestamps are application instrumentation, not new venue fields.
+SQLite schema and the production adapters are unchanged.
+
+[Settlement-source manifest](evidence/M5M_SETTLEMENT_SOURCES.json) records the
+CPI/AAA product PDFs, current US Rulebook and source discovery path through the
+official US product listing. PDF text extraction has separate hashes. Kalshi's
+fee PDF direct download returned 429; its July 7 schedule was checked through
+the browser, without claiming a new local full-PDF hash. Fresh API fee captures
+remain unapproved. [Five review packets](M5M_REVIEW_GUIDE.md) expose source,
+revision, window and exceptional-settlement differences.
+
+The genuine `m5m-public-definitions.json` and `m5m-timing-live.json` fixtures retain
+original bytes, hashes, schema/receipt clocks and sanitized transport provenance.
+They are source-backed ordinary definitions/market-data examples, never approved
+settlement labels. The actual hour used the current clocked protocol; no expired
+compatibility mode or operator approval was renewed.

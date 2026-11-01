@@ -371,3 +371,19 @@ The `scripts/m5l_*` harnesses use new archives for inference/evaluation and read
 production comparisons. Raw inference precedes decoding; method namespaces include
 the task instruction. Economic replay retains existing quote/approval gates and
 returns unknown net results on blocked commitments. See [M5L results](M5L_RESULTS.md).
+
+## M5M isolated synchronization diagnostics
+
+`quote_diagnostics.py` instruments an opt-in research capture using the existing
+single-writer soak coordinator. A GET-only measured client separates pacing,
+headers/body wait and archival/validation. The Kalshi capture's optional
+`on_receive` callback exposes only raw observation/generation IDs and local wall
+and monotonic receive clocks after privacy screening/archival; default behavior
+is unchanged. A separate JSONL journal holds versioned samples and depth hashes.
+No production schema, economic freshness gate or model namespace changes.
+
+`m5m_analyze.py` opens the completed archive read-only, verifies raw hashes and
+sequence/clock boundaries, and replays sampled comparisons. Response-only
+sensitivity metrics cannot become economic eligibility. Separate scoped
+non-sports captures and blank registry/fee forms preserve human review. See
+[M5M operations](M5M_OPERATIONS.md) and [review packets](M5M_REVIEW_GUIDE.md).

@@ -1,0 +1,343 @@
+{
+  "schema": "m5m-historical-diagnosis/v1",
+  "cases": [
+    {
+      "name": "nba",
+      "counts": {
+        "comparisons": 30,
+        "both_usable": 30,
+        "source_skew_pass": 0,
+        "receipt_skew_pass": 17,
+        "both_skew_pass": 0,
+        "fresh_comparable": 0
+      },
+      "closest_usable": {
+        "at": "2026-10-31T19:35:27.933756+00:00",
+        "both_usable": true,
+        "fresh_comparable": false,
+        "observations": {
+          "kalshi": 41,
+          "polymarket_us": 43
+        },
+        "receipt_skew_seconds": 2.166873,
+        "rejections": {
+          "kalshi": [],
+          "polymarket_us": []
+        },
+        "source_skew_seconds": 4.530251
+      },
+      "source_receipt_samples": [
+        {
+          "venue": "polymarket_us",
+          "received_at": "2026-10-31T19:34:43.843023+00:00",
+          "source_ts": "2026-10-31T19:34:18.973918935Z",
+          "source_age_seconds": 24.869105
+        },
+        {
+          "venue": "kalshi",
+          "received_at": "2026-10-31T19:34:44.323623+00:00",
+          "source_ts": "2026-10-31T19:34:44.286000+00:00",
+          "source_age_seconds": 0.037623
+        },
+        {
+          "venue": "kalshi",
+          "received_at": "2026-10-31T19:34:44.441816+00:00",
+          "source_ts": "2026-10-31T19:34:44.426000+00:00",
+          "source_age_seconds": 0.015816
+        },
+        {
+          "venue": "kalshi",
+          "received_at": "2026-10-31T19:34:44.488181+00:00",
+          "source_ts": "2026-10-31T19:34:44.472000+00:00",
+          "source_age_seconds": 0.016181
+        },
+        {
+          "venue": "kalshi",
+          "received_at": "2026-10-31T19:34:45.561395+00:00",
+          "source_ts": "2026-10-31T19:34:45.545000+00:00",
+          "source_age_seconds": 0.016395
+        },
+        {
+          "venue": "kalshi",
+          "received_at": "2026-10-31T19:34:45.778222+00:00",
+          "source_ts": "2026-10-31T19:34:45.762000+00:00",
+          "source_age_seconds": 0.016222
+        },
+        {
+          "venue": "polymarket_us",
+          "received_at": "2026-10-31T19:34:50.360461+00:00",
+          "source_ts": "2026-10-31T19:34:18.973918935Z",
+          "source_age_seconds": 31.386543
+        },
+        {
+          "venue": "kalshi",
+          "received_at": "2026-10-31T19:34:50.390712+00:00",
+          "source_ts": "2026-10-31T19:34:50.276000+00:00",
+          "source_age_seconds": 0.114712
+        },
+        {
+          "venue": "kalshi",
+          "received_at": "2026-10-31T19:34:50.411708+00:00",
+          "source_ts": "2026-10-31T19:34:50.276000+00:00",
+          "source_age_seconds": 0.135708
+        },
+        {
+          "venue": "kalshi",
+          "received_at": "2026-10-31T19:34:55.259433+00:00",
+          "source_ts": "2026-10-31T19:34:55.243000+00:00",
+          "source_age_seconds": 0.016433
+        },
+        {
+          "venue": "kalshi",
+          "received_at": "2026-10-31T19:34:55.524885+00:00",
+          "source_ts": "2026-10-31T19:34:55.509000+00:00",
+          "source_age_seconds": 0.015885
+        },
+        {
+          "venue": "polymarket_us",
+          "received_at": "2026-10-31T19:34:56.600022+00:00",
+          "source_ts": "2026-10-31T19:34:18.973918935Z",
+          "source_age_seconds": 37.626104
+        },
+        {
+          "venue": "kalshi",
+          "received_at": "2026-10-31T19:34:56.636449+00:00",
+          "source_ts": "2026-10-31T19:34:55.682000+00:00",
+          "source_age_seconds": 0.954449
+        },
+        {
+          "venue": "kalshi",
+          "received_at": "2026-10-31T19:35:00.308491+00:00",
+          "source_ts": "2026-10-31T19:35:00.293000+00:00",
+          "source_age_seconds": 0.015491
+        },
+        {
+          "venue": "kalshi",
+          "received_at": "2026-10-31T19:35:00.339779+00:00",
+          "source_ts": "2026-10-31T19:35:00.294000+00:00",
+          "source_age_seconds": 0.045779
+        },
+        {
+          "venue": "polymarket_us",
+          "received_at": "2026-10-31T19:35:02.947541+00:00",
+          "source_ts": "2026-10-31T19:34:45.401109037Z",
+          "source_age_seconds": 17.546432
+        },
+        {
+          "venue": "kalshi",
+          "received_at": "2026-10-31T19:35:07.970931+00:00",
+          "source_ts": "2026-10-31T19:35:07.939000+00:00",
+          "source_age_seconds": 0.031931
+        },
+        {
+          "venue": "polymarket_us",
+          "received_at": "2026-10-31T19:35:09.047270+00:00",
+          "source_ts": "2026-10-31T19:34:45.401109037Z",
+          "source_age_seconds": 23.646161
+        },
+        {
+          "venue": "kalshi",
+          "received_at": "2026-10-31T19:35:10.479402+00:00",
+          "source_ts": "2026-10-31T19:35:10.464000+00:00",
+          "source_age_seconds": 0.015402
+        },
+        {
+          "venue": "kalshi",
+          "received_at": "2026-10-31T19:35:10.504384+00:00",
+          "source_ts": "2026-10-31T19:35:10.464000+00:00",
+          "source_age_seconds": 0.040384
+        },
+        {
+          "venue": "kalshi",
+          "received_at": "2026-10-31T19:35:11.585251+00:00",
+          "source_ts": "2026-10-31T19:35:11.570000+00:00",
+          "source_age_seconds": 0.015251
+        },
+        {
+          "venue": "polymarket_us",
+          "received_at": "2026-10-31T19:35:15.171339+00:00",
+          "source_ts": "2026-10-31T19:34:45.401109037Z",
+          "source_age_seconds": 29.77023
+        },
+        {
+          "venue": "kalshi",
+          "received_at": "2026-10-31T19:35:15.585524+00:00",
+          "source_ts": "2026-10-31T19:35:15.571000+00:00",
+          "source_age_seconds": 0.014524
+        },
+        {
+          "venue": "kalshi",
+          "received_at": "2026-10-31T19:35:15.840466+00:00",
+          "source_ts": "2026-10-31T19:35:15.826000+00:00",
+          "source_age_seconds": 0.014466
+        },
+        {
+          "venue": "kalshi",
+          "received_at": "2026-10-31T19:35:20.278897+00:00",
+          "source_ts": "2026-10-31T19:35:20.264000+00:00",
+          "source_age_seconds": 0.014897
+        },
+        {
+          "venue": "polymarket_us",
+          "received_at": "2026-10-31T19:35:21.364880+00:00",
+          "source_ts": "2026-10-31T19:34:45.401109037Z",
+          "source_age_seconds": 35.963771
+        },
+        {
+          "venue": "kalshi",
+          "received_at": "2026-10-31T19:35:21.400243+00:00",
+          "source_ts": "2026-10-31T19:35:20.264000+00:00",
+          "source_age_seconds": 1.136243
+        },
+        {
+          "venue": "kalshi",
+          "received_at": "2026-10-31T19:35:21.415443+00:00",
+          "source_ts": "2026-10-31T19:35:20.562000+00:00",
+          "source_age_seconds": 0.853443
+        },
+        {
+          "venue": "kalshi",
+          "received_at": "2026-10-31T19:35:25.536196+00:00",
+          "source_ts": "2026-10-31T19:35:25.521000+00:00",
+          "source_age_seconds": 0.015196
+        },
+        {
+          "venue": "kalshi",
+          "received_at": "2026-10-31T19:35:25.753687+00:00",
+          "source_ts": "2026-10-31T19:35:25.733000+00:00",
+          "source_age_seconds": 0.020687
+        },
+        {
+          "venue": "polymarket_us",
+          "received_at": "2026-10-31T19:35:27.920560+00:00",
+          "source_ts": "2026-10-31T19:35:21.202749841Z",
+          "source_age_seconds": 6.717811
+        }
+      ],
+      "monotonic_receive_time": "NOT_RECORDED_IN_M5L",
+      "http_timing": "NOT_RECORDED_IN_M5L",
+      "causal_limits": "Cannot reconstruct socket queue delay or HTTP timings retroactively; current M5M tests provide separate corroborating evidence."
+    },
+    {
+      "name": "nfl",
+      "counts": {
+        "comparisons": 13,
+        "both_usable": 3,
+        "source_skew_pass": 0,
+        "receipt_skew_pass": 7,
+        "both_skew_pass": 0,
+        "fresh_comparable": 0
+      },
+      "closest_usable": {
+        "at": "2026-10-31T19:36:18.586545+00:00",
+        "both_usable": true,
+        "fresh_comparable": false,
+        "observations": {
+          "kalshi": 8,
+          "polymarket_us": 5
+        },
+        "receipt_skew_seconds": 1.342027,
+        "rejections": {
+          "kalshi": [],
+          "polymarket_us": []
+        },
+        "source_skew_seconds": 37.344561
+      },
+      "source_receipt_samples": [
+        {
+          "venue": "polymarket_us",
+          "received_at": "2026-10-31T19:36:05.901183+00:00",
+          "source_ts": "2026-10-31T19:35:41.213439657Z",
+          "source_age_seconds": 24.687744
+        },
+        {
+          "venue": "polymarket_us",
+          "received_at": "2026-10-31T19:36:17.244518+00:00",
+          "source_ts": "2026-10-31T19:35:41.213439657Z",
+          "source_age_seconds": 36.031079
+        },
+        {
+          "venue": "kalshi",
+          "received_at": "2026-10-31T19:36:18.586545+00:00",
+          "source_ts": "2026-10-31T19:36:18.558000+00:00",
+          "source_age_seconds": 0.028545
+        },
+        {
+          "venue": "polymarket_us",
+          "received_at": "2026-10-31T19:36:23.701416+00:00",
+          "source_ts": "2026-10-31T19:35:41.213439657Z",
+          "source_age_seconds": 42.487977
+        },
+        {
+          "venue": "kalshi",
+          "received_at": "2026-10-31T19:36:28.142205+00:00",
+          "source_ts": "2026-10-31T19:36:28.114000+00:00",
+          "source_age_seconds": 0.028205
+        },
+        {
+          "venue": "polymarket_us",
+          "received_at": "2026-10-31T19:36:30.233849+00:00",
+          "source_ts": "2026-10-31T19:35:41.213439657Z",
+          "source_age_seconds": 49.02041
+        },
+        {
+          "venue": "polymarket_us",
+          "received_at": "2026-10-31T19:36:36.447906+00:00",
+          "source_ts": "2026-10-31T19:35:41.213439657Z",
+          "source_age_seconds": 55.234467
+        },
+        {
+          "venue": "polymarket_us",
+          "received_at": "2026-10-31T19:36:43.447386+00:00",
+          "source_ts": "2026-10-31T19:35:41.213439657Z",
+          "source_age_seconds": 62.233947
+        },
+        {
+          "venue": "kalshi",
+          "received_at": "2026-10-31T19:36:43.510431+00:00",
+          "source_ts": "2026-10-31T19:36:42.428000+00:00",
+          "source_age_seconds": 1.082431
+        },
+        {
+          "venue": "kalshi",
+          "received_at": "2026-10-31T19:36:44.658703+00:00",
+          "source_ts": "2026-10-31T19:36:44.645000+00:00",
+          "source_age_seconds": 0.013703
+        },
+        {
+          "venue": "kalshi",
+          "received_at": "2026-10-31T19:36:44.686235+00:00",
+          "source_ts": "2026-10-31T19:36:44.645000+00:00",
+          "source_age_seconds": 0.041235
+        },
+        {
+          "venue": "kalshi",
+          "received_at": "2026-10-31T19:36:44.722956+00:00",
+          "source_ts": "2026-10-31T19:36:44.645000+00:00",
+          "source_age_seconds": 0.077956
+        },
+        {
+          "venue": "kalshi",
+          "received_at": "2026-10-31T19:36:44.748572+00:00",
+          "source_ts": "2026-10-31T19:36:44.645000+00:00",
+          "source_age_seconds": 0.103572
+        },
+        {
+          "venue": "kalshi",
+          "received_at": "2026-10-31T19:36:44.783772+00:00",
+          "source_ts": "2026-10-31T19:36:44.647000+00:00",
+          "source_age_seconds": 0.136772
+        },
+        {
+          "venue": "polymarket_us",
+          "received_at": "2026-10-31T19:36:49.908290+00:00",
+          "source_ts": "2026-10-31T19:35:41.213439657Z",
+          "source_age_seconds": 68.694851
+        }
+      ],
+      "monotonic_receive_time": "NOT_RECORDED_IN_M5L",
+      "http_timing": "NOT_RECORDED_IN_M5L",
+      "causal_limits": "Cannot reconstruct socket queue delay or HTTP timings retroactively; current M5M tests provide separate corroborating evidence."
+    }
+  ]
+}

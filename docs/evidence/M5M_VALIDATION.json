@@ -1,0 +1,228 @@
+{
+  "schema": "m5m-validation/v1",
+  "at": "2026-11-01T15:18:45.786893+00:00",
+  "preservation": {
+    "data/research.sqlite3": {
+      "before": {
+        "size": 26256674816,
+        "mtime_ns": 1793431175523168394
+      },
+      "after": {
+        "size": 26256674816,
+        "mtime_ns": 1793431175523168394
+      },
+      "unchanged": true
+    },
+    "data/m5i/index.sqlite3": {
+      "before": {
+        "size": 10613997568,
+        "mtime_ns": 1793315697547570113
+      },
+      "after": {
+        "size": 10613997568,
+        "mtime_ns": 1793315697547570113
+      },
+      "unchanged": true
+    },
+    "data/m5i/qwen-8f1b.semantic.sqlite3": {
+      "before": {
+        "size": 9470234624,
+        "mtime_ns": 1793448397584204096
+      },
+      "after": {
+        "size": 9470234624,
+        "mtime_ns": 1793448397584204096
+      },
+      "unchanged": true
+    },
+    "data/m5i/run-20261030-resume/config.json": {
+      "before": {
+        "size": 899,
+        "mtime_ns": 1793405199210097786,
+        "sha256": "b3b52631232bb2ea644369768bac9c5f382c2020de90190b1cd76bd809939c06"
+      },
+      "after": {
+        "size": 899,
+        "mtime_ns": 1793405199210097786,
+        "sha256": "b3b52631232bb2ea644369768bac9c5f382c2020de90190b1cd76bd809939c06"
+      },
+      "unchanged": true
+    },
+    "data/m5i/run-20261028/config.json": {
+      "before": {
+        "size": 473,
+        "mtime_ns": 1793202217207118775,
+        "sha256": "1b6190ade6e125d52f4a56576df54fb762bf297e057e04ccfd91cb2787c8d716"
+      },
+      "after": {
+        "size": 473,
+        "mtime_ns": 1793202217207118775,
+        "sha256": "1b6190ade6e125d52f4a56576df54fb762bf297e057e04ccfd91cb2787c8d716"
+      },
+      "unchanged": true
+    },
+    "data/m5i/run-20261029-newnamespace/config.json": {
+      "before": {
+        "size": 773,
+        "mtime_ns": 1793316039979883127,
+        "sha256": "0c42a493e4dfd75f81dc1ed7786bdcce631bc61577fe3f64f24270567c4f9687"
+      },
+      "after": {
+        "size": 773,
+        "mtime_ns": 1793316039979883127,
+        "sha256": "0c42a493e4dfd75f81dc1ed7786bdcce631bc61577fe3f64f24270567c4f9687"
+      },
+      "unchanged": true
+    },
+    "data/m5i/run-20261030-resume/collection-status.json": {
+      "before": {
+        "size": 174,
+        "mtime_ns": 1793448399210418832,
+        "sha256": "4c85463ef487a4ee03a8c0df29ed24107b2e5ecfd10c3492e7a20391d83f4b29"
+      },
+      "after": {
+        "size": 174,
+        "mtime_ns": 1793448399210418832,
+        "sha256": "4c85463ef487a4ee03a8c0df29ed24107b2e5ecfd10c3492e7a20391d83f4b29"
+      },
+      "unchanged": true
+    },
+    "data/m5i/run-20261030-resume/semantic-status.json": {
+      "before": {
+        "size": 172,
+        "mtime_ns": 1793448429213873771,
+        "sha256": "164c88ae59cffabe54b9ed8c711f4c2032cb4a888b47eebc807cb8b649712101"
+      },
+      "after": {
+        "size": 172,
+        "mtime_ns": 1793448429213873771,
+        "sha256": "164c88ae59cffabe54b9ed8c711f4c2032cb4a888b47eebc807cb8b649712101"
+      },
+      "unchanged": true
+    },
+    "data/m5i/run-20261028/collection-status.json": {
+      "before": {
+        "size": 174,
+        "mtime_ns": 1793280704780145885,
+        "sha256": "b75b304237b7a49885b34af537ba41b89c4878e4c932d9f3bcc1ddf146fd4553"
+      },
+      "after": {
+        "size": 174,
+        "mtime_ns": 1793280704780145885,
+        "sha256": "b75b304237b7a49885b34af537ba41b89c4878e4c932d9f3bcc1ddf146fd4553"
+      },
+      "unchanged": true
+    },
+    "data/m5i/run-20261028/semantic-status.json": {
+      "before": {
+        "size": 172,
+        "mtime_ns": 1793280704782067747,
+        "sha256": "fff183f89b22866e85888b46683a071550e78bff7ba7d728c43b190d939b20d3"
+      },
+      "after": {
+        "size": 172,
+        "mtime_ns": 1793280704782067747,
+        "sha256": "fff183f89b22866e85888b46683a071550e78bff7ba7d728c43b190d939b20d3"
+      },
+      "unchanged": true
+    },
+    "data/m5i/run-20261029-newnamespace/collection-status.json": {
+      "before": {
+        "size": 174,
+        "mtime_ns": 1793359239980202509,
+        "sha256": "90a2e2e476c188d021360444a3ad80080ffc87970cc1095933bf6b1d8c26222a"
+      },
+      "after": {
+        "size": 174,
+        "mtime_ns": 1793359239980202509,
+        "sha256": "90a2e2e476c188d021360444a3ad80080ffc87970cc1095933bf6b1d8c26222a"
+      },
+      "unchanged": true
+    },
+    "data/m5i/run-20261029-newnamespace/semantic-status.json": {
+      "before": {
+        "size": 172,
+        "mtime_ns": 1793359240245560679,
+        "sha256": "ae07fe7ccfc74e1f2314b8c559c32fccf49816345aa22a78e7f4da37ec971e7f"
+      },
+      "after": {
+        "size": 172,
+        "mtime_ns": 1793359240245560679,
+        "sha256": "ae07fe7ccfc74e1f2314b8c559c32fccf49816345aa22a78e7f4da37ec971e7f"
+      },
+      "unchanged": true
+    }
+  },
+  "all_preserved": true,
+  "service_units": "UNIT FILE                                            STATE    PRESET\npredarb-m5i-collection-20261028.service              disabled enabled\npredarb-m5i-collection-20261029-newnamespace.service disabled enabled\npredarb-m5i-collection-20261030-resume.service       disabled enabled\npredarb-m5i-semantic-20261028.service                disabled enabled\npredarb-m5i-semantic-20261029-newnamespace.service   disabled enabled\npredarb-m5i-semantic-20261030-resume.service         disabled enabled\n\n6 unit files listed.\n",
+  "service_activity": {
+    "predarb-m5i-collection-20261028.service": "inactive",
+    "predarb-m5i-collection-20261029-newnamespace.service": "inactive",
+    "predarb-m5i-collection-20261030-resume.service": "inactive",
+    "predarb-m5i-semantic-20261028.service": "inactive",
+    "predarb-m5i-semantic-20261029-newnamespace.service": "inactive",
+    "predarb-m5i-semantic-20261030-resume.service": "inactive"
+  },
+  "review_database": {
+    "pair_statuses": [
+      [
+        "UNVERIFIED",
+        5
+      ]
+    ],
+    "fee_profiles": 0,
+    "research_sessions": 0,
+    "research_evaluations": 0,
+    "paper_intents": 0
+  },
+  "backups": [
+    {
+      "path": "/home/chris/code/arbitrage/data/m5m/nfl-hour/capture/backups/snapshot-001.sqlite3",
+      "verified": true
+    },
+    {
+      "path": "/home/chris/code/arbitrage/data/m5m/nfl-hour/capture/backups/snapshot-002.sqlite3",
+      "verified": true
+    }
+  ],
+  "test_command": ".venv/bin/python -m unittest discover -s tests -v",
+  "test_tail": [
+    "",
+    "----------------------------------------------------------------------",
+    "Ran 454 tests in 20.825s",
+    "",
+    "OK"
+  ],
+  "smoke_evidence": "docs/evidence/M5M_SMOKE.json",
+  "production_inference_calls": 0,
+  "production_database_writes": false,
+  "approvals_renewed": false,
+  "trading_authorized": false,
+  "capture_elapsed_seconds": 3600,
+  "capture_status": "COMPLETED",
+  "source_artifacts": {
+    "docs/evidence/M5M_API_CHECKS.json": "92bc43b400f6c290b7484b3084532d32b996026d2bf291dcce2f114d9955861d",
+    "docs/evidence/M5M_CACHE_PROBE.json": "ec2de9902fc9a8d14463043127205e718fda06e04cf513ccb2b9811427c974dd",
+    "docs/evidence/M5M_CAPTURE.json": "2c8b2c38a58059465c86c84c8b586d512b5037f8f6d027ddc789eefec2f0fbef",
+    "docs/evidence/M5M_M5L_DIAGNOSIS.json": "b87c9bc6196b456373e137db24618259531b50648ecad47a90967b06dcffb441",
+    "docs/evidence/M5M_REVIEW_PACKETS.json": "5f4a8422338db1a7197bb8bb4596d0c98bda1c7d30196e3fee1ac347deace099",
+    "docs/evidence/M5M_SETTLEMENT_SOURCES.json": "84b43b97bfce387894faf82a83df31a74cd4026f33ee486828bc4a38bf537cb9",
+    "docs/evidence/M5M_SMOKE.json": "e1664cd7283f570a97bd21b597e2c4588fab2e86e82e1ea321531e285b0ff570",
+    "docs/evidence/M5M_TESTS.txt": "b0b44e23b65ab6e6315bb99e7155b9ee3f442d263d80284cbf3e30d062b80d6c"
+  },
+  "code_sha256": {
+    "src/predarb/quote_diagnostics.py": "c57cf3b11e4fcdd3b346cd1fab65bbcd0033cf18b27ce97aada36a6e3027b36e",
+    "src/predarb/kalshi_ws.py": "30dd8422060add8a73954dff825de224e8c6c0375422b528cccf269b62ff225b",
+    "scripts/m5m_analyze.py": "fe9c70955be8703429bcdb648ee48f972c7b5461641460ae764e383888c2d4fb",
+    "scripts/m5m_capture.py": "d9df7bb66092af48000a42d5565bd2ad74499ff1ea5becd014154a6239cbf936",
+    "scripts/m5m_packets.py": "cac0a6516e3407e8902fa29bcd582b2cf1700fef5a3b90c5a30dc922de7c11e2",
+    "scripts/m5m_review_packets.py": "300d5e8d8f3190fadcb208492e8628231b9fa1c03bb5f0e50598f5010e31f551",
+    "tests/test_quote_diagnostics.py": "c27aef4563348907b8a6cd89c1f9c0b63754dcdf106c0651dc0677481325d60d"
+  },
+  "fixture_sha256": {
+    "tests/fixtures/m5m-timing-live.json": "d6548c96b8a6e1ba61887d3f9132b9741bd65e8f4eb9fc012960c6c3e8c3e8b1",
+    "tests/fixtures/m5m-public-definitions.json": "bed2354b029d9f2ec80ce5672b3f885dbeb2c8648f33e6c4c2a6bedeab041bee"
+  },
+  "cache_probe_script_sha256": "017230c9ae31e775b9e455dcd620b2fc08d54c639d127e5ddc517daf6561d3b7",
+  "git_diff_check": 0
+}

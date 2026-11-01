@@ -225,3 +225,17 @@ wire hash. Per-response UTC receipts, schemas and SHA-256 values are included.
 It is not hypothetical and proves no contract equivalence. Test mutations of these
 responses are explicitly hypothetical faults. M5L scheduler mock inputs reuse the
 existing visibly hypothetical embedding corpus; no synthetic data are called live.
+
+## M5M genuine definitions and timing
+
+`m5m-public-definitions.json` preserves ten exact public detail responses for the
+five CPI/AAA review pairs, including original receipt times, URLs, adapter/fee
+capture schema and raw SHA-256. These definitions remain unapproved.
+`m5m-timing-live.json` preserves one complete selected clocked Kalshi connection
+with metadata and two stale-source US book responses from the actual hour.
+WebSocket bodies retain the existing privacy screening, wire hash and archive kind;
+local monotonic/wall receive telemetry is associated by original observation ID.
+No trading credential/account field was added. The genuine fixture demonstrates
+that a successful cached HTTP response can retain stale transaction time; it does
+not establish continuous liquidity. Modified/fault-injected test paths are labeled
+hypothetical. Full raw archives remain under `data/m5m/` for operator-local research.

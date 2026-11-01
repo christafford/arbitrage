@@ -196,3 +196,9 @@ clocked NBA/NFL captures and independent-review packets. No additional labeled
 semantic events or eligible executable arbitrage were established. GPU telemetry,
 independent adjudication and economic acceptance remain open; production indices,
 expired approvals and disabled M5I services remain preserved.
+
+[M5M synchronization diagnostics](docs/M5M_OPERATIONS.md) add isolated source/receive
+clock, HTTP, WebSocket and depth-change measurements. [Five non-sports review
+packets](docs/M5M_REVIEW_GUIDE.md) retain explicit exceptional-settlement conflicts
+and blank human forms. Experimental response-only metrics do not loosen economic
+eligibility; no model configuration, production index or trading path changes.

@@ -1,0 +1,452 @@
+{
+  "schema": "m5m-live-timing-fixture/v1",
+  "hypothetical": false,
+  "source_archive": "data/m5m/nfl-hour/capture/capture.sqlite3",
+  "sanitization": "Exact public REST bytes and existing privacy-screened WS bodies. Only allowlisted timing metadata. No authentication headers.",
+  "responses": [
+    {
+      "id": 8,
+      "ts_utc": "2026-11-01T03:59:08.225179+00:00",
+      "venue": "kalshi",
+      "endpoint": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26NOV01ARIDAL-ARI",
+      "body_sha256": "9df3950db4c1a4f8f8e97fab2e4e2d7e5c8c292f104c5374285df4a0f087671a",
+      "http_status": 200,
+      "schema_version": "kalshi-3.34.0/m1-v1",
+      "validation_status": "VALID",
+      "body": "{\"market\":{\"can_close_early\":true,\"close_time\":\"2026-11-03T18:00:00Z\",\"created_time\":\"2026-10-20T04:01:57.548274Z\",\"custom_strike\":{\"football_team\":\"d73dae4f-1f08-4b5e-bf23-4e25e9b6a69c\"},\"early_close_condition\":\"This market will close and expire after a winner is declared.\",\"event_ticker\":\"KXNFLGAME-26NOV01ARIDAL\",\"exchange_index\":0,\"expected_expiration_time\":\"2026-11-01T21:00:00Z\",\"expiration_time\":\"2026-11-03T18:00:00Z\",\"expiration_value\":\"\",\"last_price_dollars\":\"0.2600\",\"latest_expiration_time\":\"2026-11-03T18:00:00Z\",\"market_type\":\"binary\",\"no_ask_dollars\":\"0.7500\",\"no_bid_dollars\":\"0.7400\",\"no_sub_title\":\"Arizona\",\"notional_value_dollars\":\"1.0000\",\"occurrence_datetime\":\"2026-11-01T21:00:00Z\",\"open_interest_fp\":\"336017.90\",\"open_time\":\"2026-10-20T04:06:00Z\",\"previous_price_dollars\":\"0.2600\",\"previous_yes_ask_dollars\":\"0.2600\",\"previous_yes_bid_dollars\":\"0.2500\",\"price_level_structure\":\"linear_cent\",\"price_ranges\":[{\"end\":\"1.0000\",\"start\":\"0.0000\",\"step\":\"0.0100\"}],\"result\":\"\",\"rules_primary\":\"If Arizona wins the Arizona vs Dallas Pro Football game originally scheduled for Nov 1, 2026, then the market resolves to Yes.\",\"rules_secondary\":\"The following market refers to the team who wins the Arizona vs Dallas Pro Football game originally scheduled for Nov 1, 2026. If the game ends in a tie, the market will resolve to $0.50 for each team. If the game is postponed but begins within 48 hours from its originally scheduled start time, the market will remain open and resolve based on the official final result. If the game is not started within 48 hours, the market will resolve to a fair price.\\n\\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.\",\"settlement_bounds_type\":\"default\",\"settlement_timer_seconds\":60,\"status\":\"active\",\"strike_type\":\"structured\",\"ticker\":\"KXNFLGAME-26NOV01ARIDAL-ARI\",\"title\":\"Arizona wins\",\"updated_time\":\"2026-10-20T04:06:00.5311Z\",\"volume_24h_fp\":\"99435.76\",\"volume_fp\":\"356452.73\",\"yes_ask_dollars\":\"0.2600\",\"yes_ask_size_fp\":\"986399.90\",\"yes_bid_dollars\":\"0.2500\",\"yes_bid_size_fp\":\"397760.52\",\"yes_sub_title\":\"Arizona\"}}\n",
+      "headers": {
+        "content-type": "application/json",
+        "date": "Sun, 01 Nov 2026 03:59:08 GMT"
+      },
+      "timing": {
+        "body_sha256": "9df3950db4c1a4f8f8e97fab2e4e2d7e5c8c292f104c5374285df4a0f087671a",
+        "cache_control": null,
+        "call_finished_monotonic": 373014.833274531,
+        "call_monotonic": 373014.694489712,
+        "call_started_at": "2026-11-01T03:59:08.100049+00:00",
+        "headers_monotonic": 373014.81930908,
+        "http_age": null,
+        "http_date": "Sun, 01 Nov 2026 03:59:08 GMT",
+        "http_status": 200,
+        "kind": "http_request",
+        "observation_id": 8,
+        "receive_monotonic": 373014.819562804,
+        "received_at": "2026-11-01T03:59:08.225124+00:00",
+        "request_finished_monotonic": 373014.81958923,
+        "request_monotonic": 373014.694693732,
+        "request_started_at": "2026-11-01T03:59:08.100268+00:00",
+        "response_bytes": 2237,
+        "schema": "quote-synchronization/m5m-v1",
+        "success": true,
+        "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26NOV01ARIDAL-ARI",
+        "validation_status": "VALID",
+        "venue": "kalshi"
+      }
+    },
+    {
+      "id": 9,
+      "ts_utc": "2026-11-01T03:59:08.448230+00:00",
+      "venue": "kalshi",
+      "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+      "body_sha256": "b94ecfbcb0111703e5771c362392293a82b457b6b535f3938d0fc1aa0df2ca45",
+      "http_status": 101,
+      "schema_version": "kalshi-ws/m5a-v1",
+      "validation_status": "VALID",
+      "body": "{\"type\":\"subscribed\",\"id\":1,\"msg\":{\"channel\":\"orderbook_delta\",\"sid\":1},\"sending_ts_ms\":1793505548438}\n",
+      "headers": {},
+      "timing": {
+        "connection_id": 2,
+        "kind": "ws_receive",
+        "observation_id": 9,
+        "receive_monotonic": 373015.042648959,
+        "received_at": "2026-11-01T03:59:08.448230+00:00",
+        "schema": "quote-synchronization/m5m-v1"
+      },
+      "ws": {
+        "connection_id": 2,
+        "wire_sha256": "b94ecfbcb0111703e5771c362392293a82b457b6b535f3938d0fc1aa0df2ca45",
+        "archive_kind": "EXACT_WIRE"
+      }
+    },
+    {
+      "id": 10,
+      "ts_utc": "2026-11-01T03:59:08.475822+00:00",
+      "venue": "kalshi",
+      "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+      "body_sha256": "d8a525e4ce594941ad8b627597149457b5dd733ecc91d4d9df634dadd27329da",
+      "http_status": 101,
+      "schema_version": "kalshi-ws/m5a-v1",
+      "validation_status": "VALID",
+      "body": "{\"type\":\"orderbook_snapshot\",\"sid\":1,\"seq\":1,\"msg\":{\"market_ticker\":\"KXNFLGAME-26NOV01ARIDAL-ARI\",\"market_id\":\"01a15779-1d26-7e60-af88-5b30a1317e6a\",\"clock\":112767097765,\"yes_dollars_fp\":[[\"0.0100\",\"2270584.00\"],[\"0.0200\",\"8117.00\"],[\"0.0300\",\"136424.00\"],[\"0.0400\",\"1423.00\"],[\"0.0500\",\"72094.00\"],[\"0.0600\",\"354.00\"],[\"0.0700\",\"42702.00\"],[\"0.0800\",\"53984.00\"],[\"0.0900\",\"33906.00\"],[\"0.1000\",\"11188.00\"],[\"0.1100\",\"52426.17\"],[\"0.1200\",\"11351.00\"],[\"0.1300\",\"9854.00\"],[\"0.1400\",\"54352.00\"],[\"0.1500\",\"51619.00\"],[\"0.1600\",\"1297.00\"],[\"0.1700\",\"25.00\"],[\"0.1800\",\"4.00\"],[\"0.1900\",\"3.00\"],[\"0.2000\",\"164.00\"],[\"0.2100\",\"25452.04\"],[\"0.2200\",\"6006.04\"],[\"0.2300\",\"160513.96\"],[\"0.2400\",\"190419.93\"],[\"0.2500\",\"397760.52\"]],\"no_dollars_fp\":[[\"0.0100\",\"2855667.34\"],[\"0.0200\",\"6436.62\"],[\"0.0300\",\"172779.10\"],[\"0.0400\",\"778.54\"],[\"0.0500\",\"86762.43\"],[\"0.0600\",\"440.31\"],[\"0.0700\",\"85407.12\"],[\"0.0800\",\"745.67\"],[\"0.0900\",\"149.91\"],[\"0.1000\",\"91.41\"],[\"0.1100\",\"222222.77\"],[\"0.1200\",\"829.08\"],[\"0.1300\",\"136.28\"],[\"0.1400\",\"195.54\"],[\"0.1500\",\"81404.20\"],[\"0.1600\",\"508.92\"],[\"0.1700\",\"28489.50\"],[\"0.1800\",\"168.19\"],[\"0.1900\",\"189.37\"],[\"0.2000\",\"127.00\"],[\"0.2100\",\"36563.95\"],[\"0.2200\",\"177.99\"],[\"0.2300\",\"1033.44\"],[\"0.2400\",\"20648.78\"],[\"0.2500\",\"9235.24\"],[\"0.2600\",\"63.98\"],[\"0.2700\",\"19626.52\"],[\"0.2800\",\"18.28\"],[\"0.2900\",\"35.87\"],[\"0.3000\",\"16965.92\"],[\"0.3100\",\"197.58\"],[\"0.3300\",\"14198.41\"],[\"0.3400\",\"85.02\"],[\"0.3500\",\"164.55\"],[\"0.3600\",\"26523.05\"],[\"0.3700\",\"8330.00\"],[\"0.3800\",\"47.01\"],[\"0.3900\",\"3.65\"],[\"0.4000\",\"8187.56\"],[\"0.4100\",\"369.32\"],[\"0.4200\",\"47.60\"],[\"0.4300\",\"23526.50\"],[\"0.4400\",\"267.44\"],[\"0.4500\",\"5262.65\"],[\"0.4600\",\"396.28\"],[\"0.4700\",\"12.31\"],[\"0.4800\",\"5131.80\"],[\"0.4900\",\"36.20\"],[\"0.5000\",\"101.97\"],[\"0.5100\",\"20161.62\"],[\"0.5200\",\"21.97\"],[\"0.5300\",\"17.00\"],[\"0.5400\",\"2199.00\"],[\"0.5500\",\"351.12\"],[\"0.5600\",\"28.00\"],[\"0.5700\",\"15585.00\"],[\"0.5800\",\"399.92\"],[\"0.5900\",\"733.31\"],[\"0.6000\",\"47407.36\"],[\"0.6100\",\"46739.28\"],[\"0.6200\",\"56.60\"],[\"0.6300\",\"108.33\"],[\"0.6400\",\"39.26\"],[\"0.6500\",\"14.00\"],[\"0.6600\",\"1601.00\"],[\"0.6700\",\"100.00\"],[\"0.6800\",\"1341.22\"],[\"0.6900\",\"150.65\"],[\"0.7000\",\"1058.34\"],[\"0.7100\",\"103531.30\"],[\"0.7200\",\"1306540.97\"],[\"0.7300\",\"1238378.76\"],[\"0.7400\",\"986399.90\"]]},\"sending_ts_ms\":1793505548438}\n",
+      "headers": {},
+      "timing": {
+        "connection_id": 2,
+        "kind": "ws_receive",
+        "observation_id": 10,
+        "receive_monotonic": 373015.070240211,
+        "received_at": "2026-11-01T03:59:08.475822+00:00",
+        "schema": "quote-synchronization/m5m-v1"
+      },
+      "ws": {
+        "connection_id": 2,
+        "wire_sha256": "d8a525e4ce594941ad8b627597149457b5dd733ecc91d4d9df634dadd27329da",
+        "archive_kind": "EXACT_WIRE"
+      }
+    },
+    {
+      "id": 13,
+      "ts_utc": "2026-11-01T03:59:13.465203+00:00",
+      "venue": "kalshi",
+      "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+      "body_sha256": "8498fcc6df088f6c33136b45794d50249b1a07ffe865584a47fc2360e896f7db",
+      "http_status": 101,
+      "schema_version": "kalshi-ws/m5a-v1",
+      "validation_status": "VALID",
+      "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":2,\"msg\":{\"market_ticker\":\"KXNFLGAME-26NOV01ARIDAL-ARI\",\"market_id\":\"01a15779-1d26-7e60-af88-5b30a1317e6a\",\"clock\":112767186758,\"price_dollars\":\"0.2500\",\"delta_fp\":\"-300000.00\",\"side\":\"yes\",\"ts\":\"2026-11-01T03:59:13.416Z\",\"ts_ms\":1793505553416},\"sending_ts_ms\":1793505553455}\n",
+      "headers": {},
+      "timing": {
+        "connection_id": 2,
+        "kind": "ws_receive",
+        "observation_id": 13,
+        "receive_monotonic": 373020.05962515,
+        "received_at": "2026-11-01T03:59:13.465203+00:00",
+        "schema": "quote-synchronization/m5m-v1"
+      },
+      "ws": {
+        "connection_id": 2,
+        "wire_sha256": "8498fcc6df088f6c33136b45794d50249b1a07ffe865584a47fc2360e896f7db",
+        "archive_kind": "EXACT_WIRE"
+      }
+    },
+    {
+      "id": 14,
+      "ts_utc": "2026-11-01T03:59:13.489518+00:00",
+      "venue": "kalshi",
+      "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+      "body_sha256": "7b5f48f661a2019aeed9a9a4ebed9b259b73348db5dfb5158bfba82bae88f737",
+      "http_status": 101,
+      "schema_version": "kalshi-ws/m5a-v1",
+      "validation_status": "VALID",
+      "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":3,\"msg\":{\"market_ticker\":\"KXNFLGAME-26NOV01ARIDAL-ARI\",\"market_id\":\"01a15779-1d26-7e60-af88-5b30a1317e6a\",\"clock\":112767186770,\"price_dollars\":\"0.7200\",\"delta_fp\":\"-300000.00\",\"side\":\"no\",\"ts\":\"2026-11-01T03:59:13.416Z\",\"ts_ms\":1793505553416},\"sending_ts_ms\":1793505553471}\n",
+      "headers": {},
+      "timing": {
+        "connection_id": 2,
+        "kind": "ws_receive",
+        "observation_id": 14,
+        "receive_monotonic": 373020.083935701,
+        "received_at": "2026-11-01T03:59:13.489518+00:00",
+        "schema": "quote-synchronization/m5m-v1"
+      },
+      "ws": {
+        "connection_id": 2,
+        "wire_sha256": "7b5f48f661a2019aeed9a9a4ebed9b259b73348db5dfb5158bfba82bae88f737",
+        "archive_kind": "EXACT_WIRE"
+      }
+    },
+    {
+      "id": 15,
+      "ts_utc": "2026-11-01T03:59:13.521514+00:00",
+      "venue": "kalshi",
+      "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+      "body_sha256": "ffca2106982f951df597e69a788fbf6f96d03cee5f790a6ab9d08fa9f051ab27",
+      "http_status": 101,
+      "schema_version": "kalshi-ws/m5a-v1",
+      "validation_status": "VALID",
+      "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":4,\"msg\":{\"market_ticker\":\"KXNFLGAME-26NOV01ARIDAL-ARI\",\"market_id\":\"01a15779-1d26-7e60-af88-5b30a1317e6a\",\"clock\":112767191583,\"price_dollars\":\"0.2500\",\"delta_fp\":\"-975.00\",\"side\":\"yes\",\"ts\":\"2026-11-01T03:59:13.504Z\",\"ts_ms\":1793505553504},\"sending_ts_ms\":1793505553511}\n",
+      "headers": {},
+      "timing": {
+        "connection_id": 2,
+        "kind": "ws_receive",
+        "observation_id": 15,
+        "receive_monotonic": 373020.115936286,
+        "received_at": "2026-11-01T03:59:13.521514+00:00",
+        "schema": "quote-synchronization/m5m-v1"
+      },
+      "ws": {
+        "connection_id": 2,
+        "wire_sha256": "ffca2106982f951df597e69a788fbf6f96d03cee5f790a6ab9d08fa9f051ab27",
+        "archive_kind": "EXACT_WIRE"
+      }
+    },
+    {
+      "id": 16,
+      "ts_utc": "2026-11-01T03:59:13.546763+00:00",
+      "venue": "kalshi",
+      "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+      "body_sha256": "c3fc4f9068ed7387af3fa50b7980e9918e2593c8789ffc5acbc820086e6a8f23",
+      "http_status": 101,
+      "schema_version": "kalshi-ws/m5a-v1",
+      "validation_status": "VALID",
+      "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":5,\"msg\":{\"market_ticker\":\"KXNFLGAME-26NOV01ARIDAL-ARI\",\"market_id\":\"01a15779-1d26-7e60-af88-5b30a1317e6a\",\"clock\":112767191604,\"price_dollars\":\"0.2400\",\"delta_fp\":\"-575.00\",\"side\":\"yes\",\"ts\":\"2026-11-01T03:59:13.504Z\",\"ts_ms\":1793505553504},\"sending_ts_ms\":1793505553511}\n",
+      "headers": {},
+      "timing": {
+        "connection_id": 2,
+        "kind": "ws_receive",
+        "observation_id": 16,
+        "receive_monotonic": 373020.141181267,
+        "received_at": "2026-11-01T03:59:13.546763+00:00",
+        "schema": "quote-synchronization/m5m-v1"
+      },
+      "ws": {
+        "connection_id": 2,
+        "wire_sha256": "c3fc4f9068ed7387af3fa50b7980e9918e2593c8789ffc5acbc820086e6a8f23",
+        "archive_kind": "EXACT_WIRE"
+      }
+    },
+    {
+      "id": 17,
+      "ts_utc": "2026-11-01T03:59:13.749193+00:00",
+      "venue": "kalshi",
+      "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+      "body_sha256": "826e0f7dcf48a7e95d11f28ed14bcb50600e20d4b2c5cb76772a07244093775b",
+      "http_status": 101,
+      "schema_version": "kalshi-ws/m5a-v1",
+      "validation_status": "VALID",
+      "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":6,\"msg\":{\"market_ticker\":\"KXNFLGAME-26NOV01ARIDAL-ARI\",\"market_id\":\"01a15779-1d26-7e60-af88-5b30a1317e6a\",\"clock\":112767198881,\"price_dollars\":\"0.2400\",\"delta_fp\":\"-2.00\",\"side\":\"yes\",\"ts\":\"2026-11-01T03:59:13.733Z\",\"ts_ms\":1793505553733},\"sending_ts_ms\":1793505553739}\n",
+      "headers": {},
+      "timing": {
+        "connection_id": 2,
+        "kind": "ws_receive",
+        "observation_id": 17,
+        "receive_monotonic": 373020.343615193,
+        "received_at": "2026-11-01T03:59:13.749193+00:00",
+        "schema": "quote-synchronization/m5m-v1"
+      },
+      "ws": {
+        "connection_id": 2,
+        "wire_sha256": "826e0f7dcf48a7e95d11f28ed14bcb50600e20d4b2c5cb76772a07244093775b",
+        "archive_kind": "EXACT_WIRE"
+      }
+    },
+    {
+      "id": 18,
+      "ts_utc": "2026-11-01T03:59:13.772401+00:00",
+      "venue": "kalshi",
+      "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+      "body_sha256": "2f7d5973ed22ce6ca94b201bc54bc7c1ea88880857acc0ac1287aa4d1cc15373",
+      "http_status": 101,
+      "schema_version": "kalshi-ws/m5a-v1",
+      "validation_status": "VALID",
+      "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":7,\"msg\":{\"market_ticker\":\"KXNFLGAME-26NOV01ARIDAL-ARI\",\"market_id\":\"01a15779-1d26-7e60-af88-5b30a1317e6a\",\"clock\":112767199228,\"price_dollars\":\"0.7400\",\"delta_fp\":\"-50000.00\",\"side\":\"no\",\"ts\":\"2026-11-01T03:59:13.75Z\",\"ts_ms\":1793505553750},\"sending_ts_ms\":1793505553756}\n",
+      "headers": {},
+      "timing": {
+        "connection_id": 2,
+        "kind": "ws_receive",
+        "observation_id": 18,
+        "receive_monotonic": 373020.366818758,
+        "received_at": "2026-11-01T03:59:13.772401+00:00",
+        "schema": "quote-synchronization/m5m-v1"
+      },
+      "ws": {
+        "connection_id": 2,
+        "wire_sha256": "2f7d5973ed22ce6ca94b201bc54bc7c1ea88880857acc0ac1287aa4d1cc15373",
+        "archive_kind": "EXACT_WIRE"
+      }
+    },
+    {
+      "id": 19,
+      "ts_utc": "2026-11-01T03:59:13.799859+00:00",
+      "venue": "kalshi",
+      "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+      "body_sha256": "cecfe50b07cb655535f02730e5612bd67320238b5aaa2499c09a3ff458ce807c",
+      "http_status": 101,
+      "schema_version": "kalshi-ws/m5a-v1",
+      "validation_status": "VALID",
+      "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":8,\"msg\":{\"market_ticker\":\"KXNFLGAME-26NOV01ARIDAL-ARI\",\"market_id\":\"01a15779-1d26-7e60-af88-5b30a1317e6a\",\"clock\":112767199313,\"price_dollars\":\"0.7400\",\"delta_fp\":\"-50000.00\",\"side\":\"no\",\"ts\":\"2026-11-01T03:59:13.756Z\",\"ts_ms\":1793505553756},\"sending_ts_ms\":1793505553762}\n",
+      "headers": {},
+      "timing": {
+        "connection_id": 2,
+        "kind": "ws_receive",
+        "observation_id": 19,
+        "receive_monotonic": 373020.394277064,
+        "received_at": "2026-11-01T03:59:13.799859+00:00",
+        "schema": "quote-synchronization/m5m-v1"
+      },
+      "ws": {
+        "connection_id": 2,
+        "wire_sha256": "cecfe50b07cb655535f02730e5612bd67320238b5aaa2499c09a3ff458ce807c",
+        "archive_kind": "EXACT_WIRE"
+      }
+    },
+    {
+      "id": 20,
+      "ts_utc": "2026-11-01T03:59:13.823320+00:00",
+      "venue": "kalshi",
+      "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+      "body_sha256": "19c866902a2299db08e3703759669a3d568afdc4ac2ac6755f5979b7f54f778b",
+      "http_status": 101,
+      "schema_version": "kalshi-ws/m5a-v1",
+      "validation_status": "VALID",
+      "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":9,\"msg\":{\"market_ticker\":\"KXNFLGAME-26NOV01ARIDAL-ARI\",\"market_id\":\"01a15779-1d26-7e60-af88-5b30a1317e6a\",\"clock\":112767199455,\"price_dollars\":\"0.7300\",\"delta_fp\":\"-50000.00\",\"side\":\"no\",\"ts\":\"2026-11-01T03:59:13.765Z\",\"ts_ms\":1793505553765},\"sending_ts_ms\":1793505553771}\n",
+      "headers": {},
+      "timing": {
+        "connection_id": 2,
+        "kind": "ws_receive",
+        "observation_id": 20,
+        "receive_monotonic": 373020.417738445,
+        "received_at": "2026-11-01T03:59:13.823320+00:00",
+        "schema": "quote-synchronization/m5m-v1"
+      },
+      "ws": {
+        "connection_id": 2,
+        "wire_sha256": "19c866902a2299db08e3703759669a3d568afdc4ac2ac6755f5979b7f54f778b",
+        "archive_kind": "EXACT_WIRE"
+      }
+    },
+    {
+      "id": 21,
+      "ts_utc": "2026-11-01T03:59:13.839834+00:00",
+      "venue": "kalshi",
+      "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+      "body_sha256": "922bf6814ab9ec598769acf89fa9eca7a9402352242374a5823a058f4c0f03d5",
+      "http_status": 101,
+      "schema_version": "kalshi-ws/m5a-v1",
+      "validation_status": "VALID",
+      "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":10,\"msg\":{\"market_ticker\":\"KXNFLGAME-26NOV01ARIDAL-ARI\",\"market_id\":\"01a15779-1d26-7e60-af88-5b30a1317e6a\",\"clock\":112767199552,\"price_dollars\":\"0.7300\",\"delta_fp\":\"-50000.00\",\"side\":\"no\",\"ts\":\"2026-11-01T03:59:13.772Z\",\"ts_ms\":1793505553772},\"sending_ts_ms\":1793505553781}\n",
+      "headers": {},
+      "timing": {
+        "connection_id": 2,
+        "kind": "ws_receive",
+        "observation_id": 21,
+        "receive_monotonic": 373020.434252295,
+        "received_at": "2026-11-01T03:59:13.839834+00:00",
+        "schema": "quote-synchronization/m5m-v1"
+      },
+      "ws": {
+        "connection_id": 2,
+        "wire_sha256": "922bf6814ab9ec598769acf89fa9eca7a9402352242374a5823a058f4c0f03d5",
+        "archive_kind": "EXACT_WIRE"
+      }
+    },
+    {
+      "id": 22,
+      "ts_utc": "2026-11-01T03:59:13.861551+00:00",
+      "venue": "kalshi",
+      "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+      "body_sha256": "6d7288377725ff271335908f44449f2396bb3dcaf83f737a567536d8fc8e8627",
+      "http_status": 101,
+      "schema_version": "kalshi-ws/m5a-v1",
+      "validation_status": "VALID",
+      "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":11,\"msg\":{\"market_ticker\":\"KXNFLGAME-26NOV01ARIDAL-ARI\",\"market_id\":\"01a15779-1d26-7e60-af88-5b30a1317e6a\",\"clock\":112767199650,\"price_dollars\":\"0.7200\",\"delta_fp\":\"-50000.00\",\"side\":\"no\",\"ts\":\"2026-11-01T03:59:13.778Z\",\"ts_ms\":1793505553778},\"sending_ts_ms\":1793505553786}\n",
+      "headers": {},
+      "timing": {
+        "connection_id": 2,
+        "kind": "ws_receive",
+        "observation_id": 22,
+        "receive_monotonic": 373020.455970076,
+        "received_at": "2026-11-01T03:59:13.861551+00:00",
+        "schema": "quote-synchronization/m5m-v1"
+      },
+      "ws": {
+        "connection_id": 2,
+        "wire_sha256": "6d7288377725ff271335908f44449f2396bb3dcaf83f737a567536d8fc8e8627",
+        "archive_kind": "EXACT_WIRE"
+      }
+    },
+    {
+      "id": 23,
+      "ts_utc": "2026-11-01T03:59:13.884752+00:00",
+      "venue": "kalshi",
+      "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+      "body_sha256": "e020a00d10fb6959262cbe39ef120ce390be1cd695638781826bddca4021a2b7",
+      "http_status": 101,
+      "schema_version": "kalshi-ws/m5a-v1",
+      "validation_status": "VALID",
+      "body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":12,\"msg\":{\"market_ticker\":\"KXNFLGAME-26NOV01ARIDAL-ARI\",\"market_id\":\"01a15779-1d26-7e60-af88-5b30a1317e6a\",\"clock\":112767199751,\"price_dollars\":\"0.7200\",\"delta_fp\":\"-50000.00\",\"side\":\"no\",\"ts\":\"2026-11-01T03:59:13.785Z\",\"ts_ms\":1793505553785},\"sending_ts_ms\":1793505553791}\n",
+      "headers": {},
+      "timing": {
+        "connection_id": 2,
+        "kind": "ws_receive",
+        "observation_id": 23,
+        "receive_monotonic": 373020.479170437,
+        "received_at": "2026-11-01T03:59:13.884752+00:00",
+        "schema": "quote-synchronization/m5m-v1"
+      },
+      "ws": {
+        "connection_id": 2,
+        "wire_sha256": "e020a00d10fb6959262cbe39ef120ce390be1cd695638781826bddca4021a2b7",
+        "archive_kind": "EXACT_WIRE"
+      }
+    },
+    {
+      "id": 198,
+      "ts_utc": "2026-11-01T04:04:57.060358+00:00",
+      "venue": "polymarket_us",
+      "endpoint": "https://gateway.polymarket.us/v1/markets/aec-nfl-ari-dal-2026-11-01/book",
+      "body_sha256": "60c31540c0dda8e82404d5b0c86099c1335037af84fda6b17c23052a9c2eac02",
+      "http_status": 200,
+      "schema_version": "polymarket-us-marketservice-1.0.0/m1-v1",
+      "validation_status": "VALID",
+      "body": "{\"marketData\":{\"marketSlug\":\"aec-nfl-ari-dal-2026-11-01\", \"bids\":[{\"px\":{\"value\":\"0.2550\", \"currency\":\"USD\"}, \"qty\":\"1127854.3300\"}, {\"px\":{\"value\":\"0.2525\", \"currency\":\"USD\"}, \"qty\":\"545946.0000\"}, {\"px\":{\"value\":\"0.2500\", \"currency\":\"USD\"}, \"qty\":\"139925.8700\"}, {\"px\":{\"value\":\"0.2475\", \"currency\":\"USD\"}, \"qty\":\"20313.9900\"}, {\"px\":{\"value\":\"0.2450\", \"currency\":\"USD\"}, \"qty\":\"19045.9900\"}, {\"px\":{\"value\":\"0.2425\", \"currency\":\"USD\"}, \"qty\":\"841.9300\"}, {\"px\":{\"value\":\"0.2400\", \"currency\":\"USD\"}, \"qty\":\"10251.0000\"}, {\"px\":{\"value\":\"0.2375\", \"currency\":\"USD\"}, \"qty\":\"54.0000\"}, {\"px\":{\"value\":\"0.2350\", \"currency\":\"USD\"}, \"qty\":\"3097.0000\"}, {\"px\":{\"value\":\"0.2325\", \"currency\":\"USD\"}, \"qty\":\"7500.0000\"}, {\"px\":{\"value\":\"0.2300\", \"currency\":\"USD\"}, \"qty\":\"61415.2100\"}, {\"px\":{\"value\":\"0.2275\", \"currency\":\"USD\"}, \"qty\":\"7500.0000\"}, {\"px\":{\"value\":\"0.2250\", \"currency\":\"USD\"}, \"qty\":\"500.0000\"}, {\"px\":{\"value\":\"0.2200\", \"currency\":\"USD\"}, \"qty\":\"18264.0000\"}, {\"px\":{\"value\":\"0.2100\", \"currency\":\"USD\"}, \"qty\":\"23345.0000\"}, {\"px\":{\"value\":\"0.1300\", \"currency\":\"USD\"}, \"qty\":\"3994.0000\"}, {\"px\":{\"value\":\"0.1200\", \"currency\":\"USD\"}, \"qty\":\"40.7400\"}, {\"px\":{\"value\":\"0.1000\", \"currency\":\"USD\"}, \"qty\":\"46772.0000\"}, {\"px\":{\"value\":\"0.0900\", \"currency\":\"USD\"}, \"qty\":\"46690.0000\"}, {\"px\":{\"value\":\"0.0600\", \"currency\":\"USD\"}, \"qty\":\"50.0000\"}, {\"px\":{\"value\":\"0.0500\", \"currency\":\"USD\"}, \"qty\":\"31.9900\"}, {\"px\":{\"value\":\"0.0400\", \"currency\":\"USD\"}, \"qty\":\"167.0400\"}, {\"px\":{\"value\":\"0.0300\", \"currency\":\"USD\"}, \"qty\":\"15.0000\"}, {\"px\":{\"value\":\"0.0200\", \"currency\":\"USD\"}, \"qty\":\"3212.3100\"}, {\"px\":{\"value\":\"0.0100\", \"currency\":\"USD\"}, \"qty\":\"2122.4400\"}, {\"px\":{\"value\":\"0.0025\", \"currency\":\"USD\"}, \"qty\":\"2100016.0000\"}], \"offers\":[{\"px\":{\"value\":\"0.2575\", \"currency\":\"USD\"}, \"qty\":\"713787.8800\"}, {\"px\":{\"value\":\"0.2600\", \"currency\":\"USD\"}, \"qty\":\"1095584.6200\"}, {\"px\":{\"value\":\"0.2625\", \"currency\":\"USD\"}, \"qty\":\"64241.3700\"}, {\"px\":{\"value\":\"0.2650\", \"currency\":\"USD\"}, \"qty\":\"8000.0000\"}, {\"px\":{\"value\":\"0.2675\", \"currency\":\"USD\"}, \"qty\":\"1390.0700\"}, {\"px\":{\"value\":\"0.2700\", \"currency\":\"USD\"}, \"qty\":\"8971.0000\"}, {\"px\":{\"value\":\"0.2750\", \"currency\":\"USD\"}, \"qty\":\"7502.0000\"}, {\"px\":{\"value\":\"0.2775\", \"currency\":\"USD\"}, \"qty\":\"37595.0000\"}, {\"px\":{\"value\":\"0.2800\", \"currency\":\"USD\"}, \"qty\":\"67630.9400\"}, {\"px\":{\"value\":\"0.2825\", \"currency\":\"USD\"}, \"qty\":\"5720.0000\"}, {\"px\":{\"value\":\"0.2850\", \"currency\":\"USD\"}, \"qty\":\"7500.0000\"}, {\"px\":{\"value\":\"0.2875\", \"currency\":\"USD\"}, \"qty\":\"1191.0000\"}, {\"px\":{\"value\":\"0.2900\", \"currency\":\"USD\"}, \"qty\":\"16721.0000\"}, {\"px\":{\"value\":\"0.3200\", \"currency\":\"USD\"}, \"qty\":\"39.9500\"}, {\"px\":{\"value\":\"0.3375\", \"currency\":\"USD\"}, \"qty\":\"2.0000\"}, {\"px\":{\"value\":\"0.3400\", \"currency\":\"USD\"}, \"qty\":\"91.4900\"}, {\"px\":{\"value\":\"0.3500\", \"currency\":\"USD\"}, \"qty\":\"2.4100\"}, {\"px\":{\"value\":\"0.3700\", \"currency\":\"USD\"}, \"qty\":\"18.4400\"}, {\"px\":{\"value\":\"0.3800\", \"currency\":\"USD\"}, \"qty\":\"3686.3100\"}, {\"px\":{\"value\":\"0.4000\", \"currency\":\"USD\"}, \"qty\":\"36.9300\"}, {\"px\":{\"value\":\"0.4625\", \"currency\":\"USD\"}, \"qty\":\"10.0000\"}, {\"px\":{\"value\":\"0.5300\", \"currency\":\"USD\"}, \"qty\":\"18.6200\"}, {\"px\":{\"value\":\"0.5400\", \"currency\":\"USD\"}, \"qty\":\"70.1600\"}, {\"px\":{\"value\":\"0.5500\", \"currency\":\"USD\"}, \"qty\":\"1883.5000\"}, {\"px\":{\"value\":\"0.5800\", \"currency\":\"USD\"}, \"qty\":\"1.8600\"}, {\"px\":{\"value\":\"0.6000\", \"currency\":\"USD\"}, \"qty\":\"5.0000\"}, {\"px\":{\"value\":\"0.6200\", \"currency\":\"USD\"}, \"qty\":\"394.7300\"}, {\"px\":{\"value\":\"0.6800\", \"currency\":\"USD\"}, \"qty\":\"36.8500\"}, {\"px\":{\"value\":\"0.6900\", \"currency\":\"USD\"}, \"qty\":\"7.3000\"}, {\"px\":{\"value\":\"0.8100\", \"currency\":\"USD\"}, \"qty\":\"3.7200\"}, {\"px\":{\"value\":\"0.8200\", \"currency\":\"USD\"}, \"qty\":\"31.3600\"}, {\"px\":{\"value\":\"0.8400\", \"currency\":\"USD\"}, \"qty\":\"18.4400\"}, {\"px\":{\"value\":\"0.8600\", \"currency\":\"USD\"}, \"qty\":\"9.2400\"}, {\"px\":{\"value\":\"0.8800\", \"currency\":\"USD\"}, \"qty\":\"46587.0000\"}, {\"px\":{\"value\":\"0.8900\", \"currency\":\"USD\"}, \"qty\":\"46708.4400\"}, {\"px\":{\"value\":\"0.9000\", \"currency\":\"USD\"}, \"qty\":\"50.0000\"}, {\"px\":{\"value\":\"0.9200\", \"currency\":\"USD\"}, \"qty\":\"18.4400\"}, {\"px\":{\"value\":\"0.9400\", \"currency\":\"USD\"}, \"qty\":\"50.0000\"}, {\"px\":{\"value\":\"0.9600\", \"currency\":\"USD\"}, \"qty\":\"100.0000\"}, {\"px\":{\"value\":\"0.9700\", \"currency\":\"USD\"}, \"qty\":\"47.0000\"}, {\"px\":{\"value\":\"0.9800\", \"currency\":\"USD\"}, \"qty\":\"3210.0000\"}, {\"px\":{\"value\":\"0.9900\", \"currency\":\"USD\"}, \"qty\":\"2495.4700\"}, {\"px\":{\"value\":\"0.9975\", \"currency\":\"USD\"}, \"qty\":\"2100016.0000\"}], \"state\":\"MARKET_STATE_OPEN\", \"stats\":{\"openPx\":{\"value\":\"0.4400\", \"currency\":\"USD\"}, \"lowPx\":{\"value\":\"0.1600\", \"currency\":\"USD\"}, \"highPx\":{\"value\":\"0.4400\", \"currency\":\"USD\"}, \"lastTradePx\":{\"value\":\"0.2575\", \"currency\":\"USD\"}, \"sharesTraded\":\"211599.3100\", \"notionalTraded\":{\"value\":\"57367.7978\", \"currency\":\"USD\"}, \"lastTradeQty\":\"100.0000\", \"openInterest\":\"37155.2400\", \"openSetTime\":\"2026-10-19T03:59:01.136709252Z\", \"highSetTime\":\"2026-10-19T03:59:01.136709252Z\", \"lowSetTime\":\"2026-10-19T11:48:41.010627310Z\", \"lastTradeSetTime\":\"2026-11-01T04:03:06.469576767Z\", \"openInterestSetTime\":\"2026-11-01T04:03:06.500845395Z\", \"notionalSetTime\":\"2026-11-01T04:03:06.469576767Z\", \"currentPx\":{\"value\":\"0.2562\", \"currency\":\"USD\"}, \"lastPriceSample\":{\"longPx\":{\"value\":\"0.2575\", \"currency\":\"USD\"}, \"shortPx\":{\"value\":\"0.7425\", \"currency\":\"USD\"}, \"ts\":\"2026-11-01T04:03:53.644186946Z\"}}, \"transactTime\":\"2026-11-01T04:03:53.644186946Z\"}}",
+      "headers": {
+        "content-type": "application/json",
+        "date": "Sun, 01 Nov 2026 04:04:57 GMT",
+        "last-modified": "Sun, 01 Nov 2026 04:04:57 GMT"
+      },
+      "timing": {
+        "body_sha256": "60c31540c0dda8e82404d5b0c86099c1335037af84fda6b17c23052a9c2eac02",
+        "cache_control": "public, max-age=30",
+        "call_finished_monotonic": 373363.675526766,
+        "call_monotonic": 373362.675076368,
+        "call_started_at": "2026-11-01T04:04:56.080650+00:00",
+        "headers_monotonic": 373363.654384863,
+        "http_age": null,
+        "http_date": "Sun, 01 Nov 2026 04:04:57 GMT",
+        "http_status": 200,
+        "kind": "http_request",
+        "observation_id": 198,
+        "receive_monotonic": 373363.65473466,
+        "received_at": "2026-11-01T04:04:57.060293+00:00",
+        "request_finished_monotonic": 373363.654769049,
+        "request_monotonic": 373363.582769913,
+        "request_started_at": "2026-11-01T04:04:56.988332+00:00",
+        "response_bytes": 5395,
+        "schema": "quote-synchronization/m5m-v1",
+        "success": true,
+        "url": "https://gateway.polymarket.us/v1/markets/aec-nfl-ari-dal-2026-11-01/book",
+        "validation_status": "VALID",
+        "venue": "polymarket_us"
+      }
+    },
+    {
+      "id": 200,
+      "ts_utc": "2026-11-01T04:05:03.235280+00:00",
+      "venue": "polymarket_us",
+      "endpoint": "https://gateway.polymarket.us/v1/markets/aec-nfl-ari-dal-2026-11-01/book",
+      "body_sha256": "60c31540c0dda8e82404d5b0c86099c1335037af84fda6b17c23052a9c2eac02",
+      "http_status": 200,
+      "schema_version": "polymarket-us-marketservice-1.0.0/m1-v1",
+      "validation_status": "VALID",
+      "body": "{\"marketData\":{\"marketSlug\":\"aec-nfl-ari-dal-2026-11-01\", \"bids\":[{\"px\":{\"value\":\"0.2550\", \"currency\":\"USD\"}, \"qty\":\"1127854.3300\"}, {\"px\":{\"value\":\"0.2525\", \"currency\":\"USD\"}, \"qty\":\"545946.0000\"}, {\"px\":{\"value\":\"0.2500\", \"currency\":\"USD\"}, \"qty\":\"139925.8700\"}, {\"px\":{\"value\":\"0.2475\", \"currency\":\"USD\"}, \"qty\":\"20313.9900\"}, {\"px\":{\"value\":\"0.2450\", \"currency\":\"USD\"}, \"qty\":\"19045.9900\"}, {\"px\":{\"value\":\"0.2425\", \"currency\":\"USD\"}, \"qty\":\"841.9300\"}, {\"px\":{\"value\":\"0.2400\", \"currency\":\"USD\"}, \"qty\":\"10251.0000\"}, {\"px\":{\"value\":\"0.2375\", \"currency\":\"USD\"}, \"qty\":\"54.0000\"}, {\"px\":{\"value\":\"0.2350\", \"currency\":\"USD\"}, \"qty\":\"3097.0000\"}, {\"px\":{\"value\":\"0.2325\", \"currency\":\"USD\"}, \"qty\":\"7500.0000\"}, {\"px\":{\"value\":\"0.2300\", \"currency\":\"USD\"}, \"qty\":\"61415.2100\"}, {\"px\":{\"value\":\"0.2275\", \"currency\":\"USD\"}, \"qty\":\"7500.0000\"}, {\"px\":{\"value\":\"0.2250\", \"currency\":\"USD\"}, \"qty\":\"500.0000\"}, {\"px\":{\"value\":\"0.2200\", \"currency\":\"USD\"}, \"qty\":\"18264.0000\"}, {\"px\":{\"value\":\"0.2100\", \"currency\":\"USD\"}, \"qty\":\"23345.0000\"}, {\"px\":{\"value\":\"0.1300\", \"currency\":\"USD\"}, \"qty\":\"3994.0000\"}, {\"px\":{\"value\":\"0.1200\", \"currency\":\"USD\"}, \"qty\":\"40.7400\"}, {\"px\":{\"value\":\"0.1000\", \"currency\":\"USD\"}, \"qty\":\"46772.0000\"}, {\"px\":{\"value\":\"0.0900\", \"currency\":\"USD\"}, \"qty\":\"46690.0000\"}, {\"px\":{\"value\":\"0.0600\", \"currency\":\"USD\"}, \"qty\":\"50.0000\"}, {\"px\":{\"value\":\"0.0500\", \"currency\":\"USD\"}, \"qty\":\"31.9900\"}, {\"px\":{\"value\":\"0.0400\", \"currency\":\"USD\"}, \"qty\":\"167.0400\"}, {\"px\":{\"value\":\"0.0300\", \"currency\":\"USD\"}, \"qty\":\"15.0000\"}, {\"px\":{\"value\":\"0.0200\", \"currency\":\"USD\"}, \"qty\":\"3212.3100\"}, {\"px\":{\"value\":\"0.0100\", \"currency\":\"USD\"}, \"qty\":\"2122.4400\"}, {\"px\":{\"value\":\"0.0025\", \"currency\":\"USD\"}, \"qty\":\"2100016.0000\"}], \"offers\":[{\"px\":{\"value\":\"0.2575\", \"currency\":\"USD\"}, \"qty\":\"713787.8800\"}, {\"px\":{\"value\":\"0.2600\", \"currency\":\"USD\"}, \"qty\":\"1095584.6200\"}, {\"px\":{\"value\":\"0.2625\", \"currency\":\"USD\"}, \"qty\":\"64241.3700\"}, {\"px\":{\"value\":\"0.2650\", \"currency\":\"USD\"}, \"qty\":\"8000.0000\"}, {\"px\":{\"value\":\"0.2675\", \"currency\":\"USD\"}, \"qty\":\"1390.0700\"}, {\"px\":{\"value\":\"0.2700\", \"currency\":\"USD\"}, \"qty\":\"8971.0000\"}, {\"px\":{\"value\":\"0.2750\", \"currency\":\"USD\"}, \"qty\":\"7502.0000\"}, {\"px\":{\"value\":\"0.2775\", \"currency\":\"USD\"}, \"qty\":\"37595.0000\"}, {\"px\":{\"value\":\"0.2800\", \"currency\":\"USD\"}, \"qty\":\"67630.9400\"}, {\"px\":{\"value\":\"0.2825\", \"currency\":\"USD\"}, \"qty\":\"5720.0000\"}, {\"px\":{\"value\":\"0.2850\", \"currency\":\"USD\"}, \"qty\":\"7500.0000\"}, {\"px\":{\"value\":\"0.2875\", \"currency\":\"USD\"}, \"qty\":\"1191.0000\"}, {\"px\":{\"value\":\"0.2900\", \"currency\":\"USD\"}, \"qty\":\"16721.0000\"}, {\"px\":{\"value\":\"0.3200\", \"currency\":\"USD\"}, \"qty\":\"39.9500\"}, {\"px\":{\"value\":\"0.3375\", \"currency\":\"USD\"}, \"qty\":\"2.0000\"}, {\"px\":{\"value\":\"0.3400\", \"currency\":\"USD\"}, \"qty\":\"91.4900\"}, {\"px\":{\"value\":\"0.3500\", \"currency\":\"USD\"}, \"qty\":\"2.4100\"}, {\"px\":{\"value\":\"0.3700\", \"currency\":\"USD\"}, \"qty\":\"18.4400\"}, {\"px\":{\"value\":\"0.3800\", \"currency\":\"USD\"}, \"qty\":\"3686.3100\"}, {\"px\":{\"value\":\"0.4000\", \"currency\":\"USD\"}, \"qty\":\"36.9300\"}, {\"px\":{\"value\":\"0.4625\", \"currency\":\"USD\"}, \"qty\":\"10.0000\"}, {\"px\":{\"value\":\"0.5300\", \"currency\":\"USD\"}, \"qty\":\"18.6200\"}, {\"px\":{\"value\":\"0.5400\", \"currency\":\"USD\"}, \"qty\":\"70.1600\"}, {\"px\":{\"value\":\"0.5500\", \"currency\":\"USD\"}, \"qty\":\"1883.5000\"}, {\"px\":{\"value\":\"0.5800\", \"currency\":\"USD\"}, \"qty\":\"1.8600\"}, {\"px\":{\"value\":\"0.6000\", \"currency\":\"USD\"}, \"qty\":\"5.0000\"}, {\"px\":{\"value\":\"0.6200\", \"currency\":\"USD\"}, \"qty\":\"394.7300\"}, {\"px\":{\"value\":\"0.6800\", \"currency\":\"USD\"}, \"qty\":\"36.8500\"}, {\"px\":{\"value\":\"0.6900\", \"currency\":\"USD\"}, \"qty\":\"7.3000\"}, {\"px\":{\"value\":\"0.8100\", \"currency\":\"USD\"}, \"qty\":\"3.7200\"}, {\"px\":{\"value\":\"0.8200\", \"currency\":\"USD\"}, \"qty\":\"31.3600\"}, {\"px\":{\"value\":\"0.8400\", \"currency\":\"USD\"}, \"qty\":\"18.4400\"}, {\"px\":{\"value\":\"0.8600\", \"currency\":\"USD\"}, \"qty\":\"9.2400\"}, {\"px\":{\"value\":\"0.8800\", \"currency\":\"USD\"}, \"qty\":\"46587.0000\"}, {\"px\":{\"value\":\"0.8900\", \"currency\":\"USD\"}, \"qty\":\"46708.4400\"}, {\"px\":{\"value\":\"0.9000\", \"currency\":\"USD\"}, \"qty\":\"50.0000\"}, {\"px\":{\"value\":\"0.9200\", \"currency\":\"USD\"}, \"qty\":\"18.4400\"}, {\"px\":{\"value\":\"0.9400\", \"currency\":\"USD\"}, \"qty\":\"50.0000\"}, {\"px\":{\"value\":\"0.9600\", \"currency\":\"USD\"}, \"qty\":\"100.0000\"}, {\"px\":{\"value\":\"0.9700\", \"currency\":\"USD\"}, \"qty\":\"47.0000\"}, {\"px\":{\"value\":\"0.9800\", \"currency\":\"USD\"}, \"qty\":\"3210.0000\"}, {\"px\":{\"value\":\"0.9900\", \"currency\":\"USD\"}, \"qty\":\"2495.4700\"}, {\"px\":{\"value\":\"0.9975\", \"currency\":\"USD\"}, \"qty\":\"2100016.0000\"}], \"state\":\"MARKET_STATE_OPEN\", \"stats\":{\"openPx\":{\"value\":\"0.4400\", \"currency\":\"USD\"}, \"lowPx\":{\"value\":\"0.1600\", \"currency\":\"USD\"}, \"highPx\":{\"value\":\"0.4400\", \"currency\":\"USD\"}, \"lastTradePx\":{\"value\":\"0.2575\", \"currency\":\"USD\"}, \"sharesTraded\":\"211599.3100\", \"notionalTraded\":{\"value\":\"57367.7978\", \"currency\":\"USD\"}, \"lastTradeQty\":\"100.0000\", \"openInterest\":\"37155.2400\", \"openSetTime\":\"2026-10-19T03:59:01.136709252Z\", \"highSetTime\":\"2026-10-19T03:59:01.136709252Z\", \"lowSetTime\":\"2026-10-19T11:48:41.010627310Z\", \"lastTradeSetTime\":\"2026-11-01T04:03:06.469576767Z\", \"openInterestSetTime\":\"2026-11-01T04:03:06.500845395Z\", \"notionalSetTime\":\"2026-11-01T04:03:06.469576767Z\", \"currentPx\":{\"value\":\"0.2562\", \"currency\":\"USD\"}, \"lastPriceSample\":{\"longPx\":{\"value\":\"0.2575\", \"currency\":\"USD\"}, \"shortPx\":{\"value\":\"0.7425\", \"currency\":\"USD\"}, \"ts\":\"2026-11-01T04:03:53.644186946Z\"}}, \"transactTime\":\"2026-11-01T04:03:53.644186946Z\"}}",
+      "headers": {
+        "content-type": "application/json",
+        "date": "Sun, 01 Nov 2026 04:05:03 GMT",
+        "last-modified": "Sun, 01 Nov 2026 04:04:57 GMT"
+      },
+      "timing": {
+        "body_sha256": "60c31540c0dda8e82404d5b0c86099c1335037af84fda6b17c23052a9c2eac02",
+        "cache_control": "public, max-age=30",
+        "call_finished_monotonic": 373369.850340386,
+        "call_monotonic": 373368.919069048,
+        "call_started_at": "2026-11-01T04:05:02.324633+00:00",
+        "headers_monotonic": 373369.829301169,
+        "http_age": "9",
+        "http_date": "Sun, 01 Nov 2026 04:05:03 GMT",
+        "http_status": 200,
+        "kind": "http_request",
+        "observation_id": 200,
+        "receive_monotonic": 373369.829661799,
+        "received_at": "2026-11-01T04:05:03.235224+00:00",
+        "request_finished_monotonic": 373369.829690929,
+        "request_monotonic": 373369.789863426,
+        "request_started_at": "2026-11-01T04:05:03.195423+00:00",
+        "response_bytes": 5395,
+        "schema": "quote-synchronization/m5m-v1",
+        "success": true,
+        "url": "https://gateway.polymarket.us/v1/markets/aec-nfl-ari-dal-2026-11-01/book",
+        "validation_status": "VALID",
+        "venue": "polymarket_us"
+      }
+    }
+  ]
+}

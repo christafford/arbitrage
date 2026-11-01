@@ -99,3 +99,16 @@ new trading credentials, automatic approvals or renewal of expired runs is allow
 See docs/M5L_RESULTS.md and docs/M5L_OPERATIONS.md. Independent adjudication was
 explicitly left pending by the operator. The proposed M5M is not an authorized run;
 M6 remains unauthorized.
+
+## M5M authorized research boundary
+
+The operator separately authorized M5M quote-synchronization diagnostics, a bounded
+60-minute read-only capture and up to five objective non-sports review packets.
+See `docs/M5M_OPERATIONS.md` and `docs/M5M_REVIEW_GUIDE.md`. This supersedes the
+older milestone stop only for that research scope. No M6, orders, funds, automatic
+equivalence/fee approval or renewal is authorized. Preserve Qwen3-Embedding-8B
+Q6_K, pooling, batch 16 and the exact production namespace. Experimental
+response-only freshness metrics must never replace the existing economic gates.
+Sports independent discretionary settlement remains residual-risk research,
+excluded from strict arbitrage. All human review remains pending unless an actual
+explicit, source-bound decision is provided.

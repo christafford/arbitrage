@@ -318,3 +318,23 @@ instructions/acceptance reports remain records of those earlier runs.
 See [M5L results](M5L_RESULTS.md) and [operations/replay](M5L_OPERATIONS.md).
 Production indices and expired run configurations remain unchanged; all M5I units
 stay disabled. M5M is a report recommendation only. M6 remains unauthorized.
+
+## M5M — Quote synchronization and strict settlement eligibility — IN PROGRESS
+
+Separately authorized by the operator; no real-money trading or M6.
+
+- [x] Isolated receive/source-clock, HTTP/pacing, WebSocket/pong, depth-change and
+  strict-versus-experimental freshness diagnostics; production gates unchanged.
+- [x] Historical M5L rejection analysis and bounded cache-header sensitivity test.
+- [x] Five current objective non-sports source/fee review packets with explicit
+  exception/window conflicts; human forms remain blank.
+- [x] Completed and audited actual 60-minute capture: 1,683 raw observations,
+  2,890 diagnostic samples, zero strict synchronized observations, 104 raw-byte
+  comparison replays without discrepancies.
+- [ ] Human settlement, fee, mechanics and cash-release review of a strict pair.
+- [ ] Conditional live executable economics at $5/$25/$100/$500 after that review.
+
+See [M5M results](M5M_RESULTS.md), [operations](M5M_OPERATIONS.md) and
+[review guide](M5M_REVIEW_GUIDE.md). The Qwen model, quantization, pooling, batch 16
+and pinned production namespace remain preserved. Sports with independent
+exceptional payouts are residual-risk research, excluded from strict arbitrage.

@@ -57,7 +57,7 @@ def refresh_metadata(con, source_id, *, client=None):
 def capture(con, source_id, credentials, *, seconds=60, max_messages=10000, max_connections=10,
             min_free_bytes=1024**3, directory='.', connect_socket=open_socket, metadata_loader=refresh_metadata,
             now=clock, monotonic=time.monotonic, sleep=time.sleep, on_book=None, protocol='clocked',
-            on_tick=None):
+            on_tick=None, on_receive=None):
     identifier(source_id)
     for value, low, high in ((seconds, 1, 3600), (max_messages, 1, 100000), (max_connections, 1, 120)):
         if type(value) is not int or not low <= value <= high:
@@ -126,6 +126,12 @@ def capture(con, source_id, credentials, *, seconds=60, max_messages=10000, max_
                     last_message = monotonic()
                     observed, safe, kind = ws_store.archive_frame(con, connection_id, body,
                                                                  at=received.isoformat(), secrets=secrets, protocol=protocol)
+                    if on_receive is not None:
+                        # Local diagnostics only; no raw frame or authentication data.
+                        on_receive({'kind': 'ws_receive', 'observation_id': observed,
+                                    'connection_id': connection_id,
+                                    'received_at': received.isoformat(),
+                                    'receive_monotonic': last_message})
                     stats['messages'] += 1; frames += 1
                     try:
                         if abs((received - wall_start).total_seconds() - (monotonic() - mono_start)) > 1:
