@@ -93,3 +93,7 @@ silently relabeled v2. Hypothetical failure tests are explicitly labeled.
 
 See [current official source receipts](evidence/M5N_STREAM_API_CHECKS.json),
 [measured results](M5N_STREAM_RESULTS.md), and [original settlement screens](M5N_RESULTS.md).
+
+For a bounded comparison with an independent Kalshi receiver and recorded
+one-second sample clocks, use [M5N comparison operations](M5N_COMPARISON_OPERATIONS.md).
+This separate coordinator retains the standalone probe's bounds and replay format.

@@ -125,3 +125,12 @@ capture exhausted its connection budget and is INCOMPLETE. Do not relabel these
 diagnostics as economic eligibility or restart expired services. Existing keys
 may sign only the fixed market-data handshake; no account/order requests,
 automatic approvals, funds or M6 are authorized.
+
+The operator then authorized one independent 15-minute comparison, quiet-feed
+documentation review and a Fed-hold review packet. That run stopped at its fixed
+November 1 **17:25:27 UTC** deadline. See `docs/M5N_COMPARISON_RESULTS.md`:
+504/900 samples passed the isolated timestamp/depth diagnostic; all 698 US frames
+and 1,363 Kalshi raw responses were verified. This is not continuous coverage or
+economic eligibility. US continuity/quiet-book validity and metadata-grid
+integration remain open. `docs/M5N_FED_HOLD_REVIEW.md` and its source-bound blank
+worksheet leave all human decisions pending. No new run or M6 is implied.

@@ -1,6 +1,11 @@
 # December FOMC — hold
 
 **UNVERIFIED — human review pending; no economic eligibility or trading authority.**
+
+The [updated operator worksheet](../M5N_FED_HOLD_REVIEW.md) binds fresh 17:12 UTC
+sources to ten blank review items and a scenario matrix. The checked definition
+rule text is unchanged from this original screen; no human decision was inferred.
+
 This is an assistant screen. Read [the scope and stream result](../M5N_RESULTS.md)
 before interpreting a matching exceptional scenario as strict equivalence.
 

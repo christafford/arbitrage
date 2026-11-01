@@ -351,9 +351,14 @@ Operator-requested read-only follow-up; no live-money authority.
 - [x] Authenticated US short-window measurement: 64 books in 120 seconds,
   62/63 NFL timestamp/depth passes, one stale Fed snapshot; protected read-only
   probe, genuine fixtures, offline replay and failure tests.
-- [ ] US sequence/quiet-stream continuity, sustained representative freshness
-  and validated synchronous cross-venue comparison. Independent Kalshi capture
-  exhausted its connection budget early and is explicitly INCOMPLETE.
+- [x] Bounded independent 15-minute stream comparison: 900 recorded samples,
+  504 timestamp/depth overlap passes, 698 US frames and 1,363 Kalshi raw responses
+  verified. Fixed deadline, reconnect/gap reporting, actual-clock replay and tests.
+- [x] Quiet-feed documentation check and refreshed source-bound Fed-hold operator
+  worksheet; unresolved branches and all human decision fields remain pending.
+- [ ] US sequence/quiet-stream continuity, sustained representative freshness,
+  US metadata/grid integration and approved economic comparison. The earlier
+  three-connection Kalshi run remains historically INCOMPLETE.
 - [ ] Human-reviewed complete settlement map, fees and mechanics for a strict pair.
 
 See [M5N results and review packets](M5N_RESULTS.md). Shared cancellation or
@@ -361,3 +366,7 @@ previous-month fallback behavior does not establish full strict compatibility.
 The [authenticated continuation](M5N_STREAM_RESULTS.md) adds an isolated diagnostic
 reader; production indices, economic gates, expired runs and human approvals
 remain unchanged. [US stream operation and replay](US_WEBSOCKET.md).
+
+[15-minute results and remaining blockers](M5N_COMPARISON_RESULTS.md),
+[comparison operations](M5N_COMPARISON_OPERATIONS.md),
+[Fed-hold review worksheet](M5N_FED_HOLD_REVIEW.md).

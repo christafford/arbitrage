@@ -1,0 +1,547 @@
+{
+  "schema": "dual-stream-diagnostic/m5n-v1",
+  "capture_status": {
+    "schema": "dual-stream-diagnostic/m5n-v1",
+    "reason": "DURATION_COMPLETE",
+    "samples": 900,
+    "finished_at": "2026-11-01T17:25:27.639907+00:00",
+    "elapsed_seconds": 900.1637920220383,
+    "children": [
+      {
+        "name": "kalshi",
+        "exit_code": 130
+      },
+      {
+        "name": "us-001",
+        "exit_code": 0
+      },
+      {
+        "name": "us-002",
+        "exit_code": 0
+      },
+      {
+        "name": "us-003",
+        "exit_code": 0
+      }
+    ],
+    "economic_eligibility": false
+  },
+  "config": {
+    "schema": "dual-stream-diagnostic/m5n-v1",
+    "ticker": "KXNFLGAME-26NOV01ARIDAL-ARI",
+    "slugs": [
+      "aec-nfl-ari-dal-2026-11-01",
+      "rdc-usfed-fomc-2026-12-09-nochng"
+    ],
+    "seconds": 900,
+    "started_at": "2026-11-01T17:10:27.476138+00:00",
+    "deadline_at": "2026-11-01T17:25:27.476138+00:00",
+    "start_monotonic": 420494.070551648,
+    "deadline_monotonic": 421394.070551648,
+    "us_segment_seconds": 300,
+    "max_us_connections": 20,
+    "max_kalshi_connections": 120,
+    "code_sha256": {
+      "/home/chris/code/arbitrage/src/predarb/stream_comparison.py": "ab1c3485f044cda41423e60e4c9da625d40f75606aa45e417cea07d0b70f548e",
+      "/home/chris/code/arbitrage/scripts/m5n_us_stream.py": "f041dbc93f639b5a7b9f072a5565ad1926e674c1fde09bbbd81a8beff3aab964",
+      "/home/chris/code/arbitrage/src/predarb/us_stream_probe.py": "a5c18b9dcfd2107b7242e3e8a18463b8b24c08e04095a3a4acc033689606dcac"
+    }
+  },
+  "samples": 900,
+  "expected_one_second_samples": 900,
+  "timestamp_depth_overlap_samples": 504,
+  "overlap_percent_of_observed_samples": 56.0,
+  "sample_gaps_seconds": {
+    "count": 899,
+    "min": 1.0001688290503807,
+    "median": 1.0002428539446555,
+    "max": 1.0087152139749378
+  },
+  "rejections": {
+    "RECEIPT_SKEW_UNKNOWN": 4,
+    "SOURCE_SKEW_UNKNOWN": 4,
+    "kalshi:MISSING_BOOK": 1,
+    "polymarket_us:MISSING_BOOK": 4,
+    "polymarket_us:RECEIPT_NOT_WITHIN_2S": 267,
+    "polymarket_us:SOURCE_NOT_WITHIN_2S": 295,
+    "RECEIPT_SKEW_GT_2S": 205,
+    "SOURCE_SKEW_GT_2S": 213,
+    "kalshi:RECEIPT_NOT_WITHIN_2S": 127,
+    "kalshi:SOURCE_NOT_WITHIN_2S": 128,
+    "kalshi:DISCONNECTED": 48,
+    "kalshi:STREAM_DISCONNECTED": 48,
+    "kalshi:STREAM_LIVENESS_NOT_DEMONSTRATED": 18,
+    "polymarket_us:DISCONNECTED": 1,
+    "kalshi:NEWER_METADATA_REQUIRES_FRESH_BOOK": 3
+  },
+  "source_skew_seconds": {
+    "count": 896,
+    "min": 0.001869,
+    "median": 0.9373035000000001,
+    "max": 7.941428
+  },
+  "receipt_skew_seconds": {
+    "count": 896,
+    "min": 0.000379,
+    "median": 0.9307555000000001,
+    "max": 7.861677
+  },
+  "kalshi_raw_hashes_verified": 1363,
+  "kalshi_connections": [
+    {
+      "id": 1,
+      "started_at": "2026-11-01T17:10:28.108868+00:00",
+      "ended_at": "2026-11-01T17:10:58.071756+00:00",
+      "end_reason": "PERIODIC_RESNAPSHOT"
+    },
+    {
+      "id": 2,
+      "started_at": "2026-11-01T17:10:59.266684+00:00",
+      "ended_at": "2026-11-01T17:11:29.422419+00:00",
+      "end_reason": "PERIODIC_RESNAPSHOT"
+    },
+    {
+      "id": 3,
+      "started_at": "2026-11-01T17:11:30.608889+00:00",
+      "ended_at": "2026-11-01T17:12:00.820177+00:00",
+      "end_reason": "PERIODIC_RESNAPSHOT"
+    },
+    {
+      "id": 4,
+      "started_at": "2026-11-01T17:12:02.005758+00:00",
+      "ended_at": "2026-11-01T17:12:31.886397+00:00",
+      "end_reason": "PERIODIC_RESNAPSHOT"
+    },
+    {
+      "id": 5,
+      "started_at": "2026-11-01T17:12:33.058621+00:00",
+      "ended_at": "2026-11-01T17:13:02.953235+00:00",
+      "end_reason": "PERIODIC_RESNAPSHOT"
+    },
+    {
+      "id": 6,
+      "started_at": "2026-11-01T17:13:04.156434+00:00",
+      "ended_at": "2026-11-01T17:13:34.498489+00:00",
+      "end_reason": "PERIODIC_RESNAPSHOT"
+    },
+    {
+      "id": 7,
+      "started_at": "2026-11-01T17:13:35.684478+00:00",
+      "ended_at": "2026-11-01T17:14:05.785521+00:00",
+      "end_reason": "PERIODIC_RESNAPSHOT"
+    },
+    {
+      "id": 8,
+      "started_at": "2026-11-01T17:14:06.967658+00:00",
+      "ended_at": "2026-11-01T17:14:36.577691+00:00",
+      "end_reason": "MESSAGE_TIMEOUT"
+    },
+    {
+      "id": 9,
+      "started_at": "2026-11-01T17:14:38.751801+00:00",
+      "ended_at": "2026-11-01T17:15:08.753002+00:00",
+      "end_reason": "PERIODIC_RESNAPSHOT"
+    },
+    {
+      "id": 10,
+      "started_at": "2026-11-01T17:15:09.949635+00:00",
+      "ended_at": "2026-11-01T17:15:28.647637+00:00",
+      "end_reason": "MESSAGE_TIMEOUT"
+    },
+    {
+      "id": 11,
+      "started_at": "2026-11-01T17:15:30.824221+00:00",
+      "ended_at": "2026-11-01T17:15:37.589277+00:00",
+      "end_reason": "MESSAGE_TIMEOUT"
+    },
+    {
+      "id": 12,
+      "started_at": "2026-11-01T17:15:41.769189+00:00",
+      "ended_at": "2026-11-01T17:16:11.930944+00:00",
+      "end_reason": "PERIODIC_RESNAPSHOT"
+    },
+    {
+      "id": 13,
+      "started_at": "2026-11-01T17:16:13.127298+00:00",
+      "ended_at": "2026-11-01T17:16:43.391608+00:00",
+      "end_reason": "PERIODIC_RESNAPSHOT"
+    },
+    {
+      "id": 14,
+      "started_at": "2026-11-01T17:16:44.575468+00:00",
+      "ended_at": "2026-11-01T17:17:14.491281+00:00",
+      "end_reason": "PERIODIC_RESNAPSHOT"
+    },
+    {
+      "id": 15,
+      "started_at": "2026-11-01T17:17:15.683602+00:00",
+      "ended_at": "2026-11-01T17:17:43.122768+00:00",
+      "end_reason": "MESSAGE_TIMEOUT"
+    },
+    {
+      "id": 16,
+      "started_at": "2026-11-01T17:17:45.312138+00:00",
+      "ended_at": "2026-11-01T17:18:15.364283+00:00",
+      "end_reason": "PERIODIC_RESNAPSHOT"
+    },
+    {
+      "id": 17,
+      "started_at": "2026-11-01T17:18:16.541529+00:00",
+      "ended_at": "2026-11-01T17:18:46.872623+00:00",
+      "end_reason": "PERIODIC_RESNAPSHOT"
+    },
+    {
+      "id": 18,
+      "started_at": "2026-11-01T17:18:48.069910+00:00",
+      "ended_at": "2026-11-01T17:19:18.003350+00:00",
+      "end_reason": "PERIODIC_RESNAPSHOT"
+    },
+    {
+      "id": 19,
+      "started_at": "2026-11-01T17:19:19.220359+00:00",
+      "ended_at": "2026-11-01T17:19:49.214460+00:00",
+      "end_reason": "PERIODIC_RESNAPSHOT"
+    },
+    {
+      "id": 20,
+      "started_at": "2026-11-01T17:19:50.389205+00:00",
+      "ended_at": "2026-11-01T17:20:20.366294+00:00",
+      "end_reason": "PERIODIC_RESNAPSHOT"
+    },
+    {
+      "id": 21,
+      "started_at": "2026-11-01T17:20:21.568005+00:00",
+      "ended_at": "2026-11-01T17:20:51.768864+00:00",
+      "end_reason": "PERIODIC_RESNAPSHOT"
+    },
+    {
+      "id": 22,
+      "started_at": "2026-11-01T17:20:52.949440+00:00",
+      "ended_at": "2026-11-01T17:21:18.672514+00:00",
+      "end_reason": "MESSAGE_TIMEOUT"
+    },
+    {
+      "id": 23,
+      "started_at": "2026-11-01T17:21:20.894051+00:00",
+      "ended_at": "2026-11-01T17:21:50.831250+00:00",
+      "end_reason": "PERIODIC_RESNAPSHOT"
+    },
+    {
+      "id": 24,
+      "started_at": "2026-11-01T17:21:52.001872+00:00",
+      "ended_at": "2026-11-01T17:22:22.286514+00:00",
+      "end_reason": "PERIODIC_RESNAPSHOT"
+    },
+    {
+      "id": 25,
+      "started_at": "2026-11-01T17:22:23.521909+00:00",
+      "ended_at": "2026-11-01T17:22:53.623143+00:00",
+      "end_reason": "PERIODIC_RESNAPSHOT"
+    },
+    {
+      "id": 26,
+      "started_at": "2026-11-01T17:22:54.793488+00:00",
+      "ended_at": "2026-11-01T17:23:24.755664+00:00",
+      "end_reason": "PERIODIC_RESNAPSHOT"
+    },
+    {
+      "id": 27,
+      "started_at": "2026-11-01T17:23:25.984335+00:00",
+      "ended_at": "2026-11-01T17:23:55.988115+00:00",
+      "end_reason": "PERIODIC_RESNAPSHOT"
+    },
+    {
+      "id": 28,
+      "started_at": "2026-11-01T17:23:57.174032+00:00",
+      "ended_at": "2026-11-01T17:24:24.069013+00:00",
+      "end_reason": "MESSAGE_TIMEOUT"
+    },
+    {
+      "id": 29,
+      "started_at": "2026-11-01T17:24:26.286590+00:00",
+      "ended_at": "2026-11-01T17:24:56.459776+00:00",
+      "end_reason": "PERIODIC_RESNAPSHOT"
+    },
+    {
+      "id": 30,
+      "started_at": "2026-11-01T17:24:57.644948+00:00",
+      "ended_at": "2026-11-01T17:25:27.518358+00:00",
+      "end_reason": "SIGNAL_STOP"
+    }
+  ],
+  "kalshi_connection_end_reasons": {
+    "PERIODIC_RESNAPSHOT": 23,
+    "MESSAGE_TIMEOUT": 6,
+    "SIGNAL_STOP": 1
+  },
+  "kalshi_replay_rejections": {},
+  "approval_economics_counts": {
+    "pairs": 0,
+    "fee_profiles": 0,
+    "research_sessions": 0,
+    "paper_intents": 0
+  },
+  "local_clock_checks": {
+    "before": {
+      "checked_at": "2026-11-01T17:10:25.996991+00:00",
+      "timedatectl show -p NTPSynchronized": {
+        "exit_code": 0,
+        "output": "NTPSynchronized=yes\n"
+      },
+      "timedatectl timesync-status": {
+        "exit_code": 0,
+        "output": "       Server: 72.14.182.49 (3.debian.pool.ntp.org)\nPoll interval: 34min 8s (min: 32s; max 34min 8s)\n         Leap: normal\n      Version: 4\n      Stratum: 2\n    Reference: 8B4E6180\n    Precision: 1us (-24)\nRoot distance: 41.694ms (max: 5s)\n       Offset: +16.696ms\n        Delay: 51.961ms\n       Jitter: 15.578ms\n Packet count: 211\n    Frequency: +3.945ppm\n"
+      },
+      "synchronized": true
+    },
+    "after": {
+      "checked_at": "2026-11-01T17:25:27.640219+00:00",
+      "timedatectl show -p NTPSynchronized": {
+        "exit_code": 0,
+        "output": "NTPSynchronized=yes\n"
+      },
+      "timedatectl timesync-status": {
+        "exit_code": 0,
+        "output": "       Server: 72.14.182.49 (3.debian.pool.ntp.org)\nPoll interval: 34min 8s (min: 32s; max 34min 8s)\n         Leap: normal\n      Version: 4\n      Stratum: 2\n    Reference: 8B4E6180\n    Precision: 1us (-24)\nRoot distance: 41.694ms (max: 5s)\n       Offset: +16.696ms\n        Delay: 51.961ms\n       Jitter: 15.578ms\n Packet count: 211\n    Frequency: +3.945ppm\n"
+      },
+      "synchronized": true
+    }
+  },
+  "local_clock_synchronized_before_after": true,
+  "us_segments": [
+    {
+      "segment": 1,
+      "verified_frames": 203,
+      "reason": "BUDGET_COMPLETE",
+      "started_at": "2026-11-01T17:10:27.550951+00:00",
+      "finished_at": "2026-11-01T17:15:27.597472+00:00",
+      "last_pong_rtt_seconds": 0.04566409898689017,
+      "markets": {
+        "aec-nfl-ari-dal-2026-11-01": {
+          "books": 196,
+          "depth_changes": 116,
+          "economic_eligibility": false,
+          "last_receive_at": "2026-11-01T17:15:22.870849+00:00",
+          "last_source_age_at_finish_seconds": 4.892663,
+          "max_interarrival_seconds": 8.484496071992908,
+          "rejections": {},
+          "sequence_continuity": "UNKNOWN",
+          "source_age_seconds": {
+            "max": 1.401706,
+            "median": 0.118297,
+            "min": 0.052366
+          },
+          "timestamp_depth_passes": 196,
+          "unchanged_depth": 79
+        },
+        "rdc-usfed-fomc-2026-12-09-nochng": {
+          "books": 7,
+          "depth_changes": 6,
+          "economic_eligibility": false,
+          "last_receive_at": "2026-11-01T17:13:41.699486+00:00",
+          "last_source_age_at_finish_seconds": 105.976935,
+          "max_interarrival_seconds": 116.87113420601236,
+          "rejections": {
+            "SOURCE_AGE_GT_2S": 1
+          },
+          "sequence_continuity": "UNKNOWN",
+          "source_age_seconds": {
+            "max": 122.693245,
+            "median": 0.132946,
+            "min": 0.078949
+          },
+          "timestamp_depth_passes": 6,
+          "unchanged_depth": 0
+        }
+      }
+    },
+    {
+      "segment": 2,
+      "verified_frames": 219,
+      "reason": "BUDGET_COMPLETE",
+      "started_at": "2026-11-01T17:15:28.659329+00:00",
+      "finished_at": "2026-11-01T17:20:28.707824+00:00",
+      "last_pong_rtt_seconds": 0.0440680900355801,
+      "markets": {
+        "aec-nfl-ari-dal-2026-11-01": {
+          "books": 211,
+          "depth_changes": 126,
+          "economic_eligibility": false,
+          "last_receive_at": "2026-11-01T17:20:22.834372+00:00",
+          "last_source_age_at_finish_seconds": 5.958593,
+          "max_interarrival_seconds": 9.018397481995635,
+          "rejections": {},
+          "sequence_continuity": "UNKNOWN",
+          "source_age_seconds": {
+            "max": 1.401046,
+            "median": 0.116506,
+            "min": 0.05301
+          },
+          "timestamp_depth_passes": 211,
+          "unchanged_depth": 84
+        },
+        "rdc-usfed-fomc-2026-12-09-nochng": {
+          "books": 8,
+          "depth_changes": 7,
+          "economic_eligibility": false,
+          "last_receive_at": "2026-11-01T17:18:51.427023+00:00",
+          "last_source_age_at_finish_seconds": 97.431679,
+          "max_interarrival_seconds": 75.4672556949663,
+          "rejections": {
+            "SOURCE_AGE_GT_2S": 1
+          },
+          "sequence_continuity": "UNKNOWN",
+          "source_age_seconds": {
+            "max": 107.346868,
+            "median": 0.149288,
+            "min": 0.095366
+          },
+          "timestamp_depth_passes": 7,
+          "unchanged_depth": 0
+        }
+      }
+    },
+    {
+      "segment": 3,
+      "verified_frames": 276,
+      "reason": "BUDGET_COMPLETE",
+      "started_at": "2026-11-01T17:20:28.838603+00:00",
+      "finished_at": "2026-11-01T17:25:26.870242+00:00",
+      "last_pong_rtt_seconds": 0.031698869017418474,
+      "markets": {
+        "aec-nfl-ari-dal-2026-11-01": {
+          "books": 264,
+          "depth_changes": 177,
+          "economic_eligibility": false,
+          "last_receive_at": "2026-11-01T17:25:26.583509+00:00",
+          "last_source_age_at_finish_seconds": 0.340017,
+          "max_interarrival_seconds": 8.089947730011772,
+          "rejections": {},
+          "sequence_continuity": "UNKNOWN",
+          "source_age_seconds": {
+            "max": 0.401604,
+            "median": 0.10589499999999999,
+            "min": 0.047758
+          },
+          "timestamp_depth_passes": 264,
+          "unchanged_depth": 86
+        },
+        "rdc-usfed-fomc-2026-12-09-nochng": {
+          "books": 12,
+          "depth_changes": 11,
+          "economic_eligibility": false,
+          "last_receive_at": "2026-11-01T17:23:59.468288+00:00",
+          "last_source_age_at_finish_seconds": 87.546164,
+          "max_interarrival_seconds": 160.4502230430371,
+          "rejections": {
+            "SOURCE_AGE_GT_2S": 1
+          },
+          "sequence_continuity": "UNKNOWN",
+          "source_age_seconds": {
+            "max": 97.814943,
+            "median": 0.11713299999999999,
+            "min": 0.059055
+          },
+          "timestamp_depth_passes": 11,
+          "unchanged_depth": 0
+        }
+      }
+    }
+  ],
+  "us_markets": {
+    "aec-nfl-ari-dal-2026-11-01": {
+      "messages": 671,
+      "source_age_seconds": {
+        "count": 671,
+        "min": 0.047758,
+        "median": 0.112214,
+        "max": 1.401706
+      },
+      "depth_changes": 419,
+      "repeated_depth": 249,
+      "rejections": {}
+    },
+    "rdc-usfed-fomc-2026-12-09-nochng": {
+      "messages": 27,
+      "source_age_seconds": {
+        "count": 27,
+        "min": 0.059055,
+        "median": 0.132946,
+        "max": 122.693245
+      },
+      "depth_changes": 24,
+      "repeated_depth": 0,
+      "rejections": {
+        "SOURCE_AGE_GT_2S": 3
+      }
+    }
+  },
+  "us_sequence_continuity": "UNKNOWN",
+  "continuous_interval_coverage": "NOT_ESTABLISHED",
+  "us_metadata_grid_validation": "NOT_PERFORMED_BY_STREAM_PROBE",
+  "economic_eligibility": false,
+  "trading_authorized": false,
+  "sample_comparison_archive": {
+    "path": "data/m5n/overlap-15min-audit.json",
+    "sha256": "535255bb064adb1520ebf15c25229721abc34ae5d5f93e4a3362cf311b78b126",
+    "rows": 900
+  },
+  "artifacts": {
+    "data/m5n/overlap-15min/config.json": "bdde168afe40e3612c360fa05a700f01af606de68b901f6c85b922afdf633d12",
+    "data/m5n/overlap-15min/status.json": "d32fb5a9e780f785c9de5636c628a4b8846b65f96acfd15661d27384692a0f14",
+    "data/m5n/overlap-15min/samples.jsonl": "26689de1ed58a782f0d8158c35456dea0df98febeefe54101d951e93aee7bbd2",
+    "data/m5n/overlap-15min/metadata.json": "c20df8b6662af35539a915ed2c43d95cd6e6d22e31c26d7c4740acfadafa3273",
+    "data/m5n/overlap-15min/metadata.sqlite3": "934539b8108d3bbf2f2bb09bc50b7f347b28a8714518cf08d7676305cdbd3dbf",
+    "data/m5n/overlap-15min/kalshi.sqlite3": "cf22544c5b65e07f9345d83959784c22bf1ef8f5d66a5ae9da4879904a6a229f",
+    "data/m5n/overlap-15min/clock-before.json": "b9726ba6d671dfffc4021113c54c14e3f93c13f67dce116cc268294f7b32ce08",
+    "data/m5n/overlap-15min/clock-after.json": "6cfaaf99b760c44f0e9f3978d53e9c7c121542520380fa32960f1c7f616c2467",
+    "docs/evidence/M5N_OVERLAP_TESTS.txt": "3f6452ac556fa9979274c018f639696739e6c1f45784fb1bce90f2bb08e76f76",
+    "tests/fixtures/dual-stream-smoke-live.json": "70d0451b799643d474493244fba0d000612ef25681d06632fa3692fcb7f2bb7b"
+  },
+  "capture_code_hashes_still_match": {
+    "/home/chris/code/arbitrage/src/predarb/stream_comparison.py": true,
+    "/home/chris/code/arbitrage/scripts/m5n_us_stream.py": true,
+    "/home/chris/code/arbitrage/src/predarb/us_stream_probe.py": true
+  },
+  "tests": {
+    "command": ".venv/bin/python -m unittest discover -s tests -v",
+    "count": 485,
+    "seconds": "20.385",
+    "result": "OK",
+    "comparison_tests": 13
+  },
+  "smokes": [
+    {
+      "command": "scripts/m5n_compare.py --seconds 10 (same ticker/slugs, isolated overlap-smoke directory)",
+      "result": "DURATION_COMPLETE",
+      "samples": 10
+    },
+    {
+      "command": "scripts/m5n_compare_audit.py data/m5n/overlap-smoke --output data/m5n/overlap-smoke-audit.json",
+      "result": "PASS",
+      "overlap_samples": 8
+    },
+    {
+      "command": "scripts/m5n_compare.py --help",
+      "exit_code": 0
+    },
+    {
+      "command": "scripts/m5n_compare_audit.py --help",
+      "exit_code": 0
+    },
+    {
+      "command": ".venv/bin/python -m pip check",
+      "exit_code": 0
+    }
+  ],
+  "kalshi_book_count": 1303,
+  "kalshi_frame_types": {
+    "subscribed": 30,
+    "orderbook_snapshot": 30,
+    "orderbook_delta": 1273
+  },
+  "kalshi_raw_validation_status": {
+    "VALID": 1363
+  },
+  "us_frames_verified": 698
+}

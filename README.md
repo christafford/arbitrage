@@ -4,11 +4,12 @@ A **read-only, Codex-ready** starter for researching fully hedged binary predict
 
 **Current state:** M1–M3 are complete. M4 economics/recording and M5 paper/operations are implemented and tested; **M4's actual 30-day run and M5's actual multiweek run remain pending**. Research includes versioned fees, depth/budget/reserve evaluation, paper downside scenarios, later-quote comparisons, local health/metrics, verified backups and deployment templates. All live evidence remains `UNVERIFIED`; no real pair or fee profile is approved. Kalshi REST lacks source time and fails freshness checks. No live trading exists. The bounded [M5I catalogue/backfill run](docs/M5I_RUN_20261028_RESULTS.md) finished; Kalshi backfill and retrieval-quality gaps remain. Economic and paper services remain inactive. See [M5 results and gaps](docs/M5_RESULTS.md), [paper model](docs/PAPER_EXECUTION.md), [operations](docs/OPERATIONS.md) and [M4 results](docs/M4_RESULTS.md).
 
-The latest [authenticated US stream results](docs/M5N_STREAM_RESULTS.md) establish
-working access: a two-minute capture yielded 64 books, with timely NFL updates
-but a stale quiet Fed snapshot. [Setup and replay](docs/US_WEBSOCKET.md) are available.
-US continuity and strict settlement compatibility remain unverified; the
-[five Fed/labor screens](docs/M5N_RESULTS.md) still require human review.
+The latest [15-minute independent stream comparison](docs/M5N_COMPARISON_RESULTS.md)
+recorded 698 US books and 1,303 Kalshi books: 504/900 samples (56%) passed the
+timestamp/depth overlap diagnostic. Quiet intervals and reconnect gaps still
+limit freshness; US continuity and strict settlement compatibility remain
+unverified. [Capture/replay](docs/M5N_COMPARISON_OPERATIONS.md) and the
+[Fed-hold operator worksheet](docs/M5N_FED_HOLD_REVIEW.md) are available.
 Production inference and eligibility gates are unchanged.
 
 **M5A A–E:** discovery is implemented. The read-only Kalshi WebSocket adapter is
