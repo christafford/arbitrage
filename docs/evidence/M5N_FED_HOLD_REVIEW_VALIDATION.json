@@ -1,0 +1,49 @@
+{
+  "schema": "fed-hold-review-validation/m5n-v1",
+  "human_decision": null,
+  "economic_eligibility": false,
+  "definition_checks": {
+    "kalshi": {
+      "compared_fields": [
+        "rules_primary",
+        "rules_secondary"
+      ],
+      "unchanged_since_original_screen": {
+        "rules_primary": true,
+        "rules_secondary": true
+      },
+      "source_status": "active"
+    },
+    "polymarket_us": {
+      "compared_fields": [
+        "description"
+      ],
+      "unchanged_since_original_screen": {
+        "description": true
+      },
+      "source_status": "MARKET_STATUS_OPEN"
+    }
+  },
+  "sources": [
+    {
+      "role": "kalshi-terms",
+      "sha256": "3a8851179be6e53dbdaa7228179375996a1267412b26af923b7349c35297e198",
+      "hash_verified": true
+    },
+    {
+      "role": "us-terms",
+      "sha256": "cf3af0d0dd4410a638a249c06a9652cc01c40f25fb6011a0e106a4a422ba7718",
+      "hash_verified": true
+    },
+    {
+      "role": "kalshi-definition",
+      "sha256": "4e67841f1af49056a5090fffe0cde9383d4c3a345bd2035c75bdbee303bccee5",
+      "hash_verified": true
+    },
+    {
+      "role": "polymarket_us-definition",
+      "sha256": "d8a6f531f993e5cf562342f8bb2712402aad28ce7f6253414cc0cf903798a833",
+      "hash_verified": true
+    }
+  ]
+}

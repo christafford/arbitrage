@@ -390,6 +390,15 @@ source/depth changes and explicit UNKNOWN continuity. Offline replay rehashes an
 reassesses source bytes. This diagnostic has no economic or production database
 integration. See [US WebSocket operations](US_WEBSOCKET.md).
 
+`stream_comparison.py` supervises independent Kalshi and US child receivers with
+one fixed deadline and separate archives. Its one-second clock sampler records
+actual observations and process/segment identity without waiting on network I/O.
+`stream_comparison_audit.py` verifies raw evidence, uses historical Kalshi replay
+and US segment replay, and evaluates timestamp/depth overlap at those recorded
+sample times. It never reuses a book across a US generation boundary or supplies
+economic eligibility. US continuity, tick/lot validation and approved settlement
+remain separate gaps. [Operations](M5N_COMPARISON_OPERATIONS.md).
+
 `m5m_analyze.py` opens the completed archive read-only, verifies raw hashes and
 sequence/clock boundaries, and replays sampled comparisons. Response-only
 sensitivity metrics cannot become economic eligibility. Separate scoped

@@ -1,0 +1,121 @@
+{
+  "schema": "operator-review-worksheet/m5n-fed-hold-v1",
+  "registry_importable": false,
+  "hypothetical_scenarios": true,
+  "kalshi_ticker": "KXFEDDECISION-26DEC-H0",
+  "us_slug": "rdc-usfed-fomc-2026-12-09-nochng",
+  "status": "UNVERIFIED",
+  "reviewer": null,
+  "reviewed_at": null,
+  "decision": null,
+  "sources": [
+    {
+      "role": "kalshi-terms",
+      "url": "https://assets.kalshi.com/contract_terms/FEDDECISION.pdf",
+      "received_at": "2026-11-01T17:12:23.407262+00:00",
+      "sha256": "3a8851179be6e53dbdaa7228179375996a1267412b26af923b7349c35297e198"
+    },
+    {
+      "role": "us-terms",
+      "url": "https://www.polymarketexchange.com/files/products/PMUS%20-%20RDC%20-%20%282026.04.06%29.pdf",
+      "received_at": "2026-11-01T17:12:24.344993+00:00",
+      "sha256": "cf3af0d0dd4410a638a249c06a9652cc01c40f25fb6011a0e106a4a422ba7718"
+    },
+    {
+      "role": "kalshi-definition",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXFEDDECISION-26DEC-H0",
+      "received_at": "2026-11-01T17:12:24.634855+00:00",
+      "sha256": "4e67841f1af49056a5090fffe0cde9383d4c3a345bd2035c75bdbee303bccee5"
+    },
+    {
+      "role": "polymarket_us-definition",
+      "url": "https://gateway.polymarket.us/v1/market/slug/rdc-usfed-fomc-2026-12-09-nochng",
+      "received_at": "2026-11-01T17:12:24.752500+00:00",
+      "sha256": "d8a6f531f993e5cf562342f8bb2712402aad28ce7f6253414cc0cf903798a833"
+    }
+  ],
+  "items": [
+    {
+      "id": "applicability",
+      "question": "Confirm exact product terms and precedence for both instruments.",
+      "decision": null,
+      "source_reference": null,
+      "reasoning": null,
+      "clarification_evidence": null
+    },
+    {
+      "id": "ordinary_hold",
+      "question": "Confirm both classify an unchanged December meeting decision identically.",
+      "decision": null,
+      "source_reference": null,
+      "reasoning": null,
+      "clarification_evidence": null
+    },
+    {
+      "id": "ordinary_change",
+      "question": "Confirm both classify a change to both rate bounds identically.",
+      "decision": null,
+      "source_reference": null,
+      "reasoning": null,
+      "clarification_evidence": null
+    },
+    {
+      "id": "cancellation_rescheduling",
+      "question": "Resolve the original-date cancellation versus replacement-meeting branch.",
+      "decision": null,
+      "source_reference": null,
+      "reasoning": null,
+      "clarification_evidence": null
+    },
+    {
+      "id": "no_meeting",
+      "question": "Resolve no meeting/no replacement with an intervening rate action.",
+      "decision": null,
+      "source_reference": null,
+      "reasoning": null,
+      "clarification_evidence": null
+    },
+    {
+      "id": "range_bounds",
+      "question": "Resolve lower-bound-only versus upper-bound-only changes.",
+      "decision": null,
+      "source_reference": null,
+      "reasoning": null,
+      "clarification_evidence": null
+    },
+    {
+      "id": "revisions",
+      "question": "Resolve initial publication, corrections and separate expiration cutoffs.",
+      "decision": null,
+      "source_reference": null,
+      "reasoning": null,
+      "clarification_evidence": null
+    },
+    {
+      "id": "source_and_review",
+      "question": "Resolve source outage, substitution, successor benchmark and discretionary review.",
+      "decision": null,
+      "source_reference": null,
+      "reasoning": null,
+      "clarification_evidence": null
+    },
+    {
+      "id": "fees",
+      "question": "Review current account/instrument/side fee applicability and costs.",
+      "decision": null,
+      "source_reference": null,
+      "reasoning": null,
+      "clarification_evidence": null
+    },
+    {
+      "id": "mechanics_and_cash",
+      "question": "Review cash-funded sides, payout precision and reusable cash timing.",
+      "decision": null,
+      "source_reference": null,
+      "reasoning": null,
+      "clarification_evidence": null
+    }
+  ],
+  "economic_eligibility": false,
+  "trading_authorized": false
+}

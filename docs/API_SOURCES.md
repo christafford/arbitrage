@@ -639,3 +639,24 @@ receipt clocks and original v1 assessments. Remaining frames stay in the local
 archive. Recovered historical evidence and new v2 capture measurements are
 distinguished in [stream results](M5N_STREAM_RESULTS.md). No key material,
 handshake headers or account responses are included.
+
+### M5N independent comparison and quiet-feed review
+
+[Current US/Kalshi stream source captures](evidence/M5N_OVERLAP_API_CHECKS.json)
+retain raw Markdown, hashes and UTC receipts for both stream contracts, US
+book/detail metadata and Kalshi keep-alive. Existing adapters and schemas remain
+unchanged. Local `dual-stream-diagnostic/m5n-v1` records supervisor sample clocks
+and isolated child captures; these are instrumentation fields, not venue fields.
+
+The checked US overview describes ordered delivery and heartbeats, but does not
+define a consumed gap-detection sequence or guarantee that a heartbeat refreshes
+the book's `transactTime`. The Markets page describes displayed top levels. Neither
+source justifies treating a quiet book as current; continuity stays UNKNOWN and
+the separate diagnostic retains two-second ages/skews. See
+[comparison operations and limits](M5N_COMPARISON_OPERATIONS.md).
+
+[Fresh Fed-hold sources](evidence/M5N_FED_HOLD_REVIEW_SOURCES.json) preserve exact
+public definitions and both product PDFs, with separate extracted-text hashes.
+The source-bound [review worksheet](M5N_FED_HOLD_REVIEW.md) leaves applicability,
+exceptional payouts, fees and mechanics pending. No source document or language
+model output becomes a registry decision.

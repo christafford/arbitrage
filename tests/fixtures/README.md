@@ -249,3 +249,12 @@ to show initial NFL/Fed snapshots, unchanged depth with advancing source time, a
 a depth change; this is not a contiguous or representative market sample. Privacy
 screening excludes headers, credentials and unknown/private-enriched frames.
 Mutated failure cases in `test_us_stream_probe.py` are explicitly hypothetical.
+
+`dual-stream-smoke-live.json` packages the genuine ten-second independent-receiver
+smoke: exact public US frame bytes/hashes, clocks, and selected Kalshi archive
+tables with source/provenance rows. The derived `normalized_books.result_json` is
+explicitly replaced by `{}` because the auditor recomputes it from raw frames.
+This is a sanitized replay dataset, not a byte-for-byte SQLite backup. The fixture
+contains no credentials, handshake headers or account responses. Its original
+full archives remain in `data/m5n/overlap-smoke/`; fault mutations in
+`test_stream_comparison.py` are hypothetical and never become approval labels.

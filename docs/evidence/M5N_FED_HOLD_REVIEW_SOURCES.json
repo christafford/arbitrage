@@ -1,0 +1,40 @@
+[
+  {
+    "role": "kalshi-terms",
+    "url": "https://assets.kalshi.com/contract_terms/FEDDECISION.pdf",
+    "received_at": "2026-11-01T17:12:23.407262+00:00",
+    "status": 200,
+    "path": "data/m5n/fed-hold-review/kalshi-terms.pdf",
+    "sha256": "3a8851179be6e53dbdaa7228179375996a1267412b26af923b7349c35297e198",
+    "text_path": "data/m5n/fed-hold-review/kalshi-terms.txt",
+    "text_sha256": "971673842fd335f9d6a264a95850581fbc1136b88e4655ddeed515656872dd79"
+  },
+  {
+    "role": "us-terms",
+    "url": "https://www.polymarketexchange.com/files/products/PMUS%20-%20RDC%20-%20%282026.04.06%29.pdf",
+    "received_at": "2026-11-01T17:12:24.344993+00:00",
+    "status": 200,
+    "path": "data/m5n/fed-hold-review/us-terms.pdf",
+    "sha256": "cf3af0d0dd4410a638a249c06a9652cc01c40f25fb6011a0e106a4a422ba7718",
+    "text_path": "data/m5n/fed-hold-review/us-terms.txt",
+    "text_sha256": "4e00c9aa3d74a343b25d749cb8843824fceab21e428680627acd2ff6a349f7a9"
+  },
+  {
+    "role": "kalshi-definition",
+    "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXFEDDECISION-26DEC-H0",
+    "received_at": "2026-11-01T17:12:24.634855+00:00",
+    "path": "data/m5n/fed-hold-review/kalshi-definition.json",
+    "sha256": "4e67841f1af49056a5090fffe0cde9383d4c3a345bd2035c75bdbee303bccee5",
+    "schema": "kalshi-3.34.0/m1-v1",
+    "observation_id": 1
+  },
+  {
+    "role": "polymarket_us-definition",
+    "url": "https://gateway.polymarket.us/v1/market/slug/rdc-usfed-fomc-2026-12-09-nochng",
+    "received_at": "2026-11-01T17:12:24.752500+00:00",
+    "path": "data/m5n/fed-hold-review/polymarket_us-definition.json",
+    "sha256": "d8a6f531f993e5cf562342f8bb2712402aad28ce7f6253414cc0cf903798a833",
+    "schema": "polymarket-us-marketservice-1.0.0/m1-v1",
+    "observation_id": 2
+  }
+]

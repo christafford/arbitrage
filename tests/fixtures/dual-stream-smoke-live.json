@@ -1,0 +1,1054 @@
+{
+  "kind": "GENUINE_SANITIZED_DUAL_STREAM_SMOKE",
+  "description": "Exact public US wire frames and selected Kalshi source/provenance tables from the 10-second smoke. Derived normalized result_json replaced by an empty object; replay never consumes it. Original full archives remain local. No credentials or handshake headers.",
+  "source_directory": "data/m5n/overlap-smoke",
+  "files": {
+    "config.json": {
+      "body": "{\n  \"schema\": \"dual-stream-diagnostic/m5n-v1\",\n  \"ticker\": \"KXNFLGAME-26NOV01ARIDAL-ARI\",\n  \"slugs\": [\n    \"aec-nfl-ari-dal-2026-11-01\",\n    \"rdc-usfed-fomc-2026-12-09-nochng\"\n  ],\n  \"seconds\": 10,\n  \"started_at\": \"2026-11-01T17:09:44.042528+00:00\",\n  \"deadline_at\": \"2026-11-01T17:09:54.042528+00:00\",\n  \"start_monotonic\": 420450.636940689,\n  \"deadline_monotonic\": 420460.636940689,\n  \"us_segment_seconds\": 300,\n  \"max_us_connections\": 20,\n  \"max_kalshi_connections\": 120\n}\n",
+      "sha256": "4d5cd93bbe2cfc9111c457ceec58ab20bd097d58f1afce8f22349549031d9d78"
+    },
+    "status.json": {
+      "body": "{\n  \"schema\": \"dual-stream-diagnostic/m5n-v1\",\n  \"reason\": \"DURATION_COMPLETE\",\n  \"samples\": 10,\n  \"finished_at\": \"2026-11-01T17:09:54.156273+00:00\",\n  \"elapsed_seconds\": 10.113769838993903,\n  \"children\": [\n    {\n      \"name\": \"kalshi\",\n      \"exit_code\": 130\n    },\n    {\n      \"name\": \"us-001\",\n      \"exit_code\": 0\n    }\n  ],\n  \"economic_eligibility\": false\n}\n",
+      "sha256": "03e7bbd0f606e702ae25c1b66e70e5bc366143067f33b4497b06ce33b12f8c70"
+    },
+    "samples.jsonl": {
+      "body": "{\"at\": \"2026-11-01T17:09:44.043180+00:00\", \"monotonic\": 420450.637592757, \"us_segment\": 1, \"kalshi_running\": true}\n{\"at\": \"2026-11-01T17:09:45.044208+00:00\", \"monotonic\": 420451.638619351, \"us_segment\": 1, \"kalshi_running\": true}\n{\"at\": \"2026-11-01T17:09:46.044440+00:00\", \"monotonic\": 420452.638852252, \"us_segment\": 1, \"kalshi_running\": true}\n{\"at\": \"2026-11-01T17:09:47.044651+00:00\", \"monotonic\": 420453.639064234, \"us_segment\": 1, \"kalshi_running\": true}\n{\"at\": \"2026-11-01T17:09:48.044837+00:00\", \"monotonic\": 420454.639247278, \"us_segment\": 1, \"kalshi_running\": true}\n{\"at\": \"2026-11-01T17:09:49.045084+00:00\", \"monotonic\": 420455.639496312, \"us_segment\": 1, \"kalshi_running\": true}\n{\"at\": \"2026-11-01T17:09:50.045311+00:00\", \"monotonic\": 420456.63972465, \"us_segment\": 1, \"kalshi_running\": true}\n{\"at\": \"2026-11-01T17:09:51.045502+00:00\", \"monotonic\": 420457.639913828, \"us_segment\": 1, \"kalshi_running\": true}\n{\"at\": \"2026-11-01T17:09:52.045721+00:00\", \"monotonic\": 420458.640134274, \"us_segment\": 1, \"kalshi_running\": true}\n{\"at\": \"2026-11-01T17:09:53.045886+00:00\", \"monotonic\": 420459.640299189, \"us_segment\": 1, \"kalshi_running\": true}\n",
+      "sha256": "cd69d96143c895ae762d89658862aad2f33a24b0abeadf6fa9792f59fe00b676"
+    },
+    "us-001/results.json": {
+      "body": "{\"archived_frame_bytes\":71275,\"books\":10,\"capture_complete\":true,\"connection_generation\":1,\"continuity\":\"UNKNOWN\",\"economic_eligibility\":false,\"elapsed_seconds\":9.035257640003692,\"endpoint\":\"wss://api.polymarket.us/v1/ws/markets\",\"finished_at\":\"2026-11-01T17:09:53.149885+00:00\",\"frames\":10,\"handshake_seconds\":0.19765736599219963,\"heartbeats\":0,\"last_pong_rtt_seconds\":null,\"markets\":{\"aec-nfl-ari-dal-2026-11-01\":{\"books\":9,\"depth_changes\":5,\"economic_eligibility\":false,\"last_receive_at\":\"2026-11-01T17:09:51.739548+00:00\",\"last_source_age_at_finish_seconds\":1.461837,\"max_interarrival_seconds\":3.6292320120264776,\"rejections\":{},\"sequence_continuity\":\"UNKNOWN\",\"source_age_seconds\":{\"max\":1.160255,\"median\":0.154155,\"min\":0.04299},\"timestamp_depth_passes\":9,\"unchanged_depth\":3},\"rdc-usfed-fomc-2026-12-09-nochng\":{\"books\":1,\"depth_changes\":0,\"economic_eligibility\":false,\"last_receive_at\":\"2026-11-01T17:09:44.365539+00:00\",\"last_source_age_at_finish_seconds\":88.0196,\"max_interarrival_seconds\":null,\"rejections\":{\"SOURCE_AGE_GT_2S\":1},\"sequence_continuity\":\"UNKNOWN\",\"source_age_seconds\":{\"max\":79.235254,\"median\":79.235254,\"min\":79.235254},\"timestamp_depth_passes\":0,\"unchanged_depth\":0}},\"missing_markets\":[],\"reason\":\"BUDGET_COMPLETE\",\"requested_seconds\":9,\"schema\":\"polymarket-us-markets-ws/m5n-probe-v2\",\"slugs\":[\"aec-nfl-ari-dal-2026-11-01\",\"rdc-usfed-fomc-2026-12-09-nochng\"],\"start_monotonic\":420450.709063295,\"started_at\":\"2026-11-01T17:09:44.114634+00:00\"}\n",
+      "sha256": "e230568380ce79ec906e4077b9a5f904be888031c72003fc9f573ce065e30f65"
+    },
+    "us-001/timing.jsonl": {
+      "body": "{\"archive_sha256\":\"20ec1f8e4005fd1f395445300a7b49df890c16244714b1c919477994bbfabab1\",\"bid_levels\":34,\"changed_from_previous\":null,\"connection_generation\":1,\"depth_sha256\":\"f44e5b370fb3061009e4199cd72dcc4738bde9ebfbf51389836effd150822781\",\"economic_eligibility\":false,\"frame\":1,\"kind\":\"book\",\"market\":\"aec-nfl-ari-dal-2026-11-01\",\"offer_levels\":75,\"public_shape\":true,\"raw_file\":\"000001.json\",\"receive_monotonic\":420450.956693786,\"received_at\":\"2026-11-01T17:09:44.362280+00:00\",\"rejections\":[],\"sequence_continuity\":\"UNKNOWN\",\"source_age_seconds\":1.160255,\"source_ts\":\"2026-11-01T17:09:43.202025860Z\",\"timestamp_depth_diagnostic_pass\":true,\"wire_sha256\":\"20ec1f8e4005fd1f395445300a7b49df890c16244714b1c919477994bbfabab1\"}\n{\"archive_sha256\":\"7a81fc19a90580c32f92e9e28380804fa31d80acccaa9ae2bf7388aac9d92af0\",\"bid_levels\":12,\"changed_from_previous\":null,\"connection_generation\":1,\"depth_sha256\":\"de691a72ba937fa096684c2de9e60a952f317b3cdf1a7a96c66464d3852f2e5a\",\"economic_eligibility\":false,\"frame\":2,\"kind\":\"book\",\"market\":\"rdc-usfed-fomc-2026-12-09-nochng\",\"offer_levels\":10,\"public_shape\":true,\"raw_file\":\"000002.json\",\"receive_monotonic\":420450.959955479,\"received_at\":\"2026-11-01T17:09:44.365539+00:00\",\"rejections\":[\"SOURCE_AGE_GT_2S\"],\"sequence_continuity\":\"UNKNOWN\",\"source_age_seconds\":79.235254,\"source_ts\":\"2026-11-01T17:08:25.130285291Z\",\"timestamp_depth_diagnostic_pass\":false,\"wire_sha256\":\"7a81fc19a90580c32f92e9e28380804fa31d80acccaa9ae2bf7388aac9d92af0\"}\n{\"archive_sha256\":\"9f0f22589b658e01180da4b95366cc406e61d91eb530eccbbb7be600b13ca043\",\"bid_levels\":34,\"changed_from_previous\":true,\"connection_generation\":1,\"depth_sha256\":\"5fa6ea958d9204f7132df81dc1246a46d03aaeb9791ab93e50f0d6a66cded49f\",\"economic_eligibility\":false,\"frame\":3,\"kind\":\"book\",\"market\":\"aec-nfl-ari-dal-2026-11-01\",\"offer_levels\":75,\"public_shape\":true,\"raw_file\":\"000003.json\",\"receive_monotonic\":420451.675096383,\"received_at\":\"2026-11-01T17:09:45.080682+00:00\",\"rejections\":[],\"sequence_continuity\":\"UNKNOWN\",\"source_age_seconds\":0.196046,\"source_ts\":\"2026-11-01T17:09:44.884636901Z\",\"timestamp_depth_diagnostic_pass\":true,\"wire_sha256\":\"9f0f22589b658e01180da4b95366cc406e61d91eb530eccbbb7be600b13ca043\"}\n{\"archive_sha256\":\"216996f955eb6413d3886634de8e06a1e51f97b9b7dbd71dce537b08a089ab0b\",\"bid_levels\":34,\"changed_from_previous\":false,\"connection_generation\":1,\"depth_sha256\":\"5fa6ea958d9204f7132df81dc1246a46d03aaeb9791ab93e50f0d6a66cded49f\",\"economic_eligibility\":false,\"frame\":4,\"kind\":\"book\",\"market\":\"aec-nfl-ari-dal-2026-11-01\",\"offer_levels\":75,\"public_shape\":true,\"raw_file\":\"000004.json\",\"receive_monotonic\":420451.776293377,\"received_at\":\"2026-11-01T17:09:45.181879+00:00\",\"rejections\":[],\"sequence_continuity\":\"UNKNOWN\",\"source_age_seconds\":0.115612,\"source_ts\":\"2026-11-01T17:09:45.066267761Z\",\"timestamp_depth_diagnostic_pass\":true,\"wire_sha256\":\"216996f955eb6413d3886634de8e06a1e51f97b9b7dbd71dce537b08a089ab0b\"}\n{\"archive_sha256\":\"f33fbee096e72fa757f9c0f399e1c9adce7f4645dfcf6fc4737ecd885856e347\",\"bid_levels\":34,\"changed_from_previous\":false,\"connection_generation\":1,\"depth_sha256\":\"5fa6ea958d9204f7132df81dc1246a46d03aaeb9791ab93e50f0d6a66cded49f\",\"economic_eligibility\":false,\"frame\":5,\"kind\":\"book\",\"market\":\"aec-nfl-ari-dal-2026-11-01\",\"offer_levels\":75,\"public_shape\":true,\"raw_file\":\"000005.json\",\"receive_monotonic\":420455.405525389,\"received_at\":\"2026-11-01T17:09:48.811112+00:00\",\"rejections\":[],\"sequence_continuity\":\"UNKNOWN\",\"source_age_seconds\":0.159964,\"source_ts\":\"2026-11-01T17:09:48.651148577Z\",\"timestamp_depth_diagnostic_pass\":true,\"wire_sha256\":\"f33fbee096e72fa757f9c0f399e1c9adce7f4645dfcf6fc4737ecd885856e347\"}\n{\"archive_sha256\":\"1a1a7449f0ba7c256f74290015429422ea1d51c178061bbc23b568babe92789f\",\"bid_levels\":34,\"changed_from_previous\":true,\"connection_generation\":1,\"depth_sha256\":\"28440cb2e89e6e10e9eae0561a2d33e96c80b0f3c3ac4933a4ea64eda619b428\",\"economic_eligibility\":false,\"frame\":6,\"kind\":\"book\",\"market\":\"aec-nfl-ari-dal-2026-11-01\",\"offer_levels\":75,\"public_shape\":true,\"raw_file\":\"000006.json\",\"receive_monotonic\":420457.121512216,\"received_at\":\"2026-11-01T17:09:50.527098+00:00\",\"rejections\":[],\"sequence_continuity\":\"UNKNOWN\",\"source_age_seconds\":0.16254,\"source_ts\":\"2026-11-01T17:09:50.364558308Z\",\"timestamp_depth_diagnostic_pass\":true,\"wire_sha256\":\"1a1a7449f0ba7c256f74290015429422ea1d51c178061bbc23b568babe92789f\"}\n{\"archive_sha256\":\"690b9218c78bf31d23a85ea753ed81764c6a8a0f6bc51ac4f698a3cd069a1365\",\"bid_levels\":34,\"changed_from_previous\":false,\"connection_generation\":1,\"depth_sha256\":\"28440cb2e89e6e10e9eae0561a2d33e96c80b0f3c3ac4933a4ea64eda619b428\",\"economic_eligibility\":false,\"frame\":7,\"kind\":\"book\",\"market\":\"aec-nfl-ari-dal-2026-11-01\",\"offer_levels\":75,\"public_shape\":true,\"raw_file\":\"000007.json\",\"receive_monotonic\":420457.22384618,\"received_at\":\"2026-11-01T17:09:50.629432+00:00\",\"rejections\":[],\"sequence_continuity\":\"UNKNOWN\",\"source_age_seconds\":0.12506,\"source_ts\":\"2026-11-01T17:09:50.504372276Z\",\"timestamp_depth_diagnostic_pass\":true,\"wire_sha256\":\"690b9218c78bf31d23a85ea753ed81764c6a8a0f6bc51ac4f698a3cd069a1365\"}\n{\"archive_sha256\":\"abdecec708a530c0b520c4727a68a7114143b2cc089f7c5f701f016ecdb57323\",\"bid_levels\":34,\"changed_from_previous\":true,\"connection_generation\":1,\"depth_sha256\":\"a2596a38ceb692c8383fc135221e212c5092890b2b93e562c76339bb6d1185ff\",\"economic_eligibility\":false,\"frame\":8,\"kind\":\"book\",\"market\":\"aec-nfl-ari-dal-2026-11-01\",\"offer_levels\":75,\"public_shape\":true,\"raw_file\":\"000008.json\",\"receive_monotonic\":420457.830426889,\"received_at\":\"2026-11-01T17:09:51.236013+00:00\",\"rejections\":[],\"sequence_continuity\":\"UNKNOWN\",\"source_age_seconds\":0.04299,\"source_ts\":\"2026-11-01T17:09:51.193023418Z\",\"timestamp_depth_diagnostic_pass\":true,\"wire_sha256\":\"abdecec708a530c0b520c4727a68a7114143b2cc089f7c5f701f016ecdb57323\"}\n{\"archive_sha256\":\"259f64077c47c5d2c562708966d96188e5a877f292ea8035b2bab062a122febb\",\"bid_levels\":34,\"changed_from_previous\":true,\"connection_generation\":1,\"depth_sha256\":\"28440cb2e89e6e10e9eae0561a2d33e96c80b0f3c3ac4933a4ea64eda619b428\",\"economic_eligibility\":false,\"frame\":9,\"kind\":\"book\",\"market\":\"aec-nfl-ari-dal-2026-11-01\",\"offer_levels\":75,\"public_shape\":true,\"raw_file\":\"000009.json\",\"receive_monotonic\":420458.030561854,\"received_at\":\"2026-11-01T17:09:51.436148+00:00\",\"rejections\":[],\"sequence_continuity\":\"UNKNOWN\",\"source_age_seconds\":0.154155,\"source_ts\":\"2026-11-01T17:09:51.281993955Z\",\"timestamp_depth_diagnostic_pass\":true,\"wire_sha256\":\"259f64077c47c5d2c562708966d96188e5a877f292ea8035b2bab062a122febb\"}\n{\"archive_sha256\":\"17f9519d7b7934d72c73e692ae15578d2d459665c63b947e68130f50f5c0cb75\",\"bid_levels\":34,\"changed_from_previous\":true,\"connection_generation\":1,\"depth_sha256\":\"a32b7da164560d37619fb79f9cb5271ba4498e41b36823e57995d75ab654db1d\",\"economic_eligibility\":false,\"frame\":10,\"kind\":\"book\",\"market\":\"aec-nfl-ari-dal-2026-11-01\",\"offer_levels\":75,\"public_shape\":true,\"raw_file\":\"000010.json\",\"receive_monotonic\":420458.333961927,\"received_at\":\"2026-11-01T17:09:51.739548+00:00\",\"rejections\":[],\"sequence_continuity\":\"UNKNOWN\",\"source_age_seconds\":0.0515,\"source_ts\":\"2026-11-01T17:09:51.688048543Z\",\"timestamp_depth_diagnostic_pass\":true,\"wire_sha256\":\"17f9519d7b7934d72c73e692ae15578d2d459665c63b947e68130f50f5c0cb75\"}\n",
+      "sha256": "c85934dae052b2586ee6d39e01e870ac65ea9d241017f6d198fdd27558b581a4"
+    },
+    "us-001/000001.json": {
+      "body": "{\"requestId\":\"m5n-market-data\",\"subscriptionType\":\"SUBSCRIPTION_TYPE_MARKET_DATA\",\"marketData\":{\"marketSlug\":\"aec-nfl-ari-dal-2026-11-01\",\"bids\":[{\"px\":{\"value\":\"0.2450\",\"currency\":\"USD\"},\"qty\":\"721933.5700\"},{\"px\":{\"value\":\"0.2425\",\"currency\":\"USD\"},\"qty\":\"546748.0000\"},{\"px\":{\"value\":\"0.2400\",\"currency\":\"USD\"},\"qty\":\"36555.7000\"},{\"px\":{\"value\":\"0.2375\",\"currency\":\"USD\"},\"qty\":\"27968.4700\"},{\"px\":{\"value\":\"0.2350\",\"currency\":\"USD\"},\"qty\":\"13132.9900\"},{\"px\":{\"value\":\"0.2325\",\"currency\":\"USD\"},\"qty\":\"72016.1200\"},{\"px\":{\"value\":\"0.2300\",\"currency\":\"USD\"},\"qty\":\"25996.9300\"},{\"px\":{\"value\":\"0.2275\",\"currency\":\"USD\"},\"qty\":\"7500.0000\"},{\"px\":{\"value\":\"0.2225\",\"currency\":\"USD\"},\"qty\":\"9603.5700\"},{\"px\":{\"value\":\"0.2200\",\"currency\":\"USD\"},\"qty\":\"1575.0900\"},{\"px\":{\"value\":\"0.2175\",\"currency\":\"USD\"},\"qty\":\"7500.0000\"},{\"px\":{\"value\":\"0.2150\",\"currency\":\"USD\"},\"qty\":\"60000.0000\"},{\"px\":{\"value\":\"0.2100\",\"currency\":\"USD\"},\"qty\":\"64145.9000\"},{\"px\":{\"value\":\"0.2075\",\"currency\":\"USD\"},\"qty\":\"500.0000\"},{\"px\":{\"value\":\"0.2050\",\"currency\":\"USD\"},\"qty\":\"6800.0000\"},{\"px\":{\"value\":\"0.2000\",\"currency\":\"USD\"},\"qty\":\"5658.0000\"},{\"px\":{\"value\":\"0.1950\",\"currency\":\"USD\"},\"qty\":\"25.0000\"},{\"px\":{\"value\":\"0.1900\",\"currency\":\"USD\"},\"qty\":\"1100.0000\"},{\"px\":{\"value\":\"0.1800\",\"currency\":\"USD\"},\"qty\":\"600.0000\"},{\"px\":{\"value\":\"0.1650\",\"currency\":\"USD\"},\"qty\":\"1.0000\"},{\"px\":{\"value\":\"0.1600\",\"currency\":\"USD\"},\"qty\":\"500.0000\"},{\"px\":{\"value\":\"0.1200\",\"currency\":\"USD\"},\"qty\":\"5172.3300\"},{\"px\":{\"value\":\"0.1100\",\"currency\":\"USD\"},\"qty\":\"818.1800\"},{\"px\":{\"value\":\"0.1000\",\"currency\":\"USD\"},\"qty\":\"3000.0000\"},{\"px\":{\"value\":\"0.0900\",\"currency\":\"USD\"},\"qty\":\"3334.6400\"},{\"px\":{\"value\":\"0.0800\",\"currency\":\"USD\"},\"qty\":\"3750.0000\"},{\"px\":{\"value\":\"0.0700\",\"currency\":\"USD\"},\"qty\":\"4285.7100\"},{\"px\":{\"value\":\"0.0600\",\"currency\":\"USD\"},\"qty\":\"5050.0000\"},{\"px\":{\"value\":\"0.0500\",\"currency\":\"USD\"},\"qty\":\"8049.1300\"},{\"px\":{\"value\":\"0.0400\",\"currency\":\"USD\"},\"qty\":\"9702.8100\"},{\"px\":{\"value\":\"0.0300\",\"currency\":\"USD\"},\"qty\":\"16047.9600\"},{\"px\":{\"value\":\"0.0200\",\"currency\":\"USD\"},\"qty\":\"24212.3100\"},{\"px\":{\"value\":\"0.0100\",\"currency\":\"USD\"},\"qty\":\"42615.4500\"},{\"px\":{\"value\":\"0.0025\",\"currency\":\"USD\"},\"qty\":\"2100016.0000\"}],\"offers\":[{\"px\":{\"value\":\"0.2475\",\"currency\":\"USD\"},\"qty\":\"733935.9800\"},{\"px\":{\"value\":\"0.2500\",\"currency\":\"USD\"},\"qty\":\"1630796.5000\"},{\"px\":{\"value\":\"0.2525\",\"currency\":\"USD\"},\"qty\":\"47278.5000\"},{\"px\":{\"value\":\"0.2550\",\"currency\":\"USD\"},\"qty\":\"1086.0700\"},{\"px\":{\"value\":\"0.2575\",\"currency\":\"USD\"},\"qty\":\"8898.0000\"},{\"px\":{\"value\":\"0.2600\",\"currency\":\"USD\"},\"qty\":\"116101.2900\"},{\"px\":{\"value\":\"0.2625\",\"currency\":\"USD\"},\"qty\":\"8973.0000\"},{\"px\":{\"value\":\"0.2650\",\"currency\":\"USD\"},\"qty\":\"22086.7600\"},{\"px\":{\"value\":\"0.2700\",\"currency\":\"USD\"},\"qty\":\"8236.0000\"},{\"px\":{\"value\":\"0.2725\",\"currency\":\"USD\"},\"qty\":\"20618.5500\"},{\"px\":{\"value\":\"0.2750\",\"currency\":\"USD\"},\"qty\":\"10.0000\"},{\"px\":{\"value\":\"0.2800\",\"currency\":\"USD\"},\"qty\":\"7419.1600\"},{\"px\":{\"value\":\"0.2850\",\"currency\":\"USD\"},\"qty\":\"1272.9000\"},{\"px\":{\"value\":\"0.2900\",\"currency\":\"USD\"},\"qty\":\"250.0000\"},{\"px\":{\"value\":\"0.2975\",\"currency\":\"USD\"},\"qty\":\"118.9200\"},{\"px\":{\"value\":\"0.3000\",\"currency\":\"USD\"},\"qty\":\"100.0000\"},{\"px\":{\"value\":\"0.3050\",\"currency\":\"USD\"},\"qty\":\"14.0000\"},{\"px\":{\"value\":\"0.3100\",\"currency\":\"USD\"},\"qty\":\"500.0000\"},{\"px\":{\"value\":\"0.3200\",\"currency\":\"USD\"},\"qty\":\"848.2000\"},{\"px\":{\"value\":\"0.3300\",\"currency\":\"USD\"},\"qty\":\"1.0000\"},{\"px\":{\"value\":\"0.3400\",\"currency\":\"USD\"},\"qty\":\"591.4900\"},{\"px\":{\"value\":\"0.3500\",\"currency\":\"USD\"},\"qty\":\"2.4100\"},{\"px\":{\"value\":\"0.3575\",\"currency\":\"USD\"},\"qty\":\"4375.0000\"},{\"px\":{\"value\":\"0.3600\",\"currency\":\"USD\"},\"qty\":\"191.9900\"},{\"px\":{\"value\":\"0.3700\",\"currency\":\"USD\"},\"qty\":\"92.3000\"},{\"px\":{\"value\":\"0.3800\",\"currency\":\"USD\"},\"qty\":\"276.9700\"},{\"px\":{\"value\":\"0.3850\",\"currency\":\"USD\"},\"qty\":\"18.4400\"},{\"px\":{\"value\":\"0.4000\",\"currency\":\"USD\"},\"qty\":\"74.3700\"},{\"px\":{\"value\":\"0.4200\",\"currency\":\"USD\"},\"qty\":\"19.0000\"},{\"px\":{\"value\":\"0.4625\",\"currency\":\"USD\"},\"qty\":\"10.0000\"},{\"px\":{\"value\":\"0.4700\",\"currency\":\"USD\"},\"qty\":\"36.9300\"},{\"px\":{\"value\":\"0.5000\",\"currency\":\"USD\"},\"qty\":\"3.0000\"},{\"px\":{\"value\":\"0.5100\",\"currency\":\"USD\"},\"qty\":\"18.4400\"},{\"px\":{\"value\":\"0.5200\",\"currency\":\"USD\"},\"qty\":\"3.8000\"},{\"px\":{\"value\":\"0.5300\",\"currency\":\"USD\"},\"qty\":\"55.5500\"},{\"px\":{\"value\":\"0.5400\",\"currency\":\"USD\"},\"qty\":\"125.5300\"},{\"px\":{\"value\":\"0.5450\",\"currency\":\"USD\"},\"qty\":\"3.7200\"},{\"px\":{\"value\":\"0.5500\",\"currency\":\"USD\"},\"qty\":\"2158.0300\"},{\"px\":{\"value\":\"0.5550\",\"currency\":\"USD\"},\"qty\":\"27.2900\"},{\"px\":{\"value\":\"0.5700\",\"currency\":\"USD\"},\"qty\":\"184.6600\"},{\"px\":{\"value\":\"0.5800\",\"currency\":\"USD\"},\"qty\":\"1.8600\"},{\"px\":{\"value\":\"0.5900\",\"currency\":\"USD\"},\"qty\":\"18.4400\"},{\"px\":{\"value\":\"0.6000\",\"currency\":\"USD\"},\"qty\":\"5.0000\"},{\"px\":{\"value\":\"0.6100\",\"currency\":\"USD\"},\"qty\":\"542.3700\"},{\"px\":{\"value\":\"0.6200\",\"currency\":\"USD\"},\"qty\":\"18.4400\"},{\"px\":{\"value\":\"0.6700\",\"currency\":\"USD\"},\"qty\":\"5.0000\"},{\"px\":{\"value\":\"0.6800\",\"currency\":\"USD\"},\"qty\":\"36.8500\"},{\"px\":{\"value\":\"0.6900\",\"currency\":\"USD\"},\"qty\":\"26.3000\"},{\"px\":{\"value\":\"0.7000\",\"currency\":\"USD\"},\"qty\":\"72.5800\"},{\"px\":{\"value\":\"0.7200\",\"currency\":\"USD\"},\"qty\":\"10.1700\"},{\"px\":{\"value\":\"0.7400\",\"currency\":\"USD\"},\"qty\":\"36.9300\"},{\"px\":{\"value\":\"0.7800\",\"currency\":\"USD\"},\"qty\":\"62.7900\"},{\"px\":{\"value\":\"0.7900\",\"currency\":\"USD\"},\"qty\":\"11.1700\"},{\"px\":{\"value\":\"0.8000\",\"currency\":\"USD\"},\"qty\":\"168.8700\"},{\"px\":{\"value\":\"0.8100\",\"currency\":\"USD\"},\"qty\":\"161.6100\"},{\"px\":{\"value\":\"0.8200\",\"currency\":\"USD\"},\"qty\":\"231.6700\"},{\"px\":{\"value\":\"0.8300\",\"currency\":\"USD\"},\"qty\":\"187.5300\"},{\"px\":{\"value\":\"0.8400\",\"currency\":\"USD\"},\"qty\":\"205.9400\"},{\"px\":{\"value\":\"0.8500\",\"currency\":\"USD\"},\"qty\":\"45036.0000\"},{\"px\":{\"value\":\"0.8600\",\"currency\":\"USD\"},\"qty\":\"45266.1000\"},{\"px\":{\"value\":\"0.8700\",\"currency\":\"USD\"},\"qty\":\"694.1700\"},{\"px\":{\"value\":\"0.8800\",\"currency\":\"USD\"},\"qty\":\"750.0000\"},{\"px\":{\"value\":\"0.8900\",\"currency\":\"USD\"},\"qty\":\"836.6200\"},{\"px\":{\"value\":\"0.9000\",\"currency\":\"USD\"},\"qty\":\"3018.4400\"},{\"px\":{\"value\":\"0.9100\",\"currency\":\"USD\"},\"qty\":\"3333.3300\"},{\"px\":{\"value\":\"0.9200\",\"currency\":\"USD\"},\"qty\":\"3768.4400\"},{\"px\":{\"value\":\"0.9250\",\"currency\":\"USD\"},\"qty\":\"9.2400\"},{\"px\":{\"value\":\"0.9300\",\"currency\":\"USD\"},\"qty\":\"4285.7100\"},{\"px\":{\"value\":\"0.9400\",\"currency\":\"USD\"},\"qty\":\"5050.0000\"},{\"px\":{\"value\":\"0.9500\",\"currency\":\"USD\"},\"qty\":\"8000.0000\"},{\"px\":{\"value\":\"0.9600\",\"currency\":\"USD\"},\"qty\":\"9660.6100\"},{\"px\":{\"value\":\"0.9700\",\"currency\":\"USD\"},\"qty\":\"16015.0000\"},{\"px\":{\"value\":\"0.9800\",\"currency\":\"USD\"},\"qty\":\"24210.0000\"},{\"px\":{\"value\":\"0.9900\",\"currency\":\"USD\"},\"qty\":\"42663.3300\"},{\"px\":{\"value\":\"0.9975\",\"currency\":\"USD\"},\"qty\":\"2100016.0000\"}],\"state\":\"MARKET_STATE_OPEN\",\"stats\":{\"openPx\":{\"value\":\"0.4400\",\"currency\":\"USD\"},\"lowPx\":{\"value\":\"0.1600\",\"currency\":\"USD\"},\"highPx\":{\"value\":\"0.4400\",\"currency\":\"USD\"},\"lastTradePx\":{\"value\":\"0.2475\",\"currency\":\"USD\"},\"sharesTraded\":\"305644.0000\",\"notionalTraded\":{\"value\":\"81278.9039\",\"currency\":\"USD\"},\"lastTradeQty\":\"20.0000\",\"openInterest\":\"122531.1100\",\"openSetTime\":\"2026-10-19T03:59:01.136709252Z\",\"highSetTime\":\"2026-10-19T03:59:01.136709252Z\",\"lowSetTime\":\"2026-10-19T11:48:41.010627310Z\",\"lastTradeSetTime\":\"2026-11-01T17:09:42.941030017Z\",\"openInterestSetTime\":\"2026-11-01T17:09:43.202025860Z\",\"notionalSetTime\":\"2026-11-01T17:09:42.941030017Z\",\"currentPx\":{\"value\":\"0.2462\",\"currency\":\"USD\"},\"lastPriceSample\":{\"longPx\":{\"value\":\"0.2475\",\"currency\":\"USD\"},\"shortPx\":{\"value\":\"0.7525\",\"currency\":\"USD\"},\"ts\":\"2026-11-01T17:09:43.202025860Z\"}},\"transactTime\":\"2026-11-01T17:09:43.202025860Z\"}}",
+      "sha256": "20ec1f8e4005fd1f395445300a7b49df890c16244714b1c919477994bbfabab1"
+    },
+    "us-001/000002.json": {
+      "body": "{\"requestId\":\"m5n-market-data\",\"subscriptionType\":\"SUBSCRIPTION_TYPE_MARKET_DATA\",\"marketData\":{\"marketSlug\":\"rdc-usfed-fomc-2026-12-09-nochng\",\"bids\":[{\"px\":{\"value\":\"0.2800\",\"currency\":\"USD\"},\"qty\":\"454.3700\"},{\"px\":{\"value\":\"0.2700\",\"currency\":\"USD\"},\"qty\":\"1358.5800\"},{\"px\":{\"value\":\"0.2600\",\"currency\":\"USD\"},\"qty\":\"418.0000\"},{\"px\":{\"value\":\"0.2500\",\"currency\":\"USD\"},\"qty\":\"226.0000\"},{\"px\":{\"value\":\"0.2400\",\"currency\":\"USD\"},\"qty\":\"25000.0000\"},{\"px\":{\"value\":\"0.2300\",\"currency\":\"USD\"},\"qty\":\"25001.8000\"},{\"px\":{\"value\":\"0.2200\",\"currency\":\"USD\"},\"qty\":\"133.0000\"},{\"px\":{\"value\":\"0.2000\",\"currency\":\"USD\"},\"qty\":\"100.0000\"},{\"px\":{\"value\":\"0.0500\",\"currency\":\"USD\"},\"qty\":\"5108.0000\"},{\"px\":{\"value\":\"0.0300\",\"currency\":\"USD\"},\"qty\":\"0.9000\"},{\"px\":{\"value\":\"0.0200\",\"currency\":\"USD\"},\"qty\":\"352.2000\"},{\"px\":{\"value\":\"0.0100\",\"currency\":\"USD\"},\"qty\":\"27500.0000\"}],\"offers\":[{\"px\":{\"value\":\"0.2900\",\"currency\":\"USD\"},\"qty\":\"1488.1400\"},{\"px\":{\"value\":\"0.3000\",\"currency\":\"USD\"},\"qty\":\"300.5800\"},{\"px\":{\"value\":\"0.3100\",\"currency\":\"USD\"},\"qty\":\"25046.4100\"},{\"px\":{\"value\":\"0.3200\",\"currency\":\"USD\"},\"qty\":\"25000.0000\"},{\"px\":{\"value\":\"0.6700\",\"currency\":\"USD\"},\"qty\":\"5861.4900\"},{\"px\":{\"value\":\"0.6800\",\"currency\":\"USD\"},\"qty\":\"300.0000\"},{\"px\":{\"value\":\"0.8100\",\"currency\":\"USD\"},\"qty\":\"1.8500\"},{\"px\":{\"value\":\"0.9700\",\"currency\":\"USD\"},\"qty\":\"5450.0000\"},{\"px\":{\"value\":\"0.9800\",\"currency\":\"USD\"},\"qty\":\"51.0000\"},{\"px\":{\"value\":\"0.9900\",\"currency\":\"USD\"},\"qty\":\"27499.0000\"}],\"state\":\"MARKET_STATE_OPEN\",\"stats\":{\"openPx\":{\"value\":\"0.3100\",\"currency\":\"USD\"},\"lowPx\":{\"value\":\"0.1600\",\"currency\":\"USD\"},\"highPx\":{\"value\":\"0.3400\",\"currency\":\"USD\"},\"lastTradePx\":{\"value\":\"0.2900\",\"currency\":\"USD\"},\"sharesTraded\":\"1227905.3000\",\"notionalTraded\":{\"value\":\"331457.2101\",\"currency\":\"USD\"},\"lastTradeQty\":\"6.6800\",\"openInterest\":\"20619.8900\",\"openSetTime\":\"2026-09-23T00:46:08.646949617Z\",\"highSetTime\":\"2026-09-27T16:10:27.774825569Z\",\"lowSetTime\":\"2026-10-28T18:40:07.197245322Z\",\"lastTradeSetTime\":\"2026-11-01T07:18:57.391859394Z\",\"openInterestSetTime\":\"2026-11-01T07:18:57.560159613Z\",\"notionalSetTime\":\"2026-11-01T07:18:57.391859394Z\",\"currentPx\":{\"value\":\"0.2850\",\"currency\":\"USD\"},\"lastPriceSample\":{\"longPx\":{\"value\":\"0.2900\",\"currency\":\"USD\"},\"shortPx\":{\"value\":\"0.71\",\"currency\":\"USD\"},\"ts\":\"2026-11-01T17:08:25.130285291Z\"}},\"transactTime\":\"2026-11-01T17:08:25.130285291Z\"}}",
+      "sha256": "7a81fc19a90580c32f92e9e28380804fa31d80acccaa9ae2bf7388aac9d92af0"
+    },
+    "us-001/000003.json": {
+      "body": "{\"requestId\":\"m5n-market-data\",\"subscriptionType\":\"SUBSCRIPTION_TYPE_MARKET_DATA\",\"marketData\":{\"marketSlug\":\"aec-nfl-ari-dal-2026-11-01\",\"bids\":[{\"px\":{\"value\":\"0.2450\",\"currency\":\"USD\"},\"qty\":\"721933.5700\"},{\"px\":{\"value\":\"0.2425\",\"currency\":\"USD\"},\"qty\":\"546748.0000\"},{\"px\":{\"value\":\"0.2400\",\"currency\":\"USD\"},\"qty\":\"36555.7000\"},{\"px\":{\"value\":\"0.2375\",\"currency\":\"USD\"},\"qty\":\"27968.4700\"},{\"px\":{\"value\":\"0.2350\",\"currency\":\"USD\"},\"qty\":\"13132.9900\"},{\"px\":{\"value\":\"0.2325\",\"currency\":\"USD\"},\"qty\":\"72016.1200\"},{\"px\":{\"value\":\"0.2300\",\"currency\":\"USD\"},\"qty\":\"25996.9300\"},{\"px\":{\"value\":\"0.2275\",\"currency\":\"USD\"},\"qty\":\"7500.0000\"},{\"px\":{\"value\":\"0.2225\",\"currency\":\"USD\"},\"qty\":\"9603.5700\"},{\"px\":{\"value\":\"0.2200\",\"currency\":\"USD\"},\"qty\":\"1575.0900\"},{\"px\":{\"value\":\"0.2175\",\"currency\":\"USD\"},\"qty\":\"7500.0000\"},{\"px\":{\"value\":\"0.2150\",\"currency\":\"USD\"},\"qty\":\"60000.0000\"},{\"px\":{\"value\":\"0.2100\",\"currency\":\"USD\"},\"qty\":\"64145.9000\"},{\"px\":{\"value\":\"0.2075\",\"currency\":\"USD\"},\"qty\":\"500.0000\"},{\"px\":{\"value\":\"0.2050\",\"currency\":\"USD\"},\"qty\":\"6800.0000\"},{\"px\":{\"value\":\"0.2000\",\"currency\":\"USD\"},\"qty\":\"5658.0000\"},{\"px\":{\"value\":\"0.1950\",\"currency\":\"USD\"},\"qty\":\"25.0000\"},{\"px\":{\"value\":\"0.1900\",\"currency\":\"USD\"},\"qty\":\"1100.0000\"},{\"px\":{\"value\":\"0.1800\",\"currency\":\"USD\"},\"qty\":\"600.0000\"},{\"px\":{\"value\":\"0.1650\",\"currency\":\"USD\"},\"qty\":\"1.0000\"},{\"px\":{\"value\":\"0.1600\",\"currency\":\"USD\"},\"qty\":\"500.0000\"},{\"px\":{\"value\":\"0.1200\",\"currency\":\"USD\"},\"qty\":\"5172.3300\"},{\"px\":{\"value\":\"0.1100\",\"currency\":\"USD\"},\"qty\":\"818.1800\"},{\"px\":{\"value\":\"0.1000\",\"currency\":\"USD\"},\"qty\":\"3000.0000\"},{\"px\":{\"value\":\"0.0900\",\"currency\":\"USD\"},\"qty\":\"3334.6400\"},{\"px\":{\"value\":\"0.0800\",\"currency\":\"USD\"},\"qty\":\"3750.0000\"},{\"px\":{\"value\":\"0.0700\",\"currency\":\"USD\"},\"qty\":\"4285.7100\"},{\"px\":{\"value\":\"0.0600\",\"currency\":\"USD\"},\"qty\":\"5050.0000\"},{\"px\":{\"value\":\"0.0500\",\"currency\":\"USD\"},\"qty\":\"8049.1300\"},{\"px\":{\"value\":\"0.0400\",\"currency\":\"USD\"},\"qty\":\"9702.8100\"},{\"px\":{\"value\":\"0.0300\",\"currency\":\"USD\"},\"qty\":\"16047.9600\"},{\"px\":{\"value\":\"0.0200\",\"currency\":\"USD\"},\"qty\":\"24212.3100\"},{\"px\":{\"value\":\"0.0100\",\"currency\":\"USD\"},\"qty\":\"42615.4500\"},{\"px\":{\"value\":\"0.0025\",\"currency\":\"USD\"},\"qty\":\"2100016.0000\"}],\"offers\":[{\"px\":{\"value\":\"0.2475\",\"currency\":\"USD\"},\"qty\":\"733839.9800\"},{\"px\":{\"value\":\"0.2500\",\"currency\":\"USD\"},\"qty\":\"1630796.5000\"},{\"px\":{\"value\":\"0.2525\",\"currency\":\"USD\"},\"qty\":\"47278.5000\"},{\"px\":{\"value\":\"0.2550\",\"currency\":\"USD\"},\"qty\":\"1086.0700\"},{\"px\":{\"value\":\"0.2575\",\"currency\":\"USD\"},\"qty\":\"8898.0000\"},{\"px\":{\"value\":\"0.2600\",\"currency\":\"USD\"},\"qty\":\"116101.2900\"},{\"px\":{\"value\":\"0.2625\",\"currency\":\"USD\"},\"qty\":\"8973.0000\"},{\"px\":{\"value\":\"0.2650\",\"currency\":\"USD\"},\"qty\":\"22086.7600\"},{\"px\":{\"value\":\"0.2700\",\"currency\":\"USD\"},\"qty\":\"8236.0000\"},{\"px\":{\"value\":\"0.2725\",\"currency\":\"USD\"},\"qty\":\"20618.5500\"},{\"px\":{\"value\":\"0.2750\",\"currency\":\"USD\"},\"qty\":\"10.0000\"},{\"px\":{\"value\":\"0.2800\",\"currency\":\"USD\"},\"qty\":\"7419.1600\"},{\"px\":{\"value\":\"0.2850\",\"currency\":\"USD\"},\"qty\":\"1272.9000\"},{\"px\":{\"value\":\"0.2900\",\"currency\":\"USD\"},\"qty\":\"250.0000\"},{\"px\":{\"value\":\"0.2975\",\"currency\":\"USD\"},\"qty\":\"118.9200\"},{\"px\":{\"value\":\"0.3000\",\"currency\":\"USD\"},\"qty\":\"100.0000\"},{\"px\":{\"value\":\"0.3050\",\"currency\":\"USD\"},\"qty\":\"14.0000\"},{\"px\":{\"value\":\"0.3100\",\"currency\":\"USD\"},\"qty\":\"500.0000\"},{\"px\":{\"value\":\"0.3200\",\"currency\":\"USD\"},\"qty\":\"848.2000\"},{\"px\":{\"value\":\"0.3300\",\"currency\":\"USD\"},\"qty\":\"1.0000\"},{\"px\":{\"value\":\"0.3400\",\"currency\":\"USD\"},\"qty\":\"591.4900\"},{\"px\":{\"value\":\"0.3500\",\"currency\":\"USD\"},\"qty\":\"2.4100\"},{\"px\":{\"value\":\"0.3575\",\"currency\":\"USD\"},\"qty\":\"4375.0000\"},{\"px\":{\"value\":\"0.3600\",\"currency\":\"USD\"},\"qty\":\"191.9900\"},{\"px\":{\"value\":\"0.3700\",\"currency\":\"USD\"},\"qty\":\"92.3000\"},{\"px\":{\"value\":\"0.3800\",\"currency\":\"USD\"},\"qty\":\"276.9700\"},{\"px\":{\"value\":\"0.3850\",\"currency\":\"USD\"},\"qty\":\"18.4400\"},{\"px\":{\"value\":\"0.4000\",\"currency\":\"USD\"},\"qty\":\"74.3700\"},{\"px\":{\"value\":\"0.4200\",\"currency\":\"USD\"},\"qty\":\"19.0000\"},{\"px\":{\"value\":\"0.4625\",\"currency\":\"USD\"},\"qty\":\"10.0000\"},{\"px\":{\"value\":\"0.4700\",\"currency\":\"USD\"},\"qty\":\"36.9300\"},{\"px\":{\"value\":\"0.5000\",\"currency\":\"USD\"},\"qty\":\"3.0000\"},{\"px\":{\"value\":\"0.5100\",\"currency\":\"USD\"},\"qty\":\"18.4400\"},{\"px\":{\"value\":\"0.5200\",\"currency\":\"USD\"},\"qty\":\"3.8000\"},{\"px\":{\"value\":\"0.5300\",\"currency\":\"USD\"},\"qty\":\"55.5500\"},{\"px\":{\"value\":\"0.5400\",\"currency\":\"USD\"},\"qty\":\"125.5300\"},{\"px\":{\"value\":\"0.5450\",\"currency\":\"USD\"},\"qty\":\"3.7200\"},{\"px\":{\"value\":\"0.5500\",\"currency\":\"USD\"},\"qty\":\"2158.0300\"},{\"px\":{\"value\":\"0.5550\",\"currency\":\"USD\"},\"qty\":\"27.2900\"},{\"px\":{\"value\":\"0.5700\",\"currency\":\"USD\"},\"qty\":\"184.6600\"},{\"px\":{\"value\":\"0.5800\",\"currency\":\"USD\"},\"qty\":\"1.8600\"},{\"px\":{\"value\":\"0.5900\",\"currency\":\"USD\"},\"qty\":\"18.4400\"},{\"px\":{\"value\":\"0.6000\",\"currency\":\"USD\"},\"qty\":\"5.0000\"},{\"px\":{\"value\":\"0.6100\",\"currency\":\"USD\"},\"qty\":\"542.3700\"},{\"px\":{\"value\":\"0.6200\",\"currency\":\"USD\"},\"qty\":\"18.4400\"},{\"px\":{\"value\":\"0.6700\",\"currency\":\"USD\"},\"qty\":\"5.0000\"},{\"px\":{\"value\":\"0.6800\",\"currency\":\"USD\"},\"qty\":\"36.8500\"},{\"px\":{\"value\":\"0.6900\",\"currency\":\"USD\"},\"qty\":\"26.3000\"},{\"px\":{\"value\":\"0.7000\",\"currency\":\"USD\"},\"qty\":\"72.5800\"},{\"px\":{\"value\":\"0.7200\",\"currency\":\"USD\"},\"qty\":\"10.1700\"},{\"px\":{\"value\":\"0.7400\",\"currency\":\"USD\"},\"qty\":\"36.9300\"},{\"px\":{\"value\":\"0.7800\",\"currency\":\"USD\"},\"qty\":\"62.7900\"},{\"px\":{\"value\":\"0.7900\",\"currency\":\"USD\"},\"qty\":\"11.1700\"},{\"px\":{\"value\":\"0.8000\",\"currency\":\"USD\"},\"qty\":\"168.8700\"},{\"px\":{\"value\":\"0.8100\",\"currency\":\"USD\"},\"qty\":\"161.6100\"},{\"px\":{\"value\":\"0.8200\",\"currency\":\"USD\"},\"qty\":\"231.6700\"},{\"px\":{\"value\":\"0.8300\",\"currency\":\"USD\"},\"qty\":\"187.5300\"},{\"px\":{\"value\":\"0.8400\",\"currency\":\"USD\"},\"qty\":\"205.9400\"},{\"px\":{\"value\":\"0.8500\",\"currency\":\"USD\"},\"qty\":\"45036.0000\"},{\"px\":{\"value\":\"0.8600\",\"currency\":\"USD\"},\"qty\":\"45266.1000\"},{\"px\":{\"value\":\"0.8700\",\"currency\":\"USD\"},\"qty\":\"694.1700\"},{\"px\":{\"value\":\"0.8800\",\"currency\":\"USD\"},\"qty\":\"750.0000\"},{\"px\":{\"value\":\"0.8900\",\"currency\":\"USD\"},\"qty\":\"836.6200\"},{\"px\":{\"value\":\"0.9000\",\"currency\":\"USD\"},\"qty\":\"3018.4400\"},{\"px\":{\"value\":\"0.9100\",\"currency\":\"USD\"},\"qty\":\"3333.3300\"},{\"px\":{\"value\":\"0.9200\",\"currency\":\"USD\"},\"qty\":\"3768.4400\"},{\"px\":{\"value\":\"0.9250\",\"currency\":\"USD\"},\"qty\":\"9.2400\"},{\"px\":{\"value\":\"0.9300\",\"currency\":\"USD\"},\"qty\":\"4285.7100\"},{\"px\":{\"value\":\"0.9400\",\"currency\":\"USD\"},\"qty\":\"5050.0000\"},{\"px\":{\"value\":\"0.9500\",\"currency\":\"USD\"},\"qty\":\"8000.0000\"},{\"px\":{\"value\":\"0.9600\",\"currency\":\"USD\"},\"qty\":\"9660.6100\"},{\"px\":{\"value\":\"0.9700\",\"currency\":\"USD\"},\"qty\":\"16015.0000\"},{\"px\":{\"value\":\"0.9800\",\"currency\":\"USD\"},\"qty\":\"24210.0000\"},{\"px\":{\"value\":\"0.9900\",\"currency\":\"USD\"},\"qty\":\"42663.3300\"},{\"px\":{\"value\":\"0.9975\",\"currency\":\"USD\"},\"qty\":\"2100016.0000\"}],\"state\":\"MARKET_STATE_OPEN\",\"stats\":{\"openPx\":{\"value\":\"0.4400\",\"currency\":\"USD\"},\"lowPx\":{\"value\":\"0.1600\",\"currency\":\"USD\"},\"highPx\":{\"value\":\"0.4400\",\"currency\":\"USD\"},\"lastTradePx\":{\"value\":\"0.2475\",\"currency\":\"USD\"},\"sharesTraded\":\"305740.0000\",\"notionalTraded\":{\"value\":\"81302.6639\",\"currency\":\"USD\"},\"lastTradeQty\":\"96.0000\",\"openInterest\":\"122531.1100\",\"openSetTime\":\"2026-10-19T03:59:01.136709252Z\",\"highSetTime\":\"2026-10-19T03:59:01.136709252Z\",\"lowSetTime\":\"2026-10-19T11:48:41.010627310Z\",\"lastTradeSetTime\":\"2026-11-01T17:09:44.884636901Z\",\"openInterestSetTime\":\"2026-11-01T17:09:43.202025860Z\",\"notionalSetTime\":\"2026-11-01T17:09:44.884636901Z\",\"currentPx\":{\"value\":\"0.2462\",\"currency\":\"USD\"},\"lastPriceSample\":{\"longPx\":{\"value\":\"0.2475\",\"currency\":\"USD\"},\"shortPx\":{\"value\":\"0.7525\",\"currency\":\"USD\"},\"ts\":\"2026-11-01T17:09:44.884636901Z\"}},\"transactTime\":\"2026-11-01T17:09:44.884636901Z\"}}",
+      "sha256": "9f0f22589b658e01180da4b95366cc406e61d91eb530eccbbb7be600b13ca043"
+    },
+    "us-001/000004.json": {
+      "body": "{\"requestId\":\"m5n-market-data\",\"subscriptionType\":\"SUBSCRIPTION_TYPE_MARKET_DATA\",\"marketData\":{\"marketSlug\":\"aec-nfl-ari-dal-2026-11-01\",\"bids\":[{\"px\":{\"value\":\"0.2450\",\"currency\":\"USD\"},\"qty\":\"721933.5700\"},{\"px\":{\"value\":\"0.2425\",\"currency\":\"USD\"},\"qty\":\"546748.0000\"},{\"px\":{\"value\":\"0.2400\",\"currency\":\"USD\"},\"qty\":\"36555.7000\"},{\"px\":{\"value\":\"0.2375\",\"currency\":\"USD\"},\"qty\":\"27968.4700\"},{\"px\":{\"value\":\"0.2350\",\"currency\":\"USD\"},\"qty\":\"13132.9900\"},{\"px\":{\"value\":\"0.2325\",\"currency\":\"USD\"},\"qty\":\"72016.1200\"},{\"px\":{\"value\":\"0.2300\",\"currency\":\"USD\"},\"qty\":\"25996.9300\"},{\"px\":{\"value\":\"0.2275\",\"currency\":\"USD\"},\"qty\":\"7500.0000\"},{\"px\":{\"value\":\"0.2225\",\"currency\":\"USD\"},\"qty\":\"9603.5700\"},{\"px\":{\"value\":\"0.2200\",\"currency\":\"USD\"},\"qty\":\"1575.0900\"},{\"px\":{\"value\":\"0.2175\",\"currency\":\"USD\"},\"qty\":\"7500.0000\"},{\"px\":{\"value\":\"0.2150\",\"currency\":\"USD\"},\"qty\":\"60000.0000\"},{\"px\":{\"value\":\"0.2100\",\"currency\":\"USD\"},\"qty\":\"64145.9000\"},{\"px\":{\"value\":\"0.2075\",\"currency\":\"USD\"},\"qty\":\"500.0000\"},{\"px\":{\"value\":\"0.2050\",\"currency\":\"USD\"},\"qty\":\"6800.0000\"},{\"px\":{\"value\":\"0.2000\",\"currency\":\"USD\"},\"qty\":\"5658.0000\"},{\"px\":{\"value\":\"0.1950\",\"currency\":\"USD\"},\"qty\":\"25.0000\"},{\"px\":{\"value\":\"0.1900\",\"currency\":\"USD\"},\"qty\":\"1100.0000\"},{\"px\":{\"value\":\"0.1800\",\"currency\":\"USD\"},\"qty\":\"600.0000\"},{\"px\":{\"value\":\"0.1650\",\"currency\":\"USD\"},\"qty\":\"1.0000\"},{\"px\":{\"value\":\"0.1600\",\"currency\":\"USD\"},\"qty\":\"500.0000\"},{\"px\":{\"value\":\"0.1200\",\"currency\":\"USD\"},\"qty\":\"5172.3300\"},{\"px\":{\"value\":\"0.1100\",\"currency\":\"USD\"},\"qty\":\"818.1800\"},{\"px\":{\"value\":\"0.1000\",\"currency\":\"USD\"},\"qty\":\"3000.0000\"},{\"px\":{\"value\":\"0.0900\",\"currency\":\"USD\"},\"qty\":\"3334.6400\"},{\"px\":{\"value\":\"0.0800\",\"currency\":\"USD\"},\"qty\":\"3750.0000\"},{\"px\":{\"value\":\"0.0700\",\"currency\":\"USD\"},\"qty\":\"4285.7100\"},{\"px\":{\"value\":\"0.0600\",\"currency\":\"USD\"},\"qty\":\"5050.0000\"},{\"px\":{\"value\":\"0.0500\",\"currency\":\"USD\"},\"qty\":\"8049.1300\"},{\"px\":{\"value\":\"0.0400\",\"currency\":\"USD\"},\"qty\":\"9702.8100\"},{\"px\":{\"value\":\"0.0300\",\"currency\":\"USD\"},\"qty\":\"16047.9600\"},{\"px\":{\"value\":\"0.0200\",\"currency\":\"USD\"},\"qty\":\"24212.3100\"},{\"px\":{\"value\":\"0.0100\",\"currency\":\"USD\"},\"qty\":\"42615.4500\"},{\"px\":{\"value\":\"0.0025\",\"currency\":\"USD\"},\"qty\":\"2100016.0000\"}],\"offers\":[{\"px\":{\"value\":\"0.2475\",\"currency\":\"USD\"},\"qty\":\"733839.9800\"},{\"px\":{\"value\":\"0.2500\",\"currency\":\"USD\"},\"qty\":\"1630796.5000\"},{\"px\":{\"value\":\"0.2525\",\"currency\":\"USD\"},\"qty\":\"47278.5000\"},{\"px\":{\"value\":\"0.2550\",\"currency\":\"USD\"},\"qty\":\"1086.0700\"},{\"px\":{\"value\":\"0.2575\",\"currency\":\"USD\"},\"qty\":\"8898.0000\"},{\"px\":{\"value\":\"0.2600\",\"currency\":\"USD\"},\"qty\":\"116101.2900\"},{\"px\":{\"value\":\"0.2625\",\"currency\":\"USD\"},\"qty\":\"8973.0000\"},{\"px\":{\"value\":\"0.2650\",\"currency\":\"USD\"},\"qty\":\"22086.7600\"},{\"px\":{\"value\":\"0.2700\",\"currency\":\"USD\"},\"qty\":\"8236.0000\"},{\"px\":{\"value\":\"0.2725\",\"currency\":\"USD\"},\"qty\":\"20618.5500\"},{\"px\":{\"value\":\"0.2750\",\"currency\":\"USD\"},\"qty\":\"10.0000\"},{\"px\":{\"value\":\"0.2800\",\"currency\":\"USD\"},\"qty\":\"7419.1600\"},{\"px\":{\"value\":\"0.2850\",\"currency\":\"USD\"},\"qty\":\"1272.9000\"},{\"px\":{\"value\":\"0.2900\",\"currency\":\"USD\"},\"qty\":\"250.0000\"},{\"px\":{\"value\":\"0.2975\",\"currency\":\"USD\"},\"qty\":\"118.9200\"},{\"px\":{\"value\":\"0.3000\",\"currency\":\"USD\"},\"qty\":\"100.0000\"},{\"px\":{\"value\":\"0.3050\",\"currency\":\"USD\"},\"qty\":\"14.0000\"},{\"px\":{\"value\":\"0.3100\",\"currency\":\"USD\"},\"qty\":\"500.0000\"},{\"px\":{\"value\":\"0.3200\",\"currency\":\"USD\"},\"qty\":\"848.2000\"},{\"px\":{\"value\":\"0.3300\",\"currency\":\"USD\"},\"qty\":\"1.0000\"},{\"px\":{\"value\":\"0.3400\",\"currency\":\"USD\"},\"qty\":\"591.4900\"},{\"px\":{\"value\":\"0.3500\",\"currency\":\"USD\"},\"qty\":\"2.4100\"},{\"px\":{\"value\":\"0.3575\",\"currency\":\"USD\"},\"qty\":\"4375.0000\"},{\"px\":{\"value\":\"0.3600\",\"currency\":\"USD\"},\"qty\":\"191.9900\"},{\"px\":{\"value\":\"0.3700\",\"currency\":\"USD\"},\"qty\":\"92.3000\"},{\"px\":{\"value\":\"0.3800\",\"currency\":\"USD\"},\"qty\":\"276.9700\"},{\"px\":{\"value\":\"0.3850\",\"currency\":\"USD\"},\"qty\":\"18.4400\"},{\"px\":{\"value\":\"0.4000\",\"currency\":\"USD\"},\"qty\":\"74.3700\"},{\"px\":{\"value\":\"0.4200\",\"currency\":\"USD\"},\"qty\":\"19.0000\"},{\"px\":{\"value\":\"0.4625\",\"currency\":\"USD\"},\"qty\":\"10.0000\"},{\"px\":{\"value\":\"0.4700\",\"currency\":\"USD\"},\"qty\":\"36.9300\"},{\"px\":{\"value\":\"0.5000\",\"currency\":\"USD\"},\"qty\":\"3.0000\"},{\"px\":{\"value\":\"0.5100\",\"currency\":\"USD\"},\"qty\":\"18.4400\"},{\"px\":{\"value\":\"0.5200\",\"currency\":\"USD\"},\"qty\":\"3.8000\"},{\"px\":{\"value\":\"0.5300\",\"currency\":\"USD\"},\"qty\":\"55.5500\"},{\"px\":{\"value\":\"0.5400\",\"currency\":\"USD\"},\"qty\":\"125.5300\"},{\"px\":{\"value\":\"0.5450\",\"currency\":\"USD\"},\"qty\":\"3.7200\"},{\"px\":{\"value\":\"0.5500\",\"currency\":\"USD\"},\"qty\":\"2158.0300\"},{\"px\":{\"value\":\"0.5550\",\"currency\":\"USD\"},\"qty\":\"27.2900\"},{\"px\":{\"value\":\"0.5700\",\"currency\":\"USD\"},\"qty\":\"184.6600\"},{\"px\":{\"value\":\"0.5800\",\"currency\":\"USD\"},\"qty\":\"1.8600\"},{\"px\":{\"value\":\"0.5900\",\"currency\":\"USD\"},\"qty\":\"18.4400\"},{\"px\":{\"value\":\"0.6000\",\"currency\":\"USD\"},\"qty\":\"5.0000\"},{\"px\":{\"value\":\"0.6100\",\"currency\":\"USD\"},\"qty\":\"542.3700\"},{\"px\":{\"value\":\"0.6200\",\"currency\":\"USD\"},\"qty\":\"18.4400\"},{\"px\":{\"value\":\"0.6700\",\"currency\":\"USD\"},\"qty\":\"5.0000\"},{\"px\":{\"value\":\"0.6800\",\"currency\":\"USD\"},\"qty\":\"36.8500\"},{\"px\":{\"value\":\"0.6900\",\"currency\":\"USD\"},\"qty\":\"26.3000\"},{\"px\":{\"value\":\"0.7000\",\"currency\":\"USD\"},\"qty\":\"72.5800\"},{\"px\":{\"value\":\"0.7200\",\"currency\":\"USD\"},\"qty\":\"10.1700\"},{\"px\":{\"value\":\"0.7400\",\"currency\":\"USD\"},\"qty\":\"36.9300\"},{\"px\":{\"value\":\"0.7800\",\"currency\":\"USD\"},\"qty\":\"62.7900\"},{\"px\":{\"value\":\"0.7900\",\"currency\":\"USD\"},\"qty\":\"11.1700\"},{\"px\":{\"value\":\"0.8000\",\"currency\":\"USD\"},\"qty\":\"168.8700\"},{\"px\":{\"value\":\"0.8100\",\"currency\":\"USD\"},\"qty\":\"161.6100\"},{\"px\":{\"value\":\"0.8200\",\"currency\":\"USD\"},\"qty\":\"231.6700\"},{\"px\":{\"value\":\"0.8300\",\"currency\":\"USD\"},\"qty\":\"187.5300\"},{\"px\":{\"value\":\"0.8400\",\"currency\":\"USD\"},\"qty\":\"205.9400\"},{\"px\":{\"value\":\"0.8500\",\"currency\":\"USD\"},\"qty\":\"45036.0000\"},{\"px\":{\"value\":\"0.8600\",\"currency\":\"USD\"},\"qty\":\"45266.1000\"},{\"px\":{\"value\":\"0.8700\",\"currency\":\"USD\"},\"qty\":\"694.1700\"},{\"px\":{\"value\":\"0.8800\",\"currency\":\"USD\"},\"qty\":\"750.0000\"},{\"px\":{\"value\":\"0.8900\",\"currency\":\"USD\"},\"qty\":\"836.6200\"},{\"px\":{\"value\":\"0.9000\",\"currency\":\"USD\"},\"qty\":\"3018.4400\"},{\"px\":{\"value\":\"0.9100\",\"currency\":\"USD\"},\"qty\":\"3333.3300\"},{\"px\":{\"value\":\"0.9200\",\"currency\":\"USD\"},\"qty\":\"3768.4400\"},{\"px\":{\"value\":\"0.9250\",\"currency\":\"USD\"},\"qty\":\"9.2400\"},{\"px\":{\"value\":\"0.9300\",\"currency\":\"USD\"},\"qty\":\"4285.7100\"},{\"px\":{\"value\":\"0.9400\",\"currency\":\"USD\"},\"qty\":\"5050.0000\"},{\"px\":{\"value\":\"0.9500\",\"currency\":\"USD\"},\"qty\":\"8000.0000\"},{\"px\":{\"value\":\"0.9600\",\"currency\":\"USD\"},\"qty\":\"9660.6100\"},{\"px\":{\"value\":\"0.9700\",\"currency\":\"USD\"},\"qty\":\"16015.0000\"},{\"px\":{\"value\":\"0.9800\",\"currency\":\"USD\"},\"qty\":\"24210.0000\"},{\"px\":{\"value\":\"0.9900\",\"currency\":\"USD\"},\"qty\":\"42663.3300\"},{\"px\":{\"value\":\"0.9975\",\"currency\":\"USD\"},\"qty\":\"2100016.0000\"}],\"state\":\"MARKET_STATE_OPEN\",\"stats\":{\"openPx\":{\"value\":\"0.4400\",\"currency\":\"USD\"},\"lowPx\":{\"value\":\"0.1600\",\"currency\":\"USD\"},\"highPx\":{\"value\":\"0.4400\",\"currency\":\"USD\"},\"lastTradePx\":{\"value\":\"0.2475\",\"currency\":\"USD\"},\"sharesTraded\":\"305740.0000\",\"notionalTraded\":{\"value\":\"81302.6639\",\"currency\":\"USD\"},\"lastTradeQty\":\"96.0000\",\"openInterest\":\"122627.1100\",\"openSetTime\":\"2026-10-19T03:59:01.136709252Z\",\"highSetTime\":\"2026-10-19T03:59:01.136709252Z\",\"lowSetTime\":\"2026-10-19T11:48:41.010627310Z\",\"lastTradeSetTime\":\"2026-11-01T17:09:44.884636901Z\",\"openInterestSetTime\":\"2026-11-01T17:09:45.066267761Z\",\"notionalSetTime\":\"2026-11-01T17:09:44.884636901Z\",\"currentPx\":{\"value\":\"0.2462\",\"currency\":\"USD\"},\"lastPriceSample\":{\"longPx\":{\"value\":\"0.2475\",\"currency\":\"USD\"},\"shortPx\":{\"value\":\"0.7525\",\"currency\":\"USD\"},\"ts\":\"2026-11-01T17:09:45.066267761Z\"}},\"transactTime\":\"2026-11-01T17:09:45.066267761Z\"}}",
+      "sha256": "216996f955eb6413d3886634de8e06a1e51f97b9b7dbd71dce537b08a089ab0b"
+    },
+    "us-001/000005.json": {
+      "body": "{\"requestId\":\"m5n-market-data\",\"subscriptionType\":\"SUBSCRIPTION_TYPE_MARKET_DATA\",\"marketData\":{\"marketSlug\":\"aec-nfl-ari-dal-2026-11-01\",\"bids\":[{\"px\":{\"value\":\"0.2450\",\"currency\":\"USD\"},\"qty\":\"721933.5700\"},{\"px\":{\"value\":\"0.2425\",\"currency\":\"USD\"},\"qty\":\"546748.0000\"},{\"px\":{\"value\":\"0.2400\",\"currency\":\"USD\"},\"qty\":\"36555.7000\"},{\"px\":{\"value\":\"0.2375\",\"currency\":\"USD\"},\"qty\":\"27968.4700\"},{\"px\":{\"value\":\"0.2350\",\"currency\":\"USD\"},\"qty\":\"13132.9900\"},{\"px\":{\"value\":\"0.2325\",\"currency\":\"USD\"},\"qty\":\"72016.1200\"},{\"px\":{\"value\":\"0.2300\",\"currency\":\"USD\"},\"qty\":\"25996.9300\"},{\"px\":{\"value\":\"0.2275\",\"currency\":\"USD\"},\"qty\":\"7500.0000\"},{\"px\":{\"value\":\"0.2225\",\"currency\":\"USD\"},\"qty\":\"9603.5700\"},{\"px\":{\"value\":\"0.2200\",\"currency\":\"USD\"},\"qty\":\"1575.0900\"},{\"px\":{\"value\":\"0.2175\",\"currency\":\"USD\"},\"qty\":\"7500.0000\"},{\"px\":{\"value\":\"0.2150\",\"currency\":\"USD\"},\"qty\":\"60000.0000\"},{\"px\":{\"value\":\"0.2100\",\"currency\":\"USD\"},\"qty\":\"64145.9000\"},{\"px\":{\"value\":\"0.2075\",\"currency\":\"USD\"},\"qty\":\"500.0000\"},{\"px\":{\"value\":\"0.2050\",\"currency\":\"USD\"},\"qty\":\"6800.0000\"},{\"px\":{\"value\":\"0.2000\",\"currency\":\"USD\"},\"qty\":\"5658.0000\"},{\"px\":{\"value\":\"0.1950\",\"currency\":\"USD\"},\"qty\":\"25.0000\"},{\"px\":{\"value\":\"0.1900\",\"currency\":\"USD\"},\"qty\":\"1100.0000\"},{\"px\":{\"value\":\"0.1800\",\"currency\":\"USD\"},\"qty\":\"600.0000\"},{\"px\":{\"value\":\"0.1650\",\"currency\":\"USD\"},\"qty\":\"1.0000\"},{\"px\":{\"value\":\"0.1600\",\"currency\":\"USD\"},\"qty\":\"500.0000\"},{\"px\":{\"value\":\"0.1200\",\"currency\":\"USD\"},\"qty\":\"5172.3300\"},{\"px\":{\"value\":\"0.1100\",\"currency\":\"USD\"},\"qty\":\"818.1800\"},{\"px\":{\"value\":\"0.1000\",\"currency\":\"USD\"},\"qty\":\"3000.0000\"},{\"px\":{\"value\":\"0.0900\",\"currency\":\"USD\"},\"qty\":\"3334.6400\"},{\"px\":{\"value\":\"0.0800\",\"currency\":\"USD\"},\"qty\":\"3750.0000\"},{\"px\":{\"value\":\"0.0700\",\"currency\":\"USD\"},\"qty\":\"4285.7100\"},{\"px\":{\"value\":\"0.0600\",\"currency\":\"USD\"},\"qty\":\"5050.0000\"},{\"px\":{\"value\":\"0.0500\",\"currency\":\"USD\"},\"qty\":\"8049.1300\"},{\"px\":{\"value\":\"0.0400\",\"currency\":\"USD\"},\"qty\":\"9702.8100\"},{\"px\":{\"value\":\"0.0300\",\"currency\":\"USD\"},\"qty\":\"16047.9600\"},{\"px\":{\"value\":\"0.0200\",\"currency\":\"USD\"},\"qty\":\"24212.3100\"},{\"px\":{\"value\":\"0.0100\",\"currency\":\"USD\"},\"qty\":\"42615.4500\"},{\"px\":{\"value\":\"0.0025\",\"currency\":\"USD\"},\"qty\":\"2100016.0000\"}],\"offers\":[{\"px\":{\"value\":\"0.2475\",\"currency\":\"USD\"},\"qty\":\"733839.9800\"},{\"px\":{\"value\":\"0.2500\",\"currency\":\"USD\"},\"qty\":\"1630796.5000\"},{\"px\":{\"value\":\"0.2525\",\"currency\":\"USD\"},\"qty\":\"47278.5000\"},{\"px\":{\"value\":\"0.2550\",\"currency\":\"USD\"},\"qty\":\"1086.0700\"},{\"px\":{\"value\":\"0.2575\",\"currency\":\"USD\"},\"qty\":\"8898.0000\"},{\"px\":{\"value\":\"0.2600\",\"currency\":\"USD\"},\"qty\":\"116101.2900\"},{\"px\":{\"value\":\"0.2625\",\"currency\":\"USD\"},\"qty\":\"8973.0000\"},{\"px\":{\"value\":\"0.2650\",\"currency\":\"USD\"},\"qty\":\"22086.7600\"},{\"px\":{\"value\":\"0.2700\",\"currency\":\"USD\"},\"qty\":\"8236.0000\"},{\"px\":{\"value\":\"0.2725\",\"currency\":\"USD\"},\"qty\":\"20618.5500\"},{\"px\":{\"value\":\"0.2750\",\"currency\":\"USD\"},\"qty\":\"10.0000\"},{\"px\":{\"value\":\"0.2800\",\"currency\":\"USD\"},\"qty\":\"7419.1600\"},{\"px\":{\"value\":\"0.2850\",\"currency\":\"USD\"},\"qty\":\"1272.9000\"},{\"px\":{\"value\":\"0.2900\",\"currency\":\"USD\"},\"qty\":\"250.0000\"},{\"px\":{\"value\":\"0.2975\",\"currency\":\"USD\"},\"qty\":\"118.9200\"},{\"px\":{\"value\":\"0.3000\",\"currency\":\"USD\"},\"qty\":\"100.0000\"},{\"px\":{\"value\":\"0.3050\",\"currency\":\"USD\"},\"qty\":\"14.0000\"},{\"px\":{\"value\":\"0.3100\",\"currency\":\"USD\"},\"qty\":\"500.0000\"},{\"px\":{\"value\":\"0.3200\",\"currency\":\"USD\"},\"qty\":\"848.2000\"},{\"px\":{\"value\":\"0.3300\",\"currency\":\"USD\"},\"qty\":\"1.0000\"},{\"px\":{\"value\":\"0.3400\",\"currency\":\"USD\"},\"qty\":\"591.4900\"},{\"px\":{\"value\":\"0.3500\",\"currency\":\"USD\"},\"qty\":\"2.4100\"},{\"px\":{\"value\":\"0.3575\",\"currency\":\"USD\"},\"qty\":\"4375.0000\"},{\"px\":{\"value\":\"0.3600\",\"currency\":\"USD\"},\"qty\":\"191.9900\"},{\"px\":{\"value\":\"0.3700\",\"currency\":\"USD\"},\"qty\":\"92.3000\"},{\"px\":{\"value\":\"0.3800\",\"currency\":\"USD\"},\"qty\":\"276.9700\"},{\"px\":{\"value\":\"0.3850\",\"currency\":\"USD\"},\"qty\":\"18.4400\"},{\"px\":{\"value\":\"0.4000\",\"currency\":\"USD\"},\"qty\":\"74.3700\"},{\"px\":{\"value\":\"0.4200\",\"currency\":\"USD\"},\"qty\":\"19.0000\"},{\"px\":{\"value\":\"0.4625\",\"currency\":\"USD\"},\"qty\":\"10.0000\"},{\"px\":{\"value\":\"0.4700\",\"currency\":\"USD\"},\"qty\":\"36.9300\"},{\"px\":{\"value\":\"0.5000\",\"currency\":\"USD\"},\"qty\":\"3.0000\"},{\"px\":{\"value\":\"0.5100\",\"currency\":\"USD\"},\"qty\":\"18.4400\"},{\"px\":{\"value\":\"0.5200\",\"currency\":\"USD\"},\"qty\":\"3.8000\"},{\"px\":{\"value\":\"0.5300\",\"currency\":\"USD\"},\"qty\":\"55.5500\"},{\"px\":{\"value\":\"0.5400\",\"currency\":\"USD\"},\"qty\":\"125.5300\"},{\"px\":{\"value\":\"0.5450\",\"currency\":\"USD\"},\"qty\":\"3.7200\"},{\"px\":{\"value\":\"0.5500\",\"currency\":\"USD\"},\"qty\":\"2158.0300\"},{\"px\":{\"value\":\"0.5550\",\"currency\":\"USD\"},\"qty\":\"27.2900\"},{\"px\":{\"value\":\"0.5700\",\"currency\":\"USD\"},\"qty\":\"184.6600\"},{\"px\":{\"value\":\"0.5800\",\"currency\":\"USD\"},\"qty\":\"1.8600\"},{\"px\":{\"value\":\"0.5900\",\"currency\":\"USD\"},\"qty\":\"18.4400\"},{\"px\":{\"value\":\"0.6000\",\"currency\":\"USD\"},\"qty\":\"5.0000\"},{\"px\":{\"value\":\"0.6100\",\"currency\":\"USD\"},\"qty\":\"542.3700\"},{\"px\":{\"value\":\"0.6200\",\"currency\":\"USD\"},\"qty\":\"18.4400\"},{\"px\":{\"value\":\"0.6700\",\"currency\":\"USD\"},\"qty\":\"5.0000\"},{\"px\":{\"value\":\"0.6800\",\"currency\":\"USD\"},\"qty\":\"36.8500\"},{\"px\":{\"value\":\"0.6900\",\"currency\":\"USD\"},\"qty\":\"26.3000\"},{\"px\":{\"value\":\"0.7000\",\"currency\":\"USD\"},\"qty\":\"72.5800\"},{\"px\":{\"value\":\"0.7200\",\"currency\":\"USD\"},\"qty\":\"10.1700\"},{\"px\":{\"value\":\"0.7400\",\"currency\":\"USD\"},\"qty\":\"36.9300\"},{\"px\":{\"value\":\"0.7800\",\"currency\":\"USD\"},\"qty\":\"62.7900\"},{\"px\":{\"value\":\"0.7900\",\"currency\":\"USD\"},\"qty\":\"11.1700\"},{\"px\":{\"value\":\"0.8000\",\"currency\":\"USD\"},\"qty\":\"168.8700\"},{\"px\":{\"value\":\"0.8100\",\"currency\":\"USD\"},\"qty\":\"161.6100\"},{\"px\":{\"value\":\"0.8200\",\"currency\":\"USD\"},\"qty\":\"231.6700\"},{\"px\":{\"value\":\"0.8300\",\"currency\":\"USD\"},\"qty\":\"187.5300\"},{\"px\":{\"value\":\"0.8400\",\"currency\":\"USD\"},\"qty\":\"205.9400\"},{\"px\":{\"value\":\"0.8500\",\"currency\":\"USD\"},\"qty\":\"45036.0000\"},{\"px\":{\"value\":\"0.8600\",\"currency\":\"USD\"},\"qty\":\"45266.1000\"},{\"px\":{\"value\":\"0.8700\",\"currency\":\"USD\"},\"qty\":\"694.1700\"},{\"px\":{\"value\":\"0.8800\",\"currency\":\"USD\"},\"qty\":\"750.0000\"},{\"px\":{\"value\":\"0.8900\",\"currency\":\"USD\"},\"qty\":\"836.6200\"},{\"px\":{\"value\":\"0.9000\",\"currency\":\"USD\"},\"qty\":\"3018.4400\"},{\"px\":{\"value\":\"0.9100\",\"currency\":\"USD\"},\"qty\":\"3333.3300\"},{\"px\":{\"value\":\"0.9200\",\"currency\":\"USD\"},\"qty\":\"3768.4400\"},{\"px\":{\"value\":\"0.9250\",\"currency\":\"USD\"},\"qty\":\"9.2400\"},{\"px\":{\"value\":\"0.9300\",\"currency\":\"USD\"},\"qty\":\"4285.7100\"},{\"px\":{\"value\":\"0.9400\",\"currency\":\"USD\"},\"qty\":\"5050.0000\"},{\"px\":{\"value\":\"0.9500\",\"currency\":\"USD\"},\"qty\":\"8000.0000\"},{\"px\":{\"value\":\"0.9600\",\"currency\":\"USD\"},\"qty\":\"9660.6100\"},{\"px\":{\"value\":\"0.9700\",\"currency\":\"USD\"},\"qty\":\"16015.0000\"},{\"px\":{\"value\":\"0.9800\",\"currency\":\"USD\"},\"qty\":\"24210.0000\"},{\"px\":{\"value\":\"0.9900\",\"currency\":\"USD\"},\"qty\":\"42663.3300\"},{\"px\":{\"value\":\"0.9975\",\"currency\":\"USD\"},\"qty\":\"2100016.0000\"}],\"state\":\"MARKET_STATE_OPEN\",\"stats\":{\"openPx\":{\"value\":\"0.4400\",\"currency\":\"USD\"},\"lowPx\":{\"value\":\"0.1600\",\"currency\":\"USD\"},\"highPx\":{\"value\":\"0.4400\",\"currency\":\"USD\"},\"lastTradePx\":{\"value\":\"0.2475\",\"currency\":\"USD\"},\"sharesTraded\":\"305740.0000\",\"notionalTraded\":{\"value\":\"81302.6639\",\"currency\":\"USD\"},\"lastTradeQty\":\"96.0000\",\"openInterest\":\"122627.1100\",\"openSetTime\":\"2026-10-19T03:59:01.136709252Z\",\"highSetTime\":\"2026-10-19T03:59:01.136709252Z\",\"lowSetTime\":\"2026-10-19T11:48:41.010627310Z\",\"lastTradeSetTime\":\"2026-11-01T17:09:44.884636901Z\",\"openInterestSetTime\":\"2026-11-01T17:09:45.066267761Z\",\"notionalSetTime\":\"2026-11-01T17:09:44.884636901Z\",\"currentPx\":{\"value\":\"0.2462\",\"currency\":\"USD\"},\"lastPriceSample\":{\"longPx\":{\"value\":\"0.2475\",\"currency\":\"USD\"},\"shortPx\":{\"value\":\"0.7525\",\"currency\":\"USD\"},\"ts\":\"2026-11-01T17:09:48.651148577Z\"}},\"transactTime\":\"2026-11-01T17:09:48.651148577Z\"}}",
+      "sha256": "f33fbee096e72fa757f9c0f399e1c9adce7f4645dfcf6fc4737ecd885856e347"
+    },
+    "us-001/000006.json": {
+      "body": "{\"requestId\":\"m5n-market-data\",\"subscriptionType\":\"SUBSCRIPTION_TYPE_MARKET_DATA\",\"marketData\":{\"marketSlug\":\"aec-nfl-ari-dal-2026-11-01\",\"bids\":[{\"px\":{\"value\":\"0.2450\",\"currency\":\"USD\"},\"qty\":\"721933.5700\"},{\"px\":{\"value\":\"0.2425\",\"currency\":\"USD\"},\"qty\":\"546748.0000\"},{\"px\":{\"value\":\"0.2400\",\"currency\":\"USD\"},\"qty\":\"36555.7000\"},{\"px\":{\"value\":\"0.2375\",\"currency\":\"USD\"},\"qty\":\"27968.4700\"},{\"px\":{\"value\":\"0.2350\",\"currency\":\"USD\"},\"qty\":\"13132.9900\"},{\"px\":{\"value\":\"0.2325\",\"currency\":\"USD\"},\"qty\":\"72016.1200\"},{\"px\":{\"value\":\"0.2300\",\"currency\":\"USD\"},\"qty\":\"25996.9300\"},{\"px\":{\"value\":\"0.2275\",\"currency\":\"USD\"},\"qty\":\"7500.0000\"},{\"px\":{\"value\":\"0.2225\",\"currency\":\"USD\"},\"qty\":\"9603.5700\"},{\"px\":{\"value\":\"0.2200\",\"currency\":\"USD\"},\"qty\":\"1575.0900\"},{\"px\":{\"value\":\"0.2175\",\"currency\":\"USD\"},\"qty\":\"7500.0000\"},{\"px\":{\"value\":\"0.2150\",\"currency\":\"USD\"},\"qty\":\"60000.0000\"},{\"px\":{\"value\":\"0.2100\",\"currency\":\"USD\"},\"qty\":\"64145.9000\"},{\"px\":{\"value\":\"0.2075\",\"currency\":\"USD\"},\"qty\":\"500.0000\"},{\"px\":{\"value\":\"0.2050\",\"currency\":\"USD\"},\"qty\":\"6800.0000\"},{\"px\":{\"value\":\"0.2000\",\"currency\":\"USD\"},\"qty\":\"5658.0000\"},{\"px\":{\"value\":\"0.1950\",\"currency\":\"USD\"},\"qty\":\"25.0000\"},{\"px\":{\"value\":\"0.1900\",\"currency\":\"USD\"},\"qty\":\"1100.0000\"},{\"px\":{\"value\":\"0.1800\",\"currency\":\"USD\"},\"qty\":\"600.0000\"},{\"px\":{\"value\":\"0.1650\",\"currency\":\"USD\"},\"qty\":\"1.0000\"},{\"px\":{\"value\":\"0.1600\",\"currency\":\"USD\"},\"qty\":\"500.0000\"},{\"px\":{\"value\":\"0.1200\",\"currency\":\"USD\"},\"qty\":\"5172.3300\"},{\"px\":{\"value\":\"0.1100\",\"currency\":\"USD\"},\"qty\":\"818.1800\"},{\"px\":{\"value\":\"0.1000\",\"currency\":\"USD\"},\"qty\":\"3000.0000\"},{\"px\":{\"value\":\"0.0900\",\"currency\":\"USD\"},\"qty\":\"3334.6400\"},{\"px\":{\"value\":\"0.0800\",\"currency\":\"USD\"},\"qty\":\"3750.0000\"},{\"px\":{\"value\":\"0.0700\",\"currency\":\"USD\"},\"qty\":\"4285.7100\"},{\"px\":{\"value\":\"0.0600\",\"currency\":\"USD\"},\"qty\":\"5050.0000\"},{\"px\":{\"value\":\"0.0500\",\"currency\":\"USD\"},\"qty\":\"8049.1300\"},{\"px\":{\"value\":\"0.0400\",\"currency\":\"USD\"},\"qty\":\"9702.8100\"},{\"px\":{\"value\":\"0.0300\",\"currency\":\"USD\"},\"qty\":\"16047.9600\"},{\"px\":{\"value\":\"0.0200\",\"currency\":\"USD\"},\"qty\":\"24212.3100\"},{\"px\":{\"value\":\"0.0100\",\"currency\":\"USD\"},\"qty\":\"42615.4500\"},{\"px\":{\"value\":\"0.0025\",\"currency\":\"USD\"},\"qty\":\"2100016.0000\"}],\"offers\":[{\"px\":{\"value\":\"0.2475\",\"currency\":\"USD\"},\"qty\":\"733781.5600\"},{\"px\":{\"value\":\"0.2500\",\"currency\":\"USD\"},\"qty\":\"1630796.5000\"},{\"px\":{\"value\":\"0.2525\",\"currency\":\"USD\"},\"qty\":\"47278.5000\"},{\"px\":{\"value\":\"0.2550\",\"currency\":\"USD\"},\"qty\":\"1086.0700\"},{\"px\":{\"value\":\"0.2575\",\"currency\":\"USD\"},\"qty\":\"8898.0000\"},{\"px\":{\"value\":\"0.2600\",\"currency\":\"USD\"},\"qty\":\"116101.2900\"},{\"px\":{\"value\":\"0.2625\",\"currency\":\"USD\"},\"qty\":\"8973.0000\"},{\"px\":{\"value\":\"0.2650\",\"currency\":\"USD\"},\"qty\":\"22086.7600\"},{\"px\":{\"value\":\"0.2700\",\"currency\":\"USD\"},\"qty\":\"8236.0000\"},{\"px\":{\"value\":\"0.2725\",\"currency\":\"USD\"},\"qty\":\"20618.5500\"},{\"px\":{\"value\":\"0.2750\",\"currency\":\"USD\"},\"qty\":\"10.0000\"},{\"px\":{\"value\":\"0.2800\",\"currency\":\"USD\"},\"qty\":\"7419.1600\"},{\"px\":{\"value\":\"0.2850\",\"currency\":\"USD\"},\"qty\":\"1272.9000\"},{\"px\":{\"value\":\"0.2900\",\"currency\":\"USD\"},\"qty\":\"250.0000\"},{\"px\":{\"value\":\"0.2975\",\"currency\":\"USD\"},\"qty\":\"118.9200\"},{\"px\":{\"value\":\"0.3000\",\"currency\":\"USD\"},\"qty\":\"100.0000\"},{\"px\":{\"value\":\"0.3050\",\"currency\":\"USD\"},\"qty\":\"14.0000\"},{\"px\":{\"value\":\"0.3100\",\"currency\":\"USD\"},\"qty\":\"500.0000\"},{\"px\":{\"value\":\"0.3200\",\"currency\":\"USD\"},\"qty\":\"848.2000\"},{\"px\":{\"value\":\"0.3300\",\"currency\":\"USD\"},\"qty\":\"1.0000\"},{\"px\":{\"value\":\"0.3400\",\"currency\":\"USD\"},\"qty\":\"591.4900\"},{\"px\":{\"value\":\"0.3500\",\"currency\":\"USD\"},\"qty\":\"2.4100\"},{\"px\":{\"value\":\"0.3575\",\"currency\":\"USD\"},\"qty\":\"4375.0000\"},{\"px\":{\"value\":\"0.3600\",\"currency\":\"USD\"},\"qty\":\"191.9900\"},{\"px\":{\"value\":\"0.3700\",\"currency\":\"USD\"},\"qty\":\"92.3000\"},{\"px\":{\"value\":\"0.3800\",\"currency\":\"USD\"},\"qty\":\"276.9700\"},{\"px\":{\"value\":\"0.3850\",\"currency\":\"USD\"},\"qty\":\"18.4400\"},{\"px\":{\"value\":\"0.4000\",\"currency\":\"USD\"},\"qty\":\"74.3700\"},{\"px\":{\"value\":\"0.4200\",\"currency\":\"USD\"},\"qty\":\"19.0000\"},{\"px\":{\"value\":\"0.4625\",\"currency\":\"USD\"},\"qty\":\"10.0000\"},{\"px\":{\"value\":\"0.4700\",\"currency\":\"USD\"},\"qty\":\"36.9300\"},{\"px\":{\"value\":\"0.5000\",\"currency\":\"USD\"},\"qty\":\"3.0000\"},{\"px\":{\"value\":\"0.5100\",\"currency\":\"USD\"},\"qty\":\"18.4400\"},{\"px\":{\"value\":\"0.5200\",\"currency\":\"USD\"},\"qty\":\"3.8000\"},{\"px\":{\"value\":\"0.5300\",\"currency\":\"USD\"},\"qty\":\"55.5500\"},{\"px\":{\"value\":\"0.5400\",\"currency\":\"USD\"},\"qty\":\"125.5300\"},{\"px\":{\"value\":\"0.5450\",\"currency\":\"USD\"},\"qty\":\"3.7200\"},{\"px\":{\"value\":\"0.5500\",\"currency\":\"USD\"},\"qty\":\"2158.0300\"},{\"px\":{\"value\":\"0.5550\",\"currency\":\"USD\"},\"qty\":\"27.2900\"},{\"px\":{\"value\":\"0.5700\",\"currency\":\"USD\"},\"qty\":\"184.6600\"},{\"px\":{\"value\":\"0.5800\",\"currency\":\"USD\"},\"qty\":\"1.8600\"},{\"px\":{\"value\":\"0.5900\",\"currency\":\"USD\"},\"qty\":\"18.4400\"},{\"px\":{\"value\":\"0.6000\",\"currency\":\"USD\"},\"qty\":\"5.0000\"},{\"px\":{\"value\":\"0.6100\",\"currency\":\"USD\"},\"qty\":\"542.3700\"},{\"px\":{\"value\":\"0.6200\",\"currency\":\"USD\"},\"qty\":\"18.4400\"},{\"px\":{\"value\":\"0.6700\",\"currency\":\"USD\"},\"qty\":\"5.0000\"},{\"px\":{\"value\":\"0.6800\",\"currency\":\"USD\"},\"qty\":\"36.8500\"},{\"px\":{\"value\":\"0.6900\",\"currency\":\"USD\"},\"qty\":\"26.3000\"},{\"px\":{\"value\":\"0.7000\",\"currency\":\"USD\"},\"qty\":\"72.5800\"},{\"px\":{\"value\":\"0.7200\",\"currency\":\"USD\"},\"qty\":\"10.1700\"},{\"px\":{\"value\":\"0.7400\",\"currency\":\"USD\"},\"qty\":\"36.9300\"},{\"px\":{\"value\":\"0.7800\",\"currency\":\"USD\"},\"qty\":\"62.7900\"},{\"px\":{\"value\":\"0.7900\",\"currency\":\"USD\"},\"qty\":\"11.1700\"},{\"px\":{\"value\":\"0.8000\",\"currency\":\"USD\"},\"qty\":\"168.8700\"},{\"px\":{\"value\":\"0.8100\",\"currency\":\"USD\"},\"qty\":\"161.6100\"},{\"px\":{\"value\":\"0.8200\",\"currency\":\"USD\"},\"qty\":\"231.6700\"},{\"px\":{\"value\":\"0.8300\",\"currency\":\"USD\"},\"qty\":\"187.5300\"},{\"px\":{\"value\":\"0.8400\",\"currency\":\"USD\"},\"qty\":\"205.9400\"},{\"px\":{\"value\":\"0.8500\",\"currency\":\"USD\"},\"qty\":\"45036.0000\"},{\"px\":{\"value\":\"0.8600\",\"currency\":\"USD\"},\"qty\":\"45266.1000\"},{\"px\":{\"value\":\"0.8700\",\"currency\":\"USD\"},\"qty\":\"694.1700\"},{\"px\":{\"value\":\"0.8800\",\"currency\":\"USD\"},\"qty\":\"750.0000\"},{\"px\":{\"value\":\"0.8900\",\"currency\":\"USD\"},\"qty\":\"836.6200\"},{\"px\":{\"value\":\"0.9000\",\"currency\":\"USD\"},\"qty\":\"3018.4400\"},{\"px\":{\"value\":\"0.9100\",\"currency\":\"USD\"},\"qty\":\"3333.3300\"},{\"px\":{\"value\":\"0.9200\",\"currency\":\"USD\"},\"qty\":\"3768.4400\"},{\"px\":{\"value\":\"0.9250\",\"currency\":\"USD\"},\"qty\":\"9.2400\"},{\"px\":{\"value\":\"0.9300\",\"currency\":\"USD\"},\"qty\":\"4285.7100\"},{\"px\":{\"value\":\"0.9400\",\"currency\":\"USD\"},\"qty\":\"5050.0000\"},{\"px\":{\"value\":\"0.9500\",\"currency\":\"USD\"},\"qty\":\"8000.0000\"},{\"px\":{\"value\":\"0.9600\",\"currency\":\"USD\"},\"qty\":\"9660.6100\"},{\"px\":{\"value\":\"0.9700\",\"currency\":\"USD\"},\"qty\":\"16015.0000\"},{\"px\":{\"value\":\"0.9800\",\"currency\":\"USD\"},\"qty\":\"24210.0000\"},{\"px\":{\"value\":\"0.9900\",\"currency\":\"USD\"},\"qty\":\"42663.3300\"},{\"px\":{\"value\":\"0.9975\",\"currency\":\"USD\"},\"qty\":\"2100016.0000\"}],\"state\":\"MARKET_STATE_OPEN\",\"stats\":{\"openPx\":{\"value\":\"0.4400\",\"currency\":\"USD\"},\"lowPx\":{\"value\":\"0.1600\",\"currency\":\"USD\"},\"highPx\":{\"value\":\"0.4400\",\"currency\":\"USD\"},\"lastTradePx\":{\"value\":\"0.2475\",\"currency\":\"USD\"},\"sharesTraded\":\"305798.4200\",\"notionalTraded\":{\"value\":\"81317.1228\",\"currency\":\"USD\"},\"lastTradeQty\":\"58.4200\",\"openInterest\":\"122627.1100\",\"openSetTime\":\"2026-10-19T03:59:01.136709252Z\",\"highSetTime\":\"2026-10-19T03:59:01.136709252Z\",\"lowSetTime\":\"2026-10-19T11:48:41.010627310Z\",\"lastTradeSetTime\":\"2026-11-01T17:09:50.364558308Z\",\"openInterestSetTime\":\"2026-11-01T17:09:45.066267761Z\",\"notionalSetTime\":\"2026-11-01T17:09:50.364558308Z\",\"currentPx\":{\"value\":\"0.2462\",\"currency\":\"USD\"},\"lastPriceSample\":{\"longPx\":{\"value\":\"0.2475\",\"currency\":\"USD\"},\"shortPx\":{\"value\":\"0.7525\",\"currency\":\"USD\"},\"ts\":\"2026-11-01T17:09:50.364558308Z\"}},\"transactTime\":\"2026-11-01T17:09:50.364558308Z\"}}",
+      "sha256": "1a1a7449f0ba7c256f74290015429422ea1d51c178061bbc23b568babe92789f"
+    },
+    "us-001/000007.json": {
+      "body": "{\"requestId\":\"m5n-market-data\",\"subscriptionType\":\"SUBSCRIPTION_TYPE_MARKET_DATA\",\"marketData\":{\"marketSlug\":\"aec-nfl-ari-dal-2026-11-01\",\"bids\":[{\"px\":{\"value\":\"0.2450\",\"currency\":\"USD\"},\"qty\":\"721933.5700\"},{\"px\":{\"value\":\"0.2425\",\"currency\":\"USD\"},\"qty\":\"546748.0000\"},{\"px\":{\"value\":\"0.2400\",\"currency\":\"USD\"},\"qty\":\"36555.7000\"},{\"px\":{\"value\":\"0.2375\",\"currency\":\"USD\"},\"qty\":\"27968.4700\"},{\"px\":{\"value\":\"0.2350\",\"currency\":\"USD\"},\"qty\":\"13132.9900\"},{\"px\":{\"value\":\"0.2325\",\"currency\":\"USD\"},\"qty\":\"72016.1200\"},{\"px\":{\"value\":\"0.2300\",\"currency\":\"USD\"},\"qty\":\"25996.9300\"},{\"px\":{\"value\":\"0.2275\",\"currency\":\"USD\"},\"qty\":\"7500.0000\"},{\"px\":{\"value\":\"0.2225\",\"currency\":\"USD\"},\"qty\":\"9603.5700\"},{\"px\":{\"value\":\"0.2200\",\"currency\":\"USD\"},\"qty\":\"1575.0900\"},{\"px\":{\"value\":\"0.2175\",\"currency\":\"USD\"},\"qty\":\"7500.0000\"},{\"px\":{\"value\":\"0.2150\",\"currency\":\"USD\"},\"qty\":\"60000.0000\"},{\"px\":{\"value\":\"0.2100\",\"currency\":\"USD\"},\"qty\":\"64145.9000\"},{\"px\":{\"value\":\"0.2075\",\"currency\":\"USD\"},\"qty\":\"500.0000\"},{\"px\":{\"value\":\"0.2050\",\"currency\":\"USD\"},\"qty\":\"6800.0000\"},{\"px\":{\"value\":\"0.2000\",\"currency\":\"USD\"},\"qty\":\"5658.0000\"},{\"px\":{\"value\":\"0.1950\",\"currency\":\"USD\"},\"qty\":\"25.0000\"},{\"px\":{\"value\":\"0.1900\",\"currency\":\"USD\"},\"qty\":\"1100.0000\"},{\"px\":{\"value\":\"0.1800\",\"currency\":\"USD\"},\"qty\":\"600.0000\"},{\"px\":{\"value\":\"0.1650\",\"currency\":\"USD\"},\"qty\":\"1.0000\"},{\"px\":{\"value\":\"0.1600\",\"currency\":\"USD\"},\"qty\":\"500.0000\"},{\"px\":{\"value\":\"0.1200\",\"currency\":\"USD\"},\"qty\":\"5172.3300\"},{\"px\":{\"value\":\"0.1100\",\"currency\":\"USD\"},\"qty\":\"818.1800\"},{\"px\":{\"value\":\"0.1000\",\"currency\":\"USD\"},\"qty\":\"3000.0000\"},{\"px\":{\"value\":\"0.0900\",\"currency\":\"USD\"},\"qty\":\"3334.6400\"},{\"px\":{\"value\":\"0.0800\",\"currency\":\"USD\"},\"qty\":\"3750.0000\"},{\"px\":{\"value\":\"0.0700\",\"currency\":\"USD\"},\"qty\":\"4285.7100\"},{\"px\":{\"value\":\"0.0600\",\"currency\":\"USD\"},\"qty\":\"5050.0000\"},{\"px\":{\"value\":\"0.0500\",\"currency\":\"USD\"},\"qty\":\"8049.1300\"},{\"px\":{\"value\":\"0.0400\",\"currency\":\"USD\"},\"qty\":\"9702.8100\"},{\"px\":{\"value\":\"0.0300\",\"currency\":\"USD\"},\"qty\":\"16047.9600\"},{\"px\":{\"value\":\"0.0200\",\"currency\":\"USD\"},\"qty\":\"24212.3100\"},{\"px\":{\"value\":\"0.0100\",\"currency\":\"USD\"},\"qty\":\"42615.4500\"},{\"px\":{\"value\":\"0.0025\",\"currency\":\"USD\"},\"qty\":\"2100016.0000\"}],\"offers\":[{\"px\":{\"value\":\"0.2475\",\"currency\":\"USD\"},\"qty\":\"733781.5600\"},{\"px\":{\"value\":\"0.2500\",\"currency\":\"USD\"},\"qty\":\"1630796.5000\"},{\"px\":{\"value\":\"0.2525\",\"currency\":\"USD\"},\"qty\":\"47278.5000\"},{\"px\":{\"value\":\"0.2550\",\"currency\":\"USD\"},\"qty\":\"1086.0700\"},{\"px\":{\"value\":\"0.2575\",\"currency\":\"USD\"},\"qty\":\"8898.0000\"},{\"px\":{\"value\":\"0.2600\",\"currency\":\"USD\"},\"qty\":\"116101.2900\"},{\"px\":{\"value\":\"0.2625\",\"currency\":\"USD\"},\"qty\":\"8973.0000\"},{\"px\":{\"value\":\"0.2650\",\"currency\":\"USD\"},\"qty\":\"22086.7600\"},{\"px\":{\"value\":\"0.2700\",\"currency\":\"USD\"},\"qty\":\"8236.0000\"},{\"px\":{\"value\":\"0.2725\",\"currency\":\"USD\"},\"qty\":\"20618.5500\"},{\"px\":{\"value\":\"0.2750\",\"currency\":\"USD\"},\"qty\":\"10.0000\"},{\"px\":{\"value\":\"0.2800\",\"currency\":\"USD\"},\"qty\":\"7419.1600\"},{\"px\":{\"value\":\"0.2850\",\"currency\":\"USD\"},\"qty\":\"1272.9000\"},{\"px\":{\"value\":\"0.2900\",\"currency\":\"USD\"},\"qty\":\"250.0000\"},{\"px\":{\"value\":\"0.2975\",\"currency\":\"USD\"},\"qty\":\"118.9200\"},{\"px\":{\"value\":\"0.3000\",\"currency\":\"USD\"},\"qty\":\"100.0000\"},{\"px\":{\"value\":\"0.3050\",\"currency\":\"USD\"},\"qty\":\"14.0000\"},{\"px\":{\"value\":\"0.3100\",\"currency\":\"USD\"},\"qty\":\"500.0000\"},{\"px\":{\"value\":\"0.3200\",\"currency\":\"USD\"},\"qty\":\"848.2000\"},{\"px\":{\"value\":\"0.3300\",\"currency\":\"USD\"},\"qty\":\"1.0000\"},{\"px\":{\"value\":\"0.3400\",\"currency\":\"USD\"},\"qty\":\"591.4900\"},{\"px\":{\"value\":\"0.3500\",\"currency\":\"USD\"},\"qty\":\"2.4100\"},{\"px\":{\"value\":\"0.3575\",\"currency\":\"USD\"},\"qty\":\"4375.0000\"},{\"px\":{\"value\":\"0.3600\",\"currency\":\"USD\"},\"qty\":\"191.9900\"},{\"px\":{\"value\":\"0.3700\",\"currency\":\"USD\"},\"qty\":\"92.3000\"},{\"px\":{\"value\":\"0.3800\",\"currency\":\"USD\"},\"qty\":\"276.9700\"},{\"px\":{\"value\":\"0.3850\",\"currency\":\"USD\"},\"qty\":\"18.4400\"},{\"px\":{\"value\":\"0.4000\",\"currency\":\"USD\"},\"qty\":\"74.3700\"},{\"px\":{\"value\":\"0.4200\",\"currency\":\"USD\"},\"qty\":\"19.0000\"},{\"px\":{\"value\":\"0.4625\",\"currency\":\"USD\"},\"qty\":\"10.0000\"},{\"px\":{\"value\":\"0.4700\",\"currency\":\"USD\"},\"qty\":\"36.9300\"},{\"px\":{\"value\":\"0.5000\",\"currency\":\"USD\"},\"qty\":\"3.0000\"},{\"px\":{\"value\":\"0.5100\",\"currency\":\"USD\"},\"qty\":\"18.4400\"},{\"px\":{\"value\":\"0.5200\",\"currency\":\"USD\"},\"qty\":\"3.8000\"},{\"px\":{\"value\":\"0.5300\",\"currency\":\"USD\"},\"qty\":\"55.5500\"},{\"px\":{\"value\":\"0.5400\",\"currency\":\"USD\"},\"qty\":\"125.5300\"},{\"px\":{\"value\":\"0.5450\",\"currency\":\"USD\"},\"qty\":\"3.7200\"},{\"px\":{\"value\":\"0.5500\",\"currency\":\"USD\"},\"qty\":\"2158.0300\"},{\"px\":{\"value\":\"0.5550\",\"currency\":\"USD\"},\"qty\":\"27.2900\"},{\"px\":{\"value\":\"0.5700\",\"currency\":\"USD\"},\"qty\":\"184.6600\"},{\"px\":{\"value\":\"0.5800\",\"currency\":\"USD\"},\"qty\":\"1.8600\"},{\"px\":{\"value\":\"0.5900\",\"currency\":\"USD\"},\"qty\":\"18.4400\"},{\"px\":{\"value\":\"0.6000\",\"currency\":\"USD\"},\"qty\":\"5.0000\"},{\"px\":{\"value\":\"0.6100\",\"currency\":\"USD\"},\"qty\":\"542.3700\"},{\"px\":{\"value\":\"0.6200\",\"currency\":\"USD\"},\"qty\":\"18.4400\"},{\"px\":{\"value\":\"0.6700\",\"currency\":\"USD\"},\"qty\":\"5.0000\"},{\"px\":{\"value\":\"0.6800\",\"currency\":\"USD\"},\"qty\":\"36.8500\"},{\"px\":{\"value\":\"0.6900\",\"currency\":\"USD\"},\"qty\":\"26.3000\"},{\"px\":{\"value\":\"0.7000\",\"currency\":\"USD\"},\"qty\":\"72.5800\"},{\"px\":{\"value\":\"0.7200\",\"currency\":\"USD\"},\"qty\":\"10.1700\"},{\"px\":{\"value\":\"0.7400\",\"currency\":\"USD\"},\"qty\":\"36.9300\"},{\"px\":{\"value\":\"0.7800\",\"currency\":\"USD\"},\"qty\":\"62.7900\"},{\"px\":{\"value\":\"0.7900\",\"currency\":\"USD\"},\"qty\":\"11.1700\"},{\"px\":{\"value\":\"0.8000\",\"currency\":\"USD\"},\"qty\":\"168.8700\"},{\"px\":{\"value\":\"0.8100\",\"currency\":\"USD\"},\"qty\":\"161.6100\"},{\"px\":{\"value\":\"0.8200\",\"currency\":\"USD\"},\"qty\":\"231.6700\"},{\"px\":{\"value\":\"0.8300\",\"currency\":\"USD\"},\"qty\":\"187.5300\"},{\"px\":{\"value\":\"0.8400\",\"currency\":\"USD\"},\"qty\":\"205.9400\"},{\"px\":{\"value\":\"0.8500\",\"currency\":\"USD\"},\"qty\":\"45036.0000\"},{\"px\":{\"value\":\"0.8600\",\"currency\":\"USD\"},\"qty\":\"45266.1000\"},{\"px\":{\"value\":\"0.8700\",\"currency\":\"USD\"},\"qty\":\"694.1700\"},{\"px\":{\"value\":\"0.8800\",\"currency\":\"USD\"},\"qty\":\"750.0000\"},{\"px\":{\"value\":\"0.8900\",\"currency\":\"USD\"},\"qty\":\"836.6200\"},{\"px\":{\"value\":\"0.9000\",\"currency\":\"USD\"},\"qty\":\"3018.4400\"},{\"px\":{\"value\":\"0.9100\",\"currency\":\"USD\"},\"qty\":\"3333.3300\"},{\"px\":{\"value\":\"0.9200\",\"currency\":\"USD\"},\"qty\":\"3768.4400\"},{\"px\":{\"value\":\"0.9250\",\"currency\":\"USD\"},\"qty\":\"9.2400\"},{\"px\":{\"value\":\"0.9300\",\"currency\":\"USD\"},\"qty\":\"4285.7100\"},{\"px\":{\"value\":\"0.9400\",\"currency\":\"USD\"},\"qty\":\"5050.0000\"},{\"px\":{\"value\":\"0.9500\",\"currency\":\"USD\"},\"qty\":\"8000.0000\"},{\"px\":{\"value\":\"0.9600\",\"currency\":\"USD\"},\"qty\":\"9660.6100\"},{\"px\":{\"value\":\"0.9700\",\"currency\":\"USD\"},\"qty\":\"16015.0000\"},{\"px\":{\"value\":\"0.9800\",\"currency\":\"USD\"},\"qty\":\"24210.0000\"},{\"px\":{\"value\":\"0.9900\",\"currency\":\"USD\"},\"qty\":\"42663.3300\"},{\"px\":{\"value\":\"0.9975\",\"currency\":\"USD\"},\"qty\":\"2100016.0000\"}],\"state\":\"MARKET_STATE_OPEN\",\"stats\":{\"openPx\":{\"value\":\"0.4400\",\"currency\":\"USD\"},\"lowPx\":{\"value\":\"0.1600\",\"currency\":\"USD\"},\"highPx\":{\"value\":\"0.4400\",\"currency\":\"USD\"},\"lastTradePx\":{\"value\":\"0.2475\",\"currency\":\"USD\"},\"sharesTraded\":\"305798.4200\",\"notionalTraded\":{\"value\":\"81317.1228\",\"currency\":\"USD\"},\"lastTradeQty\":\"58.4200\",\"openInterest\":\"122685.5300\",\"openSetTime\":\"2026-10-19T03:59:01.136709252Z\",\"highSetTime\":\"2026-10-19T03:59:01.136709252Z\",\"lowSetTime\":\"2026-10-19T11:48:41.010627310Z\",\"lastTradeSetTime\":\"2026-11-01T17:09:50.364558308Z\",\"openInterestSetTime\":\"2026-11-01T17:09:50.504372276Z\",\"notionalSetTime\":\"2026-11-01T17:09:50.364558308Z\",\"currentPx\":{\"value\":\"0.2462\",\"currency\":\"USD\"},\"lastPriceSample\":{\"longPx\":{\"value\":\"0.2475\",\"currency\":\"USD\"},\"shortPx\":{\"value\":\"0.7525\",\"currency\":\"USD\"},\"ts\":\"2026-11-01T17:09:50.504372276Z\"}},\"transactTime\":\"2026-11-01T17:09:50.504372276Z\"}}",
+      "sha256": "690b9218c78bf31d23a85ea753ed81764c6a8a0f6bc51ac4f698a3cd069a1365"
+    },
+    "us-001/000008.json": {
+      "body": "{\"requestId\":\"m5n-market-data\",\"subscriptionType\":\"SUBSCRIPTION_TYPE_MARKET_DATA\",\"marketData\":{\"marketSlug\":\"aec-nfl-ari-dal-2026-11-01\",\"bids\":[{\"px\":{\"value\":\"0.2450\",\"currency\":\"USD\"},\"qty\":\"721933.5700\"},{\"px\":{\"value\":\"0.2425\",\"currency\":\"USD\"},\"qty\":\"546748.0000\"},{\"px\":{\"value\":\"0.2400\",\"currency\":\"USD\"},\"qty\":\"36555.7000\"},{\"px\":{\"value\":\"0.2375\",\"currency\":\"USD\"},\"qty\":\"27968.4700\"},{\"px\":{\"value\":\"0.2350\",\"currency\":\"USD\"},\"qty\":\"13132.9900\"},{\"px\":{\"value\":\"0.2325\",\"currency\":\"USD\"},\"qty\":\"72016.1200\"},{\"px\":{\"value\":\"0.2300\",\"currency\":\"USD\"},\"qty\":\"25996.9300\"},{\"px\":{\"value\":\"0.2275\",\"currency\":\"USD\"},\"qty\":\"7500.0000\"},{\"px\":{\"value\":\"0.2225\",\"currency\":\"USD\"},\"qty\":\"9603.5700\"},{\"px\":{\"value\":\"0.2200\",\"currency\":\"USD\"},\"qty\":\"1575.0900\"},{\"px\":{\"value\":\"0.2175\",\"currency\":\"USD\"},\"qty\":\"7500.0000\"},{\"px\":{\"value\":\"0.2150\",\"currency\":\"USD\"},\"qty\":\"60000.0000\"},{\"px\":{\"value\":\"0.2100\",\"currency\":\"USD\"},\"qty\":\"64145.9000\"},{\"px\":{\"value\":\"0.2075\",\"currency\":\"USD\"},\"qty\":\"500.0000\"},{\"px\":{\"value\":\"0.2050\",\"currency\":\"USD\"},\"qty\":\"6800.0000\"},{\"px\":{\"value\":\"0.2000\",\"currency\":\"USD\"},\"qty\":\"5658.0000\"},{\"px\":{\"value\":\"0.1950\",\"currency\":\"USD\"},\"qty\":\"25.0000\"},{\"px\":{\"value\":\"0.1900\",\"currency\":\"USD\"},\"qty\":\"1100.0000\"},{\"px\":{\"value\":\"0.1800\",\"currency\":\"USD\"},\"qty\":\"600.0000\"},{\"px\":{\"value\":\"0.1650\",\"currency\":\"USD\"},\"qty\":\"1.0000\"},{\"px\":{\"value\":\"0.1600\",\"currency\":\"USD\"},\"qty\":\"500.0000\"},{\"px\":{\"value\":\"0.1200\",\"currency\":\"USD\"},\"qty\":\"5172.3300\"},{\"px\":{\"value\":\"0.1100\",\"currency\":\"USD\"},\"qty\":\"818.1800\"},{\"px\":{\"value\":\"0.1000\",\"currency\":\"USD\"},\"qty\":\"3000.0000\"},{\"px\":{\"value\":\"0.0900\",\"currency\":\"USD\"},\"qty\":\"3334.6400\"},{\"px\":{\"value\":\"0.0800\",\"currency\":\"USD\"},\"qty\":\"3750.0000\"},{\"px\":{\"value\":\"0.0700\",\"currency\":\"USD\"},\"qty\":\"4285.7100\"},{\"px\":{\"value\":\"0.0600\",\"currency\":\"USD\"},\"qty\":\"5050.0000\"},{\"px\":{\"value\":\"0.0500\",\"currency\":\"USD\"},\"qty\":\"8049.1300\"},{\"px\":{\"value\":\"0.0400\",\"currency\":\"USD\"},\"qty\":\"9702.8100\"},{\"px\":{\"value\":\"0.0300\",\"currency\":\"USD\"},\"qty\":\"16047.9600\"},{\"px\":{\"value\":\"0.0200\",\"currency\":\"USD\"},\"qty\":\"24212.3100\"},{\"px\":{\"value\":\"0.0100\",\"currency\":\"USD\"},\"qty\":\"42615.4500\"},{\"px\":{\"value\":\"0.0025\",\"currency\":\"USD\"},\"qty\":\"2100016.0000\"}],\"offers\":[{\"px\":{\"value\":\"0.2475\",\"currency\":\"USD\"},\"qty\":\"733781.5600\"},{\"px\":{\"value\":\"0.2500\",\"currency\":\"USD\"},\"qty\":\"1630796.5000\"},{\"px\":{\"value\":\"0.2525\",\"currency\":\"USD\"},\"qty\":\"47278.5000\"},{\"px\":{\"value\":\"0.2550\",\"currency\":\"USD\"},\"qty\":\"1086.0700\"},{\"px\":{\"value\":\"0.2575\",\"currency\":\"USD\"},\"qty\":\"8898.0000\"},{\"px\":{\"value\":\"0.2600\",\"currency\":\"USD\"},\"qty\":\"116101.2900\"},{\"px\":{\"value\":\"0.2625\",\"currency\":\"USD\"},\"qty\":\"8973.0000\"},{\"px\":{\"value\":\"0.2650\",\"currency\":\"USD\"},\"qty\":\"22086.7600\"},{\"px\":{\"value\":\"0.2700\",\"currency\":\"USD\"},\"qty\":\"8236.0000\"},{\"px\":{\"value\":\"0.2725\",\"currency\":\"USD\"},\"qty\":\"20618.5500\"},{\"px\":{\"value\":\"0.2750\",\"currency\":\"USD\"},\"qty\":\"10.0000\"},{\"px\":{\"value\":\"0.2800\",\"currency\":\"USD\"},\"qty\":\"7419.1600\"},{\"px\":{\"value\":\"0.2850\",\"currency\":\"USD\"},\"qty\":\"1272.9000\"},{\"px\":{\"value\":\"0.2900\",\"currency\":\"USD\"},\"qty\":\"50.0000\"},{\"px\":{\"value\":\"0.2975\",\"currency\":\"USD\"},\"qty\":\"118.9200\"},{\"px\":{\"value\":\"0.3000\",\"currency\":\"USD\"},\"qty\":\"100.0000\"},{\"px\":{\"value\":\"0.3050\",\"currency\":\"USD\"},\"qty\":\"14.0000\"},{\"px\":{\"value\":\"0.3100\",\"currency\":\"USD\"},\"qty\":\"500.0000\"},{\"px\":{\"value\":\"0.3200\",\"currency\":\"USD\"},\"qty\":\"848.2000\"},{\"px\":{\"value\":\"0.3300\",\"currency\":\"USD\"},\"qty\":\"1.0000\"},{\"px\":{\"value\":\"0.3400\",\"currency\":\"USD\"},\"qty\":\"591.4900\"},{\"px\":{\"value\":\"0.3500\",\"currency\":\"USD\"},\"qty\":\"2.4100\"},{\"px\":{\"value\":\"0.3575\",\"currency\":\"USD\"},\"qty\":\"4375.0000\"},{\"px\":{\"value\":\"0.3600\",\"currency\":\"USD\"},\"qty\":\"191.9900\"},{\"px\":{\"value\":\"0.3700\",\"currency\":\"USD\"},\"qty\":\"92.3000\"},{\"px\":{\"value\":\"0.3800\",\"currency\":\"USD\"},\"qty\":\"276.9700\"},{\"px\":{\"value\":\"0.3850\",\"currency\":\"USD\"},\"qty\":\"18.4400\"},{\"px\":{\"value\":\"0.4000\",\"currency\":\"USD\"},\"qty\":\"74.3700\"},{\"px\":{\"value\":\"0.4200\",\"currency\":\"USD\"},\"qty\":\"19.0000\"},{\"px\":{\"value\":\"0.4625\",\"currency\":\"USD\"},\"qty\":\"10.0000\"},{\"px\":{\"value\":\"0.4700\",\"currency\":\"USD\"},\"qty\":\"36.9300\"},{\"px\":{\"value\":\"0.5000\",\"currency\":\"USD\"},\"qty\":\"3.0000\"},{\"px\":{\"value\":\"0.5100\",\"currency\":\"USD\"},\"qty\":\"18.4400\"},{\"px\":{\"value\":\"0.5200\",\"currency\":\"USD\"},\"qty\":\"3.8000\"},{\"px\":{\"value\":\"0.5300\",\"currency\":\"USD\"},\"qty\":\"55.5500\"},{\"px\":{\"value\":\"0.5400\",\"currency\":\"USD\"},\"qty\":\"125.5300\"},{\"px\":{\"value\":\"0.5450\",\"currency\":\"USD\"},\"qty\":\"3.7200\"},{\"px\":{\"value\":\"0.5500\",\"currency\":\"USD\"},\"qty\":\"2158.0300\"},{\"px\":{\"value\":\"0.5550\",\"currency\":\"USD\"},\"qty\":\"27.2900\"},{\"px\":{\"value\":\"0.5700\",\"currency\":\"USD\"},\"qty\":\"184.6600\"},{\"px\":{\"value\":\"0.5800\",\"currency\":\"USD\"},\"qty\":\"1.8600\"},{\"px\":{\"value\":\"0.5900\",\"currency\":\"USD\"},\"qty\":\"18.4400\"},{\"px\":{\"value\":\"0.6000\",\"currency\":\"USD\"},\"qty\":\"5.0000\"},{\"px\":{\"value\":\"0.6100\",\"currency\":\"USD\"},\"qty\":\"542.3700\"},{\"px\":{\"value\":\"0.6200\",\"currency\":\"USD\"},\"qty\":\"18.4400\"},{\"px\":{\"value\":\"0.6700\",\"currency\":\"USD\"},\"qty\":\"5.0000\"},{\"px\":{\"value\":\"0.6800\",\"currency\":\"USD\"},\"qty\":\"36.8500\"},{\"px\":{\"value\":\"0.6900\",\"currency\":\"USD\"},\"qty\":\"26.3000\"},{\"px\":{\"value\":\"0.7000\",\"currency\":\"USD\"},\"qty\":\"72.5800\"},{\"px\":{\"value\":\"0.7200\",\"currency\":\"USD\"},\"qty\":\"10.1700\"},{\"px\":{\"value\":\"0.7400\",\"currency\":\"USD\"},\"qty\":\"36.9300\"},{\"px\":{\"value\":\"0.7800\",\"currency\":\"USD\"},\"qty\":\"62.7900\"},{\"px\":{\"value\":\"0.7900\",\"currency\":\"USD\"},\"qty\":\"11.1700\"},{\"px\":{\"value\":\"0.8000\",\"currency\":\"USD\"},\"qty\":\"168.8700\"},{\"px\":{\"value\":\"0.8100\",\"currency\":\"USD\"},\"qty\":\"161.6100\"},{\"px\":{\"value\":\"0.8200\",\"currency\":\"USD\"},\"qty\":\"231.6700\"},{\"px\":{\"value\":\"0.8300\",\"currency\":\"USD\"},\"qty\":\"187.5300\"},{\"px\":{\"value\":\"0.8400\",\"currency\":\"USD\"},\"qty\":\"205.9400\"},{\"px\":{\"value\":\"0.8500\",\"currency\":\"USD\"},\"qty\":\"45036.0000\"},{\"px\":{\"value\":\"0.8600\",\"currency\":\"USD\"},\"qty\":\"45266.1000\"},{\"px\":{\"value\":\"0.8700\",\"currency\":\"USD\"},\"qty\":\"694.1700\"},{\"px\":{\"value\":\"0.8800\",\"currency\":\"USD\"},\"qty\":\"750.0000\"},{\"px\":{\"value\":\"0.8900\",\"currency\":\"USD\"},\"qty\":\"836.6200\"},{\"px\":{\"value\":\"0.9000\",\"currency\":\"USD\"},\"qty\":\"3018.4400\"},{\"px\":{\"value\":\"0.9100\",\"currency\":\"USD\"},\"qty\":\"3333.3300\"},{\"px\":{\"value\":\"0.9200\",\"currency\":\"USD\"},\"qty\":\"3768.4400\"},{\"px\":{\"value\":\"0.9250\",\"currency\":\"USD\"},\"qty\":\"9.2400\"},{\"px\":{\"value\":\"0.9300\",\"currency\":\"USD\"},\"qty\":\"4285.7100\"},{\"px\":{\"value\":\"0.9400\",\"currency\":\"USD\"},\"qty\":\"5050.0000\"},{\"px\":{\"value\":\"0.9500\",\"currency\":\"USD\"},\"qty\":\"8000.0000\"},{\"px\":{\"value\":\"0.9600\",\"currency\":\"USD\"},\"qty\":\"9660.6100\"},{\"px\":{\"value\":\"0.9700\",\"currency\":\"USD\"},\"qty\":\"16015.0000\"},{\"px\":{\"value\":\"0.9800\",\"currency\":\"USD\"},\"qty\":\"24210.0000\"},{\"px\":{\"value\":\"0.9900\",\"currency\":\"USD\"},\"qty\":\"42663.3300\"},{\"px\":{\"value\":\"0.9975\",\"currency\":\"USD\"},\"qty\":\"2100016.0000\"}],\"state\":\"MARKET_STATE_OPEN\",\"stats\":{\"openPx\":{\"value\":\"0.4400\",\"currency\":\"USD\"},\"lowPx\":{\"value\":\"0.1600\",\"currency\":\"USD\"},\"highPx\":{\"value\":\"0.4400\",\"currency\":\"USD\"},\"lastTradePx\":{\"value\":\"0.2475\",\"currency\":\"USD\"},\"sharesTraded\":\"305798.4200\",\"notionalTraded\":{\"value\":\"81317.1228\",\"currency\":\"USD\"},\"lastTradeQty\":\"58.4200\",\"openInterest\":\"122685.5300\",\"openSetTime\":\"2026-10-19T03:59:01.136709252Z\",\"highSetTime\":\"2026-10-19T03:59:01.136709252Z\",\"lowSetTime\":\"2026-10-19T11:48:41.010627310Z\",\"lastTradeSetTime\":\"2026-11-01T17:09:50.364558308Z\",\"openInterestSetTime\":\"2026-11-01T17:09:50.504372276Z\",\"notionalSetTime\":\"2026-11-01T17:09:50.364558308Z\",\"currentPx\":{\"value\":\"0.2462\",\"currency\":\"USD\"},\"lastPriceSample\":{\"longPx\":{\"value\":\"0.2475\",\"currency\":\"USD\"},\"shortPx\":{\"value\":\"0.7525\",\"currency\":\"USD\"},\"ts\":\"2026-11-01T17:09:51.193023418Z\"}},\"transactTime\":\"2026-11-01T17:09:51.193023418Z\"}}",
+      "sha256": "abdecec708a530c0b520c4727a68a7114143b2cc089f7c5f701f016ecdb57323"
+    },
+    "us-001/000009.json": {
+      "body": "{\"requestId\":\"m5n-market-data\",\"subscriptionType\":\"SUBSCRIPTION_TYPE_MARKET_DATA\",\"marketData\":{\"marketSlug\":\"aec-nfl-ari-dal-2026-11-01\",\"bids\":[{\"px\":{\"value\":\"0.2450\",\"currency\":\"USD\"},\"qty\":\"721933.5700\"},{\"px\":{\"value\":\"0.2425\",\"currency\":\"USD\"},\"qty\":\"546748.0000\"},{\"px\":{\"value\":\"0.2400\",\"currency\":\"USD\"},\"qty\":\"36555.7000\"},{\"px\":{\"value\":\"0.2375\",\"currency\":\"USD\"},\"qty\":\"27968.4700\"},{\"px\":{\"value\":\"0.2350\",\"currency\":\"USD\"},\"qty\":\"13132.9900\"},{\"px\":{\"value\":\"0.2325\",\"currency\":\"USD\"},\"qty\":\"72016.1200\"},{\"px\":{\"value\":\"0.2300\",\"currency\":\"USD\"},\"qty\":\"25996.9300\"},{\"px\":{\"value\":\"0.2275\",\"currency\":\"USD\"},\"qty\":\"7500.0000\"},{\"px\":{\"value\":\"0.2225\",\"currency\":\"USD\"},\"qty\":\"9603.5700\"},{\"px\":{\"value\":\"0.2200\",\"currency\":\"USD\"},\"qty\":\"1575.0900\"},{\"px\":{\"value\":\"0.2175\",\"currency\":\"USD\"},\"qty\":\"7500.0000\"},{\"px\":{\"value\":\"0.2150\",\"currency\":\"USD\"},\"qty\":\"60000.0000\"},{\"px\":{\"value\":\"0.2100\",\"currency\":\"USD\"},\"qty\":\"64145.9000\"},{\"px\":{\"value\":\"0.2075\",\"currency\":\"USD\"},\"qty\":\"500.0000\"},{\"px\":{\"value\":\"0.2050\",\"currency\":\"USD\"},\"qty\":\"6800.0000\"},{\"px\":{\"value\":\"0.2000\",\"currency\":\"USD\"},\"qty\":\"5658.0000\"},{\"px\":{\"value\":\"0.1950\",\"currency\":\"USD\"},\"qty\":\"25.0000\"},{\"px\":{\"value\":\"0.1900\",\"currency\":\"USD\"},\"qty\":\"1100.0000\"},{\"px\":{\"value\":\"0.1800\",\"currency\":\"USD\"},\"qty\":\"600.0000\"},{\"px\":{\"value\":\"0.1650\",\"currency\":\"USD\"},\"qty\":\"1.0000\"},{\"px\":{\"value\":\"0.1600\",\"currency\":\"USD\"},\"qty\":\"500.0000\"},{\"px\":{\"value\":\"0.1200\",\"currency\":\"USD\"},\"qty\":\"5172.3300\"},{\"px\":{\"value\":\"0.1100\",\"currency\":\"USD\"},\"qty\":\"818.1800\"},{\"px\":{\"value\":\"0.1000\",\"currency\":\"USD\"},\"qty\":\"3000.0000\"},{\"px\":{\"value\":\"0.0900\",\"currency\":\"USD\"},\"qty\":\"3334.6400\"},{\"px\":{\"value\":\"0.0800\",\"currency\":\"USD\"},\"qty\":\"3750.0000\"},{\"px\":{\"value\":\"0.0700\",\"currency\":\"USD\"},\"qty\":\"4285.7100\"},{\"px\":{\"value\":\"0.0600\",\"currency\":\"USD\"},\"qty\":\"5050.0000\"},{\"px\":{\"value\":\"0.0500\",\"currency\":\"USD\"},\"qty\":\"8049.1300\"},{\"px\":{\"value\":\"0.0400\",\"currency\":\"USD\"},\"qty\":\"9702.8100\"},{\"px\":{\"value\":\"0.0300\",\"currency\":\"USD\"},\"qty\":\"16047.9600\"},{\"px\":{\"value\":\"0.0200\",\"currency\":\"USD\"},\"qty\":\"24212.3100\"},{\"px\":{\"value\":\"0.0100\",\"currency\":\"USD\"},\"qty\":\"42615.4500\"},{\"px\":{\"value\":\"0.0025\",\"currency\":\"USD\"},\"qty\":\"2100016.0000\"}],\"offers\":[{\"px\":{\"value\":\"0.2475\",\"currency\":\"USD\"},\"qty\":\"733781.5600\"},{\"px\":{\"value\":\"0.2500\",\"currency\":\"USD\"},\"qty\":\"1630796.5000\"},{\"px\":{\"value\":\"0.2525\",\"currency\":\"USD\"},\"qty\":\"47278.5000\"},{\"px\":{\"value\":\"0.2550\",\"currency\":\"USD\"},\"qty\":\"1086.0700\"},{\"px\":{\"value\":\"0.2575\",\"currency\":\"USD\"},\"qty\":\"8898.0000\"},{\"px\":{\"value\":\"0.2600\",\"currency\":\"USD\"},\"qty\":\"116101.2900\"},{\"px\":{\"value\":\"0.2625\",\"currency\":\"USD\"},\"qty\":\"8973.0000\"},{\"px\":{\"value\":\"0.2650\",\"currency\":\"USD\"},\"qty\":\"22086.7600\"},{\"px\":{\"value\":\"0.2700\",\"currency\":\"USD\"},\"qty\":\"8236.0000\"},{\"px\":{\"value\":\"0.2725\",\"currency\":\"USD\"},\"qty\":\"20618.5500\"},{\"px\":{\"value\":\"0.2750\",\"currency\":\"USD\"},\"qty\":\"10.0000\"},{\"px\":{\"value\":\"0.2800\",\"currency\":\"USD\"},\"qty\":\"7419.1600\"},{\"px\":{\"value\":\"0.2850\",\"currency\":\"USD\"},\"qty\":\"1272.9000\"},{\"px\":{\"value\":\"0.2900\",\"currency\":\"USD\"},\"qty\":\"250.0000\"},{\"px\":{\"value\":\"0.2975\",\"currency\":\"USD\"},\"qty\":\"118.9200\"},{\"px\":{\"value\":\"0.3000\",\"currency\":\"USD\"},\"qty\":\"100.0000\"},{\"px\":{\"value\":\"0.3050\",\"currency\":\"USD\"},\"qty\":\"14.0000\"},{\"px\":{\"value\":\"0.3100\",\"currency\":\"USD\"},\"qty\":\"500.0000\"},{\"px\":{\"value\":\"0.3200\",\"currency\":\"USD\"},\"qty\":\"848.2000\"},{\"px\":{\"value\":\"0.3300\",\"currency\":\"USD\"},\"qty\":\"1.0000\"},{\"px\":{\"value\":\"0.3400\",\"currency\":\"USD\"},\"qty\":\"591.4900\"},{\"px\":{\"value\":\"0.3500\",\"currency\":\"USD\"},\"qty\":\"2.4100\"},{\"px\":{\"value\":\"0.3575\",\"currency\":\"USD\"},\"qty\":\"4375.0000\"},{\"px\":{\"value\":\"0.3600\",\"currency\":\"USD\"},\"qty\":\"191.9900\"},{\"px\":{\"value\":\"0.3700\",\"currency\":\"USD\"},\"qty\":\"92.3000\"},{\"px\":{\"value\":\"0.3800\",\"currency\":\"USD\"},\"qty\":\"276.9700\"},{\"px\":{\"value\":\"0.3850\",\"currency\":\"USD\"},\"qty\":\"18.4400\"},{\"px\":{\"value\":\"0.4000\",\"currency\":\"USD\"},\"qty\":\"74.3700\"},{\"px\":{\"value\":\"0.4200\",\"currency\":\"USD\"},\"qty\":\"19.0000\"},{\"px\":{\"value\":\"0.4625\",\"currency\":\"USD\"},\"qty\":\"10.0000\"},{\"px\":{\"value\":\"0.4700\",\"currency\":\"USD\"},\"qty\":\"36.9300\"},{\"px\":{\"value\":\"0.5000\",\"currency\":\"USD\"},\"qty\":\"3.0000\"},{\"px\":{\"value\":\"0.5100\",\"currency\":\"USD\"},\"qty\":\"18.4400\"},{\"px\":{\"value\":\"0.5200\",\"currency\":\"USD\"},\"qty\":\"3.8000\"},{\"px\":{\"value\":\"0.5300\",\"currency\":\"USD\"},\"qty\":\"55.5500\"},{\"px\":{\"value\":\"0.5400\",\"currency\":\"USD\"},\"qty\":\"125.5300\"},{\"px\":{\"value\":\"0.5450\",\"currency\":\"USD\"},\"qty\":\"3.7200\"},{\"px\":{\"value\":\"0.5500\",\"currency\":\"USD\"},\"qty\":\"2158.0300\"},{\"px\":{\"value\":\"0.5550\",\"currency\":\"USD\"},\"qty\":\"27.2900\"},{\"px\":{\"value\":\"0.5700\",\"currency\":\"USD\"},\"qty\":\"184.6600\"},{\"px\":{\"value\":\"0.5800\",\"currency\":\"USD\"},\"qty\":\"1.8600\"},{\"px\":{\"value\":\"0.5900\",\"currency\":\"USD\"},\"qty\":\"18.4400\"},{\"px\":{\"value\":\"0.6000\",\"currency\":\"USD\"},\"qty\":\"5.0000\"},{\"px\":{\"value\":\"0.6100\",\"currency\":\"USD\"},\"qty\":\"542.3700\"},{\"px\":{\"value\":\"0.6200\",\"currency\":\"USD\"},\"qty\":\"18.4400\"},{\"px\":{\"value\":\"0.6700\",\"currency\":\"USD\"},\"qty\":\"5.0000\"},{\"px\":{\"value\":\"0.6800\",\"currency\":\"USD\"},\"qty\":\"36.8500\"},{\"px\":{\"value\":\"0.6900\",\"currency\":\"USD\"},\"qty\":\"26.3000\"},{\"px\":{\"value\":\"0.7000\",\"currency\":\"USD\"},\"qty\":\"72.5800\"},{\"px\":{\"value\":\"0.7200\",\"currency\":\"USD\"},\"qty\":\"10.1700\"},{\"px\":{\"value\":\"0.7400\",\"currency\":\"USD\"},\"qty\":\"36.9300\"},{\"px\":{\"value\":\"0.7800\",\"currency\":\"USD\"},\"qty\":\"62.7900\"},{\"px\":{\"value\":\"0.7900\",\"currency\":\"USD\"},\"qty\":\"11.1700\"},{\"px\":{\"value\":\"0.8000\",\"currency\":\"USD\"},\"qty\":\"168.8700\"},{\"px\":{\"value\":\"0.8100\",\"currency\":\"USD\"},\"qty\":\"161.6100\"},{\"px\":{\"value\":\"0.8200\",\"currency\":\"USD\"},\"qty\":\"231.6700\"},{\"px\":{\"value\":\"0.8300\",\"currency\":\"USD\"},\"qty\":\"187.5300\"},{\"px\":{\"value\":\"0.8400\",\"currency\":\"USD\"},\"qty\":\"205.9400\"},{\"px\":{\"value\":\"0.8500\",\"currency\":\"USD\"},\"qty\":\"45036.0000\"},{\"px\":{\"value\":\"0.8600\",\"currency\":\"USD\"},\"qty\":\"45266.1000\"},{\"px\":{\"value\":\"0.8700\",\"currency\":\"USD\"},\"qty\":\"694.1700\"},{\"px\":{\"value\":\"0.8800\",\"currency\":\"USD\"},\"qty\":\"750.0000\"},{\"px\":{\"value\":\"0.8900\",\"currency\":\"USD\"},\"qty\":\"836.6200\"},{\"px\":{\"value\":\"0.9000\",\"currency\":\"USD\"},\"qty\":\"3018.4400\"},{\"px\":{\"value\":\"0.9100\",\"currency\":\"USD\"},\"qty\":\"3333.3300\"},{\"px\":{\"value\":\"0.9200\",\"currency\":\"USD\"},\"qty\":\"3768.4400\"},{\"px\":{\"value\":\"0.9250\",\"currency\":\"USD\"},\"qty\":\"9.2400\"},{\"px\":{\"value\":\"0.9300\",\"currency\":\"USD\"},\"qty\":\"4285.7100\"},{\"px\":{\"value\":\"0.9400\",\"currency\":\"USD\"},\"qty\":\"5050.0000\"},{\"px\":{\"value\":\"0.9500\",\"currency\":\"USD\"},\"qty\":\"8000.0000\"},{\"px\":{\"value\":\"0.9600\",\"currency\":\"USD\"},\"qty\":\"9660.6100\"},{\"px\":{\"value\":\"0.9700\",\"currency\":\"USD\"},\"qty\":\"16015.0000\"},{\"px\":{\"value\":\"0.9800\",\"currency\":\"USD\"},\"qty\":\"24210.0000\"},{\"px\":{\"value\":\"0.9900\",\"currency\":\"USD\"},\"qty\":\"42663.3300\"},{\"px\":{\"value\":\"0.9975\",\"currency\":\"USD\"},\"qty\":\"2100016.0000\"}],\"state\":\"MARKET_STATE_OPEN\",\"stats\":{\"openPx\":{\"value\":\"0.4400\",\"currency\":\"USD\"},\"lowPx\":{\"value\":\"0.1600\",\"currency\":\"USD\"},\"highPx\":{\"value\":\"0.4400\",\"currency\":\"USD\"},\"lastTradePx\":{\"value\":\"0.2475\",\"currency\":\"USD\"},\"sharesTraded\":\"305798.4200\",\"notionalTraded\":{\"value\":\"81317.1228\",\"currency\":\"USD\"},\"lastTradeQty\":\"58.4200\",\"openInterest\":\"122685.5300\",\"openSetTime\":\"2026-10-19T03:59:01.136709252Z\",\"highSetTime\":\"2026-10-19T03:59:01.136709252Z\",\"lowSetTime\":\"2026-10-19T11:48:41.010627310Z\",\"lastTradeSetTime\":\"2026-11-01T17:09:50.364558308Z\",\"openInterestSetTime\":\"2026-11-01T17:09:50.504372276Z\",\"notionalSetTime\":\"2026-11-01T17:09:50.364558308Z\",\"currentPx\":{\"value\":\"0.2462\",\"currency\":\"USD\"},\"lastPriceSample\":{\"longPx\":{\"value\":\"0.2475\",\"currency\":\"USD\"},\"shortPx\":{\"value\":\"0.7525\",\"currency\":\"USD\"},\"ts\":\"2026-11-01T17:09:51.281993955Z\"}},\"transactTime\":\"2026-11-01T17:09:51.281993955Z\"}}",
+      "sha256": "259f64077c47c5d2c562708966d96188e5a877f292ea8035b2bab062a122febb"
+    },
+    "us-001/000010.json": {
+      "body": "{\"requestId\":\"m5n-market-data\",\"subscriptionType\":\"SUBSCRIPTION_TYPE_MARKET_DATA\",\"marketData\":{\"marketSlug\":\"aec-nfl-ari-dal-2026-11-01\",\"bids\":[{\"px\":{\"value\":\"0.2450\",\"currency\":\"USD\"},\"qty\":\"721902.4800\"},{\"px\":{\"value\":\"0.2425\",\"currency\":\"USD\"},\"qty\":\"546748.0000\"},{\"px\":{\"value\":\"0.2400\",\"currency\":\"USD\"},\"qty\":\"36555.7000\"},{\"px\":{\"value\":\"0.2375\",\"currency\":\"USD\"},\"qty\":\"27968.4700\"},{\"px\":{\"value\":\"0.2350\",\"currency\":\"USD\"},\"qty\":\"13132.9900\"},{\"px\":{\"value\":\"0.2325\",\"currency\":\"USD\"},\"qty\":\"72016.1200\"},{\"px\":{\"value\":\"0.2300\",\"currency\":\"USD\"},\"qty\":\"25996.9300\"},{\"px\":{\"value\":\"0.2275\",\"currency\":\"USD\"},\"qty\":\"7500.0000\"},{\"px\":{\"value\":\"0.2225\",\"currency\":\"USD\"},\"qty\":\"9603.5700\"},{\"px\":{\"value\":\"0.2200\",\"currency\":\"USD\"},\"qty\":\"1575.0900\"},{\"px\":{\"value\":\"0.2175\",\"currency\":\"USD\"},\"qty\":\"7500.0000\"},{\"px\":{\"value\":\"0.2150\",\"currency\":\"USD\"},\"qty\":\"60000.0000\"},{\"px\":{\"value\":\"0.2100\",\"currency\":\"USD\"},\"qty\":\"64145.9000\"},{\"px\":{\"value\":\"0.2075\",\"currency\":\"USD\"},\"qty\":\"500.0000\"},{\"px\":{\"value\":\"0.2050\",\"currency\":\"USD\"},\"qty\":\"6800.0000\"},{\"px\":{\"value\":\"0.2000\",\"currency\":\"USD\"},\"qty\":\"5658.0000\"},{\"px\":{\"value\":\"0.1950\",\"currency\":\"USD\"},\"qty\":\"25.0000\"},{\"px\":{\"value\":\"0.1900\",\"currency\":\"USD\"},\"qty\":\"1100.0000\"},{\"px\":{\"value\":\"0.1800\",\"currency\":\"USD\"},\"qty\":\"600.0000\"},{\"px\":{\"value\":\"0.1650\",\"currency\":\"USD\"},\"qty\":\"1.0000\"},{\"px\":{\"value\":\"0.1600\",\"currency\":\"USD\"},\"qty\":\"500.0000\"},{\"px\":{\"value\":\"0.1200\",\"currency\":\"USD\"},\"qty\":\"5172.3300\"},{\"px\":{\"value\":\"0.1100\",\"currency\":\"USD\"},\"qty\":\"818.1800\"},{\"px\":{\"value\":\"0.1000\",\"currency\":\"USD\"},\"qty\":\"3000.0000\"},{\"px\":{\"value\":\"0.0900\",\"currency\":\"USD\"},\"qty\":\"3334.6400\"},{\"px\":{\"value\":\"0.0800\",\"currency\":\"USD\"},\"qty\":\"3750.0000\"},{\"px\":{\"value\":\"0.0700\",\"currency\":\"USD\"},\"qty\":\"4285.7100\"},{\"px\":{\"value\":\"0.0600\",\"currency\":\"USD\"},\"qty\":\"5050.0000\"},{\"px\":{\"value\":\"0.0500\",\"currency\":\"USD\"},\"qty\":\"8049.1300\"},{\"px\":{\"value\":\"0.0400\",\"currency\":\"USD\"},\"qty\":\"9702.8100\"},{\"px\":{\"value\":\"0.0300\",\"currency\":\"USD\"},\"qty\":\"16047.9600\"},{\"px\":{\"value\":\"0.0200\",\"currency\":\"USD\"},\"qty\":\"24212.3100\"},{\"px\":{\"value\":\"0.0100\",\"currency\":\"USD\"},\"qty\":\"42615.4500\"},{\"px\":{\"value\":\"0.0025\",\"currency\":\"USD\"},\"qty\":\"2100016.0000\"}],\"offers\":[{\"px\":{\"value\":\"0.2475\",\"currency\":\"USD\"},\"qty\":\"733781.5600\"},{\"px\":{\"value\":\"0.2500\",\"currency\":\"USD\"},\"qty\":\"1630796.5000\"},{\"px\":{\"value\":\"0.2525\",\"currency\":\"USD\"},\"qty\":\"47278.5000\"},{\"px\":{\"value\":\"0.2550\",\"currency\":\"USD\"},\"qty\":\"1086.0700\"},{\"px\":{\"value\":\"0.2575\",\"currency\":\"USD\"},\"qty\":\"8898.0000\"},{\"px\":{\"value\":\"0.2600\",\"currency\":\"USD\"},\"qty\":\"116101.2900\"},{\"px\":{\"value\":\"0.2625\",\"currency\":\"USD\"},\"qty\":\"8973.0000\"},{\"px\":{\"value\":\"0.2650\",\"currency\":\"USD\"},\"qty\":\"22086.7600\"},{\"px\":{\"value\":\"0.2700\",\"currency\":\"USD\"},\"qty\":\"8236.0000\"},{\"px\":{\"value\":\"0.2725\",\"currency\":\"USD\"},\"qty\":\"20618.5500\"},{\"px\":{\"value\":\"0.2750\",\"currency\":\"USD\"},\"qty\":\"10.0000\"},{\"px\":{\"value\":\"0.2800\",\"currency\":\"USD\"},\"qty\":\"7419.1600\"},{\"px\":{\"value\":\"0.2850\",\"currency\":\"USD\"},\"qty\":\"1272.9000\"},{\"px\":{\"value\":\"0.2900\",\"currency\":\"USD\"},\"qty\":\"250.0000\"},{\"px\":{\"value\":\"0.2975\",\"currency\":\"USD\"},\"qty\":\"118.9200\"},{\"px\":{\"value\":\"0.3000\",\"currency\":\"USD\"},\"qty\":\"100.0000\"},{\"px\":{\"value\":\"0.3050\",\"currency\":\"USD\"},\"qty\":\"14.0000\"},{\"px\":{\"value\":\"0.3100\",\"currency\":\"USD\"},\"qty\":\"500.0000\"},{\"px\":{\"value\":\"0.3200\",\"currency\":\"USD\"},\"qty\":\"848.2000\"},{\"px\":{\"value\":\"0.3300\",\"currency\":\"USD\"},\"qty\":\"1.0000\"},{\"px\":{\"value\":\"0.3400\",\"currency\":\"USD\"},\"qty\":\"591.4900\"},{\"px\":{\"value\":\"0.3500\",\"currency\":\"USD\"},\"qty\":\"2.4100\"},{\"px\":{\"value\":\"0.3575\",\"currency\":\"USD\"},\"qty\":\"4375.0000\"},{\"px\":{\"value\":\"0.3600\",\"currency\":\"USD\"},\"qty\":\"191.9900\"},{\"px\":{\"value\":\"0.3700\",\"currency\":\"USD\"},\"qty\":\"92.3000\"},{\"px\":{\"value\":\"0.3800\",\"currency\":\"USD\"},\"qty\":\"276.9700\"},{\"px\":{\"value\":\"0.3850\",\"currency\":\"USD\"},\"qty\":\"18.4400\"},{\"px\":{\"value\":\"0.4000\",\"currency\":\"USD\"},\"qty\":\"74.3700\"},{\"px\":{\"value\":\"0.4200\",\"currency\":\"USD\"},\"qty\":\"19.0000\"},{\"px\":{\"value\":\"0.4625\",\"currency\":\"USD\"},\"qty\":\"10.0000\"},{\"px\":{\"value\":\"0.4700\",\"currency\":\"USD\"},\"qty\":\"36.9300\"},{\"px\":{\"value\":\"0.5000\",\"currency\":\"USD\"},\"qty\":\"3.0000\"},{\"px\":{\"value\":\"0.5100\",\"currency\":\"USD\"},\"qty\":\"18.4400\"},{\"px\":{\"value\":\"0.5200\",\"currency\":\"USD\"},\"qty\":\"3.8000\"},{\"px\":{\"value\":\"0.5300\",\"currency\":\"USD\"},\"qty\":\"55.5500\"},{\"px\":{\"value\":\"0.5400\",\"currency\":\"USD\"},\"qty\":\"125.5300\"},{\"px\":{\"value\":\"0.5450\",\"currency\":\"USD\"},\"qty\":\"3.7200\"},{\"px\":{\"value\":\"0.5500\",\"currency\":\"USD\"},\"qty\":\"2158.0300\"},{\"px\":{\"value\":\"0.5550\",\"currency\":\"USD\"},\"qty\":\"27.2900\"},{\"px\":{\"value\":\"0.5700\",\"currency\":\"USD\"},\"qty\":\"184.6600\"},{\"px\":{\"value\":\"0.5800\",\"currency\":\"USD\"},\"qty\":\"1.8600\"},{\"px\":{\"value\":\"0.5900\",\"currency\":\"USD\"},\"qty\":\"18.4400\"},{\"px\":{\"value\":\"0.6000\",\"currency\":\"USD\"},\"qty\":\"5.0000\"},{\"px\":{\"value\":\"0.6100\",\"currency\":\"USD\"},\"qty\":\"542.3700\"},{\"px\":{\"value\":\"0.6200\",\"currency\":\"USD\"},\"qty\":\"18.4400\"},{\"px\":{\"value\":\"0.6700\",\"currency\":\"USD\"},\"qty\":\"5.0000\"},{\"px\":{\"value\":\"0.6800\",\"currency\":\"USD\"},\"qty\":\"36.8500\"},{\"px\":{\"value\":\"0.6900\",\"currency\":\"USD\"},\"qty\":\"26.3000\"},{\"px\":{\"value\":\"0.7000\",\"currency\":\"USD\"},\"qty\":\"72.5800\"},{\"px\":{\"value\":\"0.7200\",\"currency\":\"USD\"},\"qty\":\"10.1700\"},{\"px\":{\"value\":\"0.7400\",\"currency\":\"USD\"},\"qty\":\"36.9300\"},{\"px\":{\"value\":\"0.7800\",\"currency\":\"USD\"},\"qty\":\"62.7900\"},{\"px\":{\"value\":\"0.7900\",\"currency\":\"USD\"},\"qty\":\"11.1700\"},{\"px\":{\"value\":\"0.8000\",\"currency\":\"USD\"},\"qty\":\"168.8700\"},{\"px\":{\"value\":\"0.8100\",\"currency\":\"USD\"},\"qty\":\"161.6100\"},{\"px\":{\"value\":\"0.8200\",\"currency\":\"USD\"},\"qty\":\"231.6700\"},{\"px\":{\"value\":\"0.8300\",\"currency\":\"USD\"},\"qty\":\"187.5300\"},{\"px\":{\"value\":\"0.8400\",\"currency\":\"USD\"},\"qty\":\"205.9400\"},{\"px\":{\"value\":\"0.8500\",\"currency\":\"USD\"},\"qty\":\"45036.0000\"},{\"px\":{\"value\":\"0.8600\",\"currency\":\"USD\"},\"qty\":\"45266.1000\"},{\"px\":{\"value\":\"0.8700\",\"currency\":\"USD\"},\"qty\":\"694.1700\"},{\"px\":{\"value\":\"0.8800\",\"currency\":\"USD\"},\"qty\":\"750.0000\"},{\"px\":{\"value\":\"0.8900\",\"currency\":\"USD\"},\"qty\":\"836.6200\"},{\"px\":{\"value\":\"0.9000\",\"currency\":\"USD\"},\"qty\":\"3018.4400\"},{\"px\":{\"value\":\"0.9100\",\"currency\":\"USD\"},\"qty\":\"3333.3300\"},{\"px\":{\"value\":\"0.9200\",\"currency\":\"USD\"},\"qty\":\"3768.4400\"},{\"px\":{\"value\":\"0.9250\",\"currency\":\"USD\"},\"qty\":\"9.2400\"},{\"px\":{\"value\":\"0.9300\",\"currency\":\"USD\"},\"qty\":\"4285.7100\"},{\"px\":{\"value\":\"0.9400\",\"currency\":\"USD\"},\"qty\":\"5050.0000\"},{\"px\":{\"value\":\"0.9500\",\"currency\":\"USD\"},\"qty\":\"8000.0000\"},{\"px\":{\"value\":\"0.9600\",\"currency\":\"USD\"},\"qty\":\"9660.6100\"},{\"px\":{\"value\":\"0.9700\",\"currency\":\"USD\"},\"qty\":\"16015.0000\"},{\"px\":{\"value\":\"0.9800\",\"currency\":\"USD\"},\"qty\":\"24210.0000\"},{\"px\":{\"value\":\"0.9900\",\"currency\":\"USD\"},\"qty\":\"42663.3300\"},{\"px\":{\"value\":\"0.9975\",\"currency\":\"USD\"},\"qty\":\"2100016.0000\"}],\"state\":\"MARKET_STATE_OPEN\",\"stats\":{\"openPx\":{\"value\":\"0.4400\",\"currency\":\"USD\"},\"lowPx\":{\"value\":\"0.1600\",\"currency\":\"USD\"},\"highPx\":{\"value\":\"0.4400\",\"currency\":\"USD\"},\"lastTradePx\":{\"value\":\"0.2450\",\"currency\":\"USD\"},\"sharesTraded\":\"305829.5100\",\"notionalTraded\":{\"value\":\"81324.7399\",\"currency\":\"USD\"},\"lastTradeQty\":\"31.0900\",\"openInterest\":\"122685.5300\",\"openSetTime\":\"2026-10-19T03:59:01.136709252Z\",\"highSetTime\":\"2026-10-19T03:59:01.136709252Z\",\"lowSetTime\":\"2026-10-19T11:48:41.010627310Z\",\"lastTradeSetTime\":\"2026-11-01T17:09:51.688048543Z\",\"openInterestSetTime\":\"2026-11-01T17:09:50.504372276Z\",\"notionalSetTime\":\"2026-11-01T17:09:51.688048543Z\",\"currentPx\":{\"value\":\"0.2462\",\"currency\":\"USD\"},\"lastPriceSample\":{\"longPx\":{\"value\":\"0.2450\",\"currency\":\"USD\"},\"shortPx\":{\"value\":\"0.755\",\"currency\":\"USD\"},\"ts\":\"2026-11-01T17:09:51.688048543Z\"}},\"transactTime\":\"2026-11-01T17:09:51.688048543Z\"}}",
+      "sha256": "17f9519d7b7934d72c73e692ae15578d2d459665c63b947e68130f50f5c0cb75"
+    },
+    "clock-before.json": {
+      "body": "{\n  \"checked_at\": \"2026-11-01T17:09:42.544659+00:00\",\n  \"timedatectl show -p NTPSynchronized\": {\n    \"exit_code\": 0,\n    \"output\": \"NTPSynchronized=yes\\n\"\n  },\n  \"timedatectl timesync-status\": {\n    \"exit_code\": 0,\n    \"output\": \"       Server: 72.14.182.49 (3.debian.pool.ntp.org)\\nPoll interval: 34min 8s (min: 32s; max 34min 8s)\\n         Leap: normal\\n      Version: 4\\n      Stratum: 2\\n    Reference: 8B4E6180\\n    Precision: 1us (-24)\\nRoot distance: 41.694ms (max: 5s)\\n       Offset: +16.696ms\\n        Delay: 51.961ms\\n       Jitter: 15.578ms\\n Packet count: 211\\n    Frequency: +3.945ppm\\n\"\n  },\n  \"synchronized\": true\n}\n",
+      "sha256": "83a80b5fb0f08ebb043ba7bbfd8c73bf6f8128f13f13670e7a4ad0be00fe61d3"
+    },
+    "clock-after.json": {
+      "body": "{\n  \"checked_at\": \"2026-11-01T17:09:54.156575+00:00\",\n  \"timedatectl show -p NTPSynchronized\": {\n    \"exit_code\": 0,\n    \"output\": \"NTPSynchronized=yes\\n\"\n  },\n  \"timedatectl timesync-status\": {\n    \"exit_code\": 0,\n    \"output\": \"       Server: 72.14.182.49 (3.debian.pool.ntp.org)\\nPoll interval: 34min 8s (min: 32s; max 34min 8s)\\n         Leap: normal\\n      Version: 4\\n      Stratum: 2\\n    Reference: 8B4E6180\\n    Precision: 1us (-24)\\nRoot distance: 41.694ms (max: 5s)\\n       Offset: +16.696ms\\n        Delay: 51.961ms\\n       Jitter: 15.578ms\\n Packet count: 211\\n    Frequency: +3.945ppm\\n\"\n  },\n  \"synchronized\": true\n}\n",
+      "sha256": "f99d403d1729341cf2e2b4230e3f910d64e7bb4f789288db8bb8eecd16d72eec"
+    }
+  },
+  "tables": {
+    "collection_runs": [
+      {
+        "id": 1,
+        "venue": "kalshi",
+        "schema_version": "kalshi-3.34.0/m1-v1",
+        "started_at": "2026-11-01T17:09:44.501338+00:00",
+        "finished_at": "2026-11-01T17:09:44.664533+00:00",
+        "status": "COMPLETE",
+        "scope_json": "{\"filter\":\"market:KXNFLGAME-26NOV01ARIDAL-ARI\",\"selected\":[\"KXNFLGAME-26NOV01ARIDAL-ARI\"],\"transport\":\"WS_METADATA\"}",
+        "pages": 1,
+        "records": 1,
+        "unique_records": 1,
+        "duplicates": 0,
+        "next_page": null,
+        "error": null
+      }
+    ],
+    "raw_observations": [
+      {
+        "id": 1,
+        "ts_utc": "2026-11-01T17:09:44.642956+00:00",
+        "venue": "kalshi",
+        "endpoint": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26NOV01ARIDAL-ARI",
+        "json_payload": "{\"market\":{\"can_close_early\":true,\"close_time\":\"2026-11-03T18:00:00Z\",\"created_time\":\"2026-10-20T04:01:57.548274Z\",\"custom_strike\":{\"football_team\":\"d73dae4f-1f08-4b5e-bf23-4e25e9b6a69c\"},\"early_close_condition\":\"This market will close and expire after a winner is declared.\",\"event_ticker\":\"KXNFLGAME-26NOV01ARIDAL\",\"exchange_index\":0,\"expected_expiration_time\":\"2026-11-01T21:00:00Z\",\"expiration_time\":\"2026-11-03T18:00:00Z\",\"expiration_value\":\"\",\"last_price_dollars\":\"0.2500\",\"latest_expiration_time\":\"2026-11-03T18:00:00Z\",\"market_type\":\"binary\",\"no_ask_dollars\":\"0.7600\",\"no_bid_dollars\":\"0.7500\",\"no_sub_title\":\"Arizona\",\"notional_value_dollars\":\"1.0000\",\"occurrence_datetime\":\"2026-11-01T21:00:00Z\",\"open_interest_fp\":\"771469.35\",\"open_time\":\"2026-10-20T04:06:00Z\",\"previous_price_dollars\":\"0.2600\",\"previous_yes_ask_dollars\":\"0.2600\",\"previous_yes_bid_dollars\":\"0.2500\",\"price_level_structure\":\"linear_cent\",\"price_ranges\":[{\"end\":\"1.0000\",\"start\":\"0.0000\",\"step\":\"0.0100\"}],\"result\":\"\",\"rules_primary\":\"If Arizona wins the Arizona vs Dallas Pro Football game originally scheduled for Nov 1, 2026, then the market resolves to Yes.\",\"rules_secondary\":\"The following market refers to the team who wins the Arizona vs Dallas Pro Football game originally scheduled for Nov 1, 2026. If the game ends in a tie, the market will resolve to $0.50 for each team. If the game is postponed but begins within 48 hours from its originally scheduled start time, the market will remain open and resolve based on the official final result. If the game is not started within 48 hours, the market will resolve to a fair price.\\n\\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.\",\"settlement_bounds_type\":\"default\",\"settlement_timer_seconds\":60,\"status\":\"active\",\"strike_type\":\"structured\",\"ticker\":\"KXNFLGAME-26NOV01ARIDAL-ARI\",\"title\":\"Arizona wins\",\"updated_time\":\"2026-10-20T04:06:00.5311Z\",\"volume_24h_fp\":\"490274.75\",\"volume_fp\":\"795448.49\",\"yes_ask_dollars\":\"0.2500\",\"yes_ask_size_fp\":\"2420743.16\",\"yes_bid_dollars\":\"0.2400\",\"yes_bid_size_fp\":\"115665.33\",\"yes_sub_title\":\"Arizona\"}}\n",
+        "raw_body": "{\"market\":{\"can_close_early\":true,\"close_time\":\"2026-11-03T18:00:00Z\",\"created_time\":\"2026-10-20T04:01:57.548274Z\",\"custom_strike\":{\"football_team\":\"d73dae4f-1f08-4b5e-bf23-4e25e9b6a69c\"},\"early_close_condition\":\"This market will close and expire after a winner is declared.\",\"event_ticker\":\"KXNFLGAME-26NOV01ARIDAL\",\"exchange_index\":0,\"expected_expiration_time\":\"2026-11-01T21:00:00Z\",\"expiration_time\":\"2026-11-03T18:00:00Z\",\"expiration_value\":\"\",\"last_price_dollars\":\"0.2500\",\"latest_expiration_time\":\"2026-11-03T18:00:00Z\",\"market_type\":\"binary\",\"no_ask_dollars\":\"0.7600\",\"no_bid_dollars\":\"0.7500\",\"no_sub_title\":\"Arizona\",\"notional_value_dollars\":\"1.0000\",\"occurrence_datetime\":\"2026-11-01T21:00:00Z\",\"open_interest_fp\":\"771469.35\",\"open_time\":\"2026-10-20T04:06:00Z\",\"previous_price_dollars\":\"0.2600\",\"previous_yes_ask_dollars\":\"0.2600\",\"previous_yes_bid_dollars\":\"0.2500\",\"price_level_structure\":\"linear_cent\",\"price_ranges\":[{\"end\":\"1.0000\",\"start\":\"0.0000\",\"step\":\"0.0100\"}],\"result\":\"\",\"rules_primary\":\"If Arizona wins the Arizona vs Dallas Pro Football game originally scheduled for Nov 1, 2026, then the market resolves to Yes.\",\"rules_secondary\":\"The following market refers to the team who wins the Arizona vs Dallas Pro Football game originally scheduled for Nov 1, 2026. If the game ends in a tie, the market will resolve to $0.50 for each team. If the game is postponed but begins within 48 hours from its originally scheduled start time, the market will remain open and resolve based on the official final result. If the game is not started within 48 hours, the market will resolve to a fair price.\\n\\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.\",\"settlement_bounds_type\":\"default\",\"settlement_timer_seconds\":60,\"status\":\"active\",\"strike_type\":\"structured\",\"ticker\":\"KXNFLGAME-26NOV01ARIDAL-ARI\",\"title\":\"Arizona wins\",\"updated_time\":\"2026-10-20T04:06:00.5311Z\",\"volume_24h_fp\":\"490274.75\",\"volume_fp\":\"795448.49\",\"yes_ask_dollars\":\"0.2500\",\"yes_ask_size_fp\":\"2420743.16\",\"yes_bid_dollars\":\"0.2400\",\"yes_bid_size_fp\":\"115665.33\",\"yes_sub_title\":\"Arizona\"}}\n",
+        "body_sha256": "62c9585f3e05a3ab98e5b21b599d20c501b38ead35dd347cce9d0285e74d87de",
+        "http_status": 200,
+        "headers_json": "{\"content-type\":\"application/json\",\"date\":\"Sun, 01 Nov 2026 17:09:44 GMT\"}",
+        "schema_version": "kalshi-3.34.0/m1-v1",
+        "source_ts": null,
+        "validation_status": "VALID",
+        "validation_error": null,
+        "truncated": 0
+      },
+      {
+        "id": 2,
+        "ts_utc": "2026-11-01T17:09:44.897616+00:00",
+        "venue": "kalshi",
+        "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+        "json_payload": "{\"type\":\"subscribed\",\"id\":1,\"msg\":{\"channel\":\"orderbook_delta\",\"sid\":1},\"sending_ts_ms\":1793552984876}\n",
+        "raw_body": "{\"type\":\"subscribed\",\"id\":1,\"msg\":{\"channel\":\"orderbook_delta\",\"sid\":1},\"sending_ts_ms\":1793552984876}\n",
+        "body_sha256": "d72d0b43222760a7e8c17fc9ccdb2d712079ec499f6df45c8772703ef73f85dc",
+        "http_status": 101,
+        "headers_json": "{}",
+        "schema_version": "kalshi-ws/m5a-v1",
+        "source_ts": null,
+        "validation_status": "VALID",
+        "validation_error": null,
+        "truncated": 0
+      },
+      {
+        "id": 3,
+        "ts_utc": "2026-11-01T17:09:44.926373+00:00",
+        "venue": "kalshi",
+        "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+        "json_payload": "{\"type\":\"orderbook_snapshot\",\"sid\":1,\"seq\":1,\"msg\":{\"market_ticker\":\"KXNFLGAME-26NOV01ARIDAL-ARI\",\"market_id\":\"01a15779-1d26-7e60-af88-5b30a1317e6a\",\"clock\":113013931191,\"yes_dollars_fp\":[[\"0.0100\",\"2239846.86\"],[\"0.0200\",\"9755.00\"],[\"0.0300\",\"137168.66\"],[\"0.0400\",\"1792.50\"],[\"0.0500\",\"72237.00\"],[\"0.0600\",\"341.33\"],[\"0.0700\",\"42709.14\"],[\"0.0800\",\"57980.25\"],[\"0.0900\",\"33901.55\"],[\"0.1000\",\"11236.00\"],[\"0.1100\",\"52458.33\"],[\"0.1200\",\"64549.16\"],[\"0.1300\",\"9817.84\"],[\"0.1400\",\"7742.57\"],[\"0.1500\",\"4919.33\"],[\"0.1600\",\"9289.00\"],[\"0.1700\",\"25.00\"],[\"0.1800\",\"4.60\"],[\"0.1900\",\"277.05\"],[\"0.2000\",\"27552.05\"],[\"0.2100\",\"4393.26\"],[\"0.2200\",\"154930.64\"],[\"0.2300\",\"590637.66\"],[\"0.2400\",\"115665.33\"]],\"no_dollars_fp\":[[\"0.0100\",\"2860852.81\"],[\"0.0200\",\"6556.53\"],[\"0.0300\",\"173554.30\"],[\"0.0400\",\"1351.58\"],[\"0.0500\",\"86769.43\"],[\"0.0600\",\"786.01\"],[\"0.0700\",\"85481.84\"],[\"0.0800\",\"1108.26\"],[\"0.0900\",\"157.22\"],[\"0.1000\",\"163.09\"],[\"0.1100\",\"222309.10\"],[\"0.1200\",\"829.08\"],[\"0.1300\",\"171.49\"],[\"0.1400\",\"1218.78\"],[\"0.1500\",\"81650.44\"],[\"0.1600\",\"824.99\"],[\"0.1700\",\"29794.86\"],[\"0.1800\",\"226.68\"],[\"0.1900\",\"302.87\"],[\"0.2000\",\"515.34\"],[\"0.2100\",\"36600.51\"],[\"0.2200\",\"632.12\"],[\"0.2300\",\"1166.97\"],[\"0.2400\",\"20711.07\"],[\"0.2500\",\"15016.69\"],[\"0.2600\",\"385.54\"],[\"0.2700\",\"19666.74\"],[\"0.2800\",\"40.58\"],[\"0.2900\",\"72.43\"],[\"0.3000\",\"17002.48\"],[\"0.3100\",\"428.64\"],[\"0.3200\",\"156.26\"],[\"0.3300\",\"14236.41\"],[\"0.3400\",\"139.87\"],[\"0.3500\",\"175.51\"],[\"0.3600\",\"26544.99\"],[\"0.3700\",\"8337.31\"],[\"0.3800\",\"47.01\"],[\"0.3900\",\"78.65\"],[\"0.4000\",\"8189.56\"],[\"0.4100\",\"372.97\"],[\"0.4200\",\"65.88\"],[\"0.4300\",\"24471.13\"],[\"0.4400\",\"6039.28\"],[\"0.4500\",\"8553.64\"],[\"0.4600\",\"454.00\"],[\"0.4700\",\"16.11\"],[\"0.4800\",\"5222.02\"],[\"0.4900\",\"129.48\"],[\"0.5000\",\"178.71\"],[\"0.5100\",\"20215.46\"],[\"0.5200\",\"4021.97\"],[\"0.5300\",\"832.97\"],[\"0.5400\",\"2220.94\"],[\"0.5500\",\"424.62\"],[\"0.5600\",\"35.31\"],[\"0.5700\",\"15592.31\"],[\"0.5800\",\"2279.47\"],[\"0.5900\",\"808.31\"],[\"0.6000\",\"4738.36\"],[\"0.6100\",\"46188.02\"],[\"0.6200\",\"45824.60\"],[\"0.6300\",\"40900.28\"],[\"0.6400\",\"4146.57\"],[\"0.6500\",\"14.00\"],[\"0.6600\",\"1638.00\"],[\"0.6700\",\"69.68\"],[\"0.6800\",\"29876.44\"],[\"0.6900\",\"3.65\"],[\"0.7000\",\"421.01\"],[\"0.7100\",\"13645.47\"],[\"0.7200\",\"41901.71\"],[\"0.7300\",\"1367346.39\"],[\"0.7400\",\"2084879.17\"],[\"0.7500\",\"2420724.16\"]]},\"sending_ts_ms\":1793552984876}\n",
+        "raw_body": "{\"type\":\"orderbook_snapshot\",\"sid\":1,\"seq\":1,\"msg\":{\"market_ticker\":\"KXNFLGAME-26NOV01ARIDAL-ARI\",\"market_id\":\"01a15779-1d26-7e60-af88-5b30a1317e6a\",\"clock\":113013931191,\"yes_dollars_fp\":[[\"0.0100\",\"2239846.86\"],[\"0.0200\",\"9755.00\"],[\"0.0300\",\"137168.66\"],[\"0.0400\",\"1792.50\"],[\"0.0500\",\"72237.00\"],[\"0.0600\",\"341.33\"],[\"0.0700\",\"42709.14\"],[\"0.0800\",\"57980.25\"],[\"0.0900\",\"33901.55\"],[\"0.1000\",\"11236.00\"],[\"0.1100\",\"52458.33\"],[\"0.1200\",\"64549.16\"],[\"0.1300\",\"9817.84\"],[\"0.1400\",\"7742.57\"],[\"0.1500\",\"4919.33\"],[\"0.1600\",\"9289.00\"],[\"0.1700\",\"25.00\"],[\"0.1800\",\"4.60\"],[\"0.1900\",\"277.05\"],[\"0.2000\",\"27552.05\"],[\"0.2100\",\"4393.26\"],[\"0.2200\",\"154930.64\"],[\"0.2300\",\"590637.66\"],[\"0.2400\",\"115665.33\"]],\"no_dollars_fp\":[[\"0.0100\",\"2860852.81\"],[\"0.0200\",\"6556.53\"],[\"0.0300\",\"173554.30\"],[\"0.0400\",\"1351.58\"],[\"0.0500\",\"86769.43\"],[\"0.0600\",\"786.01\"],[\"0.0700\",\"85481.84\"],[\"0.0800\",\"1108.26\"],[\"0.0900\",\"157.22\"],[\"0.1000\",\"163.09\"],[\"0.1100\",\"222309.10\"],[\"0.1200\",\"829.08\"],[\"0.1300\",\"171.49\"],[\"0.1400\",\"1218.78\"],[\"0.1500\",\"81650.44\"],[\"0.1600\",\"824.99\"],[\"0.1700\",\"29794.86\"],[\"0.1800\",\"226.68\"],[\"0.1900\",\"302.87\"],[\"0.2000\",\"515.34\"],[\"0.2100\",\"36600.51\"],[\"0.2200\",\"632.12\"],[\"0.2300\",\"1166.97\"],[\"0.2400\",\"20711.07\"],[\"0.2500\",\"15016.69\"],[\"0.2600\",\"385.54\"],[\"0.2700\",\"19666.74\"],[\"0.2800\",\"40.58\"],[\"0.2900\",\"72.43\"],[\"0.3000\",\"17002.48\"],[\"0.3100\",\"428.64\"],[\"0.3200\",\"156.26\"],[\"0.3300\",\"14236.41\"],[\"0.3400\",\"139.87\"],[\"0.3500\",\"175.51\"],[\"0.3600\",\"26544.99\"],[\"0.3700\",\"8337.31\"],[\"0.3800\",\"47.01\"],[\"0.3900\",\"78.65\"],[\"0.4000\",\"8189.56\"],[\"0.4100\",\"372.97\"],[\"0.4200\",\"65.88\"],[\"0.4300\",\"24471.13\"],[\"0.4400\",\"6039.28\"],[\"0.4500\",\"8553.64\"],[\"0.4600\",\"454.00\"],[\"0.4700\",\"16.11\"],[\"0.4800\",\"5222.02\"],[\"0.4900\",\"129.48\"],[\"0.5000\",\"178.71\"],[\"0.5100\",\"20215.46\"],[\"0.5200\",\"4021.97\"],[\"0.5300\",\"832.97\"],[\"0.5400\",\"2220.94\"],[\"0.5500\",\"424.62\"],[\"0.5600\",\"35.31\"],[\"0.5700\",\"15592.31\"],[\"0.5800\",\"2279.47\"],[\"0.5900\",\"808.31\"],[\"0.6000\",\"4738.36\"],[\"0.6100\",\"46188.02\"],[\"0.6200\",\"45824.60\"],[\"0.6300\",\"40900.28\"],[\"0.6400\",\"4146.57\"],[\"0.6500\",\"14.00\"],[\"0.6600\",\"1638.00\"],[\"0.6700\",\"69.68\"],[\"0.6800\",\"29876.44\"],[\"0.6900\",\"3.65\"],[\"0.7000\",\"421.01\"],[\"0.7100\",\"13645.47\"],[\"0.7200\",\"41901.71\"],[\"0.7300\",\"1367346.39\"],[\"0.7400\",\"2084879.17\"],[\"0.7500\",\"2420724.16\"]]},\"sending_ts_ms\":1793552984876}\n",
+        "body_sha256": "f072654dcf01dafd1b1bf01ad03efb0e430606ce95e875a9be735f82798bdc3a",
+        "http_status": 101,
+        "headers_json": "{}",
+        "schema_version": "kalshi-ws/m5a-v1",
+        "source_ts": "2026-11-01T17:09:44.876000+00:00",
+        "validation_status": "VALID",
+        "validation_error": null,
+        "truncated": 0
+      },
+      {
+        "id": 4,
+        "ts_utc": "2026-11-01T17:09:46.772189+00:00",
+        "venue": "kalshi",
+        "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+        "json_payload": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":2,\"msg\":{\"market_ticker\":\"KXNFLGAME-26NOV01ARIDAL-ARI\",\"market_id\":\"01a15779-1d26-7e60-af88-5b30a1317e6a\",\"clock\":113013946253,\"price_dollars\":\"0.7500\",\"delta_fp\":\"-7.60\",\"side\":\"no\",\"ts\":\"2026-11-01T17:09:46.746Z\",\"ts_ms\":1793552986746},\"sending_ts_ms\":1793552986751}\n",
+        "raw_body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":2,\"msg\":{\"market_ticker\":\"KXNFLGAME-26NOV01ARIDAL-ARI\",\"market_id\":\"01a15779-1d26-7e60-af88-5b30a1317e6a\",\"clock\":113013946253,\"price_dollars\":\"0.7500\",\"delta_fp\":\"-7.60\",\"side\":\"no\",\"ts\":\"2026-11-01T17:09:46.746Z\",\"ts_ms\":1793552986746},\"sending_ts_ms\":1793552986751}\n",
+        "body_sha256": "abb96577e3c099d9d40a1fb46d8d80aa2b319a0b9bac3f8b0d41c7b1c471f126",
+        "http_status": 101,
+        "headers_json": "{}",
+        "schema_version": "kalshi-ws/m5a-v1",
+        "source_ts": "2026-11-01T17:09:46.751000+00:00",
+        "validation_status": "VALID",
+        "validation_error": null,
+        "truncated": 0
+      },
+      {
+        "id": 5,
+        "ts_utc": "2026-11-01T17:09:47.011715+00:00",
+        "venue": "kalshi",
+        "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+        "json_payload": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":3,\"msg\":{\"market_ticker\":\"KXNFLGAME-26NOV01ARIDAL-ARI\",\"market_id\":\"01a15779-1d26-7e60-af88-5b30a1317e6a\",\"clock\":113013948163,\"price_dollars\":\"0.7400\",\"delta_fp\":\"-471.96\",\"side\":\"no\",\"ts\":\"2026-11-01T17:09:46.986Z\",\"ts_ms\":1793552986986},\"sending_ts_ms\":1793552986991}\n",
+        "raw_body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":3,\"msg\":{\"market_ticker\":\"KXNFLGAME-26NOV01ARIDAL-ARI\",\"market_id\":\"01a15779-1d26-7e60-af88-5b30a1317e6a\",\"clock\":113013948163,\"price_dollars\":\"0.7400\",\"delta_fp\":\"-471.96\",\"side\":\"no\",\"ts\":\"2026-11-01T17:09:46.986Z\",\"ts_ms\":1793552986986},\"sending_ts_ms\":1793552986991}\n",
+        "body_sha256": "190c5db88a4ced7171109abc78cec60704bcd3916e603d49c66ebf0c2c0d1db7",
+        "http_status": 101,
+        "headers_json": "{}",
+        "schema_version": "kalshi-ws/m5a-v1",
+        "source_ts": "2026-11-01T17:09:46.991000+00:00",
+        "validation_status": "VALID",
+        "validation_error": null,
+        "truncated": 0
+      },
+      {
+        "id": 6,
+        "ts_utc": "2026-11-01T17:09:47.033496+00:00",
+        "venue": "kalshi",
+        "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+        "json_payload": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":4,\"msg\":{\"market_ticker\":\"KXNFLGAME-26NOV01ARIDAL-ARI\",\"market_id\":\"01a15779-1d26-7e60-af88-5b30a1317e6a\",\"clock\":113013948165,\"price_dollars\":\"0.2300\",\"delta_fp\":\"-322.73\",\"side\":\"yes\",\"ts\":\"2026-11-01T17:09:46.986Z\",\"ts_ms\":1793552986986},\"sending_ts_ms\":1793552986991}\n",
+        "raw_body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":4,\"msg\":{\"market_ticker\":\"KXNFLGAME-26NOV01ARIDAL-ARI\",\"market_id\":\"01a15779-1d26-7e60-af88-5b30a1317e6a\",\"clock\":113013948165,\"price_dollars\":\"0.2300\",\"delta_fp\":\"-322.73\",\"side\":\"yes\",\"ts\":\"2026-11-01T17:09:46.986Z\",\"ts_ms\":1793552986986},\"sending_ts_ms\":1793552986991}\n",
+        "body_sha256": "8665a14ea85305a49b7ddf00f64b3badb1c76627073aefe478c00897ece83d9d",
+        "http_status": 101,
+        "headers_json": "{}",
+        "schema_version": "kalshi-ws/m5a-v1",
+        "source_ts": "2026-11-01T17:09:46.991000+00:00",
+        "validation_status": "VALID",
+        "validation_error": null,
+        "truncated": 0
+      },
+      {
+        "id": 7,
+        "ts_utc": "2026-11-01T17:09:47.055136+00:00",
+        "venue": "kalshi",
+        "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+        "json_payload": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":5,\"msg\":{\"market_ticker\":\"KXNFLGAME-26NOV01ARIDAL-ARI\",\"market_id\":\"01a15779-1d26-7e60-af88-5b30a1317e6a\",\"clock\":113013948324,\"price_dollars\":\"0.0500\",\"delta_fp\":\"-15.00\",\"side\":\"no\",\"ts\":\"2026-11-01T17:09:47Z\",\"ts_ms\":1793552987000},\"sending_ts_ms\":1793552987008}\n",
+        "raw_body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":5,\"msg\":{\"market_ticker\":\"KXNFLGAME-26NOV01ARIDAL-ARI\",\"market_id\":\"01a15779-1d26-7e60-af88-5b30a1317e6a\",\"clock\":113013948324,\"price_dollars\":\"0.0500\",\"delta_fp\":\"-15.00\",\"side\":\"no\",\"ts\":\"2026-11-01T17:09:47Z\",\"ts_ms\":1793552987000},\"sending_ts_ms\":1793552987008}\n",
+        "body_sha256": "a0065b698cec221a5cfc02402f82eeb96310c4fd9a6772e4c44957839351c622",
+        "http_status": 101,
+        "headers_json": "{}",
+        "schema_version": "kalshi-ws/m5a-v1",
+        "source_ts": "2026-11-01T17:09:47.008000+00:00",
+        "validation_status": "VALID",
+        "validation_error": null,
+        "truncated": 0
+      },
+      {
+        "id": 8,
+        "ts_utc": "2026-11-01T17:09:47.076555+00:00",
+        "venue": "kalshi",
+        "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+        "json_payload": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":6,\"msg\":{\"market_ticker\":\"KXNFLGAME-26NOV01ARIDAL-ARI\",\"market_id\":\"01a15779-1d26-7e60-af88-5b30a1317e6a\",\"clock\":113013948324,\"price_dollars\":\"0.0500\",\"delta_fp\":\"-15.00\",\"side\":\"yes\",\"ts\":\"2026-11-01T17:09:47Z\",\"ts_ms\":1793552987000},\"sending_ts_ms\":1793552987008}\n",
+        "raw_body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":6,\"msg\":{\"market_ticker\":\"KXNFLGAME-26NOV01ARIDAL-ARI\",\"market_id\":\"01a15779-1d26-7e60-af88-5b30a1317e6a\",\"clock\":113013948324,\"price_dollars\":\"0.0500\",\"delta_fp\":\"-15.00\",\"side\":\"yes\",\"ts\":\"2026-11-01T17:09:47Z\",\"ts_ms\":1793552987000},\"sending_ts_ms\":1793552987008}\n",
+        "body_sha256": "79c18cff92f22d18b1432674dc224580172b2b78da576332da2e5468c4104a74",
+        "http_status": 101,
+        "headers_json": "{}",
+        "schema_version": "kalshi-ws/m5a-v1",
+        "source_ts": "2026-11-01T17:09:47.008000+00:00",
+        "validation_status": "VALID",
+        "validation_error": null,
+        "truncated": 0
+      },
+      {
+        "id": 9,
+        "ts_utc": "2026-11-01T17:09:47.809352+00:00",
+        "venue": "kalshi",
+        "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+        "json_payload": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":7,\"msg\":{\"market_ticker\":\"KXNFLGAME-26NOV01ARIDAL-ARI\",\"market_id\":\"01a15779-1d26-7e60-af88-5b30a1317e6a\",\"clock\":113013954221,\"price_dollars\":\"0.7400\",\"delta_fp\":\"468.92\",\"side\":\"no\",\"ts\":\"2026-11-01T17:09:47.781Z\",\"ts_ms\":1793552987781},\"sending_ts_ms\":1793552987788}\n",
+        "raw_body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":7,\"msg\":{\"market_ticker\":\"KXNFLGAME-26NOV01ARIDAL-ARI\",\"market_id\":\"01a15779-1d26-7e60-af88-5b30a1317e6a\",\"clock\":113013954221,\"price_dollars\":\"0.7400\",\"delta_fp\":\"468.92\",\"side\":\"no\",\"ts\":\"2026-11-01T17:09:47.781Z\",\"ts_ms\":1793552987781},\"sending_ts_ms\":1793552987788}\n",
+        "body_sha256": "4aa77989ff1428d2437ba844e9a34cefbae2e64a9758b1b8a273825d50579572",
+        "http_status": 101,
+        "headers_json": "{}",
+        "schema_version": "kalshi-ws/m5a-v1",
+        "source_ts": "2026-11-01T17:09:47.788000+00:00",
+        "validation_status": "VALID",
+        "validation_error": null,
+        "truncated": 0
+      },
+      {
+        "id": 10,
+        "ts_utc": "2026-11-01T17:09:47.833929+00:00",
+        "venue": "kalshi",
+        "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+        "json_payload": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":8,\"msg\":{\"market_ticker\":\"KXNFLGAME-26NOV01ARIDAL-ARI\",\"market_id\":\"01a15779-1d26-7e60-af88-5b30a1317e6a\",\"clock\":113013954224,\"price_dollars\":\"0.2300\",\"delta_fp\":\"325.73\",\"side\":\"yes\",\"ts\":\"2026-11-01T17:09:47.782Z\",\"ts_ms\":1793552987782},\"sending_ts_ms\":1793552987788}\n",
+        "raw_body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":8,\"msg\":{\"market_ticker\":\"KXNFLGAME-26NOV01ARIDAL-ARI\",\"market_id\":\"01a15779-1d26-7e60-af88-5b30a1317e6a\",\"clock\":113013954224,\"price_dollars\":\"0.2300\",\"delta_fp\":\"325.73\",\"side\":\"yes\",\"ts\":\"2026-11-01T17:09:47.782Z\",\"ts_ms\":1793552987782},\"sending_ts_ms\":1793552987788}\n",
+        "body_sha256": "68d480ea15279bd359d3ffa7f52df7ec71d0255c7d61e3dd1de883f88f7ed8db",
+        "http_status": 101,
+        "headers_json": "{}",
+        "schema_version": "kalshi-ws/m5a-v1",
+        "source_ts": "2026-11-01T17:09:47.788000+00:00",
+        "validation_status": "VALID",
+        "validation_error": null,
+        "truncated": 0
+      },
+      {
+        "id": 11,
+        "ts_utc": "2026-11-01T17:09:49.001836+00:00",
+        "venue": "kalshi",
+        "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+        "json_payload": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":9,\"msg\":{\"market_ticker\":\"KXNFLGAME-26NOV01ARIDAL-ARI\",\"market_id\":\"01a15779-1d26-7e60-af88-5b30a1317e6a\",\"clock\":113013964632,\"price_dollars\":\"0.7500\",\"delta_fp\":\"-76.00\",\"side\":\"no\",\"ts\":\"2026-11-01T17:09:48.975Z\",\"ts_ms\":1793552988975},\"sending_ts_ms\":1793552988981}\n",
+        "raw_body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":9,\"msg\":{\"market_ticker\":\"KXNFLGAME-26NOV01ARIDAL-ARI\",\"market_id\":\"01a15779-1d26-7e60-af88-5b30a1317e6a\",\"clock\":113013964632,\"price_dollars\":\"0.7500\",\"delta_fp\":\"-76.00\",\"side\":\"no\",\"ts\":\"2026-11-01T17:09:48.975Z\",\"ts_ms\":1793552988975},\"sending_ts_ms\":1793552988981}\n",
+        "body_sha256": "76d8a5aa8a537f647d67d23ff586301e35dc59d54e441f485d1dcd86bfe094f2",
+        "http_status": 101,
+        "headers_json": "{}",
+        "schema_version": "kalshi-ws/m5a-v1",
+        "source_ts": "2026-11-01T17:09:48.981000+00:00",
+        "validation_status": "VALID",
+        "validation_error": null,
+        "truncated": 0
+      },
+      {
+        "id": 12,
+        "ts_utc": "2026-11-01T17:09:50.143025+00:00",
+        "venue": "kalshi",
+        "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+        "json_payload": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":10,\"msg\":{\"market_ticker\":\"KXNFLGAME-26NOV01ARIDAL-ARI\",\"market_id\":\"01a15779-1d26-7e60-af88-5b30a1317e6a\",\"clock\":113013972307,\"price_dollars\":\"0.2400\",\"delta_fp\":\"83333.00\",\"side\":\"yes\",\"ts\":\"2026-11-01T17:09:50.114Z\",\"ts_ms\":1793552990114},\"sending_ts_ms\":1793552990122}\n",
+        "raw_body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":10,\"msg\":{\"market_ticker\":\"KXNFLGAME-26NOV01ARIDAL-ARI\",\"market_id\":\"01a15779-1d26-7e60-af88-5b30a1317e6a\",\"clock\":113013972307,\"price_dollars\":\"0.2400\",\"delta_fp\":\"83333.00\",\"side\":\"yes\",\"ts\":\"2026-11-01T17:09:50.114Z\",\"ts_ms\":1793552990114},\"sending_ts_ms\":1793552990122}\n",
+        "body_sha256": "11a6676610f2738148954ab623f829fa4b6af91d33d7bf400adb313e6b5b73ca",
+        "http_status": 101,
+        "headers_json": "{}",
+        "schema_version": "kalshi-ws/m5a-v1",
+        "source_ts": "2026-11-01T17:09:50.122000+00:00",
+        "validation_status": "VALID",
+        "validation_error": null,
+        "truncated": 0
+      },
+      {
+        "id": 13,
+        "ts_utc": "2026-11-01T17:09:50.200253+00:00",
+        "venue": "kalshi",
+        "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+        "json_payload": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":11,\"msg\":{\"market_ticker\":\"KXNFLGAME-26NOV01ARIDAL-ARI\",\"market_id\":\"01a15779-1d26-7e60-af88-5b30a1317e6a\",\"clock\":113013972681,\"price_dollars\":\"0.2400\",\"delta_fp\":\"-83333.00\",\"side\":\"yes\",\"ts\":\"2026-11-01T17:09:50.174Z\",\"ts_ms\":1793552990174},\"sending_ts_ms\":1793552990179}\n",
+        "raw_body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":11,\"msg\":{\"market_ticker\":\"KXNFLGAME-26NOV01ARIDAL-ARI\",\"market_id\":\"01a15779-1d26-7e60-af88-5b30a1317e6a\",\"clock\":113013972681,\"price_dollars\":\"0.2400\",\"delta_fp\":\"-83333.00\",\"side\":\"yes\",\"ts\":\"2026-11-01T17:09:50.174Z\",\"ts_ms\":1793552990174},\"sending_ts_ms\":1793552990179}\n",
+        "body_sha256": "512fd1a7c6d9b7240e14f1b379d21f04a8cbc305377928eedaa9a78aa87075b1",
+        "http_status": 101,
+        "headers_json": "{}",
+        "schema_version": "kalshi-ws/m5a-v1",
+        "source_ts": "2026-11-01T17:09:50.179000+00:00",
+        "validation_status": "VALID",
+        "validation_error": null,
+        "truncated": 0
+      },
+      {
+        "id": 14,
+        "ts_utc": "2026-11-01T17:09:50.216353+00:00",
+        "venue": "kalshi",
+        "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+        "json_payload": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":12,\"msg\":{\"market_ticker\":\"KXNFLGAME-26NOV01ARIDAL-ARI\",\"market_id\":\"01a15779-1d26-7e60-af88-5b30a1317e6a\",\"clock\":113013972797,\"price_dollars\":\"0.2300\",\"delta_fp\":\"-1.00\",\"side\":\"yes\",\"ts\":\"2026-11-01T17:09:50.191Z\",\"ts_ms\":1793552990191},\"sending_ts_ms\":1793552990195}\n",
+        "raw_body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":12,\"msg\":{\"market_ticker\":\"KXNFLGAME-26NOV01ARIDAL-ARI\",\"market_id\":\"01a15779-1d26-7e60-af88-5b30a1317e6a\",\"clock\":113013972797,\"price_dollars\":\"0.2300\",\"delta_fp\":\"-1.00\",\"side\":\"yes\",\"ts\":\"2026-11-01T17:09:50.191Z\",\"ts_ms\":1793552990191},\"sending_ts_ms\":1793552990195}\n",
+        "body_sha256": "dd23f79bfb3120cdafdb37596ae374f773316b7c926aa59f54329a0335e09455",
+        "http_status": 101,
+        "headers_json": "{}",
+        "schema_version": "kalshi-ws/m5a-v1",
+        "source_ts": "2026-11-01T17:09:50.195000+00:00",
+        "validation_status": "VALID",
+        "validation_error": null,
+        "truncated": 0
+      },
+      {
+        "id": 15,
+        "ts_utc": "2026-11-01T17:09:50.237563+00:00",
+        "venue": "kalshi",
+        "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+        "json_payload": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":13,\"msg\":{\"market_ticker\":\"KXNFLGAME-26NOV01ARIDAL-ARI\",\"market_id\":\"01a15779-1d26-7e60-af88-5b30a1317e6a\",\"clock\":113013972797,\"price_dollars\":\"0.2400\",\"delta_fp\":\"1.00\",\"side\":\"yes\",\"ts\":\"2026-11-01T17:09:50.191Z\",\"ts_ms\":1793552990191},\"sending_ts_ms\":1793552990195}\n",
+        "raw_body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":13,\"msg\":{\"market_ticker\":\"KXNFLGAME-26NOV01ARIDAL-ARI\",\"market_id\":\"01a15779-1d26-7e60-af88-5b30a1317e6a\",\"clock\":113013972797,\"price_dollars\":\"0.2400\",\"delta_fp\":\"1.00\",\"side\":\"yes\",\"ts\":\"2026-11-01T17:09:50.191Z\",\"ts_ms\":1793552990191},\"sending_ts_ms\":1793552990195}\n",
+        "body_sha256": "d1b27f1f2b96ce4a80dd49796e427a52bcd70e7d7499a90e4c6986d95ca3b26f",
+        "http_status": 101,
+        "headers_json": "{}",
+        "schema_version": "kalshi-ws/m5a-v1",
+        "source_ts": "2026-11-01T17:09:50.195000+00:00",
+        "validation_status": "VALID",
+        "validation_error": null,
+        "truncated": 0
+      },
+      {
+        "id": 16,
+        "ts_utc": "2026-11-01T17:09:50.252320+00:00",
+        "venue": "kalshi",
+        "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+        "json_payload": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":14,\"msg\":{\"market_ticker\":\"KXNFLGAME-26NOV01ARIDAL-ARI\",\"market_id\":\"01a15779-1d26-7e60-af88-5b30a1317e6a\",\"clock\":113013972992,\"price_dollars\":\"0.2400\",\"delta_fp\":\"-1.00\",\"side\":\"yes\",\"ts\":\"2026-11-01T17:09:50.222Z\",\"ts_ms\":1793552990222},\"sending_ts_ms\":1793552990226}\n",
+        "raw_body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":14,\"msg\":{\"market_ticker\":\"KXNFLGAME-26NOV01ARIDAL-ARI\",\"market_id\":\"01a15779-1d26-7e60-af88-5b30a1317e6a\",\"clock\":113013972992,\"price_dollars\":\"0.2400\",\"delta_fp\":\"-1.00\",\"side\":\"yes\",\"ts\":\"2026-11-01T17:09:50.222Z\",\"ts_ms\":1793552990222},\"sending_ts_ms\":1793552990226}\n",
+        "body_sha256": "d915e4b1741039d224caf8f2edef03014c41b5ce27cc792afeb2690502df1850",
+        "http_status": 101,
+        "headers_json": "{}",
+        "schema_version": "kalshi-ws/m5a-v1",
+        "source_ts": "2026-11-01T17:09:50.226000+00:00",
+        "validation_status": "VALID",
+        "validation_error": null,
+        "truncated": 0
+      },
+      {
+        "id": 17,
+        "ts_utc": "2026-11-01T17:09:50.273427+00:00",
+        "venue": "kalshi",
+        "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+        "json_payload": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":15,\"msg\":{\"market_ticker\":\"KXNFLGAME-26NOV01ARIDAL-ARI\",\"market_id\":\"01a15779-1d26-7e60-af88-5b30a1317e6a\",\"clock\":113013972992,\"price_dollars\":\"0.2300\",\"delta_fp\":\"1.00\",\"side\":\"yes\",\"ts\":\"2026-11-01T17:09:50.222Z\",\"ts_ms\":1793552990222},\"sending_ts_ms\":1793552990226}\n",
+        "raw_body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":15,\"msg\":{\"market_ticker\":\"KXNFLGAME-26NOV01ARIDAL-ARI\",\"market_id\":\"01a15779-1d26-7e60-af88-5b30a1317e6a\",\"clock\":113013972992,\"price_dollars\":\"0.2300\",\"delta_fp\":\"1.00\",\"side\":\"yes\",\"ts\":\"2026-11-01T17:09:50.222Z\",\"ts_ms\":1793552990222},\"sending_ts_ms\":1793552990226}\n",
+        "body_sha256": "4c47da050cac48e6e581aae85b9b0ea98b4cbd547c4f096070c1cda3084f9867",
+        "http_status": 101,
+        "headers_json": "{}",
+        "schema_version": "kalshi-ws/m5a-v1",
+        "source_ts": "2026-11-01T17:09:50.226000+00:00",
+        "validation_status": "VALID",
+        "validation_error": null,
+        "truncated": 0
+      },
+      {
+        "id": 18,
+        "ts_utc": "2026-11-01T17:09:50.435468+00:00",
+        "venue": "kalshi",
+        "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+        "json_payload": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":16,\"msg\":{\"market_ticker\":\"KXNFLGAME-26NOV01ARIDAL-ARI\",\"market_id\":\"01a15779-1d26-7e60-af88-5b30a1317e6a\",\"clock\":113013974274,\"price_dollars\":\"0.7500\",\"delta_fp\":\"-7.60\",\"side\":\"no\",\"ts\":\"2026-11-01T17:09:50.409Z\",\"ts_ms\":1793552990409},\"sending_ts_ms\":1793552990414}\n",
+        "raw_body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":16,\"msg\":{\"market_ticker\":\"KXNFLGAME-26NOV01ARIDAL-ARI\",\"market_id\":\"01a15779-1d26-7e60-af88-5b30a1317e6a\",\"clock\":113013974274,\"price_dollars\":\"0.7500\",\"delta_fp\":\"-7.60\",\"side\":\"no\",\"ts\":\"2026-11-01T17:09:50.409Z\",\"ts_ms\":1793552990409},\"sending_ts_ms\":1793552990414}\n",
+        "body_sha256": "600f34ddd7f6b6558c9de132c38d95929a5d5c1fc46f596758dc8a473ef80b22",
+        "http_status": 101,
+        "headers_json": "{}",
+        "schema_version": "kalshi-ws/m5a-v1",
+        "source_ts": "2026-11-01T17:09:50.414000+00:00",
+        "validation_status": "VALID",
+        "validation_error": null,
+        "truncated": 0
+      },
+      {
+        "id": 19,
+        "ts_utc": "2026-11-01T17:09:50.463342+00:00",
+        "venue": "kalshi",
+        "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+        "json_payload": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":17,\"msg\":{\"market_ticker\":\"KXNFLGAME-26NOV01ARIDAL-ARI\",\"market_id\":\"01a15779-1d26-7e60-af88-5b30a1317e6a\",\"clock\":113013974428,\"price_dollars\":\"0.7500\",\"delta_fp\":\"-76.00\",\"side\":\"no\",\"ts\":\"2026-11-01T17:09:50.431Z\",\"ts_ms\":1793552990431},\"sending_ts_ms\":1793552990435}\n",
+        "raw_body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":17,\"msg\":{\"market_ticker\":\"KXNFLGAME-26NOV01ARIDAL-ARI\",\"market_id\":\"01a15779-1d26-7e60-af88-5b30a1317e6a\",\"clock\":113013974428,\"price_dollars\":\"0.7500\",\"delta_fp\":\"-76.00\",\"side\":\"no\",\"ts\":\"2026-11-01T17:09:50.431Z\",\"ts_ms\":1793552990431},\"sending_ts_ms\":1793552990435}\n",
+        "body_sha256": "70ef3758f45e8ef390cb787d46c7a8a4ce5676b3fa1365a285448e12857b101a",
+        "http_status": 101,
+        "headers_json": "{}",
+        "schema_version": "kalshi-ws/m5a-v1",
+        "source_ts": "2026-11-01T17:09:50.435000+00:00",
+        "validation_status": "VALID",
+        "validation_error": null,
+        "truncated": 0
+      },
+      {
+        "id": 20,
+        "ts_utc": "2026-11-01T17:09:50.965690+00:00",
+        "venue": "kalshi",
+        "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+        "json_payload": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":18,\"msg\":{\"market_ticker\":\"KXNFLGAME-26NOV01ARIDAL-ARI\",\"market_id\":\"01a15779-1d26-7e60-af88-5b30a1317e6a\",\"clock\":113013977834,\"price_dollars\":\"0.7500\",\"delta_fp\":\"-304.03\",\"side\":\"no\",\"ts\":\"2026-11-01T17:09:50.938Z\",\"ts_ms\":1793552990938},\"sending_ts_ms\":1793552990944}\n",
+        "raw_body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":18,\"msg\":{\"market_ticker\":\"KXNFLGAME-26NOV01ARIDAL-ARI\",\"market_id\":\"01a15779-1d26-7e60-af88-5b30a1317e6a\",\"clock\":113013977834,\"price_dollars\":\"0.7500\",\"delta_fp\":\"-304.03\",\"side\":\"no\",\"ts\":\"2026-11-01T17:09:50.938Z\",\"ts_ms\":1793552990938},\"sending_ts_ms\":1793552990944}\n",
+        "body_sha256": "e97a6bb289fdbd582b11c39ef194fb0841ca21acef26a3dc6794c40c5bd0dd19",
+        "http_status": 101,
+        "headers_json": "{}",
+        "schema_version": "kalshi-ws/m5a-v1",
+        "source_ts": "2026-11-01T17:09:50.944000+00:00",
+        "validation_status": "VALID",
+        "validation_error": null,
+        "truncated": 0
+      },
+      {
+        "id": 21,
+        "ts_utc": "2026-11-01T17:09:51.520028+00:00",
+        "venue": "kalshi",
+        "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+        "json_payload": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":19,\"msg\":{\"market_ticker\":\"KXNFLGAME-26NOV01ARIDAL-ARI\",\"market_id\":\"01a15779-1d26-7e60-af88-5b30a1317e6a\",\"clock\":113013981710,\"price_dollars\":\"0.7500\",\"delta_fp\":\"-76.00\",\"side\":\"no\",\"ts\":\"2026-11-01T17:09:51.495Z\",\"ts_ms\":1793552991495},\"sending_ts_ms\":1793552991499}\n",
+        "raw_body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":19,\"msg\":{\"market_ticker\":\"KXNFLGAME-26NOV01ARIDAL-ARI\",\"market_id\":\"01a15779-1d26-7e60-af88-5b30a1317e6a\",\"clock\":113013981710,\"price_dollars\":\"0.7500\",\"delta_fp\":\"-76.00\",\"side\":\"no\",\"ts\":\"2026-11-01T17:09:51.495Z\",\"ts_ms\":1793552991495},\"sending_ts_ms\":1793552991499}\n",
+        "body_sha256": "352a125818468cf02f4897253a39b4344628fb83ce3fc9d38431f1e707e2fbd5",
+        "http_status": 101,
+        "headers_json": "{}",
+        "schema_version": "kalshi-ws/m5a-v1",
+        "source_ts": "2026-11-01T17:09:51.499000+00:00",
+        "validation_status": "VALID",
+        "validation_error": null,
+        "truncated": 0
+      },
+      {
+        "id": 22,
+        "ts_utc": "2026-11-01T17:09:51.572270+00:00",
+        "venue": "kalshi",
+        "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+        "json_payload": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":20,\"msg\":{\"market_ticker\":\"KXNFLGAME-26NOV01ARIDAL-ARI\",\"market_id\":\"01a15779-1d26-7e60-af88-5b30a1317e6a\",\"clock\":113013982042,\"price_dollars\":\"0.7500\",\"delta_fp\":\"-95.01\",\"side\":\"no\",\"ts\":\"2026-11-01T17:09:51.544Z\",\"ts_ms\":1793552991544},\"sending_ts_ms\":1793552991551}\n",
+        "raw_body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":20,\"msg\":{\"market_ticker\":\"KXNFLGAME-26NOV01ARIDAL-ARI\",\"market_id\":\"01a15779-1d26-7e60-af88-5b30a1317e6a\",\"clock\":113013982042,\"price_dollars\":\"0.7500\",\"delta_fp\":\"-95.01\",\"side\":\"no\",\"ts\":\"2026-11-01T17:09:51.544Z\",\"ts_ms\":1793552991544},\"sending_ts_ms\":1793552991551}\n",
+        "body_sha256": "cea209e8feddcc68046a752f24de8eb42b3c16094b7facd6ee11e788c59e71cc",
+        "http_status": 101,
+        "headers_json": "{}",
+        "schema_version": "kalshi-ws/m5a-v1",
+        "source_ts": "2026-11-01T17:09:51.551000+00:00",
+        "validation_status": "VALID",
+        "validation_error": null,
+        "truncated": 0
+      },
+      {
+        "id": 23,
+        "ts_utc": "2026-11-01T17:09:52.016069+00:00",
+        "venue": "kalshi",
+        "endpoint": "wss://external-api-ws.kalshi.com/trade-api/ws/v2",
+        "json_payload": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":21,\"msg\":{\"market_ticker\":\"KXNFLGAME-26NOV01ARIDAL-ARI\",\"market_id\":\"01a15779-1d26-7e60-af88-5b30a1317e6a\",\"clock\":113013985603,\"price_dollars\":\"0.7500\",\"delta_fp\":\"-38.00\",\"side\":\"no\",\"ts\":\"2026-11-01T17:09:51.988Z\",\"ts_ms\":1793552991988},\"sending_ts_ms\":1793552991995}\n",
+        "raw_body": "{\"type\":\"orderbook_delta\",\"sid\":1,\"seq\":21,\"msg\":{\"market_ticker\":\"KXNFLGAME-26NOV01ARIDAL-ARI\",\"market_id\":\"01a15779-1d26-7e60-af88-5b30a1317e6a\",\"clock\":113013985603,\"price_dollars\":\"0.7500\",\"delta_fp\":\"-38.00\",\"side\":\"no\",\"ts\":\"2026-11-01T17:09:51.988Z\",\"ts_ms\":1793552991988},\"sending_ts_ms\":1793552991995}\n",
+        "body_sha256": "b996431b9004631bbe4953e3705dce534834e986872635f609b0fe202cd1ce70",
+        "http_status": 101,
+        "headers_json": "{}",
+        "schema_version": "kalshi-ws/m5a-v1",
+        "source_ts": "2026-11-01T17:09:51.995000+00:00",
+        "validation_status": "VALID",
+        "validation_error": null,
+        "truncated": 0
+      }
+    ],
+    "catalogue_entries": [
+      {
+        "run_id": 1,
+        "source_id": "KXNFLGAME-26NOV01ARIDAL-ARI",
+        "observation_id": 1,
+        "source_ts": "2026-10-20T04:06:00.5311Z",
+        "metadata_json": "{\"can_close_early\":true,\"close_time\":\"2026-11-03T18:00:00Z\",\"created_time\":\"2026-10-20T04:01:57.548274Z\",\"custom_strike\":{\"football_team\":\"d73dae4f-1f08-4b5e-bf23-4e25e9b6a69c\"},\"early_close_condition\":\"This market will close and expire after a winner is declared.\",\"event_ticker\":\"KXNFLGAME-26NOV01ARIDAL\",\"exchange_index\":0,\"expected_expiration_time\":\"2026-11-01T21:00:00Z\",\"expiration_time\":\"2026-11-03T18:00:00Z\",\"expiration_value\":\"\",\"last_price_dollars\":\"0.2500\",\"latest_expiration_time\":\"2026-11-03T18:00:00Z\",\"market_type\":\"binary\",\"no_ask_dollars\":\"0.7600\",\"no_bid_dollars\":\"0.7500\",\"no_sub_title\":\"Arizona\",\"notional_value_dollars\":\"1.0000\",\"occurrence_datetime\":\"2026-11-01T21:00:00Z\",\"open_interest_fp\":\"771469.35\",\"open_time\":\"2026-10-20T04:06:00Z\",\"previous_price_dollars\":\"0.2600\",\"previous_yes_ask_dollars\":\"0.2600\",\"previous_yes_bid_dollars\":\"0.2500\",\"price_level_structure\":\"linear_cent\",\"price_ranges\":[{\"end\":\"1.0000\",\"start\":\"0.0000\",\"step\":\"0.0100\"}],\"result\":\"\",\"rules_primary\":\"If Arizona wins the Arizona vs Dallas Pro Football game originally scheduled for Nov 1, 2026, then the market resolves to Yes.\",\"rules_secondary\":\"The following market refers to the team who wins the Arizona vs Dallas Pro Football game originally scheduled for Nov 1, 2026. If the game ends in a tie, the market will resolve to $0.50 for each team. If the game is postponed but begins within 48 hours from its originally scheduled start time, the market will remain open and resolve based on the official final result. If the game is not started within 48 hours, the market will resolve to a fair price.\\n\\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.\",\"settlement_bounds_type\":\"default\",\"settlement_timer_seconds\":60,\"status\":\"active\",\"strike_type\":\"structured\",\"ticker\":\"KXNFLGAME-26NOV01ARIDAL-ARI\",\"title\":\"Arizona wins\",\"updated_time\":\"2026-10-20T04:06:00.5311Z\",\"volume_24h_fp\":\"490274.75\",\"volume_fp\":\"795448.49\",\"yes_ask_dollars\":\"0.2500\",\"yes_ask_size_fp\":\"2420743.16\",\"yes_bid_dollars\":\"0.2400\",\"yes_bid_size_fp\":\"115665.33\",\"yes_sub_title\":\"Arizona\"}",
+        "rules_json": "{\"close_time\":\"2026-11-03T18:00:00Z\",\"latest_expiration_time\":\"2026-11-03T18:00:00Z\",\"rules_primary\":\"If Arizona wins the Arizona vs Dallas Pro Football game originally scheduled for Nov 1, 2026, then the market resolves to Yes.\",\"rules_secondary\":\"The following market refers to the team who wins the Arizona vs Dallas Pro Football game originally scheduled for Nov 1, 2026. If the game ends in a tie, the market will resolve to $0.50 for each team. If the game is postponed but begins within 48 hours from its originally scheduled start time, the market will remain open and resolve based on the official final result. If the game is not started within 48 hours, the market will resolve to a fair price.\\n\\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.\",\"settlement_timer_seconds\":60}",
+        "rules_sha256": "2e8026de400dd022c4cfe2e2bd9c5b6c321d6881bb7ea5487f08a9b74851bd3e",
+        "verification": "UNVERIFIED"
+      }
+    ],
+    "book_captures": [
+      {
+        "observation_id": 2,
+        "run_id": 1,
+        "source_id": "KXNFLGAME-26NOV01ARIDAL-ARI",
+        "source_ts": null,
+        "freshness": "UNVERIFIED_STREAM",
+        "liquidity": "UNKNOWN",
+        "verification": "UNVERIFIED"
+      },
+      {
+        "observation_id": 3,
+        "run_id": 1,
+        "source_id": "KXNFLGAME-26NOV01ARIDAL-ARI",
+        "source_ts": "2026-11-01T17:09:44.876000+00:00",
+        "freshness": "FRESH",
+        "liquidity": "TWO_SIDED",
+        "verification": "UNVERIFIED"
+      },
+      {
+        "observation_id": 4,
+        "run_id": 1,
+        "source_id": "KXNFLGAME-26NOV01ARIDAL-ARI",
+        "source_ts": "2026-11-01T17:09:46.751000+00:00",
+        "freshness": "FRESH",
+        "liquidity": "TWO_SIDED",
+        "verification": "UNVERIFIED"
+      },
+      {
+        "observation_id": 5,
+        "run_id": 1,
+        "source_id": "KXNFLGAME-26NOV01ARIDAL-ARI",
+        "source_ts": "2026-11-01T17:09:46.991000+00:00",
+        "freshness": "FRESH",
+        "liquidity": "TWO_SIDED",
+        "verification": "UNVERIFIED"
+      },
+      {
+        "observation_id": 6,
+        "run_id": 1,
+        "source_id": "KXNFLGAME-26NOV01ARIDAL-ARI",
+        "source_ts": "2026-11-01T17:09:46.991000+00:00",
+        "freshness": "FRESH",
+        "liquidity": "TWO_SIDED",
+        "verification": "UNVERIFIED"
+      },
+      {
+        "observation_id": 7,
+        "run_id": 1,
+        "source_id": "KXNFLGAME-26NOV01ARIDAL-ARI",
+        "source_ts": "2026-11-01T17:09:47.008000+00:00",
+        "freshness": "FRESH",
+        "liquidity": "TWO_SIDED",
+        "verification": "UNVERIFIED"
+      },
+      {
+        "observation_id": 8,
+        "run_id": 1,
+        "source_id": "KXNFLGAME-26NOV01ARIDAL-ARI",
+        "source_ts": "2026-11-01T17:09:47.008000+00:00",
+        "freshness": "FRESH",
+        "liquidity": "TWO_SIDED",
+        "verification": "UNVERIFIED"
+      },
+      {
+        "observation_id": 9,
+        "run_id": 1,
+        "source_id": "KXNFLGAME-26NOV01ARIDAL-ARI",
+        "source_ts": "2026-11-01T17:09:47.788000+00:00",
+        "freshness": "FRESH",
+        "liquidity": "TWO_SIDED",
+        "verification": "UNVERIFIED"
+      },
+      {
+        "observation_id": 10,
+        "run_id": 1,
+        "source_id": "KXNFLGAME-26NOV01ARIDAL-ARI",
+        "source_ts": "2026-11-01T17:09:47.788000+00:00",
+        "freshness": "FRESH",
+        "liquidity": "TWO_SIDED",
+        "verification": "UNVERIFIED"
+      },
+      {
+        "observation_id": 11,
+        "run_id": 1,
+        "source_id": "KXNFLGAME-26NOV01ARIDAL-ARI",
+        "source_ts": "2026-11-01T17:09:48.981000+00:00",
+        "freshness": "FRESH",
+        "liquidity": "TWO_SIDED",
+        "verification": "UNVERIFIED"
+      },
+      {
+        "observation_id": 12,
+        "run_id": 1,
+        "source_id": "KXNFLGAME-26NOV01ARIDAL-ARI",
+        "source_ts": "2026-11-01T17:09:50.122000+00:00",
+        "freshness": "FRESH",
+        "liquidity": "TWO_SIDED",
+        "verification": "UNVERIFIED"
+      },
+      {
+        "observation_id": 13,
+        "run_id": 1,
+        "source_id": "KXNFLGAME-26NOV01ARIDAL-ARI",
+        "source_ts": "2026-11-01T17:09:50.179000+00:00",
+        "freshness": "FRESH",
+        "liquidity": "TWO_SIDED",
+        "verification": "UNVERIFIED"
+      },
+      {
+        "observation_id": 14,
+        "run_id": 1,
+        "source_id": "KXNFLGAME-26NOV01ARIDAL-ARI",
+        "source_ts": "2026-11-01T17:09:50.195000+00:00",
+        "freshness": "FRESH",
+        "liquidity": "TWO_SIDED",
+        "verification": "UNVERIFIED"
+      },
+      {
+        "observation_id": 15,
+        "run_id": 1,
+        "source_id": "KXNFLGAME-26NOV01ARIDAL-ARI",
+        "source_ts": "2026-11-01T17:09:50.195000+00:00",
+        "freshness": "FRESH",
+        "liquidity": "TWO_SIDED",
+        "verification": "UNVERIFIED"
+      },
+      {
+        "observation_id": 16,
+        "run_id": 1,
+        "source_id": "KXNFLGAME-26NOV01ARIDAL-ARI",
+        "source_ts": "2026-11-01T17:09:50.226000+00:00",
+        "freshness": "FRESH",
+        "liquidity": "TWO_SIDED",
+        "verification": "UNVERIFIED"
+      },
+      {
+        "observation_id": 17,
+        "run_id": 1,
+        "source_id": "KXNFLGAME-26NOV01ARIDAL-ARI",
+        "source_ts": "2026-11-01T17:09:50.226000+00:00",
+        "freshness": "FRESH",
+        "liquidity": "TWO_SIDED",
+        "verification": "UNVERIFIED"
+      },
+      {
+        "observation_id": 18,
+        "run_id": 1,
+        "source_id": "KXNFLGAME-26NOV01ARIDAL-ARI",
+        "source_ts": "2026-11-01T17:09:50.414000+00:00",
+        "freshness": "FRESH",
+        "liquidity": "TWO_SIDED",
+        "verification": "UNVERIFIED"
+      },
+      {
+        "observation_id": 19,
+        "run_id": 1,
+        "source_id": "KXNFLGAME-26NOV01ARIDAL-ARI",
+        "source_ts": "2026-11-01T17:09:50.435000+00:00",
+        "freshness": "FRESH",
+        "liquidity": "TWO_SIDED",
+        "verification": "UNVERIFIED"
+      },
+      {
+        "observation_id": 20,
+        "run_id": 1,
+        "source_id": "KXNFLGAME-26NOV01ARIDAL-ARI",
+        "source_ts": "2026-11-01T17:09:50.944000+00:00",
+        "freshness": "FRESH",
+        "liquidity": "TWO_SIDED",
+        "verification": "UNVERIFIED"
+      },
+      {
+        "observation_id": 21,
+        "run_id": 1,
+        "source_id": "KXNFLGAME-26NOV01ARIDAL-ARI",
+        "source_ts": "2026-11-01T17:09:51.499000+00:00",
+        "freshness": "FRESH",
+        "liquidity": "TWO_SIDED",
+        "verification": "UNVERIFIED"
+      },
+      {
+        "observation_id": 22,
+        "run_id": 1,
+        "source_id": "KXNFLGAME-26NOV01ARIDAL-ARI",
+        "source_ts": "2026-11-01T17:09:51.551000+00:00",
+        "freshness": "FRESH",
+        "liquidity": "TWO_SIDED",
+        "verification": "UNVERIFIED"
+      },
+      {
+        "observation_id": 23,
+        "run_id": 1,
+        "source_id": "KXNFLGAME-26NOV01ARIDAL-ARI",
+        "source_ts": "2026-11-01T17:09:51.995000+00:00",
+        "freshness": "FRESH",
+        "liquidity": "TWO_SIDED",
+        "verification": "UNVERIFIED"
+      }
+    ],
+    "ws_connections": [
+      {
+        "id": 1,
+        "source_id": "KXNFLGAME-26NOV01ARIDAL-ARI",
+        "run_id": 1,
+        "metadata_observation_id": 1,
+        "started_at": "2026-11-01T17:09:44.667446+00:00",
+        "ended_at": "2026-11-01T17:09:54.080245+00:00",
+        "end_reason": "SIGNAL_STOP"
+      }
+    ],
+    "ws_frames": [
+      {
+        "observation_id": 2,
+        "connection_id": 1,
+        "wire_sha256": "d72d0b43222760a7e8c17fc9ccdb2d712079ec499f6df45c8772703ef73f85dc",
+        "archive_kind": "EXACT_WIRE"
+      },
+      {
+        "observation_id": 3,
+        "connection_id": 1,
+        "wire_sha256": "f072654dcf01dafd1b1bf01ad03efb0e430606ce95e875a9be735f82798bdc3a",
+        "archive_kind": "EXACT_WIRE"
+      },
+      {
+        "observation_id": 4,
+        "connection_id": 1,
+        "wire_sha256": "abb96577e3c099d9d40a1fb46d8d80aa2b319a0b9bac3f8b0d41c7b1c471f126",
+        "archive_kind": "EXACT_WIRE"
+      },
+      {
+        "observation_id": 5,
+        "connection_id": 1,
+        "wire_sha256": "190c5db88a4ced7171109abc78cec60704bcd3916e603d49c66ebf0c2c0d1db7",
+        "archive_kind": "EXACT_WIRE"
+      },
+      {
+        "observation_id": 6,
+        "connection_id": 1,
+        "wire_sha256": "8665a14ea85305a49b7ddf00f64b3badb1c76627073aefe478c00897ece83d9d",
+        "archive_kind": "EXACT_WIRE"
+      },
+      {
+        "observation_id": 7,
+        "connection_id": 1,
+        "wire_sha256": "a0065b698cec221a5cfc02402f82eeb96310c4fd9a6772e4c44957839351c622",
+        "archive_kind": "EXACT_WIRE"
+      },
+      {
+        "observation_id": 8,
+        "connection_id": 1,
+        "wire_sha256": "79c18cff92f22d18b1432674dc224580172b2b78da576332da2e5468c4104a74",
+        "archive_kind": "EXACT_WIRE"
+      },
+      {
+        "observation_id": 9,
+        "connection_id": 1,
+        "wire_sha256": "4aa77989ff1428d2437ba844e9a34cefbae2e64a9758b1b8a273825d50579572",
+        "archive_kind": "EXACT_WIRE"
+      },
+      {
+        "observation_id": 10,
+        "connection_id": 1,
+        "wire_sha256": "68d480ea15279bd359d3ffa7f52df7ec71d0255c7d61e3dd1de883f88f7ed8db",
+        "archive_kind": "EXACT_WIRE"
+      },
+      {
+        "observation_id": 11,
+        "connection_id": 1,
+        "wire_sha256": "76d8a5aa8a537f647d67d23ff586301e35dc59d54e441f485d1dcd86bfe094f2",
+        "archive_kind": "EXACT_WIRE"
+      },
+      {
+        "observation_id": 12,
+        "connection_id": 1,
+        "wire_sha256": "11a6676610f2738148954ab623f829fa4b6af91d33d7bf400adb313e6b5b73ca",
+        "archive_kind": "EXACT_WIRE"
+      },
+      {
+        "observation_id": 13,
+        "connection_id": 1,
+        "wire_sha256": "512fd1a7c6d9b7240e14f1b379d21f04a8cbc305377928eedaa9a78aa87075b1",
+        "archive_kind": "EXACT_WIRE"
+      },
+      {
+        "observation_id": 14,
+        "connection_id": 1,
+        "wire_sha256": "dd23f79bfb3120cdafdb37596ae374f773316b7c926aa59f54329a0335e09455",
+        "archive_kind": "EXACT_WIRE"
+      },
+      {
+        "observation_id": 15,
+        "connection_id": 1,
+        "wire_sha256": "d1b27f1f2b96ce4a80dd49796e427a52bcd70e7d7499a90e4c6986d95ca3b26f",
+        "archive_kind": "EXACT_WIRE"
+      },
+      {
+        "observation_id": 16,
+        "connection_id": 1,
+        "wire_sha256": "d915e4b1741039d224caf8f2edef03014c41b5ce27cc792afeb2690502df1850",
+        "archive_kind": "EXACT_WIRE"
+      },
+      {
+        "observation_id": 17,
+        "connection_id": 1,
+        "wire_sha256": "4c47da050cac48e6e581aae85b9b0ea98b4cbd547c4f096070c1cda3084f9867",
+        "archive_kind": "EXACT_WIRE"
+      },
+      {
+        "observation_id": 18,
+        "connection_id": 1,
+        "wire_sha256": "600f34ddd7f6b6558c9de132c38d95929a5d5c1fc46f596758dc8a473ef80b22",
+        "archive_kind": "EXACT_WIRE"
+      },
+      {
+        "observation_id": 19,
+        "connection_id": 1,
+        "wire_sha256": "70ef3758f45e8ef390cb787d46c7a8a4ce5676b3fa1365a285448e12857b101a",
+        "archive_kind": "EXACT_WIRE"
+      },
+      {
+        "observation_id": 20,
+        "connection_id": 1,
+        "wire_sha256": "e97a6bb289fdbd582b11c39ef194fb0841ca21acef26a3dc6794c40c5bd0dd19",
+        "archive_kind": "EXACT_WIRE"
+      },
+      {
+        "observation_id": 21,
+        "connection_id": 1,
+        "wire_sha256": "352a125818468cf02f4897253a39b4344628fb83ce3fc9d38431f1e707e2fbd5",
+        "archive_kind": "EXACT_WIRE"
+      },
+      {
+        "observation_id": 22,
+        "connection_id": 1,
+        "wire_sha256": "cea209e8feddcc68046a752f24de8eb42b3c16094b7facd6ee11e788c59e71cc",
+        "archive_kind": "EXACT_WIRE"
+      },
+      {
+        "observation_id": 23,
+        "connection_id": 1,
+        "wire_sha256": "b996431b9004631bbe4953e3705dce534834e986872635f609b0fe202cd1ce70",
+        "archive_kind": "EXACT_WIRE"
+      }
+    ],
+    "normalized_books": [
+      {
+        "id": 1,
+        "observation_id": 3,
+        "metadata_observation_id": 1,
+        "normalizer_version": "binary-books/m3-v1",
+        "evaluated_at": "2026-11-01T17:09:44.926373+00:00",
+        "max_age_seconds": 60,
+        "data_usable": 1,
+        "result_json": "{}",
+        "verification": "UNVERIFIED"
+      },
+      {
+        "id": 2,
+        "observation_id": 4,
+        "metadata_observation_id": 1,
+        "normalizer_version": "binary-books/m3-v1",
+        "evaluated_at": "2026-11-01T17:09:46.772189+00:00",
+        "max_age_seconds": 60,
+        "data_usable": 1,
+        "result_json": "{}",
+        "verification": "UNVERIFIED"
+      },
+      {
+        "id": 3,
+        "observation_id": 5,
+        "metadata_observation_id": 1,
+        "normalizer_version": "binary-books/m3-v1",
+        "evaluated_at": "2026-11-01T17:09:47.011715+00:00",
+        "max_age_seconds": 60,
+        "data_usable": 1,
+        "result_json": "{}",
+        "verification": "UNVERIFIED"
+      },
+      {
+        "id": 4,
+        "observation_id": 6,
+        "metadata_observation_id": 1,
+        "normalizer_version": "binary-books/m3-v1",
+        "evaluated_at": "2026-11-01T17:09:47.033496+00:00",
+        "max_age_seconds": 60,
+        "data_usable": 1,
+        "result_json": "{}",
+        "verification": "UNVERIFIED"
+      },
+      {
+        "id": 5,
+        "observation_id": 7,
+        "metadata_observation_id": 1,
+        "normalizer_version": "binary-books/m3-v1",
+        "evaluated_at": "2026-11-01T17:09:47.055136+00:00",
+        "max_age_seconds": 60,
+        "data_usable": 1,
+        "result_json": "{}",
+        "verification": "UNVERIFIED"
+      },
+      {
+        "id": 6,
+        "observation_id": 8,
+        "metadata_observation_id": 1,
+        "normalizer_version": "binary-books/m3-v1",
+        "evaluated_at": "2026-11-01T17:09:47.076555+00:00",
+        "max_age_seconds": 60,
+        "data_usable": 1,
+        "result_json": "{}",
+        "verification": "UNVERIFIED"
+      },
+      {
+        "id": 7,
+        "observation_id": 9,
+        "metadata_observation_id": 1,
+        "normalizer_version": "binary-books/m3-v1",
+        "evaluated_at": "2026-11-01T17:09:47.809352+00:00",
+        "max_age_seconds": 60,
+        "data_usable": 1,
+        "result_json": "{}",
+        "verification": "UNVERIFIED"
+      },
+      {
+        "id": 8,
+        "observation_id": 10,
+        "metadata_observation_id": 1,
+        "normalizer_version": "binary-books/m3-v1",
+        "evaluated_at": "2026-11-01T17:09:47.833929+00:00",
+        "max_age_seconds": 60,
+        "data_usable": 1,
+        "result_json": "{}",
+        "verification": "UNVERIFIED"
+      },
+      {
+        "id": 9,
+        "observation_id": 11,
+        "metadata_observation_id": 1,
+        "normalizer_version": "binary-books/m3-v1",
+        "evaluated_at": "2026-11-01T17:09:49.001836+00:00",
+        "max_age_seconds": 60,
+        "data_usable": 1,
+        "result_json": "{}",
+        "verification": "UNVERIFIED"
+      },
+      {
+        "id": 10,
+        "observation_id": 12,
+        "metadata_observation_id": 1,
+        "normalizer_version": "binary-books/m3-v1",
+        "evaluated_at": "2026-11-01T17:09:50.143025+00:00",
+        "max_age_seconds": 60,
+        "data_usable": 1,
+        "result_json": "{}",
+        "verification": "UNVERIFIED"
+      },
+      {
+        "id": 11,
+        "observation_id": 13,
+        "metadata_observation_id": 1,
+        "normalizer_version": "binary-books/m3-v1",
+        "evaluated_at": "2026-11-01T17:09:50.200253+00:00",
+        "max_age_seconds": 60,
+        "data_usable": 1,
+        "result_json": "{}",
+        "verification": "UNVERIFIED"
+      },
+      {
+        "id": 12,
+        "observation_id": 14,
+        "metadata_observation_id": 1,
+        "normalizer_version": "binary-books/m3-v1",
+        "evaluated_at": "2026-11-01T17:09:50.216353+00:00",
+        "max_age_seconds": 60,
+        "data_usable": 1,
+        "result_json": "{}",
+        "verification": "UNVERIFIED"
+      },
+      {
+        "id": 13,
+        "observation_id": 15,
+        "metadata_observation_id": 1,
+        "normalizer_version": "binary-books/m3-v1",
+        "evaluated_at": "2026-11-01T17:09:50.237563+00:00",
+        "max_age_seconds": 60,
+        "data_usable": 1,
+        "result_json": "{}",
+        "verification": "UNVERIFIED"
+      },
+      {
+        "id": 14,
+        "observation_id": 16,
+        "metadata_observation_id": 1,
+        "normalizer_version": "binary-books/m3-v1",
+        "evaluated_at": "2026-11-01T17:09:50.252320+00:00",
+        "max_age_seconds": 60,
+        "data_usable": 1,
+        "result_json": "{}",
+        "verification": "UNVERIFIED"
+      },
+      {
+        "id": 15,
+        "observation_id": 17,
+        "metadata_observation_id": 1,
+        "normalizer_version": "binary-books/m3-v1",
+        "evaluated_at": "2026-11-01T17:09:50.273427+00:00",
+        "max_age_seconds": 60,
+        "data_usable": 1,
+        "result_json": "{}",
+        "verification": "UNVERIFIED"
+      },
+      {
+        "id": 16,
+        "observation_id": 18,
+        "metadata_observation_id": 1,
+        "normalizer_version": "binary-books/m3-v1",
+        "evaluated_at": "2026-11-01T17:09:50.435468+00:00",
+        "max_age_seconds": 60,
+        "data_usable": 1,
+        "result_json": "{}",
+        "verification": "UNVERIFIED"
+      },
+      {
+        "id": 17,
+        "observation_id": 19,
+        "metadata_observation_id": 1,
+        "normalizer_version": "binary-books/m3-v1",
+        "evaluated_at": "2026-11-01T17:09:50.463342+00:00",
+        "max_age_seconds": 60,
+        "data_usable": 1,
+        "result_json": "{}",
+        "verification": "UNVERIFIED"
+      },
+      {
+        "id": 18,
+        "observation_id": 20,
+        "metadata_observation_id": 1,
+        "normalizer_version": "binary-books/m3-v1",
+        "evaluated_at": "2026-11-01T17:09:50.965690+00:00",
+        "max_age_seconds": 60,
+        "data_usable": 1,
+        "result_json": "{}",
+        "verification": "UNVERIFIED"
+      },
+      {
+        "id": 19,
+        "observation_id": 21,
+        "metadata_observation_id": 1,
+        "normalizer_version": "binary-books/m3-v1",
+        "evaluated_at": "2026-11-01T17:09:51.520028+00:00",
+        "max_age_seconds": 60,
+        "data_usable": 1,
+        "result_json": "{}",
+        "verification": "UNVERIFIED"
+      },
+      {
+        "id": 20,
+        "observation_id": 22,
+        "metadata_observation_id": 1,
+        "normalizer_version": "binary-books/m3-v1",
+        "evaluated_at": "2026-11-01T17:09:51.572270+00:00",
+        "max_age_seconds": 60,
+        "data_usable": 1,
+        "result_json": "{}",
+        "verification": "UNVERIFIED"
+      },
+      {
+        "id": 21,
+        "observation_id": 23,
+        "metadata_observation_id": 1,
+        "normalizer_version": "binary-books/m3-v1",
+        "evaluated_at": "2026-11-01T17:09:52.016069+00:00",
+        "max_age_seconds": 60,
+        "data_usable": 1,
+        "result_json": "{}",
+        "verification": "UNVERIFIED"
+      }
+    ]
+  }
+}
