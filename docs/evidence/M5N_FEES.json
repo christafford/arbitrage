@@ -1,0 +1,72 @@
+[
+  {
+    "name": "fed-hold",
+    "venue": "kalshi",
+    "capture_id": 1,
+    "path": "data/m5n/contracts/fed-hold-kalshi-fees",
+    "approved": false
+  },
+  {
+    "name": "fed-hold",
+    "venue": "polymarket_us",
+    "capture_id": 2,
+    "path": "data/m5n/contracts/fed-hold-polymarket_us-fees",
+    "approved": false
+  },
+  {
+    "name": "fed-cut25",
+    "venue": "kalshi",
+    "capture_id": 3,
+    "path": "data/m5n/contracts/fed-cut25-kalshi-fees",
+    "approved": false
+  },
+  {
+    "name": "fed-cut25",
+    "venue": "polymarket_us",
+    "capture_id": 4,
+    "path": "data/m5n/contracts/fed-cut25-polymarket_us-fees",
+    "approved": false
+  },
+  {
+    "name": "fed-hike25",
+    "venue": "kalshi",
+    "capture_id": 5,
+    "path": "data/m5n/contracts/fed-hike25-kalshi-fees",
+    "approved": false
+  },
+  {
+    "name": "fed-hike25",
+    "venue": "polymarket_us",
+    "capture_id": 6,
+    "path": "data/m5n/contracts/fed-hike25-polymarket_us-fees",
+    "approved": false
+  },
+  {
+    "name": "payrolls-zero",
+    "venue": "kalshi",
+    "capture_id": 7,
+    "path": "data/m5n/contracts/payrolls-zero-kalshi-fees",
+    "approved": false
+  },
+  {
+    "name": "payrolls-zero",
+    "venue": "polymarket_us",
+    "capture_id": 8,
+    "path": "data/m5n/contracts/payrolls-zero-polymarket_us-fees",
+    "approved": false
+  },
+  {
+    "name": "unemployment-4pt3",
+    "venue": "kalshi",
+    "capture_id": 9,
+    "path": "data/m5n/contracts/unemployment-4pt3-kalshi-fees",
+    "approved": false
+  },
+  {
+    "name": "unemployment-4pt3",
+    "venue": "polymarket_us",
+    "capture_id": 10,
+    "path": "data/m5n/contracts/unemployment-4pt3-polymarket_us-fees",
+    "approved": false
+  }
+]

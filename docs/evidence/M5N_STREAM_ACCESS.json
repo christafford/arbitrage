@@ -1,0 +1,17 @@
+{
+  "schema": "m5n-us-unauthenticated-handshake/v1",
+  "url": "wss://api.polymarket.us/v1/ws/markets",
+  "credentials_used": false,
+  "started_at": "2026-11-01T15:27:37.196521+00:00",
+  "timeliness_verified": false,
+  "status": "HTTP_REJECTED",
+  "http_status": 401,
+  "body_sha256": "d4fa28959bd1a0f046502436aa89983e34acbdcd304d9f89969fb7c0e632371e",
+  "body_path": "data/m5n/us-handshake.body",
+  "headers": {
+    "Date": "Sun, 01 Nov 2026 15:27:37 GMT",
+    "Content-Type": "text/plain; charset=utf-8"
+  },
+  "elapsed_seconds": 0.1452226560213603,
+  "finished_at": "2026-11-01T15:27:37.341780+00:00"
+}

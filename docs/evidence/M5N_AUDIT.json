@@ -1,0 +1,169 @@
+{
+  "schema": "m5n-source-audit/v1",
+  "at": "2026-11-01T15:31:04.168562+00:00",
+  "source_documents": 15,
+  "raw_responses": 58,
+  "raw_validation_counts": {
+    "VALID": 58
+  },
+  "definition_replays": 10,
+  "hash_failures": 0,
+  "fee_capture_packets": 10,
+  "approval_and_economics_counts": {
+    "fee_profiles": 0,
+    "research_sessions": 0
+  },
+  "preservation": {
+    "data/research.sqlite3": {
+      "previous_m5m": {
+        "size": 26256674816,
+        "mtime_ns": 1793431175523168394
+      },
+      "current": {
+        "size": 26256674816,
+        "mtime_ns": 1793431175523168394
+      },
+      "unchanged": true
+    },
+    "data/m5i/index.sqlite3": {
+      "previous_m5m": {
+        "size": 10613997568,
+        "mtime_ns": 1793315697547570113
+      },
+      "current": {
+        "size": 10613997568,
+        "mtime_ns": 1793315697547570113
+      },
+      "unchanged": true
+    },
+    "data/m5i/qwen-8f1b.semantic.sqlite3": {
+      "previous_m5m": {
+        "size": 9470234624,
+        "mtime_ns": 1793448397584204096
+      },
+      "current": {
+        "size": 9470234624,
+        "mtime_ns": 1793448397584204096
+      },
+      "unchanged": true
+    },
+    "data/m5i/run-20261030-resume/config.json": {
+      "previous_m5m": {
+        "size": 899,
+        "mtime_ns": 1793405199210097786,
+        "sha256": "b3b52631232bb2ea644369768bac9c5f382c2020de90190b1cd76bd809939c06"
+      },
+      "current": {
+        "size": 899,
+        "mtime_ns": 1793405199210097786,
+        "sha256": "b3b52631232bb2ea644369768bac9c5f382c2020de90190b1cd76bd809939c06"
+      },
+      "unchanged": true
+    },
+    "data/m5i/run-20261028/config.json": {
+      "previous_m5m": {
+        "size": 473,
+        "mtime_ns": 1793202217207118775,
+        "sha256": "1b6190ade6e125d52f4a56576df54fb762bf297e057e04ccfd91cb2787c8d716"
+      },
+      "current": {
+        "size": 473,
+        "mtime_ns": 1793202217207118775,
+        "sha256": "1b6190ade6e125d52f4a56576df54fb762bf297e057e04ccfd91cb2787c8d716"
+      },
+      "unchanged": true
+    },
+    "data/m5i/run-20261029-newnamespace/config.json": {
+      "previous_m5m": {
+        "size": 773,
+        "mtime_ns": 1793316039979883127,
+        "sha256": "0c42a493e4dfd75f81dc1ed7786bdcce631bc61577fe3f64f24270567c4f9687"
+      },
+      "current": {
+        "size": 773,
+        "mtime_ns": 1793316039979883127,
+        "sha256": "0c42a493e4dfd75f81dc1ed7786bdcce631bc61577fe3f64f24270567c4f9687"
+      },
+      "unchanged": true
+    },
+    "data/m5i/run-20261030-resume/collection-status.json": {
+      "previous_m5m": {
+        "size": 174,
+        "mtime_ns": 1793448399210418832,
+        "sha256": "4c85463ef487a4ee03a8c0df29ed24107b2e5ecfd10c3492e7a20391d83f4b29"
+      },
+      "current": {
+        "size": 174,
+        "mtime_ns": 1793448399210418832,
+        "sha256": "4c85463ef487a4ee03a8c0df29ed24107b2e5ecfd10c3492e7a20391d83f4b29"
+      },
+      "unchanged": true
+    },
+    "data/m5i/run-20261030-resume/semantic-status.json": {
+      "previous_m5m": {
+        "size": 172,
+        "mtime_ns": 1793448429213873771,
+        "sha256": "164c88ae59cffabe54b9ed8c711f4c2032cb4a888b47eebc807cb8b649712101"
+      },
+      "current": {
+        "size": 172,
+        "mtime_ns": 1793448429213873771,
+        "sha256": "164c88ae59cffabe54b9ed8c711f4c2032cb4a888b47eebc807cb8b649712101"
+      },
+      "unchanged": true
+    },
+    "data/m5i/run-20261028/collection-status.json": {
+      "previous_m5m": {
+        "size": 174,
+        "mtime_ns": 1793280704780145885,
+        "sha256": "b75b304237b7a49885b34af537ba41b89c4878e4c932d9f3bcc1ddf146fd4553"
+      },
+      "current": {
+        "size": 174,
+        "mtime_ns": 1793280704780145885,
+        "sha256": "b75b304237b7a49885b34af537ba41b89c4878e4c932d9f3bcc1ddf146fd4553"
+      },
+      "unchanged": true
+    },
+    "data/m5i/run-20261028/semantic-status.json": {
+      "previous_m5m": {
+        "size": 172,
+        "mtime_ns": 1793280704782067747,
+        "sha256": "fff183f89b22866e85888b46683a071550e78bff7ba7d728c43b190d939b20d3"
+      },
+      "current": {
+        "size": 172,
+        "mtime_ns": 1793280704782067747,
+        "sha256": "fff183f89b22866e85888b46683a071550e78bff7ba7d728c43b190d939b20d3"
+      },
+      "unchanged": true
+    },
+    "data/m5i/run-20261029-newnamespace/collection-status.json": {
+      "previous_m5m": {
+        "size": 174,
+        "mtime_ns": 1793359239980202509,
+        "sha256": "90a2e2e476c188d021360444a3ad80080ffc87970cc1095933bf6b1d8c26222a"
+      },
+      "current": {
+        "size": 174,
+        "mtime_ns": 1793359239980202509,
+        "sha256": "90a2e2e476c188d021360444a3ad80080ffc87970cc1095933bf6b1d8c26222a"
+      },
+      "unchanged": true
+    },
+    "data/m5i/run-20261029-newnamespace/semantic-status.json": {
+      "previous_m5m": {
+        "size": 172,
+        "mtime_ns": 1793359240245560679,
+        "sha256": "ae07fe7ccfc74e1f2314b8c559c32fccf49816345aa22a78e7f4da37ec971e7f"
+      },
+      "current": {
+        "size": 172,
+        "mtime_ns": 1793359240245560679,
+        "sha256": "ae07fe7ccfc74e1f2314b8c559c32fccf49816345aa22a78e7f4da37ec971e7f"
+      },
+      "unchanged": true
+    }
+  },
+  "all_preserved": true
+}

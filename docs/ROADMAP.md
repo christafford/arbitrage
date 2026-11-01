@@ -338,3 +338,19 @@ See [M5M results](M5M_RESULTS.md), [operations](M5M_OPERATIONS.md) and
 [review guide](M5M_REVIEW_GUIDE.md). The Qwen model, quantization, pooling, batch 16
 and pinned production namespace remain preserved. Sports with independent
 exceptional payouts are residual-risk research, excluded from strict arbitrage.
+
+## M5N — US stream access and exceptional payouts — IN PROGRESS
+
+Operator-requested read-only follow-up; no live-money authority.
+
+- [x] Current US stream documentation and actual unauthenticated handshake:
+  HTTP 401; latency verification blocked by unavailable US credentials.
+- [x] Five freshly open Fed/labor pairs screened with explicit exceptional-payout
+  matches, conflicts and unresolved branches; ten unapproved fee packets.
+- [x] Source/hash replay, isolated archive smoke and 454 passing tests.
+- [ ] Authenticated US streaming measurement and continuity verification.
+- [ ] Human-reviewed complete settlement map, fees and mechanics for a strict pair.
+
+See [M5N results and review packets](M5N_RESULTS.md). Shared cancellation or
+previous-month fallback behavior does not establish full strict compatibility.
+Production code, indices, gates, expired runs and human approvals remain unchanged.

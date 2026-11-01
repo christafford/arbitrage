@@ -598,3 +598,19 @@ original bytes, hashes, schema/receipt clocks and sanitized transport provenance
 They are source-backed ordinary definitions/market-data examples, never approved
 settlement labels. The actual hour used the current clocked protocol; no expired
 compatibility mode or operator approval was renewed.
+
+## M5N read-only source follow-up — November 1, 2026 UTC
+
+[Source receipts and hashes](evidence/M5N_SOURCES.json) recapture the official US
+Markets WebSocket, overview, authentication and market schema, Kalshi market and
+series schemas, official US product listing, and eight product PDFs. No new API
+field or production adapter was added. The documented US market-data WebSocket
+returned [401 without credentials](evidence/M5N_STREAM_ACCESS.json); no market
+stream latency or sequence guarantee was verified. The two documentation pages
+use different subscription JSON representations, retained as an unresolved live
+protocol check.
+
+[Ten exact public definitions](evidence/M5N_DEFINITIONS.json) and the isolated
+58-response archive preserve existing adapter schemas and original receipt times.
+Five ordinary-event pairs have matching payouts in some exceptional scenarios;
+none has a fully verified exception map. [Results and limits](M5N_RESULTS.md).

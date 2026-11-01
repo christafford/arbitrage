@@ -1,0 +1,261 @@
+[
+  {
+    "url": "https://docs.polymarket.us/api-reference/websocket/markets.md",
+    "path": "data/m5n/sources/us-ws-markets.md",
+    "request_at": "2026-11-01T15:27:24.037444+00:00",
+    "received_at": "2026-11-01T15:27:24.251187+00:00",
+    "elapsed_seconds": 0.2137274059932679,
+    "status": 200,
+    "headers": {
+      "Age": "75255",
+      "Cache-Control": "no-store, no-cache, must-revalidate, proxy-revalidate, max-age=0",
+      "Content-Type": "text/markdown; charset=utf-8",
+      "Date": "Sun, 01 Nov 2026 15:27:24 GMT",
+      "Last-Modified": "Sat, 31 Oct 2026 18:33:09 GMT"
+    },
+    "sha256": "e320f5338459a8508ed33c90c035d65eb8c9c22b258e9a96090b9473dbc231a0",
+    "bytes": 5471
+  },
+  {
+    "url": "https://docs.polymarket.us/api-reference/websocket/overview.md",
+    "path": "data/m5n/sources/us-ws-overview.md",
+    "request_at": "2026-11-01T15:27:24.551461+00:00",
+    "received_at": "2026-11-01T15:27:24.686256+00:00",
+    "elapsed_seconds": 0.134787916962523,
+    "status": 200,
+    "headers": {
+      "Age": "75303",
+      "Cache-Control": "no-store, no-cache, must-revalidate, proxy-revalidate, max-age=0",
+      "Content-Type": "text/markdown; charset=utf-8",
+      "Date": "Sun, 01 Nov 2026 15:27:24 GMT",
+      "Last-Modified": "Sat, 31 Oct 2026 18:32:21 GMT"
+    },
+    "sha256": "347ee218215ddd238d6e89818a23cad81c1c1c236274430ce588c2ea399abdc0",
+    "bytes": 3225
+  },
+  {
+    "url": "https://docs.polymarket.us/api-reference/authentication.md",
+    "path": "data/m5n/sources/us-auth.md",
+    "request_at": "2026-11-01T15:27:24.986531+00:00",
+    "received_at": "2026-11-01T15:27:25.131753+00:00",
+    "elapsed_seconds": 0.1452181279892102,
+    "status": 200,
+    "headers": {
+      "Age": "75173",
+      "Cache-Control": "no-store, no-cache, must-revalidate, proxy-revalidate, max-age=0",
+      "Content-Type": "text/markdown; charset=utf-8",
+      "Date": "Sun, 01 Nov 2026 15:27:25 GMT",
+      "Last-Modified": "Sat, 31 Oct 2026 18:34:31 GMT"
+    },
+    "sha256": "010361851c2641e5b7fc45d70273bf126764ca6c816ea70f5be5787d6204ee72",
+    "bytes": 3847
+  },
+  {
+    "url": "https://docs.polymarket.us/api-reference/markets/get-market-by-slug.md",
+    "path": "data/m5n/sources/us-market.md",
+    "request_at": "2026-11-01T15:27:25.432016+00:00",
+    "received_at": "2026-11-01T15:27:25.601952+00:00",
+    "elapsed_seconds": 0.1699308809475042,
+    "status": 200,
+    "headers": {
+      "Age": "74880",
+      "Cache-Control": "no-store, no-cache, must-revalidate, proxy-revalidate, max-age=0",
+      "Content-Type": "text/markdown; charset=utf-8",
+      "Date": "Sun, 01 Nov 2026 15:27:25 GMT",
+      "Last-Modified": "Sat, 31 Oct 2026 18:39:25 GMT"
+    },
+    "sha256": "16f599df2f2606ae8e661b557793274d61d50e33862a10d033e52c09e783f7cf",
+    "bytes": 26825
+  },
+  {
+    "url": "https://docs.kalshi.com/api-reference/market/get-market.md",
+    "path": "data/m5n/sources/kalshi-market.md",
+    "request_at": "2026-11-01T15:27:25.902228+00:00",
+    "received_at": "2026-11-01T15:27:26.096877+00:00",
+    "elapsed_seconds": 0.19464217399945483,
+    "status": 200,
+    "headers": {
+      "Age": "75778",
+      "Cache-Control": "no-store, no-cache, must-revalidate, proxy-revalidate, max-age=0",
+      "Content-Type": "text/markdown; charset=utf-8",
+      "Date": "Sun, 01 Nov 2026 15:27:26 GMT",
+      "Last-Modified": "Sat, 31 Oct 2026 18:24:27 GMT"
+    },
+    "sha256": "3134644faca99509f47b569c60d323a2c2d4b3a6e7beeee9243fd142353b62f5",
+    "bytes": 16009
+  },
+  {
+    "url": "https://docs.kalshi.com/api-reference/market/get-series.md",
+    "path": "data/m5n/sources/kalshi-series.md",
+    "request_at": "2026-11-01T15:27:26.397112+00:00",
+    "received_at": "2026-11-01T15:27:26.537626+00:00",
+    "elapsed_seconds": 0.14050882501760498,
+    "status": 200,
+    "headers": {
+      "Age": "75820",
+      "Cache-Control": "no-store, no-cache, must-revalidate, proxy-revalidate, max-age=0",
+      "Content-Type": "text/markdown; charset=utf-8",
+      "Date": "Sun, 01 Nov 2026 15:27:26 GMT",
+      "Last-Modified": "Sat, 31 Oct 2026 18:23:46 GMT"
+    },
+    "sha256": "1166e0fb430a488f18f7718c09d965606fd5b2937d1bfbfcdb96b86a7a2a262e",
+    "bytes": 10185
+  },
+  {
+    "url": "https://www.polymarketexchange.com/files/products",
+    "path": "data/m5n/sources/us-product-files.json",
+    "request_at": "2026-11-01T15:27:26.837858+00:00",
+    "received_at": "2026-11-01T15:27:28.035798+00:00",
+    "elapsed_seconds": 1.1979355619987473,
+    "status": 200,
+    "headers": {
+      "Date": "Sun, 01 Nov 2026 15:27:28 GMT",
+      "Content-Type": "application/json",
+      "Cache-Control": "public, max-age=300"
+    },
+    "sha256": "f7a7867814236605de63e7863a1c2a20bf28fc90630461d64307b4439d63c916",
+    "bytes": 29288
+  },
+  {
+    "url": "https://www.polymarketexchange.com/files/products/PMUS%20-%20RDC%20-%20%282026.04.06%29.pdf",
+    "path": "data/m5n/sources/us-rdc.pdf",
+    "request_at": "2026-11-01T15:27:28.344871+00:00",
+    "received_at": "2026-11-01T15:27:28.753930+00:00",
+    "elapsed_seconds": 0.40905978897353634,
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/pdf",
+      "Date": "Sun, 01 Nov 2026 15:27:29 GMT",
+      "Last-Modified": "Mon, 22 Jun 2026 14:51:19 GMT",
+      "Cache-Control": "max-age=31536000, immutable"
+    },
+    "sha256": "cf3af0d0dd4410a638a249c06a9652cc01c40f25fb6011a0e106a4a422ba7718",
+    "bytes": 207261,
+    "text_path": "data/m5n/sources/us-rdc.txt",
+    "text_sha256": "4e00c9aa3d74a343b25d749cb8843824fceab21e428680627acd2ff6a349f7a9"
+  },
+  {
+    "url": "https://www.polymarketexchange.com/files/products/PMUS%20-%20RDCCUS%20-%20%282026.10.20%29.pdf",
+    "path": "data/m5n/sources/us-rdccus.pdf",
+    "request_at": "2026-11-01T15:27:29.096915+00:00",
+    "received_at": "2026-11-01T15:27:29.469275+00:00",
+    "elapsed_seconds": 0.37236054899403825,
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/pdf",
+      "Date": "Sun, 01 Nov 2026 15:27:30 GMT",
+      "Last-Modified": "Wed, 21 Oct 2026 21:16:00 GMT",
+      "Cache-Control": "max-age=31536000, immutable"
+    },
+    "sha256": "9d13de433626248a0cc79dddae15cc4d6255e7aa8f369f7839c4d6cea52f5df9",
+    "bytes": 381515,
+    "text_path": "data/m5n/sources/us-rdccus.txt",
+    "text_sha256": "d1bac226aa26035f7bc390c088f5bc614c22e4cdf13f32654dedac64711bcf51"
+  },
+  {
+    "url": "https://www.polymarketexchange.com/files/products/PMUS%20-%20NFPC%20-%20%282026.04.03%29.pdf",
+    "path": "data/m5n/sources/us-nfpc.pdf",
+    "request_at": "2026-11-01T15:27:29.826583+00:00",
+    "received_at": "2026-11-01T15:27:30.127175+00:00",
+    "elapsed_seconds": 0.3005906690377742,
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/pdf",
+      "Date": "Sun, 01 Nov 2026 15:27:30 GMT",
+      "Last-Modified": "Tue, 07 Apr 2026 17:08:13 GMT",
+      "Cache-Control": "max-age=31536000, immutable"
+    },
+    "sha256": "45554a22c43760574879220a662f4f9be069dd4c08af74071077428bc2d2a4d8",
+    "bytes": 183498,
+    "text_path": "data/m5n/sources/us-nfpc.txt",
+    "text_sha256": "a239988c530a048197b75b14d0577ebe9084fb10f30e089668058516f77d352a"
+  },
+  {
+    "url": "https://www.polymarketexchange.com/files/products/PMUS%20-%20URC%20-%20%282026.04.03%29.pdf",
+    "path": "data/m5n/sources/us-urc.pdf",
+    "request_at": "2026-11-01T15:27:30.478365+00:00",
+    "received_at": "2026-11-01T15:27:30.755507+00:00",
+    "elapsed_seconds": 0.2771364329964854,
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/pdf",
+      "Date": "Sun, 01 Nov 2026 15:27:30 GMT",
+      "Last-Modified": "Tue, 07 Apr 2026 17:08:13 GMT",
+      "Cache-Control": "max-age=31536000, immutable"
+    },
+    "sha256": "916127ab0b1d9bd874b0a184aebb925ad48c01f555cba4483e8fa61e856f88f0",
+    "bytes": 188085,
+    "text_path": "data/m5n/sources/us-urc.txt",
+    "text_sha256": "5873d7cf65d40fe8ee01e21e461c9af9399a0bffccf2d81f2249a76d2df442c3"
+  },
+  {
+    "url": "https://www.polymarketexchange.com/files/products/PMUS%20-%20FIVYC%20-%20%282026.10.06%29.pdf",
+    "path": "data/m5n/sources/us-fivyc.pdf",
+    "request_at": "2026-11-01T15:27:31.109768+00:00",
+    "received_at": "2026-11-01T15:27:31.462415+00:00",
+    "elapsed_seconds": 0.3526545390486717,
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/pdf",
+      "Date": "Sun, 01 Nov 2026 15:27:32 GMT",
+      "Last-Modified": "Wed, 07 Oct 2026 03:37:08 GMT",
+      "Cache-Control": "max-age=31536000, immutable"
+    },
+    "sha256": "000c2aba63204eedd642784f1db3bee64390e589621db3ab77e3f8e21cf2a1d6",
+    "bytes": 407874,
+    "text_path": "data/m5n/sources/us-fivyc.txt",
+    "text_sha256": "2c2dc428631b2e90017fb52ff7e0ed16745b54ab9e9fa55991a2d852dbb8a49d"
+  },
+  {
+    "url": "https://assets.kalshi.com/contract_terms/FEDDECISION.pdf",
+    "path": "data/m5n/sources/KXFEDDECISION.pdf",
+    "request_at": "2026-11-01T15:28:30.647386+00:00",
+    "received_at": "2026-11-01T15:28:30.781108+00:00",
+    "elapsed_seconds": 0.1337063090177253,
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/pdf",
+      "Date": "Sun, 01 Nov 2026 00:19:50 GMT",
+      "Last-Modified": "Tue, 29 Sep 2026 20:38:55 GMT",
+      "Age": "54520"
+    },
+    "sha256": "3a8851179be6e53dbdaa7228179375996a1267412b26af923b7349c35297e198",
+    "bytes": 38538,
+    "text_path": "data/m5n/sources/KXFEDDECISION.txt",
+    "text_sha256": "971673842fd335f9d6a264a95850581fbc1136b88e4655ddeed515656872dd79"
+  },
+  {
+    "url": "https://assets.kalshi.com/contract_terms/PAYROLLS.pdf",
+    "path": "data/m5n/sources/KXPAYROLLS.pdf",
+    "request_at": "2026-11-01T15:28:30.801448+00:00",
+    "received_at": "2026-11-01T15:28:31.047372+00:00",
+    "elapsed_seconds": 0.24592123803449795,
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/pdf",
+      "Date": "Sun, 01 Nov 2026 15:28:31 GMT",
+      "Last-Modified": "Tue, 29 Sep 2026 20:39:43 GMT"
+    },
+    "sha256": "39b74218567924bd8ba5a05e94c8d12755be63e1c4f515c34a1dfae265912ac8",
+    "bytes": 39489,
+    "text_path": "data/m5n/sources/KXPAYROLLS.txt",
+    "text_sha256": "691b931f039683a1f1044c98230f0bcca2c638a8ce9c9ab54969dd56cb01ef1d"
+  },
+  {
+    "url": "https://assets.kalshi.com/contract_terms/U3.pdf",
+    "path": "data/m5n/sources/KXU3.pdf",
+    "request_at": "2026-11-01T15:28:31.067625+00:00",
+    "received_at": "2026-11-01T15:28:31.242921+00:00",
+    "elapsed_seconds": 0.1752888770424761,
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/pdf",
+      "Date": "Sun, 01 Nov 2026 15:28:32 GMT",
+      "Last-Modified": "Tue, 29 Sep 2026 20:40:32 GMT"
+    },
+    "sha256": "bb568889c706fb070b0a977352260b545ca8ff9e7c1936a76a1edd77aba3ce2e",
+    "bytes": 42390,
+    "text_path": "data/m5n/sources/KXU3.txt",
+    "text_sha256": "4b3ac7b334d3996f9496aaaab54c5fd51daa0ae89f7bd2a8c0daad2952c54a8b"
+  }
+]

@@ -4,6 +4,11 @@ A **read-only, Codex-ready** starter for researching fully hedged binary predict
 
 **Current state:** M1–M3 are complete. M4 economics/recording and M5 paper/operations are implemented and tested; **M4's actual 30-day run and M5's actual multiweek run remain pending**. Research includes versioned fees, depth/budget/reserve evaluation, paper downside scenarios, later-quote comparisons, local health/metrics, verified backups and deployment templates. All live evidence remains `UNVERIFIED`; no real pair or fee profile is approved. Kalshi REST lacks source time and fails freshness checks. No live trading exists. The bounded [M5I catalogue/backfill run](docs/M5I_RUN_20261028_RESULTS.md) finished; Kalshi backfill and retrieval-quality gaps remain. Economic and paper services remain inactive. See [M5 results and gaps](docs/M5_RESULTS.md), [paper model](docs/PAPER_EXECUTION.md), [operations](docs/OPERATIONS.md) and [M4 results](docs/M4_RESULTS.md).
 
+The latest [US stream and exceptional-payout review](docs/M5N_RESULTS.md) records
+an actual US WebSocket 401 and five open Fed/labor pair screens. US credentials
+are needed to measure streaming timeliness; no pair has established strict
+settlement compatibility. Production inference and eligibility gates are unchanged.
+
 **M5A A–E:** discovery is implemented. The read-only Kalshi WebSocket adapter is
 **validated live in explicit `sequence-v1` mode**, including recovery after a
 message timeout. Kalshi's changelog dates market-clock rollout to October 29;

@@ -1,0 +1,48 @@
+{
+  "schema": "m5n-validation/v1",
+  "at": "2026-11-01T15:35:14.934673+00:00",
+  "base_commit": "adb260d9ba235ec54bf843a07d63f44f9f17b094",
+  "all_m5i_units_disabled": true,
+  "service_active": {
+    "predarb-m5i-collection-20261028.service": "inactive",
+    "predarb-m5i-collection-20261029-newnamespace.service": "inactive",
+    "predarb-m5i-collection-20261030-resume.service": "inactive",
+    "predarb-m5i-semantic-20261028.service": "inactive",
+    "predarb-m5i-semantic-20261029-newnamespace.service": "inactive",
+    "predarb-m5i-semantic-20261030-resume.service": "inactive"
+  },
+  "local_document_links_checked": 51,
+  "commands": {
+    "unittest": ".venv/bin/python -m unittest discover -s tests -v",
+    "tests": 454,
+    "seconds": "22.373",
+    "result": "OK",
+    "source_replay": ".venv/bin/python data/m5n/audit.py",
+    "smokes": [
+      ".venv/bin/predarb report --db data/m5n/contracts/raw.sqlite3",
+      ".venv/bin/predarb pairs list --db data/m5n/contracts/raw.sqlite3"
+    ]
+  },
+  "artifact_sha256": {
+    "data/m5n/capture_sources.py": "0a4d9ecd2c1b03ba950d8219eed441f62baee09b13b5964b2d11eae752bf56d7",
+    "data/m5n/write_packets.py": "e41518a5500b339c1038e68459e8ff448a7f29b3d82dcdf5f35394ffe3b5e7e1",
+    "data/m5n/validate.py": "9f026a95adb7e278293ea54b4ba0b0992a74a5a9a2549eb89fd0339d82703b93",
+    "data/m5n/capture_contracts.py": "58f4e7071854343093a5d0520dabb87cfbdd7a42e5c955e56b142a0c63d72c79",
+    "data/m5n/audit.py": "4a968473786c0b7cd2648349428ed2c778e2d15d8ff0937822f657fcbd02d2ca",
+    "data/m5n/capture_fees.py": "f98e57901b58110e94fe25d6c4e8e3bd614d981924932f563fc36c616da33710",
+    "data/m5n/smoke-report.txt": "771ebc1461811ebd9c4216d2082fd7511fe915dd72c79e30ba9813feb8c12ef2",
+    "data/m5n/smoke-pairs.txt": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+    "data/m5n/us-handshake.body": "d4fa28959bd1a0f046502436aa89983e34acbdcd304d9f89969fb7c0e632371e",
+    "data/m5n/us-handshake.json": "66bba15a9db1815ffe71bb9972b2f4d12f470a2272c60cb1e78de61f679462c7",
+    "docs/evidence/M5N_AUDIT.json": "b0fb202df134041c116eda09d04dffb0b53c62c09e68fb2e2afa0a38a3e90fde",
+    "docs/evidence/M5N_FEES.json": "f5e41346afc1d33218d18628a99c04543b41ce7cf01c1a3539d7e0cfc0fa7289",
+    "docs/evidence/M5N_STREAM_ACCESS.json": "66bba15a9db1815ffe71bb9972b2f4d12f470a2272c60cb1e78de61f679462c7",
+    "docs/evidence/M5N_DEFINITIONS.json": "c7836b62f36a7bb357c9bd7395a838d3de380fa55a1dcb7b00d0b169ca63003c",
+    "docs/evidence/M5N_SOURCES.json": "60ba267d03deb8bff6c92d074371f0bb7ebed8774301790400fc66ef595eee21",
+    "docs/evidence/M5N_TESTS.txt": "ea6eb38763ff30e5af6c68f7e6bc4bdc04a916d2ebed36deaad154d51f5b4ed1"
+  },
+  "production_code_changed": false,
+  "timely_us_stream_verified": false,
+  "strict_compatible_pairs": 0,
+  "trading_authorized": false
+}
