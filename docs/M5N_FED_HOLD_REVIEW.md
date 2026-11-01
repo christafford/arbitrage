@@ -5,6 +5,23 @@ approval form accepted by the registry. Both instruments were open when rechecke
 at **2026-11-01 17:12 UTC**. The supported research route is cash-funded **Kalshi
 long NO + Polymarket US long YES**. Trading remains unauthorized.
 
+## Supplied review assistance
+
+The operator supplied [FED_HOLD_SOURCE_BOUND_REVIEW.md](FED_HOLD_SOURCE_BOUND_REVIEW.md).
+It concludes **UNRESOLVED — not approved for strict arbitrage**, identifies
+conditional zero-payout scenarios involving cancellation/rescheduling and
+no-meeting fallback, and leaves fees and capital mechanics unreviewed. It
+explicitly describes itself as review assistance, not a binding human attestation.
+The formal operator decision and all worksheet decision fields remain pending;
+no registry rejection or approval was inferred.
+
+The [receipt and source checks](evidence/M5N_FED_HOLD_REVIEW_RECEIPT.json) record
+the supplied file's exact hash and verify all four local archived sources against
+the existing manifest and worksheet. The review could not independently retrieve
+the market APIs. This receipt does not verify its referenced ZIP or refresh venue
+sources; the 17:12 UTC source timestamps remain unchanged. Before any approval,
+refresh the sources and resolve the material branches with source-bound evidence.
+
 ## Read these four sources
 
 | Source | Review focus |
