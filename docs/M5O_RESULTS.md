@@ -3,56 +3,56 @@
 **Status: RUNNING. Capture status is separate from research acceptance.**
 
 Fixed window: 2026-11-01T19:43:05.523526+00:00 through 2026-11-02T19:43:05.523526+00:00.
-Report generated: 2026-11-01T19:44:09.072888+00:00. No orders, funds or approvals.
+Report generated: 2026-11-02T02:42:51.180236+00:00. No orders, funds or approvals.
 
 The run uses independent Kalshi clocked-stream receivers and public US REST full snapshots. US source/receipt ages and both cross-venue skews must be within two seconds; existing metadata, price/quantity grid, sequence and market-state checks also apply. Cached/quiet books remain rejected. US WebSocket continuity is not promoted into eligibility.
 
 | Pair | Class / origin | Worker state | Samples | Valid data | Conditional gross samples |
 | --- | --- | --- | ---: | ---: | ---: |
-| nba-brooklyn | CONDITIONAL / DETERMINISTIC | RUNNING | 13 | 0 | 0 |
-| nba-boston | CONDITIONAL / DETERMINISTIC | RUNNING | 13 | 0 | 0 |
-| nba-toronto | CONDITIONAL / DETERMINISTIC | RUNNING | 13 | 0 | 0 |
-| nfl-arizona | CONDITIONAL / DETERMINISTIC | RUNNING | 12 | 0 | 0 |
-| nfl-baltimore | CONDITIONAL / DETERMINISTIC | RUNNING | 12 | 0 | 0 |
-| nfl-chicago | CONDITIONAL / DETERMINISTIC | RUNNING | 13 | 0 | 0 |
-| fed-hold | CONDITIONAL / DETERMINISTIC | RUNNING | 12 | 0 | 0 |
-| payrolls | CONDITIONAL / DETERMINISTIC | RUNNING | 12 | 0 | 0 |
-| unemployment | CONDITIONAL / DETERMINISTIC | RUNNING | 12 | 0 | 0 |
-| cpi | CONDITIONAL / DETERMINISTIC | RUNNING | 12 | 0 | 0 |
-| gas-high | DISCOVERY / DETERMINISTIC | RUNNING | 12 | 0 | 0 |
+| nba-brooklyn | CONDITIONAL / DETERMINISTIC | CONSECUTIVE_FAILURE_LIMIT | 3326 | 44 | 44 |
+| nba-boston | CONDITIONAL / DETERMINISTIC | CONSECUTIVE_FAILURE_LIMIT | 2092 | 33 | 33 |
+| nba-toronto | CONDITIONAL / DETERMINISTIC | RUNNING | 4959 | 36 | 36 |
+| nfl-arizona | CONDITIONAL / DETERMINISTIC | CONSECUTIVE_FAILURE_LIMIT | 1217 | 49 | 49 |
+| nfl-baltimore | CONDITIONAL / DETERMINISTIC | CONSECUTIVE_FAILURE_LIMIT | 750 | 5 | 5 |
+| nfl-chicago | CONDITIONAL / DETERMINISTIC | RUNNING | 4999 | 24 | 24 |
+| fed-hold | CONDITIONAL / DETERMINISTIC | RUNNING | 5018 | 0 | 0 |
+| payrolls | CONDITIONAL / DETERMINISTIC | RUNNING | 5022 | 0 | 0 |
+| unemployment | CONDITIONAL / DETERMINISTIC | RUNNING | 5022 | 2 | 2 |
+| cpi | CONDITIONAL / DETERMINISTIC | RUNNING | 5021 | 2 | 2 |
+| gas-high | DISCOVERY / DETERMINISTIC | RUNNING | 5020 | 0 | 0 |
 
-Observed pair samples: **136** / **190080** planned over the full window; valid data samples: **0**. Startup, poll errors, processing/audit gaps and early worker endings remain in the planned denominator. These sample counts are not continuously verified market time.
+Observed pair samples: **42446** / **190080** planned over the full window; valid data samples: **195**. Startup, poll errors, processing/audit gaps and early worker endings remain in the planned denominator. These sample counts are not continuously verified market time.
 
-Segment audits: 0 passed, 0 failed. Running segments are pending. Failed-audit observations cannot support final economic findings.
+Segment audits: 232 passed, 0 failed. Running segments are pending. Failed-audit observations cannot support final economic findings.
 
 STRICT pairs: **0**. Conditional and discovery labels are assistant research assessments; operator adjudication remains pending. Definitions changing during the run downgrade the affected observation to DISCOVERY. Discovery signals have no arbitrage calculation.
 
 | Pair / quote budget | Positive gross samples | Sample clusters | Cluster span (s) | Max gross edge ($) | Max displayed quantity under budget |
 | --- | ---: | ---: | ---: | ---: | ---: |
-| nba-brooklyn / $100 | 0 | 0 | 0.000 | UNKNOWN | UNKNOWN |
-| nba-brooklyn / $25 | 0 | 0 | 0.000 | UNKNOWN | UNKNOWN |
-| nba-brooklyn / $5 | 0 | 0 | 0.000 | UNKNOWN | UNKNOWN |
-| nba-brooklyn / $500 | 0 | 0 | 0.000 | UNKNOWN | UNKNOWN |
-| nba-boston / $100 | 0 | 0 | 0.000 | UNKNOWN | UNKNOWN |
-| nba-boston / $25 | 0 | 0 | 0.000 | UNKNOWN | UNKNOWN |
-| nba-boston / $5 | 0 | 0 | 0.000 | UNKNOWN | UNKNOWN |
-| nba-boston / $500 | 0 | 0 | 0.000 | UNKNOWN | UNKNOWN |
-| nba-toronto / $100 | 0 | 0 | 0.000 | UNKNOWN | UNKNOWN |
-| nba-toronto / $25 | 0 | 0 | 0.000 | UNKNOWN | UNKNOWN |
-| nba-toronto / $5 | 0 | 0 | 0.000 | UNKNOWN | UNKNOWN |
-| nba-toronto / $500 | 0 | 0 | 0.000 | UNKNOWN | UNKNOWN |
-| nfl-arizona / $100 | 0 | 0 | 0.000 | UNKNOWN | UNKNOWN |
-| nfl-arizona / $25 | 0 | 0 | 0.000 | UNKNOWN | UNKNOWN |
-| nfl-arizona / $5 | 0 | 0 | 0.000 | UNKNOWN | UNKNOWN |
-| nfl-arizona / $500 | 0 | 0 | 0.000 | UNKNOWN | UNKNOWN |
-| nfl-baltimore / $100 | 0 | 0 | 0.000 | UNKNOWN | UNKNOWN |
-| nfl-baltimore / $25 | 0 | 0 | 0.000 | UNKNOWN | UNKNOWN |
-| nfl-baltimore / $5 | 0 | 0 | 0.000 | UNKNOWN | UNKNOWN |
-| nfl-baltimore / $500 | 0 | 0 | 0.000 | UNKNOWN | UNKNOWN |
-| nfl-chicago / $100 | 0 | 0 | 0.000 | UNKNOWN | UNKNOWN |
-| nfl-chicago / $25 | 0 | 0 | 0.000 | UNKNOWN | UNKNOWN |
-| nfl-chicago / $5 | 0 | 0 | 0.000 | UNKNOWN | UNKNOWN |
-| nfl-chicago / $500 | 0 | 0 | 0.000 | UNKNOWN | UNKNOWN |
+| nba-brooklyn / $100 | 1 | 1 | 0.000 | 1.010100 | 101.01 |
+| nba-brooklyn / $25 | 1 | 1 | 0.000 | 0.252500 | 25.25 |
+| nba-brooklyn / $5 | 1 | 1 | 0.000 | 0.050500 | 5.05 |
+| nba-brooklyn / $500 | 1 | 1 | 0.000 | 5.050500 | 505.05 |
+| nba-boston / $100 | 0 | 0 | 0.000 | 0.000000 | 100.00 |
+| nba-boston / $25 | 0 | 0 | 0.000 | 0.000000 | 25.00 |
+| nba-boston / $5 | 0 | 0 | 0.000 | 0.000000 | 5.00 |
+| nba-boston / $500 | 0 | 0 | 0.000 | 0.000000 | 500.00 |
+| nba-toronto / $100 | 0 | 0 | 0.000 | 0.000000 | 100.00 |
+| nba-toronto / $25 | 0 | 0 | 0.000 | 0.000000 | 25.00 |
+| nba-toronto / $5 | 0 | 0 | 0.000 | 0.000000 | 5.00 |
+| nba-toronto / $500 | 0 | 0 | 0.000 | 0.000000 | 500.00 |
+| nfl-arizona / $100 | 0 | 0 | 0.000 | -0.249375 | 99.75 |
+| nfl-arizona / $25 | 0 | 0 | 0.000 | -0.062325 | 24.93 |
+| nfl-arizona / $5 | 0 | 0 | 0.000 | -0.012450 | 4.98 |
+| nfl-arizona / $500 | 0 | 0 | 0.000 | -1.246875 | 498.75 |
+| nfl-baltimore / $100 | 0 | 0 | 0.000 | -0.497500 | 99.50 |
+| nfl-baltimore / $25 | 0 | 0 | 0.000 | -0.124350 | 24.87 |
+| nfl-baltimore / $5 | 0 | 0 | 0.000 | -0.024850 | 4.97 |
+| nfl-baltimore / $500 | 0 | 0 | 0.000 | -2.487550 | 497.51 |
+| nfl-chicago / $100 | 0 | 0 | 0.000 | 0.000000 | 100.00 |
+| nfl-chicago / $25 | 0 | 0 | 0.000 | 0.000000 | 25.00 |
+| nfl-chicago / $5 | 0 | 0 | 0.000 | 0.000000 | 5.00 |
+| nfl-chicago / $500 | 0 | 0 | 0.000 | 0.000000 | 500.00 |
 | fed-hold / $100 | 0 | 0 | 0.000 | UNKNOWN | UNKNOWN |
 | fed-hold / $25 | 0 | 0 | 0.000 | UNKNOWN | UNKNOWN |
 | fed-hold / $5 | 0 | 0 | 0.000 | UNKNOWN | UNKNOWN |
@@ -61,14 +61,14 @@ STRICT pairs: **0**. Conditional and discovery labels are assistant research ass
 | payrolls / $25 | 0 | 0 | 0.000 | UNKNOWN | UNKNOWN |
 | payrolls / $5 | 0 | 0 | 0.000 | UNKNOWN | UNKNOWN |
 | payrolls / $500 | 0 | 0 | 0.000 | UNKNOWN | UNKNOWN |
-| unemployment / $100 | 0 | 0 | 0.000 | UNKNOWN | UNKNOWN |
-| unemployment / $25 | 0 | 0 | 0.000 | UNKNOWN | UNKNOWN |
-| unemployment / $5 | 0 | 0 | 0.000 | UNKNOWN | UNKNOWN |
-| unemployment / $500 | 0 | 0 | 0.000 | UNKNOWN | UNKNOWN |
-| cpi / $100 | 0 | 0 | 0.000 | UNKNOWN | UNKNOWN |
-| cpi / $25 | 0 | 0 | 0.000 | UNKNOWN | UNKNOWN |
-| cpi / $5 | 0 | 0 | 0.000 | UNKNOWN | UNKNOWN |
-| cpi / $500 | 0 | 0 | 0.000 | UNKNOWN | UNKNOWN |
+| unemployment / $100 | 0 | 0 | 0.000 | -1.31360000 | 98.68 |
+| unemployment / $25 | 0 | 0 | 0.000 | -0.247500 | 24.75 |
+| unemployment / $5 | 0 | 0 | 0.000 | -0.049500 | 4.95 |
+| unemployment / $500 | 0 | 0 | 0.000 | -83.74160000 | 416.25 |
+| cpi / $100 | 0 | 0 | 0.000 | -3.57060000 | 96.42 |
+| cpi / $25 | 0 | 0 | 0.000 | -0.683600 | 24.31 |
+| cpi / $5 | 0 | 0 | 0.000 | -0.073500 | 4.92 |
+| cpi / $500 | 0 | 0 | 0.000 | -27.36410000 | 472.63 |
 | gas-high / $100 | 0 | 0 | 0.000 | UNKNOWN | UNKNOWN |
 | gas-high / $25 | 0 | 0 | 0.000 | UNKNOWN | UNKNOWN |
 | gas-high / $5 | 0 | 0 | 0.000 | UNKNOWN | UNKNOWN |
