@@ -121,8 +121,14 @@ class KalshiBookStream:
                 context.prec = 80
                 bands, step, _ = market_rules('kalshi', self.source_id, self.metadata, now=now)
                 if message_type == 'orderbook_snapshot':
-                    raw = {'orderbook_fp': {'yes_dollars': field(message, 'yes_dollars_fp', list),
-                                            'no_dollars': field(message, 'no_dollars_fp', list)}}
+                    # Official WS schema: an omitted side means no orders on that
+                    # side. Only absence has this meaning; null/wrong types and
+                    # incomplete price/quantity levels still fail validation.
+                    # Snapshots replace both sides, including previously held depth.
+                    raw = {'orderbook_fp': {
+                        side + '_dollars': field(message, side + '_dollars_fp', list)
+                        if side + '_dollars_fp' in message else []
+                        for side in ('yes', 'no')}}
                     kalshi.validate_book(raw)
                     yes = _levels(raw['orderbook_fp']['yes_dollars'], bands=bands, step=step)
                     no = _levels(raw['orderbook_fp']['no_dollars'], bands=bands, step=step)

@@ -114,6 +114,10 @@ exact public bytes, hashes and clocks; unused derived normalization JSON alone
 was replaced with `{}`. Another fixture preserves all 22 selected definitions.
 Fault injections and positive-price examples are explicitly hypothetical.
 
+The [November 2 ladder correction](M5O_LADDER_FIX.md) handles Kalshi's documented
+omitted empty snapshot sides. It is available to new processes; the existing
+run's imported code, rejected evidence and fixed deadline remain preserved.
+
 ## Commands and status
 
 Create a new selection and launch the authorized run once:

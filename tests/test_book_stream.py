@@ -2,11 +2,13 @@
 from copy import deepcopy
 from datetime import timedelta
 from decimal import Decimal as D
+import hashlib
+from pathlib import Path
 import unittest
 
 from predarb.book_stream import KalshiBookStream, StreamProtocolError
 from predarb.orderbooks import walk_depth
-from predarb.validation import utc_time
+from predarb.validation import load_json, utc_time
 from test_orderbooks import sample
 
 
@@ -147,6 +149,45 @@ class StreamReplayTests(unittest.TestCase):
         repaired=self.apply(self.delta(quantity='1.00'))
         self.assertEqual(repaired.issues(now=self.now),())
 
+    def test_documented_omitted_snapshot_sides_are_partial_or_empty_not_usable(self):
+        for sides in [('yes',),('no',),('yes','no')]:
+            with self.subTest(sides=sides):
+                self.stream.reconnect();frame=self.snapshot()
+                for side in sides:del frame['msg'][side+'_dollars_fp']
+                book=self.apply(frame)
+                self.assertEqual(book.rejections,('EMPTY_BOOK' if len(sides)==2 else 'PARTIAL_BOOK',))
+                self.assertEqual(self.stream.state,'SYNCED')
+                for side in sides:self.assertEqual(getattr(self.stream,side),{})
+                for side in ('YES','NO'):
+                    with self.assertRaises(ValueError):walk_depth(book,side,'1',now=self.now)
+
+    def test_omitted_side_replaces_old_depth_and_sequenced_delta_can_restore_it(self):
+        self.apply(self.snapshot());replacement=self.snapshot(11,101)
+        del replacement['msg']['yes_dollars_fp']
+        partial=self.apply(replacement)
+        self.assertEqual(partial.no_asks,());self.assertEqual(self.stream.yes,{})
+        restored=self.apply(self.delta(12,102,quantity='1.00'))
+        self.assertEqual(restored.issues(now=self.now),())
+        self.assertEqual(restored.no_asks[0].quantity,D('1.00'))
+
+    def test_omitted_side_does_not_relax_malformed_present_ladder_or_required_fields(self):
+        for bad in (None,{},'empty',0,[['.42']],[['.42',None]],[['1.01','1']],[['.4201','1']],[['.42','-.1']]):
+            with self.subTest(value=bad):
+                self.stream.reconnect();frame=self.snapshot();del frame['msg']['no_dollars_fp']
+                frame['msg']['yes_dollars_fp']=bad
+                with self.assertRaises(ValueError):self.apply(frame)
+                self.assertIsNone(self.stream.current)
+        for key in ('market_ticker','market_id','clock'):
+            self.stream.reconnect();frame=self.snapshot()
+            del frame['msg']['yes_dollars_fp'];del frame['msg'][key]
+            with self.assertRaises(ValueError):self.apply(frame)
+
+    def test_partial_snapshot_keeps_freshness_and_sequence_gates(self):
+        frame=self.snapshot();del frame['msg']['yes_dollars_fp'];book=self.apply(frame)
+        self.assertIn('STALE_SOURCE',book.issues(now=self.now+timedelta(seconds=61)))
+        with self.assertRaisesRegex(ValueError,'sequence gap'):self.apply(self.delta(12,102,quantity='1.00'))
+        self.assertIsNone(self.stream.current)
+
     def test_metadata_grid_change_discards_prior_depth_and_requires_new_snapshot(self):
         self.apply(self.snapshot())
         metadata=deepcopy(self.case['kalshi_metadata'])
@@ -168,3 +209,23 @@ class StreamReplayTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError,'timestamp regressed'): self.apply(self.snapshot(13,201))
         recovered=self.snapshot(14,202);recovered['sending_ts_ms']+=10
         self.assertEqual(self.apply(recovered).sequence,14)
+
+
+class GenuineOmittedLadderTests(unittest.TestCase):
+    def test_four_originally_rejected_live_snapshots_parse_as_unusable_partial_books(self):
+        fixture=load_json((Path(__file__).parent/'fixtures/kalshi-omitted-ladders-live.json').read_bytes())
+        self.assertFalse(fixture['hypothetical']);self.assertEqual(len(fixture['records']),4)
+        for record in fixture['records']:
+            with self.subTest(pair=record['pair']):
+                for source in (record['metadata'],record['snapshot']):
+                    self.assertEqual(hashlib.sha256(source['body'].encode()).hexdigest(),source['sha256'])
+                self.assertEqual(record['snapshot']['original_validation_status'],'REJECTED')
+                meta=load_json(record['metadata']['body'])['market'];frame=load_json(record['snapshot']['body'])
+                stream=KalshiBookStream(record['source_id'],meta,metadata_received_at=record['metadata']['received_at'])
+                at=utc_time(record['snapshot']['received_at'])
+                book=stream.apply(frame,received_at=record['snapshot']['received_at'],now=at,generation=stream.generation)
+                self.assertEqual(book.rejections,('PARTIAL_BOOK',));self.assertEqual(stream.state,'SYNCED')
+                self.assertFalse(book.as_dict(now=at)['data_usable'])
+                self.assertTrue(bool(book.yes_asks) != bool(book.no_asks))
+                for side in ('YES','NO'):
+                    with self.assertRaises(ValueError):walk_depth(book,side,'1',now=at)

@@ -678,3 +678,19 @@ Commit frontiers and sample clocks are local instrumentation, not new venue fiel
 US REST caching is not reinterpreted as freshness; its WebSocket continuity stays
 unknown. No fee coefficient is automatically approved. See
 [M5O operations](M5O_OPERATIONS.md) for isolated hypothetical sensitivity bounds.
+
+### M5O omitted Kalshi snapshot ladders — November 2 UTC
+
+The freshly archived official [orderbook update schema](https://docs.kalshi.com/websockets/orderbook-updates)
+declares `yes_dollars_fp` and `no_dollars_fp` optional and explicitly describes
+omission when that side has no orders. Required snapshot message fields remain
+market ticker, market ID and exchange clock; source-send/sequence validation is
+unchanged. The WS schema has no upstream semantic version. This is an additive
+parser correction within `kalshi-ws/m5a-v1`; no SQLite migration, REST-field
+relaxation or reinterpretation of historical rejection statuses is introduced.
+
+[Source receipt, exact raw hashes and validation](evidence/M5O_LADDER_FIX.json)
+bind the checked document, four genuine rejected snapshots, current market states
+and a separate live partial-book capture. Missing sides become explicitly empty
+depth; missing prices/quantities inside present levels never receive defaults.
+One-sided snapshots remain economically unusable. [Findings](M5O_LADDER_FIX.md).

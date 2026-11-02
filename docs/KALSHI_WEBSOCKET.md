@@ -189,3 +189,21 @@ and failures. No compatibility deadline was extended. Neither case produced fres
 cross-venue observations within both two-second skew gates, and stopped streams
 are not currently usable. [M5L findings](M5L_RESULTS.md) distinguish this bounded
 protocol validation from economic or sustained-run acceptance.
+
+### November 2 optional snapshot-side correction
+
+The official snapshot schema explicitly omits `yes_dollars_fp` or `no_dollars_fp`
+when that side has no orders. The parser now interprets **absence only** as an
+empty side; a full snapshot clears any previously held levels on that side.
+Present null, wrong types, malformed levels, missing prices/quantities and invalid
+grids still reject. This change is scoped to WS snapshots, not REST schemas.
+
+Such a snapshot can maintain stream sequencing but remains `PARTIAL_BOOK` or
+`EMPTY_BOOK`, with `data_usable=false`. Economics and depth quotes stay blocked.
+Later correctly sequenced deltas may restore a two-sided book. Required clocks,
+freshness, disconnect and five-second liveness checks remain unchanged.
+
+[Correction evidence](M5O_LADDER_FIX.md) includes four genuine formerly rejected
+snapshots and a new live open-market capture. Historical `REJECTED` rows remain
+rejected during archive inspection; corrected-parser fixture replay is explicitly
+counterfactual. Existing running processes retain their imported original code.

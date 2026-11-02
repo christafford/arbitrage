@@ -216,6 +216,31 @@ class StreamCaptureTests(unittest.TestCase):
         with self.assertRaises(ValueError): load_book(self.db, rows[2][0], now=self.clock.now())
         self.assertIn('STREAM_DISCONNECTED', inspect_book(self.db, rows[1][0], now=self.clock.now())['rejections'])
 
+    def test_omitted_ladder_archives_valid_partial_then_recovers_without_reconnect(self):
+        frame=self.snapshot();del frame['msg']['yes_dollars_fp']
+        seen=[]
+        def observe(con,oid,at):seen.append(inspect_book(con,oid,now=at))
+        stats=self.run_capture([self.ack(),frame,self.delta(delta_fp='1.00')],
+                               max_messages=3,on_book=observe)
+        self.assertEqual(stats['failures'],[]);self.assertEqual(stats['connections'],1)
+        self.assertFalse(seen[0]['data_usable']);self.assertIn('PARTIAL_BOOK',seen[0]['rejections'])
+        self.assertTrue(seen[1]['data_usable'])
+        oid=seen[0]['observation_id']
+        body,status=self.db.execute('SELECT raw_body,validation_status FROM raw_observations WHERE id=?',(oid,)).fetchone()
+        self.assertEqual(body,dumps(frame).encode());self.assertEqual(status,'VALID')
+        replay=inspect_book(self.db,oid,now=utc_time(seen[0]['evaluated_at']))
+        self.assertFalse(replay['data_usable']);self.assertIn('PARTIAL_BOOK',replay['rejections'])
+
+    def test_historical_rejected_omitted_ladder_is_not_promoted_during_archive_replay(self):
+        frame=self.snapshot();del frame['msg']['yes_dollars_fp'];seen=[]
+        self.run_capture([self.ack(),frame],max_messages=2,
+                         on_book=lambda con,oid,at:seen.append((oid,at)))
+        oid,at=seen[0]
+        # Hypothetical reproduction of the old parser's persisted rejection.
+        validate_observation(self.db,oid,'REJECTED','INVALID_STREAM_FRAME')
+        with self.assertRaisesRegex(ValueError,'provenance or continuity'):
+            load_book(self.db,oid,now=at)
+
     def test_coordinator_tick_runs_during_quiet_backoff_and_preserves_capture_stats(self):
         ticks = []
         def stop(db, at):

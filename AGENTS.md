@@ -148,3 +148,9 @@ gates, model namespaces and expired runs stay preserved. No funds, orders, autom
 approvals or M6. The new run has its own fixed deadline in
 `data/m5o/run-20261101/config.json`; never renew it automatically. Completion of its
 budget is not completion of research acceptance or proof of profitability.
+
+November 2: the documented optional Kalshi snapshot ladders are now supported;
+see `docs/M5O_LADDER_FIX.md`. Omitted sides remain partial/empty and economically
+unusable. Original M5O processes retain their launch-time code; no hot reload or
+restart occurred. Four stopped sports markets subsequently finalized. Preserve
+their rejected evidence and gaps; this correction does not renew the deadline.
