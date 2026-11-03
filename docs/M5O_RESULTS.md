@@ -1,9 +1,9 @@
 # M5O — Continuous cross-market economic research
 
-**Status: RUNNING. Capture status is separate from research acceptance.**
+**Status: DEADLINE_REACHED. Capture status is separate from research acceptance.**
 
 Fixed window: 2026-11-01T19:43:05.523526+00:00 through 2026-11-02T19:43:05.523526+00:00.
-Report generated: 2026-11-02T02:42:51.180236+00:00. No orders, funds or approvals.
+Report generated: 2026-11-02T19:43:08.617728+00:00. No orders, funds or approvals.
 
 The run uses independent Kalshi clocked-stream receivers and public US REST full snapshots. US source/receipt ages and both cross-venue skews must be within two seconds; existing metadata, price/quantity grid, sequence and market-state checks also apply. Cached/quiet books remain rejected. US WebSocket continuity is not promoted into eligibility.
 
@@ -11,19 +11,19 @@ The run uses independent Kalshi clocked-stream receivers and public US REST full
 | --- | --- | --- | ---: | ---: | ---: |
 | nba-brooklyn | CONDITIONAL / DETERMINISTIC | CONSECUTIVE_FAILURE_LIMIT | 3326 | 44 | 44 |
 | nba-boston | CONDITIONAL / DETERMINISTIC | CONSECUTIVE_FAILURE_LIMIT | 2092 | 33 | 33 |
-| nba-toronto | CONDITIONAL / DETERMINISTIC | RUNNING | 4959 | 36 | 36 |
+| nba-toronto | CONDITIONAL / DETERMINISTIC | CONSECUTIVE_FAILURE_LIMIT | 5952 | 51 | 51 |
 | nfl-arizona | CONDITIONAL / DETERMINISTIC | CONSECUTIVE_FAILURE_LIMIT | 1217 | 49 | 49 |
 | nfl-baltimore | CONDITIONAL / DETERMINISTIC | CONSECUTIVE_FAILURE_LIMIT | 750 | 5 | 5 |
-| nfl-chicago | CONDITIONAL / DETERMINISTIC | RUNNING | 4999 | 24 | 24 |
-| fed-hold | CONDITIONAL / DETERMINISTIC | RUNNING | 5018 | 0 | 0 |
-| payrolls | CONDITIONAL / DETERMINISTIC | RUNNING | 5022 | 0 | 0 |
-| unemployment | CONDITIONAL / DETERMINISTIC | RUNNING | 5022 | 2 | 2 |
-| cpi | CONDITIONAL / DETERMINISTIC | RUNNING | 5021 | 2 | 2 |
-| gas-high | DISCOVERY / DETERMINISTIC | RUNNING | 5020 | 0 | 0 |
+| nfl-chicago | CONDITIONAL / DETERMINISTIC | DEADLINE_REACHED | 17132 | 137 | 137 |
+| fed-hold | CONDITIONAL / DETERMINISTIC | DEADLINE_REACHED | 17218 | 6 | 6 |
+| payrolls | CONDITIONAL / DETERMINISTIC | DEADLINE_REACHED | 17231 | 7 | 7 |
+| unemployment | CONDITIONAL / DETERMINISTIC | DEADLINE_REACHED | 17232 | 9 | 9 |
+| cpi | CONDITIONAL / DETERMINISTIC | DEADLINE_REACHED | 17224 | 23 | 23 |
+| gas-high | DISCOVERY / DETERMINISTIC | DEADLINE_REACHED | 17219 | 21 | 0 |
 
-Observed pair samples: **42446** / **190080** planned over the full window; valid data samples: **195**. Startup, poll errors, processing/audit gaps and early worker endings remain in the planned denominator. These sample counts are not continuously verified market time.
+Observed pair samples: **116593** / **190080** planned over the full window; valid data samples: **385**. Startup, poll errors, processing/audit gaps and early worker endings remain in the planned denominator. These sample counts are not continuously verified market time.
 
-Segment audits: 232 passed, 0 failed. Running segments are pending. Failed-audit observations cannot support final economic findings.
+Segment audits: 653 passed, 0 failed. Running segments are pending. Failed-audit observations cannot support final economic findings.
 
 STRICT pairs: **0**. Conditional and discovery labels are assistant research assessments; operator adjudication remains pending. Definitions changing during the run downgrade the affected observation to DISCOVERY. Discovery signals have no arbitrage calculation.
 
@@ -53,22 +53,22 @@ STRICT pairs: **0**. Conditional and discovery labels are assistant research ass
 | nfl-chicago / $25 | 0 | 0 | 0.000 | 0.000000 | 25.00 |
 | nfl-chicago / $5 | 0 | 0 | 0.000 | 0.000000 | 5.00 |
 | nfl-chicago / $500 | 0 | 0 | 0.000 | 0.000000 | 500.00 |
-| fed-hold / $100 | 0 | 0 | 0.000 | UNKNOWN | UNKNOWN |
-| fed-hold / $25 | 0 | 0 | 0.000 | UNKNOWN | UNKNOWN |
-| fed-hold / $5 | 0 | 0 | 0.000 | UNKNOWN | UNKNOWN |
-| fed-hold / $500 | 0 | 0 | 0.000 | UNKNOWN | UNKNOWN |
-| payrolls / $100 | 0 | 0 | 0.000 | UNKNOWN | UNKNOWN |
-| payrolls / $25 | 0 | 0 | 0.000 | UNKNOWN | UNKNOWN |
-| payrolls / $5 | 0 | 0 | 0.000 | UNKNOWN | UNKNOWN |
-| payrolls / $500 | 0 | 0 | 0.000 | UNKNOWN | UNKNOWN |
+| fed-hold / $100 | 0 | 0 | 0.000 | -0.990000 | 99.00 |
+| fed-hold / $25 | 0 | 0 | 0.000 | -0.247500 | 24.75 |
+| fed-hold / $5 | 0 | 0 | 0.000 | -0.049500 | 4.95 |
+| fed-hold / $500 | 0 | 0 | 0.000 | -4.950400 | 495.04 |
+| payrolls / $100 | 0 | 0 | 0.000 | -1.960600 | 98.03 |
+| payrolls / $25 | 0 | 0 | 0.000 | -0.490000 | 24.50 |
+| payrolls / $5 | 0 | 0 | 0.000 | -0.098000 | 4.90 |
+| payrolls / $500 | 0 | 0 | 0.000 | -14.08930000 | 485.91 |
 | unemployment / $100 | 0 | 0 | 0.000 | -1.31360000 | 98.68 |
 | unemployment / $25 | 0 | 0 | 0.000 | -0.247500 | 24.75 |
 | unemployment / $5 | 0 | 0 | 0.000 | -0.049500 | 4.95 |
-| unemployment / $500 | 0 | 0 | 0.000 | -83.74160000 | 416.25 |
-| cpi / $100 | 0 | 0 | 0.000 | -3.57060000 | 96.42 |
-| cpi / $25 | 0 | 0 | 0.000 | -0.683600 | 24.31 |
-| cpi / $5 | 0 | 0 | 0.000 | -0.073500 | 4.92 |
-| cpi / $500 | 0 | 0 | 0.000 | -27.36410000 | 472.63 |
+| unemployment / $500 | 0 | 0 | 0.000 | -70.56670000 | 429.43 |
+| cpi / $100 | 0 | 0 | 0.000 | -2.067900 | 97.93 |
+| cpi / $25 | 0 | 0 | 0.000 | -0.441000 | 24.55 |
+| cpi / $5 | 0 | 0 | 0.000 | -0.049500 | 4.95 |
+| cpi / $500 | 0 | 0 | 0.000 | -21.30570000 | 478.69 |
 | gas-high / $100 | 0 | 0 | 0.000 | UNKNOWN | UNKNOWN |
 | gas-high / $25 | 0 | 0 | 0.000 | UNKNOWN | UNKNOWN |
 | gas-high / $5 | 0 | 0 | 0.000 | UNKNOWN | UNKNOWN |
