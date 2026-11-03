@@ -1,5 +1,33 @@
 # Official API sources and versioned contracts
 
+## M5P recovery check — November 3, 2026 UTC
+
+[Eleven current official-document captures](evidence/M5P_API_CHECKS.json) retain
+exact Markdown bytes, hashes and retrieval times for US book/detail/catalogue,
+stream/overview/rate limits and Kalshi book stream/detail/catalogue/keepalive/rate
+limits. Existing consumed schema contracts are unchanged (US MarketService 1.0.0,
+Kalshi upstream 3.35.0; stream prose has no immutable upstream semantic version).
+Current Kalshi documentation also describes conflation; this research continues
+using the existing real-time subscription and does not consume conflated fields.
+
+The US Markets page describes full displayed snapshots, while the overview
+advises ordered processing and heartbeat monitoring. Neither supplies a consumed
+gap-detection sequence or a book-freshness watermark from heartbeats. No quiet-book
+freshness exemption is justified. The isolated full-frame path validates existing
+metadata/price/lot fields, with US continuity still UNKNOWN; it cannot authorize
+trading. Request timing, local availability and mutation-observation clocks are
+local telemetry, never fabricated venue fields.
+
+Historical US HTTP headers consistently advertise `public, max-age=30`; exact
+counts and response timings are in [transport evidence](evidence/M5P_HISTORY_TRANSPORT.json).
+HTTP Date/Age do not replace the source timestamp. The genuine M5P fixtures retain
+exact public bytes, adapter schemas, receipts and hashes for the election selection,
+Brooklyn sample/frame reconstruction, Toronto's historically rejected omitted
+ladder, and the successful second smoke. Provider data remains local research
+evidence; no publication, private account request or international API is involved.
+
+---
+
 Verified directly on **2026-10-21 UTC**, with public response retrievals at
 19:51–19:58 UTC. Each JSON fixture records its own URL, retrieval timestamp,
 upstream schema version, sanitizer description, and SHA-256 of the unchanged body.

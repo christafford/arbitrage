@@ -207,7 +207,8 @@ def summarize(rows, slugs, finished_at):
     return {'markets': markets, 'missing_markets': [slug for slug in slugs if not markets[slug]['books']]}
 
 
-def capture(directory, credentials, slugs, *, seconds=30, connect_socket=open_socket, stop=None):
+def capture(directory, credentials, slugs, *, seconds=30, connect_socket=open_socket, stop=None,
+            on_event=None):
     """One generation, fixed monotonic deadline; no automatic retry or approval."""
     if type(seconds) is not int or not 1 <= seconds <= 600: raise ValueError('duration must be 1..600 seconds')
     request=subscription(slugs); directory=Path(directory); directory.mkdir(parents=True,exist_ok=False)
@@ -221,6 +222,7 @@ def capture(directory, credentials, slugs, *, seconds=30, connect_socket=open_so
     def emit(row):
         with (directory/'timing.jsonl').open('a') as handle: handle.write(dumps(row)+'\n')
         rows.append(row)
+        if on_event is not None: on_event(dict(row))
     try:
         if shutil.disk_usage(directory).free < MIN_FREE_BYTES:
             raise ValueError('low disk')

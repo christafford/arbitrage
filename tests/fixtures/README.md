@@ -258,3 +258,19 @@ This is a sanitized replay dataset, not a byte-for-byte SQLite backup. The fixtu
 contains no credentials, handshake headers or account responses. Its original
 full archives remain in `data/m5n/overlap-smoke/`; fault mutations in
 `test_stream_comparison.py` are hypothetical and never become approval labels.
+
+## M5P additions — genuine local research evidence
+
+`m5p-brooklyn-live.json` preserves the exact public Kalshi snapshot/delta chains,
+US books and metadata for the positive M5O observation and its neighboring samples.
+`m5p-toronto-live.json` preserves the fifth omitted-ladder stop with its original
+REJECTED status. Counterfactual parsing cannot upgrade historical evidence.
+`m5p-selection-live.json` preserves eight exact public definition/book responses
+for the House/Senate quality shortlist. `m5p-event-replay-live.json` contains the
+successful second smoke's raw records, journal and clock-bound samples for a
+self-contained offline replay. Original body/file hashes, UTC receipts, adapter
+schemas and local source paths are retained. These fixtures are not hypothetical;
+fault mutations in tests and all fill assumptions are explicitly hypothetical.
+No credentials, handshake headers, account data or settlement approval is included.
+Current official sources: `docs/evidence/M5P_API_CHECKS.json`. Provider rights and
+local-research restrictions continue to apply.

@@ -180,6 +180,22 @@ class CaptureTests(unittest.TestCase):
         self.assertEqual(archived,raw);self.assertEqual(r['reason'],'INVALID_FRAME')
         self.assertEqual(rows[0]['rejection'],'INVALID_FRAME')
 
+    def test_quality_callback_follows_raw_and_timing_archival(self):
+        cred=SimpleNamespace(headers=lambda:{},sensitive_values=lambda h:())
+        class Socket:
+            def __enter__(self):return self
+            def __exit__(self,*args):pass
+            def send(self,msg):pass
+            def recv(self,timeout):return '{"heartbeat":{}}'
+        with tempfile.TemporaryDirectory() as tmp,patch.object(p,'MAX_FRAMES',1):
+            root=Path(tmp)/'capture';seen=[]
+            def event(row):
+                self.assertTrue((root/row['raw_file']).exists())
+                self.assertEqual(len((root/'timing.jsonl').read_text().splitlines()),1)
+                seen.append(row['kind'])
+            p.capture(root,cred,[SLUG],seconds=1,connect_socket=lambda h:Socket(),on_event=event)
+            self.assertEqual(seen,['heartbeat'])
+
     def test_valid_capture_interrupt_and_privacy_failure(self):
         r,rows,_=self.run_capture(dumps(frame()))
         self.assertEqual(r['books'],1);self.assertEqual(r['reason'],'INTERRUPTED')

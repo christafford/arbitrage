@@ -203,6 +203,17 @@ class StreamCaptureTests(unittest.TestCase):
         self.assertIn('STREAM_DISCONNECTED', inspect_book(self.db, seen[-1][0], now=self.clock.now())['rejections'])
         self.assertEqual(self.sockets[0].sent, [{'id': 1, 'cmd': 'subscribe', 'params': {
             'channels': ['orderbook_delta'], 'market_ticker': self.source, 'use_yes_price': False}}])
+
+    def test_quality_state_callback_raw_first_pending_book_and_disconnect(self):
+        seen=[]
+        def callback(con,event,book):
+            if 'observation_id' in event:
+                status=con.execute('SELECT validation_status FROM raw_observations WHERE id=?',(event['observation_id'],)).fetchone()[0]
+                self.assertEqual(status,'PENDING' if event['kind']=='pending' else 'VALID')
+            self.assertEqual(book is not None,event['kind']=='book')
+            seen.append(event['kind'])
+        self.run_capture([self.ack(),self.snapshot(),self.delta()],max_messages=3,on_state=callback)
+        self.assertEqual(seen,['pending','pending','book','pending','book','disconnect'])
         self.assertEqual(self.db.execute('SELECT COUNT(*) FROM pairs').fetchone()[0], 0)
 
     def test_gap_invalidates_old_book_then_new_generation_snapshot_recovers(self):

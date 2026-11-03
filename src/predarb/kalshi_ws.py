@@ -57,7 +57,7 @@ def refresh_metadata(con, source_id, *, client=None):
 def capture(con, source_id, credentials, *, seconds=60, max_messages=10000, max_connections=10,
             min_free_bytes=1024**3, directory='.', connect_socket=open_socket, metadata_loader=refresh_metadata,
             now=clock, monotonic=time.monotonic, sleep=time.sleep, on_book=None, protocol='clocked',
-            on_tick=None, on_receive=None):
+            on_tick=None, on_receive=None, on_state=None):
     identifier(source_id)
     for value, low, high in ((seconds, 1, 3600), (max_messages, 1, 100000), (max_connections, 1, 120)):
         if type(value) is not int or not low <= value <= high:
@@ -133,6 +133,9 @@ def capture(con, source_id, credentials, *, seconds=60, max_messages=10000, max_
                                     'received_at': received.isoformat(),
                                     'receive_monotonic': last_message})
                     stats['messages'] += 1; frames += 1
+                    if on_state is not None:
+                        on_state(con, {'kind':'pending', 'observation_id':observed,
+                            'connection_id':connection_id}, None)
                     try:
                         if abs((received - wall_start).total_seconds() - (monotonic() - mono_start)) > 1:
                             raise ValueError('wall clock jump')
@@ -162,6 +165,10 @@ def capture(con, source_id, credentials, *, seconds=60, max_messages=10000, max_
                         validate_observation(con, observed, 'REJECTED', 'INVALID_STREAM_FRAME')
                         reason = 'INVALID_STREAM_FRAME'; break
                     key = 'snapshots' if frame['type'] == 'orderbook_snapshot' else 'deltas'
+                    if on_state is not None:
+                        on_state(con, {'kind':'book', 'observation_id':observed,
+                            'connection_id':connection_id, 'snapshot':key=='snapshots',
+                            'metadata_observation_id':detail.id}, book)
                     stats[key] += 1
                     if not book.issues(now=received):
                         stats['usable_books'] += 1
@@ -185,6 +192,9 @@ def capture(con, source_id, credentials, *, seconds=60, max_messages=10000, max_
             if stream is not None: stream.disconnect()
             if connection_id is not None:
                 ws_store.end_connection(con, connection_id, at=now().isoformat(), reason=reason)
+                if on_state is not None:
+                    on_state(con, {'kind':'disconnect', 'connection_id':connection_id,
+                                   'reason':reason}, None)
         if reason in {'WALL_CLOCK_JUMP', 'LOW_DISK_SPACE', 'PROTOCOL_REVIEW_REQUIRED', 'UNEXPECTED_MARKET_CLOCK', 'COORDINATOR_STOP'}:
             stats['failures'].append(reason); break
         if reason not in {'BUDGET_COMPLETE', 'PERIODIC_RESNAPSHOT'}:

@@ -1,5 +1,16 @@
 # Architecture
 
+M5P adds `quality_recovery.py` for immutable M5O forensics and
+`quality_capture.py` for isolated bounded stream/REST validation. Raw-first
+callbacks expose pending barriers, validated books and disconnects without
+changing production gates. A hash-chained event journal binds local availability
+to source pointers; offline reconstruction verifies all samples and integrates
+valid local market-state intervals, cutting at freshness expiries and continuity
+losses. US frames reuse metadata/grid validation only in the research module;
+US gap detection and continuous exchange validity remain UNKNOWN. Production
+SQLite schema, approvals and model namespaces are unchanged. See
+[M5P operations](M5P_OPERATIONS.md).
+
 M5O adds isolated `conditional_research.py` and `continuous_research.py`: Decimal
 cash-long gross-price research and independent per-pair Kalshi/US receivers with
 separate single-writer archives. Production approved economics remains unchanged.
