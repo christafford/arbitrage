@@ -423,3 +423,14 @@ sequence/clock boundaries, and replays sampled comparisons. Response-only
 sensitivity metrics cannot become economic eligibility. Separate scoped
 non-sports captures and blank registry/fee forms preserve human review. See
 [M5M operations](M5M_OPERATIONS.md) and [review packets](M5M_REVIEW_GUIDE.md).
+
+### M5P cadence and recovery follow-up
+
+`snapshot_recovery.py` supplies an opt-in research-only controller for bounded
+in-band Kalshi snapshots. The default capture policy is unchanged. Requests enter
+existing raw storage before send; experimental public control responses correlate
+to those requests and never advance book clocks. Sequence loss still reconnects.
+Metadata/frame-bound rotations retain the original source context and replay cap.
+`cadence.py` consumes verified raw/event replay, measures full-window and half-window
+coverage, and ranks supplied candidates deterministically. Selection is a research
+recommendation only. [Limits and results](M5P_CADENCE_RECOVERY.md).

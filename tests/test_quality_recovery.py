@@ -240,7 +240,7 @@ class GenuineEventReplay(unittest.TestCase):
     def setUp(self):
         self.tmp=tempfile.TemporaryDirectory();self.addCleanup(self.tmp.cleanup)
         self.root=Path(self.tmp.name)
-        self.fixture=load_json((Path(__file__).parent/'fixtures/m5p-event-replay-live.json').read_bytes())
+        self.fixture=load_json((Path(__file__).parent/'fixtures'/getattr(self,'fixture_name','m5p-event-replay-live.json')).read_bytes())
         self.assertIs(self.fixture['hypothetical'],False)
         for name,item in self.fixture['files'].items():
             p=self.root/name;p.parent.mkdir(parents=True,exist_ok=True)
@@ -258,8 +258,9 @@ class GenuineEventReplay(unittest.TestCase):
 
     def test_all_raw_frames_event_clocks_samples_and_intervals_replay(self):
         r=self.replay()
-        self.assertEqual(r['events'],49);self.assertEqual(r['samples'],40)
-        self.assertEqual(r['raw_hashes_verified'],28);self.assertEqual(r['us_frames_verified'],4)
+        expected=load_json(self.fixture['files']['audit.json']['body'])
+        for key in ('events','samples','raw_hashes_verified','us_frames_verified'):
+            self.assertEqual(r[key],expected[key])
         self.assertTrue(r['interval_coverage_recomputed'])
 
     def test_missing_event_cannot_inflate_coverage(self):

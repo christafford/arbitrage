@@ -59,6 +59,9 @@ def validate_config(config):
     validate_window(config['seconds'],config['pairs'])
     if seconds(utc_time(config['deadline_at'])-utc_time(config['started_at'])) != config['seconds']:
         raise ValueError('fixed deadline differs from bounded duration')
+    from .snapshot_recovery import POLICIES
+    if config.get('kalshi_recovery_policy','reconnect') not in POLICIES:
+        raise ValueError('unknown recovery policy')
 
 
 class State:
@@ -85,7 +88,7 @@ class State:
                 self.last_continuity_loss_at = at
                 self.depth = None  # Never infer mutation across an unknown interval.
             return
-        if kind == 'heartbeat':
+        if kind in {'heartbeat','control'}:
             self.last_authenticated_validated_activity_at = event['received_at']
             return  # A heartbeat does not refresh or rehabilitate the book.
         if kind != 'book' or book is None: raise ValueError('unknown quality event')
@@ -265,6 +268,7 @@ def worker(root, pair, config, kcredentials, ucredentials, stop):
                     seconds=max(1,int(duration)),max_connections=120,max_messages=100000,directory=root,
                     metadata_loader=lambda db,sid:kalshi_ws.refresh_metadata(db,sid,client=client),
                     on_tick=guard,on_state=state,
+                    recovery_policy=config.get('kalshi_recovery_policy','reconnect'),
                     on_receive=lambda r:append(root/'kalshi-timing.jsonl',r))
         except Exception as exc: errors.append({'channel':'kalshi','error_type':type(exc).__name__})
         finally: loss('kalshi','RECEIVER_ENDED')
@@ -372,7 +376,7 @@ def worker(root, pair, config, kcredentials, ucredentials, stop):
     return report
 
 
-def replay(root, pair, config):
+def replay(root, pair, config, *, event_observer=None):
     """Rebuild every admitted book from archived raw data, then all event intervals.
 
     Receive time and local availability time are distinct. No later message is
@@ -385,7 +389,7 @@ def replay(root, pair, config):
     samples = list(json_lines(root/'samples.jsonl'))
     engine = Engine(pair,config['started_at'],config['deadline_at'])
     stream = None; generation = None; sid = None
-    head = '0'*64; sample_index = 0; verified_us = {}; us_rows = {}
+    head = '0'*64; sample_index = 0; verified_us = {}; us_rows = {}; acknowledged=set()
     for folder in sorted(root.glob('us-stream-*')):
         verified_us[folder.name] = us_stream_probe.replay(folder)
         for r in json_lines(folder/'timing.jsonl'): us_rows[folder.name+'/'+r['raw_file']] = r
@@ -415,7 +419,7 @@ def replay(root, pair, config):
                 raise ValueError('event outside fixed deadline')
             head=digest; book=None
             channel=event.get('channel'); kind=event['kind']
-            if channel=='kalshi' and kind in {'pending','book'}:
+            if channel=='kalshi' and kind in {'pending','book','control'}:
                 payload,r=raw(kc,event['observation_id'])
                 frame=kc.execute('SELECT connection_id,wire_sha256,archive_kind FROM ws_frames WHERE observation_id=?',(event['observation_id'],)).fetchone()
                 if not frame or frame[0]!=event['connection_id'] or r[4]!=ws_store.PROTOCOL_SCHEMAS['clocked']:
@@ -423,6 +427,14 @@ def replay(root, pair, config):
                 if frame[2]=='EXACT_WIRE' and frame[1]!=r[1]: raise ValueError('wire hash mismatch')
                 if kind=='pending' and payload.get('type')=='subscribed' and r[3]=='VALID':
                     sid=payload['msg']['sid']
+                if kind=='control':
+                    from .snapshot_recovery import acknowledge, load_command
+                    if config.get('kalshi_recovery_policy')!='inband-snapshot' or stream is None or generation!=event['connection_id'] or r[3]!='VALID':
+                        raise ValueError('unapproved control replay context')
+                    request=load_command(kc,event['command_observation_id'],generation,pair['kalshi_id'],sid,r[2])
+                    key=(generation,request['id'])
+                    if key in acknowledged or event['received_at']!=r[2]:raise ValueError('control provenance mismatch')
+                    acknowledge(stream,payload,request);acknowledged.add(key)
                 if kind=='book':
                     meta,mr=raw(kc,event['metadata_observation_id'])
                     if r[3]!='VALID' or mr[3]!='VALID' or mr[1]!=event['metadata_sha256'] or payload.get('sid')!=sid:
@@ -457,6 +469,7 @@ def replay(root, pair, config):
                 if us_rows[event['raw_file']].get('kind')!='heartbeat': raise ValueError('heartbeat provenance mismatch')
             if book and utc_time(book.received_at)>utc_time(event['at']): raise ValueError('book used before receipt')
             engine.event(event,book)
+            if event_observer is not None:event_observer(event,book)
         check_samples(len(events),utc_time(config['deadline_at']))
         if sample_index!=len(samples): raise ValueError('unreplayed samples')
         if kc.execute('SELECT count(*) FROM ws_connections WHERE ended_at IS NULL').fetchone()[0]:

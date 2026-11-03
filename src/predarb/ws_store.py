@@ -29,7 +29,7 @@ CREATE INDEX ws_frames_connection ON ws_frames(connection_id,observation_id);
 """
 
 
-def safe_frame(body, secrets=()):
+def safe_frame(body, secrets=(), *, allow_control=False):
     """Security screening precedes archival; normalization always follows archival.
 
     Public-shaped frames retain exact wire bytes. Account enrichment is removed;
@@ -45,6 +45,18 @@ def safe_frame(body, secrets=()):
         if any(secret in dumps(frame) for secret in secrets if secret):
             return marker, digest, 'REDACTED'
         kind = frame.get('type')
+        if allow_control and kind == 'ok':
+            if not set(frame) <= {'type','id','sid','seq','sending_ts_ms','msg'}:
+                return marker,digest,'REDACTED'
+            if any(type(v) is not int for k,v in frame.items() if k not in {'type','msg'}):
+                return marker,digest,'REDACTED'
+            msg=frame.get('msg',{})
+            if not isinstance(msg,dict) or set(msg)-{'market_tickers'}:
+                return marker,digest,'REDACTED'
+            if 'market_tickers' in msg and (not isinstance(msg['market_tickers'],list) or any(
+                    not isinstance(v,str) or not re.fullmatch(r'[A-Za-z0-9_.:+\-]{1,250}',v) for v in msg['market_tickers'])):
+                return marker,digest,'REDACTED'
+            return raw,digest,'EXACT_WIRE'
         if kind not in {'subscribed', 'orderbook_snapshot', 'orderbook_delta'}:
             return marker, digest, 'REDACTED'
         allowed = {'type', 'id', 'sid', 'seq', 'sending_ts_ms', 'msg'}
@@ -95,10 +107,10 @@ def connection(con, connection_id):
     return row
 
 
-def archive_frame(con, connection_id, body, *, at, secrets=(), protocol='clocked'):
+def archive_frame(con, connection_id, body, *, at, secrets=(), protocol='clocked', allow_control=False):
     if protocol not in PROTOCOL_SCHEMAS:
         raise ValueError('unknown Kalshi stream protocol')
-    safe, wire_hash, kind = safe_frame(body, secrets)
+    safe, wire_hash, kind = safe_frame(body, secrets, allow_control=allow_control)
     observed = archive_response(con, 'kalshi', WS_URL, safe, 101, {}, at, PROTOCOL_SCHEMAS[protocol])
     con.execute('INSERT INTO ws_frames VALUES(?,?,?,?)', (observed, connection_id, wire_hash, kind))
     # Every frame is a pending barrier until validated, including a crash between writes.

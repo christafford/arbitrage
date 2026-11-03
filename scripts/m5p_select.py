@@ -16,12 +16,21 @@ PROPOSALS=[('house-dem','CONTROLH-2026-D','paccc-usho-midterms-2026-11-03-dem'),
            ('senate-rep','CONTROLS-2026-R','paccc-usse-midterms-2026-11-03-rep')]
 
 
-def select(root):
+def select(root, proposals=None):
     root=Path(root);root.mkdir(parents=True,exist_ok=False)
     pairs=[];responses=[]
     with connect(str(root/'selection.sqlite3')) as con:
         clients={v:HttpClient(con,v,attempts=1,timeout=5,interval=1) for v in ('kalshi','polymarket_us')}
-        for name,ticker,slug in PROPOSALS:
+        items=proposals if proposals is not None else [dict(id=n,kalshi_id=k,polymarket_us_id=u) for n,k,u in PROPOSALS]
+        if not 2<=len(items)<=3:raise ValueError('two or three screening candidates required')
+        from predarb.conditional_research import classification
+        from predarb.validation import identifier
+        for key in ('id','kalshi_id','polymarket_us_id'):
+            if len({identifier(p[key]) for p in items})!=len(items):raise ValueError('duplicate screening instrument or pair')
+        if proposals is not None:
+            for proposed in items:classification(proposed)
+        for proposed in items:
+            name,ticker,slug=(proposed[k] for k in ('id','kalshi_id','polymarket_us_id'))
             fingerprints={};metrics={};sources=[]
             for venue,adapter,sid in [('kalshi',kalshi,ticker),('polymarket_us',us,slug)]:
                 client=clients[venue]
@@ -44,7 +53,7 @@ def select(root):
                         received_at=observation.received_at,schema_version=adapter.SCHEMA_VERSION,body=raw.decode(),sha256=digest,
                         representation='EXACT_PUBLIC_RESPONSE')
                     responses.append(row);sources.append({k:v for k,v in row.items() if k!='body'})
-            pairs.append(dict(id=name,kalshi_id=ticker,polymarket_us_id=slug,classification='CONDITIONAL',
+            pair=dict(id=name,kalshi_id=ticker,polymarket_us_id=slug,classification='CONDITIONAL',
                 ordinary_basis='Assistant ordinary-outcome screen: named party control of the same chamber following the November 3 2026 election. NOT legal equivalence.',
                 residual_risks=['Kalshi early media-call determination versus US electoral/chamber sources',
                     'Kalshi February 1 officeholder fallback versus US majority/independent-caucus/January 4 attribution',
@@ -52,9 +61,14 @@ def select(root):
                     'Unreviewed fees, collateral, cash release and non-atomic fills'],
                 exceptional_scenario='HYPOTHETICAL K YES=1, US YES=0: both selected legs pay zero; unadjudicated source differences.',
                 origin='DETERMINISTIC',ai_only=False,contract_fingerprints=fingerprints,
-                selection_metrics=metrics,sources=sources,operator_approved=False))
+                selection_metrics=metrics,sources=sources,operator_approved=False)
+            if proposals is not None:
+                pair['ordinary_basis']=proposed.get('ordinary_basis','UNKNOWN; cadence screening only')
+                for key in ('classification','ordinary_basis','residual_risks','exceptional_scenario','origin','ai_only'):
+                    if key in proposed:pair[key]=proposed[key]
+            pairs.append(pair)
     manifest=dict(schema='m5p-selection/v1',selected_at=now().isoformat(),pairs=pairs,
-        selection='Purposive two-chamber election-day scope, fresh open-state and two-sided depth. Not representative coverage; source activity must be measured.',
+        selection='Purposive supplied scope, fresh open-state and two-sided depth. Not representative coverage; source activity must be measured.',
         inference_requests=0,strict_pairs=0,trading_authorized=False)
     atomic_json(root/'candidates.json',manifest)
     atomic_json(root/'fixture.json',dict(schema='m5p-public-selection/v1',hypothetical=False,responses=responses))
@@ -63,4 +77,7 @@ def select(root):
 
 if __name__=='__main__':
     p=argparse.ArgumentParser(description=__doc__);p.add_argument('--output',required=True)
-    select(p.parse_args().output)
+    p.add_argument('--proposals',type=Path)
+    a=p.parse_args()
+    from predarb.validation import load_json
+    select(a.output,load_json(a.proposals.read_bytes())['pairs'] if a.proposals else None)

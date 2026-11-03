@@ -722,3 +722,29 @@ bind the checked document, four genuine rejected snapshots, current market state
 and a separate live partial-book capture. Missing sides become explicitly empty
 depth; missing prices/quantities inside present levels never receive defaults.
 One-sided snapshots remain economically unusable. [Findings](M5O_LADDER_FIX.md).
+
+### M5P cadence / in-band snapshot follow-up — November 3 UTC
+
+[Eight fresh official documents](evidence/M5P_CADENCE_API_CHECKS.json) preserve
+exact bytes and UTC receipts for Kalshi connection/orderbook/keepalive/rate limits,
+AsyncAPI **2.0.0**, and US stream/detail/book schemas. The documented
+`update_subscription` with `params.sid`, `market_tickers`, and
+`action=get_snapshot` returns a replacement snapshot without resubscribing.
+`ok` control responses can include command ID, subscription ID, sequence, send
+time and the subscribed ticker list. Unknown/private fields remain redacted;
+this research accepts only a response correlated to its own archived command.
+Optional control sequence/time fields are validated when present, never invented.
+No control message, cached REST response or pong renews quote freshness.
+
+Book snapshot/delta fields retain `kalshi-ws/m5a-v1`. Locally originated, read-only
+snapshot commands use `kalshi-snapshot-command/m5p-v1`, explicitly not a provider
+response schema. The local cadence report is `market-cadence-screen/m5p-v1`.
+SQLite and production consumed-book schemas remain unchanged. The separate
+research replay handles control acknowledgments; generic production inspection
+fails closed on such control frames. No conflation mode or gap bypass is used.
+
+`m5p-inband-live.json` retains a genuine 20-second Fed smoke with three requested
+snapshots on the same connection, exact raw bytes/hashes, metadata/command refs,
+UTC receipts and event/sample/interval replay. It observed **no** `ok` responses;
+acknowledgment behavior is tested with explicitly hypothetical fault injection.
+See [method and execution evidence](M5P_CADENCE_RECOVERY.md).

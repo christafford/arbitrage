@@ -11,6 +11,7 @@ from .kalshi_auth import WS_URL
 from .provider import HttpClient
 from .store import save_entry, start_run, update_run, validate_observation
 from .validation import dumps, identifier, load_json
+from .snapshot_recovery import POLICIES, Recovery, archive_command, command, acknowledge
 
 
 def clock():
@@ -57,8 +58,13 @@ def refresh_metadata(con, source_id, *, client=None):
 def capture(con, source_id, credentials, *, seconds=60, max_messages=10000, max_connections=10,
             min_free_bytes=1024**3, directory='.', connect_socket=open_socket, metadata_loader=refresh_metadata,
             now=clock, monotonic=time.monotonic, sleep=time.sleep, on_book=None, protocol='clocked',
-            on_tick=None, on_receive=None, on_state=None):
+            on_tick=None, on_receive=None, on_state=None, recovery_policy='reconnect'):
     identifier(source_id)
+    if recovery_policy not in POLICIES:
+        raise ValueError('unknown recovery policy')
+    inband = recovery_policy == 'inband-snapshot'
+    if inband and (protocol != 'clocked' or on_state is None or on_book is not None):
+        raise ValueError('inband recovery requires isolated clocked research state consumer')
     for value, low, high in ((seconds, 1, 3600), (max_messages, 1, 100000), (max_connections, 1, 120)):
         if type(value) is not int or not low <= value <= high:
             raise ValueError('invalid stream duration/message/connection budget')
@@ -71,6 +77,9 @@ def capture(con, source_id, credentials, *, seconds=60, max_messages=10000, max_
              'protocol': protocol, 'protocol_valid_until': SEQUENCE_PROTOCOL_END.isoformat() if protocol == 'sequence-v1' else None,
              'sequenced_connection_ids': [], 'reconnected_continuity_demonstrated': False}
     deadline = monotonic() + seconds
+    if inband:
+        stats.update(recovery_policy=recovery_policy, snapshot_requests=0, snapshot_responses=0,
+                     control_acknowledgments=0)
     attempts, had_failure, coordinator_stopped = 0, False, False
     # An interrupted earlier invocation has no demonstrable transport continuity.
     con.execute("UPDATE ws_connections SET ended_at=?,end_reason='PREVIOUS_WRITER_STOPPED' WHERE ended_at IS NULL",
@@ -100,6 +109,7 @@ def capture(con, source_id, credentials, *, seconds=60, max_messages=10000, max_
                     'channels': ['orderbook_delta'], 'market_ticker': source_id,
                     'use_yes_price': False}}))
                 sid, frames, last_message = None, 0, monotonic()
+                recovery = Recovery(last_message)
                 while monotonic() < deadline and stats['messages'] < max_messages:
                     if on_tick is not None and on_tick(con, now()):
                         reason = 'COORDINATOR_STOP'; break
@@ -112,9 +122,17 @@ def capture(con, source_id, credentials, *, seconds=60, max_messages=10000, max_
                         reason = exc.code; break
                     if abs((received - wall_start).total_seconds() - (monotonic() - mono_start)) > 1:
                         reason = 'WALL_CLOCK_JUMP'; break
-                    if monotonic() - mono_start >= 30 or frames >= ws_store.MAX_FRAMES:
-                        reason = 'PERIODIC_RESNAPSHOT'; break
-                    if monotonic() - last_message >= 5:
+                    # Keep the initial metadata context below its 60-second gate.
+                    # Frame-limit rotations preserve bounded generic archival replay.
+                    if monotonic() - mono_start >= (45 if inband else 30) or frames >= ws_store.MAX_FRAMES:
+                        reason = 'METADATA_OR_FRAME_ROTATION' if inband else 'PERIODIC_RESNAPSHOT'; break
+                    if inband and recovery.timed_out(monotonic()):
+                        reason = 'SNAPSHOT_RESPONSE_TIMEOUT'; break
+                    if inband and recovery.due(monotonic(),sid):
+                        oid=archive_command(con,connection_id,source_id,sid,recovery.next_id,now().isoformat())
+                        socket.send(dumps(command(source_id,sid,recovery.next_id)))
+                        recovery.sent(monotonic(),oid);stats['snapshot_requests']+=1
+                    if (not inband or sid is None) and monotonic() - last_message >= 5:
                         reason = 'MESSAGE_TIMEOUT'; break
                     if shutil.disk_usage(directory).free < min_free_bytes:
                         reason = 'LOW_DISK_SPACE'; break
@@ -125,7 +143,8 @@ def capture(con, source_id, credentials, *, seconds=60, max_messages=10000, max_
                     received = now()  # Receipt captured before security screening/normalization.
                     last_message = monotonic()
                     observed, safe, kind = ws_store.archive_frame(con, connection_id, body,
-                                                                 at=received.isoformat(), secrets=secrets, protocol=protocol)
+                                                                 at=received.isoformat(), secrets=secrets, protocol=protocol,
+                                                                 allow_control=inband)
                     if on_receive is not None:
                         # Local diagnostics only; no raw frame or authentication data.
                         on_receive({'kind': 'ws_receive', 'observation_id': observed,
@@ -133,7 +152,8 @@ def capture(con, source_id, credentials, *, seconds=60, max_messages=10000, max_
                                     'received_at': received.isoformat(),
                                     'receive_monotonic': last_message})
                     stats['messages'] += 1; frames += 1
-                    if on_state is not None:
+                    frame = load_json(safe)
+                    if on_state is not None and frame.get('type') != 'ok':
                         on_state(con, {'kind':'pending', 'observation_id':observed,
                             'connection_id':connection_id}, None)
                     try:
@@ -142,6 +162,16 @@ def capture(con, source_id, credentials, *, seconds=60, max_messages=10000, max_
                         frame = load_json(safe)
                         if kind == 'REDACTED':
                             raise ValueError('unexpected or unsafe message')
+                        if inband and frame['type'] == 'ok':
+                            cid=frame.get('id')
+                            if type(cid) is not int or cid not in recovery.requests or cid in recovery.acknowledged:
+                                raise ValueError('unsolicited or duplicate snapshot acknowledgment')
+                            acknowledge(stream,frame,command(source_id,sid,cid))
+                            validate_observation(con,observed,'VALID',None)
+                            recovery.acknowledged.add(cid);stats['control_acknowledgments']+=1
+                            on_state(con,dict(kind='control',observation_id=observed,connection_id=connection_id,
+                                command_observation_id=recovery.requests[cid],received_at=received.isoformat()),None)
+                            continue
                         if frame['type'] == 'subscribed':
                             if sid is not None or frame.get('id') != 1 or frame['msg'].get('channel') != 'orderbook_delta':
                                 raise ValueError('unexpected acknowledgment')
@@ -165,6 +195,9 @@ def capture(con, source_id, credentials, *, seconds=60, max_messages=10000, max_
                         validate_observation(con, observed, 'REJECTED', 'INVALID_STREAM_FRAME')
                         reason = 'INVALID_STREAM_FRAME'; break
                     key = 'snapshots' if frame['type'] == 'orderbook_snapshot' else 'deltas'
+                    if inband:
+                        if key == 'snapshots' and recovery.pending is not None:stats['snapshot_responses']+=1
+                        recovery.book(monotonic(),key=='snapshots')
                     if on_state is not None:
                         on_state(con, {'kind':'book', 'observation_id':observed,
                             'connection_id':connection_id, 'snapshot':key=='snapshots',
@@ -197,13 +230,13 @@ def capture(con, source_id, credentials, *, seconds=60, max_messages=10000, max_
                                    'reason':reason}, None)
         if reason in {'WALL_CLOCK_JUMP', 'LOW_DISK_SPACE', 'PROTOCOL_REVIEW_REQUIRED', 'UNEXPECTED_MARKET_CLOCK', 'COORDINATOR_STOP'}:
             stats['failures'].append(reason); break
-        if reason not in {'BUDGET_COMPLETE', 'PERIODIC_RESNAPSHOT'}:
+        if reason not in {'BUDGET_COMPLETE', 'PERIODIC_RESNAPSHOT', 'METADATA_OR_FRAME_ROTATION'}:
             stats['failures'].append(reason); had_failure = True; attempts += 1
         else:
             attempts = 0
         remaining = deadline - monotonic()
         if remaining > 0 and stats['messages'] < max_messages and stats['connections'] < max_connections:
-            delay = min(remaining, min(30, 2 ** min(attempts, 5)))
+            delay = 0 if inband and reason=='METADATA_OR_FRAME_ROTATION' else min(remaining, min(30, 2 ** min(attempts, 5)))
             if on_tick is None:
                 sleep(delay)
             else:

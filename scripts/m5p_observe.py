@@ -30,6 +30,7 @@ def main():
     parser.add_argument('--config',type=Path)
     parser.add_argument('--pair')
     parser.add_argument('--seconds',type=int,default=900)
+    parser.add_argument('--kalshi-recovery-policy',choices=['reconnect','inband-snapshot'],default='reconnect')
     parser.add_argument('--kalshi-credentials',default=str(Path.home()/'.config/predarb/kalshi-readonly.json'))
     parser.add_argument('--us-credentials',default=str(Path.home()/'polymarket-us.api'))
     a=parser.parse_args();stop=threading.Event()
@@ -58,6 +59,7 @@ def main():
     started=now();mono=time.monotonic()
     config=dict(schema=VERSION,seconds=a.seconds,started_at=started.isoformat(),
         deadline_at=(started+timedelta(seconds=a.seconds)).isoformat(),pairs=pairs,
+        kalshi_recovery_policy=a.kalshi_recovery_policy,
         selection_sha256=hashlib.sha256(a.candidates.read_bytes()).hexdigest(),
         engineering_targets=dict(valid_sample_percent=50,unexplained_stops=0,audit_failures=0),
         code_sha256={str(p):hashlib.sha256(p.read_bytes()).hexdigest() for p in

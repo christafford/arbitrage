@@ -274,3 +274,14 @@ fault mutations in tests and all fill assumptions are explicitly hypothetical.
 No credentials, handshake headers, account data or settlement approval is included.
 Current official sources: `docs/evidence/M5P_API_CHECKS.json`. Provider rights and
 local-research restrictions continue to apply.
+
+`m5p-inband-live.json` is genuine, sanitized public evidence from the November 3
+M5P cadence/recovery smoke (`data/m5p/cadence-recovery/smoke-01/fed-hold`). It preserves
+exact public source bytes and hashes, metadata/commands/connection provenance,
+UTC receipt times and the complete short worker event/sample/interval journal.
+There are three successful `get_snapshot` requests on one connection. Local
+commands use `kalshi-snapshot-command/m5p-v1`; received books retain
+`kalshi-ws/m5a-v1`; US frames retain the M5N probe schema. No credentials or private
+fields are included. There were no live control acknowledgments; those and other
+mutations in `test_snapshot_recovery.py` are labeled hypothetical. Provider data
+is retained for the operator's local research, not published or relicensed.
