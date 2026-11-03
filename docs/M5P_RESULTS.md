@@ -1,5 +1,9 @@
 # M5P — Market-data quality recovery results
 
+Subsequent operator-authorized [cadence/recovery follow-up](M5P_CADENCE_RECOVERY.md)
+adds a measured shortlist and bounded in-band snapshots. The results below retain
+the original run and its acceptance status.
+
 **The authorized analysis, implementation and 15-minute validation were executed.
 The 50% data-quality engineering target was not met; M5P quality acceptance remains
 open.** Tests were not weakened. Both validation workers finished at their fixed

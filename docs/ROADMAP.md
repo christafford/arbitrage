@@ -409,3 +409,19 @@ See [operations](M5O_OPERATIONS.md) and [evolving results](M5O_RESULTS.md).
 [Results](M5P_RESULTS.md), [operation](M5P_OPERATIONS.md),
 [worker-stop causes](M5P_WORKER_STOPS.md) and [Brooklyn reconstruction](M5P_BROOKLYN.md).
 No one-hour continuation, full-day run, production-model change or M6 is implied.
+
+### M5P measured-cadence / recovery follow-up — authorized November 3
+
+- [x] Opt-in bounded in-band Kalshi snapshot requests; unchanged freshness,
+  sequence/clock gates, raw-first provenance and reconnect fallback.
+- [x] Audited update-cadence screening with full-window and half-window coverage;
+  deterministic ranking, explicit rejection and no automatic approval or launch.
+- [x] Genuine same-connection requested-snapshot smoke and regression fixtures.
+- [x] Finish and audit the new bounded five-minute old/new policy comparison: six
+  audits pass, zero early stops, 13 → 0 Kalshi message timeouts. Senate and House
+  meet the screen; Fed remains rejected. 564 tests pass.
+- [ ] Held-out/sustained coverage and broader candidate screening; House remains
+  marginal, US continuity and independent human decisions remain unresolved.
+
+[Scope, method and results](M5P_CADENCE_RECOVERY.md). This follows the operator's
+explicit request; it does not renew the expired M5P window or authorize M6.

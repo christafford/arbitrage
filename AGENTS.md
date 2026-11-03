@@ -173,3 +173,21 @@ early worker stops, but stream samples passed only 19.41% and full-window local
 state coverage was 19.26%. The 50% target remains unmet. The 118 Senate gross
 samples are conditional research, not profitability or approval. No continuation
 was prepared or authorized; preserve the fixed deadline and original evidence.
+
+### M5P cadence/recovery follow-up — November 3
+
+The operator subsequently requested actual update-cadence screening and reduced
+Kalshi recovery gaps. This authorizes the focused M5P engineering follow-up in
+`docs/M5P_CADENCE_RECOVERY.md`, including short bounded read-only validation in new
+archives. Preserve all old deadlines/evidence and unchanged quality/approval gates.
+The opt-in in-band snapshot policy must retain sequence/source-clock validation,
+raw-first requests/responses, bounded fallback and deterministic offline replay.
+Cadence screening uses wall time and sample coverage; an empty shortlist is valid.
+No automatic longer run, renewed service, model change, funds, orders or M6.
+The follow-up stopped at November 3 23:23:32.856342 UTC. Six worker audits passed,
+with no early stops; in-band recovery reduced message timeouts 13 → 0 and all 67
+requested snapshots returned. The five-minute screen selected Senate (82.09% wall)
+and marginal House (53.18%), rejecting Fed (3.25%). See the result document and
+`data/m5p/cadence-recovery/`. Shortlist validity is historical, not a standing
+activity guarantee; held-out/sustained coverage remains open. No further run is
+implied, and all old services remain off.
