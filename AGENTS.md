@@ -154,3 +154,22 @@ see `docs/M5O_LADDER_FIX.md`. Omitted sides remain partial/empty and economicall
 unusable. Original M5O processes retain their launch-time code; no hot reload or
 restart occurred. Four stopped sports markets subsequently finalized. Preserve
 their rejected evidence and gaps; this correction does not renew the deadline.
+
+## M5P authorized market-data quality recovery — November 3
+
+The operator explicitly requested `docs/M5P_MARKET_DATA_QUALITY_RECOVERY.md`.
+Scope: immutable M5O forensics, collection instrumentation/repairs, and one new
+15-minute read-only validation of two or three freshly open, deliberately active
+pairs after tests and scope disclosure. The 50% valid-sample target is an initial
+engineering goal; preserve two-second gates and measure wall-clock local-state
+coverage separately. Do not weaken tests to attain it. Existing model namespaces,
+settlement/fee/clock/collateral approvals, capital limits and expired runs remain
+preserved. No full-day run, automatic renewal, funds, orders or M6. An optional
+one-hour validation is only a separate proposal after initial targets pass.
+See `docs/M5P_OPERATIONS.md`, `docs/M5P_RESULTS.md` and the fixed window in
+`data/m5p/validation-20261103/config.json` before any further operational work.
+The run stopped at November 3 16:34:51.923924 UTC. Both audits passed, with no
+early worker stops, but stream samples passed only 19.41% and full-window local
+state coverage was 19.26%. The 50% target remains unmet. The 118 Senate gross
+samples are conditional research, not profitability or approval. No continuation
+was prepared or authorized; preserve the fixed deadline and original evidence.

@@ -388,3 +388,24 @@ remain unchanged. [US stream operation and replay](US_WEBSOCKET.md).
   representative AI-only economic contribution. No M6 or live-money authority.
 
 See [operations](M5O_OPERATIONS.md) and [evolving results](M5O_RESULTS.md).
+
+## M5P — Market-data quality recovery — EXECUTED; QUALITY TARGET NOT MET
+
+- [x] Immutable M5O raw-hash audit, exact primary/simultaneous rejection accounting,
+  five early-stop explanations and original Brooklyn sample reconstruction.
+- [x] Isolated raw-first stream/REST instrumentation with separate snapshot,
+  mutation-observation, activity, continuity-loss, source/receipt and HTTP clocks.
+- [x] Event-time local market-state coverage with unchanged two-second gates,
+  deterministic offline replay, genuine fixtures and fault tests.
+- [x] Finish and audit the one authorized 15-minute two-pair validation; compare
+  sample and full-wall-window coverage, error rates, quote age and skew.
+- [x] Establish and report observed feed/collector limitations without relaxing tests:
+  19.41% passing stream samples, 19.26% full-window local-state coverage; zero early
+  worker stops and zero validation-run audit failures.
+- [ ] Meet the initial 50% engineering target on deliberately active pairs. The
+  measured update cadence did not support it; no optional hour was prepared.
+- [ ] Independently adjudicated settlement/fee/mechanics/cash-release review.
+
+[Results](M5P_RESULTS.md), [operation](M5P_OPERATIONS.md),
+[worker-stop causes](M5P_WORKER_STOPS.md) and [Brooklyn reconstruction](M5P_BROOKLYN.md).
+No one-hour continuation, full-day run, production-model change or M6 is implied.

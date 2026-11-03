@@ -1,0 +1,190 @@
+pair,reason,primary_count,additional_count,all_count
+nba-brooklyn,OSError:transport failed after 1 attempts: https://gateway.polymarket.us/v1/market/slug/aec-nba-bkn-ind-2026-11-01: <urlopen error _ssl.c:1012: The handshake operation timed out>,3,0,3
+nba-brooklyn,OSError:transport failed after 1 attempts: https://gateway.polymarket.us/v1/markets/aec-nba-bkn-ind-2026-11-01/book: <urlopen error _ssl.c:1012: The handshake operation timed out>,1,0,1
+nba-brooklyn,PASS,44,0,0
+nba-brooklyn,RECEIPT_SKEW_GT_2S,0,744,744
+nba-brooklyn,SOURCE_SKEW_GT_2S,0,2895,2895
+nba-brooklyn,ValueError:invalid stream frame provenance or continuity,270,0,270
+nba-brooklyn,ValueError:stream has no snapshot,1,0,1
+nba-brooklyn,kalshi:DISCONNECTED,398,0,398
+nba-brooklyn,kalshi:NEWER_METADATA_REQUIRES_FRESH_BOOK,0,24,24
+nba-brooklyn,kalshi:PARTIAL_BOOK,5,1,6
+nba-brooklyn,kalshi:RECEIPT_NOT_WITHIN_2S,405,350,755
+nba-brooklyn,kalshi:SOURCE_NOT_WITHIN_2S,206,756,962
+nba-brooklyn,kalshi:STREAM_DISCONNECTED,0,398,398
+nba-brooklyn,kalshi:STREAM_LIVENESS_NOT_DEMONSTRATED,4,263,267
+nba-brooklyn,polymarket_us:PARTIAL_BOOK,2,3,5
+nba-brooklyn,polymarket_us:SOURCE_NOT_WITHIN_2S,1987,1000,2987
+nba-brooklyn,polymarket_us:STALE_SOURCE,0,1,1
+nba-boston,OSError:transport failed after 1 attempts: https://gateway.polymarket.us/v1/market/slug/aec-nba-bos-orl-2026-11-01: <urlopen error _ssl.c:1012: The handshake operation timed out>,2,0,2
+nba-boston,OSError:transport failed after 1 attempts: https://gateway.polymarket.us/v1/markets/aec-nba-bos-orl-2026-11-01/book: <urlopen error _ssl.c:1012: The handshake operation timed out>,1,0,1
+nba-boston,PASS,33,0,0
+nba-boston,RECEIPT_SKEW_GT_2S,0,263,263
+nba-boston,SOURCE_SKEW_GT_2S,0,1720,1720
+nba-boston,ValueError:invalid stream frame provenance or continuity,248,0,248
+nba-boston,ValueError:kalshi:MISSING_BOOK,3,0,3
+nba-boston,kalshi:DISCONNECTED,187,0,187
+nba-boston,kalshi:NEWER_METADATA_REQUIRES_FRESH_BOOK,0,19,19
+nba-boston,kalshi:RECEIPT_NOT_WITHIN_2S,125,141,266
+nba-boston,kalshi:SOURCE_NOT_WITHIN_2S,241,270,511
+nba-boston,kalshi:STREAM_DISCONNECTED,0,187,187
+nba-boston,kalshi:STREAM_LIVENESS_NOT_DEMONSTRATED,0,82,82
+nba-boston,polymarket_us:SOURCE_NOT_WITHIN_2S,1252,543,1795
+nba-toronto,OSError:transport failed after 1 attempts: https://gateway.polymarket.us/v1/market/slug/aec-nba-tor-lal-2026-11-01: <urlopen error _ssl.c:1012: The handshake operation timed out>,4,0,4
+nba-toronto,OSError:transport failed after 1 attempts: https://gateway.polymarket.us/v1/markets/aec-nba-tor-lal-2026-11-01/book: <urlopen error _ssl.c:1012: The handshake operation timed out>,6,0,6
+nba-toronto,PASS,51,0,0
+nba-toronto,RECEIPT_SKEW_GT_2S,0,3534,3534
+nba-toronto,SOURCE_SKEW_GT_2S,0,5273,5273
+nba-toronto,ValueError:invalid stream frame provenance or continuity,200,0,200
+nba-toronto,ValueError:stream has no snapshot,2,0,2
+nba-toronto,kalshi:DISCONNECTED,2957,0,2957
+nba-toronto,kalshi:NEWER_METADATA_REQUIRES_FRESH_BOOK,0,45,45
+nba-toronto,kalshi:RECEIPT_NOT_WITHIN_2S,626,2917,3543
+nba-toronto,kalshi:SOURCE_NOT_WITHIN_2S,94,3543,3637
+nba-toronto,kalshi:STALE_METADATA,0,4,4
+nba-toronto,kalshi:STALE_RECEIPT,0,3,3
+nba-toronto,kalshi:STALE_SOURCE,0,3,3
+nba-toronto,kalshi:STREAM_DISCONNECTED,0,2957,2957
+nba-toronto,kalshi:STREAM_LIVENESS_NOT_DEMONSTRATED,7,2852,2859
+nba-toronto,polymarket_us:PARTIAL_BOOK,6,0,6
+nba-toronto,polymarket_us:SOURCE_NOT_WITHIN_2S,1999,3658,5657
+nba-toronto,polymarket_us:STALE_SOURCE,0,129,129
+nfl-arizona,OSError:transport failed after 1 attempts: https://gateway.polymarket.us/v1/market/slug/aec-nfl-ari-dal-2026-11-01: <urlopen error _ssl.c:1012: The handshake operation timed out>,4,0,4
+nfl-arizona,OSError:transport failed after 1 attempts: https://gateway.polymarket.us/v1/markets/aec-nfl-ari-dal-2026-11-01/book: <urlopen error _ssl.c:1012: The handshake operation timed out>,2,0,2
+nfl-arizona,PASS,49,0,0
+nfl-arizona,RECEIPT_SKEW_GT_2S,0,57,57
+nfl-arizona,SOURCE_SKEW_GT_2S,0,889,889
+nfl-arizona,ValueError:invalid stream frame provenance or continuity,234,0,234
+nfl-arizona,kalshi:DISCONNECTED,80,0,80
+nfl-arizona,kalshi:NEWER_METADATA_REQUIRES_FRESH_BOOK,0,14,14
+nfl-arizona,kalshi:RECEIPT_NOT_WITHIN_2S,0,57,57
+nfl-arizona,kalshi:SOURCE_NOT_WITHIN_2S,177,57,234
+nfl-arizona,kalshi:STREAM_DISCONNECTED,0,80,80
+nfl-arizona,kalshi:STREAM_LIVENESS_NOT_DEMONSTRATED,0,4,4
+nfl-arizona,polymarket_us:SOURCE_NOT_WITHIN_2S,671,240,911
+nfl-baltimore,OSError:transport failed after 1 attempts: https://gateway.polymarket.us/v1/market/slug/aec-nfl-bal-buf-2026-11-01: <urlopen error _ssl.c:1012: The handshake operation timed out>,1,0,1
+nfl-baltimore,OSError:transport failed after 1 attempts: https://gateway.polymarket.us/v1/markets/aec-nfl-bal-buf-2026-11-01/book: <urlopen error _ssl.c:1012: The handshake operation timed out>,2,0,2
+nfl-baltimore,PASS,5,0,0
+nfl-baltimore,RECEIPT_SKEW_GT_2S,0,14,14
+nfl-baltimore,SOURCE_SKEW_GT_2S,0,654,654
+nfl-baltimore,ValueError:invalid stream frame provenance or continuity,69,0,69
+nfl-baltimore,kalshi:DISCONNECTED,40,0,40
+nfl-baltimore,kalshi:NEWER_METADATA_REQUIRES_FRESH_BOOK,0,6,6
+nfl-baltimore,kalshi:PARTIAL_BOOK,3,0,3
+nfl-baltimore,kalshi:RECEIPT_NOT_WITHIN_2S,5,9,14
+nfl-baltimore,kalshi:SOURCE_NOT_WITHIN_2S,21,16,37
+nfl-baltimore,kalshi:STREAM_DISCONNECTED,0,40,40
+nfl-baltimore,kalshi:STREAM_LIVENESS_NOT_DEMONSTRATED,0,1,1
+nfl-baltimore,polymarket_us:SOURCE_NOT_WITHIN_2S,604,69,673
+nfl-chicago,OSError:transport failed after 1 attempts: https://gateway.polymarket.us/v1/market/slug/aec-nfl-chi-sea-2026-11-02: <urlopen error _ssl.c:1012: The handshake operation timed out>,14,0,14
+nfl-chicago,OSError:transport failed after 1 attempts: https://gateway.polymarket.us/v1/markets/aec-nfl-chi-sea-2026-11-02/book: <urlopen error _ssl.c:1012: The handshake operation timed out>,11,0,11
+nfl-chicago,PASS,137,0,0
+nfl-chicago,RECEIPT_SKEW_GT_2S,0,9272,9272
+nfl-chicago,SOURCE_SKEW_GT_2S,0,15858,15858
+nfl-chicago,ValueError:invalid stream frame provenance or continuity,54,0,54
+nfl-chicago,ValueError:stream has no snapshot,4,0,4
+nfl-chicago,kalshi:DISCONNECTED,6733,0,6733
+nfl-chicago,kalshi:NEWER_METADATA_REQUIRES_FRESH_BOOK,0,108,108
+nfl-chicago,kalshi:RECEIPT_NOT_WITHIN_2S,2722,6590,9312
+nfl-chicago,kalshi:SOURCE_NOT_WITHIN_2S,48,9313,9361
+nfl-chicago,kalshi:STALE_METADATA,0,4,4
+nfl-chicago,kalshi:STALE_RECEIPT,0,1,1
+nfl-chicago,kalshi:STALE_SOURCE,0,1,1
+nfl-chicago,kalshi:STREAM_DISCONNECTED,0,6733,6733
+nfl-chicago,kalshi:STREAM_LIVENESS_NOT_DEMONSTRATED,26,6484,6510
+nfl-chicago,polymarket_us:SOURCE_NOT_WITHIN_2S,7383,9414,16797
+nfl-chicago,polymarket_us:STALE_SOURCE,0,198,198
+fed-hold,OSError:transport failed after 1 attempts: https://gateway.polymarket.us/v1/market/slug/rdc-usfed-fomc-2026-12-09-nochng: <urlopen error _ssl.c:1012: The handshake operation timed out>,16,0,16
+fed-hold,OSError:transport failed after 1 attempts: https://gateway.polymarket.us/v1/market/slug/rdc-usfed-fomc-2026-12-09-nochng: The read operation timed out,2,0,2
+fed-hold,OSError:transport failed after 1 attempts: https://gateway.polymarket.us/v1/markets/rdc-usfed-fomc-2026-12-09-nochng/book: <urlopen error _ssl.c:1012: The handshake operation timed out>,17,0,17
+fed-hold,PASS,6,0,0
+fed-hold,RECEIPT_SKEW_GT_2S,0,16011,16011
+fed-hold,SOURCE_SKEW_GT_2S,0,16357,16357
+fed-hold,ValueError:invalid stream frame provenance or continuity,7,0,7
+fed-hold,ValueError:stream has no snapshot,4,0,4
+fed-hold,kalshi:DISCONNECTED,14277,0,14277
+fed-hold,kalshi:NEWER_METADATA_REQUIRES_FRESH_BOOK,0,101,101
+fed-hold,kalshi:RECEIPT_NOT_WITHIN_2S,1712,14306,16018
+fed-hold,kalshi:SOURCE_NOT_WITHIN_2S,20,16018,16038
+fed-hold,kalshi:STALE_METADATA,0,7,7
+fed-hold,kalshi:STALE_RECEIPT,0,7,7
+fed-hold,kalshi:STALE_SOURCE,0,7,7
+fed-hold,kalshi:STREAM_DISCONNECTED,0,14277,14277
+fed-hold,kalshi:STREAM_LIVENESS_NOT_DEMONSTRATED,29,14277,14306
+fed-hold,polymarket_us:SOURCE_NOT_WITHIN_2S,1128,15962,17090
+fed-hold,polymarket_us:STALE_SOURCE,0,5891,5891
+payrolls,OSError:FIXED_DEADLINE_OR_STOP,1,0,1
+payrolls,OSError:transport failed after 1 attempts: https://gateway.polymarket.us/v1/market/slug/nfpc-usnfp-sa-october-2026-11-06-gt0: <urlopen error _ssl.c:1012: The handshake operation timed out>,17,0,17
+payrolls,OSError:transport failed after 1 attempts: https://gateway.polymarket.us/v1/market/slug/nfpc-usnfp-sa-october-2026-11-06-gt0: The read operation timed out,1,0,1
+payrolls,OSError:transport failed after 1 attempts: https://gateway.polymarket.us/v1/markets/nfpc-usnfp-sa-october-2026-11-06-gt0/book: <urlopen error _ssl.c:1012: The handshake operation timed out>,16,0,16
+payrolls,PASS,7,0,0
+payrolls,RECEIPT_SKEW_GT_2S,0,16046,16046
+payrolls,SOURCE_SKEW_GT_2S,0,16444,16444
+payrolls,ValueError:invalid stream frame provenance or continuity,2,0,2
+payrolls,ValueError:stream has no snapshot,5,0,5
+payrolls,kalshi:DISCONNECTED,14403,0,14403
+payrolls,kalshi:NEWER_METADATA_REQUIRES_FRESH_BOOK,0,104,104
+payrolls,kalshi:RECEIPT_NOT_WITHIN_2S,1625,14429,16054
+payrolls,kalshi:SOURCE_NOT_WITHIN_2S,17,16054,16071
+payrolls,kalshi:STALE_METADATA,0,10,10
+payrolls,kalshi:STALE_RECEIPT,0,10,10
+payrolls,kalshi:STALE_SOURCE,0,10,10
+payrolls,kalshi:STREAM_DISCONNECTED,0,14403,14403
+payrolls,kalshi:STREAM_LIVENESS_NOT_DEMONSTRATED,26,14402,14428
+payrolls,polymarket_us:SOURCE_NOT_WITHIN_2S,1111,15987,17098
+payrolls,polymarket_us:STALE_SOURCE,0,6393,6393
+unemployment,OSError:transport failed after 1 attempts: https://gateway.polymarket.us/v1/market/slug/urc-usunemp-sa-october-2026-11-06-gt4pt3pct: <urlopen error _ssl.c:1012: The handshake operation timed out>,14,0,14
+unemployment,OSError:transport failed after 1 attempts: https://gateway.polymarket.us/v1/markets/urc-usunemp-sa-october-2026-11-06-gt4pt3pct/book: <urlopen error _ssl.c:1012: The handshake operation timed out>,12,0,12
+unemployment,PASS,9,0,0
+unemployment,RECEIPT_SKEW_GT_2S,0,16035,16035
+unemployment,SOURCE_SKEW_GT_2S,0,16669,16669
+unemployment,ValueError:invalid stream frame provenance or continuity,9,0,9
+unemployment,ValueError:stream has no snapshot,5,0,5
+unemployment,kalshi:DISCONNECTED,14360,0,14360
+unemployment,kalshi:NEWER_METADATA_REQUIRES_FRESH_BOOK,0,118,118
+unemployment,kalshi:RECEIPT_NOT_WITHIN_2S,1650,14391,16041
+unemployment,kalshi:SOURCE_NOT_WITHIN_2S,12,16041,16053
+unemployment,kalshi:STALE_METADATA,0,14,14
+unemployment,kalshi:STALE_RECEIPT,0,14,14
+unemployment,kalshi:STALE_SOURCE,0,14,14
+unemployment,kalshi:STREAM_DISCONNECTED,0,14360,14360
+unemployment,kalshi:STREAM_LIVENESS_NOT_DEMONSTRATED,32,14359,14391
+unemployment,polymarket_us:SOURCE_NOT_WITHIN_2S,1129,16001,17130
+unemployment,polymarket_us:STALE_SOURCE,0,9995,9995
+cpi,OSError:transport failed after 1 attempts: https://gateway.polymarket.us/v1/market/slug/cpic-uscpi-october-mom-2026-11-10-gt0pt2pct: <urlopen error _ssl.c:1012: The handshake operation timed out>,13,0,13
+cpi,OSError:transport failed after 1 attempts: https://gateway.polymarket.us/v1/markets/cpic-uscpi-october-mom-2026-11-10-gt0pt2pct/book: <urlopen error _ssl.c:1012: The handshake operation timed out>,16,0,16
+cpi,PASS,23,0,0
+cpi,RECEIPT_SKEW_GT_2S,0,15747,15747
+cpi,SOURCE_SKEW_GT_2S,0,15869,15869
+cpi,ValueError:invalid stream frame provenance or continuity,8,0,8
+cpi,ValueError:stream has no snapshot,4,0,4
+cpi,kalshi:DISCONNECTED,13968,0,13968
+cpi,kalshi:NEWER_METADATA_REQUIRES_FRESH_BOOK,0,104,104
+cpi,kalshi:RECEIPT_NOT_WITHIN_2S,1766,13985,15751
+cpi,kalshi:SOURCE_NOT_WITHIN_2S,15,15751,15766
+cpi,kalshi:STALE_METADATA,0,7,7
+cpi,kalshi:STALE_RECEIPT,0,6,6
+cpi,kalshi:STALE_SOURCE,0,6,6
+cpi,kalshi:STREAM_DISCONNECTED,0,13968,13968
+cpi,kalshi:STREAM_LIVENESS_NOT_DEMONSTRATED,18,13967,13985
+cpi,polymarket_us:SOURCE_NOT_WITHIN_2S,1393,15675,17068
+cpi,polymarket_us:STALE_SOURCE,0,4528,4528
+gas-high,OSError:transport failed after 1 attempts: https://gateway.polymarket.us/v1/market/slug/aaagaspc-usgas-high-2026-12-31-gt4pt60: <urlopen error _ssl.c:1012: The handshake operation timed out>,23,0,23
+gas-high,OSError:transport failed after 1 attempts: https://gateway.polymarket.us/v1/market/slug/aaagaspc-usgas-high-2026-12-31-gt4pt60: The read operation timed out,1,0,1
+gas-high,OSError:transport failed after 1 attempts: https://gateway.polymarket.us/v1/markets/aaagaspc-usgas-high-2026-12-31-gt4pt60/book: <urlopen error _ssl.c:1012: The handshake operation timed out>,16,0,16
+gas-high,PASS,21,0,0
+gas-high,RECEIPT_SKEW_GT_2S,0,15754,15754
+gas-high,SOURCE_SKEW_GT_2S,0,16790,16790
+gas-high,ValueError:invalid stream frame provenance or continuity,4,0,4
+gas-high,ValueError:stream has no snapshot,6,0,6
+gas-high,kalshi:DISCONNECTED,14059,0,14059
+gas-high,kalshi:NEWER_METADATA_REQUIRES_FRESH_BOOK,0,114,114
+gas-high,kalshi:RECEIPT_NOT_WITHIN_2S,1702,14066,15768
+gas-high,kalshi:SOURCE_NOT_WITHIN_2S,21,15769,15790
+gas-high,kalshi:STALE_METADATA,0,12,12
+gas-high,kalshi:STALE_RECEIPT,0,11,11
+gas-high,kalshi:STALE_SOURCE,0,11,11
+gas-high,kalshi:STREAM_DISCONNECTED,0,14059,14059
+gas-high,kalshi:STREAM_LIVENESS_NOT_DEMONSTRATED,18,14046,14064
+gas-high,polymarket_us:SOURCE_NOT_WITHIN_2S,1348,15754,17102
+gas-high,polymarket_us:STALE_SOURCE,0,11818,11818
