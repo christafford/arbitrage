@@ -1,5 +1,9 @@
 # M5P follow-up — measured cadence and Kalshi recovery
 
+The subsequent [independent 15-minute holdout](M5P_HOLDOUT_VALIDATION.md) passed
+for Senate but failed for House. The five-minute results below remain the original
+selection evidence, not sustained acceptance.
+
 The operator requested update-cadence screening and reduced Kalshi recovery gaps
 on November 3, after reviewing M5P's failed 50% quality target. This is a bounded
 M5P engineering follow-up. Historical runs and their fixed deadlines are preserved.

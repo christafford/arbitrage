@@ -6,7 +6,9 @@ window and adds isolated stream/REST comparison with event-time coverage. The
 profitability claim. [Replay and limits](docs/M5P_OPERATIONS.md). The subsequent
 [cadence/recovery follow-up](docs/M5P_CADENCE_RECOVERY.md) selects Senate and House
 from a five-minute measured screen and reduces Kalshi recovery gaps; sustained
-coverage and human reviews remain open.
+coverage and human reviews remain open. The separate
+[15-minute holdout](docs/M5P_HOLDOUT_VALIDATION.md) passed for Senate but failed
+for House; the two-pair quality target remains unmet.
 
 A **read-only, Codex-ready** starter for researching fully hedged binary prediction-market opportunities between **Kalshi** and **Polymarket US**. Designed for a modest always-on Linux server, a SQLite database, and an initial bankroll of **$0** during discovery, potentially **$200–$500** for separately authorized experiments, with a **$10,000 lifetime seed-deposit ceiling**.
 

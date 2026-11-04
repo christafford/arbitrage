@@ -425,3 +425,17 @@ No one-hour continuation, full-day run, production-model change or M6 is implied
 
 [Scope, method and results](M5P_CADENCE_RECOVERY.md). This follows the operator's
 explicit request; it does not renew the expired M5P window or authorize M6.
+
+### M5P independent 15-minute holdout — executed November 3–4
+
+- [x] Fresh five-minute screen and source-bound frozen two-pair selection.
+- [x] Complete the separate 900-second holdout and raw/event/sample/interval
+  replay; unchanged code and gates, 564 tests pass, no early stops or audit errors.
+- [x] Report per-pair failure honestly: Senate passes (81.56% samples / 82.15%
+  wall); House fails (49.94% samples, second-half wall 47.51%). All 46 Kalshi
+  snapshot requests returned with no timeout failures.
+- [ ] Passing held-out coverage for every selected pair; broader candidates and
+  sustained quality. No optional hour was prepared or started.
+
+[Holdout results](M5P_HOLDOUT_VALIDATION.md). This does not alter the original
+M5P run or authorize M6, trading, automatic decisions or a service renewal.

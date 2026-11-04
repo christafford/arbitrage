@@ -191,3 +191,19 @@ and marginal House (53.18%), rejecting Fed (3.25%). See the result document and
 `data/m5p/cadence-recovery/`. Shortlist validity is historical, not a standing
 activity guarantee; held-out/sustained coverage remains open. No further run is
 implied, and all old services remain off.
+
+### M5P independent holdout — explicitly authorized November 3
+
+The operator requested execution of the proposed new-collector validation. See
+`docs/M5P_HOLDOUT_VALIDATION.md` and the preregistered
+`data/m5p/holdout-20261103/plan.json`: refresh and screen the shortlist, freeze two
+or three eligible pairs, then one new 900-second read-only holdout with unchanged
+collector settings and 50% per-pair sample/wall targets plus 50% wall time in each
+half. Keep failed pairs in the report. Do not extend fixed deadlines, hot-reload,
+start services, infer approvals or launch an optional hour automatically.
+The holdout stopped at **November 4 00:04:13.158062 UTC** (November 3 19:04:13 EST).
+Both audits passed with no early stops or timeout failures; all 46 requested Kalshi
+snapshots returned. Senate passed (82.15% wall / 81.56% samples); House failed
+(49.94% samples and 47.51% second-half wall, despite 50.14% overall wall). The
+cohort target remains unmet. Preserve the frozen scope/deadline and failed result;
+no optional hour or renewal was prepared. Further activity is not implied.
