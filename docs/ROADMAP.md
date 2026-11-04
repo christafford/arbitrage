@@ -456,3 +456,22 @@ M5P run or authorize M6, trading, automatic decisions or a service renewal.
 
 [Evidence and limits](M5P_SECOND_CANDIDATE.md). Zero inference requests; existing
 index/model identities and expired runs preserved. No further run or M6 implied.
+
+### M5P persistence/validation profiling — authorized November 4 UTC
+
+- [x] Bounded offline prefixes through unchanged production capture/storage,
+  real WAL/FULL commits, exclusive wall/thread-CPU phase measurements and paired
+  instrumented/plain runs. No new capture, service or durability change.
+- [x] All 18 baseline runs retain exact raw/intermediate normalized parity;
+  4,608 frames, 4,590 books, 4,626 raw records verified. Three CPU probes also pass.
+- [x] Genuine fixture and fault tests, independent-reader pending visibility,
+  archive/journal integrity, full suite: 574 tests pass.
+- [x] Identify measured costs: commits 60–64%, validation/reconstruction 20–24%,
+  Kalshi-only journal about 5%; serial-prefix/concurrency limits explicit.
+- [ ] Test the proposed atomic final validation/normalized-book transaction and
+  measure before/after performance with unchanged integrity/durability.
+- [ ] Demonstrate live multi-pair quality improvement; offline timings are not
+  wall-time market-state coverage or economic eligibility.
+
+[Profile and next-step acceptance](M5P_PERSISTENCE_PROFILE.md). This completes
+the bounded profiling task only; no broader M5P completion or renewal is implied.

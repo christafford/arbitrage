@@ -1,5 +1,19 @@
 # Official API sources and versioned contracts
 
+## M5P offline persistence profiling — November 4, 2026 UTC
+
+[Source receipts and hashes](evidence/M5P_PROFILE_SOURCES.json) preserve fresh
+official Kalshi orderbook/connection/market documents and SQLite WAL/PRAGMA
+references. Existing clocked fields and adapter schemas are reused; no new venue
+field or API is introduced. The genuine profiling fixture preserves original
+public raw bytes, schema versions, UTC receipts and hashes. Hypothetical transport
+and fault mutations are explicitly separate from source evidence.
+
+SQLite WAL with synchronous FULL performs an additional WAL synchronization at
+transaction commit; the benchmark records the effective mode rather than lowering
+it. Timed commit calls also include checkpoint/scheduling overhead and are not
+isolated fsync/device measurements. [Method and results](M5P_PERSISTENCE_PROFILE.md).
+
 ## M5P recovery check — November 3, 2026 UTC
 
 [Eleven current official-document captures](evidence/M5P_API_CHECKS.json) retain

@@ -1,0 +1,132 @@
+ga-governor-rep
+         4299525 function calls (4205357 primitive calls) in 7.282 seconds
+
+   Ordered by: cumulative time
+   List reduced from 190 to 35 due to restriction <35>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.032    0.032    7.294    7.294 kalshi_ws.py:58(capture)
+      255    0.047    0.000    4.600    0.018 book_stream.py:79(apply)
+      255    0.037    0.000    4.305    0.017 orderbooks.py:150(_build)
+     1277    0.417    0.000    3.456    0.003 orderbooks.py:134(_levels)
+   121468    0.553    0.000    2.449    0.000 orderbooks.py:14(exact)
+      255    0.006    0.000    1.726    0.007 ws_store.py:131(record_frame)
+      255    0.002    0.000    1.397    0.005 orderbooks.py:71(as_dict)
+      255    0.001    0.000    1.372    0.005 dataclasses.py:1338(asdict)
+94080/255    0.466    0.000    1.370    0.005 dataclasses.py:1362(_asdict_inner)
+   184984    0.772    0.000    1.254    0.000 validation.py:50(decimal_value)
+   242936    0.418    0.000    0.903    0.000 {method 'as_tuple' of 'decimal.Decimal' objects}
+      512    0.012    0.000    0.615    0.001 persistence_profile.py:204(state)
+      257    0.147    0.001    0.597    0.002 kalshi.py:103(validate_book)
+      512    0.014    0.000    0.530    0.001 quality_capture.py:205(event)
+     3582    0.009    0.000    0.494    0.000 validation.py:72(dumps)
+     3582    0.016    0.000    0.485    0.000 __init__.py:183(dumps)
+   242936    0.311    0.000    0.485    0.000 <string>:1(<lambda>)
+   766141    0.483    0.000    0.483    0.000 {built-in method builtins.isinstance}
+     3582    0.017    0.000    0.465    0.000 encoder.py:183(encode)
+60367/60256    0.253    0.000    0.449    0.000 copy.py:119(deepcopy)
+     3582    0.190    0.000    0.439    0.000 encoder.py:205(iterencode)
+    57931    0.115    0.000    0.370    0.000 <string>:2(__init__)
+      512    0.004    0.000    0.347    0.001 quality_capture.py:176(event)
+      510    0.021    0.000    0.341    0.001 orderbooks.py:78(market_rules)
+59695/59467    0.127    0.000    0.273    0.000 {built-in method builtins.any}
+    57931    0.176    0.000    0.255    0.000 models.py:9(__post_init__)
+   118729    0.178    0.000    0.249    0.000 validation.py:74(<lambda>)
+    29745    0.138    0.000    0.237    0.000 dataclasses.py:1308(fields)
+      512    0.019    0.000    0.212    0.000 quality_capture.py:83(apply)
+   300846    0.210    0.000    0.210    0.000 {method 'is_finite' of 'decimal.Decimal' objects}
+   244729    0.177    0.000    0.177    0.000 {built-in method __new__ of type object at 0x9f3a38}
+      510    0.020    0.000    0.161    0.000 kalshi.py:22(validate_market)
+      768    0.010    0.000    0.151    0.000 continuous_research.py:52(append)
+   241020    0.150    0.000    0.150    0.000 {built-in method builtins.issubclass}
+    21497    0.081    0.000    0.149    0.000 validation.py:38(utc_time)
+
+
+
+mi-senate-dem
+         4448847 function calls (4350756 primitive calls) in 7.492 seconds
+
+   Ordered by: cumulative time
+   List reduced from 190 to 35 due to restriction <35>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.031    0.031    7.514    7.514 kalshi_ws.py:58(capture)
+      255    0.048    0.000    4.762    0.019 book_stream.py:79(apply)
+      255    0.037    0.000    4.475    0.018 orderbooks.py:150(_build)
+     1276    0.433    0.000    3.593    0.003 orderbooks.py:134(_levels)
+   126630    0.573    0.000    2.542    0.000 orderbooks.py:14(exact)
+      255    0.006    0.000    1.781    0.007 ws_store.py:131(record_frame)
+      255    0.002    0.000    1.448    0.006 orderbooks.py:71(as_dict)
+      255    0.001    0.000    1.423    0.006 dataclasses.py:1338(asdict)
+98112/255    0.483    0.000    1.422    0.006 dataclasses.py:1362(_asdict_inner)
+   192616    0.801    0.000    1.301    0.000 validation.py:50(decimal_value)
+   253260    0.435    0.000    0.939    0.000 {method 'as_tuple' of 'decimal.Decimal' objects}
+      256    0.153    0.001    0.621    0.002 kalshi.py:103(validate_book)
+      512    0.012    0.000    0.620    0.001 persistence_profile.py:204(state)
+      512    0.014    0.000    0.536    0.001 quality_capture.py:205(event)
+     3582    0.009    0.000    0.507    0.000 validation.py:72(dumps)
+   253260    0.323    0.000    0.504    0.000 <string>:1(<lambda>)
+   795158    0.499    0.000    0.499    0.000 {built-in method builtins.isinstance}
+     3582    0.016    0.000    0.499    0.000 __init__.py:183(dumps)
+     3582    0.017    0.000    0.478    0.000 encoder.py:183(encode)
+63055/62944    0.264    0.000    0.467    0.000 copy.py:119(deepcopy)
+     3582    0.194    0.000    0.453    0.000 encoder.py:205(iterencode)
+    60511    0.120    0.000    0.386    0.000 <string>:2(__init__)
+      512    0.004    0.000    0.354    0.001 quality_capture.py:176(event)
+      510    0.021    0.000    0.340    0.001 orderbooks.py:78(market_rules)
+62164/62045    0.131    0.000    0.280    0.000 {built-in method builtins.any}
+    60511    0.183    0.000    0.266    0.000 models.py:9(__post_init__)
+   124105    0.184    0.000    0.258    0.000 validation.py:74(<lambda>)
+    31089    0.143    0.000    0.247    0.000 dataclasses.py:1308(fields)
+      512    0.020    0.000    0.219    0.000 quality_capture.py:83(apply)
+   313638    0.217    0.000    0.217    0.000 {method 'is_finite' of 'decimal.Decimal' objects}
+   255053    0.183    0.000    0.183    0.000 {built-in method __new__ of type object at 0x9f3a38}
+      510    0.020    0.000    0.160    0.000 kalshi.py:22(validate_market)
+   251772    0.156    0.000    0.156    0.000 {built-in method builtins.issubclass}
+      768    0.010    0.000    0.152    0.000 continuous_research.py:52(append)
+    21437    0.080    0.000    0.148    0.000 validation.py:38(utc_time)
+
+
+
+senate-rep
+         5324308 function calls (5206271 primitive calls) in 8.764 seconds
+
+   Ordered by: cumulative time
+   List reduced from 229 to 35 due to restriction <35>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.033    0.033    8.777    8.777 kalshi_ws.py:58(capture)
+      255    0.053    0.000    5.648    0.022 book_stream.py:79(apply)
+      255    0.045    0.000    5.357    0.021 orderbooks.py:150(_build)
+     1276    0.521    0.000    4.330    0.003 orderbooks.py:134(_levels)
+   153238    0.685    0.000    3.038    0.000 orderbooks.py:14(exact)
+      255    0.006    0.000    2.111    0.008 ws_store.py:131(record_frame)
+      255    0.002    0.000    1.726    0.007 orderbooks.py:71(as_dict)
+      255    0.001    0.000    1.701    0.007 dataclasses.py:1338(asdict)
+118029/255    0.577    0.000    1.699    0.007 dataclasses.py:1362(_asdict_inner)
+   232554    0.957    0.000    1.551    0.000 validation.py:50(decimal_value)
+   306476    0.522    0.000    1.122    0.000 {method 'as_tuple' of 'decimal.Decimal' objects}
+      256    0.183    0.001    0.743    0.003 kalshi.py:103(validate_book)
+      512    0.012    0.000    0.662    0.001 persistence_profile.py:204(state)
+   306476    0.383    0.000    0.600    0.000 <string>:1(<lambda>)
+     3582    0.009    0.000    0.592    0.000 validation.py:72(dumps)
+   948301    0.586    0.000    0.586    0.000 {built-in method builtins.isinstance}
+     3582    0.016    0.000    0.583    0.000 __init__.py:183(dumps)
+      512    0.014    0.000    0.579    0.001 quality_capture.py:205(event)
+     3582    0.017    0.000    0.563    0.000 encoder.py:183(encode)
+76325/76222    0.315    0.000    0.558    0.000 copy.py:119(deepcopy)
+     3582    0.226    0.000    0.537    0.000 encoder.py:205(iterencode)
+    73815    0.145    0.000    0.467    0.000 <string>:2(__init__)
+      512    0.004    0.000    0.397    0.001 quality_capture.py:176(event)
+      510    0.021    0.000    0.337    0.001 orderbooks.py:78(market_rules)
+75494/75349    0.156    0.000    0.334    0.000 {built-in method builtins.any}
+    73815    0.222    0.000    0.322    0.000 models.py:9(__post_init__)
+   150661    0.222    0.000    0.311    0.000 validation.py:74(<lambda>)
+    37728    0.171    0.000    0.295    0.000 dataclasses.py:1308(fields)
+      512    0.023    0.000    0.263    0.001 quality_capture.py:83(apply)
+   380184    0.260    0.000    0.260    0.000 {method 'is_finite' of 'decimal.Decimal' objects}
+   308269    0.220    0.000    0.220    0.000 {built-in method __new__ of type object at 0x9f3a38}
+   304884    0.187    0.000    0.187    0.000 {built-in method builtins.issubclass}
+      510    0.020    0.000    0.159    0.000 kalshi.py:22(validate_market)
+   147082    0.158    0.000    0.158    0.000 orderbooks.py:141(<genexpr>)
+      768    0.010    0.000    0.153    0.000 continuous_research.py:52(append)

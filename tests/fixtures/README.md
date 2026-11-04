@@ -285,3 +285,13 @@ commands use `kalshi-snapshot-command/m5p-v1`; received books retain
 fields are included. There were no live control acknowledgments; those and other
 mutations in `test_snapshot_recovery.py` are labeled hypothetical. Provider data
 is retained for the operator's local research, not published or relicensed.
+
+## M5P offline profiling fixture
+
+`m5p-profile-live.json` contains exact already privacy-screened public metadata
+and the first four Kalshi frames of the Senate reference's first connection in
+the November 4 second-candidate screen. It retains original receipt times,
+adapter schemas, raw hashes and parent archive identity. Expected normalized
+books are local derived evidence. No credentials/handshake headers are present.
+Tests that mutate this fixture label their changes HYPOTHETICAL; the offline
+transport is hypothetical even when the supplied bytes are genuine.

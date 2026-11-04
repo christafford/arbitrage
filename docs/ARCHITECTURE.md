@@ -1,5 +1,14 @@
 # Architecture
 
+`persistence_profile.py` and `scripts/m5p_profile.py` provide isolated offline
+profiling of archived Kalshi prefixes through the unchanged capture/storage path.
+Historical clocks exercise validators; separate wall/thread clocks time real
+SQLite commits and nested processing phases. Plain/profiled outputs must match
+every original normalized book. Source archives are read-only; output databases
+are new. Process-local instrumentation is confined to a dedicated serial command,
+never imported by collectors. No durability or transaction boundary changes.
+See [profiling measurements and limits](M5P_PERSISTENCE_PROFILE.md).
+
 M5P adds `quality_recovery.py` for immutable M5O forensics and
 `quality_capture.py` for isolated bounded stream/REST validation. Raw-first
 callbacks expose pending barriers, validated books and disconnects without

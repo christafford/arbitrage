@@ -227,3 +227,15 @@ was launched. Local Kalshi pending barriers accumulated 67.12s for Michigan and
 profile persistence/validation before attributing all losses to quiet venues.
 No inference was requested. Preserve these failures and the fixed deadline;
 no new capture or completion is implied.
+
+### M5P persistence/validation profile — authorized November 4 UTC
+
+The operator requested profiling while retaining integrity checks. See
+`docs/M5P_PERSISTENCE_PROFILE.md` and `data/m5p/persistence-profile-20261104/`.
+The bounded offline task is complete: 18 plain/profiled executions and three
+CPU probes pass exact normalized parity; 574 tests pass. Source archives remain
+unchanged. Commits account for 60–64% of serial-prefix capture wall time; validation
+for 20–24%. No collector transaction/durability/gate change or live run occurred.
+Combining final validation and normalized persistence into one atomic commit is
+a proposed next optimization, requiring failure/reader-visibility tests and
+same-source before/after measurements. No live coverage gain or renewal is implied.

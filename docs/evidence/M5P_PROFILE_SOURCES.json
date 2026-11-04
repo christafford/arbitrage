@@ -1,0 +1,41 @@
+{
+  "schema": "m5p-profile-source-checks/v1",
+  "documents": [
+    {
+      "url": "https://docs.kalshi.com/websockets/orderbook-updates.md",
+      "http_status": 200,
+      "retrieved_at": "2026-11-04T03:22:08.981572+00:00",
+      "path": "data/m5p/persistence-profile-20261104/sources/00.txt",
+      "sha256": "f71cd6a72c3f0bcff889da18c2b18e0603cf63566f482a7391de4b0c2cc11228"
+    },
+    {
+      "url": "https://docs.kalshi.com/websockets/websocket-connection.md",
+      "http_status": 200,
+      "retrieved_at": "2026-11-04T03:22:08.882252+00:00",
+      "path": "data/m5p/persistence-profile-20261104/sources/01.txt",
+      "sha256": "38ef5f2bc1c180a8f1a68991cc0325fc03c2368f8b65fa229dfe6499351d94ff"
+    },
+    {
+      "url": "https://docs.kalshi.com/api-reference/market/get-market.md",
+      "http_status": 200,
+      "retrieved_at": "2026-11-04T03:22:08.884969+00:00",
+      "path": "data/m5p/persistence-profile-20261104/sources/02.txt",
+      "sha256": "7fba1eea3cfe4fd1e45c7e84b2b5740e3dbd7c18eefb3e9671aa4fbfb2573fd2"
+    },
+    {
+      "url": "https://www.sqlite.org/pragma.html",
+      "http_status": 200,
+      "retrieved_at": "2026-11-04T03:22:08.965204+00:00",
+      "path": "data/m5p/persistence-profile-20261104/sources/03.txt",
+      "sha256": "af75d7d7ab00c29e6eea98618cb1259a3919c308af60a6173215bf9798706034"
+    },
+    {
+      "url": "https://www.sqlite.org/wal.html",
+      "http_status": 200,
+      "retrieved_at": "2026-11-04T03:22:08.938785+00:00",
+      "path": "data/m5p/persistence-profile-20261104/sources/04.txt",
+      "sha256": "f3467b530b883d4a00574fe1a898b3d121ed72764ae28cf66941080ac0badb9e"
+    }
+  ],
+  "consumed_fields": "Existing Kalshi metadata/clocked frames only; no new venue fields."
+}

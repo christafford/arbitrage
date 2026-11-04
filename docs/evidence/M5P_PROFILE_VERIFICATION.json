@@ -1,0 +1,35 @@
+{
+  "schema": "m5p-profile-verification/v1",
+  "verified_at": "2026-11-04T03:31:23.928267+00:00",
+  "full_suite": {
+    "command": ".venv/bin/python -m unittest discover -s tests -v",
+    "tests": 574,
+    "elapsed_seconds": "24.054",
+    "result": "OK"
+  },
+  "focused_suite": {
+    "tests": 10,
+    "result": "OK"
+  },
+  "smoke_runs": 6,
+  "baseline_runs": 18,
+  "cpu_runs": 3,
+  "all_intermediate_normalized_parity": true,
+  "preserved_source_files_verified": 61,
+  "new_live_capture": false,
+  "collector_behavior_changed": false,
+  "artifact_sha256": {
+    "docs/evidence/M5P_PROFILE_CPU.txt": "e7ca031c3dc5a59d93b03bc036a400c71aaca6df343f4c23d6d11fa94d8b145c",
+    "docs/evidence/M5P_PROFILE_RUNS.json": "89b615d7613a03be188f5e461074de64bcf0b733a3f9aeb9ab59e6f72cd4d445",
+    "docs/evidence/M5P_PROFILE_SOURCES.json": "c54a862780069d1154d8cf60a523c021910a90aa3a47a5d849e545598edcc6ea",
+    "docs/evidence/M5P_PROFILE_SUMMARY.json": "8441b2be0ead237f2182ffa8212aec98f7569fdb78fe82de7252d80b71f0b813",
+    "docs/evidence/M5P_PROFILE_TESTS.txt": "1227175be36ac9657e5c1d28f3b38b817f87418507560b8b1c3c16c64ec182ae",
+    "src/predarb/persistence_profile.py": "8e26a552adf81bda16d1902f2145205537b5a88c0f190094e8121841312047fd",
+    "scripts/m5p_profile.py": "8a013b1d857adb16081e5c40e03d737c54026729bc8d889fe2a460a830c218e8",
+    "tests/test_persistence_profile.py": "645e5164ed7f1760b49138cdaf8775bdc5d1ecc2bb098216342228e2209cbcba",
+    "tests/fixtures/m5p-profile-live.json": "6a678de317ce3eb3aa610b221a09dcfcc4e34059a534662a449bc3c87f37697c",
+    "data/m5p/persistence-profile-20261104/smoke-01/report.json": "066452c8f87a9f9fde1c9b5bdfe87e7320025e7dcb8dff2277ad9186c9067fd7",
+    "data/m5p/persistence-profile-20261104/demo-report.txt": "1bf85403da715422f7a7520542080cec892ca2070ce18106bcea9e5f589d8b70",
+    "data/m5p/persistence-profile-20261104/cli-help.txt": "09a184ea13a5c2afc4e92f0b3b39706e515d5732cd085c92bc10b7ea9ce0a147"
+  }
+}
