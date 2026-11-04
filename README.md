@@ -8,7 +8,10 @@ profitability claim. [Replay and limits](docs/M5P_OPERATIONS.md). The subsequent
 from a five-minute measured screen and reduces Kalshi recovery gaps; sustained
 coverage and human reviews remain open. The separate
 [15-minute holdout](docs/M5P_HOLDOUT_VALIDATION.md) passed for Senate but failed
-for House; the two-pair quality target remains unmet.
+for House; the two-pair quality target remains unmet. A subsequent
+[stronger second-candidate screen](docs/M5P_SECOND_CANDIDATE.md) found no challenger
+meeting the preregistered 60% headroom in both halves; it also measured substantial
+local Kalshi validation-barrier time on busy feeds.
 
 A **read-only, Codex-ready** starter for researching fully hedged binary prediction-market opportunities between **Kalshi** and **Polymarket US**. Designed for a modest always-on Linux server, a SQLite database, and an initial bankroll of **$0** during discovery, potentially **$200–$500** for separately authorized experiments, with a **$10,000 lifetime seed-deposit ceiling**.
 

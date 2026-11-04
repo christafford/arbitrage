@@ -439,3 +439,20 @@ explicit request; it does not renew the expired M5P window or authorize M6.
 
 [Holdout results](M5P_HOLDOUT_VALIDATION.md). This does not alter the original
 M5P run or authorize M6, trading, automatic decisions or a service renewal.
+
+### M5P stronger second-candidate screen — executed November 4 UTC
+
+- [x] Screen four distinct race proposals using fresh definitions/depth; exclude
+  determined Georgia Senate and one-sided North Carolina Senate before streaming.
+- [x] Complete one fixed five-minute cohort with Senate reference, Michigan Senate
+  and Georgia Governor; three replay audits pass, no early stops, 21/21 requested
+  Kalshi snapshots returned, 564 tests pass.
+- [x] Preserve both stronger-rule failures: Michigan second-half wall 57.57%;
+  Georgia Governor overall wall 59.38% and second-half 57.82%. All pass the
+  original 50% screen; neither earns the 60% nomination. No confirmation launched.
+- [ ] Stronger second candidate and independent sustained multi-pair validation.
+- [ ] Profile cumulative local Kalshi pending barriers without weakening raw-first
+  persistence or integrity gates; storage causation remains unproven.
+
+[Evidence and limits](M5P_SECOND_CANDIDATE.md). Zero inference requests; existing
+index/model identities and expired runs preserved. No further run or M6 implied.

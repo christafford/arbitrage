@@ -207,3 +207,23 @@ snapshots returned. Senate passed (82.15% wall / 81.56% samples); House failed
 (49.94% samples and 47.51% second-half wall, despite 50.14% overall wall). The
 cohort target remains unmet. Preserve the frozen scope/deadline and failed result;
 no optional hour or renewal was prepared. Further activity is not implied.
+
+### M5P stronger second-candidate screen — authorized November 4 UTC
+
+The operator requested screening for a stronger second candidate. See
+`docs/M5P_SECOND_CANDIDATE.md` and `data/m5p/second-candidate-20261104/plan.json`:
+four proposed distinct election races, fresh definitions/depth, at most two
+five-minute discovery cohorts and one five-minute confirmation for the best
+qualifier with Senate reference. The stronger nomination requires 60% sample,
+full-wall and each-half wall coverage without weakening the existing 50% target
+or any two-second/approval gates. Retain exclusions and failures. No inference,
+index/model writes, service renewal, 15-minute holdout, hour, funds or M6.
+The screen ended at **November 4 01:10:22.063368 UTC**. Neither challenger met
+the stronger rule: Michigan second-half wall 57.57%; Georgia Governor overall
+wall 59.38% and second-half 57.82%. All three workers/audits passed, all 21
+requested snapshots returned, and the original 50% screen passed. No confirmation
+was launched. Local Kalshi pending barriers accumulated 67.12s for Michigan and
+69.38s for Senate despite individual receipt-to-availability times below 90ms;
+profile persistence/validation before attributing all losses to quiet venues.
+No inference was requested. Preserve these failures and the fixed deadline;
+no new capture or completion is implied.
