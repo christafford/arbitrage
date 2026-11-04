@@ -1,12 +1,20 @@
 # Architecture
 
+`ws_store.record_frame` now commits validation status, capture classification and
+the normalized book atomically after the two durable raw/pending commits. It owns
+an explicit transaction, rejects unfinished caller writes, and rolls back on
+exceptions or interruption before cleanup. Publication follows successful commit.
+WAL/FULL, schema, source validation and pending barriers are unchanged. See
+[atomic-finalization evidence and failure behavior](M5P_ATOMIC_FINAL_COMMIT.md).
+
 `persistence_profile.py` and `scripts/m5p_profile.py` provide isolated offline
 profiling of archived Kalshi prefixes through the unchanged capture/storage path.
 Historical clocks exercise validators; separate wall/thread clocks time real
 SQLite commits and nested processing phases. Plain/profiled outputs must match
 every original normalized book. Source archives are read-only; output databases
 are new. Process-local instrumentation is confined to a dedicated serial command,
-never imported by collectors. No durability or transaction boundary changes.
+never imported by collectors. The original profiling milestone changed no transaction boundaries; the later
+atomic-finalization follow-up above changes only the final two commits.
 See [profiling measurements and limits](M5P_PERSISTENCE_PROFILE.md).
 
 M5P adds `quality_recovery.py` for immutable M5O forensics and

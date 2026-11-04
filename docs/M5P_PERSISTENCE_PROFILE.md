@@ -1,5 +1,9 @@
 # M5P — persistence and validation profiling
 
+This is the preserved original profiling report. The operator subsequently
+authorized the [atomic-final-commit follow-up](M5P_ATOMIC_FINAL_COMMIT.md); its
+implementation, tests and new measurements are recorded separately.
+
 The operator authorized profiling after the stronger-candidate screen identified
 material cumulative Kalshi pending-barrier time. This follow-up measures the
 unchanged collector in new, isolated local archives. It does not renew any capture,

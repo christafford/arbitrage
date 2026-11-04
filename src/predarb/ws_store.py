@@ -129,18 +129,35 @@ def end_connection(con, connection_id, *, at, reason):
 
 
 def record_frame(con, observed, book, *, now):
-    validate_observation(con, observed, 'VALID', None, book.source_ts)
+    """Finalize status and derived book together, after durable raw/pending writes.
+
+    Own the transaction so a failed insert/commit (including interruption) cannot
+    be committed by connection cleanup. Callers publish only after return.
+    """
+    if con.in_transaction:
+        raise ValueError('frame finalization requires committed raw/pending provenance')
     result = book.as_dict(now=now)
-    con.execute('UPDATE book_captures SET source_ts=?,freshness=?,liquidity=? WHERE observation_id=?',
-                (book.source_ts, 'FRESH' if result['data_usable'] else 'REJECTED',
-                 'TWO_SIDED' if book.yes_asks and book.no_asks else 'PARTIAL_OR_EMPTY', observed))
-    metadata_id = con.execute('''SELECT c.metadata_observation_id FROM ws_frames f JOIN ws_connections c
-                               ON c.id=f.connection_id WHERE f.observation_id=?''', (observed,)).fetchone()[0]
-    con.execute('''INSERT INTO normalized_books(observation_id,metadata_observation_id,normalizer_version,
-                   evaluated_at,max_age_seconds,data_usable,result_json,verification) VALUES(?,?,?,?,?,?,?,'UNVERIFIED')''',
-                (observed, metadata_id, result['normalizer_version'], now.isoformat(), 60,
-                 int(result['data_usable']), dumps(result)))
-    con.commit()
+    serialized = dumps(result)
+    try:
+        con.execute('BEGIN IMMEDIATE')
+        validate_observation(con, observed, 'VALID', None, book.source_ts, commit=False)
+        updated = con.execute('UPDATE book_captures SET source_ts=?,freshness=?,liquidity=? WHERE observation_id=?',
+                    (book.source_ts, 'FRESH' if result['data_usable'] else 'REJECTED',
+                     'TWO_SIDED' if book.yes_asks and book.no_asks else 'PARTIAL_OR_EMPTY', observed))
+        if updated.rowcount != 1:
+            raise ValueError('missing pending book capture')
+        metadata = con.execute('''SELECT c.metadata_observation_id FROM ws_frames f JOIN ws_connections c
+                                   ON c.id=f.connection_id WHERE f.observation_id=?''', (observed,)).fetchone()
+        if metadata is None:
+            raise ValueError('missing stream frame provenance')
+        con.execute('''INSERT INTO normalized_books(observation_id,metadata_observation_id,normalizer_version,
+                       evaluated_at,max_age_seconds,data_usable,result_json,verification) VALUES(?,?,?,?,?,?,?,'UNVERIFIED')''',
+                    (observed, metadata[0], result['normalizer_version'], now.isoformat(), 60,
+                     int(result['data_usable']), serialized))
+        con.commit()
+    except BaseException:
+        con.rollback()
+        raise
 
 
 def load_stream_book(con, observation_id, *, now):

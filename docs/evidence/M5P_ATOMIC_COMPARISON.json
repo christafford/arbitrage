@@ -1,0 +1,672 @@
+{
+  "schema": "atomic-final-comparison/m5p-v1",
+  "recorded_at": "2026-11-04T19:56:07.680682+00:00",
+  "base_git_commit": "e09c963e53fb247def96309f8271124658062690",
+  "reports": {
+    "before": {
+      "path": "data/m5p/atomic-final-20261104/before/report.json",
+      "sha256": "45baccd831f3b47bd3323afc051152ea63ad07abccc540c79021d09925cced1e"
+    },
+    "after": {
+      "path": "data/m5p/atomic-final-20261104/after/report.json",
+      "sha256": "a9c20379827fca99e7125bbb3feed8dc1190767a6a4294a76a9d34627d2beb9b"
+    }
+  },
+  "fixture_sha256": "9e2edc8e8f5930662bc169c392f5bc2613075f0a75f6b1978cbf7e6beeb506d8",
+  "status": "PASS",
+  "executions": 36,
+  "frames": 9216,
+  "books": 9180,
+  "raw_records": 9252,
+  "exact_table_parity": [
+    {
+      "directory": "senate-rep-1-instrumented",
+      "tables": {
+        "raw_observations": {
+          "rows": 257,
+          "sha256": "93821b4484e7a67c62a2f54614040bb0868f138f169723545a5531578eb7edb7"
+        },
+        "book_captures": {
+          "rows": 256,
+          "sha256": "de9d98d00afc05966ed8032a8f10fd6ba2de0f1f4a8d6cbcd9339fb88283bab0"
+        },
+        "normalized_books": {
+          "rows": 255,
+          "sha256": "06f23016090d6cfac73c21c526c49fba335af5afce744b85b8d988a273d8f0c7"
+        },
+        "ws_frames": {
+          "rows": 256,
+          "sha256": "248f559923a89d9db5e3d0d92753352effab46869cef3efd0a158afd293c0e9f"
+        },
+        "ws_connections": {
+          "rows": 1,
+          "sha256": "8b802d0ebeeadaaf0f2f6cbb40c6c0cec114bbc46d6c941a10c1962c9d8ece40"
+        },
+        "catalogue_entries": {
+          "rows": 1,
+          "sha256": "26bfc6466bd580cab6dce6232ce5963098f29f19d59026871f303ac3285e5cc0"
+        }
+      },
+      "exact_parity": true
+    },
+    {
+      "directory": "senate-rep-1-plain",
+      "tables": {
+        "raw_observations": {
+          "rows": 257,
+          "sha256": "93821b4484e7a67c62a2f54614040bb0868f138f169723545a5531578eb7edb7"
+        },
+        "book_captures": {
+          "rows": 256,
+          "sha256": "de9d98d00afc05966ed8032a8f10fd6ba2de0f1f4a8d6cbcd9339fb88283bab0"
+        },
+        "normalized_books": {
+          "rows": 255,
+          "sha256": "06f23016090d6cfac73c21c526c49fba335af5afce744b85b8d988a273d8f0c7"
+        },
+        "ws_frames": {
+          "rows": 256,
+          "sha256": "248f559923a89d9db5e3d0d92753352effab46869cef3efd0a158afd293c0e9f"
+        },
+        "ws_connections": {
+          "rows": 1,
+          "sha256": "8b802d0ebeeadaaf0f2f6cbb40c6c0cec114bbc46d6c941a10c1962c9d8ece40"
+        },
+        "catalogue_entries": {
+          "rows": 1,
+          "sha256": "26bfc6466bd580cab6dce6232ce5963098f29f19d59026871f303ac3285e5cc0"
+        }
+      },
+      "exact_parity": true
+    },
+    {
+      "directory": "mi-senate-dem-1-instrumented",
+      "tables": {
+        "raw_observations": {
+          "rows": 257,
+          "sha256": "c7c50c26cdf6bafd01ad1cc17cc359a5207f659c3624f1996c14be38f4055a99"
+        },
+        "book_captures": {
+          "rows": 256,
+          "sha256": "5a4bc1adf527b8e169411ca1edebab5c69fca2f4640612c26d9b87b682ae0a76"
+        },
+        "normalized_books": {
+          "rows": 255,
+          "sha256": "32cb0b918fd41915382d6b9074f48f2daf974475bdc13d0d9464346013d5a57a"
+        },
+        "ws_frames": {
+          "rows": 256,
+          "sha256": "8d2be5f8156a62e9ef94f051589f955fea037c5d8547d94ab90d8f5dc651f957"
+        },
+        "ws_connections": {
+          "rows": 1,
+          "sha256": "f7b4f43739f925785d0d800b74a94db8ee509dd7939a8fabc875a0cf088f6352"
+        },
+        "catalogue_entries": {
+          "rows": 1,
+          "sha256": "aa80be1fb28d027f0b37034edc1f3ce423d0fedc454afa0fd012ee26fad45a9c"
+        }
+      },
+      "exact_parity": true
+    },
+    {
+      "directory": "mi-senate-dem-1-plain",
+      "tables": {
+        "raw_observations": {
+          "rows": 257,
+          "sha256": "c7c50c26cdf6bafd01ad1cc17cc359a5207f659c3624f1996c14be38f4055a99"
+        },
+        "book_captures": {
+          "rows": 256,
+          "sha256": "5a4bc1adf527b8e169411ca1edebab5c69fca2f4640612c26d9b87b682ae0a76"
+        },
+        "normalized_books": {
+          "rows": 255,
+          "sha256": "32cb0b918fd41915382d6b9074f48f2daf974475bdc13d0d9464346013d5a57a"
+        },
+        "ws_frames": {
+          "rows": 256,
+          "sha256": "8d2be5f8156a62e9ef94f051589f955fea037c5d8547d94ab90d8f5dc651f957"
+        },
+        "ws_connections": {
+          "rows": 1,
+          "sha256": "f7b4f43739f925785d0d800b74a94db8ee509dd7939a8fabc875a0cf088f6352"
+        },
+        "catalogue_entries": {
+          "rows": 1,
+          "sha256": "aa80be1fb28d027f0b37034edc1f3ce423d0fedc454afa0fd012ee26fad45a9c"
+        }
+      },
+      "exact_parity": true
+    },
+    {
+      "directory": "ga-governor-rep-1-instrumented",
+      "tables": {
+        "raw_observations": {
+          "rows": 257,
+          "sha256": "c6b6db0fa0c4a8b5ac7bcb5ec4b0bde41b5b7185380e9fbab6c80e5bca2d3ffa"
+        },
+        "book_captures": {
+          "rows": 256,
+          "sha256": "89bbf32fe09890930e8441a444cb0a1f3afb7db037af6340db1f67dbe9845a01"
+        },
+        "normalized_books": {
+          "rows": 255,
+          "sha256": "b9fa04625fa968bacae9fbaa6af3c71fd2e26502152cb566baae17c896c47e80"
+        },
+        "ws_frames": {
+          "rows": 256,
+          "sha256": "ce615ccf3b048ffc7f848338121077860c56d757a8bd74c162bf87312994d337"
+        },
+        "ws_connections": {
+          "rows": 1,
+          "sha256": "f1876cee8ac05fd00cffe4a20a6a8f1308bac7a53a1e9a8196f7def7100e4d51"
+        },
+        "catalogue_entries": {
+          "rows": 1,
+          "sha256": "1081da024d2077b40237cb3e038fedeb95d26cbd946250d2f4481d20ddc72f91"
+        }
+      },
+      "exact_parity": true
+    },
+    {
+      "directory": "ga-governor-rep-1-plain",
+      "tables": {
+        "raw_observations": {
+          "rows": 257,
+          "sha256": "c6b6db0fa0c4a8b5ac7bcb5ec4b0bde41b5b7185380e9fbab6c80e5bca2d3ffa"
+        },
+        "book_captures": {
+          "rows": 256,
+          "sha256": "89bbf32fe09890930e8441a444cb0a1f3afb7db037af6340db1f67dbe9845a01"
+        },
+        "normalized_books": {
+          "rows": 255,
+          "sha256": "b9fa04625fa968bacae9fbaa6af3c71fd2e26502152cb566baae17c896c47e80"
+        },
+        "ws_frames": {
+          "rows": 256,
+          "sha256": "ce615ccf3b048ffc7f848338121077860c56d757a8bd74c162bf87312994d337"
+        },
+        "ws_connections": {
+          "rows": 1,
+          "sha256": "f1876cee8ac05fd00cffe4a20a6a8f1308bac7a53a1e9a8196f7def7100e4d51"
+        },
+        "catalogue_entries": {
+          "rows": 1,
+          "sha256": "1081da024d2077b40237cb3e038fedeb95d26cbd946250d2f4481d20ddc72f91"
+        }
+      },
+      "exact_parity": true
+    },
+    {
+      "directory": "senate-rep-2-plain",
+      "tables": {
+        "raw_observations": {
+          "rows": 257,
+          "sha256": "93821b4484e7a67c62a2f54614040bb0868f138f169723545a5531578eb7edb7"
+        },
+        "book_captures": {
+          "rows": 256,
+          "sha256": "de9d98d00afc05966ed8032a8f10fd6ba2de0f1f4a8d6cbcd9339fb88283bab0"
+        },
+        "normalized_books": {
+          "rows": 255,
+          "sha256": "06f23016090d6cfac73c21c526c49fba335af5afce744b85b8d988a273d8f0c7"
+        },
+        "ws_frames": {
+          "rows": 256,
+          "sha256": "248f559923a89d9db5e3d0d92753352effab46869cef3efd0a158afd293c0e9f"
+        },
+        "ws_connections": {
+          "rows": 1,
+          "sha256": "8b802d0ebeeadaaf0f2f6cbb40c6c0cec114bbc46d6c941a10c1962c9d8ece40"
+        },
+        "catalogue_entries": {
+          "rows": 1,
+          "sha256": "26bfc6466bd580cab6dce6232ce5963098f29f19d59026871f303ac3285e5cc0"
+        }
+      },
+      "exact_parity": true
+    },
+    {
+      "directory": "senate-rep-2-instrumented",
+      "tables": {
+        "raw_observations": {
+          "rows": 257,
+          "sha256": "93821b4484e7a67c62a2f54614040bb0868f138f169723545a5531578eb7edb7"
+        },
+        "book_captures": {
+          "rows": 256,
+          "sha256": "de9d98d00afc05966ed8032a8f10fd6ba2de0f1f4a8d6cbcd9339fb88283bab0"
+        },
+        "normalized_books": {
+          "rows": 255,
+          "sha256": "06f23016090d6cfac73c21c526c49fba335af5afce744b85b8d988a273d8f0c7"
+        },
+        "ws_frames": {
+          "rows": 256,
+          "sha256": "248f559923a89d9db5e3d0d92753352effab46869cef3efd0a158afd293c0e9f"
+        },
+        "ws_connections": {
+          "rows": 1,
+          "sha256": "8b802d0ebeeadaaf0f2f6cbb40c6c0cec114bbc46d6c941a10c1962c9d8ece40"
+        },
+        "catalogue_entries": {
+          "rows": 1,
+          "sha256": "26bfc6466bd580cab6dce6232ce5963098f29f19d59026871f303ac3285e5cc0"
+        }
+      },
+      "exact_parity": true
+    },
+    {
+      "directory": "mi-senate-dem-2-plain",
+      "tables": {
+        "raw_observations": {
+          "rows": 257,
+          "sha256": "c7c50c26cdf6bafd01ad1cc17cc359a5207f659c3624f1996c14be38f4055a99"
+        },
+        "book_captures": {
+          "rows": 256,
+          "sha256": "5a4bc1adf527b8e169411ca1edebab5c69fca2f4640612c26d9b87b682ae0a76"
+        },
+        "normalized_books": {
+          "rows": 255,
+          "sha256": "32cb0b918fd41915382d6b9074f48f2daf974475bdc13d0d9464346013d5a57a"
+        },
+        "ws_frames": {
+          "rows": 256,
+          "sha256": "8d2be5f8156a62e9ef94f051589f955fea037c5d8547d94ab90d8f5dc651f957"
+        },
+        "ws_connections": {
+          "rows": 1,
+          "sha256": "f7b4f43739f925785d0d800b74a94db8ee509dd7939a8fabc875a0cf088f6352"
+        },
+        "catalogue_entries": {
+          "rows": 1,
+          "sha256": "aa80be1fb28d027f0b37034edc1f3ce423d0fedc454afa0fd012ee26fad45a9c"
+        }
+      },
+      "exact_parity": true
+    },
+    {
+      "directory": "mi-senate-dem-2-instrumented",
+      "tables": {
+        "raw_observations": {
+          "rows": 257,
+          "sha256": "c7c50c26cdf6bafd01ad1cc17cc359a5207f659c3624f1996c14be38f4055a99"
+        },
+        "book_captures": {
+          "rows": 256,
+          "sha256": "5a4bc1adf527b8e169411ca1edebab5c69fca2f4640612c26d9b87b682ae0a76"
+        },
+        "normalized_books": {
+          "rows": 255,
+          "sha256": "32cb0b918fd41915382d6b9074f48f2daf974475bdc13d0d9464346013d5a57a"
+        },
+        "ws_frames": {
+          "rows": 256,
+          "sha256": "8d2be5f8156a62e9ef94f051589f955fea037c5d8547d94ab90d8f5dc651f957"
+        },
+        "ws_connections": {
+          "rows": 1,
+          "sha256": "f7b4f43739f925785d0d800b74a94db8ee509dd7939a8fabc875a0cf088f6352"
+        },
+        "catalogue_entries": {
+          "rows": 1,
+          "sha256": "aa80be1fb28d027f0b37034edc1f3ce423d0fedc454afa0fd012ee26fad45a9c"
+        }
+      },
+      "exact_parity": true
+    },
+    {
+      "directory": "ga-governor-rep-2-plain",
+      "tables": {
+        "raw_observations": {
+          "rows": 257,
+          "sha256": "c6b6db0fa0c4a8b5ac7bcb5ec4b0bde41b5b7185380e9fbab6c80e5bca2d3ffa"
+        },
+        "book_captures": {
+          "rows": 256,
+          "sha256": "89bbf32fe09890930e8441a444cb0a1f3afb7db037af6340db1f67dbe9845a01"
+        },
+        "normalized_books": {
+          "rows": 255,
+          "sha256": "b9fa04625fa968bacae9fbaa6af3c71fd2e26502152cb566baae17c896c47e80"
+        },
+        "ws_frames": {
+          "rows": 256,
+          "sha256": "ce615ccf3b048ffc7f848338121077860c56d757a8bd74c162bf87312994d337"
+        },
+        "ws_connections": {
+          "rows": 1,
+          "sha256": "f1876cee8ac05fd00cffe4a20a6a8f1308bac7a53a1e9a8196f7def7100e4d51"
+        },
+        "catalogue_entries": {
+          "rows": 1,
+          "sha256": "1081da024d2077b40237cb3e038fedeb95d26cbd946250d2f4481d20ddc72f91"
+        }
+      },
+      "exact_parity": true
+    },
+    {
+      "directory": "ga-governor-rep-2-instrumented",
+      "tables": {
+        "raw_observations": {
+          "rows": 257,
+          "sha256": "c6b6db0fa0c4a8b5ac7bcb5ec4b0bde41b5b7185380e9fbab6c80e5bca2d3ffa"
+        },
+        "book_captures": {
+          "rows": 256,
+          "sha256": "89bbf32fe09890930e8441a444cb0a1f3afb7db037af6340db1f67dbe9845a01"
+        },
+        "normalized_books": {
+          "rows": 255,
+          "sha256": "b9fa04625fa968bacae9fbaa6af3c71fd2e26502152cb566baae17c896c47e80"
+        },
+        "ws_frames": {
+          "rows": 256,
+          "sha256": "ce615ccf3b048ffc7f848338121077860c56d757a8bd74c162bf87312994d337"
+        },
+        "ws_connections": {
+          "rows": 1,
+          "sha256": "f1876cee8ac05fd00cffe4a20a6a8f1308bac7a53a1e9a8196f7def7100e4d51"
+        },
+        "catalogue_entries": {
+          "rows": 1,
+          "sha256": "1081da024d2077b40237cb3e038fedeb95d26cbd946250d2f4481d20ddc72f91"
+        }
+      },
+      "exact_parity": true
+    },
+    {
+      "directory": "senate-rep-3-instrumented",
+      "tables": {
+        "raw_observations": {
+          "rows": 257,
+          "sha256": "93821b4484e7a67c62a2f54614040bb0868f138f169723545a5531578eb7edb7"
+        },
+        "book_captures": {
+          "rows": 256,
+          "sha256": "de9d98d00afc05966ed8032a8f10fd6ba2de0f1f4a8d6cbcd9339fb88283bab0"
+        },
+        "normalized_books": {
+          "rows": 255,
+          "sha256": "06f23016090d6cfac73c21c526c49fba335af5afce744b85b8d988a273d8f0c7"
+        },
+        "ws_frames": {
+          "rows": 256,
+          "sha256": "248f559923a89d9db5e3d0d92753352effab46869cef3efd0a158afd293c0e9f"
+        },
+        "ws_connections": {
+          "rows": 1,
+          "sha256": "8b802d0ebeeadaaf0f2f6cbb40c6c0cec114bbc46d6c941a10c1962c9d8ece40"
+        },
+        "catalogue_entries": {
+          "rows": 1,
+          "sha256": "26bfc6466bd580cab6dce6232ce5963098f29f19d59026871f303ac3285e5cc0"
+        }
+      },
+      "exact_parity": true
+    },
+    {
+      "directory": "senate-rep-3-plain",
+      "tables": {
+        "raw_observations": {
+          "rows": 257,
+          "sha256": "93821b4484e7a67c62a2f54614040bb0868f138f169723545a5531578eb7edb7"
+        },
+        "book_captures": {
+          "rows": 256,
+          "sha256": "de9d98d00afc05966ed8032a8f10fd6ba2de0f1f4a8d6cbcd9339fb88283bab0"
+        },
+        "normalized_books": {
+          "rows": 255,
+          "sha256": "06f23016090d6cfac73c21c526c49fba335af5afce744b85b8d988a273d8f0c7"
+        },
+        "ws_frames": {
+          "rows": 256,
+          "sha256": "248f559923a89d9db5e3d0d92753352effab46869cef3efd0a158afd293c0e9f"
+        },
+        "ws_connections": {
+          "rows": 1,
+          "sha256": "8b802d0ebeeadaaf0f2f6cbb40c6c0cec114bbc46d6c941a10c1962c9d8ece40"
+        },
+        "catalogue_entries": {
+          "rows": 1,
+          "sha256": "26bfc6466bd580cab6dce6232ce5963098f29f19d59026871f303ac3285e5cc0"
+        }
+      },
+      "exact_parity": true
+    },
+    {
+      "directory": "mi-senate-dem-3-instrumented",
+      "tables": {
+        "raw_observations": {
+          "rows": 257,
+          "sha256": "c7c50c26cdf6bafd01ad1cc17cc359a5207f659c3624f1996c14be38f4055a99"
+        },
+        "book_captures": {
+          "rows": 256,
+          "sha256": "5a4bc1adf527b8e169411ca1edebab5c69fca2f4640612c26d9b87b682ae0a76"
+        },
+        "normalized_books": {
+          "rows": 255,
+          "sha256": "32cb0b918fd41915382d6b9074f48f2daf974475bdc13d0d9464346013d5a57a"
+        },
+        "ws_frames": {
+          "rows": 256,
+          "sha256": "8d2be5f8156a62e9ef94f051589f955fea037c5d8547d94ab90d8f5dc651f957"
+        },
+        "ws_connections": {
+          "rows": 1,
+          "sha256": "f7b4f43739f925785d0d800b74a94db8ee509dd7939a8fabc875a0cf088f6352"
+        },
+        "catalogue_entries": {
+          "rows": 1,
+          "sha256": "aa80be1fb28d027f0b37034edc1f3ce423d0fedc454afa0fd012ee26fad45a9c"
+        }
+      },
+      "exact_parity": true
+    },
+    {
+      "directory": "mi-senate-dem-3-plain",
+      "tables": {
+        "raw_observations": {
+          "rows": 257,
+          "sha256": "c7c50c26cdf6bafd01ad1cc17cc359a5207f659c3624f1996c14be38f4055a99"
+        },
+        "book_captures": {
+          "rows": 256,
+          "sha256": "5a4bc1adf527b8e169411ca1edebab5c69fca2f4640612c26d9b87b682ae0a76"
+        },
+        "normalized_books": {
+          "rows": 255,
+          "sha256": "32cb0b918fd41915382d6b9074f48f2daf974475bdc13d0d9464346013d5a57a"
+        },
+        "ws_frames": {
+          "rows": 256,
+          "sha256": "8d2be5f8156a62e9ef94f051589f955fea037c5d8547d94ab90d8f5dc651f957"
+        },
+        "ws_connections": {
+          "rows": 1,
+          "sha256": "f7b4f43739f925785d0d800b74a94db8ee509dd7939a8fabc875a0cf088f6352"
+        },
+        "catalogue_entries": {
+          "rows": 1,
+          "sha256": "aa80be1fb28d027f0b37034edc1f3ce423d0fedc454afa0fd012ee26fad45a9c"
+        }
+      },
+      "exact_parity": true
+    },
+    {
+      "directory": "ga-governor-rep-3-instrumented",
+      "tables": {
+        "raw_observations": {
+          "rows": 257,
+          "sha256": "c6b6db0fa0c4a8b5ac7bcb5ec4b0bde41b5b7185380e9fbab6c80e5bca2d3ffa"
+        },
+        "book_captures": {
+          "rows": 256,
+          "sha256": "89bbf32fe09890930e8441a444cb0a1f3afb7db037af6340db1f67dbe9845a01"
+        },
+        "normalized_books": {
+          "rows": 255,
+          "sha256": "b9fa04625fa968bacae9fbaa6af3c71fd2e26502152cb566baae17c896c47e80"
+        },
+        "ws_frames": {
+          "rows": 256,
+          "sha256": "ce615ccf3b048ffc7f848338121077860c56d757a8bd74c162bf87312994d337"
+        },
+        "ws_connections": {
+          "rows": 1,
+          "sha256": "f1876cee8ac05fd00cffe4a20a6a8f1308bac7a53a1e9a8196f7def7100e4d51"
+        },
+        "catalogue_entries": {
+          "rows": 1,
+          "sha256": "1081da024d2077b40237cb3e038fedeb95d26cbd946250d2f4481d20ddc72f91"
+        }
+      },
+      "exact_parity": true
+    },
+    {
+      "directory": "ga-governor-rep-3-plain",
+      "tables": {
+        "raw_observations": {
+          "rows": 257,
+          "sha256": "c6b6db0fa0c4a8b5ac7bcb5ec4b0bde41b5b7185380e9fbab6c80e5bca2d3ffa"
+        },
+        "book_captures": {
+          "rows": 256,
+          "sha256": "89bbf32fe09890930e8441a444cb0a1f3afb7db037af6340db1f67dbe9845a01"
+        },
+        "normalized_books": {
+          "rows": 255,
+          "sha256": "b9fa04625fa968bacae9fbaa6af3c71fd2e26502152cb566baae17c896c47e80"
+        },
+        "ws_frames": {
+          "rows": 256,
+          "sha256": "ce615ccf3b048ffc7f848338121077860c56d757a8bd74c162bf87312994d337"
+        },
+        "ws_connections": {
+          "rows": 1,
+          "sha256": "f1876cee8ac05fd00cffe4a20a6a8f1308bac7a53a1e9a8196f7def7100e4d51"
+        },
+        "catalogue_entries": {
+          "rows": 1,
+          "sha256": "1081da024d2077b40237cb3e038fedeb95d26cbd946250d2f4481d20ddc72f91"
+        }
+      },
+      "exact_parity": true
+    }
+  ],
+  "measurements": [
+    {
+      "pair": "ga-governor-rep",
+      "before": {
+        "plain_wall_ns": [
+          3558033055,
+          3703471424,
+          4007073632
+        ],
+        "median_plain_wall_ns": 3703471424,
+        "measured_commits": 3078,
+        "measured_final_commits": 1530,
+        "commit_wall_ns": 6974428667,
+        "frames_per_run": 256,
+        "books_per_run": 255
+      },
+      "after": {
+        "plain_wall_ns": [
+          3507430631,
+          3524609110,
+          3133757793
+        ],
+        "median_plain_wall_ns": 3507430631,
+        "measured_commits": 2313,
+        "measured_final_commits": 765,
+        "commit_wall_ns": 6000967079,
+        "frames_per_run": 256,
+        "books_per_run": 255
+      },
+      "median_plain_wall_reduction_pct": "5.29"
+    },
+    {
+      "pair": "mi-senate-dem",
+      "before": {
+        "plain_wall_ns": [
+          3671841477,
+          4170194190,
+          3567502099
+        ],
+        "median_plain_wall_ns": 3671841477,
+        "measured_commits": 3078,
+        "measured_final_commits": 1530,
+        "commit_wall_ns": 7587445785,
+        "frames_per_run": 256,
+        "books_per_run": 255
+      },
+      "after": {
+        "plain_wall_ns": [
+          3187755164,
+          3161565748,
+          3185233118
+        ],
+        "median_plain_wall_ns": 3185233118,
+        "measured_commits": 2313,
+        "measured_final_commits": 765,
+        "commit_wall_ns": 6021840923,
+        "frames_per_run": 256,
+        "books_per_run": 255
+      },
+      "median_plain_wall_reduction_pct": "13.25"
+    },
+    {
+      "pair": "senate-rep",
+      "before": {
+        "plain_wall_ns": [
+          3861623807,
+          3876965001,
+          3977857791
+        ],
+        "median_plain_wall_ns": 3876965001,
+        "measured_commits": 3078,
+        "measured_final_commits": 1530,
+        "commit_wall_ns": 7100518914,
+        "frames_per_run": 256,
+        "books_per_run": 255
+      },
+      "after": {
+        "plain_wall_ns": [
+          3427137855,
+          3341776369,
+          3394003440
+        ],
+        "median_plain_wall_ns": 3394003440,
+        "measured_commits": 2313,
+        "measured_final_commits": 765,
+        "commit_wall_ns": 5812711185,
+        "frames_per_run": 256,
+        "books_per_run": 255
+      },
+      "median_plain_wall_reduction_pct": "12.46"
+    }
+  ],
+  "source_archives_unchanged": true,
+  "settings": {
+    "foreign_keys": 1,
+    "journal_mode": "wal",
+    "page_size": 4096,
+    "synchronous": 2,
+    "wal_autocheckpoint": 1000
+  },
+  "sqlite_version": "3.46.1",
+  "limitations": [
+    "Serial unpaced historical Kalshi-only prefixes, not live multi-pair coverage.",
+    "Before and after measured as separate blocks; three plain and three instrumented repetitions per pair/version; scheduling/cache drift not isolated.",
+    "Commit wall time includes synchronization/checkpoint/scheduling; no physical power-loss or fsync fault experiment."
+  ],
+  "live_coverage_claim": false,
+  "network_requests_in_replay": 0,
+  "inference_requests": 0
+}

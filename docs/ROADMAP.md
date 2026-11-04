@@ -468,10 +468,29 @@ index/model identities and expired runs preserved. No further run or M6 implied.
   archive/journal integrity, full suite: 574 tests pass.
 - [x] Identify measured costs: commits 60–64%, validation/reconstruction 20–24%,
   Kalshi-only journal about 5%; serial-prefix/concurrency limits explicit.
-- [ ] Test the proposed atomic final validation/normalized-book transaction and
-  measure before/after performance with unchanged integrity/durability.
+- [x] Test the atomic final validation/normalized-book transaction and measure
+  before/after performance with unchanged integrity/durability. The separately
+  authorized follow-up below records its acceptance evidence.
 - [ ] Demonstrate live multi-pair quality improvement; offline timings are not
   wall-time market-state coverage or economic eligibility.
 
 [Profile and next-step acceptance](M5P_PERSISTENCE_PROFILE.md). This completes
 the bounded profiling task only; no broader M5P completion or renewal is implied.
+
+
+### M5P atomic final commit — offline acceptance passed November 4 UTC
+
+- [x] Combine final validation status, capture classification and normalized-book
+  persistence in one explicit transaction; retain separate raw/pending commits,
+  WAL/FULL, every validator and publication only after commit.
+- [x] Independent-reader snapshots, statement/commit failures, real deferred-FK
+  commit rejection, interruption and subprocess-death tests; 581 tests pass.
+- [x] Same-source before/after replay: 36 executions, exact intermediate books
+  and six-table parity, unchanged source hashes. Median plain times fall by
+  5.29–13.25% across the three serial prefixes; final commits halve.
+- [ ] Separately authorized live multi-pair validation before claiming coverage
+  improvement; stronger second-candidate and sustained-quality gaps remain open.
+
+[Results, reproduction and failure limits](M5P_ATOMIC_FINAL_COMMIT.md). This is an
+explicitly authorized offline optimization only. No new capture, service restart,
+renewal, model/index change, approval, funds, orders or M6 is implied.

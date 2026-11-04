@@ -295,3 +295,8 @@ adapter schemas, raw hashes and parent archive identity. Expected normalized
 books are local derived evidence. No credentials/handshake headers are present.
 Tests that mutate this fixture label their changes HYPOTHETICAL; the offline
 transport is hypothetical even when the supplied bytes are genuine.
+
+`m5p-atomic-faults-hypothetical.json` is a labeled local fault plan for final
+transaction failure/process-death tests. It reuses `m5p-profile-live.json` without
+changing its genuine raw bytes, schema versions, receipt clocks or hashes. It is
+not a venue response, and its retrieval timestamp is null.

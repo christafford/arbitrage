@@ -1,0 +1,15 @@
+{
+  "schema": "atomic-frame-fault-plan/m5p-v1",
+  "hypothetical": true,
+  "retrieved_at": null,
+  "description": "HYPOTHETICAL local storage and process-death faults, not venue responses. Apply to unchanged genuine m5p-profile-live.json bytes with their original schema, UTC receipts and hashes.",
+  "storage_failure_stages": ["status", "capture", "normalized", "commit_entry", "sqlite_commit", "interrupt"],
+  "process_death_stages": [
+    {"stage": "status", "committed": false},
+    {"stage": "normalized", "committed": false},
+    {"stage": "commit_entry", "committed": false},
+    {"stage": "commit_vm", "committed": false},
+    {"stage": "committed", "committed": true}
+  ],
+  "limits": "commit_vm terminates at SQLite COMMIT VM entry, not inside fsync. No physical disk failure or machine power loss is simulated. No publication callback may run at any injected boundary."
+}

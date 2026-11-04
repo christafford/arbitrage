@@ -1,5 +1,14 @@
 # Official API sources and versioned contracts
 
+## M5P atomic final commit — November 4, 2026 UTC
+
+[Fresh source receipts](evidence/M5P_ATOMIC_SOURCES.json) preserve official SQLite
+transaction/WAL/synchronous documentation and Kalshi orderbook documentation.
+This follow-up reuses existing consumed fields and the genuine profiling fixture;
+no new venue schema or API is introduced. Only the final local transaction
+boundary changes. Raw and pending commits remain separate, with WAL/FULL.
+[Implementation, failure tests and measurement limits](M5P_ATOMIC_FINAL_COMMIT.md).
+
 ## M5P offline persistence profiling — November 4, 2026 UTC
 
 [Source receipts and hashes](evidence/M5P_PROFILE_SOURCES.json) preserve fresh

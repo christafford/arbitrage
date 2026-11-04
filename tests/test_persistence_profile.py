@@ -41,7 +41,7 @@ class PersistenceProfileTests(unittest.TestCase):
         commits={k:v['inclusive_wall']['count'] for k,v in a['phases'].items() if k.endswith('/sqlite_commit')}
         self.assertEqual(commits['capture/archive_frame/archive_raw/sqlite_commit'],4)
         self.assertEqual(commits['capture/archive_frame/sqlite_commit'],4)
-        self.assertEqual(commits['capture/record_frame/validation_status/sqlite_commit'],3)
+        self.assertNotIn('capture/record_frame/validation_status/sqlite_commit',commits)
         self.assertEqual(commits['capture/record_frame/sqlite_commit'],3)
         self.assertFalse(b['phases'])
 

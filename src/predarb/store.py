@@ -130,10 +130,14 @@ def archive_response(con, venue, endpoint, body, status, headers, received_at, s
     return cursor.lastrowid
 
 
-def validate_observation(con, observation_id, status, error, source_ts=None):
+def validate_observation(con, observation_id, status, error, source_ts=None, *, commit=True):
+    """Persist status, or join an explicitly owned finalization transaction."""
+    if not commit and not con.in_transaction:
+        raise ValueError('deferred validation requires an active transaction')
     con.execute('''UPDATE raw_observations SET validation_status=?, validation_error=?,
                    source_ts=? WHERE id=?''', (status, error, source_ts, observation_id))
-    con.commit()
+    if commit:
+        con.commit()
 
 
 def start_run(con, venue, schema_version, scope):

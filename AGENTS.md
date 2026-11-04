@@ -239,3 +239,16 @@ for 20–24%. No collector transaction/durability/gate change or live run occurr
 Combining final validation and normalized persistence into one atomic commit is
 a proposed next optimization, requiring failure/reader-visibility tests and
 same-source before/after measurements. No live coverage gain or renewal is implied.
+
+
+### M5P atomic final commit — authorized November 4 UTC
+
+The operator authorized testing one atomic final validation-status/normalized-book
+commit. See `docs/M5P_ATOMIC_FINAL_COMMIT.md` and
+`data/m5p/atomic-final-20261104/`. Offline acceptance passed: 581 tests, independent
+reader/failure/process-death checks and 36 before/after executions with exact
+six-table/intermediate-book parity. Final commits halve; median serial-prefix
+plain times fall 5.29–13.25%. Raw and pending commits, WAL/FULL, all integrity and
+approval gates remain intact. This is not measured live coverage improvement.
+No capture, service renewal, expired-deadline change, model/index change, funds,
+orders or M6 is authorized. Broader M5P quality acceptance remains open.

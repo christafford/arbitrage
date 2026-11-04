@@ -1,0 +1,15 @@
+senate-rep-1-instrumented PASS 4 0.083 seconds
+senate-rep-1-plain PASS 4 0.074 seconds
+mi-senate-dem-1-instrumented PASS 4 0.076 seconds
+mi-senate-dem-1-plain PASS 4 0.064 seconds
+ga-governor-rep-1-instrumented PASS 4 0.073 seconds
+ga-governor-rep-1-plain PASS 4 0.072 seconds
+HYPOTHETICAL EXAMPLE ONLY — not a trade signal or verified exchange quotes
+pairs=400 required_capital=$391.000 modeled_profit=$9.000 ROI=2.302%
+Read-only archive counts: {}
+Collection runs (id, venue, status, pages, records, unique, duplicates): []
+Book captures (freshness AT CAPTURE, liquidity, count): []
+All live catalogue entries and books are UNVERIFIED; no actionable signals
+Normalized book assessments (data usable AT ASSESSMENT, count): []
+Pair decisions (hypothetical, status, count; no trading authority): []
+Hypothetical evaluations: 1 (sum of *example modeled* profits, NOT realized P&L: $9.00)
