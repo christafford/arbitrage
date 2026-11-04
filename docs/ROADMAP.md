@@ -494,3 +494,23 @@ the bounded profiling task only; no broader M5P completion or renewal is implied
 [Results, reproduction and failure limits](M5P_ATOMIC_FINAL_COMMIT.md). This is an
 explicitly authorized offline optimization only. No new capture, service restart,
 renewal, model/index change, approval, funds, orders or M6 is implied.
+
+
+### M5P atomic collector live screen — executed November 4 UTC
+
+- [x] Fresh eligibility rejects all four finalized/resolved election hints; select
+  three distinct open NBA pairs using bounded public source checks, with explicit
+  unresolved sports settlement and DISCOVERY status.
+- [x] Complete one fixed five-minute screen with atomic finalization and unchanged
+  gates; all three worker audits and independent replays pass, 581 tests pass.
+- [x] Report Philadelphia–Detroit as the only 60% qualifier (68.23% samples,
+  66.54% wall); Atlanta–Washington and Milwaukee–Boston fail. Retain Milwaukee's
+  US connection error/recovery and the failed preflight-only setup.
+- [x] Audit pending/availability latency and 35/35 returned Kalshi snapshots;
+  18 exact-parity offline cost comparisons on newly captured prefixes pass.
+- [ ] Two qualifying pairs and the conditional independent 15-minute holdout.
+  The registered stop rule prevented launch; no repeat or extension prepared.
+
+[Final results and evidence](M5P_ATOMIC_LIVE_VALIDATION.md). One historical screen
+qualifier is not a standing activity guarantee. Sustained coverage, causal live
+improvement and all human review remain open; no M6, funds or orders.

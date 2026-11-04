@@ -1,5 +1,17 @@
 # Official API sources and versioned contracts
 
+## M5P atomic collector live validation — November 4, 2026 UTC
+
+[Ten current stream/detail/rate-limit captures](evidence/M5P_ATOMIC_LIVE_API_CHECKS.json)
+and [two catalogue documents](evidence/M5P_ATOMIC_LIVE_CATALOGUE_SOURCES.json) retain
+raw bytes, UTC receipts and hashes. Kalshi Get Market changed only its published
+version from 3.35.0 to 3.36.0; existing consumed fields and adapter schemas remain.
+The documented US `sportsMarketTypes`, active/closed and sort query returned
+non-sports entries, so the response was not assumed to prove filtered coverage.
+Kalshi `series_ticker` scoped the NBA hints. All selected identities, rules and
+depth were then refreshed individually. Exact genuine responses remain in the
+new eligibility/selection archives. [Execution and limits](M5P_ATOMIC_LIVE_VALIDATION.md).
+
 ## M5P atomic final commit — November 4, 2026 UTC
 
 [Fresh source receipts](evidence/M5P_ATOMIC_SOURCES.json) preserve official SQLite

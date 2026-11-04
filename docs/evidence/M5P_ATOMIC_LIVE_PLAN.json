@@ -1,0 +1,47 @@
+{
+  "schema": "m5p-atomic-live-plan/v1",
+  "registered_at": "2026-11-04T23:00:03.823337+00:00",
+  "authorization": "Operator requested all proposed eligibility, 5-minute screen and conditional independent 15-minute holdout steps.",
+  "git_commit": "d00de43473e3a64a8cd6be137ed343b1bac47e4c",
+  "initial_proposal_order": [
+    "senate-rep",
+    "mi-senate-dem",
+    "ga-governor-rep",
+    "house-dem"
+  ],
+  "max_fresh_proposals": 12,
+  "selection": "Refresh previous Senate/Michigan/Georgia Governor/House hints in order; take first three open, valid two-sided pairs. If fewer than two, bounded existing local catalogue hints and official public metadata may supply additional distinct proposals up to twelve total. Retain all exclusions. No inference.",
+  "screen": {
+    "max_windows": 1,
+    "seconds": 300,
+    "max_pairs": 3,
+    "min_pairs": 2,
+    "sample_percent": 60,
+    "wall_percent": 60,
+    "each_half_wall_percent": 60,
+    "min_us_depth_changes": 5,
+    "audit_failures": 0,
+    "early_receiver_stops": 0,
+    "receiver_errors": 0
+  },
+  "ranking": "Among full qualifiers, descending minimum half-window wall coverage, then full wall coverage, then stable pair ID. Freeze best two; no substitutions.",
+  "holdout": {
+    "max_windows": 1,
+    "seconds": 900,
+    "pairs": 2,
+    "sample_percent": 50,
+    "wall_percent": 50,
+    "each_half_wall_percent": 50,
+    "audit_failures": 0,
+    "early_receiver_stops": 0,
+    "receiver_errors": 0
+  },
+  "stop_rule": "No holdout if fewer than two screen qualifiers, audit/preflight failure or changed definitions. Stop at original fixed deadlines, no repeat or extension.",
+  "unchanged_settings": "Atomic final commit, WAL/FULL, inband-snapshot, two-second age/skew gates, existing metadata/grids, snapshot/reconnect budgets.",
+  "denominators": "Recorded sample percentages plus planned one-second slots/missing samples; full wall window and both equal halves.",
+  "telemetry": "Existing raw/event/receive journals measure availability, pending barriers and recoveries. No live instrumentation change. Any post-capture commit-cost probe is isolated offline and separately labeled.",
+  "classification": "DISCOVERY/UNVERIFIED",
+  "trading_authorized": false,
+  "inference_requests": 0,
+  "services_started": false
+}

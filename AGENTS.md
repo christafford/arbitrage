@@ -252,3 +252,19 @@ plain times fall 5.29–13.25%. Raw and pending commits, WAL/FULL, all integrity
 approval gates remain intact. This is not measured live coverage improvement.
 No capture, service renewal, expired-deadline change, model/index change, funds,
 orders or M6 is authorized. Broader M5P quality acceptance remains open.
+
+
+### M5P atomic collector live screen — authorized and stopped November 4 UTC
+
+The operator authorized fresh eligibility, one five-minute 60% screen and a
+conditional 15-minute holdout only if two pairs qualified. See
+`docs/M5P_ATOMIC_LIVE_VALIDATION.md` and `data/m5p/atomic-live-20261104/`.
+All four election hints were finalized/resolved. One preflight-only setup timed
+out without creating a window; its bounded retry ran the sole screen on three
+fresh NBA pairs until **November 4 23:09:14.866288 UTC**. All audits passed, but
+only Philadelphia–Detroit qualified (68.23% samples / 66.54% wall). Atlanta–Washington
+and Milwaukee–Boston failed; Milwaukee also had a US ConnectionClosedError and
+recovered. No holdout launched, and no renewal is implied. All 35 Kalshi snapshot
+requests returned. 581 tests and 18 same-source offline cost runs pass. Preserve
+failed selections, setup attempt, fixed deadline and gates. Live causal improvement,
+a second qualifier, sustained quality and independent review remain open.

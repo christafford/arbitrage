@@ -16,7 +16,9 @@ local Kalshi validation-barrier time on busy feeds. Subsequent
 time in the sampled prefixes to SQLite commits, with all integrity checks intact;
 the subsequent [atomic final commit](docs/M5P_ATOMIC_FINAL_COMMIT.md) combines
 status and normalized-book persistence while preserving raw-first WAL/FULL writes.
-Live coverage improvement remains unmeasured.
+A subsequent [live screen](docs/M5P_ATOMIC_LIVE_VALIDATION.md) qualified only
+Philadelphia–Detroit among three fresh NBA pairs; the required second qualifier
+was absent, so no holdout launched. Causal live coverage improvement remains unproven.
 
 A **read-only, Codex-ready** starter for researching fully hedged binary prediction-market opportunities between **Kalshi** and **Polymarket US**. Designed for a modest always-on Linux server, a SQLite database, and an initial bankroll of **$0** during discovery, potentially **$200–$500** for separately authorized experiments, with a **$10,000 lifetime seed-deposit ceiling**.
 
