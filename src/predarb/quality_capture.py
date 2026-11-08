@@ -38,10 +38,14 @@ def seconds(delta):
     return Decimal(delta.days*86400)+Decimal(delta.seconds)+Decimal(delta.microseconds)/1000000
 
 
-def validate_window(seconds_requested, pairs):
+def validate_window(seconds_requested, pairs, *, scope='M5P'):
     if type(seconds_requested) is not int or not 10 <= seconds_requested <= 900:
         raise ValueError('M5P duration must be 10..900 seconds; no automatic extension')
-    if not 2 <= len(pairs) <= 3 or len({p['id'] for p in pairs}) != len(pairs):
+    if scope not in {'M5P', 'M5Q'}:
+        raise ValueError('unknown observation scope')
+    if scope == 'M5Q' and (seconds_requested != 900 or len(pairs) != 1):
+        raise ValueError('M5Q requires exactly one pair and 900 seconds')
+    if (scope == 'M5P' and not 2 <= len(pairs) <= 3) or len({p['id'] for p in pairs}) != len(pairs):
         raise ValueError('two or three distinct pairs required')
     for key in ('kalshi_id', 'polymarket_us_id'):
         if len({p[key] for p in pairs}) != len(pairs): raise ValueError('duplicate instrument')
@@ -56,7 +60,7 @@ def validate_window(seconds_requested, pairs):
 
 def validate_config(config):
     if config.get('schema') != VERSION: raise ValueError('unknown M5P configuration schema')
-    validate_window(config['seconds'],config['pairs'])
+    validate_window(config['seconds'],config['pairs'],scope=config.get('scope','M5P'))
     if seconds(utc_time(config['deadline_at'])-utc_time(config['started_at'])) != config['seconds']:
         raise ValueError('fixed deadline differs from bounded duration')
     from .snapshot_recovery import POLICIES
@@ -376,7 +380,7 @@ def worker(root, pair, config, kcredentials, ucredentials, stop):
     return report
 
 
-def replay(root, pair, config, *, event_observer=None):
+def replay(root, pair, config, *, event_observer=None, sample_observer=None):
     """Rebuild every admitted book from archived raw data, then all event intervals.
 
     Receive time and local availability time are distinct. No later message is
@@ -408,6 +412,7 @@ def replay(root, pair, config, *, event_observer=None):
                 raise ValueError('sample replay mismatch')
             clocks={c:engine.states[c].report() for c in ('kalshi',saved['channel'])}
             if load_json(dumps(clocks)) != saved['clocks']: raise ValueError('instrumentation clock mismatch')
+            if sample_observer is not None: sample_observer(saved,engine)
             sample_index+=1
     with closing(readonly(root/'kalshi.sqlite3')) as kc, closing(readonly(root/'us.sqlite3')) as uc:
         for i,event in enumerate(events,1):

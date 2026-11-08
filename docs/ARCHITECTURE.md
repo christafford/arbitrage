@@ -451,3 +451,21 @@ Metadata/frame-bound rotations retain the original source context and replay cap
 `cadence.py` consumes verified raw/event replay, measures full-window and half-window
 coverage, and ranks supplied candidates deterministically. Selection is a research
 recommendation only. [Limits and results](M5P_CADENCE_RECOVERY.md).
+
+## M5Q isolated economic reconstruction
+
+`economic_signals.py` applies existing Decimal quality/mechanics calculations to
+verified historical books, preserving CONDITIONAL/DISCOVERY classification and
+explicit hypothetical ordinary payouts. It exposes exact depth walks and one-leg
+purchase-cost downside, with unknown fees, actual fills and all-in funding.
+Source-state and full-depth hashes distinguish samples from quote states;
+`Episodes` breaks sampled spans at rejection/nonpositive samples and actual gaps
+above two seconds. It makes no continuous-exchange or independent-trial claim.
+
+`scripts/m5q_reconstruct.py` opens source archives read-only. M5O v2 raw hashes
+and every historically passing sample are checked against original committed
+frontiers; all M5P events/samples/intervals are replayed. Failed development
+archives are quarantined. A new replay observer exposes reconstructed states only
+after the original sample matches. `--scope M5Q` explicitly permits one pair for
+900 seconds in the existing collector; M5P defaults and all gates remain intact.
+[Method and operational bounds](M5Q_OPERATIONS.md).

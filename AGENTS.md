@@ -268,3 +268,25 @@ recovered. No holdout launched, and no renewal is implied. All 35 Kalshi snapsho
 requests returned. 581 tests and 18 same-source offline cost runs pass. Preserve
 failed selections, setup attempt, fixed deadline and gates. Live causal improvement,
 a second qualifier, sustained quality and independent review remain open.
+
+### M5Q economic signal validation — authorized November 8 UTC
+
+The operator requested execution of `docs/M5Q_ECONOMIC_SIGNAL_VALIDATION.md`.
+This authorizes immutable M5O/M5P economic reconstruction, official US continuity
+review, and one new bounded 15-minute read-only observation of one freshly checked,
+active pair. See `docs/M5Q_OPERATIONS.md` and `data/m5q/run-20261108/plan.json`.
+One bounded five-minute selection screen establishes current quality; a failed
+screen is retained and does not justify automatic repeated screening or a weak
+candidate substitution. Preserve classifications, all two-second and approval
+gates, production models/indices, expired runs and raw evidence. Gross DISCOVERY
+arithmetic never becomes arbitrage; fees and capital release remain UNKNOWN
+without independent source-bound review. No orders, funds, automatic approvals,
+new credentials or M6. Inspect M5Q results/configurations before further operations.
+
+The M5Q selection screen stopped at **November 8 06:28:55.859543 UTC**.
+All three audits passed, but Lakers–Detroit (41.27% wall), Cincinnati–Atlanta
+(37.07%) and Las Vegas–San Francisco (10.16%) all failed even the existing 50%
+quality target. No pair qualified and no 15-minute observation was launched.
+See `docs/M5Q_RESULTS.md`: historical gross quotes do not establish fee-adjusted
+profitability, and the current screen had no positive gross signal. Preserve this
+failed selection and deadline; no repeat, substitution or new capture is implied.

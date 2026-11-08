@@ -1,5 +1,10 @@
 # Prediction Arbitrage Research (US Exchanges)
 
+[M5Q economic signal validation](docs/M5Q_RESULTS.md) reconstructs historical
+gross quote signals while keeping fees, settlement approval and actual fills
+unknown. Its new three-pair selection screen failed; no qualifying pair or
+independent 15-minute observation was established. [Method and limits](docs/M5Q_OPERATIONS.md).
+
 [M5P market-data quality recovery](docs/M5P_RESULTS.md) audits the completed M5O
 window and adds isolated stream/REST comparison with event-time coverage. The
 50% passing-data target is an engineering goal, not an exchange standard or a

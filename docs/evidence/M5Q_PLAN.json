@@ -1,0 +1,23 @@
+{
+  "schema": "m5q-plan/v1",
+  "authorization": "User: execute M5Q_ECONOMIC_SIGNAL_VALIDATION.md",
+  "created_at": "2026-11-08T06:18:58.531209+00:00",
+  "offline_scope": "All existing M5O/M5P observation windows, including failed development archives explicitly quarantined; newly replay each quality-passing M5O sample and all M5P events/samples/intervals; preserve original classifications",
+  "selection": "Fresh public scoped NBA/NFL hints, at most three distinct pairs, one 300-second cadence screen to establish recent quality; freeze strongest qualifier then fresh checks and sole 900-second one-pair observation. No repeat screen, substitution after freeze, automatic extension or services.",
+  "screen_rule": {
+    "sample_percent": 60,
+    "full_wall_percent": 60,
+    "each_half_wall_percent": 60,
+    "minimum_us_depth_changes": 5,
+    "worker_errors": 0,
+    "replay": "PASS",
+    "ranking": "minimum half wall, full wall, stable pair id"
+  },
+  "live_seconds": 900,
+  "gates": "Unchanged two-second source/receipt/skew; metadata/grid/sequence/raw-first/WAL/FULL/atomic finalization unchanged",
+  "no_qualifier": "Do not substitute volume or open status for measured quality; report Phase B blocked and preserve all failed candidates",
+  "episode_rule": "Consecutive positive samples within 2 seconds, broken by any intervening rejection/nonpositive sample or window/source-definition/classification change; unchanged combined depth states never independent opportunities; spans are sampled evidence, not continuous exchange validity",
+  "net_fees": "UNKNOWN without independent source-bound review",
+  "trading_authorized": false,
+  "created_at_basis": "File write clock; corrected initial hand-entered timestamp before capture"
+}

@@ -783,3 +783,21 @@ snapshots on the same connection, exact raw bytes/hashes, metadata/command refs,
 UTC receipts and event/sample/interval replay. It observed **no** `ok` responses;
 acknowledgment behavior is tested with explicitly hypothetical fault injection.
 See [method and execution evidence](M5P_CADENCE_RECOVERY.md).
+
+## M5Q economic signal validation — November 8, 2026 UTC
+
+[Seventeen fresh official captures](evidence/M5Q_API_CHECKS.json) retain exact raw
+bytes, hashes and UTC receipts for US/Kalshi detail, books, streams, rate limits,
+catalogues and US collateral, fees and settlement. Existing consumed schemas
+remain unchanged: Kalshi published 3.36.0, US MarketService 1.0.0, and the existing
+local adapter contracts. A scoped public response is a bounded candidate hint,
+not representative coverage or measured update cadence. No international API,
+account request, new credential or inference service is used.
+
+[Continuity findings](M5Q_CONTINUITY.md) retain UNKNOWN US gap detection and
+quiet-book validity. Heartbeat/ordered-delivery advice supplies no per-market
+no-change watermark, and never relaxes the strict two-second gate. The genuine
+`m5q-selection-live.json` fixture retains twelve exact public responses, identities,
+receipt times and schemas; matching ordinary sports identity is not settlement
+approval. Historical fee applicability, exceptional payouts and cash release
+remain independently reviewable unknowns.

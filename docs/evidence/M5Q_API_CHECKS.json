@@ -1,0 +1,124 @@
+{
+  "schema": "m5q-sources/v1",
+  "documents": [
+    {
+      "url": "https://docs.kalshi.com/websockets/websocket-connection.md",
+      "http_status": 200,
+      "path": "data/m5q/run-20261108/sources/00.txt",
+      "sha256": "38ef5f2bc1c180a8f1a68991cc0325fc03c2368f8b65fa229dfe6499351d94ff",
+      "retrieved_at": "2026-11-08T06:17:41.064167+00:00"
+    },
+    {
+      "url": "https://docs.kalshi.com/websockets/orderbook-updates.md",
+      "http_status": 200,
+      "path": "data/m5q/run-20261108/sources/01.txt",
+      "sha256": "f71cd6a72c3f0bcff889da18c2b18e0603cf63566f482a7391de4b0c2cc11228",
+      "retrieved_at": "2026-11-08T06:17:41.062627+00:00"
+    },
+    {
+      "url": "https://docs.kalshi.com/websockets/connection-keep-alive.md",
+      "http_status": 200,
+      "path": "data/m5q/run-20261108/sources/02.txt",
+      "sha256": "fe7055a6b3f01b0a995e3151b64d33ba7ee79b0f9eb7af0ef24d0f62441d0794",
+      "retrieved_at": "2026-11-08T06:17:41.037507+00:00"
+    },
+    {
+      "url": "https://docs.kalshi.com/getting_started/rate_limits.md",
+      "http_status": 200,
+      "path": "data/m5q/run-20261108/sources/03.txt",
+      "sha256": "44b1dae5df95ba4a72ab541c5045d657ba1022583a44ff460fc46c754cf10ce8",
+      "retrieved_at": "2026-11-08T06:17:41.048767+00:00"
+    },
+    {
+      "url": "https://docs.kalshi.com/asyncapi.yaml",
+      "http_status": 200,
+      "path": "data/m5q/run-20261108/sources/04.txt",
+      "sha256": "33fd603e0f7a95acd0da82a70cfc9126c31ddc27528a6e696efb2c3806b56b23",
+      "retrieved_at": "2026-11-08T06:17:41.327707+00:00"
+    },
+    {
+      "url": "https://docs.polymarket.us/api-reference/websocket/markets.md",
+      "http_status": 200,
+      "path": "data/m5q/run-20261108/sources/05.txt",
+      "sha256": "e320f5338459a8508ed33c90c035d65eb8c9c22b258e9a96090b9473dbc231a0",
+      "retrieved_at": "2026-11-08T06:17:41.216792+00:00"
+    },
+    {
+      "url": "https://docs.polymarket.us/api-reference/markets/get-market-by-slug.md",
+      "http_status": 200,
+      "path": "data/m5q/run-20261108/sources/06.txt",
+      "sha256": "16f599df2f2606ae8e661b557793274d61d50e33862a10d033e52c09e783f7cf",
+      "retrieved_at": "2026-11-08T06:17:41.228648+00:00"
+    },
+    {
+      "url": "https://docs.polymarket.us/api-reference/markets/get-market-book.md",
+      "http_status": 200,
+      "path": "data/m5q/run-20261108/sources/07.txt",
+      "sha256": "a7067ab36d8372f67f9eae96b8ef177e120b94f33355f85ff7bf49f66d795e29",
+      "retrieved_at": "2026-11-08T06:17:41.245598+00:00"
+    },
+    {
+      "url": "https://docs.kalshi.com/api-reference/market/get-market.md",
+      "http_status": 200,
+      "path": "data/m5q/run-20261108/sources/08.txt",
+      "sha256": "d2b8e38d6a6b204cfcecd74048ebed955f61b2f575c1f7b631fa63b902b5e63d",
+      "retrieved_at": "2026-11-08T06:17:41.363125+00:00"
+    },
+    {
+      "url": "https://docs.polymarket.us/api-reference/rate-limits.md",
+      "http_status": 200,
+      "path": "data/m5q/run-20261108/sources/09.txt",
+      "sha256": "a28524b840c2a11ae20ad52764299b5405382f417b17d1125dd2a17638144e07",
+      "retrieved_at": "2026-11-08T06:17:41.363498+00:00"
+    },
+    {
+      "url": "https://docs.polymarket.us/api-reference/websocket/overview.md",
+      "http_status": 200,
+      "path": "data/m5q/run-20261108/sources/10.txt",
+      "sha256": "347ee218215ddd238d6e89818a23cad81c1c1c236274430ce588c2ea399abdc0",
+      "retrieved_at": "2026-11-08T06:17:41.378173+00:00"
+    },
+    {
+      "url": "https://docs.polymarket.us/api-reference/markets/get-markets.md",
+      "http_status": 200,
+      "path": "data/m5q/run-20261108/sources/11.txt",
+      "sha256": "b3484b1053fb162ea408666b827d67dbd19dbeccd62c454137be798cf374c98a",
+      "retrieved_at": "2026-11-08T06:17:41.464827+00:00"
+    },
+    {
+      "url": "https://docs.kalshi.com/api-reference/market/get-markets.md",
+      "http_status": 200,
+      "path": "data/m5q/run-20261108/sources/12.txt",
+      "sha256": "795243d2f0c3fd8f1528dc2765716cd4561a227f3ac66721041e8cdc070cb4b8",
+      "retrieved_at": "2026-11-08T06:17:41.580706+00:00"
+    },
+    {
+      "url": "https://docs.polymarket.us/market-structure/collateral-and-margin.md",
+      "http_status": 200,
+      "path": "data/m5q/run-20261108/sources/13.txt",
+      "sha256": "a9219a064e721606ecae9414657b314d8a226340541039445e146d956df4a35a",
+      "retrieved_at": "2026-11-08T06:17:41.507793+00:00"
+    },
+    {
+      "url": "https://docs.polymarket.us/learn/markets/contract-settlement.md",
+      "http_status": 200,
+      "path": "data/m5q/run-20261108/sources/14.txt",
+      "sha256": "86b9a5bf54b27614019b95d608bed6a83c5a6714af54616ebd41e3f34ad95ad3",
+      "retrieved_at": "2026-11-08T06:17:41.535162+00:00"
+    },
+    {
+      "url": "https://docs.polymarket.us/fees.md",
+      "http_status": 200,
+      "path": "data/m5q/run-20261108/sources/15.txt",
+      "sha256": "bcbf6d9fea20f967ad2248c49ddd16ee17559e52a44e9b0d49225c851586874a",
+      "retrieved_at": "2026-11-08T06:17:41.591970+00:00"
+    },
+    {
+      "url": "https://docs.polymarket.us/learn/trading/basics/buying-yes-vs-selling-no.md",
+      "http_status": 200,
+      "path": "data/m5q/run-20261108/sources/16.txt",
+      "sha256": "e7e62b037569c6fb616b6647f1942907db7a4f596dfbcf25948d18adcf3d07b5",
+      "retrieved_at": "2026-11-08T06:17:41.641826+00:00"
+    }
+  ]
+}

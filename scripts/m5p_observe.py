@@ -30,6 +30,7 @@ def main():
     parser.add_argument('--config',type=Path)
     parser.add_argument('--pair')
     parser.add_argument('--seconds',type=int,default=900)
+    parser.add_argument('--scope',choices=['M5P','M5Q'],default='M5P')
     parser.add_argument('--kalshi-recovery-policy',choices=['reconnect','inband-snapshot'],default='reconnect')
     parser.add_argument('--kalshi-credentials',default=str(Path.home()/'.config/predarb/kalshi-readonly.json'))
     parser.add_argument('--us-credentials',default=str(Path.home()/'polymarket-us.api'))
@@ -44,7 +45,7 @@ def main():
         audit=replay(a.output,pair,config);atomic_json(a.output/'audit.json',audit)
         print(audit);return
     candidates=load_json(a.candidates.read_bytes());pairs=candidates['pairs']
-    validate_window(a.seconds,pairs)
+    validate_window(a.seconds,pairs,scope=a.scope)
     root=a.output.resolve();root.mkdir(parents=True,exist_ok=False)
     before=clock_evidence();atomic_json(root/'clock-before.json',before)
     if not before['synchronized']: raise ValueError('synchronized local clock required')
@@ -57,7 +58,7 @@ def main():
                 if contract_fingerprint(v,r.data['market'])!=p['contract_fingerprints'][v]:
                     raise ValueError('source definition changed since selection')
     started=now();mono=time.monotonic()
-    config=dict(schema=VERSION,seconds=a.seconds,started_at=started.isoformat(),
+    config=dict(schema=VERSION,scope=a.scope,seconds=a.seconds,started_at=started.isoformat(),
         deadline_at=(started+timedelta(seconds=a.seconds)).isoformat(),pairs=pairs,
         kalshi_recovery_policy=a.kalshi_recovery_policy,
         selection_sha256=hashlib.sha256(a.candidates.read_bytes()).hexdigest(),

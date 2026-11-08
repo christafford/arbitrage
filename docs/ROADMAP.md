@@ -514,3 +514,23 @@ renewal, model/index change, approval, funds, orders or M6 is implied.
 [Final results and evidence](M5P_ATOMIC_LIVE_VALIDATION.md). One historical screen
 qualifier is not a standing activity guarantee. Sustained coverage, causal live
 improvement and all human review remain open; no M6, funds or orders.
+
+## M5Q — Economic signal validation — EXECUTED IN PART; LIVE ACCEPTANCE BLOCKED (November 8 UTC)
+
+- [x] Isolated immutable M5O/M5P gross-quote reconstruction with preserved classes,
+  exact depth/budget/one-leg downside, raw provenance and duplicate-state accounting.
+- [x] Current official US sequence/liveness/recovery/quiet-book documentation review;
+  no justified freshness exemption and no gate changes.
+- [x] Fresh three-candidate selection and one bounded five-minute screen; all workers
+  and replays passed, but every pair failed both the 60% screen and existing 50%
+  target. Best wall coverage was 41.27%; zero positive gross screen signals.
+- [x] Explicit one-pair 900-second collector scope, hypothetical failure fixtures,
+  genuine source/replay tests and operator report; 593 tests pass.
+- [ ] A qualifying current pair and independent 15-minute observation. None launched;
+  the failed selection is preserved without repeats, substitutions or extension.
+- [ ] Independently reviewed fees, exceptional payouts, mechanics and cash release;
+  verified net economics and any further sustained-research decision.
+
+[Results and ranked evidence](M5Q_RESULTS.md), [operations](M5Q_OPERATIONS.md),
+[continuity review](M5Q_CONTINUITY.md). No M6, orders, funding, automatic approval,
+model/index mutation or service renewal is implied. Earlier milestone gaps remain.

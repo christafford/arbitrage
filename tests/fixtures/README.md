@@ -300,3 +300,9 @@ transport is hypothetical even when the supplied bytes are genuine.
 transaction failure/process-death tests. It reuses `m5p-profile-live.json` without
 changing its genuine raw bytes, schema versions, receipt clocks or hashes. It is
 not a venue response, and its retrieval timestamp is null.
+
+`m5q-selection-live.json` contains twelve exact public detail/book responses from
+November 8, 2026, with unchanged body hashes, receipt times, endpoints and local
+adapter schemas. It covers three proposed NBA/NFL ordinary identities, without
+settlement approval. `m5q-episodes-hypothetical.json` is explicitly synthetic
+sample-gap/duplicate-state fault input, never provider evidence.
