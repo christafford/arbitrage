@@ -1,0 +1,39 @@
+{
+  "schema": "m5r-final-verification/v1",
+  "at": "2026-11-08T15:49:40.797002+00:00",
+  "full_suite": {
+    "command": ".venv/bin/python -m unittest discover -s tests -v",
+    "tests": 609,
+    "result": "PASS",
+    "log_sha256": "d4de65b9f3b8d810d60cc18799a763ef279fe9fc2c944e424e503ad744cecc07"
+  },
+  "smoke": {
+    "command": ".venv/bin/python scripts/m5r_analyze.py --output data/m5r/analysis-20261108/offline-03",
+    "result": "PASS",
+    "repeated_economics_and_attribution": "EXACT_PARITY",
+    "final_attribution_replay_after_explicit_unknown_category_guard": "EXACT_PARITY",
+    "help_command": "PASS"
+  },
+  "preservation": {
+    "files": 4423,
+    "changed": [],
+    "manifest": "data/m5r/analysis-20261108/offline-03/preservation-before.json",
+    "sha256": "6301ec000c4323f0ab6bc97d3f2e0b0b34d20722c63e9f42e932e0dd4158d54c"
+  },
+  "official_source_files_verified": 46,
+  "production_changed": false,
+  "network_quote_capture": false,
+  "inference_requests": 0,
+  "account_requests": 0,
+  "orders": 0,
+  "artifacts": {
+    "src/predarb/viability.py": "5c8b14b9949e56b07d7e2b23633c0d35292fd102a18f3a91ff400a34a7f2d019",
+    "scripts/m5r_analyze.py": "9e270830c1122859d312df22a1db303f32b81f57c301d5466d0a73719b1ff30c",
+    "tests/test_viability.py": "939c5b75952f6c62b56111f6b82bca26bcb84ad582b10f31c1798aa5a31ef7ec",
+    "tests/fixtures/m5r-fee-history-genuine.json": "5c1f355641adb83a38125baadd3307ae338bf71e1dc356c099d32d25bfb16ba7",
+    "tests/fixtures/m5r-senate-genuine.json": "41e07b7df0e4ac16fda8c5f150193f4e7dfb232c837e19681a329e1a55408cb3",
+    "docs/evidence/M5R_ECONOMICS.json": "a38b6ea3769cd8d8bc87f5f3e3909828666bea8c4e4bff0ddcdbc84abff53694",
+    "docs/evidence/M5R_PROSPECTIVE_FEES.json": "f0eea3abffffde3c1c460303bec870a6a5ef9cd9be94ce59b462d952649a5a84",
+    "docs/evidence/M5R_API_CHECKS.json": "bb1b481ef98c6d4d349e56eb54ba87e430879e827965e625fa24bbcc6384e4dd"
+  }
+}

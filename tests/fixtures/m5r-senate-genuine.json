@@ -1,0 +1,1393 @@
+{
+  "label": "GENUINE historical normalized M5Q replay; fee and fill scenarios remain HYPOTHETICAL",
+  "schema": "economic-viability-fixture/m5r-v1",
+  "source_path": "data/m5q/run-20261108/offline/observations.jsonl",
+  "source_line_sha256": "739a16630665280af7b9e33651e3f17db40a704d908549872ec0a10d4d5ff276",
+  "row": {
+    "at": "2026-11-03T16:20:02.382457+00:00",
+    "capital_cases": [
+      {
+        "actual_fills": null,
+        "additional_collateral_required_usd": null,
+        "all_in_capital_usd": null,
+        "buying_power_required_usd": null,
+        "cash_release_delay_seconds": null,
+        "combined_fee_break_even_usd": "0.0500",
+        "depth_limited_before_budget": false,
+        "displayed_depth_walks": [
+          {
+            "complete": true,
+            "covered": "5",
+            "levels": [
+              {
+                "price": "0.7400",
+                "quantity": "5"
+              }
+            ],
+            "quote_cost": "3.7000",
+            "reason": "COVERED",
+            "requested": "5"
+          },
+          {
+            "complete": true,
+            "covered": "5",
+            "levels": [
+              {
+                "price": "0.2500",
+                "quantity": "5"
+              }
+            ],
+            "quote_cost": "1.2500",
+            "reason": "COVERED",
+            "requested": "5"
+          }
+        ],
+        "evaluated_quantity": "5",
+        "exceptional_payout_basis": "HYPOTHETICAL K YES=1, US YES=0: both selected legs pay zero; unadjudicated source differences.",
+        "fee_adjusted_edge_usd": null,
+        "fees_and_additional_collateral": "UNKNOWN",
+        "gross_edge_per_unit_usd": "0.0100",
+        "gross_edge_usd": "0.0500",
+        "gross_return_on_quote_cost": "0.010101010101010101010101010101010101010101010101010101010101010101010101010101010",
+        "hypothetical_combined_fee_per_unit_sensitivity": {
+          "0.01": "0.0000",
+          "0.02": "-0.0500",
+          "0.05": "-0.2000"
+        },
+        "loss_if_selected_legs_both_pay_zero_before_fees_usd": "4.9500",
+        "maximum_matched_displayed_quantity": "1404456",
+        "maximum_quantity_within_quote_budget": "5",
+        "one_leg_only_loss_before_fees_usd": {
+          "kalshi": "3.7000",
+          "polymarket_us": "1.2500"
+        },
+        "one_leg_unmatched_quantity": "5",
+        "ordinary_combined_payout_assumption_usd": "5",
+        "partial_fill_exposure": "For unequal fills, abs(q_k-q_us) units remain unhedged; either single leg can lose its entire purchase cost plus UNKNOWN fees.",
+        "positive_gross_signal": true,
+        "prefee_capital_per_venue_usd": {
+          "kalshi": "3.7000",
+          "polymarket_us": "1.2500"
+        },
+        "prefee_capital_usd": "4.9500",
+        "quote_only_budget_usd": "5",
+        "settlement_delay_seconds": null
+      },
+      {
+        "actual_fills": null,
+        "additional_collateral_required_usd": null,
+        "all_in_capital_usd": null,
+        "buying_power_required_usd": null,
+        "cash_release_delay_seconds": null,
+        "combined_fee_break_even_usd": "0.2500",
+        "depth_limited_before_budget": false,
+        "displayed_depth_walks": [
+          {
+            "complete": true,
+            "covered": "25",
+            "levels": [
+              {
+                "price": "0.7400",
+                "quantity": "25"
+              }
+            ],
+            "quote_cost": "18.5000",
+            "reason": "COVERED",
+            "requested": "25"
+          },
+          {
+            "complete": true,
+            "covered": "25",
+            "levels": [
+              {
+                "price": "0.2500",
+                "quantity": "25"
+              }
+            ],
+            "quote_cost": "6.2500",
+            "reason": "COVERED",
+            "requested": "25"
+          }
+        ],
+        "evaluated_quantity": "25",
+        "exceptional_payout_basis": "HYPOTHETICAL K YES=1, US YES=0: both selected legs pay zero; unadjudicated source differences.",
+        "fee_adjusted_edge_usd": null,
+        "fees_and_additional_collateral": "UNKNOWN",
+        "gross_edge_per_unit_usd": "0.0100",
+        "gross_edge_usd": "0.2500",
+        "gross_return_on_quote_cost": "0.010101010101010101010101010101010101010101010101010101010101010101010101010101010",
+        "hypothetical_combined_fee_per_unit_sensitivity": {
+          "0.01": "0.0000",
+          "0.02": "-0.2500",
+          "0.05": "-1.0000"
+        },
+        "loss_if_selected_legs_both_pay_zero_before_fees_usd": "24.7500",
+        "maximum_matched_displayed_quantity": "1404456",
+        "maximum_quantity_within_quote_budget": "25",
+        "one_leg_only_loss_before_fees_usd": {
+          "kalshi": "18.5000",
+          "polymarket_us": "6.2500"
+        },
+        "one_leg_unmatched_quantity": "25",
+        "ordinary_combined_payout_assumption_usd": "25",
+        "partial_fill_exposure": "For unequal fills, abs(q_k-q_us) units remain unhedged; either single leg can lose its entire purchase cost plus UNKNOWN fees.",
+        "positive_gross_signal": true,
+        "prefee_capital_per_venue_usd": {
+          "kalshi": "18.5000",
+          "polymarket_us": "6.2500"
+        },
+        "prefee_capital_usd": "24.7500",
+        "quote_only_budget_usd": "25",
+        "settlement_delay_seconds": null
+      },
+      {
+        "actual_fills": null,
+        "additional_collateral_required_usd": null,
+        "all_in_capital_usd": null,
+        "buying_power_required_usd": null,
+        "cash_release_delay_seconds": null,
+        "combined_fee_break_even_usd": "1.0100",
+        "depth_limited_before_budget": false,
+        "displayed_depth_walks": [
+          {
+            "complete": true,
+            "covered": "101",
+            "levels": [
+              {
+                "price": "0.7400",
+                "quantity": "101"
+              }
+            ],
+            "quote_cost": "74.7400",
+            "reason": "COVERED",
+            "requested": "101"
+          },
+          {
+            "complete": true,
+            "covered": "101",
+            "levels": [
+              {
+                "price": "0.2500",
+                "quantity": "101"
+              }
+            ],
+            "quote_cost": "25.2500",
+            "reason": "COVERED",
+            "requested": "101"
+          }
+        ],
+        "evaluated_quantity": "101",
+        "exceptional_payout_basis": "HYPOTHETICAL K YES=1, US YES=0: both selected legs pay zero; unadjudicated source differences.",
+        "fee_adjusted_edge_usd": null,
+        "fees_and_additional_collateral": "UNKNOWN",
+        "gross_edge_per_unit_usd": "0.0100",
+        "gross_edge_usd": "1.0100",
+        "gross_return_on_quote_cost": "0.010101010101010101010101010101010101010101010101010101010101010101010101010101010",
+        "hypothetical_combined_fee_per_unit_sensitivity": {
+          "0.01": "0.0000",
+          "0.02": "-1.0100",
+          "0.05": "-4.0400"
+        },
+        "loss_if_selected_legs_both_pay_zero_before_fees_usd": "99.9900",
+        "maximum_matched_displayed_quantity": "1404456",
+        "maximum_quantity_within_quote_budget": "101",
+        "one_leg_only_loss_before_fees_usd": {
+          "kalshi": "74.7400",
+          "polymarket_us": "25.2500"
+        },
+        "one_leg_unmatched_quantity": "101",
+        "ordinary_combined_payout_assumption_usd": "101",
+        "partial_fill_exposure": "For unequal fills, abs(q_k-q_us) units remain unhedged; either single leg can lose its entire purchase cost plus UNKNOWN fees.",
+        "positive_gross_signal": true,
+        "prefee_capital_per_venue_usd": {
+          "kalshi": "74.7400",
+          "polymarket_us": "25.2500"
+        },
+        "prefee_capital_usd": "99.9900",
+        "quote_only_budget_usd": "100",
+        "settlement_delay_seconds": null
+      },
+      {
+        "actual_fills": null,
+        "additional_collateral_required_usd": null,
+        "all_in_capital_usd": null,
+        "buying_power_required_usd": null,
+        "cash_release_delay_seconds": null,
+        "combined_fee_break_even_usd": "5.0500",
+        "depth_limited_before_budget": false,
+        "displayed_depth_walks": [
+          {
+            "complete": true,
+            "covered": "505",
+            "levels": [
+              {
+                "price": "0.7400",
+                "quantity": "505"
+              }
+            ],
+            "quote_cost": "373.7000",
+            "reason": "COVERED",
+            "requested": "505"
+          },
+          {
+            "complete": true,
+            "covered": "505",
+            "levels": [
+              {
+                "price": "0.2500",
+                "quantity": "505"
+              }
+            ],
+            "quote_cost": "126.2500",
+            "reason": "COVERED",
+            "requested": "505"
+          }
+        ],
+        "evaluated_quantity": "505",
+        "exceptional_payout_basis": "HYPOTHETICAL K YES=1, US YES=0: both selected legs pay zero; unadjudicated source differences.",
+        "fee_adjusted_edge_usd": null,
+        "fees_and_additional_collateral": "UNKNOWN",
+        "gross_edge_per_unit_usd": "0.0100",
+        "gross_edge_usd": "5.0500",
+        "gross_return_on_quote_cost": "0.010101010101010101010101010101010101010101010101010101010101010101010101010101010",
+        "hypothetical_combined_fee_per_unit_sensitivity": {
+          "0.01": "0.0000",
+          "0.02": "-5.0500",
+          "0.05": "-20.2000"
+        },
+        "loss_if_selected_legs_both_pay_zero_before_fees_usd": "499.9500",
+        "maximum_matched_displayed_quantity": "1404456",
+        "maximum_quantity_within_quote_budget": "505",
+        "one_leg_only_loss_before_fees_usd": {
+          "kalshi": "373.7000",
+          "polymarket_us": "126.2500"
+        },
+        "one_leg_unmatched_quantity": "505",
+        "ordinary_combined_payout_assumption_usd": "505",
+        "partial_fill_exposure": "For unequal fills, abs(q_k-q_us) units remain unhedged; either single leg can lose its entire purchase cost plus UNKNOWN fees.",
+        "positive_gross_signal": true,
+        "prefee_capital_per_venue_usd": {
+          "kalshi": "373.7000",
+          "polymarket_us": "126.2500"
+        },
+        "prefee_capital_usd": "499.9500",
+        "quote_only_budget_usd": "500",
+        "settlement_delay_seconds": null
+      }
+    ],
+    "cash_release_at": null,
+    "classification": "CONDITIONAL",
+    "depth_state_sha256": "2921ffbcc6907b1021671775035748140b50ece0fc3072ffff52e1bb2a08362c",
+    "displayed_books": [
+      {
+        "continuity": "SEQUENCED",
+        "data_usable": true,
+        "market_close_at": "2027-02-01T15:00:00Z",
+        "mechanism_no": "BUY_NO_FROM_COMPLEMENTARY_YES_BID",
+        "mechanism_yes": "BUY_YES_FROM_COMPLEMENTARY_NO_BID",
+        "metadata_received_at": "2026-11-03T16:19:52.645008+00:00",
+        "minimum_quantity": "0.01",
+        "no_asks": [
+          {
+            "price": "0.7400",
+            "quantity": "4750.76"
+          },
+          {
+            "price": "0.7500",
+            "quantity": "77014.58"
+          },
+          {
+            "price": "0.7600",
+            "quantity": "51441.56"
+          },
+          {
+            "price": "0.7700",
+            "quantity": "273163.73"
+          },
+          {
+            "price": "0.7800",
+            "quantity": "19165.63"
+          },
+          {
+            "price": "0.7900",
+            "quantity": "11023.09"
+          },
+          {
+            "price": "0.8000",
+            "quantity": "37067.46"
+          },
+          {
+            "price": "0.8100",
+            "quantity": "2258.79"
+          },
+          {
+            "price": "0.8200",
+            "quantity": "5550.00"
+          },
+          {
+            "price": "0.8300",
+            "quantity": "15.71"
+          },
+          {
+            "price": "0.8400",
+            "quantity": "24.22"
+          },
+          {
+            "price": "0.8500",
+            "quantity": "20254.53"
+          },
+          {
+            "price": "0.8600",
+            "quantity": "6203.00"
+          },
+          {
+            "price": "0.8700",
+            "quantity": "70969.96"
+          },
+          {
+            "price": "0.8800",
+            "quantity": "5473.71"
+          },
+          {
+            "price": "0.8900",
+            "quantity": "178470.75"
+          },
+          {
+            "price": "0.9000",
+            "quantity": "1041.38"
+          },
+          {
+            "price": "0.9090",
+            "quantity": "513.00"
+          },
+          {
+            "price": "0.9100",
+            "quantity": "89113.00"
+          },
+          {
+            "price": "0.9200",
+            "quantity": "1.00"
+          },
+          {
+            "price": "0.9270",
+            "quantity": "498.00"
+          },
+          {
+            "price": "0.9280",
+            "quantity": "30550.00"
+          },
+          {
+            "price": "0.9290",
+            "quantity": "22222.00"
+          },
+          {
+            "price": "0.9300",
+            "quantity": "154652.75"
+          },
+          {
+            "price": "0.9390",
+            "quantity": "409.00"
+          },
+          {
+            "price": "0.9400",
+            "quantity": "496.17"
+          },
+          {
+            "price": "0.9480",
+            "quantity": "688.00"
+          },
+          {
+            "price": "0.9490",
+            "quantity": "20000.00"
+          },
+          {
+            "price": "0.9500",
+            "quantity": "250957.04"
+          },
+          {
+            "price": "0.9580",
+            "quantity": "595.00"
+          },
+          {
+            "price": "0.9590",
+            "quantity": "300.00"
+          },
+          {
+            "price": "0.9600",
+            "quantity": "94586.32"
+          },
+          {
+            "price": "0.9680",
+            "quantity": "781.00"
+          },
+          {
+            "price": "0.9690",
+            "quantity": "300.00"
+          },
+          {
+            "price": "0.9700",
+            "quantity": "458358.00"
+          },
+          {
+            "price": "0.9760",
+            "quantity": "1041.00"
+          },
+          {
+            "price": "0.9770",
+            "quantity": "5000.00"
+          },
+          {
+            "price": "0.9790",
+            "quantity": "300.00"
+          },
+          {
+            "price": "0.9800",
+            "quantity": "2179.88"
+          },
+          {
+            "price": "0.9860",
+            "quantity": "1785.00"
+          },
+          {
+            "price": "0.9870",
+            "quantity": "500.00"
+          },
+          {
+            "price": "0.9900",
+            "quantity": "4176251.07"
+          },
+          {
+            "price": "0.9960",
+            "quantity": "6250.00"
+          },
+          {
+            "price": "0.9970",
+            "quantity": "7500.00"
+          },
+          {
+            "price": "0.9990",
+            "quantity": "4010730.00"
+          }
+        ],
+        "normalizer_version": "binary-books/m3-v1",
+        "price_bands": [
+          {
+            "end": "0.1000",
+            "start": "0.0000",
+            "step": "0.0010"
+          },
+          {
+            "end": "0.9000",
+            "start": "0.1000",
+            "step": "0.0100"
+          },
+          {
+            "end": "1.0000",
+            "start": "0.9000",
+            "step": "0.0010"
+          }
+        ],
+        "quantity_step": "0.01",
+        "received_at": "2026-11-03T16:20:02.081111+00:00",
+        "rejections": [],
+        "sequence": 11,
+        "source_id": "CONTROLS-2026-R",
+        "source_ts": "2026-11-03T16:20:02.061000+00:00",
+        "timestamp_kind": "PROVIDER_SEND_TIME",
+        "trading_authorized": false,
+        "transport": "KALSHI_AUTHENTICATED_WS",
+        "venue": "kalshi",
+        "verification": "UNVERIFIED",
+        "yes_asks": [
+          {
+            "price": "0.2700",
+            "quantity": "351231.79"
+          },
+          {
+            "price": "0.2800",
+            "quantity": "35417.01"
+          },
+          {
+            "price": "0.2900",
+            "quantity": "17833.61"
+          },
+          {
+            "price": "0.3000",
+            "quantity": "66505.44"
+          },
+          {
+            "price": "0.3100",
+            "quantity": "369.84"
+          },
+          {
+            "price": "0.3200",
+            "quantity": "6615.01"
+          },
+          {
+            "price": "0.3300",
+            "quantity": "7555.47"
+          },
+          {
+            "price": "0.3400",
+            "quantity": "5722.00"
+          },
+          {
+            "price": "0.3500",
+            "quantity": "4933.23"
+          },
+          {
+            "price": "0.3600",
+            "quantity": "7322.00"
+          },
+          {
+            "price": "0.3700",
+            "quantity": "10179.86"
+          },
+          {
+            "price": "0.3800",
+            "quantity": "103.28"
+          },
+          {
+            "price": "0.3900",
+            "quantity": "14675.39"
+          },
+          {
+            "price": "0.4000",
+            "quantity": "4095.93"
+          },
+          {
+            "price": "0.4100",
+            "quantity": "97.51"
+          },
+          {
+            "price": "0.4200",
+            "quantity": "91.37"
+          },
+          {
+            "price": "0.4300",
+            "quantity": "44.20"
+          },
+          {
+            "price": "0.4400",
+            "quantity": "1639.32"
+          },
+          {
+            "price": "0.4500",
+            "quantity": "148.01"
+          },
+          {
+            "price": "0.4600",
+            "quantity": "1886.12"
+          },
+          {
+            "price": "0.4700",
+            "quantity": "2844.13"
+          },
+          {
+            "price": "0.4800",
+            "quantity": "9464.87"
+          },
+          {
+            "price": "0.4900",
+            "quantity": "2636.05"
+          },
+          {
+            "price": "0.5000",
+            "quantity": "16415.83"
+          },
+          {
+            "price": "0.5100",
+            "quantity": "590.06"
+          },
+          {
+            "price": "0.5200",
+            "quantity": "419.16"
+          },
+          {
+            "price": "0.5300",
+            "quantity": "1436.16"
+          },
+          {
+            "price": "0.5400",
+            "quantity": "391.53"
+          },
+          {
+            "price": "0.5500",
+            "quantity": "1992.08"
+          },
+          {
+            "price": "0.5600",
+            "quantity": "13413.46"
+          },
+          {
+            "price": "0.5700",
+            "quantity": "10673.11"
+          },
+          {
+            "price": "0.5800",
+            "quantity": "778.03"
+          },
+          {
+            "price": "0.5900",
+            "quantity": "15284.00"
+          },
+          {
+            "price": "0.6000",
+            "quantity": "2748.77"
+          },
+          {
+            "price": "0.6100",
+            "quantity": "24554.72"
+          },
+          {
+            "price": "0.6200",
+            "quantity": "26986.27"
+          },
+          {
+            "price": "0.6300",
+            "quantity": "17871.54"
+          },
+          {
+            "price": "0.6400",
+            "quantity": "23303.98"
+          },
+          {
+            "price": "0.6500",
+            "quantity": "16694.76"
+          },
+          {
+            "price": "0.6600",
+            "quantity": "101477.54"
+          },
+          {
+            "price": "0.6700",
+            "quantity": "119229.85"
+          },
+          {
+            "price": "0.6800",
+            "quantity": "100482.00"
+          },
+          {
+            "price": "0.6900",
+            "quantity": "26134.51"
+          },
+          {
+            "price": "0.7000",
+            "quantity": "101866.08"
+          },
+          {
+            "price": "0.7100",
+            "quantity": "126589.36"
+          },
+          {
+            "price": "0.7200",
+            "quantity": "103085.63"
+          },
+          {
+            "price": "0.7300",
+            "quantity": "133897.98"
+          },
+          {
+            "price": "0.7400",
+            "quantity": "35797.03"
+          },
+          {
+            "price": "0.7500",
+            "quantity": "621385.97"
+          },
+          {
+            "price": "0.7600",
+            "quantity": "4976.04"
+          },
+          {
+            "price": "0.7700",
+            "quantity": "41891.96"
+          },
+          {
+            "price": "0.7800",
+            "quantity": "105646.22"
+          },
+          {
+            "price": "0.7900",
+            "quantity": "60789.82"
+          },
+          {
+            "price": "0.8000",
+            "quantity": "6367.51"
+          },
+          {
+            "price": "0.8100",
+            "quantity": "51208.77"
+          },
+          {
+            "price": "0.8200",
+            "quantity": "23903.92"
+          },
+          {
+            "price": "0.8300",
+            "quantity": "41401.78"
+          },
+          {
+            "price": "0.8400",
+            "quantity": "36351.37"
+          },
+          {
+            "price": "0.8500",
+            "quantity": "288231.62"
+          },
+          {
+            "price": "0.8600",
+            "quantity": "10166.52"
+          },
+          {
+            "price": "0.8700",
+            "quantity": "33651.67"
+          },
+          {
+            "price": "0.8800",
+            "quantity": "58347.85"
+          },
+          {
+            "price": "0.8900",
+            "quantity": "532137.44"
+          },
+          {
+            "price": "0.9000",
+            "quantity": "13522.99"
+          },
+          {
+            "price": "0.9020",
+            "quantity": "1.00"
+          },
+          {
+            "price": "0.9090",
+            "quantity": "399.00"
+          },
+          {
+            "price": "0.9100",
+            "quantity": "4540.76"
+          },
+          {
+            "price": "0.9190",
+            "quantity": "308.00"
+          },
+          {
+            "price": "0.9200",
+            "quantity": "7480.21"
+          },
+          {
+            "price": "0.9270",
+            "quantity": "342.00"
+          },
+          {
+            "price": "0.9280",
+            "quantity": "60000.00"
+          },
+          {
+            "price": "0.9290",
+            "quantity": "22222.00"
+          },
+          {
+            "price": "0.9300",
+            "quantity": "168078.38"
+          },
+          {
+            "price": "0.9390",
+            "quantity": "409.00"
+          },
+          {
+            "price": "0.9400",
+            "quantity": "3078.34"
+          },
+          {
+            "price": "0.9480",
+            "quantity": "480.00"
+          },
+          {
+            "price": "0.9490",
+            "quantity": "55555.00"
+          },
+          {
+            "price": "0.9500",
+            "quantity": "292393.01"
+          },
+          {
+            "price": "0.9590",
+            "quantity": "609.00"
+          },
+          {
+            "price": "0.9600",
+            "quantity": "2834.29"
+          },
+          {
+            "price": "0.9670",
+            "quantity": "757.00"
+          },
+          {
+            "price": "0.9680",
+            "quantity": "22222.00"
+          },
+          {
+            "price": "0.9700",
+            "quantity": "469199.69"
+          },
+          {
+            "price": "0.9780",
+            "quantity": "1136.00"
+          },
+          {
+            "price": "0.9790",
+            "quantity": "22222.00"
+          },
+          {
+            "price": "0.9800",
+            "quantity": "56233.73"
+          },
+          {
+            "price": "0.9870",
+            "quantity": "1923.00"
+          },
+          {
+            "price": "0.9880",
+            "quantity": "33333.00"
+          },
+          {
+            "price": "0.9890",
+            "quantity": "500000.00"
+          },
+          {
+            "price": "0.9900",
+            "quantity": "4423751.06"
+          },
+          {
+            "price": "0.9960",
+            "quantity": "6250.00"
+          },
+          {
+            "price": "0.9970",
+            "quantity": "349999.00"
+          },
+          {
+            "price": "0.9980",
+            "quantity": "3000000.00"
+          },
+          {
+            "price": "0.9990",
+            "quantity": "5014184.81"
+          }
+        ]
+      },
+      {
+        "continuity": "UNKNOWN",
+        "data_usable": true,
+        "market_close_at": "2027-02-02T04:59:00Z",
+        "mechanism_no": "SYNTHETIC_NO_FROM_SELL_YES_AT_BID",
+        "mechanism_yes": "BUY_LONG_FROM_OFFER",
+        "metadata_received_at": "2026-11-03T16:19:57.642686+00:00",
+        "minimum_quantity": "1",
+        "no_asks": [
+          {
+            "price": "0.7510",
+            "quantity": "7278.0000"
+          },
+          {
+            "price": "0.7550",
+            "quantity": "200.0000"
+          },
+          {
+            "price": "0.7570",
+            "quantity": "6.0000"
+          },
+          {
+            "price": "0.7580",
+            "quantity": "40.0000"
+          },
+          {
+            "price": "0.7590",
+            "quantity": "939.0000"
+          },
+          {
+            "price": "0.7600",
+            "quantity": "120.0000"
+          },
+          {
+            "price": "0.7610",
+            "quantity": "699.0000"
+          },
+          {
+            "price": "0.7620",
+            "quantity": "20.0000"
+          },
+          {
+            "price": "0.7650",
+            "quantity": "610.0000"
+          },
+          {
+            "price": "0.7660",
+            "quantity": "22348.0000"
+          },
+          {
+            "price": "0.7670",
+            "quantity": "27.0000"
+          },
+          {
+            "price": "0.7680",
+            "quantity": "302.0000"
+          },
+          {
+            "price": "0.7690",
+            "quantity": "100.0000"
+          },
+          {
+            "price": "0.7700",
+            "quantity": "25078.0000"
+          },
+          {
+            "price": "0.7710",
+            "quantity": "100.0000"
+          },
+          {
+            "price": "0.7720",
+            "quantity": "100.0000"
+          },
+          {
+            "price": "0.7730",
+            "quantity": "100.0000"
+          },
+          {
+            "price": "0.7740",
+            "quantity": "200.0000"
+          },
+          {
+            "price": "0.7750",
+            "quantity": "20000.0000"
+          },
+          {
+            "price": "0.7840",
+            "quantity": "20.0000"
+          },
+          {
+            "price": "0.7850",
+            "quantity": "17029.0000"
+          },
+          {
+            "price": "0.7900",
+            "quantity": "1.0000"
+          },
+          {
+            "price": "0.8000",
+            "quantity": "11.0000"
+          },
+          {
+            "price": "0.8100",
+            "quantity": "32.0000"
+          },
+          {
+            "price": "0.8180",
+            "quantity": "90.0000"
+          },
+          {
+            "price": "0.9630",
+            "quantity": "800.0000"
+          },
+          {
+            "price": "0.9640",
+            "quantity": "25000.0000"
+          },
+          {
+            "price": "0.9700",
+            "quantity": "15.0000"
+          },
+          {
+            "price": "0.9710",
+            "quantity": "40000.0000"
+          },
+          {
+            "price": "0.9800",
+            "quantity": "10.0000"
+          },
+          {
+            "price": "0.9840",
+            "quantity": "40000.0000"
+          },
+          {
+            "price": "0.9890",
+            "quantity": "100001.0000"
+          },
+          {
+            "price": "0.9900",
+            "quantity": "53.0000"
+          },
+          {
+            "price": "0.9980",
+            "quantity": "1000000.0000"
+          },
+          {
+            "price": "0.9990",
+            "quantity": "280000.0000"
+          }
+        ],
+        "normalizer_version": "binary-books/m3-v1",
+        "price_bands": [
+          {
+            "end": "1",
+            "start": "0",
+            "step": "0.001"
+          }
+        ],
+        "quantity_step": "1",
+        "received_at": "2026-11-03T16:20:02.066931+00:00",
+        "rejections": [],
+        "sequence": null,
+        "source_id": "paccc-usse-midterms-2026-11-03-rep",
+        "source_ts": "2026-11-03T16:20:01.999269497Z",
+        "timestamp_kind": "TRANSACTION_TIME",
+        "trading_authorized": false,
+        "transport": "US_AUTHENTICATED_WS_RESEARCH",
+        "venue": "polymarket_us",
+        "verification": "UNVERIFIED",
+        "yes_asks": [
+          {
+            "price": "0.2500",
+            "quantity": "50289.0000"
+          },
+          {
+            "price": "0.2620",
+            "quantity": "3119.0000"
+          },
+          {
+            "price": "0.2650",
+            "quantity": "5000.0000"
+          },
+          {
+            "price": "0.2700",
+            "quantity": "6710.0000"
+          },
+          {
+            "price": "0.2750",
+            "quantity": "295.0000"
+          },
+          {
+            "price": "0.2790",
+            "quantity": "813.0000"
+          },
+          {
+            "price": "0.2800",
+            "quantity": "5.0000"
+          },
+          {
+            "price": "0.2820",
+            "quantity": "475.0000"
+          },
+          {
+            "price": "0.2840",
+            "quantity": "16.0000"
+          },
+          {
+            "price": "0.2900",
+            "quantity": "1.0000"
+          },
+          {
+            "price": "0.2920",
+            "quantity": "6258.0000"
+          },
+          {
+            "price": "0.2930",
+            "quantity": "502.0000"
+          },
+          {
+            "price": "0.2940",
+            "quantity": "20.0000"
+          },
+          {
+            "price": "0.2960",
+            "quantity": "4999.0000"
+          },
+          {
+            "price": "0.3000",
+            "quantity": "425.0000"
+          },
+          {
+            "price": "0.3100",
+            "quantity": "734.0000"
+          },
+          {
+            "price": "0.3150",
+            "quantity": "183.0000"
+          },
+          {
+            "price": "0.3200",
+            "quantity": "365.0000"
+          },
+          {
+            "price": "0.3300",
+            "quantity": "217.0000"
+          },
+          {
+            "price": "0.3400",
+            "quantity": "256.0000"
+          },
+          {
+            "price": "0.3490",
+            "quantity": "312.0000"
+          },
+          {
+            "price": "0.3500",
+            "quantity": "26499.0000"
+          },
+          {
+            "price": "0.3600",
+            "quantity": "566.0000"
+          },
+          {
+            "price": "0.3700",
+            "quantity": "889.0000"
+          },
+          {
+            "price": "0.3800",
+            "quantity": "165.0000"
+          },
+          {
+            "price": "0.3900",
+            "quantity": "728.0000"
+          },
+          {
+            "price": "0.4000",
+            "quantity": "860.0000"
+          },
+          {
+            "price": "0.4100",
+            "quantity": "682.0000"
+          },
+          {
+            "price": "0.4200",
+            "quantity": "74.0000"
+          },
+          {
+            "price": "0.4300",
+            "quantity": "148.0000"
+          },
+          {
+            "price": "0.4400",
+            "quantity": "81.0000"
+          },
+          {
+            "price": "0.4500",
+            "quantity": "3.0000"
+          },
+          {
+            "price": "0.4590",
+            "quantity": "70.0000"
+          },
+          {
+            "price": "0.4600",
+            "quantity": "450.0000"
+          },
+          {
+            "price": "0.4700",
+            "quantity": "2180.0000"
+          },
+          {
+            "price": "0.4800",
+            "quantity": "218.0000"
+          },
+          {
+            "price": "0.5000",
+            "quantity": "37.0000"
+          },
+          {
+            "price": "0.5100",
+            "quantity": "17.0000"
+          },
+          {
+            "price": "0.5200",
+            "quantity": "2181.0000"
+          },
+          {
+            "price": "0.5300",
+            "quantity": "22.0000"
+          },
+          {
+            "price": "0.5400",
+            "quantity": "79.0000"
+          },
+          {
+            "price": "0.5700",
+            "quantity": "905.0000"
+          },
+          {
+            "price": "0.5800",
+            "quantity": "207.0000"
+          },
+          {
+            "price": "0.5900",
+            "quantity": "204.0000"
+          },
+          {
+            "price": "0.6100",
+            "quantity": "199.0000"
+          },
+          {
+            "price": "0.6200",
+            "quantity": "81.0000"
+          },
+          {
+            "price": "0.6300",
+            "quantity": "35.0000"
+          },
+          {
+            "price": "0.6400",
+            "quantity": "18.0000"
+          },
+          {
+            "price": "0.6500",
+            "quantity": "39.0000"
+          },
+          {
+            "price": "0.6800",
+            "quantity": "222.0000"
+          },
+          {
+            "price": "0.7200",
+            "quantity": "166.0000"
+          },
+          {
+            "price": "0.7300",
+            "quantity": "6.0000"
+          },
+          {
+            "price": "0.7400",
+            "quantity": "37.0000"
+          },
+          {
+            "price": "0.7500",
+            "quantity": "60.0000"
+          },
+          {
+            "price": "0.7700",
+            "quantity": "13.0000"
+          },
+          {
+            "price": "0.7800",
+            "quantity": "431.0000"
+          },
+          {
+            "price": "0.7900",
+            "quantity": "37.0000"
+          },
+          {
+            "price": "0.8000",
+            "quantity": "34.0000"
+          },
+          {
+            "price": "0.8200",
+            "quantity": "79.0000"
+          },
+          {
+            "price": "0.8400",
+            "quantity": "30.0000"
+          },
+          {
+            "price": "0.8500",
+            "quantity": "2.0000"
+          },
+          {
+            "price": "0.8600",
+            "quantity": "24.0000"
+          },
+          {
+            "price": "0.8800",
+            "quantity": "35.0000"
+          },
+          {
+            "price": "0.8900",
+            "quantity": "1.0000"
+          },
+          {
+            "price": "0.9000",
+            "quantity": "17.0000"
+          },
+          {
+            "price": "0.9100",
+            "quantity": "296.0000"
+          },
+          {
+            "price": "0.9300",
+            "quantity": "38.0000"
+          },
+          {
+            "price": "0.9400",
+            "quantity": "247.0000"
+          },
+          {
+            "price": "0.9700",
+            "quantity": "15.0000"
+          },
+          {
+            "price": "0.9800",
+            "quantity": "10.0000"
+          },
+          {
+            "price": "0.9870",
+            "quantity": "10272.0000"
+          },
+          {
+            "price": "0.9890",
+            "quantity": "1.0000"
+          },
+          {
+            "price": "0.9900",
+            "quantity": "3753.0000"
+          },
+          {
+            "price": "0.9980",
+            "quantity": "1000000.0000"
+          },
+          {
+            "price": "0.9990",
+            "quantity": "269999.0000"
+          }
+        ]
+      }
+    ],
+    "expected_capital_release_at": null,
+    "expected_settlement_at": null,
+    "fee_status": "UNKNOWN_UNREVIEWED",
+    "fill_assumption": "HYPOTHETICAL_SIMULTANEOUS_FULL_FILLS_OF_DISPLAYED_DEPTH",
+    "net_edge_usd": null,
+    "ordinary_basis": "Assistant ordinary-outcome screen: named party control of the same chamber following the November 3 2026 election. NOT legal equivalence.",
+    "provenance": {
+      "archive": "data/m5p/validation-20261103/senate-rep",
+      "channel": "us_ws",
+      "event_number": 28,
+      "event_sha256": "b926040741f22b14c676658dcf2da12671f5a09938182a057da08852b625b67a"
+    },
+    "quality": {
+      "economic_eligibility": false,
+      "receipt_skew_seconds": 0.01418,
+      "rejections": [],
+      "source_skew_seconds": 0.061731,
+      "timestamp_depth_overlap": true,
+      "us_continuity": "UNKNOWN"
+    },
+    "residual_risks": [
+      "Kalshi early media-call determination versus US electoral/chamber sources",
+      "Kalshi February 1 officeholder fallback versus US majority/independent-caucus/January 4 attribution",
+      "Runoffs, party changes and ambiguous control can produce different payouts",
+      "Unreviewed fees, collateral, cash release and non-atomic fills"
+    ],
+    "reverse_direction": "BLOCKED_US_SYNTHETIC_NO_COLLATERAL_UNMODELED",
+    "schema": "economic-signal-validation/m5q-v1",
+    "settlement_review": "PENDING",
+    "source_state_sha256": "e37c83fdbac1306a6092e8b30cc25f5441eb72ecde46013505d13600659f44ac",
+    "source_versions": {
+      "kalshi": "2e083208422249974b7454e473952cc38e4cab0c8c71d9b4aefad62052dd8aed",
+      "polymarket_us": "be557a8d005900800dba9fbcfc709d31153ae59787d569a764ef008aed0fc194"
+    },
+    "status": "CONDITIONAL_GROSS_ONLY",
+    "strict_arbitrage_eligible": false,
+    "supported_direction": "KALSHI_NO_PLUS_US_LONG_YES",
+    "trading_authorized": false,
+    "verification": "UNVERIFIED"
+  }
+}

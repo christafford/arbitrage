@@ -290,3 +290,18 @@ quality target. No pair qualified and no 15-minute observation was launched.
 See `docs/M5Q_RESULTS.md`: historical gross quotes do not establish fee-adjusted
 profitability, and the current screen had no positive gross signal. Preserve this
 failed selection and deadline; no repeat, substitution or new capture is implied.
+
+## M5R authorized offline viability research — November 8 UTC
+
+The operator requested `docs/M5R_ECONOMIC_VIABILITY_AND_MARKETDATA_FEASIBILITY.md`.
+The offline decision report is complete; see `docs/M5R_RESULTS.md` and
+`docs/M5R_OPERATIONS.md`. All 196 historical operational gross-positive observations
+are negative under the declared standard-taker per-level scenario, not actual
+independently established account fees. The US current schedule announces November 6
+tiers; never relabel historical 0.0695 as current account applicability. M5Q raw
+replay preserves strict coverage and attributes most loss to source-update gaps;
+gRPC slow-consumer disconnect behavior does not establish quiet-book validity.
+609 tests pass and 4,423 prior source/evidence/code files remain unchanged. Recommend
+pausing broad infrastructure expansion. Actual net viability, settlement/cash release,
+independent review and prior M5P/M5Q acceptance remain open. No new capture,
+credential use, model/index change, renewed service, funds, orders or M6 is implied.

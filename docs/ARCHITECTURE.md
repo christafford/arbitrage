@@ -469,3 +469,14 @@ archives are quarantined. A new replay observer exposes reconstructed states onl
 after the original sample matches. `--scope M5Q` explicitly permits one pair for
 900 seconds in the existing collector; M5P defaults and all gates remain intact.
 [Method and operational bounds](M5Q_OPERATIONS.md).
+
+## M5R offline viability consumer
+
+`viability.py` consumes normalized historical books and independently replayed
+quality events. It preserves the production fee evaluator and collector unchanged.
+Its Decimal sensitivity has explicit venue cash caps and labeled fee/partition
+assumptions; actual net, release and approvals remain unknown. An attribution
+companion partitions the original Engine's event intervals without changing its
+two-second source/receipt or metadata gates. The offline command hashes sources
+before/after, rejects existing output directories and verifies original raw replay
+and coverage before reporting. See [M5R operations](M5R_OPERATIONS.md).

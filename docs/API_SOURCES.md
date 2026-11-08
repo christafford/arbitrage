@@ -801,3 +801,28 @@ no-change watermark, and never relaxes the strict two-second gate. The genuine
 receipt times and schemas; matching ordinary sports identity is not settlement
 approval. Historical fee applicability, exceptional payouts and cash release
 remain independently reviewable unknowns.
+
+## M5R official-source review — November 8, 2026 UTC
+
+[Manifest, exact UTC retrievals and hashes](evidence/M5R_API_CHECKS.json) archive
+the official fee, rounding, history and US streaming documentation used by M5R.
+Sixteen public Kalshi GET responses cover four historical series/events, including
+`/series/fee_changes?show_historical=true` and completed `/events/fee_changes`
+pagination. Existing validators check identities, supported numeric fee parameters,
+paired overrides and cursors. Empty history does not establish historical account
+applicability. Ten original November 1–4 metadata bodies are separately retained.
+
+The US [fee page](https://docs.polymarket.us/fees.md) now announces November 6
+volume-based taker coefficients and onboarding exceptions. Keep historical 0.0695
+metadata separate from current account applicability; no production fee profile
+was changed. Kalshi PDF HTTP retrieval returned 429; the existing July 7 official
+PDF is copied with its original unknown retrieval time, not labeled a new download.
+
+The official [proto reference](https://docs.polymarket.us/streaming-endpoints/proto-reference)
+links the successfully archived ZIP in the manifest. Inspected members are
+`api/polymarket/v1/marketdatasubscription.proto` and `types.proto`. The market-data
+request defaults `slow_consumer_skip_to_head` to false (disconnect on a slow
+consumer), but updates have no market sequence/replay cursor and heartbeat is
+empty. No code was generated/executed and no authenticated gRPC request occurred.
+This review does not establish quiet-book validity or justify changing freshness.
+[Full findings](M5R_RESULTS.md), [offline reproduction](M5R_OPERATIONS.md).

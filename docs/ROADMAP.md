@@ -534,3 +534,19 @@ improvement and all human review remain open; no M6, funds or orders.
 [Results and ranked evidence](M5Q_RESULTS.md), [operations](M5Q_OPERATIONS.md),
 [continuity review](M5Q_CONTINUITY.md). No M6, orders, funding, automatic approval,
 model/index mutation or service renewal is implied. Earlier milestone gaps remain.
+
+## M5R — Economic viability and market-data feasibility — OFFLINE REPORT COMPLETE
+
+- [x] Archive current fee histories, historical schedule/metadata evidence and
+  official US WebSocket/gRPC contracts; preserve UNKNOWN account applicability.
+- [x] Exact $5/$25/$100/$500/$3,000 depth and fee sensitivities, fragmentation,
+  split cash caps, conservative fee-funded quantities and source-bound timing.
+- [x] Reconstruct all three M5Q workers and decompose wall-time loss with exact
+  original strict coverage, exclusive combinations and separate latency evidence.
+- [x] Compare existing deterministic/AI evidence, rank three research classes and
+  deliver the [pause recommendation](M5R_RESULTS.md), with 609 tests passing.
+- [ ] Independently established account fees, settlement equivalence/cash release,
+  sustained qualifying current coverage and verified positive net economics.
+
+M5R closes its offline decision-report scope only. Earlier milestone failures remain;
+no new capture, gRPC implementation, inference, service renewal, funds, orders or M6.

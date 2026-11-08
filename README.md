@@ -1,5 +1,11 @@
 # Prediction Arbitrage Research (US Exchanges)
 
+[M5R viability research](docs/M5R_RESULTS.md) recommends pausing broad infrastructure
+expansion: all 196 historical operational gross-positive observations are negative
+under the declared standard-taker sensitivity, while actual account fees remain
+unknown. Raw replay attributes most coverage loss to infrequent fresh source states.
+The offline report preserves all gates and authorizes no further capture or trading.
+
 [M5Q economic signal validation](docs/M5Q_RESULTS.md) reconstructs historical
 gross quote signals while keeping fees, settlement approval and actual fills
 unknown. Its new three-pair selection screen failed; no qualifying pair or
